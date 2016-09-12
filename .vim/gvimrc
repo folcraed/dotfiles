@@ -1,0 +1,7 @@
+" Will need to change background light/dark depending on scheme
+set background=dark
+colorscheme onedark
+let g:airline_theme='onedark'
+highlight Comment gui=italic
+set lines=48
+set columns=132
