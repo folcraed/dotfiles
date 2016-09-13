@@ -1,4 +1,2 @@
-.vim/plugged/vCoolor.vim
-.vim/plugged/vim-airline-themes
-nvim/plugged/vCoolor.vim
-nvim/plugged/vim-airline-themes
+.vim/plugged/*
+nvim/plugged/*
