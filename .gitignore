@@ -1,2 +1,2 @@
-Dropbox/Settings/dotfiles/.vim/plugged/*
-Dropbox/Settings/dotfiles/nvim/plugged/*
+.vim/plugged/*
+nvim/plugged/*
