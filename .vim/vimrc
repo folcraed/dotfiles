@@ -68,12 +68,12 @@ set t_ZH=[3m
 set t_ZR=[23m
 
 " Set up Solarized or other color scheme
-" let g:onedark_terminal_italics = 1
+let g:onedark_terminal_italics = 1
 " let g:one_allow_italics = 1
 
 set background=dark
-" colorscheme onedark  " Set to 'solarized' if wanted and uncomment above
-colorscheme solarized  " Set to 'solarized' if wanted and uncomment above
+colorscheme onedark  " Set to 'solarized' if wanted and uncomment above
+" colorscheme solarized  " Set to 'solarized' if wanted and uncomment above
 
 " nno <C-6> ddp -- these aren't working, not sure why
 " nno <C-7> ddkp -- these aren't working, not sure why
@@ -190,7 +190,7 @@ if !exists(":DiffOrig")
 endif
 
   " Set the Airline to use Powerline customized fonts for extra glyphs
-  " let g:airline_powerline_fonts=1
+let g:airline_powerline_fonts=1
 " the separator used on the left side
 let g:airline_left_sep=''
 " the separator used on the right side
@@ -200,8 +200,8 @@ let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#show_splits = 0
 let g:airline#extensions#tabline#show_tab_nr = 1
 let g:airline#extensions#tabline#tab_nr_type = 2
-" let g:airline_theme='onedark'
-let g:airline_theme='solarized'
+let g:airline_theme='onedark'
+" let g:airline_theme='solarized'
 
   " Set the directory depth for CtrlP to open
 let g:ctrlp_by_filename = 1

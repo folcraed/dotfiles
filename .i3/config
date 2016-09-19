@@ -160,7 +160,7 @@ for_window [class="Eog"] floating enable
 for_window [class="MuPDF"] floating enable
 for_window [class="Vlc"] floating enable
 for_window [class="mpv"] floating enable
-for_window [class="Recoll"] floating enable
+for_window [class="Tracker-needle"] floating enable
 # for_window [class="Simplescreenrecorder"] floating enable
 
 set $bg_color #1C1C1C
@@ -192,5 +192,5 @@ exec --no-startup-id /home/rob/.dropbox-dist/dropboxd
 exec --no-startup-id xclip
 # exec --no-startup-id mpd ~/.config/mpd/mpd.conf
 exec --no-startup-id /usr/lib64/polkit-gnome/polkit-gnome-authentication-agent-1
-exec --no-startup-id /usr/bin/tracker
+exec --no-startup-id /usr/bin/tracker --daemon -s
 # vim: ft=sh
