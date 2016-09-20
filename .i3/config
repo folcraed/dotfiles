@@ -19,9 +19,6 @@ gaps inner 10
 # start a terminal
 bindsym $mod+Return exec --no-startup-id /usr/bin/gnome-terminal
 
-# Start Recoll for quick search
-# bindsym $mod+Shift+f exec --no-startup-id recoll
-
 # Open Rofi application menu
 bindsym $mod+p exec --no-startup-id rofi -show run -font "Roboto Mono 10" -opacity "90" -terminal "gnome-terminal"
 # bindsym $mod+p exec --no-startup-id dmenu_run
@@ -188,9 +185,7 @@ bar {
 exec --no-startup-id /home/rob/.fehbg
 exec --no-startup-id clipit
 exec --no-startup-id /home/rob/.dropbox-dist/dropboxd
-# exec --no-startup-id recollindex -m -w 60
 exec --no-startup-id xclip
-# exec --no-startup-id mpd ~/.config/mpd/mpd.conf
 exec --no-startup-id /usr/lib64/polkit-gnome/polkit-gnome-authentication-agent-1
 exec --no-startup-id /usr/bin/tracker --daemon -s
 # vim: ft=sh
