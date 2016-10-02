@@ -20,7 +20,7 @@ gaps inner 10
 bindsym $mod+Return exec --no-startup-id /usr/bin/gnome-terminal
 
 # Open Rofi application menu
-bindsym $mod+p exec --no-startup-id rofi -show run -font "Roboto Mono 10" -opacity "90" -terminal "gnome-terminal"
+bindsym $mod+p exec --no-startup-id rofi -show run -font "Hack 10" -opacity "90" -terminal "gnome-terminal"
 # bindsym $mod+p exec --no-startup-id dmenu_run
 
 # kill focused window
@@ -129,21 +129,16 @@ bindsym $mod+Shift+e exec "i3-msg exit"
 # resize window (you can also use the mouse for that)
 mode "resize" {
         # These bindings trigger as soon as you enter the resize mode
-
-        # Pressing left will shrink the window’s width.
-        # Pressing right will grow the window’s width.
-        # Pressing up will shrink the window’s height.
-        # Pressing down will grow the window’s height.
-        bindsym h resize shrink width 10 px or 10 ppt
-        bindsym j resize grow height 10 px or 10 ppt
-        bindsym k resize shrink height 10 px or 10 ppt
-        bindsym l resize grow width 10 px or 10 ppt
+        bindsym h resize shrink width 2 px or 2 ppt
+        bindsym j resize grow height 2 px or 2 ppt
+        bindsym k resize shrink height 2 px or 2 ppt
+        bindsym l resize grow width 2 px or 2 ppt
 
         # same bindings, but for the arrow keys
-        bindsym Right resize shrink width 10 px or 10 ppt
-        bindsym Up resize grow height 10 px or 10 ppt
-        bindsym Down resize shrink height 10 px or 10 ppt
-        bindsym Left resize grow width 10 px or 10 ppt
+        bindsym Right resize shrink width 2 px or 2 ppt
+        bindsym Up resize grow height 2 px or 2 ppt
+        bindsym Down resize shrink height 2 px or 2 ppt
+        bindsym Left resize grow width 2 px or 2 ppt
 
         # back to normal: Enter or Escape
         bindsym Return mode "default"

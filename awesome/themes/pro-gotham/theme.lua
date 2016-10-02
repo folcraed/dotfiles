@@ -11,7 +11,7 @@ theme            = {}
 theme.icons      = os.getenv("HOME") .. "/.config/awesome/themes/pro-gotham/icons/"
 theme.wallpaper  = os.getenv("HOME") .. "/Dropbox/Photos/Backgrounds/exagons.jpg"
 theme.panel      = "png:" .. theme.icons .. "/panel/panel.png"
-theme.font       = "Roboto Mono 8"
+theme.font       = "Hack 9"
 
 theme.fg_normal  = "#74AEAB"
 theme.fg_focus   = "#DBDBDB"
@@ -81,7 +81,7 @@ theme.taglist_font        = "Terminus 11"
 
 -- | Tasklist | --
 
-theme.tasklist_font                 = "Roboto Mono 8"
+theme.tasklist_font                 = "Hack 9"
 theme.tasklist_disable_icon         = true
 theme.tasklist_bg_normal            = "png:" .. theme.icons .. "panel/tasklist/normal.png"
 theme.tasklist_bg_focus             = "png:" .. theme.icons .. "panel/tasklist/focus.png"

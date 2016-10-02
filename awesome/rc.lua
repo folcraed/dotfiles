@@ -159,19 +159,19 @@ widget_display_c:set_image(beautiful.widget_display_c)
 --         if mpd_now.state == "play" then
 --             mpd_now.artist = mpd_now.artist:upper():gsub("&.-;", string.lower)
 --             mpd_now.title = mpd_now.title:upper():gsub("&.-;", string.lower)
---             widget:set_markup(markup.font("Roboto Mono 7", " ")
---                               .. markup.font("Roboto Mono 7",
+--             widget:set_markup(markup.font("Hack 7", " ")
+--                               .. markup.font("Hack 7",
 --                               mpd_now.artist
 --                               .. " - " ..
 --                               mpd_now.title
---                               .. markup.font("Roboto Mono 7", " ")))
+--                               .. markup.font("Hack 7", " ")))
 --             play_pause_icon:set_image(beautiful.mpd_pause)
 --             mpd_sepl:set_image(beautiful.mpd_sepl)
 --             mpd_sepr:set_image(beautiful.mpd_sepr)
 --         elseif mpd_now.state == "pause" then
---             widget:set_markup(markup.font("Roboto Mono 7", "") ..
---                               markup.font("Roboto Mono 7", "MPD PAUSED") ..
---                               markup.font("Roboto Mono 8", ""))
+--             widget:set_markup(markup.font("Hack 7", "") ..
+--                               markup.font("Hack 7", "MPD PAUSED") ..
+--                               markup.font("Hack 8", ""))
 --             play_pause_icon:set_image(beautiful.mpd_play)
 --             mpd_sepl:set_image(beautiful.mpd_sepl)
 --             mpd_sepr:set_image(beautiful.mpd_sepr)
@@ -215,7 +215,7 @@ widget_display_c:set_image(beautiful.widget_display_c)
 
 cpu_widget = lain.widgets.cpu({
     settings = function()
-        widget:set_markup(space3 .. cpu_now.usage .. "%" .. markup.font("Roboto Mono 7", " "))
+        widget:set_markup(space3 .. cpu_now.usage .. "%" .. markup.font("Hack 8", " "))
     end
 })
 
@@ -229,7 +229,7 @@ cpuwidget:set_bgimage(beautiful.widget_display)
 
 mem_widget = lain.widgets.mem({
     settings = function()
-        widget:set_markup(space3 .. mem_now.used .. "MB" .. markup.font("Roboto Mono 7", " "))
+        widget:set_markup(space3 .. mem_now.used .. "MB" .. markup.font("Hack 8", " "))
     end
 })
 
@@ -256,8 +256,8 @@ net_widgetdl = wibox.widget.textbox()
 net_widgetul = lain.widgets.net({
     iface = "eno1",
     settings = function()
-        widget:set_markup(markup.font("Tamsyn 1", "  ") .. net_now.sent)
-        net_widgetdl:set_markup(markup.font("Tamsyn 1", " ") .. net_now.received .. markup.font("Tamsyn 1", " "))
+        widget:set_markup(markup.font("Hack 4", "  ") .. net_now.sent)
+        net_widgetdl:set_markup(markup.font("Hack 4", " ") .. net_now.received .. markup.font("Hack 4", " "))
     end
 })
 
@@ -275,9 +275,9 @@ netwidgetul:set_bgimage(beautiful.widget_display)
 
 -- | Clock / Calendar | --
 
-mytextclock    = awful.widget.textclock(markup(clockgf, space3 .. "%I:%M" .. markup.font("Roboto Mono 7", " ")))
+mytextclock    = awful.widget.textclock(markup(clockgf, space3 .. "%I:%M" .. markup.font("Hack 8", " ")))
 -- mytextcalendar = awful.widget.textclock(markup(clockgf, space3 .. "%a %d %b"))
-lain.widgets.calendar:attach(mytextclock, { font = "Roboto Mono", font_size = 8 })
+lain.widgets.calendar:attach(mytextclock, { font = "Hack", font_size = 9 })
 
 widget_clock = wibox.widget.imagebox()
 widget_clock:set_image(beautiful.widget_clock)
@@ -598,7 +598,7 @@ awful.rules.rules = {
                      raise = true,
                      keys = clientkeys,
                      buttons = clientbuttons } },
-    { rule = { class = "recoll" },
+    { rule = { class = "tracker-needle" },
       properties = { floating = true } },
     { rule = { class = "vlc" },
       properties = { floating = true } },
@@ -688,10 +688,10 @@ end
 
 -- | Autostart | --
 
-run_once("compton")
-run_once("parcellite")
+-- run_once("compton")
+run_once("clipit")
 run_once("dropbox start -i")
-run_once("recollindex -m -w 60")
--- run_once("pasystray")
--- run_once("mpd ~/.config/mpd/mpd.conf")
+run_once("tracker --daemon -s")
+run_once("xclip")
+run_once("/usr/lib64/polkit-gnome/polkit-gnome-authentication-agent-1")
 -- run_once("urxvtd -q -f -o")
