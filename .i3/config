@@ -176,9 +176,9 @@ bar {
 
 # Startup apps
 # exec --no-startup-id nvidia-settings --load-config-only
-# exec --no-startup-id compton
-exec --no-startup-id /home/rob/.fehbg
-exec --no-startup-id clipit
+exec --no-startup-id compton
+# exec --no-startup-id /home/rob/.fehbg
+exec --no-startup-id parcellite
 exec --no-startup-id /home/rob/.dropbox-dist/dropboxd
 exec --no-startup-id xclip
 exec --no-startup-id /usr/lib64/polkit-gnome/polkit-gnome-authentication-agent-1

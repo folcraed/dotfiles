@@ -54,11 +54,11 @@ local exec   = function (s) oldspawn(s, false) end
 local shexec = awful.util.spawn_with_shell
 
 modkey        = "Mod4"
-terminal      = "gnome-terminal"
-tmux          = "gnome-terminal -e tmux"
-browser       = "qutebrowser"
-filemanager   = "gnome-terminal -e ranger"
-configuration = 'gnome-terminal -e "vim -O $HOME/.config/awesome/rc.lua $HOME/.config/awesome/themes/' ..theme.. '/theme.lua"'
+terminal      = "termite"
+tmux          = "termite -e tmux"
+browser       = "firefox"
+filemanager   = "termite -e vifm"
+configuration = 'termite -e "vim -O $HOME/.config/awesome/rc.lua $HOME/.config/awesome/themes/' ..theme.. '/theme.lua"'
 app_menu = menugen.build_menu()
 
 -- | Table of layouts I use| --
@@ -116,7 +116,7 @@ markup = lain.util.markup
 space3 = markup.font("Terminus 3", " ")
 space2 = markup.font("Terminus 2", " ")
 vspace1 = '<span font="Terminus 3"> </span>'
-vspace2 = '<span font="Terminus 3">  </span>'
+vspace2 = '<span font="Terminus 3"> </span>'
 clockgf = beautiful.clockgf
 
 -- | Widgets | --
@@ -688,10 +688,10 @@ end
 
 -- | Autostart | --
 
--- run_once("compton")
-run_once("clipit")
+run_once("compton")
+run_once("parcellite")
 run_once("dropbox start -i")
-run_once("tracker --daemon -s")
+-- run_once("tracker --daemon -s")
 run_once("xclip")
-run_once("/usr/lib64/polkit-gnome/polkit-gnome-authentication-agent-1")
-run_once("gnome-keyring-daemon -s")
+-- run_once("/usr/lib64/polkit-gnome/polkit-gnome-authentication-agent-1")
+-- run_once("gnome-keyring-daemon -s")

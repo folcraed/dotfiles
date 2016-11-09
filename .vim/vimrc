@@ -133,6 +133,8 @@ nno <leader>= :wincmd =<cr>
 nno <silent><leader>n :NERDTreeToggle<CR>
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 let g:NERDTreeHijackNetrw=1
+let NERDTreeShowBookmarks=1
+let NERDTreeShowHidden=1
 nno <silent><leader>e :edit .<cr>
 
 " If using Netrw, set it's default list mode

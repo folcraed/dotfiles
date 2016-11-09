@@ -9,7 +9,7 @@
 
 theme            = {}
 theme.icons      = os.getenv("HOME") .. "/.config/awesome/themes/pro-gotham/icons/"
-theme.wallpaper  = os.getenv("HOME") .. "/Dropbox/Photos/Backgrounds/exagons.jpg"
+theme.wallpaper  = os.getenv("HOME") .. "/Dropbox/Photos/Backgrounds/NightSea.jpg"
 theme.panel      = "png:" .. theme.icons .. "/panel/panel.png"
 theme.font       = "Hack 9"
 
