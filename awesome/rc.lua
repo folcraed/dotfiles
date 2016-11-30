@@ -54,11 +54,11 @@ local exec   = function (s) oldspawn(s, false) end
 local shexec = awful.util.spawn_with_shell
 
 modkey        = "Mod4"
-terminal      = "termite"
-tmux          = "termite -e tmux"
+terminal      = "konsole"
+tmux          = "konsole -e tmux"
 browser       = "firefox"
-filemanager   = "termite -e vifm"
-configuration = 'termite -e "vim -O $HOME/.config/awesome/rc.lua $HOME/.config/awesome/themes/' ..theme.. '/theme.lua"'
+filemanager   = "konsole -e vifm"
+configuration = 'konsole -e "vim -O $HOME/.config/awesome/rc.lua $HOME/.config/awesome/themes/' ..theme.. '/theme.lua"'
 app_menu = menugen.build_menu()
 
 -- | Table of layouts I use| --
@@ -691,7 +691,7 @@ end
 run_once("compton")
 run_once("parcellite")
 run_once("dropbox start -i")
-run_once("tracker --daemon -s")
+run_once("recollindex -m -i -w 30")
 run_once("xclip")
 -- run_once("/usr/lib64/polkit-gnome/polkit-gnome-authentication-agent-1")
-run_once("gnome-keyring-daemon -s")
+-- run_once("gnome-keyring-daemon -s")

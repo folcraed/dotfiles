@@ -181,6 +181,6 @@ exec --no-startup-id /home/rob/.fehbg
 exec --no-startup-id parcellite
 exec --no-startup-id dropbox start -i
 exec --no-startup-id xclip
-exec --no-startup-id /usr/lib64/polkit-gnome/polkit-gnome-authentication-agent-1
+# exec --no-startup-id /usr/lib64/polkit-gnome/polkit-gnome-authentication-agent-1
 exec --no-startup-id /usr/bin/tracker --daemon -s
 # vim: ft=sh
