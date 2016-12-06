@@ -68,12 +68,11 @@ set t_ZH=[3m
 set t_ZR=[23m
 
 " Set up Solarized or other color scheme
-let g:onedark_terminal_italics = 1
+" let g:onedark_terminal_italics = 1
 " let g:one_allow_italics = 1
 
-set background=dark
+" set background=dark
 colorscheme onedark  " Set to 'solarized' if wanted and uncomment above
-" colorscheme solarized  " Set to 'solarized' if wanted and uncomment above
 
 " nno <C-6> ddp -- these aren't working, not sure why
 " nno <C-7> ddkp -- these aren't working, not sure why
