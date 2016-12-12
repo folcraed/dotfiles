@@ -1,7 +1,7 @@
 " Will need to change background light/dark depending on scheme
-set background=light
-colorscheme PaperColor
-let g:airline_theme='PaperColor'
+set background=dark
+colorscheme base16-ocean
+let g:airline_theme='base16_ocean'
 highlight Comment gui=italic
 set lines=48
 set columns=132

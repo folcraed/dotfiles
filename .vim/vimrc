@@ -72,7 +72,7 @@ set t_ZR=[23m
 " let g:one_allow_italics = 1
 
 " set background=dark
-colorscheme onedark  " Set to 'solarized' if wanted and uncomment above
+colorscheme base16-ocean  " Set to 'solarized' if wanted and uncomment above
 
 " nno <C-6> ddp -- these aren't working, not sure why
 " nno <C-7> ddkp -- these aren't working, not sure why
@@ -201,7 +201,7 @@ let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#show_splits = 0
 let g:airline#extensions#tabline#show_tab_nr = 1
 let g:airline#extensions#tabline#tab_nr_type = 2
-let g:airline_theme='onedark'
+let g:airline_theme='base16_ocean'
 " let g:airline_theme='solarized'
 
   " Set the directory depth for CtrlP to open

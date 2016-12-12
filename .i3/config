@@ -148,12 +148,12 @@ mode "resize" {
 
 new_window pixel 1
 new_float pixel 1
+# for_window [class="^.*"] floating enable
 for_window [class="Eog"] floating enable
-for_window [class="MuPDF"] floating enable
+for_window [class="Evince"] floating enable
 for_window [class="Vlc"] floating enable
 for_window [class="mpv"] floating enable
-for_window [class="Tracker-needle"] floating enable
-# for_window [class="Simplescreenrecorder"] floating enable
+for_window [class="Recoll"] floating enable
 
 set $bg_color #1C1C1C
 set $fg_color #869FC2
@@ -176,11 +176,12 @@ bar {
 
 # Startup apps
 # exec --no-startup-id nvidia-settings --load-config-only
-exec --no-startup-id compton
+exec --no-startup-id gnome-keyring-daemon -s
+exec --no-startup-id /usr/lib64/polkit-gnome/polkit-gnome-authentication-agent-1
 exec --no-startup-id /home/rob/.fehbg
+exec --no-startup-id compton
 exec --no-startup-id parcellite
-exec --no-startup-id dropbox start -i
 exec --no-startup-id xclip
-# exec --no-startup-id /usr/lib64/polkit-gnome/polkit-gnome-authentication-agent-1
-exec --no-startup-id /usr/bin/tracker --daemon -s
+exec --no-startup-id /usr/bin/recollindex -m -n -w 30
+exec --no-startup-id dropbox start -i
 # vim: ft=sh
