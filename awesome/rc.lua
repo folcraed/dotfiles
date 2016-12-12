@@ -532,7 +532,7 @@ client.connect_signal("manage", function (c, startup)
         end
     end
 
-    local titlebars_enabled = true
+    local titlebars_enabled = false
     if titlebars_enabled and (c.type == "normal" or c.type == "dialog") then
         local buttons = awful.util.table.join(
                 awful.button({ }, 1, function()
