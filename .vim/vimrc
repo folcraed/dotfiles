@@ -1,5 +1,5 @@
 " vimrc by Rob Boudreau
-" Last change:	2016 Aug 5
+" Last change:	2016 Dec 13
 
 " Use Vim settings, rather than Vi settings (much better!).
 " This must be first, because it changes other options as a side effect.
@@ -71,8 +71,8 @@ set t_ZR=[23m
 " let g:onedark_terminal_italics = 1
 " let g:one_allow_italics = 1
 
-" set background=dark
-colorscheme base16-ocean  " Set to 'solarized' if wanted and uncomment above
+set background=dark
+colorscheme hybrid_material  " Set to 'solarized' if wanted and uncomment above
 
 " nno <C-6> ddp -- these aren't working, not sure why
 " nno <C-7> ddkp -- these aren't working, not sure why
@@ -201,7 +201,7 @@ let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#show_splits = 0
 let g:airline#extensions#tabline#show_tab_nr = 1
 let g:airline#extensions#tabline#tab_nr_type = 2
-let g:airline_theme='base16_ocean'
+let g:airline_theme='hybridline'
 " let g:airline_theme='solarized'
 
   " Set the directory depth for CtrlP to open

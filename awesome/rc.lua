@@ -589,10 +589,10 @@ end
 
 -- | Autostart | --
 
-run_once("compton")
-run_once("parcellite")
-run_once("dropbox start -i")
-run_once("recollindex -m -n -w 30")
-run_once("xclip")
 run_once("gnome-keyring-daemon -s")
 run_once("/usr/lib64/polkit-gnome/polkit-gnome-authentication-agent-1")
+run_once("compton")
+run_once("parcellite")
+run_once("xclip")
+run_once("recollindex -m -n -w 30")
+run_once("dropbox start -i")
