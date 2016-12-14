@@ -16,7 +16,7 @@ if has('gui_running')
   set guioptions-=T
   set guioptions-=r
   set guioptions-=l
-  set guioptions-=m
+  " set guioptions-=m
   set guioptions-=b
   set guioptions-=h
 endif
@@ -139,6 +139,9 @@ nno <silent><leader>e :edit .<cr>
 " If using Netrw, set it's default list mode
 " let g:netrw_liststyle=3
 
+" Save a admin file from regular user
+nno <silent><leader>r :w !sudo tee %
+
   " Don't use Ex mode, use Q for formatting
 map Q gq
 
@@ -201,7 +204,7 @@ let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#show_splits = 0
 let g:airline#extensions#tabline#show_tab_nr = 1
 let g:airline#extensions#tabline#tab_nr_type = 2
-let g:airline_theme='hybridline'
+let g:airline_theme='hybrid'
 " let g:airline_theme='solarized'
 
   " Set the directory depth for CtrlP to open
