@@ -12,7 +12,7 @@ endif
 
 " Set font for GVim
 if has('gui_running')
-  set guifont=Hack\ 9
+  set guifont=Roboto\ Mono\ 9
   set guioptions-=T
   set guioptions-=r
   set guioptions-=l
@@ -128,7 +128,12 @@ nno <leader>p :CtrlPMRU<cr>
 nno <leader>- :wincmd =<cr>:wincmd \|<cr>
 nno <leader>= :wincmd =<cr>
 
-  " Settings for NerdTree so it's more sane
+" Save current session using existing or new name
+nno <leader>q :mks! ~/.vim/sessions/
+" Load existing session
+nno <leader>l :source ~/.vim/sessions/
+
+" Settings for NerdTree so it's more sane
 nno <silent><leader>n :NERDTreeToggle<CR>
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 let g:NERDTreeHijackNetrw=1
@@ -209,7 +214,7 @@ let g:airline_theme='hybrid'
 
   " Set the directory depth for CtrlP to open
 let g:ctrlp_by_filename = 1
-let g:ctrlp_mac_depth = 10
+let g:ctrlp_mac_depth = 3
 let g:ctrlp_max_files = 0
 let g:ctrlp_show_hidden = 1
 let g:ctrlp_switch_buffer = 'Et'

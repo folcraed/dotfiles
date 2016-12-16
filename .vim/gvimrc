@@ -1,7 +1,7 @@
 " Will need to change background light/dark depending on scheme
-set background=dark
+set background=light
 colorscheme hybrid_material
-let g:airline_theme='hybrid'
+let g:airline_theme='luna'
 highlight Comment gui=italic
 set lines=48
 set columns=132
