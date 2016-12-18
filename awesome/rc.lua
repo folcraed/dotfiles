@@ -38,8 +38,8 @@ end
 
 -- {{{ Variable definitions
 -- Themes define colours, icons, font and wallpapers.
--- beautiful.init(awful.util.get_themes_dir() .. "mydefault/theme.lua")
-beautiful.init("/home/rob/.config/awesome/themes/mydefault/theme.lua")
+-- beautiful.init(awful.util.get_themes_dir() .. "Material/theme.lua")
+beautiful.init("/home/rob/.config/awesome/themes/Material/theme.lua")
 
 -- This is used later as the default terminal and editor to run.
 terminal = "termite"
@@ -62,11 +62,11 @@ awful.layout.layouts = {
     awful.layout.suit.tile.top,
     awful.layout.suit.fair,
     awful.layout.suit.fair.horizontal,
-    awful.layout.suit.spiral,
-    awful.layout.suit.spiral.dwindle,
-    awful.layout.suit.max,
-    awful.layout.suit.max.fullscreen,
-    awful.layout.suit.magnifier,
+    -- awful.layout.suit.spiral,
+    -- awful.layout.suit.spiral.dwindle,
+    -- awful.layout.suit.max,
+    -- awful.layout.suit.max.fullscreen,
+    -- awful.layout.suit.magnifier,
     awful.layout.suit.corner.nw,
     -- awful.layout.suit.corner.ne,
     -- awful.layout.suit.corner.sw,
@@ -181,7 +181,7 @@ awful.screen.connect_for_each_screen(function(s)
     set_wallpaper(s)
 
     -- Each screen has its own tag table.
-    awful.tag({ "1", "2", "3", "4", "5", "6", "7", "8", "9" }, s, awful.layout.layouts[1])
+    awful.tag({ "", "", "", "", "", "", "", "", "" }, s, awful.layout.layouts[1])
 
     -- Create a promptbox for each screen
     s.mypromptbox = awful.widget.prompt()
@@ -235,33 +235,45 @@ root.buttons(awful.util.table.join(
 globalkeys = awful.util.table.join(
     awful.key({ modkey,           }, "s",      hotkeys_popup.show_help,
               {description="show help", group="awesome"}),
-    -- awful.key({ modkey,           }, "Left",   awful.tag.viewprev,
-    --           {description = "view previous", group = "tag"}),
-    -- awful.key({ modkey,           }, "Right",  awful.tag.viewnext,
-    --           {description = "view next", group = "tag"}),
     awful.key({ modkey,           }, "Escape", awful.tag.history.restore,
               {description = "go back", group = "tag"}),
 
     awful.key({ modkey,           }, "Left",
         function ()
-            awful.client.focus.byidx( 1)
+            awful.client.focus.bydirection("left")
         end,
-        {description = "focus next by index", group = "client"}
+        {description = "focus window on left", group = "client"}
+    ),
+    awful.key({ modkey,           }, "Up",
+        function ()
+            awful.client.focus.bydirection("up")
+        end,
+        {description = "focus window above", group = "client"}
+    ),
+    awful.key({ modkey,           }, "Down",
+        function ()
+            awful.client.focus.bydirection("down")
+        end,
+        {description = "focus window below", group = "client"}
     ),
     awful.key({ modkey,           }, "Right",
         function ()
-            awful.client.focus.byidx(-1)
+            awful.client.focus.bydirection("right")
         end,
-        {description = "focus previous by index", group = "client"}
+        {description = "focus window on right", group = "client"}
     ),
     awful.key({ modkey,           }, "w", function () mymainmenu:show() end,
               {description = "show main menu", group = "awesome"}),
 
     -- Layout manipulation
-    awful.key({ modkey, "Shift"   }, "Left", function () awful.client.swap.byidx(  1)    end,
-              {description = "swap with next client by index", group = "client"}),
-    awful.key({ modkey, "Shift"   }, "Right", function () awful.client.swap.byidx( -1)    end,
-              {description = "swap with previous client by index", group = "client"}),
+    awful.key({ modkey, "Shift"   }, "Left", function () awful.client.swap.bydirection("left")    end,
+              {description = "swap with left window", group = "client"}),
+    awful.key({ modkey, "Shift"   }, "Up", function () awful.client.swap.bydirection("up")    end,
+              {description = "swap with above window", group = "client"}),
+    awful.key({ modkey, "Shift"   }, "Down", function () awful.client.swap.bydirection("down")    end,
+              {description = "swap with below window", group = "client"}),
+    awful.key({ modkey, "Shift"   }, "Right", function () awful.client.swap.bydirection("right")    end,
+              {description = "swap with right window", group = "client"}),
     awful.key({ modkey, "Control" }, "j", function () awful.screen.focus_relative( 1) end,
               {description = "focus the next screen", group = "screen"}),
     awful.key({ modkey, "Control" }, "k", function () awful.screen.focus_relative(-1) end,
@@ -301,6 +313,10 @@ globalkeys = awful.util.table.join(
               {description = "select next", group = "layout"}),
     awful.key({ modkey, "Shift"   }, "space", function () awful.layout.inc(-1)                end,
               {description = "select previous", group = "layout"}),
+
+    -- Volume control
+    awful.key({ }, "XF86AudioRaiseVolume", function () awful.spawn("pactl set-sink-volume 1 +5%") end),
+    awful.key({ }, "XF86AudioLowerVolume", function () awful.spawn("pactl set-sink-volume 1 -5%") end),
 
     awful.key({ modkey, "Control" }, "n",
               function ()
@@ -563,5 +579,7 @@ run_once("/usr/lib64/polkit-gnome/polkit-gnome-authentication-agent-1")
 run_once("compton")
 run_once("parcellite")
 run_once("xclip")
-run_once("recollindex -m -n -w 30")
+run_once("tracker-daemon -s")
+-- run_once("recollindex -m -n -w 30")
 run_once("dropbox start -i")
+run_once("/home/rob/bin/setxset.sh")

@@ -13,12 +13,14 @@ endif
 " Set font for GVim
 if has('gui_running')
   set guifont=Roboto\ Mono\ 9
-  set guioptions-=T
-  set guioptions-=r
-  set guioptions-=l
-  " set guioptions-=m
-  set guioptions-=b
-  set guioptions-=h
+  " set guioptions-=T
+  " set guioptions-=r
+  " set guioptions-=R
+  " set guioptions-=L
+  " set guioptions-=l
+  set guioptions=m
+  " set guioptions-=b
+  " set guioptions-=h
 endif
 
 " Call and/or install plugins with vim-plug
@@ -33,6 +35,7 @@ Plug 'https://github.com/vim-airline/vim-airline.git'
 Plug 'https://github.com/vim-airline/vim-airline-themes.git'
 Plug 'https://github.com/tpope/vim-commentary.git'
 Plug 'https://github.com/rakr/vim-one'
+Plug 'https://github.com/bling/vim-bufferline'
 
 call plug#end()
 " Start Pathogen to add plugins
@@ -199,16 +202,18 @@ if !exists(":DiffOrig")
 endif
 
   " Set the Airline to use Powerline customized fonts for extra glyphs
-let g:airline_powerline_fonts=1
+" let g:airline_powerline_fonts=1
 " the separator used on the left side
 let g:airline_left_sep=''
 " the separator used on the right side
 let g:airline_right_sep=''
-  " and set the tabline to something more useful
-let g:airline#extensions#tabline#enabled = 1
-let g:airline#extensions#tabline#show_splits = 0
-let g:airline#extensions#tabline#show_tab_nr = 1
-let g:airline#extensions#tabline#tab_nr_type = 2
+" set the bufferline to something more useful
+let g:airline#extensions#bufferline#enabled = 1
+let g:bufferline_echo = 0
+" let g:airline#extensions#tabline#enabled = 1
+" let g:airline#extensions#tabline#show_splits = 0
+" let g:airline#extensions#tabline#show_tab_nr = 1
+" let g:airline#extensions#tabline#tab_nr_type = 2
 let g:airline_theme='hybrid'
 " let g:airline_theme='solarized'
 
