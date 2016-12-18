@@ -68,12 +68,13 @@ inoremap { {}i
 let &cpo=s:cpo_save
 unlet s:cpo_save
 set autoindent
+set background=dark
 set backspace=indent,eol,start
 set backupdir=~/Temp
 set directory=~/Temp
 set expandtab
 set fileencodings=ucs-bom,utf-8,default,latin1
-set guifont=Roboto\ Mono\ 9
+set guifont=Roboto\ Mono\ 10
 set guioptions=m
 set helplang=en
 set hlsearch
@@ -84,17 +85,19 @@ set ruler
 set runtimepath=~/.vim,~/.vim/plugged/ctrlp.vim/,~/.vim/plugged/nerdtree/,~/.vim/plugged/tmuxline.vim/,~/.vim/plugged/vCoolor.vim/,~/.vim/plugged/colorizer/,~/.vim/plugged/vim-airline/,~/.vim/plugged/vim-airline-themes/,~/.vim/plugged/vim-commentary/,~/.vim/plugged/vim-one/,~/.vim/plugged/vim-bufferline/,/usr/share/vim/vimfiles,/usr/share/vim/vim80,/usr/share/vim/vimfiles/after,~/.vim/after
 set shiftwidth=4
 set showcmd
+set showtabline=2
 set splitbelow
 set splitright
 set suffixes=.bak,~,.swp,.o,.info,.aux,.log,.dvi,.bbl,.blg,.brf,.cb,.ind,.idx,.ilg,.inx,.out,.toc,.png,.jpg
 set noswapfile
+set tabline=%!airline#extensions#tabline#get()
 set tabstop=4
 set termencoding=utf-8
 set termguicolors
 set ttimeoutlen=50
 set wildmenu
 set wildmode=list:longest,full
-set window=88
+set window=75
 let s:so_save = &so | let s:siso_save = &siso | set so=0 siso=0
 let v:this_session=expand("<sfile>:p")
 silent only
@@ -103,10 +106,10 @@ if expand('%') == '' && !&modified && line('$') <= 1 && getline(1) == ''
   let s:wipebuf = bufnr('%')
 endif
 set shortmess=aoO
-badd +0 Journal\ 2016.txt
-badd +0 Changes.txt
+badd +469 Journal\ 2016.txt
 badd +0 Todo.txt
 badd +0 Gen\ Todo.txt
+badd +0 Changes.txt
 argglobal
 silent! argdel *
 edit Journal\ 2016.txt
@@ -124,12 +127,12 @@ split
 wincmd w
 wincmd t
 set winheight=1 winwidth=1
-exe 'vert 1resize ' . ((&columns * 104 + 157) / 315)
-exe 'vert 2resize ' . ((&columns * 104 + 157) / 315)
-exe '3resize ' . ((&lines * 43 + 44) / 89)
-exe 'vert 3resize ' . ((&columns * 105 + 157) / 315)
-exe '4resize ' . ((&lines * 43 + 44) / 89)
-exe 'vert 4resize ' . ((&columns * 105 + 157) / 315)
+exe 'vert 1resize ' . ((&columns * 90 + 135) / 271)
+exe 'vert 2resize ' . ((&columns * 89 + 135) / 271)
+exe '3resize ' . ((&lines * 36 + 38) / 76)
+exe 'vert 3resize ' . ((&columns * 90 + 135) / 271)
+exe '4resize ' . ((&lines * 36 + 38) / 76)
+exe 'vert 4resize ' . ((&columns * 90 + 135) / 271)
 argglobal
 setlocal keymap=
 setlocal noarabic
@@ -243,12 +246,12 @@ setlocal nowinfixwidth
 setlocal wrap
 setlocal wrapmargin=0
 silent! normal! zE
-let s:l = 469 - ((21 * winheight(0) + 43) / 87)
+let s:l = 479 - ((19 * winheight(0) + 36) / 73)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-469
-normal! 0734|
+479
+normal! 0
 wincmd w
 argglobal
 edit Changes.txt
@@ -303,7 +306,7 @@ setlocal formatexpr=
 setlocal formatoptions=tcq
 setlocal formatlistpat=^\\s*\\d\\+[\\]:.)}\\t\ ]\\s*
 setlocal grepprg=
-setlocal iminsert=0
+setlocal iminsert=2
 setlocal imsearch=2
 setlocal include=
 setlocal includeexpr=
@@ -364,15 +367,15 @@ setlocal nowinfixwidth
 setlocal wrap
 setlocal wrapmargin=0
 silent! normal! zE
-let s:l = 250 - ((40 * winheight(0) + 43) / 87)
+let s:l = 257 - ((35 * winheight(0) + 36) / 73)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-250
-normal! 0249|
+257
+normal! 0
 wincmd w
 argglobal
-edit Todo.txt
+edit Gen\ Todo.txt
 setlocal keymap=
 setlocal noarabic
 setlocal autoindent
@@ -485,15 +488,15 @@ setlocal nowinfixwidth
 setlocal wrap
 setlocal wrapmargin=0
 silent! normal! zE
-let s:l = 1 - ((0 * winheight(0) + 21) / 43)
+let s:l = 12 - ((11 * winheight(0) + 18) / 36)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-1
+12
 normal! 0
 wincmd w
 argglobal
-edit Gen\ Todo.txt
+edit Todo.txt
 setlocal keymap=
 setlocal noarabic
 setlocal autoindent
@@ -606,20 +609,19 @@ setlocal nowinfixwidth
 setlocal wrap
 setlocal wrapmargin=0
 silent! normal! zE
-let s:l = 4 - ((3 * winheight(0) + 21) / 43)
+let s:l = 1 - ((0 * winheight(0) + 18) / 36)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-4
+1
 normal! 0
 wincmd w
-2wincmd w
-exe 'vert 1resize ' . ((&columns * 104 + 157) / 315)
-exe 'vert 2resize ' . ((&columns * 104 + 157) / 315)
-exe '3resize ' . ((&lines * 43 + 44) / 89)
-exe 'vert 3resize ' . ((&columns * 105 + 157) / 315)
-exe '4resize ' . ((&lines * 43 + 44) / 89)
-exe 'vert 4resize ' . ((&columns * 105 + 157) / 315)
+exe 'vert 1resize ' . ((&columns * 90 + 135) / 271)
+exe 'vert 2resize ' . ((&columns * 89 + 135) / 271)
+exe '3resize ' . ((&lines * 36 + 38) / 76)
+exe 'vert 3resize ' . ((&columns * 90 + 135) / 271)
+exe '4resize ' . ((&lines * 36 + 38) / 76)
+exe 'vert 4resize ' . ((&columns * 90 + 135) / 271)
 tabnext 1
 if exists('s:wipebuf')
   silent exe 'bwipe ' . s:wipebuf

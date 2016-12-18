@@ -1,26 +1,14 @@
 " vimrc by Rob Boudreau
-" Last change:	2016 Dec 13
+" Last change:	2016 Dec 18
 
 " Use Vim settings, rather than Vi settings (much better!).
 " This must be first, because it changes other options as a side effect.
 set nocompatible
 
-" Added this so Vim and Neovim won't have trouble with fish shell
-if &shell =~# 'fish$'
-    set shell=sh
-endif
-
-" Set font for GVim
+" Set font and some optionsfor GVim
 if has('gui_running')
-  set guifont=Roboto\ Mono\ 9
-  " set guioptions-=T
-  " set guioptions-=r
-  " set guioptions-=R
-  " set guioptions-=L
-  " set guioptions-=l
+  set guifont=Roboto\ Mono\ for\ Powerline\ 10
   set guioptions=m
-  " set guioptions-=b
-  " set guioptions-=h
 endif
 
 " Call and/or install plugins with vim-plug
@@ -38,10 +26,10 @@ Plug 'https://github.com/rakr/vim-one'
 Plug 'https://github.com/bling/vim-bufferline'
 
 call plug#end()
-" Start Pathogen to add plugins
-" execute pathogen#infect()
 
+" Set global options
 set termguicolors
+set encoding=utf-8
 set expandtab
 set tabstop=4
 set shiftwidth=4
@@ -70,31 +58,40 @@ set backupdir=~/Temp
 set t_ZH=[3m
 set t_ZR=[23m
 
-" Set up Solarized or other color scheme
+" Set up colorschemes
 " let g:onedark_terminal_italics = 1
 " let g:one_allow_italics = 1
 
 set background=dark
-colorscheme hybrid_material  " Set to 'solarized' if wanted and uncomment above
+colorscheme hybrid_material
 
-" nno <C-6> ddp -- these aren't working, not sure why
-" nno <C-7> ddkp -- these aren't working, not sure why
+" --{{{ Start of key mappings
+
+" These are for auto-brackets
 ino " ""<ESC>i
 ino { {}<ESC>i
 ino [ []<ESC>i
 ino ( ()<ESC>i
 nno ; :
+
+" These keep searches centered in the page
 nno n nzzzv
 nno N Nzzzv
+
+" These increase/decrease window split sizes
 nno <c-left> 5<c-w>>
 nno <c-right> 5<c-w><
+
+" This turns off search highlighting
 nno <silent><leader>\ :noh<cr>
 
 "Make moving back and forth in buffers easier
 nno <silent><leader>[ :bp<cr>
 nno <silent><leader>] :bn<cr>
 
+" This makes unrecognized code files use shell syntax highlighting
 nno <F5> :set syntax=sh<cr>
+
 "Makes moving throught windows more sane
 nno <C-j> <C-w>j
 nno <C-k> <C-w>k
@@ -144,9 +141,6 @@ let NERDTreeShowBookmarks=1
 let NERDTreeShowHidden=1
 nno <silent><leader>e :edit .<cr>
 
-" If using Netrw, set it's default list mode
-" let g:netrw_liststyle=3
-
 " Save a admin file from regular user
 nno <silent><leader>r :w !sudo tee %
 
@@ -159,7 +153,9 @@ autocmd VimResized * :wincmd =
   " Set the file selection window to tree view
   " CTRL-U in insert mode deletes a lot.  Use CTRL-G u to first break undo,
   " so that you can undo CTRL-U after inserting a line break.
-inoremap <C-U> <C-G>u<C-U>
+ino <C-U> <C-G>u<C-U>
+
+" }}}-- End of mappings
 
   " In many terminal emulators the mouse works just fine, thus enable it.
 if has('mouse')
@@ -202,19 +198,22 @@ if !exists(":DiffOrig")
 endif
 
   " Set the Airline to use Powerline customized fonts for extra glyphs
-" let g:airline_powerline_fonts=1
+let g:airline_powerline_fonts=1
+" save some space on the statusline by deleting the obvious
+let g:airline#parts#ffenc#skip_expected_string='utf-8[unix]'
 " the separator used on the left side
 let g:airline_left_sep=''
 " the separator used on the right side
 let g:airline_right_sep=''
 " set the bufferline to something more useful
-let g:airline#extensions#bufferline#enabled = 1
+let g:airline#extensions#bufferline#enabled = 0
 let g:bufferline_echo = 0
-" let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#buffer_nr_show = 1
 " let g:airline#extensions#tabline#show_splits = 0
 " let g:airline#extensions#tabline#show_tab_nr = 1
 " let g:airline#extensions#tabline#tab_nr_type = 2
-let g:airline_theme='hybrid'
+let g:airline_theme='luna'
 " let g:airline_theme='solarized'
 
   " Set the directory depth for CtrlP to open

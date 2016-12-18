@@ -1,5 +1,5 @@
 " Will need to change background light/dark depending on scheme
-set background=light
+set background=dark
 colorscheme hybrid_material
 let g:airline_theme='luna'
 highlight Comment gui=italic
