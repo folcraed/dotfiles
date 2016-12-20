@@ -24,6 +24,7 @@ Plug 'https://github.com/vim-airline/vim-airline-themes.git'
 Plug 'https://github.com/tpope/vim-commentary.git'
 Plug 'https://github.com/rakr/vim-one'
 Plug 'https://github.com/bling/vim-bufferline'
+Plug 'https://github.com/sirver/ultisnips'
 
 call plug#end()
 
@@ -124,9 +125,12 @@ let g:ctrlp_cmd = 'CtrlP'
 nno <leader>b :CtrlPBuffer<cr>
 nno <leader>p :CtrlPMRU<cr>
 
-" zoom a vim pane, <C-w>= to re-balance
-nno <leader>- :wincmd =<cr>:wincmd \|<cr>
-nno <leader>= :wincmd =<cr>
+" zoom a vim pane, <C-w>- to re-balance
+nno <leader>+ :wincmd =<cr>:wincmd \|<cr>
+nno <leader>- :wincmd =<cr>
+
+" Snippets
+nno <leader>= i=================================<cr>
 
 " Save current session using existing or new name
 nno <leader>q :mks! ~/.vim/sessions/
@@ -196,6 +200,10 @@ if !exists(":DiffOrig")
   command DiffOrig vert new | set bt=nofile | r ++edit # | 0d_ | diffthis
   \ | wincmd p | diffthis
 endif
+
+" Default path for UltiSnip snippets
+let g:UltiSnipsSnippetDirectories='~/.vim/UltiSnips'
+let g:UltiSnipsSnippetDirectories=["UltiSnips"]
 
   " Set the Airline to use Powerline customized fonts for extra glyphs
 let g:airline_powerline_fonts=1

@@ -35,6 +35,8 @@
 *.color7:       #f5f5f5
 *.color15:      #f5f5f5
 
+! =================================
+
 ! Generic term settings
 Xcursor.theme: default
 Xcursor.size: 16

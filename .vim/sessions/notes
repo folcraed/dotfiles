@@ -25,8 +25,9 @@ nnoremap <silent> \e :edit .
 nnoremap <silent> \n :NERDTreeToggle
 nnoremap \l :source ~/.vim/sessions/
 nnoremap \q :mks! ~/.vim/sessions/
-nnoremap \= :wincmd =
-nnoremap \- :wincmd =:wincmd |
+nnoremap \= i =================================
+nnoremap \- :wincmd =
+nnoremap \+ :wincmd =:wincmd |
 nnoremap \p :CtrlPMRU
 nnoremap \b :CtrlPBuffer
 nnoremap <silent> \v :VCoolor
@@ -68,13 +69,12 @@ inoremap { {}i
 let &cpo=s:cpo_save
 unlet s:cpo_save
 set autoindent
-set background=dark
 set backspace=indent,eol,start
 set backupdir=~/Temp
 set directory=~/Temp
 set expandtab
 set fileencodings=ucs-bom,utf-8,default,latin1
-set guifont=Roboto\ Mono\ 10
+set guifont=Roboto\ Mono\ for\ Powerline\ 10
 set guioptions=m
 set helplang=en
 set hlsearch
@@ -106,10 +106,10 @@ if expand('%') == '' && !&modified && line('$') <= 1 && getline(1) == ''
   let s:wipebuf = bufnr('%')
 endif
 set shortmess=aoO
-badd +469 Journal\ 2016.txt
+badd +0 Journal\ 2016.txt
+badd +0 Changes.txt
 badd +0 Todo.txt
 badd +0 Gen\ Todo.txt
-badd +0 Changes.txt
 argglobal
 silent! argdel *
 edit Journal\ 2016.txt
@@ -367,7 +367,7 @@ setlocal nowinfixwidth
 setlocal wrap
 setlocal wrapmargin=0
 silent! normal! zE
-let s:l = 257 - ((35 * winheight(0) + 36) / 73)
+let s:l = 257 - ((27 * winheight(0) + 36) / 73)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
@@ -375,7 +375,7 @@ normal! zt
 normal! 0
 wincmd w
 argglobal
-edit Gen\ Todo.txt
+edit Todo.txt
 setlocal keymap=
 setlocal noarabic
 setlocal autoindent
@@ -488,15 +488,15 @@ setlocal nowinfixwidth
 setlocal wrap
 setlocal wrapmargin=0
 silent! normal! zE
-let s:l = 12 - ((11 * winheight(0) + 18) / 36)
+let s:l = 1 - ((0 * winheight(0) + 18) / 36)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-12
+1
 normal! 0
 wincmd w
 argglobal
-edit Todo.txt
+edit Gen\ Todo.txt
 setlocal keymap=
 setlocal noarabic
 setlocal autoindent
@@ -609,11 +609,11 @@ setlocal nowinfixwidth
 setlocal wrap
 setlocal wrapmargin=0
 silent! normal! zE
-let s:l = 1 - ((0 * winheight(0) + 18) / 36)
+let s:l = 12 - ((11 * winheight(0) + 18) / 36)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-1
+12
 normal! 0
 wincmd w
 exe 'vert 1resize ' . ((&columns * 90 + 135) / 271)

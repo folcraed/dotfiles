@@ -78,7 +78,7 @@ theme.titlebar_maximized_button_focus_inactive  = "/home/rob/.config/awesome/the
 theme.titlebar_maximized_button_normal_active = "/home/rob/.config/awesome/themes/Material/titlebar/maximized_normal_active.png"
 theme.titlebar_maximized_button_focus_active  = "/home/rob/.config/awesome/themes/Material/titlebar/maximized_focus_active.png"
 
-theme.wallpaper = "/home/rob/Dropbox/Photos/Backgrounds/Material_Design_1.jpg"
+theme.wallpaper = "/home/rob/Dropbox/Photos/Backgrounds/tri-fadeno.jpg"
 
 -- You can use your own layout icons like this:
 theme.layout_fairh = "/home/rob/.config/awesome/themes/Material/layouts/fairhw.png"
