@@ -98,7 +98,7 @@ theme.layout_cornerne = "/home/rob/.config/awesome/themes/Material/layouts/corne
 theme.layout_cornersw = "/home/rob/.config/awesome/themes/Material/layouts/cornersww.png"
 theme.layout_cornerse = "/home/rob/.config/awesome/themes/Material/layouts/cornersew.png"
 
-theme.awesome_icon = "/usr/share/awesome/icons/awesome16.png"
+theme.awesome_icon = "/home/rob/.config/awesome/icons/awesome16.png"
 
 -- Define the icon theme for application icons. If not set then the icons
 -- from /usr/share/icons and /usr/share/icons/hicolor will be used.
