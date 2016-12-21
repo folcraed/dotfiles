@@ -18,13 +18,10 @@ Plug 'https://github.com/ctrlpvim/ctrlp.vim.git'
 Plug 'https://github.com/scrooloose/nerdtree.git'
 Plug 'https://github.com/vim-airline/vim-airline.git'
 Plug 'https://github.com/vim-airline/vim-airline-themes.git'
-Plug 'https://github.com/edkolev/tmuxline.vim.git'
 Plug 'https://github.com/KabbAmine/vCoolor.vim.git'
 Plug 'https://github.com/lilydjwg/colorizer'
 Plug 'https://github.com/tpope/vim-commentary.git'
 Plug 'https://github.com/rakr/vim-one'
-Plug 'https://github.com/bling/vim-bufferline'
-Plug 'https://github.com/sirver/ultisnips'
 Plug 'https://github.com/ryanoasis/vim-devicons'
 Plug 'https://github.com/tiagofumo/vim-nerdtree-syntax-highlight'
 
@@ -56,6 +53,7 @@ set number
 set relativenumber
 set autoindent
 set backupdir=~/Temp
+set noshowmode
 
 " This is supposed to allow italics in terminal
 set t_ZH=[3m
@@ -66,7 +64,7 @@ set t_ZR=[23m
 " let g:one_allow_italics = 1
 
 set background=dark
-colorscheme hybrid_material
+colorscheme PaperColor
 
 " --{{{ Start of key mappings
 
@@ -209,27 +207,19 @@ if !exists(":DiffOrig")
   \ | wincmd p | diffthis
 endif
 
-" Default path for UltiSnip snippets
-let g:UltiSnipsSnippetDirectories='~/.vim/UltiSnips'
-let g:UltiSnipsSnippetDirectories=["UltiSnips"]
-
-  " Set the Airline to use Powerline customized fonts for extra glyphs
+" Set the Airline to use Powerline customized fonts for extra glyphs
 let g:airline_powerline_fonts=1
-" save some space on the statusline by deleting the obvious
-let g:airline#parts#ffenc#skip_expected_string='utf-8[unix]'
 " the separator used on the left side
 let g:airline_left_sep=''
 " the separator used on the right side
 let g:airline_right_sep=''
 " set the bufferline to something more useful
-let g:airline#extensions#bufferline#enabled = 0
-let g:bufferline_echo = 0
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#buffer_nr_show = 1
 " let g:airline#extensions#tabline#show_splits = 0
 " let g:airline#extensions#tabline#show_tab_nr = 1
 " let g:airline#extensions#tabline#tab_nr_type = 2
-let g:airline_theme='luna'
+let g:airline_theme='PaperColor'
 " let g:airline_theme='solarized'
 
   " Set the directory depth for CtrlP to open

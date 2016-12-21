@@ -111,6 +111,7 @@ menubar.utils.terminal = terminal -- Set the terminal for applications that requ
 -- Create a few widgets
 markup  = lain.util.markup
 mytextclock = wibox.widget.textclock()
+-- lain.widgets.calendar:attach(mytextclock, { font = "Roboto Mono", font_size = 9 })
 myweather   = lain.widgets.weather({
     city_id = 5666639,
     units   = "imperial",

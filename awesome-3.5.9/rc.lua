@@ -1,6 +1,7 @@
 -- Copied from ProMaster theme and modified for my needs
 -- Most of the credit has to go to 'barwinco' for all his
 -- work. http://github.com/barwinco/pro
+-- Note this won't work with newer Awesome > 3.5.9
 
 local gears      = require("gears")
 local awful      = require("awful")
