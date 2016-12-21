@@ -4,6 +4,7 @@ local awful = require("awful")
 require("awful.autofocus")
 -- Widget and layout library
 local wibox = require("wibox")
+local lain  = require("lain")
 -- Theme handling library
 local beautiful = require("beautiful")
 -- Notification library
@@ -106,12 +107,19 @@ mylauncher = awful.widget.launcher({ image = beautiful.awesome_icon,
 menubar.utils.terminal = terminal -- Set the terminal for applications that require it
 -- }}}
 
--- Keyboard map indicator and switcher
-mykeyboardlayout = awful.widget.keyboardlayout()
-
 -- {{{ Wibar
--- Create a textclock widget
+-- Create a few widgets
+markup  = lain.util.markup
 mytextclock = wibox.widget.textclock()
+myweather   = lain.widgets.weather({
+    city_id = 5666639,
+    units   = "imperial",
+    settings = function()
+        descr = weather_now["weather"][1]["description"]:lower()
+        units = math.floor(weather_now["main"]["temp"])
+        widget:set_markup(markup("#aaaaaa", " " .. descr .. " @ " .. units .. "°F "))
+    end
+})
 
 -- Create a wibox for each screen and add it
 local taglist_buttons = awful.util.table.join(
@@ -209,8 +217,8 @@ awful.screen.connect_for_each_screen(function(s)
         s.mytasklist, -- Middle widget
         { -- Right widgets
             layout = wibox.layout.fixed.horizontal,
-            mykeyboardlayout,
             wibox.widget.systray(),
+            myweather,
             mytextclock,
             s.mylayoutbox,
         },

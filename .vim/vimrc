@@ -7,7 +7,7 @@ set nocompatible
 
 " Set font and some optionsfor GVim
 if has('gui_running')
-  set guifont=Roboto\ Mono\ for\ Powerline\ 10
+  set guifont=DroidSansMonoForPowerline\ Nerd\ Font\ 11
   set guioptions=m
 endif
 
@@ -16,15 +16,17 @@ call plug#begin('~/.vim/plugged')
 
 Plug 'https://github.com/ctrlpvim/ctrlp.vim.git'
 Plug 'https://github.com/scrooloose/nerdtree.git'
+Plug 'https://github.com/vim-airline/vim-airline.git'
+Plug 'https://github.com/vim-airline/vim-airline-themes.git'
 Plug 'https://github.com/edkolev/tmuxline.vim.git'
 Plug 'https://github.com/KabbAmine/vCoolor.vim.git'
 Plug 'https://github.com/lilydjwg/colorizer'
-Plug 'https://github.com/vim-airline/vim-airline.git'
-Plug 'https://github.com/vim-airline/vim-airline-themes.git'
 Plug 'https://github.com/tpope/vim-commentary.git'
 Plug 'https://github.com/rakr/vim-one'
 Plug 'https://github.com/bling/vim-bufferline'
 Plug 'https://github.com/sirver/ultisnips'
+Plug 'https://github.com/ryanoasis/vim-devicons'
+Plug 'https://github.com/tiagofumo/vim-nerdtree-syntax-highlight'
 
 call plug#end()
 
@@ -98,6 +100,12 @@ nno <C-j> <C-w>j
 nno <C-k> <C-w>k
 nno <C-h> <C-w>h
 nno <C-l> <C-w>l
+
+"Make moving through lines normal, instead of jumping past wraps
+nno <silent> <Up> gk
+nno <silent> <Down> gj
+nno <silent> k gk
+nno <silent> j gj
 
 " Do a search through current project files for selected word
 nno <leader>s :execute "vimgrep /" . expand("<cword>") . "/j **" <Bar> cw<CR>
@@ -231,4 +239,6 @@ let g:ctrlp_max_files = 0
 let g:ctrlp_show_hidden = 1
 let g:ctrlp_switch_buffer = 'Et'
 let g:ctrlp_working_path_mode = 'w'
+" Some eye-candy stuff, because everyone likes eye-candy ;)
+let g:WebDevIconsOS = 'Linux'
 highlight Comment cterm=italic
