@@ -43,7 +43,7 @@ end
 beautiful.init("/home/rob/.config/awesome/themes/Material/theme.lua")
 
 -- This is used later as the default terminal and editor to run.
-terminal = "termite"
+terminal = "konsole"
 editor = os.getenv("EDITOR") or "vim"
 editor_cmd = terminal .. " -e " .. editor
 
@@ -118,7 +118,7 @@ myweather   = lain.widgets.weather({
     settings = function()
         descr = weather_now["weather"][1]["description"]:lower()
         units = math.floor(weather_now["main"]["temp"])
-        widget:set_markup(markup("#aaaaaa", " " .. descr .. " @ " .. units .. "°F "))
+        widget:set_markup(markup("#eee8d5", " " .. descr .. " @ " .. units .. "°F "))
     end
 })
 

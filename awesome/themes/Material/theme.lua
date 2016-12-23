@@ -7,21 +7,21 @@ local theme = {}
 theme.font          = "Roboto 10, FontAwesome 10"
 -- theme.icons         = "/home/rob/.config/awesome/themes/Material/icons/"
 
-theme.bg_normal     = "#2a373e"
-theme.bg_focus      = "#455a64"
+theme.bg_normal     = "#073642"
+theme.bg_focus      = "#586e75"
 theme.bg_urgent     = "#ff0000"
-theme.bg_minimize   = "#444444"
+theme.bg_minimize   = "#839496"
 theme.bg_systray    = theme.bg_normal
 
-theme.fg_normal     = "#aaaaaa"
-theme.fg_focus      = "#ffffff"
+theme.fg_normal     = "#657b83"
+theme.fg_focus      = "#eee8d5"
 theme.fg_urgent     = "#ffffff"
-theme.fg_minimize   = "#ffffff"
+theme.fg_minimize   = "#002b36"
 
 theme.useless_gap   = 3
 theme.border_width  = 1
-theme.border_normal = "#000000"
-theme.border_focus  = "#455a64"
+theme.border_normal = "#002b36"
+theme.border_focus  = "#586e75"
 theme.border_marked = "#91231c"
 
 -- There are other variable sets
