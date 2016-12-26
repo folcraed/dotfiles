@@ -39,8 +39,8 @@ end
 
 -- {{{ Variable definitions
 -- Themes define colours, icons, font and wallpapers.
--- beautiful.init(awful.util.get_themes_dir() .. "Material/theme.lua")
-beautiful.init("/home/rob/.config/awesome/themes/Material/theme.lua")
+-- beautiful.init(awful.util.get_themes_dir() .. "Onedark/theme.lua")
+beautiful.init("/home/rob/.config/awesome/themes/Onedark/theme.lua")
 
 -- This is used later as the default terminal and editor to run.
 terminal = "konsole"

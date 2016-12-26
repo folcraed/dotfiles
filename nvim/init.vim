@@ -55,7 +55,7 @@ set relativenumber
 let g:one_allow_italics = 1
 set background=dark
 " let g:onedark_terminal_italics = 1
-colorscheme one
+colorscheme onedark
 
 " When typing enclosures, automatically duplicate them
 ino " ""<ESC>i
@@ -148,7 +148,7 @@ let g:airline#extensions#tabline#tab_nr_type = 2
 "   let g:airline_symbols = {}
 " endif
 " let g:airline_symbols.space = "\ua0"
-let g:airline_theme='understated'
+let g:airline_theme='onedark'
 
 " Set the directory depth for CtrlP to open
 let g:ctrlp_by_filename = 1

@@ -2,7 +2,15 @@ let SessionLoad = 1
 if &cp | set nocp | endif
 let s:cpo_save=&cpo
 set cpo&vim
+inoremap <silent> <Plug>(neocomplete_auto_refresh) =neocomplete#mappings#refresh()
+inoremap <silent> <Plug>(neocomplete_start_manual_complete) =neocomplete#mappings#manual_complete()
+inoremap <silent> <Plug>(neocomplete_start_auto_complete) =neocomplete#mappings#auto_complete()
+inoremap <silent> <Plug>(neocomplete_start_omni_complete) 
+inoremap <silent> <expr> <Plug>(neocomplete_start_unite_quick_match) unite#sources#neocomplete#start_quick_match()
+inoremap <silent> <expr> <Plug>(neocomplete_start_unite_complete) unite#sources#neocomplete#start_complete()
 inoremap <F6> :VCoolor
+inoremap <expr> <BS> neocomplete#smart_close_popup()."\"
+map! <S-Insert> <MiddleMouse>
 vmap  "+yi
 nnoremap  h
 nnoremap <NL> j
@@ -58,6 +66,11 @@ nnoremap <silent> <Up> gk
 nnoremap <F5> :set syntax=sh
 nnoremap <C-Right> 5<
 nnoremap <C-Left> 5>
+map <S-Insert> <MiddleMouse>
+inoremap <expr>  neocomplete#undo_completion()
+inoremap <expr>  neocomplete#smart_close_popup()."\"
+inoremap <expr> 	 pumvisible() ? "\" : "\	"
+inoremap <expr>  neocomplete#complete_common_string()
 inoremap  u
 imap  "+pa
 inoremap " ""i
@@ -77,14 +90,15 @@ set backupdir=~/Temp
 set directory=~/Temp
 set expandtab
 set fileencodings=ucs-bom,utf-8,default,latin1
+set guifont=Bitstream\ Vera\ Sans\ Mono\ 10
+set guioptions=m
 set helplang=en
 set hlsearch
 set incsearch
 set laststatus=2
 set mouse=a
-set operatorfunc=<SNR>44_go
 set ruler
-set runtimepath=~/.vim,~/.vim/plugged/ctrlp.vim/,~/.vim/plugged/nerdtree/,~/.vim/plugged/vim-airline/,~/.vim/plugged/vim-airline-themes/,~/.vim/plugged/vCoolor.vim/,~/.vim/plugged/colorizer/,~/.vim/plugged/vim-commentary/,~/.vim/plugged/vim-one/,~/.vim/plugged/vim-devicons/,~/.vim/plugged/vim-nerdtree-syntax-highlight/,/usr/share/vim/vimfiles,/usr/share/vim/vim80,/usr/share/vim/vimfiles/after,~/.vim/plugged/vim-nerdtree-syntax-highlight/after,~/.vim/after
+set runtimepath=~/.vim,~/.vim/plugged/ctrlp.vim/,~/.vim/plugged/nerdtree/,~/.vim/plugged/vim-airline/,~/.vim/plugged/vim-airline-themes/,~/.vim/plugged/vCoolor.vim/,~/.vim/plugged/colorizer/,~/.vim/plugged/vim-commentary/,~/.vim/plugged/vim-one/,~/.vim/plugged/vim-javascript/,~/.vim/plugged/neocomplete.vim/,/usr/share/vim/vimfiles,/usr/share/vim/vim80,/usr/share/vim/vimfiles/after,~/.vim/plugged/vim-javascript/after,~/.vim/after
 set shiftwidth=4
 set showcmd
 set noshowmode
@@ -95,22 +109,24 @@ set suffixes=.bak,~,.swp,.o,.info,.aux,.log,.dvi,.bbl,.blg,.brf,.cb,.ind,.idx,.i
 set noswapfile
 set tabline=%!airline#extensions#tabline#get()
 set tabstop=4
+set termencoding=utf-8
 set termguicolors
 set ttimeoutlen=50
 set wildmenu
 set wildmode=list:longest,full
+set window=47
 let s:so_save = &so | let s:siso_save = &siso | set so=0 siso=0
 let v:this_session=expand("<sfile>:p")
 silent only
-cd ~/Temp/lua
+cd ~/code/javascript
 if expand('%') == '' && !&modified && line('$') <= 1 && getline(1) == ''
   let s:wipebuf = bufnr('%')
 endif
 set shortmess=aoO
-badd +3 notifytest.lua
+badd +0 concat.js
 argglobal
 silent! argdel *
-edit notifytest.lua
+edit concat.js
 set splitbelow splitright
 wincmd t
 set winheight=1 winwidth=1
@@ -131,8 +147,8 @@ setlocal cinkeys=0{,0},0),:,0#,!^F,o,O,e
 setlocal cinoptions=
 setlocal cinwords=if,else,while,do,for,switch
 setlocal colorcolumn=
-setlocal comments=:--
-setlocal commentstring=--%s
+setlocal comments=sO:*\ -,mO:*\ \ ,exO:*/,s1:/*,mb:*,ex:*/,://
+setlocal commentstring=//%s
 setlocal complete=.,w,b,u,t,i
 setlocal concealcursor=
 setlocal conceallevel=0
@@ -148,8 +164,8 @@ setlocal nodiff
 setlocal equalprg=
 setlocal errorformat=
 setlocal expandtab
-if &filetype != 'lua'
-setlocal filetype=lua
+if &filetype != 'javascript'
+setlocal filetype=javascript
 endif
 setlocal fixendofline
 setlocal foldcolumn=0
@@ -170,10 +186,10 @@ setlocal iminsert=2
 setlocal imsearch=2
 setlocal include=
 setlocal includeexpr=
-setlocal indentexpr=GetLuaIndent()
-setlocal indentkeys=0{,0},:,0#,!^F,o,O,e,0=end,0=until
+setlocal indentexpr=GetJavascriptIndent()
+setlocal indentkeys=0{,0},:,0#,!^F,o,O,e,0],0)
 setlocal noinfercase
-setlocal iskeyword=@,48-57,_,192-255
+setlocal iskeyword=@,48-57,_,192-255,$
 setlocal keywordprg=
 set linebreak
 setlocal linebreak
@@ -188,7 +204,7 @@ setlocal nrformats=bin,octal,hex
 set number
 setlocal number
 setlocal numberwidth=4
-setlocal omnifunc=
+setlocal omnifunc=javascriptcomplete#CompleteJS
 setlocal path=
 setlocal nopreserveindent
 setlocal nopreviewwindow
@@ -209,11 +225,11 @@ setlocal spellcapcheck=[.?!]\\_[\\])'\"\	\ ]\\+
 setlocal spellfile=
 setlocal spelllang=en
 setlocal statusline=%!airline#statusline(1)
-setlocal suffixesadd=.lua
+setlocal suffixesadd=.js
 setlocal noswapfile
 setlocal synmaxcol=3000
-if &syntax != 'lua'
-setlocal syntax=lua
+if &syntax != 'javascript'
+setlocal syntax=javascript
 endif
 setlocal tabstop=4
 setlocal tagcase=
@@ -227,12 +243,12 @@ setlocal nowinfixwidth
 setlocal wrap
 setlocal wrapmargin=0
 silent! normal! zE
-let s:l = 3 - ((2 * winheight(0) + 21) / 42)
+let s:l = 1 - ((0 * winheight(0) + 22) / 45)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-3
-normal! 010|
+1
+normal! 0
 tabnext 1
 if exists('s:wipebuf')
   silent exe 'bwipe ' . s:wipebuf

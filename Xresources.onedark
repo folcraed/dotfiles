@@ -54,7 +54,7 @@ Xft.hintstyle:  hintslight
 ! Xterm settings
 xterm*utf8: 1
 xterm*termName: xterm-256color
-xterm*faceName: Roboto Mono:size=10:antialias=false
+xterm*faceName: Bitstream Vera Sans Mono:size=10:antialias=false
 xterm*selectToClipboard: true
 xterm*appcursorDefault: true
 xterm*geometry: 132x42
