@@ -8,7 +8,7 @@ theme.font          = "Noto Sans Mono 10, FontAwesome 10"
 -- theme.icons         = "/home/rob/.config/awesome/themes/Onedark/icons/"
 
 theme.bg_normal     = "#2b303b"
-theme.bg_focus      = "#65737e"
+theme.bg_focus      = "#2b303b"
 theme.bg_urgent     = "#bf616a"
 theme.bg_minimize   = "#96b5b4"
 theme.bg_systray    = theme.bg_normal
@@ -21,7 +21,7 @@ theme.fg_minimize   = "#2b303b"
 theme.useless_gap   = 3
 theme.border_width  = 1
 theme.border_normal = "#2b303b"
-theme.border_focus  = "#65737e"
+theme.border_focus  = "#2b303b"
 theme.border_marked = "#bf616a"
 
 -- There are other variable sets
