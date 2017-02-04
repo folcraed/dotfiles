@@ -110,6 +110,7 @@ menubar.utils.terminal = terminal -- Set the terminal for applications that requ
 -- {{{ Wibar
 -- Create a few widgets
 markup  = lain.util.markup
+spacer = wibox.widget.textbox("  ")
 mytextclock = wibox.widget.textclock()
 local calendar = lain.widgets.calendar()
 lain.widgets.calendar({
@@ -218,15 +219,21 @@ awful.screen.connect_for_each_screen(function(s)
         { -- Left widgets
             layout = wibox.layout.fixed.horizontal,
             mylauncher,
+            spacer,
             s.mytaglist,
+            spacer,
             s.mypromptbox,
+            spacer,
         },
         s.mytasklist, -- Middle widget
         { -- Right widgets
             layout = wibox.layout.fixed.horizontal,
             wibox.widget.systray(),
+            spacer,
             myweather,
+            spacer,
             mytextclock,
+            spacer,
             s.mylayoutbox,
         },
     }
