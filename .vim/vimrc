@@ -1,7 +1,6 @@
 " vimrc by Rob Boudreau
-" Last change:	2016 Dec 18
+" Last change:	2017 Jan 29
 
-" Use Vim settings, rather than Vi settings (much better!).
 " This must be first, because it changes other options as a side effect.
 set nocompatible
 
@@ -149,6 +148,8 @@ let g:onedark_terminal_italics = 1
 
 set background=dark
 colorscheme onedark
+" colorscheme OceanicNext
+" colorscheme hybrid_material
 
 " --{{{ Start of key mappings
 

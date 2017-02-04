@@ -40,7 +40,7 @@ end
 -- {{{ Variable definitions
 -- Themes define colours, icons, font and wallpapers.
 -- beautiful.init(awful.util.get_themes_dir() .. "Onedark/theme.lua")
-beautiful.init("/home/rob/.config/awesome/themes/Material/theme.lua")
+beautiful.init("/home/rob/.config/awesome/themes/Onedark/theme.lua")
 
 -- This is used later as the default terminal and editor to run.
 terminal = "gnome-terminal"
@@ -111,14 +111,20 @@ menubar.utils.terminal = terminal -- Set the terminal for applications that requ
 -- Create a few widgets
 markup  = lain.util.markup
 mytextclock = wibox.widget.textclock()
--- lain.widgets.calendar:attach(mytextclock, { font = "Roboto Mono", font_size = 9 })
+local calendar = lain.widgets.calendar()
+lain.widgets.calendar({
+    attach_to = {mytextclock},
+    notification_preset = {
+        font = "Roboto Mono 10",
+        fg = "#81a2be"},
+})
 myweather   = lain.widgets.weather({
     city_id = 5666639,
     units   = "imperial",
     settings = function()
         descr = weather_now["weather"][1]["description"]:lower()
         units = math.floor(weather_now["main"]["temp"])
-        widget:set_markup(markup("#65737e", " " .. descr .. " @ " .. units .. "°F "))
+        widget:set_markup(markup("#81a2be", " " .. descr .. " @ " .. units .. "°F "))
     end
 })
 

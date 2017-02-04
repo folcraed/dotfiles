@@ -13,7 +13,7 @@ theme.bg_urgent     = "#bf616a"
 theme.bg_minimize   = "#96b5b4"
 theme.bg_systray    = theme.bg_normal
 
-theme.fg_normal     = "#65737e"
+theme.fg_normal     = "#81a2be"
 theme.fg_focus      = "#eff1f5"
 theme.fg_urgent     = "#ffffff"
 theme.fg_minimize   = "#2b303b"
@@ -93,7 +93,7 @@ theme.layout_cornerne = "/home/rob/.config/awesome/themes/Onedark/layouts/corner
 theme.layout_cornersw = "/home/rob/.config/awesome/themes/Onedark/layouts/cornersww.png"
 theme.layout_cornerse = "/home/rob/.config/awesome/themes/Onedark/layouts/cornersew.png"
 
-theme.awesome_icon = "/home/rob/.config/awesome/icons/awesome16.png"
+theme.awesome_icon = "/home/rob/.config/awesome/themes/Onedark/awesome16.png"
 
 -- Define the icon theme for application icons. If not set then the icons
 -- from /usr/share/icons and /usr/share/icons/hicolor will be used.
