@@ -111,7 +111,7 @@ menubar.utils.terminal = terminal -- Set the terminal for applications that requ
 -- Create a few widgets
 markup  = lain.util.markup
 spacer = wibox.widget.textbox("  ")
-mytextclock = wibox.widget.textclock()
+mytextclock = wibox.widget.textclock("%a %b %e, %l:%M %P")
 local calendar = lain.widgets.calendar()
 lain.widgets.calendar({
     attach_to = {mytextclock},
