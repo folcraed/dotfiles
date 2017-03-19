@@ -6,7 +6,7 @@ set nocompatible
 
 " Set font and some optionsfor GVim
 if has('gui_running')
-  set guifont=Bitstream\ Vera\ Sans\ Mono\ 10
+  set guifont=DejaVu\ Sans\ Mono\ 9
   set guioptions=m
 endif
 
@@ -221,7 +221,7 @@ nno <leader>+ :wincmd =<cr>:wincmd \|<cr>
 nno <leader>- :wincmd =<cr>
 
 " Snippets
-nno <leader>= i=================================<cr>
+nno <leader>= i==================================================<cr>
 
 " Save current session using existing or new name
 nno <leader>q :mks! ~/.vim/sessions/
