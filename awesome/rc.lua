@@ -112,14 +112,14 @@ menubar.utils.terminal = terminal -- Set the terminal for applications that requ
 markup  = lain.util.markup
 spacer = wibox.widget.textbox("  ")
 mytextclock = wibox.widget.textclock("%a %b %e, %l:%M %P")
-local calendar = lain.widgets.calendar()
-lain.widgets.calendar({
+local calendar = lain.widget.calendar()
+lain.widget.calendar({
     attach_to = {mytextclock},
     notification_preset = {
         font = "Roboto Mono 10",
         fg = "#81a2be"},
 })
-myweather   = lain.widgets.weather({
+myweather   = lain.widget.weather({
     city_id = 5666639,
     units   = "imperial",
     settings = function()
@@ -596,4 +596,4 @@ run_once("recollindex -m -n -w 30")
 run_once("dropbox start -i")
 run_once("trash-cli")
 run_once("/home/rob/bin/setxset.sh")
-run once("nm-applet")
+run_once("nm-applet")
