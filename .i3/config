@@ -17,10 +17,10 @@ gaps inner 10
 # gaps outer 2
 
 # start a terminal
-bindsym $mod+Return exec --no-startup-id /usr/bin/termite
+bindsym $mod+Return exec --no-startup-id /usr/bin/gnome-terminal
 
 # Open Rofi application menu
-bindsym $mod+p exec --no-startup-id rofi -show run -font "Hack 10" -opacity "90" -terminal "termite"
+bindsym $mod+p exec --no-startup-id rofi -show run -font "Hack 10" -opacity "90" -terminal "gnome-terminal"
 # bindsym $mod+p exec --no-startup-id dmenu_run
 
 # kill focused window
@@ -178,10 +178,11 @@ bar {
 # exec --no-startup-id nvidia-settings --load-config-only
 exec --no-startup-id gnome-keyring-daemon -s
 exec --no-startup-id /usr/lib64/polkit-gnome/polkit-gnome-authentication-agent-1
-exec --no-startup-id /home/rob/.fehbg
-exec --no-startup-id compton
-exec --no-startup-id parcellite
-exec --no-startup-id xclip
-exec --no-startup-id /usr/bin/recollindex -m -n -w 30
+exec --no-startup-id nm-applet
+# exec --no-startup-id /home/rob/.fehbg
+# exec --no-startup-id compton
+# exec --no-startup-id parcellite
+# exec --no-startup-id xclip
+# exec --no-startup-id /usr/bin/recollindex -m -n -w 30
 exec --no-startup-id dropbox start -i
 # vim: ft=sh

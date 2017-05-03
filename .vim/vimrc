@@ -6,7 +6,7 @@ set nocompatible
 
 " Set font and some optionsfor GVim
 if has('gui_running')
-  set guifont=DejaVu\ Sans\ Mono\ 9
+  set guifont=Hack\ 9
   set guioptions=m
 endif
 
@@ -69,6 +69,8 @@ let g:neocomplete#enable_at_startup = 1
 let g:neocomplete#enable_smart_case = 1
 " Set minimum syntax keyword length.
 let g:neocomplete#sources#syntax#min_keyword_length = 3
+" Set the completion delay time in milliseconds
+let g:neocomplete#auto_complete_delay = 500
 
 " Define dictionary.
 let g:neocomplete#sources#dictionary#dictionaries = {
