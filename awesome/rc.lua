@@ -43,7 +43,7 @@ end
 beautiful.init("/home/rob/.config/awesome/themes/Onedark/theme.lua")
 
 -- This is used later as the default terminal and editor to run.
-terminal = "gnome-terminal"
+terminal = "konsole"
 editor = os.getenv("EDITOR") or "vim"
 editor_cmd = terminal .. " -e " .. editor
 
@@ -592,7 +592,7 @@ run_once("compton")
 run_once("parcellite")
 run_once("xclip")
 -- run_once("tracker daemon -s")
-run_once("recollindex -m -n -w 30")
+run_once("recollindex -m -n -C -w 30")
 run_once("dropbox start -i")
 run_once("trash-cli")
 run_once("/home/rob/bin/setxset.sh")
