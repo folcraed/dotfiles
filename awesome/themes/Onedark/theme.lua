@@ -4,7 +4,7 @@
 
 local theme = {}
 
-theme.font          = "Noto Sans Mono 10, FontAwesome 10"
+theme.font          = "Roboto Mono 11, FontAwesome 11"
 -- theme.icons         = "/home/rob/.config/awesome/themes/Onedark/icons/"
 
 theme.bg_normal     = "#2b303b"

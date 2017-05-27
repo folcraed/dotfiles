@@ -48,10 +48,6 @@ editor = os.getenv("EDITOR") or "vim"
 editor_cmd = terminal .. " -e " .. editor
 
 -- Default modkey.
--- Usually, Mod4 is the key with a logo between Control and Alt.
--- If you do not like this or do not have such a key,
--- I suggest you to remap Mod4 to another key using xmodmap or other tools.
--- However, you can use another modifier like Mod1, but it may interact with others.
 modkey = "Mod4"
 
 -- Table of layouts to cover with awful.layout.inc, order matters.
@@ -495,7 +491,7 @@ awful.rules.rules = {
 
     -- Add titlebars to normal clients and dialogs
     { rule_any = {type = { "normal", "dialog" }
-      }, properties = { titlebars_enabled = false }
+      }, properties = { titlebars_enabled = true }
     },
 
     -- Set Firefox to always map on the tag named "2" on screen 1.
@@ -594,6 +590,6 @@ run_once("xclip")
 -- run_once("tracker daemon -s")
 run_once("recollindex -m -n -C -w 30")
 run_once("dropbox start -i")
-run_once("trash-cli")
+-- run_once("trash-cli")
 run_once("/home/rob/bin/setxset.sh")
 run_once("nm-applet")
