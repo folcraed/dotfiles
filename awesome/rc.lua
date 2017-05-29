@@ -43,7 +43,7 @@ end
 beautiful.init("/home/rob/.config/awesome/themes/Onedark/theme.lua")
 
 -- This is used later as the default terminal and editor to run.
-terminal = "konsole"
+terminal = "termite"
 editor = os.getenv("EDITOR") or "vim"
 editor_cmd = terminal .. " -e " .. editor
 
@@ -546,10 +546,10 @@ client.connect_signal("request::titlebars", function(c)
             layout  = wibox.layout.flex.horizontal
         },
         { -- Right
-            awful.titlebar.widget.floatingbutton (c),
+            awful.titlebar.widget.minimizebutton (c),
             awful.titlebar.widget.maximizedbutton(c),
-            awful.titlebar.widget.stickybutton   (c),
-            awful.titlebar.widget.ontopbutton    (c),
+            -- awful.titlebar.widget.stickybutton   (c),
+            -- awful.titlebar.widget.ontopbutton    (c),
             awful.titlebar.widget.closebutton    (c),
             layout = wibox.layout.fixed.horizontal()
         },
@@ -588,7 +588,7 @@ run_once("compton")
 run_once("parcellite")
 run_once("xclip")
 -- run_once("tracker daemon -s")
-run_once("recollindex -m -n -C -w 30")
+run_once("recollindex -m -n")
 run_once("dropbox start -i")
 -- run_once("trash-cli")
 run_once("/home/rob/bin/setxset.sh")

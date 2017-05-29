@@ -3,6 +3,7 @@
 ---------------------------
 
 local theme = {}
+profileConfigPath = "/home/rob/Dropbox/Settings/dotfiles/awesome/"
 
 theme.font          = "Roboto Mono 11, FontAwesome 11"
 -- theme.icons         = "/home/rob/.config/awesome/themes/Onedark/icons/"
@@ -36,8 +37,8 @@ theme.border_marked = "#bf616a"
 --theme.taglist_bg_focus = "#ff0000"
 
 -- Display the taglist squares
-theme.taglist_squares_sel   = "/home/rob/.config/awesome/themes/Onedark/taglist/linefw.png"
-theme.taglist_squares_unsel = "/home/rob/.config/awesome/themes/Onedark/taglist/linew.png"
+theme.taglist_squares_sel   = profileConfigPath.."themes/Onedark/taglist/linefw.png"
+theme.taglist_squares_unsel = profileConfigPath.."themes/Onedark/taglist/linew.png"
 
 -- Variables set for theming the menu:
 -- menu_[bg|fg]_[normal|focus]
@@ -52,48 +53,50 @@ theme.menu_width  = 100
 --theme.bg_widget = "#cc0000"
 
 -- Define the image to load
-theme.titlebar_close_button_normal = "/home/rob/.config/awesome/themes/Onedark/titlebar/close_normal.png"
-theme.titlebar_close_button_focus  = "/home/rob/.config/awesome/themes/Onedark/titlebar/close_focus.png"
+theme.titlebar_close_button_normal = profileConfigPath.."themes/Onedark/titlebar/close_normal.png"
+theme.titlebar_close_button_normal_hover = profileConfigPath.."themes/Onedark/titlebar/close_normal_hover.png"
+theme.titlebar_close_button_normal_press = profileConfigPath.."themes/Onedark/titlebar/close_normal_press.png"
+theme.titlebar_close_button_focus  = profileConfigPath.."themes/Onedark/titlebar/close_focus.png"
+theme.titlebar_close_button_focus_hover = profileConfigPath.."themes/Onedark/titlebar/close_focus_hover.png"
+theme.titlebar_close_button_focus_press = profileConfigPath.."themes/Onedark/titlebar/close_focus_press.png"
 
-theme.titlebar_minimize_button_normal = "/home/rob/.config/awesome/themes/Onedark/titlebar/minimize_normal.png"
-theme.titlebar_minimize_button_focus  = "/home/rob/.config/awesome/themes/Onedark/titlebar/minimize_focus.png"
+theme.titlebar_minimize_button_normal = profileConfigPath.."themes/Onedark/titlebar/minimize_normal.png"
+theme.titlebar_minimize_button_normal_hover = profileConfigPath.."themes/Onedark/titlebar/minimize_normal_hover.png"
+theme.titlebar_minimize_button_normal_press = profileConfigPath.."themes/Onedark/titlebar/minimize_normal_press.png"
+theme.titlebar_minimize_button_focus  = profileConfigPath.."themes/Onedark/titlebar/minimize_focus.png"
+theme.titlebar_minimize_button_focus_hover = profileConfigPath.."themes/Onedark/titlebar/minimize_focus_hover.png"
+theme.titlebar_minimize_button_focus_press = profileConfigPath.."themes/Onedark/titlebar/minimize_focus_press.png"
 
-theme.titlebar_ontop_button_normal_inactive = "/home/rob/.config/awesome/themes/Onedark/titlebar/ontop_normal_inactive.png"
-theme.titlebar_ontop_button_focus_inactive  = "/home/rob/.config/awesome/themes/Onedark/titlebar/ontop_focus_inactive.png"
-theme.titlebar_ontop_button_normal_active = "/home/rob/.config/awesome/themes/Onedark/titlebar/ontop_normal_active.png"
-theme.titlebar_ontop_button_focus_active  = "/home/rob/.config/awesome/themes/Onedark/titlebar/ontop_focus_active.png"
+theme.titlebar_maximized_button_normal_inactive = profileConfigPath.."themes/Onedark/titlebar/maximized_normal_inactive.png"
+theme.titlebar_maximized_button_normal_inactive_hover = profileConfigPath.."themes/Onedark/titlebar/maximized_normal_inactive_hover.png"
+theme.titlebar_maximized_button_normal_inactive_press = profileConfigPath.."themes/Onedark/titlebar/maximized_normal_inactive_press.png"
+theme.titlebar_maximized_button_focus_inactive  = profileConfigPath.."themes/Onedark/titlebar/maximized_focus_inactive.png"
+theme.titlebar_maximized_button_focus_inactive_hover = profileConfigPath.."themes/Onedark/titlebar/maximized_focus_inactive_hover.png"
+theme.titlebar_maximized_button_focus_inactive_press = profileConfigPath.."themes/Onedark/titlebar/maximized_focus_inactive_press.png"
 
-theme.titlebar_sticky_button_normal_inactive = "/home/rob/.config/awesome/themes/Onedark/titlebar/sticky_normal_inactive.png"
-theme.titlebar_sticky_button_focus_inactive  = "/home/rob/.config/awesome/themes/Onedark/titlebar/sticky_focus_inactive.png"
-theme.titlebar_sticky_button_normal_active = "/home/rob/.config/awesome/themes/Onedark/titlebar/sticky_normal_active.png"
-theme.titlebar_sticky_button_focus_active  = "/home/rob/.config/awesome/themes/Onedark/titlebar/sticky_focus_active.png"
-
-theme.titlebar_floating_button_normal_inactive = "/home/rob/.config/awesome/themes/Onedark/titlebar/floating_normal_inactive.png"
-theme.titlebar_floating_button_focus_inactive  = "/home/rob/.config/awesome/themes/Onedark/titlebar/floating_focus_inactive.png"
-theme.titlebar_floating_button_normal_active = "/home/rob/.config/awesome/themes/Onedark/titlebar/floating_normal_active.png"
-theme.titlebar_floating_button_focus_active  = "/home/rob/.config/awesome/themes/Onedark/titlebar/floating_focus_active.png"
-
-theme.titlebar_maximized_button_normal_inactive = "/home/rob/.config/awesome/themes/Onedark/titlebar/maximized_normal_inactive.png"
-theme.titlebar_maximized_button_focus_inactive  = "/home/rob/.config/awesome/themes/Onedark/titlebar/maximized_focus_inactive.png"
-theme.titlebar_maximized_button_normal_active = "/home/rob/.config/awesome/themes/Onedark/titlebar/maximized_normal_active.png"
-theme.titlebar_maximized_button_focus_active  = "/home/rob/.config/awesome/themes/Onedark/titlebar/maximized_focus_active.png"
+theme.titlebar_maximized_button_normal_active = profileConfigPath.."themes/Onedark/titlebar/maximized_normal_inactive.png"
+theme.titlebar_maximized_button_normal_active_hover = profileConfigPath.."themes/Onedark/titlebar/maximized_normal_active_hover.png"
+theme.titlebar_maximized_button_normal_active_press = profileConfigPath.."themes/Onedark/titlebar/maximized_normal_active_press.png"
+theme.titlebar_maximized_button_focus_active  = profileConfigPath.."themes/Onedark/titlebar/maximized_focus_inactive.png"
+theme.titlebar_maximized_button_focus_active_hover = profileConfigPath.."themes/Onedark/titlebar/maximized_focus_active_hover.png"
+theme.titlebar_maximized_button_focus_active_press = profileConfigPath.."themes/Onedark/titlebar/maximized_focus_active_press.png"
 
 theme.wallpaper = "/home/rob/Dropbox/Photos/Backgrounds/tri-fadeno.jpg"
 
 -- You can use your own layout icons like this:
-theme.layout_fairh = "/home/rob/.config/awesome/themes/Onedark/layouts/fairhw.png"
-theme.layout_fairv = "/home/rob/.config/awesome/themes/Onedark/layouts/fairvw.png"
-theme.layout_floating  = "/home/rob/.config/awesome/themes/Onedark/layouts/floatingw.png"
-theme.layout_tilebottom = "/home/rob/.config/awesome/themes/Onedark/layouts/tilebottomw.png"
-theme.layout_tileleft   = "/home/rob/.config/awesome/themes/Onedark/layouts/tileleftw.png"
-theme.layout_tile = "/home/rob/.config/awesome/themes/Onedark/layouts/tilew.png"
-theme.layout_tiletop = "/home/rob/.config/awesome/themes/Onedark/layouts/tiletopw.png"
-theme.layout_cornernw = "/home/rob/.config/awesome/themes/Onedark/layouts/cornernww.png"
-theme.layout_cornerne = "/home/rob/.config/awesome/themes/Onedark/layouts/cornernew.png"
-theme.layout_cornersw = "/home/rob/.config/awesome/themes/Onedark/layouts/cornersww.png"
-theme.layout_cornerse = "/home/rob/.config/awesome/themes/Onedark/layouts/cornersew.png"
+theme.layout_fairh = profileConfigPath.."themes/Onedark/layouts/fairhw.png"
+theme.layout_fairv = profileConfigPath.."themes/Onedark/layouts/fairvw.png"
+theme.layout_floating  = profileConfigPath.."themes/Onedark/layouts/floatingw.png"
+theme.layout_tilebottom = profileConfigPath.."themes/Onedark/layouts/tilebottomw.png"
+theme.layout_tileleft   = profileConfigPath.."themes/Onedark/layouts/tileleftw.png"
+theme.layout_tile = profileConfigPath.."themes/Onedark/layouts/tilew.png"
+theme.layout_tiletop = profileConfigPath.."themes/Onedark/layouts/tiletopw.png"
+theme.layout_cornernw = profileConfigPath.."themes/Onedark/layouts/cornernww.png"
+theme.layout_cornerne = profileConfigPath.."themes/Onedark/layouts/cornernew.png"
+theme.layout_cornersw = profileConfigPath.."themes/Onedark/layouts/cornersww.png"
+theme.layout_cornerse = profileConfigPath.."themes/Onedark/layouts/cornersew.png"
 
-theme.awesome_icon = "/home/rob/.config/awesome/themes/Onedark/awesome16.png"
+theme.awesome_icon = profileConfigPath.."themes/Onedark/awesome16.png"
 
 -- Define the icon theme for application icons. If not set then the icons
 -- from /usr/share/icons and /usr/share/icons/hicolor will be used.
