@@ -116,7 +116,7 @@ lain.widget.calendar({
         fg = "#81a2be"},
 })
 myweather   = lain.widget.weather({
-    city_id = 5202855,
+    city_id = 5666639,
     units   = "imperial",
     settings = function()
         descr = weather_now["weather"][1]["description"]:lower()
