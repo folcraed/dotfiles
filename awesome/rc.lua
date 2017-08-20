@@ -492,7 +492,7 @@ awful.rules.rules = {
 
     -- Add titlebars to normal clients and dialogs
     { rule_any = {type = { "normal", "dialog" }
-      }, properties = { titlebars_enabled = true }
+      }, properties = { titlebars_enabled = false }
     },
 
     -- Set Firefox to always map on the tag named "2" on screen 1.
@@ -589,7 +589,7 @@ run_once("compton")
 run_once("parcellite")
 run_once("xclip")
 -- run_once("tracker daemon -s")
-run_once("recollindex -m -n")
+run_once("recollindex -m -n -w 60")
 run_once("dropbox start -i")
 -- run_once("trash-cli")
 run_once("/home/rob/bin/setxset.sh")
