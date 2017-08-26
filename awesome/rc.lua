@@ -189,7 +189,7 @@ awful.screen.connect_for_each_screen(function(s)
     set_wallpaper(s)
 
     -- Each screen has its own tag table.
-    awful.tag({ "", "", "", "", "", "", "", "", "" }, s, awful.layout.layouts[1])
+    awful.tag({ " ", " ", " ", " ", " ", " ", " ", " ", " " }, s, awful.layout.layouts[1])
 
     -- Create a promptbox for each screen
     s.mypromptbox = awful.widget.prompt()
@@ -588,9 +588,10 @@ run_once("/usr/lib64/polkit-gnome/polkit-gnome-authentication-agent-1")
 run_once("compton")
 run_once("parcellite")
 run_once("xclip")
--- run_once("tracker daemon -s")
-run_once("recollindex -m -n -w 60")
+run_once("tracker daemon -s")
+-- run_once("recollindex -m -n -w 60")
 run_once("dropbox start -i")
 -- run_once("trash-cli")
-run_once("/home/rob/bin/setxset.sh")
+-- run_once("/home/rob/bin/setxset.sh")
+run_once("xfce4-power-manager")
 run_once("nm-applet")
