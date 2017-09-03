@@ -152,6 +152,7 @@ set background=dark
 colorscheme onedark
 " colorscheme OceanicNext
 " colorscheme hybrid_material
+" colorscheme base16-ocean
 
 " --{{{ Start of key mappings
 
