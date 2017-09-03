@@ -1,2 +1,3 @@
 .vim/plugged/*
 nvim/plugged/*
+*/.vscode
