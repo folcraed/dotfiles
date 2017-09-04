@@ -6,7 +6,7 @@ set nocompatible
 
 " Set font and some optionsfor GVim
 if has('gui_running')
-  set guifont=Roboto\ Mono\ 11
+  set guifont=Hack\ 10
   set guioptions=m
 endif
 
