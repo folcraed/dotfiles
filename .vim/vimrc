@@ -1,5 +1,5 @@
 " vimrc by Rob Boudreau
-" Last change:	2017 Jan 29
+" Last change:	5 Sep 2017
 
 " This must be first, because it changes other options as a side effect.
 set nocompatible
@@ -21,12 +21,9 @@ Plug 'https://github.com/KabbAmine/vCoolor.vim.git'
 Plug 'https://github.com/lilydjwg/colorizer'
 Plug 'https://github.com/tpope/vim-commentary.git'
 Plug 'https://github.com/rakr/vim-one'
-" Plug 'https://github.com/pangloss/vim-javascript'
 Plug 'https://github.com/Shougo/neocomplete.vim'
 Plug 'https://github.com/SirVer/ultisnips'
 Plug 'https://github.com/honza/vim-snippets'
-" Plug 'https://github.com/ryanoasis/vim-devicons'
-" Plug 'https://github.com/tiagofumo/vim-nerdtree-syntax-highlight'
 
 call plug#end()
 
