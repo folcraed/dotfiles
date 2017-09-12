@@ -52,6 +52,7 @@ modules-right = filesystem volume memory cpu temperature date
 
 tray-position = right
 tray-padding = 2
+tray-detached = false
 ;tray-transparent = true
 ;tray-background = #0063ff
 
@@ -243,7 +244,7 @@ label = %percentage_used%%
 type = internal/date
 interval = 5
 
-date =
+date = " %A %b %d"
 date-alt = " %A %b %d"
 
 time = %I:%M
@@ -312,7 +313,7 @@ bar-volume-empty-foreground = ${colors.foreground-alt}
 
 [module/temperature]
 type = internal/temperature
-thermal-zone = 0
+thermal-zone = 2
 warn-temperature = 60
 
 ;format = <ramp> <label>
@@ -366,7 +367,7 @@ screenchange-reload = true
 ;compositing-border = over
 
 [global/wm]
-margin-top = 5
+margin-top = 2
 margin-bottom = 5
 
 ; vim:ft=dosini

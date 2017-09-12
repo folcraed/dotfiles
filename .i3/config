@@ -182,7 +182,7 @@ exec --no-startup-id gnome-keyring-daemon -s
 # exec --no-startup-id /usr/lib64/polkit-gnome/polkit-gnome-authentication-agent-1
 # exec --no-startup-id mate-settings-daemon
 exec --no-startup-id mate-power-manager
-exec --no-startup-id nm-applet
+# exec --no-startup-id nm-applet
 exec --no-startup-id /home/rob/.fehbg
 # exec --no-startup-id compton
 exec --no-startup-id clipit
