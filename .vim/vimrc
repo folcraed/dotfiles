@@ -222,7 +222,7 @@ nno <leader>+ :wincmd =<cr>:wincmd \|<cr>
 nno <leader>- :wincmd =<cr>
 
 " Snippets
-nno <leader>= i==================================================<cr>
+nno <leader>= 50i=<cr><ESC>
 
 " Save current session using existing or new name
 nno <leader>q :mks! ~/.vim/sessions/

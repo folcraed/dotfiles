@@ -17,10 +17,10 @@ gaps inner 10
 # gaps outer 2
 
 # start a terminal
-bindsym $mod+Return exec --no-startup-id /usr/bin/gnome-terminal
+bindsym $mod+Return exec --no-startup-id /usr/bin/mate-terminal
 
 # Open Rofi application menu
-bindsym $mod+p exec --no-startup-id rofi -show run -font "Hack 10" -opacity "90" -terminal "gnome-terminal"
+bindsym $mod+p exec --no-startup-id rofi -show drun -font "Hack 10" -opacity "90" -terminal "mate-terminal"
 # bindsym $mod+p exec --no-startup-id dmenu_run
 
 # kill focused window
@@ -149,40 +149,44 @@ mode "resize" {
 new_window pixel 1
 new_float pixel 1
 # for_window [class="^.*"] floating enable
-for_window [class="Eog"] floating enable
-for_window [class="Evince"] floating enable
+for_window [class="Eom"] floating enable
+for_window [class="Atril"] floating enable
 for_window [class="Vlc"] floating enable
 for_window [class="mpv"] floating enable
-for_window [class="Recoll"] floating enable
 
 set $bg_color #1C1C1C
 set $fg_color #869FC2
 
-# Start i3bar to display a workspace bar plus the system information
 bar {
-        position top
-        status_command i3blocks -c /home/rob/.i3/i3blocks.conf
-        strip_workspace_numbers yes
-        colors {
-                background $bg_color
-                separator #4A586B
-                focused_workspace $bg_color $bg_color $fg_color
-                active_workspace $bg_color $bg_color $fg_color
-                inactive_workspace $bg_color $bg_color #4A586B
-                urgent_workspace $bg_color $bg_color #B40404
-                statusline $fg_color
-                }
+    i3bar_command /home/rob/.config/polybar/launch.sh
 }
+# Start i3bar to display a workspace bar plus the system information
+# bar {
+#         position top
+#         status_command i3blocks -c /home/rob/.i3/i3blocks.conf
+#         strip_workspace_numbers yes
+#         colors {
+#                 background $bg_color
+#                 separator #4A586B
+#                 focused_workspace $bg_color $bg_color $fg_color
+#                 active_workspace $bg_color $bg_color $fg_color
+#                 inactive_workspace $bg_color $bg_color #4A586B
+#                 urgent_workspace $bg_color $bg_color #B40404
+#                 statusline $fg_color
+#                 }
+# }
 
 # Startup apps
 # exec --no-startup-id nvidia-settings --load-config-only
 exec --no-startup-id gnome-keyring-daemon -s
-exec --no-startup-id /usr/lib64/polkit-gnome/polkit-gnome-authentication-agent-1
+# exec --no-startup-id /usr/lib64/polkit-gnome/polkit-gnome-authentication-agent-1
+# exec --no-startup-id mate-settings-daemon
+exec --no-startup-id mate-power-manager
 exec --no-startup-id nm-applet
-# exec --no-startup-id /home/rob/.fehbg
+exec --no-startup-id /home/rob/.fehbg
 # exec --no-startup-id compton
-# exec --no-startup-id parcellite
-# exec --no-startup-id xclip
+exec --no-startup-id clipit
+exec --no-startup-id xclip
 # exec --no-startup-id /usr/bin/recollindex -m -n -w 30
 exec --no-startup-id dropbox start -i
 # vim: ft=sh
