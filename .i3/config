@@ -153,7 +153,7 @@ for_window [class="Eom"] floating enable
 for_window [class="Atril"] floating enable
 for_window [class="Vlc"] floating enable
 for_window [class="mpv"] floating enable
-for_window [class="tracker-needle"] floating enable
+for_window [class="Tracker-needle"] floating enable
 
 set $bg_color #1C1C1C
 set $fg_color #869FC2
@@ -181,7 +181,6 @@ bar {
 # exec --no-startup-id nvidia-settings --load-config-only
 exec --no-startup-id gnome-keyring-daemon -s
 # exec --no-startup-id /usr/lib64/polkit-gnome/polkit-gnome-authentication-agent-1
-# exec --no-startup-id mate-settings-daemon
 exec --no-startup-id mate-power-manager
 # exec --no-startup-id nm-applet
 exec --no-startup-id /home/rob/.fehbg
