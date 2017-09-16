@@ -99,7 +99,7 @@ bindsym $mod+2 workspace 2:Media
 bindsym $mod+3 workspace 3:Sys
 bindsym $mod+4 workspace 4:Write
 bindsym $mod+5 workspace 5:News
-bindsym $mod+6 workspace 6:Gene
+bindsym $mod+6 workspace 6:Gen
 bindsym $mod+7 workspace 7:Code
 bindsym $mod+8 workspace 8:Pics
 bindsym $mod+9 workspace 9:Info
@@ -111,7 +111,7 @@ bindsym $mod+Shift+2 move container to workspace 2:Media
 bindsym $mod+Shift+3 move container to workspace 3:Sys
 bindsym $mod+Shift+4 move container to workspace 4:Write
 bindsym $mod+Shift+5 move container to workspace 5:News
-bindsym $mod+Shift+6 move container to workspace 6:Gene
+bindsym $mod+Shift+6 move container to workspace 6:Gen
 bindsym $mod+Shift+7 move container to workspace 7:Code
 bindsym $mod+Shift+8 move container to workspace 8:Pics
 bindsym $mod+Shift+9 move container to workspace 9:Info
@@ -153,6 +153,7 @@ for_window [class="Eom"] floating enable
 for_window [class="Atril"] floating enable
 for_window [class="Vlc"] floating enable
 for_window [class="mpv"] floating enable
+for_window [class="feh"] floating enable
 for_window [class="Tracker-needle"] floating enable
 
 set $bg_color #1C1C1C

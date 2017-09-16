@@ -176,6 +176,9 @@ nno <silent><leader>\ :noh<cr>
 nno <silent><leader>[ :bp<cr>
 nno <silent><leader>] :bn<cr>
 
+" This closes the currently viewed buffer and loads the last in the window
+nno <silent><leader>c :bp\|bd #<CR>
+
 " This makes unrecognized code files use shell syntax highlighting
 nno <F5> :set syntax=sh<cr>
 
