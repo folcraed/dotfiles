@@ -1,17 +1,8 @@
-" vimrc by Rob Boudreau
-" Last change:	5 Sep 2017
-
-" This must be first, because it changes other options as a side effect.
-set nocompatible
-
-" Set font and some optionsfor GVim
-if has('gui_running')
-  set guifont=Liberation\ Mono\ for\ Powerline\ 9
-  set guioptions=m
-endif
+" init.vim by Rob Boudreau
+" Last change:	17 Sep 2017
 
 " Call and/or install plugins with vim-plug
-call plug#begin('~/.vim/plugged')
+call plug#begin('~/.config/nvim/plugged')
 
 Plug 'https://github.com/ctrlpvim/ctrlp.vim.git'
 Plug 'https://github.com/scrooloose/nerdtree.git'
@@ -20,8 +11,9 @@ Plug 'https://github.com/vim-airline/vim-airline-themes.git'
 Plug 'https://github.com/lilydjwg/colorizer'
 Plug 'https://github.com/tpope/vim-commentary.git'
 Plug 'https://github.com/rakr/vim-one'
-Plug 'https://github.com/Shougo/neocomplete.vim'
+Plug 'https://github.com/Shougo/deoplete.nvim'
 Plug 'https://github.com/eugen0329/vim-esearch'
+Plug 'https://github.com/edkolev/tmuxline.vim'
 
 call plug#end()
 
@@ -31,102 +23,26 @@ set encoding=utf-8
 set expandtab
 set tabstop=4
 set shiftwidth=4
-set backspace=indent,eol,start
 set history=50
-set ruler
-set showcmd
-set incsearch
-set laststatus=2
 set linebreak
-set wildmenu
 set wildmode=list:longest,full
 set ttimeoutlen=50
 set dir=~/Temp
 set splitbelow
 set splitright
 set noswapfile
-syntax on
-set hlsearch
 set number
 set relativenumber
-set autoindent
 set backupdir=~/Temp
 set noshowmode
 
-" --{{ neocomplete settings
-
-"Note: This option must be set in .vimrc(_vimrc).  NOT IN .gvimrc(_gvimrc)!
-" Disable AutoComplPop.
-let g:acp_enableAtStartup = 0
-" Use neocomplete.
-let g:neocomplete#enable_at_startup = 1
-" Use smartcase.
-let g:neocomplete#enable_smart_case = 1
-" Set minimum syntax keyword length.
-let g:neocomplete#sources#syntax#min_keyword_length = 3
-" Set the completion delay time in milliseconds
-let g:neocomplete#auto_complete_delay = 300
-
-" Define dictionary.
-let g:neocomplete#sources#dictionary#dictionaries = {
-    \ 'default' : '',
-    \ 'vimshell' : $HOME.'/.vimshell_hist',
-    \ 'scheme' : $HOME.'/.gosh_completions'
-        \ }
-
-" Define keyword.
-if !exists('g:neocomplete#keyword_patterns')
-    let g:neocomplete#keyword_patterns = {}
-endif
-let g:neocomplete#keyword_patterns['default'] = '\h\w*'
-
-" Plugin key-mappings.
-inoremap <expr><C-g>     neocomplete#undo_completion()
-inoremap <expr><C-l>     neocomplete#complete_common_string()
-
-" Recommended key-mappings.
-" <CR>: close popup and save indent.
-inoremap <silent> <CR> <C-r>=<SID>my_cr_function()<CR>
-function! s:my_cr_function()
-"  return (pumvisible() ? "\<C-y>" : "" ) . "\<CR>"
-  " For no inserting <CR> key.
-return pumvisible() ? "\<C-y>" : "\<CR>"
-endfunction
-" <TAB>: completion.
-inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
-" <C-h>, <BS>: close popup and delete backword char.
-" inoremap <expr><C-h> neocomplete#smart_close_popup()."\<C-i>"
-inoremap <expr><BS> neocomplete#smart_close_popup()."\<C-h>"
-" Close popup by <Space>.
-"inoremap <expr><Space> pumvisible() ? "\<C-y>" : "\<Space>"
-
-" AutoComplPop like behavior.
-"let g:neocomplete#enable_auto_select = 1
-
-" Enable omni completion.
-autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
-autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
-autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
-autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
-autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
-
-" Enable heavy omni completion.
-if !exists('g:neocomplete#sources#omni#input_patterns')
-  let g:neocomplete#sources#omni#input_patterns = {}
-endif
-"let g:neocomplete#sources#omni#input_patterns.php = '[^. \t]->\h\w*\|\h\w*::'
-"let g:neocomplete#sources#omni#input_patterns.c = '[^.[:digit:] *\t]\%(\.\|->\)'
-"let g:neocomplete#sources#omni#input_patterns.cpp = '[^.[:digit:] *\t]\%(\.\|->\)\|\h\w*::'
-
-" For perlomni.vim setting.
-" https://github.com/c9s/perlomni.vim
-let g:neocomplete#sources#omni#input_patterns.perl = '\h\w*->\h\w*\|\h\w*::'
-" }}-- end of neoplete settings
+" Startup deoplete on init
+let g:deoplete#enable_at_startup = 1
 
 " --{{ Settings for vim-esearch
 let g:esearch = {
   \ 'adapter':    'grep',
-  \ 'backend':    'system',
+  \ 'backend':    'nvim',
   \ 'out':        'qflist',
   \ 'batch_size': 1000,
   \ 'use':        ['word_under_cursor'],
@@ -190,9 +106,6 @@ nno <silent> <Down> gj
 nno <silent> k gk
 nno <silent> j gj
 
-" Do a search through current project files for selected word
-nno <leader>s :execute "vimgrep /" . expand("<cword>") . "/j **" <Bar> cw<CR>
-
 " Move lines up or down using CTRL+arrow key
 nno <C-down> ddp
 nno <C-up> ddkP
@@ -219,11 +132,6 @@ nno <leader>- :wincmd =<cr>
 " Snippets
 nno <leader>= o==================================================<cr><ESC>
 
-" Save current session using existing or new name
-nno <leader>q :mks! ~/.vim/sessions/
-" Load existing session
-nno <leader>l :source ~/.vim/sessions/
-
 " Settings for NerdTree so it's more sane
 nno <silent><leader>n :NERDTreeToggle<CR>
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
@@ -235,7 +143,7 @@ nno <silent><leader>e :edit .<cr>
 " Save a admin file from regular user
 nno <silent><leader>r :w !sudo tee %
 
-  " Don't use Ex mode, use Q for formatting
+" Don't use Ex mode, use Q for formatting
 map Q gq
 
 " automatically rebalance windows on vim resize
@@ -248,19 +156,10 @@ ino <C-U> <C-G>u<C-U>
 
 " }}}-- End of mappings
 
-  " In many terminal emulators the mouse works just fine, thus enable it.
-if has('mouse')
-  set mouse=a
-endif
-
-  " Enable filetype detection.
-filetype plugin indent on
-syntax enable
-
-  " Only do this part when compiled with support for autocommands.
+" Only do this part when compiled with support for autocommands.
 if has("autocmd")
 
-  " Put these in an autocmd group, so that we can delete them easily.
+" Put these in an autocmd group, so that we can delete them easily.
 augroup vimrcEx
 au!
 
