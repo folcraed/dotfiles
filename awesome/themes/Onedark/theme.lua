@@ -15,7 +15,7 @@ theme.bg_minimize   = "#96b5b4"
 theme.bg_systray    = theme.bg_normal
 
 theme.fg_normal     = "#81a2be"
-theme.fg_focus      = "#eff1f5"
+theme.fg_focus      = "#00ff00"
 theme.fg_urgent     = "#ffffff"
 theme.fg_minimize   = "#2b303b"
 

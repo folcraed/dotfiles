@@ -44,7 +44,7 @@ end
 beautiful.init("/home/rob/.config/awesome/themes/Onedark/theme.lua")
 
 -- This is used later as the default terminal and editor to run.
-terminal = "termite"
+terminal = "mate-terminal"
 editor = os.getenv("EDITOR") or "vim"
 editor_cmd = terminal .. " -e " .. editor
 
@@ -465,6 +465,7 @@ awful.rules.rules = {
                      keys = clientkeys,
                      buttons = clientbuttons,
                      screen = awful.screen.preferred,
+                     size_hints_honor = false,
                      placement = awful.placement.no_overlap+awful.placement.no_offscreen
      }
     },
@@ -476,10 +477,12 @@ awful.rules.rules = {
           "copyq",  -- Includes session name in class.
         },
         class = {
-          "Gpick",
+          "Eom",
           "mpv",
-          "tracker-needle",  -- kalarm.
-          "pavucontrol"},
+          "Atril",
+          "vlc",
+          "Tracker-needle",  -- kalarm.
+          "feh"},
 
         name = {
           "Event Tester",  -- xev.
@@ -585,13 +588,13 @@ end
 
 run_once("gnome-keyring-daemon -s")
 run_once("/usr/lib64/polkit-gnome/polkit-gnome-authentication-agent-1")
-run_once("compton")
-run_once("parcellite")
+-- run_once("compton")
+run_once("clipit")
 run_once("xclip")
 run_once("tracker daemon -s")
 -- run_once("recollindex -m -n -w 60")
 run_once("dropbox start -i")
 -- run_once("trash-cli")
 -- run_once("/home/rob/bin/setxset.sh")
-run_once("xfce4-power-manager")
-run_once("nm-applet")
+-- run_once("xfce4-power-manager")
+-- run_once("nm-applet")
