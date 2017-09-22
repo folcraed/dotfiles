@@ -113,7 +113,7 @@ local calendar = lain.widget.calendar()
 lain.widget.calendar({
     attach_to = {mytextclock},
     notification_preset = {
-        font = "Roboto Mono 10",
+        font = "Roboto Mono for Powerline 10",
         fg = "#81a2be"},
 })
 myweather   = lain.widget.weather({

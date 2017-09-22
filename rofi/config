@@ -1,7 +1,0 @@
-rofi.width: 20
-rofi.hide-scrollbar: true
-rofi.font: "Hack 12"
-# rofi.color-enable: true
-# # State               bg           fg        bgalt       hlbg        hlfg
-# rofi.color-normal:   #383C4A,    #DEDEDE,    #2F343F,    #61AFEF,    #000000
-# rofi.color-window:   #383C4A,    #DEDEDE

@@ -20,7 +20,7 @@ gaps inner 10
 bindsym $mod+Return exec --no-startup-id /usr/bin/mate-terminal
 
 # Open Rofi application menu
-bindsym $mod+p exec --no-startup-id rofi -show drun -font "Hack 10" -opacity "90" -terminal "mate-terminal"
+bindsym $mod+p exec --no-startup-id rofi -show drun -sidebar-mode -font "Hack 10" -width "20" -opacity "90" -terminal "mate-terminal"
 # bindsym $mod+p exec --no-startup-id dmenu_run
 
 # kill focused window
