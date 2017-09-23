@@ -24,7 +24,7 @@ width = 100%
 height = 27
 ;offset-x = 1%
 ;offset-y = 1%
-radius = 6.0
+radius = 0
 fixed-center = false
 
 background = ${colors.background}
@@ -48,7 +48,7 @@ font-1 = Hack:size=9;0
 font-2 = FontAwesome:size=10;1
 
 modules-left = i3
-;modules-center = mpd
+modules-center = xwindow
 modules-right = volume filesystem memory cpu temperature date
 
 tray-position = right
@@ -71,22 +71,6 @@ tray-detached = false
 [module/xwindow]
 type = internal/xwindow
 label = %title:0:30:...%
-
-;[module/xkeyboard]
-;type = internal/xkeyboard
-;blacklist-0 = num lock
-;
-;format-prefix = " "
-;format-prefix-foreground = ${colors.foreground-alt}
-;format-prefix-underline = ${colors.secondary}
-;
-;label-layout = %layout%
-;label-layout-underline = ${colors.secondary}
-;
-;label-indicator-padding = 2
-;label-indicator-margin = 1
-;label-indicator-background = ${colors.secondary}
-;label-indicator-underline = ${colors.secondary}
 
 [module/filesystem]
 type = internal/fs
@@ -204,28 +188,6 @@ interval = 2
 format-underline = #4bffdc
 label = %percentage_used%%
 
-;[module/wlan]
-;type = internal/network
-;interface = net1
-;interval = 3.0
-;
-;format-connected = <ramp-signal> <label-connected>
-;format-connected-underline = #9f78e1
-;label-connected = %essid%
-;
-;format-disconnected =
-;;format-disconnected = <label-disconnected>
-;;format-disconnected-underline = ${self.format-connected-underline}
-;;label-disconnected = %ifname% disconnected
-;;label-disconnected-foreground = ${colors.foreground-alt}
-;
-;ramp-signal-0 = 
-;ramp-signal-1 = 
-;ramp-signal-2 = 
-;ramp-signal-3 = 
-;ramp-signal-4 = 
-;ramp-signal-foreground = ${colors.foreground-alt}
-
 ;[module/eth]
 ;type = internal/network
 ;interface = eno1
@@ -246,7 +208,7 @@ label = %percentage_used%%
 type = internal/date
 interval = 5
 
-date = " %A %b %d"
+date = " %A %b %d "
 date-alt = " %A %b %d"
 
 time = %I:%M
@@ -286,33 +248,6 @@ bar-volume-empty = ─
 bar-volume-empty-font = 2
 bar-volume-empty-foreground = ${colors.foreground-alt}
 
-;[module/battery]
-;type = internal/battery
-;battery = BAT0
-;adapter = ADP1
-;full-at = 98
-;
-;format-charging = <animation-charging> <label-charging>
-;format-charging-underline = #ffb52a
-;
-;format-discharging = <ramp-capacity> <label-discharging>
-;format-discharging-underline = ${self.format-charging-underline}
-;
-;format-full-prefix = " "
-;format-full-prefix-foreground = ${colors.foreground-alt}
-;format-full-underline = ${self.format-charging-underline}
-;
-;ramp-capacity-0 = 
-;ramp-capacity-1 = 
-;ramp-capacity-2 = 
-;ramp-capacity-foreground = ${colors.foreground-alt}
-;
-;animation-charging-0 = 
-;animation-charging-1 = 
-;animation-charging-2 = 
-;animation-charging-foreground = ${colors.foreground-alt}
-;animation-charging-framerate = 750
-
 [module/temperature]
 type = internal/temperature
 thermal-zone = 2
@@ -333,33 +268,6 @@ label-warn-foreground = ${colors.secondary}
 ;ramp-1 = 
 ;ramp-2 = 
 ;ramp-foreground = ${colors.foreground-alt}
-
-;[module/powermenu]
-;type = custom/menu
-;
-;format-spacing = 1
-;
-;label-open = 
-;label-open-foreground = ${colors.secondary}
-;label-close =  cancel
-;label-close-foreground = ${colors.secondary}
-;label-separator = |
-;label-separator-foreground = ${colors.foreground-alt}
-;
-;menu-0-0 = reboot
-;menu-0-0-exec = menu-open-1
-;menu-0-1 = power off
-;menu-0-1-exec = menu-open-2
-;
-;menu-1-0 = cancel
-;menu-1-0-exec = menu-open-0
-;menu-1-1 = reboot
-;menu-1-1-exec = sudo reboot
-;
-;menu-2-0 = power off
-;menu-2-0-exec = sudo poweroff
-;menu-2-1 = cancel
-;menu-2-1-exec = menu-open-0
 
 [settings]
 screenchange-reload = true
