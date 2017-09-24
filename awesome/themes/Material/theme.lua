@@ -7,7 +7,7 @@ local theme = {}
 theme.font          = "Roboto 10, FontAwesome 10"
 -- theme.icons         = "/home/rob/.config/awesome/themes/Material/icons/"
 
-theme.bg_normal     = "#073642"
+theme.bg_normal     = "#222D32"
 theme.bg_focus      = "#586e75"
 theme.bg_urgent     = "#ff0000"
 theme.bg_minimize   = "#839496"
