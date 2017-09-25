@@ -157,7 +157,7 @@ for_window [class="feh"] floating enable
 for_window [class="Tracker-needle"] floating enable
 
 set $bg_color #1C1C1C
-set $fg_color #869FC2
+set $fg_color #00BCD4
 
 bar {
     i3bar_command /home/rob/.config/polybar/launch.sh

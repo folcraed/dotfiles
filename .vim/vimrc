@@ -22,6 +22,7 @@ Plug 'https://github.com/tpope/vim-commentary.git'
 Plug 'https://github.com/rakr/vim-one'
 Plug 'https://github.com/Shougo/neocomplete.vim'
 Plug 'https://github.com/eugen0329/vim-esearch'
+Plug 'https://github.com/edkolev/tmuxline.vim'
 
 call plug#end()
 
