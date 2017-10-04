@@ -61,8 +61,14 @@ xterm*appcursorDefault: true
 xterm*geometry: 132x42
 
 ! Settings for Rofi
-rofi.color-enable: true
-! State             bg           fg        bgalt       hlbg        hlfg
-rofi.color-normal: #263238,    #8abeb7,    #263238,    #81a2be,    #263238
-rofi.color-active: #263238,    #de935e,    #263238,    #81a2be,    #263238
-rofi.color-window: #263238,    #263238
+! State             bg       fg     bgalt     hlbg     hlfg
+! ------------------------------------------------------------------------------
+! ROFI Color theme
+! Based on Adapta-Nokto GTK theme (https://github.com/adapta-project/adapta-gtk-theme)
+! Copyright: PyGeek03
+! ------------------------------------------------------------------------------
+rofi.color-enabled: true
+rofi.color-window: #3a4c54, #2a373e, #c3c6c8
+rofi.color-normal: #455a64, #fafbfc, #455a64, #00bcd4, #fafbfc
+rofi.color-active: #455a64, #00bcd4, #455a64, #009688, #fdf6e3
+rofi.color-urgent: #455a64, #ff5252, #455a64, #ff5252, #fdf6e3
