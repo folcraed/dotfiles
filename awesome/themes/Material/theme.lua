@@ -88,10 +88,10 @@ theme.layout_tilebottom = "/home/rob/.config/awesome/themes/Material/layouts/til
 theme.layout_tileleft   = "/home/rob/.config/awesome/themes/Material/layouts/tileleftw.png"
 theme.layout_tile = "/home/rob/.config/awesome/themes/Material/layouts/tilew.png"
 theme.layout_tiletop = "/home/rob/.config/awesome/themes/Material/layouts/tiletopw.png"
-theme.layout_cornernw = "/home/rob/.config/awesome/themes/Material/layouts/cornernww.png"
-theme.layout_cornerne = "/home/rob/.config/awesome/themes/Material/layouts/cornernew.png"
-theme.layout_cornersw = "/home/rob/.config/awesome/themes/Material/layouts/cornersww.png"
-theme.layout_cornerse = "/home/rob/.config/awesome/themes/Material/layouts/cornersew.png"
+-- theme.layout_cornernw = "/home/rob/.config/awesome/themes/Material/layouts/cornernww.png"
+-- theme.layout_cornerne = "/home/rob/.config/awesome/themes/Material/layouts/cornernew.png"
+-- theme.layout_cornersw = "/home/rob/.config/awesome/themes/Material/layouts/cornersww.png"
+-- theme.layout_cornerse = "/home/rob/.config/awesome/themes/Material/layouts/cornersew.png"
 
 theme.awesome_icon = "/home/rob/.config/awesome/icons/awesome16.png"
 

@@ -15,7 +15,7 @@ theme.bg_minimize   = "#96b5b4"
 theme.bg_systray    = theme.bg_normal
 
 theme.fg_normal     = "#81a2be"
-theme.fg_focus      = "#00ff00"
+theme.fg_focus      = "#97c278"
 theme.fg_urgent     = "#ffffff"
 theme.fg_minimize   = "#2b303b"
 
@@ -81,20 +81,20 @@ theme.titlebar_maximized_button_focus_active  = profileConfigPath.."themes/Oneda
 theme.titlebar_maximized_button_focus_active_hover = profileConfigPath.."themes/Onedark/titlebar/maximized_focus_active_hover.png"
 theme.titlebar_maximized_button_focus_active_press = profileConfigPath.."themes/Onedark/titlebar/maximized_focus_active_press.png"
 
-theme.wallpaper = "/home/rob/Dropbox/Photos/Backgrounds/tri-fadeno.jpg"
+theme.wallpaper = "/home/rob/Dropbox/Photos/Backgrounds/NightSea.jpg"
 
 -- You can use your own layout icons like this:
-theme.layout_fairh = profileConfigPath.."themes/Onedark/layouts/fairhw.png"
-theme.layout_fairv = profileConfigPath.."themes/Onedark/layouts/fairvw.png"
-theme.layout_floating  = profileConfigPath.."themes/Onedark/layouts/floatingw.png"
-theme.layout_tilebottom = profileConfigPath.."themes/Onedark/layouts/tilebottomw.png"
-theme.layout_tileleft   = profileConfigPath.."themes/Onedark/layouts/tileleftw.png"
-theme.layout_tile = profileConfigPath.."themes/Onedark/layouts/tilew.png"
-theme.layout_tiletop = profileConfigPath.."themes/Onedark/layouts/tiletopw.png"
-theme.layout_cornernw = profileConfigPath.."themes/Onedark/layouts/cornernww.png"
-theme.layout_cornerne = profileConfigPath.."themes/Onedark/layouts/cornernew.png"
-theme.layout_cornersw = profileConfigPath.."themes/Onedark/layouts/cornersww.png"
-theme.layout_cornerse = profileConfigPath.."themes/Onedark/layouts/cornersew.png"
+theme.layout_fairh = profileConfigPath.."themes/Onedark/layouts/fairh.png"
+theme.layout_fairv = profileConfigPath.."themes/Onedark/layouts/fairv.png"
+theme.layout_floating  = profileConfigPath.."themes/Onedark/layouts/floating.png"
+theme.layout_tilebottom = profileConfigPath.."themes/Onedark/layouts/tilebottom.png"
+theme.layout_tileleft   = profileConfigPath.."themes/Onedark/layouts/tileleft.png"
+theme.layout_tile = profileConfigPath.."themes/Onedark/layouts/tile.png"
+theme.layout_tiletop = profileConfigPath.."themes/Onedark/layouts/tiletop.png"
+-- theme.layout_cornernw = profileConfigPath.."themes/Onedark/layouts/cornernww.png"
+-- theme.layout_cornerne = profileConfigPath.."themes/Onedark/layouts/cornernew.png"
+-- theme.layout_cornersw = profileConfigPath.."themes/Onedark/layouts/cornersww.png"
+-- theme.layout_cornerse = profileConfigPath.."themes/Onedark/layouts/cornersew.png"
 
 theme.awesome_icon = profileConfigPath.."themes/Onedark/awesome16.png"
 

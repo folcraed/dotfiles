@@ -158,7 +158,7 @@ for_window [class="Gcolor3"] floating enable
 for_window [class="Tracker-needle"] floating enable
 
 set $bg_color #1C1C1C
-set $fg_color #00BCD4
+set $fg_color #60AEEE
 
 bar {
     i3bar_command /home/rob/.config/polybar/launch.sh
@@ -184,7 +184,7 @@ bar {
 exec --no-startup-id gnome-keyring-daemon -s
 exec --no-startup-id /usr/lib64/polkit-gnome/polkit-gnome-authentication-agent-1
 # exec --no-startup-id mate-power-manager
-# exec --no-startup-id nm-applet
+exec --no-startup-id ibus-daemon -s
 exec --no-startup-id /home/rob/.fehbg
 # exec --no-startup-id compton
 exec --no-startup-id clipit

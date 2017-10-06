@@ -60,10 +60,10 @@ awful.layout.layouts = {
     awful.layout.suit.tile.top,
     awful.layout.suit.fair,
     awful.layout.suit.fair.horizontal,
-    awful.layout.suit.corner.nw,
-    awful.layout.suit.corner.ne,
-    awful.layout.suit.corner.sw,
-    awful.layout.suit.corner.se,
+--    awful.layout.suit.corner.nw,
+--    awful.layout.suit.corner.ne,
+--    awful.layout.suit.corner.sw,
+--    awful.layout.suit.corner.se,
 }
 -- }}}
 
@@ -215,7 +215,7 @@ awful.screen.connect_for_each_screen(function(s)
         layout = wibox.layout.align.horizontal,
         { -- Left widgets
             layout = wibox.layout.fixed.horizontal,
-            mylauncher,
+            s.mylayoutbox,
             spacer,
             s.mytaglist,
             spacer,
@@ -231,7 +231,7 @@ awful.screen.connect_for_each_screen(function(s)
             spacer,
             mytextclock,
             spacer,
-            s.mylayoutbox,
+--            s.mylayoutbox,
         },
     }
 end)
@@ -395,7 +395,7 @@ clientkeys = awful.util.table.join(
 )
 
 -- Bind all key numbers to tags.
--- Be careful: we use keycodes to make it works on any keyboard layout.
+-- Be careful: we use keycodes to make it work on any keyboard layout.
 -- This should map on the top row of your keyboard, usually 1 to 9.
 for i = 1, 9 do
     globalkeys = awful.util.table.join(globalkeys,
@@ -588,6 +588,7 @@ end
 
 run_once("gnome-keyring-daemon -s")
 run_once("/usr/lib64/polkit-gnome/polkit-gnome-authentication-agent-1")
+run_once("ibus-daemon -s")
 -- run_once("compton")
 run_once("clipit")
 run_once("xclip")
@@ -596,5 +597,4 @@ run_once("tracker daemon -s")
 run_once("dropbox start -i")
 -- run_once("trash-cli")
 -- run_once("/home/rob/bin/setxset.sh")
--- run_once("xfce4-power-manager")
 -- run_once("nm-applet")
