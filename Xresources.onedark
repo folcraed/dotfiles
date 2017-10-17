@@ -35,7 +35,7 @@
 *.color7:       #c0c5ce
 *.color15:      #eff1f5
 
- 
+
 ! Generic term settings
 Xcursor.theme: default
 Xcursor.size: 16
@@ -50,14 +50,6 @@ Xft.antialias:  1
 Xft.hinting:    1
 Xft.rgba:       rgb
 Xft.hintstyle:  hintslight
-
-! Xterm settings
-xterm*utf8: 1
-xterm*termName: xterm-256color
-xterm*faceName: Hack:size=10:antialias=false
-xterm*selectToClipboard: true
-xterm*appcursorDefault: true
-xterm*geometry: 132x42
 
 ! Settings for Rofi
 rofi.color-enable: true

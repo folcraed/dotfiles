@@ -52,14 +52,6 @@ Xft.hinting:    1
 Xft.rgba:       rgb
 Xft.hintstyle:  hintslight
 
-! Xterm settings
-xterm*utf8: 1
-xterm*termName: xterm-256color
-xterm*faceName: Roboto Mono:size=10:antialias=false
-xterm*selectToClipboard: true
-xterm*appcursorDefault: true
-xterm*geometry: 132x42
-
 ! Settings for Rofi
 ! State             bg       fg     bgalt     hlbg     hlfg
 ! ------------------------------------------------------------------------------

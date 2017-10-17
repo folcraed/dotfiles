@@ -60,9 +60,9 @@ let g:onedark_termcolors = 256
 " let g:one_allow_italics = 1
 
 set background=dark
-" colorscheme onedark
+colorscheme onedark
 " colorscheme OceanicNext
-colorscheme hybrid_material
+" colorscheme hybrid_material
 " colorscheme base16-ocean
 
 " --{{{ Start of key mappings
@@ -200,7 +200,7 @@ let g:airline#extensions#tabline#buffer_nr_show = 1
 " let g:airline#extensions#tabline#show_splits = 0
 " let g:airline#extensions#tabline#show_tab_nr = 1
 " let g:airline#extensions#tabline#tab_nr_type = 2
-let g:airline_theme='hybrid'
+let g:airline_theme='onedark'
 
   " Set the directory depth for CtrlP to open
 let g:ctrlp_by_filename = 1
