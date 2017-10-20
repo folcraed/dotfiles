@@ -18,7 +18,7 @@ Plug 'https://github.com/eugen0329/vim-esearch'
 call plug#end()
 
 " Set global options
-set t_ut=
+" set t_ut=
 set termguicolors
 set encoding=utf-8
 set expandtab
@@ -56,7 +56,7 @@ set t_ZR=[23m
 
 " Set up colorschemes
 let g:onedark_terminal_italics = 1
-let g:onedark_termcolors = 256
+" let g:onedark_termcolors = 256
 " let g:one_allow_italics = 1
 
 set background=dark

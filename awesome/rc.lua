@@ -125,6 +125,12 @@ myweather   = lain.widget.weather({
         widget:set_markup(markup("#81a2be", " " .. descr .. " @ " .. units .. "°F "))
     end
 })
+local cputemp = lain.widget.temp({
+    tempfile = "/sys/class/thermal/thermal_zone2/temp",
+    settings = function()
+      widget:set_markup(markup("#81a2be", " " .. coretemp_now .. "°C"))
+    end
+})
 
 -- Create a wibox for each screen and add it
 local taglist_buttons = awful.util.table.join(
@@ -226,6 +232,8 @@ awful.screen.connect_for_each_screen(function(s)
         { -- Right widgets
             layout = wibox.layout.fixed.horizontal,
             wibox.widget.systray(),
+            spacer,
+            cputemp,
             spacer,
             myweather,
             spacer,
@@ -575,6 +583,17 @@ client.connect_signal("unfocus", function(c) c.border_color = beautiful.border_n
 
 -- | run_once | --
 
+-- local function run_once(cmd_arr)
+--     for _, cmd in ipairs(cmd_arr) do
+--         findme = cmd
+--         firstspace = cmd:find(" ")
+--         if firstspace then
+--             findme = cmd:sub(0, firstspace-1)
+--         end
+--         awful.spawn.with_shell(string.format("pgrep -u $USER -x %s > /dev/null; or (%s)", findme, cmd))
+--     end
+-- end
+
 function run_once(cmd)
   findme = cmd
   firstspace = cmd:find(" ")
@@ -589,7 +608,7 @@ end
 run_once("gnome-keyring-daemon -s")
 run_once("/usr/lib64/polkit-gnome/polkit-gnome-authentication-agent-1")
 run_once("ibus-daemon -d -s")
--- run_once("compton")
+run_once("compton")
 run_once("clipit")
 run_once("xclip")
 run_once("tracker daemon -s")
