@@ -107,14 +107,14 @@ menubar.utils.terminal = terminal -- Set the terminal for applications that requ
 -- {{{ Wibar
 -- Create a few widgets
 markup  = lain.util.markup
-spacer = wibox.widget.textbox("  ")
+spacer = wibox.widget.textbox(" | ")
 mytextclock = wibox.widget.textclock("%a %b %e, %l:%M %P")
 local calendar = lain.widget.calendar()
 lain.widget.calendar({
     attach_to = {mytextclock},
     notification_preset = {
         font = "Roboto Mono for Powerline 10",
-        fg = "#81a2be"},
+        fg = "#60AEEE"},
 })
 myweather   = lain.widget.weather({
     city_id = 5666639,
@@ -122,13 +122,23 @@ myweather   = lain.widget.weather({
     settings = function()
         descr = weather_now["weather"][1]["description"]:lower()
         units = math.floor(weather_now["main"]["temp"])
-        widget:set_markup(markup("#81a2be", " " .. descr .. " @ " .. units .. "°F "))
+        widget:set_markup(markup("#60AEEE", " " .. descr .. " @ " .. units .. "°F "))
     end
 })
 local cputemp = lain.widget.temp({
     tempfile = "/sys/class/thermal/thermal_zone2/temp",
     settings = function()
-      widget:set_markup(markup("#81a2be", " " .. coretemp_now .. "°C"))
+      widget:set_markup(markup("#C577DC", " " .. coretemp_now .. "°C"))
+    end
+})
+local mycpu = lain.widget.cpu({
+    settings = function()
+        widget:set_markup(markup("#E4BF7A", " " .. cpu_now[1].usage .. "% " .. cpu_now[2].usage .. "% " .. cpu_now[3].usage .. "% " .. cpu_now[4].usage .. "% "))
+    end
+})
+local mymem = lain.widget.mem({
+    settings = function()
+        widget:set_markup(markup("#56B6C2", " " .. mem_now.used .. "Mb " .. mem_now.perc .. "% "))
     end
 })
 
@@ -231,7 +241,10 @@ awful.screen.connect_for_each_screen(function(s)
         s.mytasklist, -- Middle widget
         { -- Right widgets
             layout = wibox.layout.fixed.horizontal,
-            wibox.widget.systray(),
+            spacer,
+            mycpu,
+            spacer,
+            mymem,
             spacer,
             cputemp,
             spacer,
@@ -239,6 +252,7 @@ awful.screen.connect_for_each_screen(function(s)
             spacer,
             mytextclock,
             spacer,
+            wibox.widget.systray(),
 --            s.mylayoutbox,
         },
     }

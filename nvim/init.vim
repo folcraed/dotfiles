@@ -44,7 +44,7 @@ let g:deoplete#enable_at_startup = 1
 let g:esearch = {
   \ 'adapter':    'grep',
   \ 'backend':    'nvim',
-  \ 'out':        'qflist',
+  \ 'out':        'win',
   \ 'batch_size': 1000,
   \ 'use':        ['word_under_cursor'],
   \}

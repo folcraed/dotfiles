@@ -125,7 +125,7 @@ let g:neocomplete#sources#omni#input_patterns.perl = '\h\w*->\h\w*\|\h\w*::'
 let g:esearch = {
   \ 'adapter':    'grep',
   \ 'backend':    'system',
-  \ 'out':        'qflist',
+  \ 'out':        'win',
   \ 'batch_size': 1000,
   \ 'use':        ['word_under_cursor'],
   \}

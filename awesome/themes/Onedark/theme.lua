@@ -14,12 +14,12 @@ theme.bg_urgent     = "#bf616a"
 theme.bg_minimize   = "#96b5b4"
 theme.bg_systray    = theme.bg_normal
 
-theme.fg_normal     = "#81a2be"
-theme.fg_focus      = "#a3be8c"
+theme.fg_normal     = "#60AEEE"
+theme.fg_focus      = "#E4BF7A"
 theme.fg_urgent     = "#ffffff"
 theme.fg_minimize   = "#2b303b"
 
-theme.useless_gap   = 3
+theme.useless_gap   = 5
 theme.border_width  = 1
 theme.border_normal = "#2b303b"
 theme.border_focus  = "#2b303b"
