@@ -252,7 +252,7 @@ awful.screen.connect_for_each_screen(function(s)
             spacer,
             mytextclock,
             spacer,
-            wibox.widget.systray(),
+            wibox.widget.systray()
 --            s.mylayoutbox,
         },
     }
@@ -622,7 +622,7 @@ end
 run_once("gnome-keyring-daemon -s")
 run_once("/usr/lib64/polkit-gnome/polkit-gnome-authentication-agent-1")
 run_once("ibus-daemon -d -s")
-run_once("compton")
+-- run_once("compton")
 run_once("clipit")
 run_once("xclip")
 run_once("tracker daemon -s")
