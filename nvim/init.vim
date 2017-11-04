@@ -1,5 +1,5 @@
 " init.vim by Rob Boudreau
-" Last change:	5 Oct 2017
+" Last change:	2 Nov 2017
 
 " Call and/or install plugins with vim-plug
 call plug#begin('~/.config/nvim/plugged')
@@ -51,18 +51,18 @@ let g:esearch = {
 " --}} end of settings for vim-esearch
 
 " This is supposed to allow italics in terminal
-set t_ZH=[3m
-set t_ZR=[23m
+" set t_ZH=[3m
+" set t_ZR=[23m
 
 " Set up colorschemes
-" let g:onedark_terminal_italics = 1
+let g:onedark_terminal_italics = 1
 " let g:onedark_termcolors = 256
 " let g:one_allow_italics = 1
 
 set background=dark
-" colorscheme onedark
+colorscheme onedark
 " colorscheme OceanicNext
-colorscheme hybrid_material
+" colorscheme hybrid_material
 " colorscheme base16-ocean
 
 " --{{{ Start of key mappings
@@ -200,7 +200,7 @@ let g:airline#extensions#tabline#buffer_nr_show = 1
 " let g:airline#extensions#tabline#show_splits = 0
 " let g:airline#extensions#tabline#show_tab_nr = 1
 " let g:airline#extensions#tabline#tab_nr_type = 2
-let g:airline_theme='hybrid'
+let g:airline_theme='onedark'
 
   " Set the directory depth for CtrlP to open
 let g:ctrlp_by_filename = 1
