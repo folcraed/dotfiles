@@ -6,6 +6,7 @@ local theme = {}
 profileConfigPath = "/home/rob/Dropbox/Settings/dotfiles/awesome/"
 
 theme.font          = "Roboto Mono for Powerline 11, FontAwesome 11"
+theme.taglist_font  = "Xirod 11"
 -- theme.icons         = "/home/rob/.config/awesome/themes/Onedark/icons/"
 
 theme.bg_normal     = "#2b303b"
