@@ -41,8 +41,6 @@ end
 
 -- {{{ Variable definitions
 -- Get the theme
--- beautiful.init(awful.util.get_themes_dir() .. "Onedark/theme.lua")
--- beautiful.init("/home/rob/.config/awesome/themes/Onedark/theme.lua")
 local theme_path = string.format("%s/.config/awesome/themes/%s/theme.lua", os.getenv("HOME"), "Onedark")
 beautiful.init(theme_path)
 
