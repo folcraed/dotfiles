@@ -1,4 +1,10 @@
--- Awesome libraries
+--[[ Configuration for Awesome 4.x modified by folraed
+     Uses some custon icons, but otherwise sticks to
+     using available and stock Awesome libraries and
+     extensions. Initially created for Awesome 4.2 ]]
+
+--| Get some default Awesome libraries |--
+
 local gears = require("gears")
 local awful = require("awful")
 require("awful.autofocus")
@@ -15,15 +21,18 @@ local collision = require("collision")
 require("awful.hotkeys_popup.keys")
 
 -- {{{ Error handling
--- Check if awesome encountered an error during startup and fell back to
--- another config (This code will only ever execute for the fallback config)
+
+--| Check if awesome encountered an error during startup and fell back to
+-- another config (This code will only ever execute for the fallback config) |--
+
 if awesome.startup_errors then
     naughty.notify({ preset = naughty.config.presets.critical,
                      title = "Oops, there were errors during startup!",
                      text = awesome.startup_errors })
 end
 
--- Handle runtime errors after startup
+--| Handle runtime errors after startup |--
+
 do
     local in_error = false
     awesome.connect_signal("debug::error", function (err)
@@ -39,21 +48,26 @@ do
 end
 -- }}}
 
--- {{{ Variable definitions
--- Get the theme
+-- {{{ Set some Awesome defaults
+
+--| Get the theme |--
+
 local theme_path = string.format("%s/.config/awesome/themes/%s/theme.lua", os.getenv("HOME"), "Onedark")
 beautiful.init(theme_path)
 
 
--- This is used later as the default terminal and editor to run.
-terminal = "konsole"
+--| Default terminal and editor |--
+
+terminal = "tilix"
 editor = os.getenv("EDITOR") or "vim"
 editor_cmd = terminal .. " -e " .. editor
 
--- Default modkey.
+--| Default modkey. |--
+
 modkey = "Mod4"
 
--- Table of layouts to cover with awful.layout.inc, order matters.
+--| Table of layouts to cover with awful.layout.inc, order matters. |--
+
 awful.layout.layouts = {
     awful.layout.suit.floating,
     awful.layout.suit.tile,
@@ -62,10 +76,6 @@ awful.layout.layouts = {
     awful.layout.suit.tile.top,
     awful.layout.suit.fair,
     awful.layout.suit.fair.horizontal,
---    awful.layout.suit.corner.nw,
---    awful.layout.suit.corner.ne,
---    awful.layout.suit.corner.sw,
---    awful.layout.suit.corner.se,
 }
 -- }}}
 
@@ -85,7 +95,9 @@ end
 -- }}}
 
 -- {{{ Menu
--- Create a launcher widget and a main menu
+
+--| Create a launcher widget and a main menu |--
+
 myawesomemenu = {
    { "hotkeys", function() return false, hotkeys_popup.show_help end},
    { "manual", terminal .. " -e man awesome" },
@@ -107,7 +119,9 @@ menubar.utils.terminal = terminal -- Set the terminal for applications that requ
 -- }}}
 
 -- {{{ Wibar
--- Create a few widgets
+
+--| Create a few widgets |--
+
 markup  = lain.util.markup
 spacer = wibox.widget.textbox(" | ")
 mytextclock = wibox.widget.textclock("%a %b %e, %l:%M %P")
@@ -144,7 +158,8 @@ local mymem = lain.widget.mem({
     end
 })
 
--- Create a wibox for each screen and add it
+--| Create a wibox for each screen and add it |--
+
 local taglist_buttons = awful.util.table.join(
                     awful.button({ }, 1, function(t) t:view_only() end),
                     awful.button({ modkey }, 1, function(t)
@@ -199,7 +214,8 @@ local function set_wallpaper(s)
     end
 end
 
--- Re-set wallpaper when a screen's geometry changes (e.g. different resolution)
+--| Re-set wallpaper when a screen's geometry changes (e.g. different resolution) |--
+
 screen.connect_signal("property::geometry", set_wallpaper)
 
 awful.screen.connect_for_each_screen(function(s)
@@ -273,6 +289,9 @@ root.buttons(awful.util.table.join(
 -- }}}
 
 -- {{{ Key bindings
+
+--| Some bindings might conflict with collision, watch for it |--
+
 globalkeys = awful.util.table.join(
     awful.key({ modkey,           }, "s",      hotkeys_popup.show_help,
               {description="show help", group="awesome"}),
@@ -422,8 +441,6 @@ clientkeys = awful.util.table.join(
 )
 
 -- Bind all key numbers to tags.
--- Be careful: we use keycodes to make it work on any keyboard layout.
--- This should map on the top row of your keyboard, usually 1 to 9.
 for i = 1, 9 do
     globalkeys = awful.util.table.join(globalkeys,
         -- View tag only.
@@ -481,7 +498,9 @@ root.keys(globalkeys)
 -- }}}
 
 -- {{{ Rules
--- Rules to apply to new clients (through the "manage" signal).
+
+--| Rules to apply to new clients (through the "manage" signal). |--
+
 awful.rules.rules = {
     -- All clients will match this rule.
     { rule = { },
@@ -524,15 +543,13 @@ awful.rules.rules = {
     { rule_any = {type = { "normal", "dialog" }
       }, properties = { titlebars_enabled = false }
     },
-
-    -- Set Firefox to always map on the tag named "2" on screen 1.
-    -- { rule = { class = "Firefox" },
-    --   properties = { screen = 1, tag = "2" } },
 }
 -- }}}
 
 -- {{{ Signals
--- Signal function to execute when a new client appears.
+
+--| Signal function to execute when a new client appears. |--
+
 client.connect_signal("manage", function (c)
     -- Set the windows at the slave,
     -- i.e. put it at the end of others instead of setting it master.
@@ -546,7 +563,8 @@ client.connect_signal("manage", function (c)
     end
 end)
 
--- Add a titlebar if titlebars_enabled is set to true in the rules.
+--| Add a titlebar if titlebars_enabled is set to true in the rules. | --
+
 client.connect_signal("request::titlebars", function(c)
     -- buttons for the titlebar
     local buttons = awful.util.table.join(
@@ -588,7 +606,8 @@ client.connect_signal("request::titlebars", function(c)
     }
 end)
 
--- Enable sloppy focus, so that focus follows mouse.
+-- | Enable sloppy focus, so that focus follows mouse. | --
+
 client.connect_signal("mouse::enter", function(c)
     if awful.layout.get(c.screen) ~= awful.layout.suit.magnifier
         and awful.client.focus.filter(c) then
@@ -601,17 +620,6 @@ client.connect_signal("unfocus", function(c) c.border_color = beautiful.border_n
 -- }}}
 
 -- | run_once | --
-
--- local function run_once(cmd_arr)
---     for _, cmd in ipairs(cmd_arr) do
---         findme = cmd
---         firstspace = cmd:find(" ")
---         if firstspace then
---             findme = cmd:sub(0, firstspace-1)
---         end
---         awful.spawn.with_shell(string.format("pgrep -u $USER -x %s > /dev/null; or (%s)", findme, cmd))
---     end
--- end
 
 function run_once(cmd)
   findme = cmd
@@ -631,8 +639,4 @@ run_once("compton")
 run_once("clipit")
 run_once("xclip")
 run_once("tracker daemon -s")
--- run_once("recollindex -m -n -w 60")
 run_once("dropbox start -i")
--- run_once("trash-cli")
--- run_once("/home/rob/bin/setxset.sh")
--- run_once("nm-applet")
