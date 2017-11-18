@@ -12,6 +12,7 @@ call plug#begin('~/.vim/plugged')
 
 Plug 'https://github.com/ctrlpvim/ctrlp.vim.git'
 Plug 'https://github.com/scrooloose/nerdtree.git'
+Plug 'https://github.com/tpope/vim-fugitive.git'
 Plug 'https://github.com/vim-airline/vim-airline.git'
 Plug 'https://github.com/vim-airline/vim-airline-themes.git'
 Plug 'https://github.com/lilydjwg/colorizer'
@@ -229,6 +230,8 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isT
 let g:NERDTreeHijackNetrw=1
 let NERDTreeShowBookmarks=1
 let NERDTreeShowHidden=1
+let g:NERDTreeDirArrowExpandable = '▸'
+let g:NERDTreeDirArrowCollapsible = '▾'
 nno <silent><leader>e :edit .<cr>
 
 " Save a admin file from regular user
@@ -299,7 +302,7 @@ let g:airline#extensions#tabline#buffer_nr_show = 1
 " let g:airline#extensions#tabline#show_splits = 0
 " let g:airline#extensions#tabline#show_tab_nr = 1
 " let g:airline#extensions#tabline#tab_nr_type = 2
-" let g:airline_theme='onedark'
+" let g:airline_theme='base16_spacemacs'
 let g:airline_theme='onedark'
 
   " Set the directory depth for CtrlP to open
