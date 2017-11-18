@@ -8,6 +8,7 @@ local beautiful = require("beautiful")
 local naughty = require("naughty")
 local menubar = require("menubar")
 local hotkeys_popup = require("awful.hotkeys_popup").widget
+require("collision")()
 
 -- Enable hotkeys help widget for VIM and other apps
 -- when client with a matching name is opened:
@@ -205,7 +206,7 @@ awful.screen.connect_for_each_screen(function(s)
     set_wallpaper(s)
 
     -- Each screen has its own tag table.
-    awful.tag({ "WEB ", "VID ", "DIR ", "TXT ", "DOC ", "GEN ", "SRC ", "PIC ", "SYS " }, s, awful.layout.layouts[1])
+    awful.tag({ "WEB ", "VID ", "DIR ", "ST3 ", "DOC ", "GEN ", "DEV ", "PIC ", "SYS " }, s, awful.layout.layouts[1])
 
     -- Create a promptbox for each screen
     s.mypromptbox = awful.widget.prompt()
