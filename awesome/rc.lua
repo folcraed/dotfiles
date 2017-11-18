@@ -8,7 +8,7 @@ local beautiful = require("beautiful")
 local naughty = require("naughty")
 local menubar = require("menubar")
 local hotkeys_popup = require("awful.hotkeys_popup").widget
-require("collision")()
+local collision = require("collision")
 
 -- Enable hotkeys help widget for VIM and other apps
 -- when client with a matching name is opened:
@@ -40,12 +40,15 @@ end
 -- }}}
 
 -- {{{ Variable definitions
--- Themes define colours, icons, font and wallpapers.
+-- Get the theme
 -- beautiful.init(awful.util.get_themes_dir() .. "Onedark/theme.lua")
-beautiful.init("/home/rob/.config/awesome/themes/Onedark/theme.lua")
+-- beautiful.init("/home/rob/.config/awesome/themes/Onedark/theme.lua")
+local theme_path = string.format("%s/.config/awesome/themes/%s/theme.lua", os.getenv("HOME"), "Onedark")
+beautiful.init(theme_path)
+
 
 -- This is used later as the default terminal and editor to run.
-terminal = "mate-terminal"
+terminal = "konsole"
 editor = os.getenv("EDITOR") or "vim"
 editor_cmd = terminal .. " -e " .. editor
 
@@ -259,6 +262,9 @@ awful.screen.connect_for_each_screen(function(s)
     }
 end)
 -- }}}
+
+-- Call collision for it's keybindings
+collision()
 
 -- {{{ Mouse bindings
 root.buttons(awful.util.table.join(
