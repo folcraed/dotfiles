@@ -12,6 +12,7 @@ Plug 'https://github.com/lilydjwg/colorizer'
 Plug 'https://github.com/tpope/vim-commentary.git'
 Plug 'https://github.com/rakr/vim-one'
 Plug 'https://github.com/Shougo/deoplete.nvim'
+Plug 'https://github.com/vim-syntastic/syntastic.git'
 Plug 'https://github.com/eugen0329/vim-esearch'
 " Plug 'https://github.com/edkolev/tmuxline.vim'
 
@@ -55,18 +56,28 @@ let g:esearch = {
 " set t_ZR=[23m
 
 " Set up colorschemes
-" let g:onedark_terminal_italics = 1
+let g:onedark_terminal_italics = 1
 " let g:onedark_termcolors = 256
 " let g:one_allow_italics = 1
 
 set background=dark
-" colorscheme onedark
+colorscheme onedark
 " colorscheme OceanicNext
-colorscheme hybrid_material
+" colorscheme hybrid_material
 " colorscheme base16-ocean
 
-" --{{{ Start of key mappings
+" Settings for syntastic
+let g:syntastic_python_checkers = ['flake8']
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+let g:syntastic_shell = "/bin/sh"
 
+" --{{{ Start of key mappings
 " These are for auto-brackets
 ino " ""<ESC>i
 ino { {}<ESC>i
@@ -200,8 +211,8 @@ let g:airline#extensions#tabline#buffer_nr_show = 1
 " let g:airline#extensions#tabline#show_splits = 0
 " let g:airline#extensions#tabline#show_tab_nr = 1
 " let g:airline#extensions#tabline#tab_nr_type = 2
-" let g:airline_theme='onedark'
-let g:airline_theme='hybrid'
+let g:airline_theme='onedark'
+" let g:airline_theme='hybrid'
 
   " Set the directory depth for CtrlP to open
 let g:ctrlp_by_filename = 1
