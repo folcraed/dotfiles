@@ -1,5 +1,5 @@
 " init.vim by Rob Boudreau
-" Last change:	2 Nov 2017
+" Last change:	21 Nov 2017
 
 " Call and/or install plugins with vim-plug
 call plug#begin('~/.config/nvim/plugged')
@@ -12,7 +12,6 @@ Plug 'https://github.com/lilydjwg/colorizer'
 Plug 'https://github.com/tpope/vim-commentary.git'
 Plug 'https://github.com/rakr/vim-one'
 Plug 'https://github.com/Shougo/deoplete.nvim'
-Plug 'https://github.com/vim-syntastic/syntastic.git'
 Plug 'https://github.com/eugen0329/vim-esearch'
 " Plug 'https://github.com/edkolev/tmuxline.vim'
 
@@ -65,17 +64,6 @@ colorscheme onedark
 " colorscheme OceanicNext
 " colorscheme hybrid_material
 " colorscheme base16-ocean
-
-" Settings for syntastic
-let g:syntastic_python_checkers = ['flake8']
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
-let g:syntastic_shell = "/bin/sh"
 
 " --{{{ Start of key mappings
 " These are for auto-brackets
