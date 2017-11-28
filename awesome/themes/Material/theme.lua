@@ -3,13 +3,23 @@
 ---------------------------
 
 local theme = {}
+profileConfigPath = "/home/rob/Dropbox/Settings/dotfiles/awesome/"
 
+-- Setting for the Collision keybindings lib
+theme.collision_resize_width = 10
+theme.Collision_shape_width = 20
+theme.collision_shape_height = 20
+theme.collision_focus_padding = 5
+
+-- Theme fonts
 theme.font          = "Roboto Mono for Powerline 10, FontAwesome 10"
--- theme.icons         = "/home/rob/.config/awesome/themes/Material/icons/"
+theme.taglist_font  = "Xirod 11"
 
+-- Theme coloring
 theme.bg_normal     = "#222D32"
-theme.bg_focus      = "#586e75"
+theme.bg_focus      = "#222D32"
 theme.bg_urgent     = "#ff0000"
+theme.bg_alternate  = "#bf616a"
 theme.bg_minimize   = "#839496"
 theme.bg_systray    = theme.bg_normal
 
@@ -18,82 +28,45 @@ theme.fg_focus      = "#eee8d5"
 theme.fg_urgent     = "#ffffff"
 theme.fg_minimize   = "#002b36"
 
-theme.useless_gap   = 3
+theme.useless_gap   = 5
 theme.border_width  = 1
 theme.border_normal = "#002b36"
 theme.border_focus  = "#586e75"
 theme.border_marked = "#91231c"
 
--- There are other variable sets
--- overriding the default one when
--- defined, the sets are:
--- taglist_[bg|fg]_[focus|urgent|occupied|empty]
--- tasklist_[bg|fg]_[focus|urgent]
--- titlebar_[bg|fg]_[normal|focus]
--- tooltip_[font|opacity|fg_color|bg_color|border_width|border_color]
--- mouse_finder_[color|timeout|animate_timeout|radius|factor]
--- Example:
---theme.taglist_bg_focus = "#ff0000"
-
 -- Display the taglist squares
-theme.taglist_squares_sel   = "/home/rob/.config/awesome/themes/Material/taglist/linefw.png"
-theme.taglist_squares_unsel = "/home/rob/.config/awesome/themes/Material/taglist/linew.png"
+theme.taglist_squares_sel   = profileConfigPath.."themes/Onedark/taglist/linefw.png"
+theme.taglist_squares_unsel = profileConfigPath.."themes/Onedark/taglist/linew.png"
 
--- Variables set for theming the menu:
--- menu_[bg|fg]_[normal|focus]
--- menu_[border_color|border_width]
-theme.menu_submenu_icon = "/home/rob/.config/awesome/themes/Material/submenu.png"
+theme.menu_submenu_icon = profileConfigPath.."themes/Material/submenu.png"
 theme.menu_height = 15
 theme.menu_width  = 100
 
--- You can add as many variables as
--- you wish and access them by using
--- beautiful.variable in your rc.lua
---theme.bg_widget = "#cc0000"
+-- Titlebar close
+theme.titlebar_close_button_normal = profileConfigPath.."themes/Material/titlebar/close_normal.png"
+theme.titlebar_close_button_focus  = profileConfigPath.."themes/Material/titlebar/close_focus.png"
 
--- Define the image to load
-theme.titlebar_close_button_normal = "/home/rob/.config/awesome/themes/Material/titlebar/close_normal.png"
-theme.titlebar_close_button_focus  = "/home/rob/.config/awesome/themes/Material/titlebar/close_focus.png"
+-- Titlebar minimize
+theme.titlebar_minimize_button_normal = profileConfigPath.."themes/Material/titlebar/minimize_normal.png"
+theme.titlebar_minimize_button_focus  = profileConfigPath.."themes/Material/titlebar/minimize_focus.png"
 
-theme.titlebar_minimize_button_normal = "/home/rob/.config/awesome/themes/Material/titlebar/minimize_normal.png"
-theme.titlebar_minimize_button_focus  = "/home/rob/.config/awesome/themes/Material/titlebar/minimize_focus.png"
-
-theme.titlebar_ontop_button_normal_inactive = "/home/rob/.config/awesome/themes/Material/titlebar/ontop_normal_inactive.png"
-theme.titlebar_ontop_button_focus_inactive  = "/home/rob/.config/awesome/themes/Material/titlebar/ontop_focus_inactive.png"
-theme.titlebar_ontop_button_normal_active = "/home/rob/.config/awesome/themes/Material/titlebar/ontop_normal_active.png"
-theme.titlebar_ontop_button_focus_active  = "/home/rob/.config/awesome/themes/Material/titlebar/ontop_focus_active.png"
-
-theme.titlebar_sticky_button_normal_inactive = "/home/rob/.config/awesome/themes/Material/titlebar/sticky_normal_inactive.png"
-theme.titlebar_sticky_button_focus_inactive  = "/home/rob/.config/awesome/themes/Material/titlebar/sticky_focus_inactive.png"
-theme.titlebar_sticky_button_normal_active = "/home/rob/.config/awesome/themes/Material/titlebar/sticky_normal_active.png"
-theme.titlebar_sticky_button_focus_active  = "/home/rob/.config/awesome/themes/Material/titlebar/sticky_focus_active.png"
-
-theme.titlebar_floating_button_normal_inactive = "/home/rob/.config/awesome/themes/Material/titlebar/floating_normal_inactive.png"
-theme.titlebar_floating_button_focus_inactive  = "/home/rob/.config/awesome/themes/Material/titlebar/floating_focus_inactive.png"
-theme.titlebar_floating_button_normal_active = "/home/rob/.config/awesome/themes/Material/titlebar/floating_normal_active.png"
-theme.titlebar_floating_button_focus_active  = "/home/rob/.config/awesome/themes/Material/titlebar/floating_focus_active.png"
-
-theme.titlebar_maximized_button_normal_inactive = "/home/rob/.config/awesome/themes/Material/titlebar/maximized_normal_inactive.png"
-theme.titlebar_maximized_button_focus_inactive  = "/home/rob/.config/awesome/themes/Material/titlebar/maximized_focus_inactive.png"
-theme.titlebar_maximized_button_normal_active = "/home/rob/.config/awesome/themes/Material/titlebar/maximized_normal_active.png"
-theme.titlebar_maximized_button_focus_active  = "/home/rob/.config/awesome/themes/Material/titlebar/maximized_focus_active.png"
+-- Titlebar maximize
+theme.titlebar_maximized_button_normal_inactive = profileConfigPath.."themes/Material/titlebar/maximized_normal_inactive.png"
+theme.titlebar_maximized_button_focus_inactive  = profileConfigPath.."themes/Material/titlebar/maximized_focus_inactive.png"
+theme.titlebar_maximized_button_normal_active = profileConfigPath.."themes/Material/titlebar/maximized_normal_active.png"
+theme.titlebar_maximized_button_focus_active  = profileConfigPath.."themes/Material/titlebar/maximized_focus_active.png"
 
 theme.wallpaper = "/home/rob/Dropbox/Photos/Backgrounds/tri-fadeno.jpg"
 
 -- You can use your own layout icons like this:
-theme.layout_fairh = "/home/rob/.config/awesome/themes/Material/layouts/fairhw.png"
-theme.layout_fairv = "/home/rob/.config/awesome/themes/Material/layouts/fairvw.png"
-theme.layout_floating  = "/home/rob/.config/awesome/themes/Material/layouts/floatingw.png"
-theme.layout_tilebottom = "/home/rob/.config/awesome/themes/Material/layouts/tilebottomw.png"
-theme.layout_tileleft   = "/home/rob/.config/awesome/themes/Material/layouts/tileleftw.png"
-theme.layout_tile = "/home/rob/.config/awesome/themes/Material/layouts/tilew.png"
-theme.layout_tiletop = "/home/rob/.config/awesome/themes/Material/layouts/tiletopw.png"
--- theme.layout_cornernw = "/home/rob/.config/awesome/themes/Material/layouts/cornernww.png"
--- theme.layout_cornerne = "/home/rob/.config/awesome/themes/Material/layouts/cornernew.png"
--- theme.layout_cornersw = "/home/rob/.config/awesome/themes/Material/layouts/cornersww.png"
--- theme.layout_cornerse = "/home/rob/.config/awesome/themes/Material/layouts/cornersew.png"
-
-theme.awesome_icon = "/home/rob/.config/awesome/icons/awesome16.png"
+theme.layout_fairh = profileConfigPath.."themes/Material/layouts/fairhw.png"
+theme.layout_fairv = profileConfigPath.."themes/Material/layouts/fairvw.png"
+theme.layout_floating  = profileConfigPath.."themes/Material/layouts/floatingw.png"
+theme.layout_tilebottom = profileConfigPath.."themes/Material/layouts/tilebottomw.png"
+theme.layout_tileleft   = profileConfigPath.."themes/Material/layouts/tileleftw.png"
+theme.layout_tile = profileConfigPath.."themes/Material/layouts/tilew.png"
+theme.layout_tiletop = profileConfigPath.."themes/Material/layouts/tiletopw.png"
+theme.awesome_icon = profileConfigPath.."icons/awesome16.png"
 
 -- Define the icon theme for application icons. If not set then the icons
 -- from /usr/share/icons and /usr/share/icons/hicolor will be used.
