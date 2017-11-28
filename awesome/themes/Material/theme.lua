@@ -43,19 +43,38 @@ theme.menu_height = 15
 theme.menu_width  = 100
 
 -- Titlebar close
-theme.titlebar_close_button_normal = profileConfigPath.."themes/Material/titlebar/close_normal.png"
-theme.titlebar_close_button_focus  = profileConfigPath.."themes/Material/titlebar/close_focus.png"
+theme.titlebar_close_button_normal = profileConfigPath.."themes/Onedark/titlebar/close_normal.png"
+theme.titlebar_close_button_normal_hover = profileConfigPath.."themes/Onedark/titlebar/close_normal_hover.png"
+theme.titlebar_close_button_normal_press = profileConfigPath.."themes/Onedark/titlebar/close_normal_press.png"
+theme.titlebar_close_button_focus  = profileConfigPath.."themes/Onedark/titlebar/close_focus.png"
+theme.titlebar_close_button_focus_hover = profileConfigPath.."themes/Onedark/titlebar/close_focus_hover.png"
+theme.titlebar_close_button_focus_press = profileConfigPath.."themes/Onedark/titlebar/close_focus_press.png"
 
 -- Titlebar minimize
-theme.titlebar_minimize_button_normal = profileConfigPath.."themes/Material/titlebar/minimize_normal.png"
-theme.titlebar_minimize_button_focus  = profileConfigPath.."themes/Material/titlebar/minimize_focus.png"
+theme.titlebar_minimize_button_normal = profileConfigPath.."themes/Onedark/titlebar/minimize_normal.png"
+theme.titlebar_minimize_button_normal_hover = profileConfigPath.."themes/Onedark/titlebar/minimize_normal_hover.png"
+theme.titlebar_minimize_button_normal_press = profileConfigPath.."themes/Onedark/titlebar/minimize_normal_press.png"
+theme.titlebar_minimize_button_focus  = profileConfigPath.."themes/Onedark/titlebar/minimize_focus.png"
+theme.titlebar_minimize_button_focus_hover = profileConfigPath.."themes/Onedark/titlebar/minimize_focus_hover.png"
+theme.titlebar_minimize_button_focus_press = profileConfigPath.."themes/Onedark/titlebar/minimize_focus_press.png"
 
--- Titlebar maximize
-theme.titlebar_maximized_button_normal_inactive = profileConfigPath.."themes/Material/titlebar/maximized_normal_inactive.png"
-theme.titlebar_maximized_button_focus_inactive  = profileConfigPath.."themes/Material/titlebar/maximized_focus_inactive.png"
-theme.titlebar_maximized_button_normal_active = profileConfigPath.."themes/Material/titlebar/maximized_normal_active.png"
-theme.titlebar_maximized_button_focus_active  = profileConfigPath.."themes/Material/titlebar/maximized_focus_active.png"
+-- Titlebar maximize inactive
+theme.titlebar_maximized_button_normal_inactive = profileConfigPath.."themes/Onedark/titlebar/maximized_normal_inactive.png"
+theme.titlebar_maximized_button_normal_inactive_hover = profileConfigPath.."themes/Onedark/titlebar/maximized_normal_inactive_hover.png"
+theme.titlebar_maximized_button_normal_inactive_press = profileConfigPath.."themes/Onedark/titlebar/maximized_normal_inactive_press.png"
+theme.titlebar_maximized_button_focus_inactive  = profileConfigPath.."themes/Onedark/titlebar/maximized_focus_inactive.png"
+theme.titlebar_maximized_button_focus_inactive_hover = profileConfigPath.."themes/Onedark/titlebar/maximized_focus_inactive_hover.png"
+theme.titlebar_maximized_button_focus_inactive_press = profileConfigPath.."themes/Onedark/titlebar/maximized_focus_inactive_press.png"
 
+-- Titlebar maximize active
+theme.titlebar_maximized_button_normal_active = profileConfigPath.."themes/Onedark/titlebar/maximized_normal_inactive.png"
+theme.titlebar_maximized_button_normal_active_hover = profileConfigPath.."themes/Onedark/titlebar/maximized_normal_active_hover.png"
+theme.titlebar_maximized_button_normal_active_press = profileConfigPath.."themes/Onedark/titlebar/maximized_normal_active_press.png"
+theme.titlebar_maximized_button_focus_active  = profileConfigPath.."themes/Onedark/titlebar/maximized_focus_inactive.png"
+theme.titlebar_maximized_button_focus_active_hover = profileConfigPath.."themes/Onedark/titlebar/maximized_focus_active_hover.png"
+theme.titlebar_maximized_button_focus_active_press = profileConfigPath.."themes/Onedark/titlebar/maximized_focus_active_press.png"
+
+-- Wallpaper
 theme.wallpaper = "/home/rob/Dropbox/Photos/Backgrounds/tri-fadeno.jpg"
 
 -- You can use your own layout icons like this:
@@ -68,8 +87,7 @@ theme.layout_tile = profileConfigPath.."themes/Material/layouts/tilew.png"
 theme.layout_tiletop = profileConfigPath.."themes/Material/layouts/tiletopw.png"
 theme.awesome_icon = profileConfigPath.."icons/awesome16.png"
 
--- Define the icon theme for application icons. If not set then the icons
--- from /usr/share/icons and /usr/share/icons/hicolor will be used.
+-- Using default icons from the system for application menu, etc.
 theme.icon_theme = nil
 
 return theme
