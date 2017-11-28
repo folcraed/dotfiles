@@ -8,11 +8,13 @@ Plug 'https://github.com/ctrlpvim/ctrlp.vim.git'
 Plug 'https://github.com/scrooloose/nerdtree.git'
 Plug 'https://github.com/vim-airline/vim-airline.git'
 Plug 'https://github.com/vim-airline/vim-airline-themes.git'
+Plug 'https://github.com/mkarmona/materialbox.git'
 Plug 'https://github.com/lilydjwg/colorizer'
 Plug 'https://github.com/tpope/vim-commentary.git'
 Plug 'https://github.com/rakr/vim-one'
 Plug 'https://github.com/Shougo/deoplete.nvim'
 Plug 'https://github.com/eugen0329/vim-esearch'
+Plug 'https://github.com/suan/vim-instant-markdown.git'
 " Plug 'https://github.com/edkolev/tmuxline.vim'
 
 call plug#end()
@@ -41,6 +43,7 @@ set noshowmode
 let g:deoplete#enable_at_startup = 1
 
 " --{{ Settings for vim-esearch
+" It uses <leader>ff to search
 let g:esearch = {
   \ 'adapter':    'grep',
   \ 'backend':    'nvim',
@@ -49,6 +52,10 @@ let g:esearch = {
   \ 'use':        ['word_under_cursor'],
   \}
 " --}} end of settings for vim-esearch
+
+" Settings for Instant Markdown
+let g:instant_markdown_autostart = 0
+nno <silent><F9> :InstantMarkdownPreview<cr>
 
 " This is supposed to allow italics in terminal
 " set t_ZH=[3m
@@ -60,9 +67,9 @@ let g:onedark_terminal_italics = 1
 " let g:one_allow_italics = 1
 
 set background=dark
-colorscheme onedark
+" colorscheme onedark
 " colorscheme OceanicNext
-" colorscheme hybrid_material
+colorscheme materialbox
 " colorscheme base16-ocean
 
 " --{{{ Start of key mappings
@@ -199,8 +206,8 @@ let g:airline#extensions#tabline#buffer_nr_show = 1
 " let g:airline#extensions#tabline#show_splits = 0
 " let g:airline#extensions#tabline#show_tab_nr = 1
 " let g:airline#extensions#tabline#tab_nr_type = 2
-let g:airline_theme='onedark'
-" let g:airline_theme='hybrid'
+" let g:airline_theme='onedark'
+let g:airline_theme='hybrid'
 
   " Set the directory depth for CtrlP to open
 let g:ctrlp_by_filename = 1
