@@ -52,7 +52,7 @@ end
 
 --| Get the theme |--
 
-local theme_path = string.format("%s/.config/awesome/themes/%s/theme.lua", os.getenv("HOME"), "Material")
+local theme_path = string.format("%s/.config/awesome/themes/%s/theme.lua", os.getenv("HOME"), "Onedark")
 beautiful.init(theme_path)
 
 
@@ -632,8 +632,8 @@ end
 
 -- | Autostart | --
 
-run_once("gnome-keyring-daemon -s")
-run_once("/usr/lib64/polkit-gnome/polkit-gnome-authentication-agent-1")
+-- run_once("gnome-keyring-daemon -s")
+run_once("/usr/lib64/mate-polkit/polkit-mate-authentication-agent-1")
 run_once("ibus-daemon -d -s")
 run_once("compton")
 run_once("clipit")

@@ -6,6 +6,7 @@ call plug#begin('~/.config/nvim/plugged')
 
 Plug 'https://github.com/ctrlpvim/ctrlp.vim.git'
 Plug 'https://github.com/scrooloose/nerdtree.git'
+Plug 'https://github.com/tpope/vim-fugitive.git'
 Plug 'https://github.com/vim-airline/vim-airline.git'
 Plug 'https://github.com/vim-airline/vim-airline-themes.git'
 Plug 'https://github.com/mkarmona/materialbox.git'
@@ -36,6 +37,7 @@ set splitright
 set noswapfile
 set number
 set relativenumber
+set inccommand=split
 set backupdir=~/Temp
 set noshowmode
 
@@ -47,7 +49,7 @@ let g:deoplete#enable_at_startup = 1
 let g:esearch = {
   \ 'adapter':    'grep',
   \ 'backend':    'nvim',
-  \ 'out':        'win',
+  \ 'out':        'qflist',
   \ 'batch_size': 1000,
   \ 'use':        ['word_under_cursor'],
   \}
@@ -67,9 +69,9 @@ let g:onedark_terminal_italics = 1
 " let g:one_allow_italics = 1
 
 set background=dark
-" colorscheme onedark
+colorscheme onedark
 " colorscheme OceanicNext
-colorscheme materialbox
+" colorscheme materialbox
 " colorscheme base16-ocean
 
 " --{{{ Start of key mappings
@@ -102,10 +104,10 @@ nno <silent><leader>c :bp\|bd #<CR>
 nno <F5> :set syntax=sh<cr>
 
 "Makes moving throught windows more sane
-nno <C-j> <C-w>j
-nno <C-k> <C-w>k
-nno <C-h> <C-w>h
-nno <C-l> <C-w>l
+nno <A-j> <C-w>j
+nno <A-k> <C-w>k
+nno <A-h> <C-w>h
+nno <A-l> <C-w>l
 
 "Make moving through lines normal, instead of jumping past wraps
 nno <silent> <Up> gk
@@ -206,8 +208,8 @@ let g:airline#extensions#tabline#buffer_nr_show = 1
 " let g:airline#extensions#tabline#show_splits = 0
 " let g:airline#extensions#tabline#show_tab_nr = 1
 " let g:airline#extensions#tabline#tab_nr_type = 2
-" let g:airline_theme='onedark'
-let g:airline_theme='hybrid'
+let g:airline_theme='onedark'
+" let g:airline_theme='hybrid'
 
   " Set the directory depth for CtrlP to open
 let g:ctrlp_by_filename = 1

@@ -3,6 +3,7 @@
 
 config_version: 1
 global:
+  auto_save.interval: 15000
   bindings.key_mappings:
     <Ctrl-6>: <Ctrl-^>
     <Ctrl-Enter>: <Ctrl-Return>
@@ -36,3 +37,7 @@ global:
   fonts.prompts: 10pt Roboto
   fonts.statusbar: 10pt Hack
   fonts.tabs: 10pt Hack
+  url.searchengines:
+    DEFAULT: https://duckduckgo.com/?q={}
+    aw: https://wiki.archlinux.org/?search={}
+    gg: https://www.google.com/search?hl=en&q={}
