@@ -18,6 +18,7 @@ Plug 'https://github.com/vim-airline/vim-airline-themes.git'
 Plug 'https://github.com/mkarmona/materialbox.git'
 Plug 'https://github.com/lilydjwg/colorizer'
 Plug 'https://github.com/tpope/vim-commentary.git'
+Plug 'https://github.com/tpope/vim-surround.git'
 Plug 'https://github.com/rakr/vim-one'
 Plug 'https://github.com/Shougo/neocomplete.vim'
 Plug 'https://github.com/eugen0329/vim-esearch'
@@ -138,6 +139,9 @@ let g:esearch#out#win#open = 'split'
 " Settings for Instant Markdown
 let g:instant_markdown_autostart = 0
 nno <silent><F9> :InstantMarkdownPreview<cr>
+
+" This is suppose to allow file links to be opened with 'gx'
+let g:netrw_browsex_viewer = "xdg-open"
 
 " This is supposed to allow italics in terminal
 set t_ZH=[3m

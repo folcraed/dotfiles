@@ -12,6 +12,7 @@ Plug 'https://github.com/vim-airline/vim-airline-themes.git'
 Plug 'https://github.com/mkarmona/materialbox.git'
 Plug 'https://github.com/lilydjwg/colorizer'
 Plug 'https://github.com/tpope/vim-commentary.git'
+Plug 'https://github.com/tpope/vim-surround.git'
 Plug 'https://github.com/rakr/vim-one'
 Plug 'https://github.com/Shougo/deoplete.nvim'
 Plug 'https://github.com/eugen0329/vim-esearch'
@@ -147,6 +148,8 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isT
 let g:NERDTreeHijackNetrw=1
 let NERDTreeShowBookmarks=1
 let NERDTreeShowHidden=1
+let g:NERDTreeDirArrowExpandable = '▸'
+let g:NERDTreeDirArrowCollapsible = '▾'
 nno <silent><leader>e :edit .<cr>
 
 " Save a admin file from regular user
