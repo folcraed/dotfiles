@@ -10,6 +10,7 @@ Plug 'https://github.com/tpope/vim-fugitive.git'
 Plug 'https://github.com/vim-airline/vim-airline.git'
 Plug 'https://github.com/vim-airline/vim-airline-themes.git'
 Plug 'https://github.com/mkarmona/materialbox.git'
+Plug 'https://github.com/arcticicestudio/nord-vim'
 Plug 'https://github.com/lilydjwg/colorizer'
 Plug 'https://github.com/tpope/vim-commentary.git'
 Plug 'https://github.com/tpope/vim-surround.git'
@@ -40,6 +41,7 @@ set number
 set relativenumber
 set inccommand=split
 set backupdir=~/Temp
+set writebackup
 set noshowmode
 
 " Startup deoplete on init
@@ -211,7 +213,8 @@ let g:airline#extensions#tabline#buffer_nr_show = 1
 " let g:airline#extensions#tabline#show_splits = 0
 " let g:airline#extensions#tabline#show_tab_nr = 1
 " let g:airline#extensions#tabline#tab_nr_type = 2
-let g:airline_theme='onedark'
+let g:airline_theme='nord'
+" let g:airline_theme='onedark'
 " let g:airline_theme='hybrid'
 
   " Set the directory depth for CtrlP to open

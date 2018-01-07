@@ -1,9 +1,12 @@
 " Will need to change background light/dark depending on scheme
 " set background=dark
+set background=light
 " colorscheme materialbox
 " let g:airline_theme='hybrid'
-colorscheme onedark
+" colorscheme onedark
+colorscheme PaperColor
 let g:airline_theme='onedark'
+let g:airline_theme='PaperColor'
 highlight Comment gui=italic
 set lines=48
 set columns=132
