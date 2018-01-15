@@ -52,7 +52,9 @@ set hlsearch
 set number
 set relativenumber
 set autoindent
-set backupdir=~/Temp
+" set backupdir=~/Temp
+set nobackup
+set nowritebackup
 set noshowmode
 
 " --{{ neocomplete settings

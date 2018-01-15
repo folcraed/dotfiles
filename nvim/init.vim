@@ -40,8 +40,9 @@ set noswapfile
 set number
 set relativenumber
 set inccommand=split
-set backupdir=~/Temp
-set writebackup
+" set backupdir=~/Temp
+set nobackup
+set nowritebackup
 set noshowmode
 
 " Startup deoplete on init
