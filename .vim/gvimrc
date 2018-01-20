@@ -4,9 +4,10 @@ set background=light
 " colorscheme materialbox
 " let g:airline_theme='hybrid'
 " colorscheme onedark
+" let g:airline_theme='onedark'
 colorscheme PaperColor
-let g:airline_theme='onedark'
-let g:airline_theme='PaperColor'
+" let g:airline_theme='PaperColor'
+let g:airline_theme='nord'
 highlight Comment gui=italic
 set lines=48
 set columns=132

@@ -15,9 +15,9 @@ Plug 'https://github.com/lilydjwg/colorizer'
 Plug 'https://github.com/tpope/vim-commentary.git'
 Plug 'https://github.com/tpope/vim-surround.git'
 Plug 'https://github.com/rakr/vim-one'
-Plug 'https://github.com/Shougo/deoplete.nvim'
+" Plug 'https://github.com/Shougo/deoplete.nvim'
 Plug 'https://github.com/eugen0329/vim-esearch'
-Plug 'https://github.com/suan/vim-instant-markdown.git'
+" Plug 'https://github.com/suan/vim-instant-markdown.git'
 " Plug 'https://github.com/edkolev/tmuxline.vim'
 
 call plug#end()
@@ -46,7 +46,7 @@ set nowritebackup
 set noshowmode
 
 " Startup deoplete on init
-let g:deoplete#enable_at_startup = 1
+" let g:deoplete#enable_at_startup = 1
 
 " --{{ Settings for vim-esearch
 " It uses <leader>ff to search
@@ -60,8 +60,8 @@ let g:esearch = {
 " --}} end of settings for vim-esearch
 
 " Settings for Instant Markdown
-let g:instant_markdown_autostart = 0
-nno <silent><F9> :InstantMarkdownPreview<cr>
+" let g:instant_markdown_autostart = 0
+" nno <silent><F9> :InstantMarkdownPreview<cr>
 
 " This is supposed to allow italics in terminal
 " set t_ZH=[3m
