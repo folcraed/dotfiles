@@ -88,6 +88,9 @@ colorscheme onedark
 
 " --{{{ Start of key mappings
 
+" This is to open markdown in okular
+nno <silent><F9> :!okular %:p<cr>
+
 " These are for auto-brackets
 ino " ""<ESC>i
 ino { {}<ESC>i

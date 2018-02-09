@@ -45,8 +45,8 @@ set nobackup
 set nowritebackup
 set noshowmode
 
-" Startup deoplete on init
-" let g:deoplete#enable_at_startup = 1
+" Set xdg-open to open links with gx
+let g:netrw_browsex_viewer = "xdg-open"
 
 " --{{ Settings for vim-esearch
 " It uses <leader>ff to search
@@ -58,10 +58,6 @@ let g:esearch = {
   \ 'use':        ['word_under_cursor'],
   \}
 " --}} end of settings for vim-esearch
-
-" Settings for Instant Markdown
-" let g:instant_markdown_autostart = 0
-" nno <silent><F9> :InstantMarkdownPreview<cr>
 
 " This is supposed to allow italics in terminal
 " set t_ZH=[3m
@@ -79,6 +75,10 @@ colorscheme onedark
 " colorscheme base16-ocean
 
 " --{{{ Start of key mappings
+
+" This opens markdown in okular
+nno <silent><F9> :!okular %:p<cr>
+
 " These are for auto-brackets
 ino " ""<ESC>i
 ino { {}<ESC>i
