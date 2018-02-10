@@ -114,10 +114,10 @@ nno <A-h> <C-w>h
 nno <A-l> <C-w>l
 
 "Make moving through lines normal, instead of jumping past wraps
-nno <silent> <Up> gk
-nno <silent> <Down> gj
-nno <silent> k gk
-nno <silent> j gj
+"nno <silent> <Up> gk
+"nno <silent> <Down> gj
+"nno <silent> k gk
+"nno <silent> j gj
 
 " Move lines up or down using CTRL+arrow key
 nno <C-down> ddp
