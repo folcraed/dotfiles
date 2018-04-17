@@ -55,6 +55,9 @@ set nobackup
 set nowritebackup
 set noshowmode
 
+" Sets the leader from \ to SPACE
+let mapleader = " "
+
 " --{{ Settings for vim-esearch
 let g:esearch = {
   \ 'adapter':    'grep',
@@ -80,7 +83,8 @@ set t_ZR=[23m
 " let g:one_allow_italics = 1
 
 set background=dark
-colorscheme onedark
+" colorscheme onedark
+colorscheme one
 " colorscheme OceanicNext
 " colorscheme hybrid_material
 " colorscheme base16-ocean
@@ -128,8 +132,8 @@ nno <C-l> <C-w>l
 "Make moving through lines normal, instead of jumping past wraps
 nno <silent> <Up> gk
 nno <silent> <Down> gj
-nno <silent> k gk
-nno <silent> j gj
+nno <expr> k (v:count? 'k' : 'gk')
+nno <expr> j (v:count? 'j' : 'gj')
 
 " Do a search through current project files for selected word
 nno <leader>s :execute "vimgrep /" . expand("<cword>") . "/j **" <Bar> cw<CR>
@@ -244,7 +248,9 @@ let g:airline#extensions#tabline#buffer_nr_show = 1
 " let g:airline#extensions#tabline#show_tab_nr = 1
 " let g:airline#extensions#tabline#tab_nr_type = 2
 " let g:airline_theme='base16_spacemacs'
-let g:airline_theme='onedark'
+" let g:airline_theme='onedark'
+let g:airline_theme='nord'
+" let g:airline_theme='onedark'
 " let g:airline_theme='hybrid'
 
   " Set the directory depth for CtrlP to open

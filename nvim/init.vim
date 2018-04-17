@@ -48,6 +48,9 @@ set noshowmode
 " Set xdg-open to open links with gx
 let g:netrw_browsex_viewer = "xdg-open"
 
+" Sets the leader from \ to SPACE
+let mapleader = " "
+
 " --{{ Settings for vim-esearch
 " It uses <leader>ff to search
 let g:esearch = {
@@ -77,7 +80,7 @@ colorscheme onedark
 " --{{{ Start of key mappings
 
 " This opens markdown in okular
-nno <silent><F9> :!okular %:p<cr>
+nno <silent><F9> :!okular %:p &<cr><cr>
 
 " These are for auto-brackets
 ino " ""<ESC>i
@@ -114,10 +117,10 @@ nno <A-h> <C-w>h
 nno <A-l> <C-w>l
 
 "Make moving through lines normal, instead of jumping past wraps
-"nno <silent> <Up> gk
-"nno <silent> <Down> gj
-"nno <silent> k gk
-"nno <silent> j gj
+nno <silent> <Up> gk
+nno <silent> <Down> gj
+nno <expr> k (v:count? 'k' : 'gk')
+nno <expr> j (v:count? 'j' : 'gj')
 
 " Move lines up or down using CTRL+arrow key
 nno <C-down> ddp
