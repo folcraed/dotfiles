@@ -1,5 +1,5 @@
 " init.vim by Rob Boudreau
-" Last change:	21 Nov 2017
+" Last change:	26 Apr 2018
 
 " Call and/or install plugins with vim-plug
 call plug#begin('~/.config/nvim/plugged')
@@ -72,10 +72,11 @@ let g:onedark_terminal_italics = 1
 " let g:one_allow_italics = 1
 
 set background=dark
-colorscheme onedark
+" colorscheme onedark
 " colorscheme OceanicNext
 " colorscheme materialbox
 " colorscheme base16-ocean
+colorscheme hybrid_material
 
 " --{{{ Start of key mappings
 
@@ -217,9 +218,9 @@ let g:airline#extensions#tabline#buffer_nr_show = 1
 " let g:airline#extensions#tabline#show_splits = 0
 " let g:airline#extensions#tabline#show_tab_nr = 1
 " let g:airline#extensions#tabline#tab_nr_type = 2
-let g:airline_theme='nord'
+" let g:airline_theme='nord'
 " let g:airline_theme='onedark'
-" let g:airline_theme='hybrid'
+let g:airline_theme='hybrid'
 
   " Set the directory depth for CtrlP to open
 let g:ctrlp_by_filename = 1

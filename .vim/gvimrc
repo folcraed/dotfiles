@@ -1,13 +1,29 @@
+" Settings for GVim outside of .vimrc
+
 " Will need to change background light/dark depending on scheme
-" set background=dark
-set background=light
+set background=dark
+" set background=light
+
+" Material colors
 " colorscheme materialbox
 " let g:airline_theme='hybrid'
+
+" Different Material colors
+colorscheme hybrid_material
+let g:airline_theme='hybrid'
+
+" Pure Onedark theme
 " colorscheme onedark
 " let g:airline_theme='onedark'
-colorscheme PaperColor
+
+" Onedark theme with Nord Airline
+" colorscheme onedark
+" let g:airline_theme='nord'
+
+" PaperColor light theme
+" colorscheme PaperColor
 " let g:airline_theme='PaperColor'
-let g:airline_theme='nord'
+
 highlight Comment gui=italic
 set lines=48
 set columns=132
