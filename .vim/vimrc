@@ -87,7 +87,8 @@ set background=dark
 " colorscheme onedark
 " colorscheme one
 " colorscheme OceanicNext
-colorscheme hybrid_material
+colorscheme nord
+" colorscheme hybrid_material
 " colorscheme base16-ocean
 " colorscheme materialbox
 
@@ -249,9 +250,9 @@ let g:airline#extensions#tabline#buffer_nr_show = 1
 " let g:airline#extensions#tabline#show_tab_nr = 1
 " let g:airline#extensions#tabline#tab_nr_type = 2
 " let g:airline_theme='base16_spacemacs'
-" let g:airline_theme='nord'
+let g:airline_theme='nord'
 " let g:airline_theme='onedark'
-let g:airline_theme='hybrid'
+" let g:airline_theme='hybrid'
 
   " Set the directory depth for CtrlP to open
 let g:ctrlp_by_filename = 1

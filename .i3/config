@@ -17,10 +17,10 @@ gaps inner 10
 # gaps outer 2
 
 # start a terminal
-bindsym $mod+Return exec --no-startup-id /usr/bin/tilix
+bindsym $mod+Return exec --no-startup-id /usr/bin/konsole
 
 # Open Rofi application menu
-bindsym $mod+p exec --no-startup-id rofi -show drun -sidebar-mode -font "Hack 10" -width "20" -opacity "90" -terminal "tilix"
+bindsym $mod+p exec --no-startup-id rofi -show drun -sidebar-mode -font "Ubuntu Mono 10" -width "20" -opacity "90" -terminal "konsole"
 # bindsym $mod+p exec --no-startup-id dmenu_run
 
 # kill focused window
@@ -148,14 +148,15 @@ mode "resize" {
 
 new_window pixel 1
 new_float pixel 1
-# for_window [class="^.*"] floating enable
-for_window [class="gwenview"] floating enable
-for_window [class="okular"] floating enable
-for_window [class="vlc"] floating enable
-for_window [class="mpv"] floating enable
-for_window [class="feh"] floating enable
+for_window [class="^.*"] floating enable
+# for_window [class="gwenview"] floating enable
+# for_window [class="okular"] floating enable
+# for_window [class="vlc"] floating enable
+# for_window [class="mpv"] floating enable
+# for_window [class="zathura"] floating enable
+# for_window [class="feh"] floating enable
 # for_window [class="Gcolor3"] floating enable
-for_window [class="Gvim"] floating enable
+# for_window [class="Gvim"] floating enable
 
 set $bg_color #1C1C1C
 set $fg_color #60AEEE
@@ -180,15 +181,14 @@ bar {
 # }
 
 # Startup apps
-# exec --no-startup-id nvidia-settings --load-config-only
 # exec --no-startup-id gnome-keyring-daemon -s
 exec --no-startup-id /usr/lib64/polkit-gnome/polkit-gnome-authentication-agent-1
 # exec --no-startup-id mate-power-manager
 exec --no-startup-id ibus-daemon -s
 exec --no-startup-id /home/rob/.fehbg
 exec --no-startup-id compton
-exec --no-startup-id clipit
-exec --no-startup-id xclip
-# exec --no-startup-id tracker daemon -s
+exec --no-startup-id tracker daemon -s
 exec --no-startup-id dropbox start -i
+exec --no-startup-id xclip
+exec --no-startup-id clipit
 # vim: ft=sh

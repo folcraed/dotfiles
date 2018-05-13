@@ -9,16 +9,16 @@ set background=dark
 " let g:airline_theme='hybrid'
 
 " Different Material colors
-colorscheme hybrid_material
-let g:airline_theme='hybrid'
+" colorscheme hybrid_material
+" let g:airline_theme='hybrid'
 
 " Pure Onedark theme
 " colorscheme onedark
 " let g:airline_theme='onedark'
 
-" Onedark theme with Nord Airline
-" colorscheme onedark
-" let g:airline_theme='nord'
+" Nord theme with Nord Airline
+colorscheme nord
+let g:airline_theme='nord'
 
 " PaperColor light theme
 " colorscheme PaperColor
