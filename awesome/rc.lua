@@ -59,7 +59,7 @@ beautiful.init(theme_path)
 --| Default terminal and editor |--
 
 terminal = "tilix"
-editor = os.getenv("EDITOR") or "vim"
+editor = os.getenv("EDITOR") or "nvim"
 editor_cmd = terminal .. " -e " .. editor
 
 --| Default modkey. |--
@@ -633,8 +633,8 @@ end
 -- | Autostart | --
 
 -- run_once("gnome-keyring-daemon -s")
-run_once("/usr/lib64/mate-polkit/polkit-mate-authentication-agent-1")
-run_once("ibus-daemon -d -s")
+run_once("/usr/lib64/polkit-gnome/polkit-gnome-authentication-agent-1")
+run_once("ibus-daemon -s")
 run_once("compton")
 run_once("clipit")
 run_once("xclip")

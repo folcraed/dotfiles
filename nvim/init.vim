@@ -74,11 +74,11 @@ let g:nord_italic = 1
 let g:nord_italic_comments = 1
 
 set background=dark
-" colorscheme onedark
+colorscheme onedark
 " colorscheme OceanicNext
 " colorscheme materialbox
 " colorscheme base16-ocean
-colorscheme nord
+" colorscheme nord
 " colorscheme hybrid_material
 
 " --{{{ Start of key mappings

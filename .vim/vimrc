@@ -84,10 +84,10 @@ set t_ZR=[23m
 " let g:one_allow_italics = 1
 
 set background=dark
-" colorscheme onedark
+colorscheme onedark
 " colorscheme one
 " colorscheme OceanicNext
-colorscheme nord
+" colorscheme nord
 " colorscheme hybrid_material
 " colorscheme base16-ocean
 " colorscheme materialbox
