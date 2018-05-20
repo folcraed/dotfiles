@@ -96,13 +96,13 @@ bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 1 -3%
 # switch to workspace
 bindsym $mod+1 workspace 1:Web
 bindsym $mod+2 workspace 2:Media
-bindsym $mod+3 workspace 3:Sys
+bindsym $mod+3 workspace 3:Files
 bindsym $mod+4 workspace 4:Write
-bindsym $mod+5 workspace 5:Files
+bindsym $mod+5 workspace 5:Info
 bindsym $mod+6 workspace 6:Gen
 bindsym $mod+7 workspace 7:Code
 bindsym $mod+8 workspace 8:Pics
-bindsym $mod+9 workspace 9:Info
+bindsym $mod+9 workspace 9:Sys
 bindsym $mod+0 workspace 10:Misc
 
 # move focused container to workspace
@@ -181,7 +181,7 @@ bar {
 # }
 
 # Startup apps
-# exec --no-startup-id gnome-keyring-daemon -s
+exec --no-startup-id gnome-keyring-daemon -s
 exec --no-startup-id /usr/lib64/polkit-gnome/polkit-gnome-authentication-agent-1
 # exec --no-startup-id mate-power-manager
 exec --no-startup-id ibus-daemon -s
