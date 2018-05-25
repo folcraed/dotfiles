@@ -207,6 +207,7 @@ bindsym $mod+r mode "resize"
 bar {
     position top
     font "pango:Hack 9"
+    tray_output primary
     colors {
         statusline #EFF1F5
         background #2E3440
@@ -221,6 +222,7 @@ include /etc/sway/config.d/*
 exec --no-startup-id gnome-keyring-daemon -s
 exec --no-startup-id /usr/lib64/polkit-gnome/polkit-gnome-authentication-agent-1
 exec --no-startup-id clipit
+exec --no-startup-id dropbox start -i
 
 
 # vim: ft=sh

@@ -46,7 +46,8 @@ font-0 = Hack:size=9;0
 font-1 = FontAwesome:size=10;1
 font-2 = Xirod:size=8;1
 
-modules-left = i3
+modules-left = bspwm
+; modules-left = i3
 modules-center = xwindow
 modules-right = volume filesystem memory cpu temperature date
 
@@ -178,7 +179,7 @@ type = internal/cpu
 interval = 2
 ;format-prefix = " "
 ;format-prefix-foreground = ${colors.foreground-alt}
-format-underline = #A3BE8C
+; format-underline = #A3BE8C
 label = %percentage%%
 
 [module/memory]
@@ -186,7 +187,7 @@ type = internal/memory
 interval = 2
 ;format-prefix = " "
 ;format-prefix-foreground = ${colors.foreground-alt}
-format-underline = #88C0D0
+; format-underline = #88C0D0
 label = %percentage_used%%
 
 ;[module/eth]
@@ -217,7 +218,7 @@ time-alt = %H:%M:%S
 
 ;format-prefix = 
 ;format-prefix-foreground = ${colors.foreground-alt}
-format-underline = #5E81AC
+; format-underline = #5E81AC
 
 label = %date% %time%
 
@@ -256,10 +257,10 @@ warn-temperature = 60
 
 ;format = <ramp> <label>
 format = <label>
-format-underline = #EBCB8B
+; format-underline = #EBCB8B
 ;format-warn = <ramp> <label-warn>
 format-warn = <label-warn>
-format-warn-underline = ${self.format-underline}
+; format-warn-underline = ${self.format-underline}
 
 label = %temperature%
 label-warn = %temperature%
@@ -278,7 +279,7 @@ screenchange-reload = true
 ;compositing-border = over
 
 [global/wm]
-margin-top = 2
-margin-bottom = 5
+margin-top = 1
+margin-bottom = 1
 
 ; vim:ft=dosini
