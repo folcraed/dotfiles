@@ -149,17 +149,26 @@ mode "resize" {
 new_window pixel 1
 new_float pixel 1
 # for_window [class="^.*"] floating enable
-# for_window [class="gwenview"] floating enable
+for_window [class="Sxiv"] floating enable
 # for_window [class="okular"] floating enable
 # for_window [class="vlc"] floating enable
 for_window [class="mpv"] floating enable
 for_window [class="zathura"] floating enable
 # for_window [class="feh"] floating enable
-# for_window [class="Gcolor3"] floating enable
+for_window [class="Gcolor3"] floating enable
 # for_window [class="Gvim"] floating enable
 
-set $bg_color #1C1C1C
-set $fg_color #60AEEE
+# Set Onedark colors
+set $bg_color #8FA1B3
+set $tx_color #65737E
+set $fb_color #60AEEE
+set $uf_color #2B303B
+set $ur_color #BF616A
+
+# Set the colors for windows and borders
+client.focused      $fb_color   $bg_color   $uf_color
+client.unfocused    $uf_color   $uf_color   $tx_color
+client.urgent       $ur_color   $ur_color   $uf_color
 
 bar {
     i3bar_command /home/rob/.config/polybar/launch.sh

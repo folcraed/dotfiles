@@ -137,7 +137,8 @@
 " Terminals that support italics
 let s:terms_italic=[
             \"rxvt",
-            \"gnome-terminal"
+            \"gnome-terminal",
+            \"xterm-256color"
             \]
 " For reference only, terminals are known to be incomptible.
 " Terminals that are in neither list need to be tested.
@@ -148,7 +149,7 @@ let s:terms_noitalic=[
 if has("gui_running")
     let s:terminal_italic=1 " TODO: could refactor to not require this at all
 else
-    let s:terminal_italic=0 " terminals will be guilty until proven compatible
+    let s:terminal_italic=1 " terminals will be guilty until proven compatible
     for term in s:terms_italic
         if $TERM_PROGRAM =~ term
             let s:terminal_italic=1

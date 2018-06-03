@@ -1,4 +1,4 @@
 " Set the font for Neovim-qt
 if exists('g:GuiLoaded')
-    GuiFont Cousine for Powerline:h10
+    GuiFont! Knack Nerd Font:h10
 endif

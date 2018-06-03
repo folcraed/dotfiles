@@ -76,5 +76,6 @@ xterm*highlightColor:          S_base3
 ! Settings for Rofi
 rofi.color-enable: true
 ! State               bg           fg        bgalt       hlbg        hlfg
-rofi.color-normal:   #5A6367,    #383C4A,    #5A6367,    #546E7A,    #F3F3F3
-rofi.color-window:   #D3D7CF,    #383C4A
+rofi.color-normal:   #002b36,    #93a1a1,    #073642,    #586e75,    #fdf6e3
+rofi.color-active:   #5A6367,    #fdf6e3,    #073642,    #586e75,    #fdf6e3
+rofi.color-window:   #002b36,    #93a1a1

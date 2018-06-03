@@ -1,5 +1,5 @@
 " init.vim by Rob Boudreau
-" Last change:	26 Apr 2018
+" Last change:	2 Jun 2018
 
 " Call and/or install plugins with vim-plug
 call plug#begin('~/.config/nvim/plugged')
@@ -10,6 +10,7 @@ Plug 'https://github.com/vim-airline/vim-airline.git'
 Plug 'https://github.com/vim-airline/vim-airline-themes.git'
 Plug 'https://github.com/mkarmona/materialbox.git'
 Plug 'https://github.com/arcticicestudio/nord-vim'
+Plug 'https://github.com/lifepillar/vim-solarized8'
 Plug 'https://github.com/lilydjwg/colorizer'
 Plug 'https://github.com/tpope/vim-commentary.git'
 Plug 'https://github.com/tpope/vim-surround.git'
@@ -18,13 +19,14 @@ Plug 'https://github.com/rakr/vim-one'
 " Plug 'https://github.com/Shougo/deoplete.nvim'
 Plug 'https://github.com/eugen0329/vim-esearch'
 " Plug 'https://github.com/suan/vim-instant-markdown.git'
-" Plug 'https://github.com/edkolev/tmuxline.vim'
+Plug 'https://github.com/ryanoasis/vim-devicons'
 
 call plug#end()
 
 " Set global options
 " set t_ut=
 set termguicolors
+set guifont=UbuntuMono\ Nerd\ Font:h11
 set encoding=utf-8
 set expandtab
 set tabstop=4
@@ -74,8 +76,8 @@ let g:nord_italic = 1
 let g:nord_italic_comments = 1
 
 set background=dark
-colorscheme onedark
-" colorscheme OceanicNext
+" colorscheme onedark
+colorscheme solarized8
 " colorscheme materialbox
 " colorscheme base16-ocean
 " colorscheme nord
@@ -221,7 +223,8 @@ let g:airline#extensions#tabline#buffer_nr_show = 1
 " let g:airline#extensions#tabline#show_splits = 0
 " let g:airline#extensions#tabline#show_tab_nr = 1
 " let g:airline#extensions#tabline#tab_nr_type = 2
-let g:airline_theme='nord'
+" let g:airline_theme='nord'
+let g:airline_theme='solarized'
 " let g:airline_theme='onedark'
 " let g:airline_theme='hybrid'
 
