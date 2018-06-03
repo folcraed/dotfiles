@@ -17,7 +17,7 @@ gaps inner 10
 # gaps outer 2
 
 # start a terminal
-bindsym $mod+Return exec --no-startup-id /usr/bin/konsole
+bindsym $mod+Return exec --no-startup-id /usr/bin/tilix
 
 # Open Rofi application menu
 bindsym $mod+p exec --no-startup-id rofi -show drun -sidebar-mode -font "Ubuntu Mono 10" -width "20" -opacity "90" -terminal "konsole"
@@ -153,17 +153,24 @@ for_window [class="Sxiv"] floating enable
 # for_window [class="okular"] floating enable
 # for_window [class="vlc"] floating enable
 for_window [class="mpv"] floating enable
-for_window [class="zathura"] floating enable
+for_window [class="Zathura"] floating enable
 # for_window [class="feh"] floating enable
 for_window [class="Gcolor3"] floating enable
 # for_window [class="Gvim"] floating enable
 
 # Set Onedark colors
-set $bg_color #8FA1B3
-set $tx_color #65737E
-set $fb_color #60AEEE
-set $uf_color #2B303B
-set $ur_color #BF616A
+# set $bg_color #8FA1B3
+# set $tx_color #65737E
+# set $fb_color #60AEEE
+# set $uf_color #2B303B
+# set $ur_color #BF616A
+
+# Set Solarized colors
+set $bg_color #93a1a1
+set $tx_color #586e75
+set $fb_color #2aa198
+set $uf_color #073642
+set $ur_color #dc322f
 
 # Set the colors for windows and borders
 client.focused      $fb_color   $bg_color   $uf_color
@@ -192,12 +199,12 @@ bar {
 # Startup apps
 exec --no-startup-id gnome-keyring-daemon -s
 exec --no-startup-id /usr/lib64/polkit-gnome/polkit-gnome-authentication-agent-1
-# exec --no-startup-id mate-power-manager
 exec --no-startup-id ibus-daemon -s
 exec --no-startup-id /home/rob/.fehbg
 exec --no-startup-id compton
 exec --no-startup-id tracker daemon -s
 exec --no-startup-id dropbox start -i
+exec --no-startup-id dunst
 exec --no-startup-id xclip
 exec --no-startup-id clipit
 # vim: ft=sh

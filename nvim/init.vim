@@ -225,6 +225,7 @@ let g:airline#extensions#tabline#buffer_nr_show = 1
 " let g:airline#extensions#tabline#tab_nr_type = 2
 " let g:airline_theme='nord'
 let g:airline_theme='solarized'
+let g:airline_solarized_bg='dark'
 " let g:airline_theme='onedark'
 " let g:airline_theme='hybrid'
 
