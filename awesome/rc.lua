@@ -52,7 +52,7 @@ end
 
 --| Get the theme |--
 
-local theme_path = string.format("%s/.config/awesome/themes/%s/theme.lua", os.getenv("HOME"), "Onedark")
+local theme_path = string.format("%s/.config/awesome/themes/%s/theme.lua", os.getenv("HOME"), "Solarized")
 beautiful.init(theme_path)
 
 
@@ -130,7 +130,7 @@ lain.widget.calendar({
     attach_to = {mytextclock},
     notification_preset = {
         font = "Roboto Mono for Powerline 10",
-        fg = "#60AEEE"},
+        fg = "#93a1a1"},
 })
 myweather   = lain.widget.weather({
     city_id = 5666639,
@@ -138,23 +138,23 @@ myweather   = lain.widget.weather({
     settings = function()
         descr = weather_now["weather"][1]["description"]:lower()
         units = math.floor(weather_now["main"]["temp"])
-        widget:set_markup(markup("#60AEEE", " " .. descr .. " @ " .. units .. "°F "))
+        widget:set_markup(markup("#93a1a1", " " .. descr .. " @ " .. units .. "°F "))
     end
 })
 local cputemp = lain.widget.temp({
     tempfile = "/sys/class/thermal/thermal_zone2/temp",
     settings = function()
-      widget:set_markup(markup("#C577DC", " " .. coretemp_now .. "°C"))
+      widget:set_markup(markup("#2aa198", " " .. coretemp_now .. "°C"))
     end
 })
 local mycpu = lain.widget.cpu({
     settings = function()
-        widget:set_markup(markup("#E4BF7A", " " .. cpu_now[1].usage .. "% " .. cpu_now[2].usage .. "% " .. cpu_now[3].usage .. "% " .. cpu_now[4].usage .. "% "))
+        widget:set_markup(markup("#b58900", " " .. cpu_now[1].usage .. "% " .. cpu_now[2].usage .. "% " .. cpu_now[3].usage .. "% " .. cpu_now[4].usage .. "% "))
     end
 })
 local mymem = lain.widget.mem({
     settings = function()
-        widget:set_markup(markup("#56B6C2", " " .. mem_now.used .. "Mb " .. mem_now.perc .. "% "))
+        widget:set_markup(markup("#d33682", " " .. mem_now.used .. "Mb " .. mem_now.perc .. "% "))
     end
 })
 
@@ -223,7 +223,7 @@ awful.screen.connect_for_each_screen(function(s)
     set_wallpaper(s)
 
     -- Each screen has its own tag table.
-    awful.tag({ "WEB ", "VID ", "DIR ", "DOC", "INF ", "GEN ", "DEV ", "PIC ", "SYS " }, s, awful.layout.layouts[1])
+    awful.tag({ "WEB", "VID", "DIR", "DOC", "INF", "GEN", "DEV", "IMG", "SYS" }, s, awful.layout.layouts[1])
 
     -- Create a promptbox for each screen
     s.mypromptbox = awful.widget.prompt()
@@ -541,7 +541,7 @@ awful.rules.rules = {
 
     -- Add titlebars to normal clients and dialogs
     { rule_any = {type = { "normal", "dialog" }
-      }, properties = { titlebars_enabled = true }
+      }, properties = { titlebars_enabled = false }
     },
 }
 -- }}}
@@ -632,11 +632,12 @@ end
 
 -- | Autostart | --
 
--- run_once("gnome-keyring-daemon -s")
+run_once("gnome-keyring-daemon -s")
 run_once("/usr/lib64/polkit-gnome/polkit-gnome-authentication-agent-1")
 run_once("ibus-daemon -s")
 run_once("compton")
 run_once("clipit")
 run_once("xclip")
+run_once("nm-applet")
 run_once("tracker daemon -s")
 run_once("dropbox start -i")

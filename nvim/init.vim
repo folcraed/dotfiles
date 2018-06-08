@@ -100,8 +100,10 @@ nno n nzzzv
 nno N Nzzzv
 
 " These increase/decrease window split sizes
-nno <c-left> 5<c-w>>
-nno <c-right> 5<c-w><
+nno <A-left> <C-W>>
+nno <A-right> <C-W><
+nno <A-up> <C-W>+
+nno <A-down> <C-W>-
 
 " This turns off search highlighting
 nno <silent><leader>\ :noh<cr>

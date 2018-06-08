@@ -14,7 +14,7 @@ set $down j
 set $up k
 set $right l
 # Your preferred terminal emulator
-set $term /usr/bin/konsole
+set $term /usr/bin/konsole -platform wayland
 # Your preferred application launcher
 set $menu rofi -show drun -sidebar-mode -font "Ubuntu Mono 10" -width "20" -opacity "90" -terminal "konsole"
 
@@ -22,7 +22,7 @@ set $menu rofi -show drun -sidebar-mode -font "Ubuntu Mono 10" -width "20" -opac
 ### Output configuration
 #
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
-output * bg /home/rob/Pictures/shapes.jpg fill
+output * bg /home/rob/Pictures/sailingship-Solarized.jpg fill
 #
 # Example configuration:
 #
@@ -64,7 +64,7 @@ default_border pixel 1
     bindsym $mod+Shift+q kill
 
     # start your launcher
-    bindsym $mod+d exec $menu
+    bindsym $mod+p exec $menu
 
     # Drag floating windows by holding down $mod and left mouse button.
     # Resize them with right mouse button + $mod.
@@ -209,10 +209,10 @@ bar {
     font "pango:Hack 9"
     tray_output primary
     colors {
-        statusline #EFF1F5
-        background #2E3440
-        inactive_workspace #282C34 #282C34 #5c5c5c
-        focused_workspace  #65737E #65737E #EFF1F5
+        statusline #fdf6e3
+        background #002B3680
+        inactive_workspace #073642 #073642 #586e75
+        focused_workspace  #657b83 #657b83 #fdf6e3
     }
 }
 
