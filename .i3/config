@@ -177,9 +177,9 @@ client.focused      $fb_color   $bg_color   $uf_color
 client.unfocused    $uf_color   $uf_color   $tx_color
 client.urgent       $ur_color   $ur_color   $uf_color
 
-bar {
-    i3bar_command /home/rob/.config/polybar/launch.sh
-}
+# bar {
+#     i3bar_command /home/rob/.config/polybar/launch.sh
+# }
 # Start i3bar to display a workspace bar plus the system information
 # bar {
 #         position top
@@ -202,6 +202,7 @@ exec --no-startup-id /usr/lib64/polkit-gnome/polkit-gnome-authentication-agent-1
 exec --no-startup-id ibus-daemon -s
 exec --no-startup-id /home/rob/.fehbg
 exec --no-startup-id compton
+exec --no-startup-id polybar i3bar
 exec --no-startup-id tracker daemon -s
 exec --no-startup-id dropbox start -i
 exec --no-startup-id dunst

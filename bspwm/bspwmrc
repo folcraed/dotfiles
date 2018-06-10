@@ -1,7 +1,7 @@
 #! /bin/sh
 
 sxhkd &
-polybar mybar &
+polybar bspwmbar &
 gnome-keyring-daemon -s &
 /usr/lib64/polkit-gnome/polkit-gnome-authentication-agent-1 &
 /home/rob/.fehbg &
