@@ -28,5 +28,6 @@ bspc config presel_feedback_color "#65737E"
 bspc rule -a Gimp desktop='^8' state=floating follow=on
 bspc rule -a Sxiv state=floating
 bspc rule -a mpv state=floating
+bspc rule -a okular state=floating
 bspc rule -a rofi focus=on
 bspc rule -a Zathura state=floating
