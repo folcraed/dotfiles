@@ -58,7 +58,7 @@ beautiful.init(theme_path)
 
 --| Default terminal and editor |--
 
-terminal = "tilix"
+terminal = "kitty"
 editor = os.getenv("EDITOR") or "nvim"
 editor_cmd = terminal .. " -e " .. editor
 
