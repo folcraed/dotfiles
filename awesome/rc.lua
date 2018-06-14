@@ -14,7 +14,7 @@ local beautiful = require("beautiful")
 local naughty = require("naughty")
 local menubar = require("menubar")
 local hotkeys_popup = require("awful.hotkeys_popup").widget
-local collision = require("collision")
+-- local collision = require("collision")
 
 -- Enable hotkeys help widget for VIM and other apps
 -- when client with a matching name is opened:
@@ -154,7 +154,7 @@ local mycpu = lain.widget.cpu({
 })
 local mymem = lain.widget.mem({
     settings = function()
-        widget:set_markup(markup("#d33682", " " .. mem_now.used .. "Mb " .. mem_now.perc .. "% "))
+        widget:set_markup(markup("#6c71c4", " " .. mem_now.used .. "Mb " .. mem_now.perc .. "% "))
     end
 })
 
@@ -278,7 +278,7 @@ end)
 -- }}}
 
 -- Call collision for it's keybindings
-collision()
+-- collision()
 
 -- {{{ Mouse bindings
 root.buttons(awful.util.table.join(
@@ -357,9 +357,9 @@ globalkeys = awful.util.table.join(
     awful.key({ modkey, "Shift"   }, "q", awesome.quit,
               {description = "quit awesome", group = "awesome"}),
 
-    awful.key({ modkey,           }, "l",     function () awful.tag.incmwfact( 0.05)          end,
+    awful.key({ modkey,           }, "l",     function () awful.tag.incmwfact( 0.01)          end,
               {description = "increase master width factor", group = "layout"}),
-    awful.key({ modkey,           }, "h",     function () awful.tag.incmwfact(-0.05)          end,
+    awful.key({ modkey,           }, "h",     function () awful.tag.incmwfact(-0.01)          end,
               {description = "decrease master width factor", group = "layout"}),
     awful.key({ modkey, "Shift"   }, "h",     function () awful.tag.incnmaster( 1, nil, true) end,
               {description = "increase the number of master clients", group = "layout"}),
@@ -404,8 +404,12 @@ globalkeys = awful.util.table.join(
               end,
               {description = "lua execute prompt", group = "awesome"}),
     -- Menubar
-    awful.key({ modkey }, "p", function() menubar.show() end,
-              {description = "show the menubar", group = "launcher"})
+    awful.key({ modkey }, "d", function() menubar.show() end,
+              {description = "show the menubar", group = "launcher"}),
+
+    -- Rofi
+    awful.key({ modkey }, "p", function () awful.spawn('rofi -show drun -sidebar-mode -font "Ubuntu Mono 10" -width "20" -opacity "90" -terminal "kitty"') end,
+              {description = "Run Rofi", group = "launcher"})
 )
 
 clientkeys = awful.util.table.join(
@@ -523,12 +527,12 @@ awful.rules.rules = {
           "copyq",  -- Includes session name in class.
         },
         class = {
-          "Eom",
+          "Sxiv",
           "mpv",
-          "Atril",
+          "Zathura",
           "vlc",
-          "Tracker-needle",  -- kalarm.
-          "feh"},
+          "Gcolor2",  -- kalarm.
+          "okular"},
 
         name = {
           "Event Tester",  -- xev.
