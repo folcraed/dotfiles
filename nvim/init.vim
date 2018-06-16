@@ -16,9 +16,7 @@ Plug 'https://github.com/tpope/vim-commentary.git'
 Plug 'https://github.com/tpope/vim-surround.git'
 Plug 'https://github.com/tpope/vim-fugitive.git'
 Plug 'https://github.com/rakr/vim-one'
-" Plug 'https://github.com/Shougo/deoplete.nvim'
 Plug 'https://github.com/eugen0329/vim-esearch'
-" Plug 'https://github.com/suan/vim-instant-markdown.git'
 Plug 'https://github.com/ryanoasis/vim-devicons'
 
 call plug#end()
@@ -226,6 +224,7 @@ let g:airline_powerline_fonts=1
 " set the bufferline to something more useful
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#buffer_nr_show = 1
+let g:airline_inactive_collapse=1
 " let g:airline#extensions#tabline#show_splits = 0
 " let g:airline#extensions#tabline#show_tab_nr = 1
 " let g:airline#extensions#tabline#tab_nr_type = 2
