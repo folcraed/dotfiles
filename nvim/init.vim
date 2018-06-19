@@ -13,7 +13,6 @@ Plug 'https://github.com/arcticicestudio/nord-vim'
 Plug 'https://github.com/lifepillar/vim-solarized8'
 Plug 'https://github.com/lilydjwg/colorizer'
 Plug 'https://github.com/tpope/vim-commentary.git'
-Plug 'https://github.com/tpope/vim-surround.git'
 Plug 'https://github.com/tpope/vim-fugitive.git'
 Plug 'https://github.com/rakr/vim-one'
 Plug 'https://github.com/eugen0329/vim-esearch'
@@ -31,6 +30,8 @@ set tabstop=4
 set shiftwidth=4
 set history=50
 set linebreak
+set ignorecase
+set smartcase
 set wildmode=list:longest,full
 set ttimeoutlen=50
 set dir=~/Temp
@@ -109,6 +110,10 @@ nno <silent><leader>\ :noh<cr>
 "Make moving back and forth in buffers easier
 nno <silent><leader>[ :bp<cr>
 nno <silent><leader>] :bn<cr>
+
+" Make moving back and forth in tabs easier
+nno <silent><tab> :tabnext
+nno <silent><S-tab> :tabprev
 
 " This closes the currently viewed buffer and loads the last in the window
 nno <silent><leader>c :bp\|bd #<CR>
