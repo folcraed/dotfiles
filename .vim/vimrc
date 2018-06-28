@@ -3,7 +3,7 @@
 
 " Set font and some optionsfor GVim
 if has('gui_running')
-  set guifont=UbuntuMono\ Nerd\ Font\ 11
+  set guifont=UbuntuMono\ Nerd\ Font\ 12
   set guioptions=m
 endif
 

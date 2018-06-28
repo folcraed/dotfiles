@@ -6,14 +6,14 @@ local theme = {}
 profileConfigPath = "/home/rob/Dropbox/Settings/dotfiles/awesome/"
 
 -- Setting for the Collision keybindings lib
-theme.collision_resize_width = 10
-theme.Collision_shape_width = 20
-theme.collision_shape_height = 20
-theme.collision_focus_padding = 5
+-- theme.collision_resize_width = 10
+-- theme.Collision_shape_width = 20
+-- theme.collision_shape_height = 20
+-- theme.collision_focus_padding = 5
 
 -- Theme fonts
 theme.font          = "Roboto Mono for Powerline 11, FontAwesome 11"
-theme.taglist_font  = "Xirod 11"
+-- theme.taglist_font  = "Xirod 11"
 
 -- Theme coloring
 theme.bg_normal     = "#002b36"
