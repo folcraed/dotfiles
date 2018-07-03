@@ -8,13 +8,15 @@ Plug 'https://github.com/ctrlpvim/ctrlp.vim.git'
 Plug 'https://github.com/scrooloose/nerdtree.git'
 Plug 'https://github.com/vim-airline/vim-airline.git'
 Plug 'https://github.com/vim-airline/vim-airline-themes.git'
-Plug 'https://github.com/mkarmona/materialbox.git'
-Plug 'https://github.com/arcticicestudio/nord-vim'
+" Plug 'https://github.com/mkarmona/materialbox.git'
+" Plug 'https://github.com/arcticicestudio/nord-vim'
 Plug 'https://github.com/lifepillar/vim-solarized8'
 Plug 'https://github.com/lilydjwg/colorizer'
 Plug 'https://github.com/tpope/vim-commentary.git'
 Plug 'https://github.com/tpope/vim-fugitive.git'
-Plug 'https://github.com/rakr/vim-one'
+Plug 'https://github.com/plasticboy/vim-markdown.git'
+Plug 'https://github.com/godlygeek/tabular.git'
+" Plug 'https://github.com/rakr/vim-one'
 Plug 'https://github.com/eugen0329/vim-esearch'
 Plug 'https://github.com/ryanoasis/vim-devicons'
 
@@ -45,12 +47,19 @@ set inccommand=split
 set nobackup
 set nowritebackup
 set noshowmode
+set conceallevel=2
 
 " Set xdg-open to open links with gx
 let g:netrw_browsex_viewer = "xdg-open"
 
+" Settings for vim-markdown
+" let g:vim_markdown_folding_level = 5
+let g:vim_markdown_folding_disabled = 1
+let g:vim_markdown_follow_anchor = 1
+let g:vim_markdown_autowrite = 1
+
 " Sets the leader from \ to SPACE
-let mapleader = " "
+" let mapleader = " "
 
 " --{{ Settings for vim-esearch
 " It uses <leader>ff to search
@@ -157,7 +166,7 @@ nno <leader>+ :wincmd =<cr>:wincmd \|<cr>
 nno <leader>- :wincmd =<cr>
 
 " Session management. F2 loads the notes session, F3 saves it.
-nno <F2> :source ~/Dropbox/Docs/Notes/notes.vim<CR>
+nno <F2> :source ~/Dropbox/Docs/Notes/session.vim<CR>
 nno <F3> :wa<Bar>exe "mksession! " . v:this_session<CR>
 
 " Snippets
@@ -223,9 +232,9 @@ endif
 " Set the Airline to use Powerline customized fonts for extra glyphs
 let g:airline_powerline_fonts=1
 " the separator used on the left side
-" let g:airline_left_sep=''
+let g:airline_left_sep=''
 " the separator used on the right side
-" let g:airline_right_sep=''
+let g:airline_right_sep=''
 " set the bufferline to something more useful
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#buffer_nr_show = 1
