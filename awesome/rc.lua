@@ -638,7 +638,7 @@ end
 
 run_once("gnome-keyring-daemon -s")
 run_once("/usr/lib64/polkit-gnome/polkit-gnome-authentication-agent-1")
-run_once("ibus-daemon -s")
+run_once("ibus-daemon -s -d")
 run_once("compton")
 run_once("clipit")
 run_once("xclip")

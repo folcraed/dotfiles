@@ -199,7 +199,7 @@ client.urgent       $ur_color   $ur_color   $uf_color
 # Startup apps
 exec --no-startup-id gnome-keyring-daemon -s
 exec --no-startup-id /usr/lib64/polkit-gnome/polkit-gnome-authentication-agent-1
-exec --no-startup-id ibus-daemon -s
+exec --no-startup-id ibus-daemon -s -d
 exec --no-startup-id /home/rob/.fehbg
 exec --no-startup-id compton
 exec --no-startup-id polybar i3bar

@@ -166,7 +166,7 @@ nno <leader>+ :wincmd =<cr>:wincmd \|<cr>
 nno <leader>- :wincmd =<cr>
 
 " Session management. F2 loads the notes session, F3 saves it.
-nno <F2> :source ~/Dropbox/Docs/Notes/session.vim<CR>
+nno <F2> :source ~/Dropbox/Docs/Notes/Session.vim<CR>
 nno <F3> :wa<Bar>exe "mksession! " . v:this_session<CR>
 
 " Snippets
