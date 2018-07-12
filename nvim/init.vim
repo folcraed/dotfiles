@@ -1,29 +1,28 @@
-" init.vim by Rob Boudreau
-" Last change:	2 Jun 2018
+" ====== init.vim by Rob Boudreau ======
+" ====== Last change: 12 Jul 2018 ======
 
-" Call and/or install plugins with vim-plug
+    " Call and/or install plugins with vim-plug
 call plug#begin('~/.config/nvim/plugged')
 
 Plug 'https://github.com/ctrlpvim/ctrlp.vim.git'
 Plug 'https://github.com/scrooloose/nerdtree.git'
-Plug 'https://github.com/vim-airline/vim-airline.git'
-Plug 'https://github.com/vim-airline/vim-airline-themes.git'
+Plug 'https://github.com/itchyny/lightline.vim'
+Plug 'https://github.com/taohexxx/lightline-buffer'
 " Plug 'https://github.com/mkarmona/materialbox.git'
 " Plug 'https://github.com/arcticicestudio/nord-vim'
+" Plug 'https://github.com/rakr/vim-one'
 Plug 'https://github.com/lifepillar/vim-solarized8'
 Plug 'https://github.com/lilydjwg/colorizer'
 Plug 'https://github.com/tpope/vim-commentary.git'
 Plug 'https://github.com/tpope/vim-fugitive.git'
 Plug 'https://github.com/plasticboy/vim-markdown.git'
 Plug 'https://github.com/godlygeek/tabular.git'
-" Plug 'https://github.com/rakr/vim-one'
 Plug 'https://github.com/eugen0329/vim-esearch'
 Plug 'https://github.com/ryanoasis/vim-devicons'
 
 call plug#end()
 
-" Set global options
-" set t_ut=
+    " Set global options
 set termguicolors
 set guifont=UbuntuMono\ Nerd\ Font:h11
 set encoding=utf-8
@@ -39,6 +38,7 @@ set ttimeoutlen=50
 set dir=~/Temp
 set splitbelow
 set splitright
+set showtabline=2
 set noswapfile
 set number
 set relativenumber
@@ -49,20 +49,18 @@ set nowritebackup
 set noshowmode
 set conceallevel=2
 
-" Set xdg-open to open links with gx
+    " Set xdg-open to open links with gx
 let g:netrw_browsex_viewer = "xdg-open"
 
-" Settings for vim-markdown
+    " Settings for vim-markdown
 " let g:vim_markdown_folding_level = 5
 let g:vim_markdown_folding_disabled = 1
 let g:vim_markdown_follow_anchor = 1
 let g:vim_markdown_autowrite = 1
+nno <leader>t :TableFormat<cr>
 
-" Sets the leader from \ to SPACE
-" let mapleader = " "
-
-" --{{ Settings for vim-esearch
-" It uses <leader>ff to search
+    " --{{ Settings for vim-esearch
+    " It uses <leader>ff to search
 let g:esearch = {
   \ 'adapter':    'grep',
   \ 'backend':    'nvim',
@@ -70,18 +68,42 @@ let g:esearch = {
   \ 'batch_size': 1000,
   \ 'use':        ['word_under_cursor'],
   \}
-" --}} end of settings for vim-esearch
+    " --}} end of settings for vim-esearch
 
-" This is supposed to allow italics in terminal
-" set t_ZH=[3m
-" set t_ZR=[23m
+    " --{{ Settings for Lightline
+let g:lightline = {
+    \ 'colorscheme': 'solarized',
+    \ 'tabline': {
+    \   'left': [ [ 'bufferinfo' ],
+    \             [ 'separator' ],
+    \             [ 'bufferbefore', 'buffercurrent', 'bufferafter' ], ],
+    \   'right': [ [ 'close' ], ],
+    \ },
+    \ 'component_expand': {
+    \   'buffercurrent': 'lightline#buffer#buffercurrent',
+    \   'bufferbefore': 'lightline#buffer#bufferbefore',
+    \   'bufferafter': 'lightline#buffer#bufferafter',
+    \ },
+    \ 'component_type': {
+    \   'buffercurrent': 'tabsel',
+    \   'bufferbefore': 'raw',
+    \   'bufferafter': 'raw',
+    \ },
+    \ 'component_function': {
+    \   'bufferinfo': 'lightline#buffer#bufferinfo',
+    \ },
+    \ 'component': {
+    \   'separator': '',
+    \ },
+    \ }
+    " --}} End of Lightline settings
 
-" Set up colorschemes
-let g:onedark_terminal_italics = 1
+    " --{{ Set up colorschemes
+" let g:onedark_terminal_italics = 1
 " let g:onedark_termcolors = 256
 " let g:one_allow_italics = 1
-let g:nord_italic = 1
-let g:nord_italic_comments = 1
+" let g:nord_italic = 1
+" let g:nord_italic_comments = 1
 
 set background=dark
 " colorscheme onedark
@@ -90,89 +112,90 @@ colorscheme solarized8
 " colorscheme base16-ocean
 " colorscheme nord
 " colorscheme hybrid_material
+    " --}} End of colorschemes
 
-" --{{{ Start of key mappings
+    " --{{{ Start of key mappings
 
-" This opens markdown in okular
+    " This opens markdown in okular
 nno <silent><F9> :!okular %:p &<cr><cr>
 
-" These are for auto-brackets
+    " These are for auto-brackets
 ino " ""<ESC>i
 ino { {}<ESC>i
 ino [ []<ESC>i
 ino ( ()<ESC>i
 nno ; :
 
-" These keep searches centered in the page
+    " These keep searches centered in the page
 nno n nzzzv
 nno N Nzzzv
 
-" These increase/decrease window split sizes
+    " These increase/decrease window split sizes
 nno <A-left> <C-W>>
 nno <A-right> <C-W><
 nno <A-up> <C-W>+
 nno <A-down> <C-W>-
 
-" This turns off search highlighting
+    " This turns off search highlighting
 nno <silent><leader>\ :noh<cr>
 
-"Make moving back and forth in buffers easier
+    "Make moving back and forth in buffers easier
 nno <silent><leader>[ :bp<cr>
 nno <silent><leader>] :bn<cr>
 
-" Make moving back and forth in tabs easier
+    " Make moving back and forth in tabs easier
 nno <silent><tab> :tabnext
 nno <silent><S-tab> :tabprev
 
-" This closes the currently viewed buffer and loads the last in the window
+    " This closes the currently viewed buffer and loads the last in the window
 nno <silent><leader>c :bp\|bd #<CR>
 
-" This makes unrecognized code files use shell syntax highlighting
+    " This makes unrecognized code files use shell syntax highlighting
 nno <F5> :set syntax=sh<cr>
 
-"Makes moving throught windows more sane
+    "Makes moving throught windows more sane
 nno <A-j> <C-w>j
 nno <A-k> <C-w>k
 nno <A-h> <C-w>h
 nno <A-l> <C-w>l
 
-"Make moving through lines normal, instead of jumping past wraps
+    "Make moving through lines normal, instead of jumping past wraps
 nno <silent> <Up> gk
 nno <silent> <Down> gj
 nno <expr> k (v:count? 'k' : 'gk')
 nno <expr> j (v:count? 'j' : 'gj')
 
-" Move lines up or down using CTRL+arrow key
+    " Move lines up or down using CTRL+arrow key
 nno <C-down> ddp
 nno <C-up> ddkP
 
-" Copy and paste
+    " Copy and paste
 vmap <C-c> "+yi
 vmap <C-x> "+c
 vmap <C-v> c<ESC>"+p
 imap <C-v> <ESC>"+pa
 
-" Cleans up trailing whitespace from current edit
+    " Cleans up trailing whitespace from current edit
 nno <leader>w :%s/\s\+$//<cr>:let @/=''<cr>
 
-" Control keys for CtrlP to open it in different modes
+    " Control keys for CtrlP to open it in different modes
 let g:ctrlp_map = '<C-p>'
 let g:ctrlp_cmd = 'CtrlP'
 nno <leader>b :CtrlPBuffer<cr>
 nno <leader>p :CtrlPMRU<cr>
 
-" zoom a vim pane, <C-w>- to re-balance
+    " Zoom a vim pane, <C-w>- to re-balance
 nno <leader>+ :wincmd =<cr>:wincmd \|<cr>
 nno <leader>- :wincmd =<cr>
 
-" Session management. F2 loads the notes session, F3 saves it.
+    " Session management. F2 loads the notes session, F3 saves it.
 nno <F2> :source ~/Dropbox/Docs/Notes/Session.vim<CR>
 nno <F3> :wa<Bar>exe "mksession! " . v:this_session<CR>
 
-" Snippets
+    " Snippets
 nno <leader>= o==================================================<cr><ESC>
 
-" Settings for NerdTree so it's more sane
+    " Settings for NerdTree so it's more sane
 nno <silent><leader>n :NERDTreeToggle<CR>
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 let g:NERDTreeHijackNetrw=1
@@ -182,34 +205,34 @@ let g:NERDTreeDirArrowExpandable = '▸'
 let g:NERDTreeDirArrowCollapsible = '▾'
 nno <silent><leader>e :edit .<cr>
 
-" Save a admin file from regular user
+    " Save a admin file from regular user
 nno <silent><leader>r :w !sudo tee %
 
-" Don't use Ex mode, use Q for formatting
+    " Don't use Ex mode, use Q for formatting
 map Q gq
 
-" automatically rebalance windows on vim resize
+    " Automatically rebalance windows on vim resize
 autocmd VimResized * :wincmd =
 
-  " Set the file selection window to tree view
-  " CTRL-U in insert mode deletes a lot.  Use CTRL-G u to first break undo,
-  " so that you can undo CTRL-U after inserting a line break.
+    " Set the file selection window to tree view
+    " CTRL-U in insert mode deletes a lot.  Use CTRL-G u to first break undo,
+    " so that you can undo CTRL-U after inserting a line break.
 ino <C-U> <C-G>u<C-U>
 
-" }}}-- End of mappings
+    " }}}-- End of mappings
 
-" Only do this part when compiled with support for autocommands.
+    " Only do this part when compiled with support for autocommands.
 if has("autocmd")
 
-" Put these in an autocmd group, so that we can delete them easily.
+    " Put these in an autocmd group, so that we can delete them easily.
 augroup vimrcEx
 au!
 
-  " When editing a file, always jump to the last known cursor position.
-  " Don't do it when the position is invalid or when inside an event handler
-  " (happens when dropping a file on gvim).
-  " Also don't do it when the mark is in the first line, that is the default
-  " position when opening a file.
+    " When editing a file, always jump to the last known cursor position.
+    " Don't do it when the position is invalid or when inside an event handler
+    " (happens when dropping a file on gvim).
+    " Also don't do it when the mark is in the first line, that is the default
+    " position when opening a file.
   autocmd BufReadPost *
     \ if line("'\"") > 1 && line("'\"") <= line("$") |
     \   exe "normal! g`\"" |
@@ -221,34 +244,15 @@ else
 
 endif " has("autocmd")
 
-  " Convenient command to see the difference between the current buffer and the
-  " file it was loaded from, thus the changes you made.
-  " Only define it when not defined already.
+    " Convenient command to see the difference between the current buffer and the
+    " file it was loaded from, thus the changes you made.
+    " Only define it when not defined already.
 if !exists(":DiffOrig")
   command DiffOrig vert new | set bt=nofile | r ++edit # | 0d_ | diffthis
   \ | wincmd p | diffthis
 endif
 
-" Set the Airline to use Powerline customized fonts for extra glyphs
-let g:airline_powerline_fonts=1
-" the separator used on the left side
-let g:airline_left_sep=''
-" the separator used on the right side
-let g:airline_right_sep=''
-" set the bufferline to something more useful
-let g:airline#extensions#tabline#enabled = 1
-let g:airline#extensions#tabline#buffer_nr_show = 1
-let g:airline_inactive_collapse=1
-" let g:airline#extensions#tabline#show_splits = 0
-" let g:airline#extensions#tabline#show_tab_nr = 1
-" let g:airline#extensions#tabline#tab_nr_type = 2
-" let g:airline_theme='nord'
-let g:airline_theme='solarized'
-let g:airline_solarized_bg='dark'
-" let g:airline_theme='onedark'
-" let g:airline_theme='hybrid'
-
-  " Set the directory depth for CtrlP to open
+    " Set the directory depth for CtrlP to open
 let g:ctrlp_by_filename = 1
 let g:ctrlp_mac_depth = 3
 let g:ctrlp_max_files = 0
