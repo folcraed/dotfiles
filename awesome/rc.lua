@@ -65,6 +65,7 @@ editor_cmd = terminal .. " -e " .. editor
 --| Default modkey. |--
 
 modkey = "Mod4"
+altkey = "Mod1"
 
 --| Table of layouts to cover with awful.layout.inc, order matters. |--
 
@@ -348,6 +349,20 @@ globalkeys = awful.util.table.join(
             end
         end,
         {description = "go back", group = "client"}),
+
+    -- -- Move/Resize floating windows
+    -- awful.key({ modkey, altkey }, "Next",  function () awful.client.relative_move( 20,  20, -40, -40 ) end,
+    --           {description = "Increase floating window size", group = "client" }),
+    -- awful.key({ modkey, altkey }, "Prior", function () awful.client.relative_move(-20, -20,  40,  40 ) end,
+    --           {description = "Decrease floating window size", group = "client" }),
+    -- awful.key({ modkey, altkey }, "Down",  function () awful.client.relative_move(  0,  20,   0,   0 ) end,
+    --           {description = "Move floating window down", group = "client" }),
+    -- awful.key({ modkey, altkey }, "Up",    function () awful.client.relative_move(  0, -20,   0,   0 ) end,
+    --           {description = "Move floating window up", group = "client" }),
+    -- awful.key({ modkey, altkey }, "Left",  function () awful.client.relative_move(-20,   0,   0,   0 ) end,
+    --           {description = "Move floating window left", group = "client" }),
+    -- awful.key({ modkey, altkey }, "Right", function () awful.client.relative_move( 20,   0,   0,   0 ) end,
+    --           {description = "Move floating window right", group = "client" }),
 
     -- Standard program
     awful.key({ modkey,           }, "Return", function () awful.spawn(terminal) end,

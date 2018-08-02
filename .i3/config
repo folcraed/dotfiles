@@ -17,10 +17,10 @@ gaps inner 10
 # gaps outer 2
 
 # start a terminal
-bindsym $mod+Return exec --no-startup-id /usr/bin/konsole
+bindsym $mod+Return exec --no-startup-id /usr/bin/kitty
 
 # Open Rofi application menu
-bindsym $mod+p exec --no-startup-id rofi -show drun -sidebar-mode -font "Ubuntu Mono 10" -width "20" -opacity "90" -terminal "konsole"
+bindsym $mod+p exec --no-startup-id rofi -show drun -sidebar-mode -font "Ubuntu Mono 10" -width "20" -opacity "90" -terminal "kitty"
 # bindsym $mod+p exec --no-startup-id dmenu_run
 
 # kill focused window
@@ -197,12 +197,13 @@ client.urgent       $ur_color   $ur_color   $uf_color
 # }
 
 # Startup apps
+# Removed "--no-startup-id" to see if it's what's causing startup problems
+exec --no-startup-id polybar i3bar
 exec --no-startup-id gnome-keyring-daemon -s
 exec --no-startup-id /usr/lib64/polkit-gnome/polkit-gnome-authentication-agent-1
 exec --no-startup-id ibus-daemon -s -d
 exec --no-startup-id /home/rob/.fehbg
 exec --no-startup-id compton
-exec --no-startup-id polybar i3bar
 exec --no-startup-id tracker daemon -s
 exec --no-startup-id dropbox start -i
 exec --no-startup-id dunst

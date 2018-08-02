@@ -214,6 +214,7 @@ bar {
         inactive_workspace #073642 #073642 #586e75
         focused_workspace  #657b83 #657b83 #fdf6e3
     }
+    status_command i3blocks -c /home/rob/.i3/i3blocks.conf
 }
 
 include /etc/sway/config.d/*
