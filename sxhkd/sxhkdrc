@@ -4,11 +4,11 @@
 
 # terminal emulator
 super + Return
-    kitty
+    tilix
 
 # program launcher
 super + p
-    rofi -show drun -sidebar-mode -font "Ubuntu Mono 10" -width "20" -opacity "90" -terminal "kitty"
+    rofi -show drun -sidebar-mode -font "Hack 9" -width "20" -opacity "90" -terminal "tilix"
 
 # make sxhkd reload its configuration files:
 super + Escape

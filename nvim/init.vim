@@ -211,10 +211,6 @@ nno <silent><leader>r :w !sudo tee %
     " Don't use Ex mode, use Q for formatting
 map Q gq
 
-    " Automatically rebalance windows on vim resize
-autocmd VimResized * :wincmd =
-
-    " Set the file selection window to tree view
     " CTRL-U in insert mode deletes a lot.  Use CTRL-G u to first break undo,
     " so that you can undo CTRL-U after inserting a line break.
 ino <C-U> <C-G>u<C-U>
