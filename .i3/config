@@ -199,8 +199,8 @@ client.urgent       $ur_color   $ur_color   $uf_color
 # Startup apps
 # Removed "--no-startup-id" to see if it's what's causing startup problems
 exec --no-startup-id polybar i3bar
-exec --no-startup-id gnome-keyring-daemon -s
-exec --no-startup-id /usr/lib64/polkit-gnome/polkit-gnome-authentication-agent-1
+exec gnome-keyring-daemon -s
+exec /usr/lib64/polkit-gnome/polkit-gnome-authentication-agent-1
 exec --no-startup-id ibus-daemon -s -d
 exec --no-startup-id /home/rob/.fehbg
 exec --no-startup-id compton
@@ -209,5 +209,5 @@ exec --no-startup-id dropbox start -i
 exec --no-startup-id dunst
 exec --no-startup-id nm-applet
 exec --no-startup-id xclip
-exec --no-startup-id clipit
+exec clipit
 # vim: ft=sh
