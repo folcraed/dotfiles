@@ -9,9 +9,9 @@ Plug 'https://github.com/scrooloose/nerdtree.git'
 Plug 'https://github.com/itchyny/lightline.vim'
 Plug 'https://github.com/taohexxx/lightline-buffer'
 " Plug 'https://github.com/mkarmona/materialbox.git'
-" Plug 'https://github.com/arcticicestudio/nord-vim'
+Plug 'https://github.com/arcticicestudio/nord-vim'
 " Plug 'https://github.com/rakr/vim-one'
-Plug 'https://github.com/lifepillar/vim-solarized8'
+" Plug 'https://github.com/lifepillar/vim-solarized8'
 Plug 'https://github.com/lilydjwg/colorizer'
 Plug 'https://github.com/tpope/vim-commentary.git'
 Plug 'https://github.com/tpope/vim-fugitive.git'
@@ -72,7 +72,7 @@ let g:esearch = {
 
     " --{{ Settings for Lightline
 let g:lightline = {
-    \ 'colorscheme': 'solarized',
+    \ 'colorscheme': 'nord',
     \ 'tabline': {
     \   'left': [ [ 'bufferinfo' ],
     \             [ 'separator' ],
@@ -107,10 +107,10 @@ let g:lightline = {
 
 set background=dark
 " colorscheme onedark
-colorscheme solarized8
+" colorscheme solarized8
 " colorscheme materialbox
 " colorscheme base16-ocean
-" colorscheme nord
+colorscheme nord
 " colorscheme hybrid_material
     " --}} End of colorschemes
 

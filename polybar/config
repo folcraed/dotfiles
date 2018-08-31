@@ -9,22 +9,22 @@
 
 [colors]
 ; Onedark colors
-;background = #2E3440
-;background-alt = #3B4252
-;foreground = #D8DEE9
-;foreground-alt = #4C566A
-;primary = #B48EAD
-;secondary = #BF616A
-;alert = #f50a4d
+background = #2E3440
+background-alt = #3B4252
+foreground = #D8DEE9
+foreground-alt = #4C566A
+primary = #B48EAD
+secondary = #BF616A
+alert = #f50a4d
 
 ; Solarized colors
-background = #002B36
-background-alt = #073642
-foreground = #93A1A1
-foreground-alt = #586E75
-primary = #657B83
-secondary = #2AA198
-alert = #DC322F
+;background = #002B36
+;background-alt = #073642
+;foreground = #93A1A1
+;foreground-alt = #586E75
+;primary = #657B83
+;secondary = #2AA198
+;alert = #DC322F
 
 [bar/i3bar]
 width = 100%
