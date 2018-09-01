@@ -39,10 +39,10 @@ adjust_column_width 0
 box_drawing_scale 0.001, 1, 1.5, 2
 
 # The foreground color
-foreground       #D8DEE9
+foreground       #93A1A1
 
 # The background color
-background       #2E3440
+background       #002b36
 
 # The opacity of the background. A number between 0 and 1, where 1 is opaque and 0 is fully transparent.
 # This will only work if supported by the OS (for instance, when using a compositor under X11). Note
@@ -57,7 +57,7 @@ background       #2E3440
 background_opacity 1.0
 
 # The foreground for selections
-selection_foreground #2E3440
+selection_foreground #002b36
 
 # The background for selections
 selection_background #D8DEE9
@@ -212,39 +212,38 @@ inactive_tab_font_style normal
 # The 16 terminal colors. There are 8 basic colors, each color has a dull and
 # bright version.
 
-
-# **** Nord Colors ****
+# **** Solarized Colors ****
 # black
-color0   #3b4252
-color8   #2e3440
+color0   #073542
+color8   #002b36
 
 # red
-color1   #bf616a
-color9   #bf616a
+color1   #dc312f
+color9   #cb4b16
 
 # green
-color2   #a3be8c
-color10  #a3be8c
+color2   #859900
+color10  #586e75
 
 # yellow
-color3   #ebcb8b
-color11  #ebcb8b
+color3   #b58900
+color11  #657a83
 
 # blue
-color4   #81a1c1
-color12  #81a1c1
+color4   #268ad2
+color12  #839496
 
 # magenta
-color5   #b48ead
-color13  #b48ead
+color5   #d33681
+color13  #6c71c4
 
 # cyan
-color6   #88c0d0
-color14  #8fbcbb
+color6   #29a198
+color14  #93a1a1
 
 # white
-color7   #e5e9f0
-color15  #eceff4
+color7   #eee8d5
+color15  #fdf6e3
 
 # Key mapping
 # For a list of key names, see: http://www.glfw.org/docs/latest/group__keys.html
