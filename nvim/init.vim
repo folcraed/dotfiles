@@ -48,6 +48,7 @@ set nobackup
 set nowritebackup
 set noshowmode
 set conceallevel=2
+set fcs=eob:\ 
 
     " Set xdg-open to open links with gx
 let g:netrw_browsex_viewer = "xdg-open"
