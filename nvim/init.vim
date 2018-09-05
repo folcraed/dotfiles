@@ -10,7 +10,6 @@ Plug 'https://github.com/itchyny/lightline.vim'
 Plug 'https://github.com/taohexxx/lightline-buffer'
 " Plug 'https://github.com/mkarmona/materialbox.git'
 Plug 'https://github.com/arcticicestudio/nord-vim'
-" Plug 'https://github.com/rakr/vim-one'
 " Plug 'https://github.com/lifepillar/vim-solarized8'
 Plug 'https://github.com/lilydjwg/colorizer'
 Plug 'https://github.com/tpope/vim-commentary.git'
@@ -18,6 +17,8 @@ Plug 'https://github.com/tpope/vim-fugitive.git'
 Plug 'https://github.com/plasticboy/vim-markdown.git'
 Plug 'https://github.com/godlygeek/tabular.git'
 Plug 'https://github.com/eugen0329/vim-esearch'
+Plug 'https://github.com/majutsushi/tagbar'
+Plug 'https://github.com/lvht/tagbar-markdown'
 Plug 'https://github.com/ryanoasis/vim-devicons'
 
 call plug#end()
@@ -192,6 +193,10 @@ nno <leader>- :wincmd =<cr>
     " Session management. F2 loads the notes session, F3 saves it.
 nno <F2> :source ~/Dropbox/Docs/Notes/Session.vim<CR>
 nno <F3> :wa<Bar>exe "mksession! " . v:this_session<CR>
+
+    " Toogle the markdown outline view.
+nno <F8> :TagbarToggle<cr>
+ino <F8> :TagbarToggle<cr>
 
     " Snippets
 nno <leader>= o==================================================<cr><ESC>
