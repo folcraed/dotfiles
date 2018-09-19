@@ -13,12 +13,12 @@ set background=dark
 " let g:airline_theme='hybrid'
 
 " Pure Onedark theme
-" colorscheme onedark
+colorscheme onedark
 " let g:airline_theme='onedark'
 
 " Solarized theme
-colorscheme solarized8
-let g:airline_theme='solarized'
+" colorscheme solarized8
+" let g:airline_theme='solarized'
 
 " Nord theme with Nord Airline
 " colorscheme nord

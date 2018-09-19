@@ -10,11 +10,12 @@ Plug 'https://github.com/itchyny/lightline.vim'
 Plug 'https://github.com/taohexxx/lightline-buffer'
 " Plug 'https://github.com/mkarmona/materialbox.git'
 Plug 'https://github.com/arcticicestudio/nord-vim'
+Plug 'https://github.com/joshdick/onedark.vim'
 " Plug 'https://github.com/lifepillar/vim-solarized8'
 Plug 'https://github.com/lilydjwg/colorizer'
 Plug 'https://github.com/tpope/vim-commentary.git'
 Plug 'https://github.com/tpope/vim-fugitive.git'
-Plug 'https://github.com/plasticboy/vim-markdown.git'
+" Plug 'https://github.com/plasticboy/vim-markdown.git'
 Plug 'https://github.com/godlygeek/tabular.git'
 Plug 'https://github.com/eugen0329/vim-esearch'
 Plug 'https://github.com/majutsushi/tagbar'
@@ -25,7 +26,7 @@ call plug#end()
 
     " Set global options
 set termguicolors
-set guifont=UbuntuMono\ Nerd\ Font:h11
+set guifont=Ubuntu\ Mono:h11.5
 set encoding=utf-8
 set expandtab
 set tabstop=4
@@ -56,9 +57,9 @@ let g:netrw_browsex_viewer = "xdg-open"
 
     " Settings for vim-markdown
 " let g:vim_markdown_folding_level = 5
-let g:vim_markdown_folding_disabled = 1
-let g:vim_markdown_follow_anchor = 1
-let g:vim_markdown_autowrite = 1
+" let g:vim_markdown_folding_disabled = 1
+" let g:vim_markdown_follow_anchor = 1
+" let g:vim_markdown_autowrite = 1
 nno <leader>t :TableFormat<cr>
 
     " --{{ Settings for vim-esearch
@@ -74,7 +75,7 @@ let g:esearch = {
 
     " --{{ Settings for Lightline
 let g:lightline = {
-    \ 'colorscheme': 'nord',
+    \ 'colorscheme': 'onedark',
     \ 'tabline': {
     \   'left': [ [ 'bufferinfo' ],
     \             [ 'separator' ],
@@ -101,18 +102,18 @@ let g:lightline = {
     " --}} End of Lightline settings
 
     " --{{ Set up colorschemes
-" let g:onedark_terminal_italics = 1
+let g:onedark_terminal_italics = 1
 " let g:onedark_termcolors = 256
 " let g:one_allow_italics = 1
 " let g:nord_italic = 1
 " let g:nord_italic_comments = 1
 
 set background=dark
-" colorscheme onedark
+colorscheme onedark
 " colorscheme solarized8
 " colorscheme materialbox
 " colorscheme base16-ocean
-colorscheme nord
+" colorscheme nord
 " colorscheme hybrid_material
     " --}} End of colorschemes
 

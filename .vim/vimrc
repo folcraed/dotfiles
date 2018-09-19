@@ -1,9 +1,9 @@
 " ====== vimrc by Rob Boudreau ======
-" ====== Last change:	11 Jul 2018 ======
+" ====== Last change:	13 Sep 2018 ======
 
     " Set font and some optionsfor GVim
 if has('gui_running')
-  set guifont=UbuntuMono\ Nerd\ Font\ 12
+  set guifont=Ubuntu\ Mono\ 11.5
   set guioptions=m
 endif
 
@@ -16,12 +16,12 @@ Plug 'https://github.com/itchyny/lightline.vim'
 Plug 'https://github.com/taohexxx/lightline-buffer'
 " Plug 'https://github.com/mkarmona/materialbox.git'
 Plug 'https://github.com/arcticicestudio/nord-vim'
-Plug 'https://github.com/joshdick/onedark'
+Plug 'https://github.com/joshdick/onedark.vim'
 " Plug 'https://github.com/lifepillar/vim-solarized8'
 Plug 'https://github.com/lilydjwg/colorizer'
 Plug 'https://github.com/tpope/vim-commentary.git'
 Plug 'https://github.com/tpope/vim-fugitive.git'
-Plug 'https://github.com/plasticboy/vim-markdown.git'
+" Plug 'https://github.com/plasticboy/vim-markdown.git'
 Plug 'https://github.com/godlygeek/tabular.git'
 Plug 'https://github.com/eugen0329/vim-esearch'
 Plug 'https://github.com/majutsushi/tagbar'
@@ -64,7 +64,7 @@ set noshowmode
 set conceallevel=2
 
     " Settings for Vim-Markdown
-let g:vim_markdown_folding_disabled = 1
+" let g:vim_markdown_folding_disabled = 1
 
     " --{{ Settings for vim-esearch
 let g:esearch = {
@@ -86,7 +86,7 @@ set t_ZR=[23m
 
     " --{{ Settings for Lightline
 let g:lightline = {
-    \ 'colorscheme': 'nord',
+    \ 'colorscheme': 'onedark',
     \ 'tabline': {
     \   'left': [ [ 'bufferinfo' ],
     \             [ 'separator' ],
@@ -113,15 +113,15 @@ let g:lightline = {
     " --}} End of Lightline settings
 
     " Set up colorschemes
-" let g:onedark_terminal_italics = 1
+let g:onedark_terminal_italics = 1
 " let g:onedark_termcolors = 256
 " let g:one_allow_italics = 1
 
 set background=dark
-" colorscheme onedark
+colorscheme onedark
 " colorscheme one
 " colorscheme solarized8
-colorscheme nord
+" colorscheme nord
 " colorscheme hybrid_material
 " colorscheme base16-ocean
 " colorscheme materialbox
@@ -199,7 +199,7 @@ nno <leader>p :CtrlPMRU<cr>
 nno <leader>+ :wincmd =<cr>:wincmd \|<cr>
 nno <leader>- :wincmd =<cr>
 
-    " Open the markdown ouline
+    " Open the markdown outline
 nno <F8> :TagbarToggle<cr>
 ino <F8> :TagbarToggle<cr>
 
