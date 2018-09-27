@@ -196,8 +196,10 @@ nno <F2> :source ~/Dropbox/Docs/Notes/Session.vim<CR>
 nno <F3> :wa<Bar>exe "mksession! " . v:this_session<CR>
 
     " Toogle the markdown outline view.
+    " and open it on the left side
 nno <F8> :TagbarToggle<cr>
 ino <F8> :TagbarToggle<cr>
+let g:tagbar_left=1
 
     " Snippets
 nno <leader>= o==================================================<cr><ESC>

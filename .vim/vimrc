@@ -200,8 +200,10 @@ nno <leader>+ :wincmd =<cr>:wincmd \|<cr>
 nno <leader>- :wincmd =<cr>
 
     " Open the markdown outline
+    " and put it on the left side
 nno <F8> :TagbarToggle<cr>
 ino <F8> :TagbarToggle<cr>
+let g:tagbar_left=1
 
     " Snippets
 nno <leader>= o==================================================<cr><ESC>
