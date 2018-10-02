@@ -17,10 +17,10 @@ gaps inner 10
 # gaps outer 2
 
 # start a terminal
-bindsym $mod+Return exec --no-startup-id /usr/bin/kitty
+bindsym $mod+Return exec --no-startup-id konsole
 
 # Open Rofi application menu
-bindsym $mod+p exec --no-startup-id rofi -show drun -sidebar-mode -font "Ubuntu Mono 10" -width "20" -opacity "90" -terminal "kitty"
+bindsym $mod+p exec --no-startup-id rofi -show drun -sidebar-mode -font "Ubuntu Mono 10" -width "20" -opacity "90" -terminal "konsole"
 # bindsym $mod+p exec --no-startup-id dmenu_run
 
 # kill focused window
