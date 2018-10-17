@@ -1,9 +1,9 @@
 % Color settings
 
 color normal lightgray 0
-color status yellow black
-color underline brightgreen black
-color overstrike brightred black
+color status yellow 0
+color underline brightgreen 0
+color overstrike brightred 0
 
 % Keybindings
 

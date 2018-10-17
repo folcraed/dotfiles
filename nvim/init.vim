@@ -11,10 +11,12 @@ Plug 'https://github.com/taohexxx/lightline-buffer'
 " Plug 'https://github.com/mkarmona/materialbox.git'
 Plug 'https://github.com/arcticicestudio/nord-vim'
 Plug 'https://github.com/joshdick/onedark.vim'
+" Plug 'https://github.com/KeitaNakamura/neodark.vim'
 " Plug 'https://github.com/lifepillar/vim-solarized8'
 Plug 'https://github.com/lilydjwg/colorizer'
 Plug 'https://github.com/tpope/vim-commentary.git'
 Plug 'https://github.com/tpope/vim-fugitive.git'
+Plug 'https://github.com/tpope/vim-markdown.git'
 " Plug 'https://github.com/plasticboy/vim-markdown.git'
 Plug 'https://github.com/godlygeek/tabular.git'
 Plug 'https://github.com/eugen0329/vim-esearch'
@@ -102,6 +104,7 @@ let g:lightline = {
     " --}} End of Lightline settings
 
     " --{{ Set up colorschemes
+" let g:neodark#background = '#2b303b'
 let g:onedark_terminal_italics = 1
 " let g:onedark_termcolors = 256
 " let g:one_allow_italics = 1
@@ -109,6 +112,7 @@ let g:onedark_terminal_italics = 1
 " let g:nord_italic_comments = 1
 
 set background=dark
+" colorscheme neodark
 colorscheme onedark
 " colorscheme solarized8
 " colorscheme materialbox
@@ -197,8 +201,8 @@ nno <F3> :wa<Bar>exe "mksession! " . v:this_session<CR>
 
     " Toogle the markdown outline view.
     " and open it on the left side
-nno <F8> :TagbarToggle<cr>
-ino <F8> :TagbarToggle<cr>
+nno <silent><F8> :TagbarToggle<cr>
+ino <silent><F8> :TagbarToggle<cr>
 let g:tagbar_left=1
 
     " Snippets
