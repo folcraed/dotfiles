@@ -40,7 +40,7 @@ values."
      ;; ----------------------------------------------------------------
      helm
      auto-completion
-     ranger
+     ;; ranger
      ;; better-defaults
      emacs-lisp
      git
@@ -50,6 +50,7 @@ values."
             shell-default-height 30
             shell-default-position 'bottom)
      ;; spell-checking
+     pdf
      syntax-checking
      ;; version-control
      )
@@ -57,7 +58,9 @@ values."
    ;; wrapped in a layer. If you need some configuration for these
    ;; packages, then consider creating a layer. You can also put the
    ;; configuration in `dotspacemacs/user-config'.
-   dotspacemacs-additional-packages '(atom-one-dark-theme org-preview-html ox-epub)
+   dotspacemacs-additional-packages '(atom-one-dark-theme
+                                      org-preview-html
+                                      ox-epub)
    ;; A list of packages that cannot be updated.
    dotspacemacs-frozen-packages '()
    ;; A list of packages that will not be installed and loaded.
@@ -327,17 +330,24 @@ you should place your code here."
                 create-lockfiles nil
                 auto-save-default nil)
   (setq-default tab-width 4 indent-tabs-mode nil)
-  (ranger-override-dired-mode t)
+  ;; (ranger-override-dired-mode t)
   (global-visual-line-mode t)
   (define-key evil-motion-state-map (kbd "j") 'evil-next-visual-line)
   (define-key evil-motion-state-map (kbd "k") 'evil-previous-visual-line)
   (setq-default powerline-height 18)
   (setq browse-url-browser-function 'browse-url-generic
         browse-url-generic-program "xdg-open")
+  ;; (pdf-loader-install)
   (setq-default org-startup-with-inline-images nil)
+  (setq-default org-file-apps
+    (quote
+     ((auto-mode . emacs)
+      ("\\.png\\'" . "xdg-open %s")
+      ("\\.jpg\\'" . "xdg-open %s")
+      ("\\.pdf\\'" . "xdg-open %s"))))
   (org-projectile-per-project)
   (setq org-projectile-per-project-filepath "notes.org")
- ;;  (setq org-hide-emphasis-markers t)
+  (setq-default org-hide-emphasis-markers t)
   (setq org-agenda-files (directory-files-recursively "~/Dropbox/Notes" "\.org$"))
   (require 'ox-epub)
   )
@@ -351,10 +361,10 @@ This function is called at the very end of Spacemacs initialization."
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- ;; '(org-agenda-files (quote ("~/Dropbox/Notes/notes.org")))
  '(package-selected-packages
    (quote
-    (helm-org-rifle doom-modeline aggressive-indent flycheck projectile yasnippet-snippets yapfify xterm-color ws-butler winum which-key web-mode web-beautify volatile-highlights uuidgen use-package toc-org tagedit symon string-inflection spaceline-all-the-icons smeargle slim-mode shrink-path shell-pop scss-mode sass-mode restart-emacs ranger rainbow-delimiters pyvenv pytest pyenv-mode py-isort pug-mode prettier-js popwin pippel pipenv pip-requirements persp-mode pcre2el password-generator paradox ox-epub overseer orgit org-projectile org-preview-html org-present org-pomodoro org-mime org-download org-bullets org-brain open-junk-file nameless multi-term move-text mmm-mode markdown-toc magit-svn magit-gitflow macrostep lorem-ipsum live-py-mode link-hint indent-guide importmagic impatient-mode hungry-delete hl-todo highlight-parentheses highlight-numbers highlight-indentation helm-xref helm-themes helm-swoop helm-pydoc helm-purpose helm-projectile helm-mode-manager helm-make helm-gitignore helm-git-grep helm-flx helm-descbinds helm-css-scss helm-company helm-c-yasnippet helm-ag google-translate golden-ratio gnuplot gitignore-templates gitconfig-mode gitattributes-mode git-timemachine git-messenger git-link gh-md fuzzy font-lock+ flycheck-pos-tip flx-ido fill-column-indicator fancy-battery eyebrowse expand-region evil-visualstar evil-visual-mark-mode evil-unimpaired evil-tutor evil-surround evil-org evil-numbers evil-nerd-commenter evil-mc evil-matchit evil-magit evil-lisp-state evil-lion evil-indent-plus evil-iedit-state evil-goggles evil-exchange evil-escape evil-ediff evil-cleverparens evil-args evil-anzu eval-sexp-fu eshell-z eshell-prompt-extras esh-help emmet-mode elisp-slime-nav eldoc-eval editorconfig dumb-jump dotenv-mode diminish define-word cython-mode counsel-projectile company-web company-statistics company-anaconda column-enforce-mode clean-aindent-mode centered-cursor-mode auto-yasnippet auto-highlight-symbol auto-compile atom-one-dark-theme ace-window ace-link ace-jump-helm-line ac-ispell))))
+    (pdf-tools tablist helm-org-rifle doom-modeline aggressive-indent flycheck projectile yasnippet-snippets yapfify xterm-color ws-butler winum which-key web-mode web-beautify volatile-highlights uuidgen use-package toc-org tagedit symon string-inflection spaceline-all-the-icons smeargle slim-mode shrink-path shell-pop scss-mode sass-mode restart-emacs ranger rainbow-delimiters pyvenv pytest pyenv-mode py-isort pug-mode prettier-js popwin pippel pipenv pip-requirements persp-mode pcre2el password-generator paradox ox-epub overseer orgit org-projectile org-preview-html org-present org-pomodoro org-mime org-download org-bullets org-brain open-junk-file nameless multi-term move-text mmm-mode markdown-toc magit-svn magit-gitflow macrostep lorem-ipsum live-py-mode link-hint indent-guide importmagic impatient-mode hungry-delete hl-todo highlight-parentheses highlight-numbers highlight-indentation helm-xref helm-themes helm-swoop helm-pydoc helm-purpose helm-projectile helm-mode-manager helm-make helm-gitignore helm-git-grep helm-flx helm-descbinds helm-css-scss helm-company helm-c-yasnippet helm-ag google-translate golden-ratio gnuplot gitignore-templates gitconfig-mode gitattributes-mode git-timemachine git-messenger git-link gh-md fuzzy font-lock+ flycheck-pos-tip flx-ido fill-column-indicator fancy-battery eyebrowse expand-region evil-visualstar evil-visual-mark-mode evil-unimpaired evil-tutor evil-surround evil-org evil-numbers evil-nerd-commenter evil-mc evil-matchit evil-magit evil-lisp-state evil-lion evil-indent-plus evil-iedit-state evil-goggles evil-exchange evil-escape evil-ediff evil-cleverparens evil-args evil-anzu eval-sexp-fu eshell-z eshell-prompt-extras esh-help emmet-mode elisp-slime-nav eldoc-eval editorconfig dumb-jump dotenv-mode diminish define-word cython-mode counsel-projectile company-web company-statistics company-anaconda column-enforce-mode clean-aindent-mode centered-cursor-mode auto-yasnippet auto-highlight-symbol auto-compile atom-one-dark-theme ace-window ace-link ace-jump-helm-line ac-ispell)))
+ '(paradox-github-token t))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
