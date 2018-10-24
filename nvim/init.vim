@@ -1,5 +1,4 @@
 " ====== init.vim by Rob Boudreau ======
-" ====== Last change: 12 Jul 2018 ======
 
     " Call and/or install plugins with vim-plug
 call plug#begin('~/.config/nvim/plugged')
