@@ -51,7 +51,7 @@ set nobackup
 set nowritebackup
 set noshowmode
 set conceallevel=2
-set fcs=eob:\ 
+set fcs=eob:\
 
     " Set xdg-open to open links with gx
 let g:netrw_browsex_viewer = "xdg-open"
@@ -76,7 +76,7 @@ let g:esearch = {
 
     " --{{ Settings for Lightline
 let g:lightline = {
-    \ 'colorscheme': 'onedark',
+    \ 'colorscheme': 'one',
     \ 'tabline': {
     \   'left': [ [ 'bufferinfo' ],
     \             [ 'separator' ],
@@ -104,7 +104,9 @@ let g:lightline = {
 
     " --{{ Set up colorschemes
 " let g:neodark#background = '#2b303b'
-let g:onedark_terminal_italics = 1
+" let g:onedark_terminal_italics = 1
+let g:spacegray_use_italics = 1
+let g:spacegray_underline_search = 1
 " let g:onedark_termcolors = 256
 " let g:one_allow_italics = 1
 " let g:nord_italic = 1
@@ -113,6 +115,7 @@ let g:onedark_terminal_italics = 1
 set background=dark
 " colorscheme neodark
 colorscheme onedark
+" colorscheme spacegray
 " colorscheme solarized8
 " colorscheme materialbox
 " colorscheme base16-ocean
