@@ -8,14 +8,14 @@ Plug 'https://github.com/scrooloose/nerdtree.git'
 Plug 'https://github.com/itchyny/lightline.vim'
 Plug 'https://github.com/taohexxx/lightline-buffer'
 " Plug 'https://github.com/mkarmona/materialbox.git'
-Plug 'https://github.com/arcticicestudio/nord-vim'
+" Plug 'https://github.com/arcticicestudio/nord-vim'
 Plug 'https://github.com/joshdick/onedark.vim'
 " Plug 'https://github.com/KeitaNakamura/neodark.vim'
 " Plug 'https://github.com/lifepillar/vim-solarized8'
 Plug 'https://github.com/lilydjwg/colorizer'
 Plug 'https://github.com/tpope/vim-commentary.git'
 Plug 'https://github.com/tpope/vim-fugitive.git'
-Plug 'https://github.com/tpope/vim-markdown.git'
+" Plug 'https://github.com/tpope/vim-markdown.git'
 " Plug 'https://github.com/plasticboy/vim-markdown.git'
 Plug 'https://github.com/godlygeek/tabular.git'
 Plug 'https://github.com/eugen0329/vim-esearch'
@@ -58,25 +58,27 @@ let g:netrw_browsex_viewer = "xdg-open"
 
     " Settings for vim-markdown
 " let g:vim_markdown_folding_level = 5
-" let g:vim_markdown_folding_disabled = 1
-" let g:vim_markdown_follow_anchor = 1
-" let g:vim_markdown_autowrite = 1
+let g:vim_markdown_folding_disabled = 1
+let g:vim_markdown_follow_anchor = 1
+let g:vim_markdown_autowrite = 1
+let g:vim_markdown_conceal = 1
 nno <leader>t :TableFormat<cr>
 
     " --{{ Settings for vim-esearch
     " It uses <leader>ff to search
 let g:esearch = {
-  \ 'adapter':    'grep',
+  \ 'adapter':    'rg',
   \ 'backend':    'nvim',
   \ 'out':        'qflist',
   \ 'batch_size': 1000,
   \ 'use':        ['word_under_cursor'],
+  \ 'default_mappings': 1,
   \}
     " --}} end of settings for vim-esearch
 
     " --{{ Settings for Lightline
 let g:lightline = {
-    \ 'colorscheme': 'one',
+    \ 'colorscheme': 'Tomorrow_Night',
     \ 'tabline': {
     \   'left': [ [ 'bufferinfo' ],
     \             [ 'separator' ],
@@ -114,8 +116,8 @@ let g:spacegray_underline_search = 1
 
 set background=dark
 " colorscheme neodark
-colorscheme onedark
-" colorscheme spacegray
+" colorscheme onedark
+colorscheme spacegray
 " colorscheme solarized8
 " colorscheme materialbox
 " colorscheme base16-ocean
@@ -205,7 +207,7 @@ nno <F3> :wa<Bar>exe "mksession! " . v:this_session<CR>
     " and open it on the left side
 nno <silent><F8> :TagbarToggle<cr>
 ino <silent><F8> :TagbarToggle<cr>
-let g:tagbar_left=1
+let g:tagbar_left=0
 
     " Snippets
 nno <leader>= o==================================================<cr><ESC>

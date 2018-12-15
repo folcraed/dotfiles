@@ -3,7 +3,7 @@
 
     " Set font and some optionsfor GVim
 if has('gui_running')
-  set guifont=Ubuntu\ Mono\ 11.5
+  set guifont=Iosevka\ 12
   set guioptions=m
 endif
 
@@ -15,18 +15,18 @@ Plug 'https://github.com/scrooloose/nerdtree.git'
 Plug 'https://github.com/itchyny/lightline.vim'
 Plug 'https://github.com/taohexxx/lightline-buffer'
 " Plug 'https://github.com/mkarmona/materialbox.git'
-Plug 'https://github.com/arcticicestudio/nord-vim'
+" Plug 'https://github.com/arcticicestudio/nord-vim'
 Plug 'https://github.com/joshdick/onedark.vim'
 " Plug 'https://github.com/lifepillar/vim-solarized8'
 Plug 'https://github.com/lilydjwg/colorizer'
 Plug 'https://github.com/tpope/vim-commentary.git'
 Plug 'https://github.com/tpope/vim-fugitive.git'
-" Plug 'https://github.com/plasticboy/vim-markdown.git'
 Plug 'https://github.com/godlygeek/tabular.git'
 Plug 'https://github.com/eugen0329/vim-esearch'
 Plug 'https://github.com/majutsushi/tagbar'
 Plug 'https://github.com/lvht/tagbar-markdown'
 Plug 'https://github.com/ryanoasis/vim-devicons'
+Plug 'https://github.com/plasticboy/vim-markdown.git'
 
 call plug#end()
 
@@ -64,15 +64,19 @@ set noshowmode
 set conceallevel=2
 
     " Settings for Vim-Markdown
-" let g:vim_markdown_folding_disabled = 1
+let g:vim_markdown_folding_disabled = 1
+let g:vim_markdown_follow_anchor = 1
+let g:vim_markdown_autowrite = 1
+nno <leader>t :TableFormat<cr>
 
     " --{{ Settings for vim-esearch
 let g:esearch = {
-  \ 'adapter':    'grep',
+  \ 'adapter':    'rg',
   \ 'backend':    'system',
   \ 'out':        'qflist',
   \ 'batch_size': 1000,
   \ 'use':        ['word_under_cursor'],
+  \ 'default_mappings': 1,
   \}
 let g:esearch#out#win#open = 'split'
     " --}} end of settings for vim-esearch
@@ -86,7 +90,7 @@ set t_ZR=[23m
 
     " --{{ Settings for Lightline
 let g:lightline = {
-    \ 'colorscheme': 'onedark',
+    \ 'colorscheme': 'one',
     \ 'tabline': {
     \   'left': [ [ 'bufferinfo' ],
     \             [ 'separator' ],
@@ -249,27 +253,27 @@ filetype plugin indent on
 syntax enable
 
     " Only do this part when compiled with support for autocommands.
-if has("autocmd")
+" if has("autocmd")
 
-    " Put these in an autocmd group, so that we can delete them easily.
-augroup vimrcEx
-au!
+"     " Put these in an autocmd group, so that we can delete them easily.
+" augroup vimrcEx
+" au!
 
-    " When editing a file, always jump to the last known cursor position.
-    " Don't do it when the position is invalid or when inside an event handler
-    " (happens when dropping a file on gvim).
-    " Also don't do it when the mark is in the first line, that is the default
-    " position when opening a file.
-  autocmd BufReadPost *
-    \ if line("'\"") > 1 && line("'\"") <= line("$") |
-    \   exe "normal! g`\"" |
-    \ endif
+"     " When editing a file, always jump to the last known cursor position.
+"     " Don't do it when the position is invalid or when inside an event handler
+"     " (happens when dropping a file on gvim).
+"     " Also don't do it when the mark is in the first line, that is the default
+"     " position when opening a file.
+"   autocmd BufReadPost *
+"     \ if line("'\"") > 1 && line("'\"") <= line("$") |
+"     \   exe normal! g`\"" |
+"     \ endif
 
-  augroup END
+"   augroup END
 
-else
+" else
 
-endif " has("autocmd")
+" endif  has("autocmd")
 
     " Convenient command to see the difference between the current buffer and the
     " file it was loaded from, thus the changes you made.
