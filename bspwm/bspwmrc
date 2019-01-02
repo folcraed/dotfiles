@@ -8,11 +8,12 @@ gnome-keyring-daemon -s &
 /home/rob/.fehbg &
 compton &
 # tracker daemon -s &
-dropbox start -i &
-dunst &
-nm-applet &
+/home/rob/dropbox-dist/dropboxd &
+dbus-launch dunst &
+# nm-applet &
 xclip &
 clipit &
+recollindex -w 60 -m &
 
 bspc monitor -d I II III IV V VI VII VIII IX X
 
@@ -31,4 +32,5 @@ bspc rule -a Sxiv state=floating
 bspc rule -a mpv state=floating
 bspc rule -a okular state=floating
 bspc rule -a rofi focus=on
+bspc rule -a Cherrytree state=floating
 bspc rule -a Zathura state=floating

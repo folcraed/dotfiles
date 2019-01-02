@@ -27,7 +27,7 @@ call plug#end()
 
     " Set global options
 set termguicolors
-set guifont=Ubuntu\ Mono:h11.5
+set guifont=Iosevka:h12
 set encoding=utf-8
 set expandtab
 set tabstop=4
@@ -50,7 +50,8 @@ set inccommand=split
 set nobackup
 set nowritebackup
 set noshowmode
-set conceallevel=2
+set conceallevel=3
+set concealcursor=nc
 set fcs=eob:\
 
     " Set xdg-open to open links with gx
@@ -58,10 +59,10 @@ let g:netrw_browsex_viewer = "xdg-open"
 
     " Settings for vim-markdown
 " let g:vim_markdown_folding_level = 5
-let g:vim_markdown_folding_disabled = 1
-let g:vim_markdown_follow_anchor = 1
-let g:vim_markdown_autowrite = 1
-let g:vim_markdown_conceal = 1
+" let g:vim_markdown_folding_disabled = 1
+" let g:vim_markdown_follow_anchor = 1
+" let g:vim_markdown_autowrite = 1
+" let g:markdown_enable_conceal = 1
 nno <leader>t :TableFormat<cr>
 
     " --{{ Settings for vim-esearch

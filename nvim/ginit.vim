@@ -1,4 +1,5 @@
 " Set the font for Neovim-qt
 if exists('g:GuiLoaded')
-    GuiFont! Ubuntu\ Mono:h12
+    GuiFont! Iosevka:h12
+    GuiTabline 0
 endif

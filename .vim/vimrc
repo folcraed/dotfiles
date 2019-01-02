@@ -30,7 +30,13 @@ Plug 'https://github.com/plasticboy/vim-markdown.git'
 
 call plug#end()
 
+    " Enable filetype detection.
+filetype plugin indent on
+syntax enable
+
     " Set global options
+set conceallevel=3
+set concealcursor=nc
 set termguicolors
 set encoding=utf-8
 set expandtab
@@ -51,7 +57,7 @@ set dir=~/Temp
 set splitbelow
 set splitright
 set noswapfile
-syntax on
+" syntax on
 set hlsearch
 set number
 set relativenumber
@@ -61,12 +67,11 @@ set nobackup
 set nowritebackup
 set noshowmode
 " set foldenable
-set conceallevel=2
 
     " Settings for Vim-Markdown
 let g:vim_markdown_folding_disabled = 1
 let g:vim_markdown_follow_anchor = 1
-let g:vim_markdown_autowrite = 1
+" let g:vim_markdown_autowrite = 1
 nno <leader>t :TableFormat<cr>
 
     " --{{ Settings for vim-esearch
@@ -85,8 +90,8 @@ let g:esearch#out#win#open = 'split'
 let g:netrw_browsex_viewer = "xdg-open"
 
     " This is supposed to allow italics in terminal
-set t_ZH=[3m
-set t_ZR=[23m
+" set t_ZH=[3m
+" set t_ZR=[23m
 
     " --{{ Settings for Lightline
 let g:lightline = {
@@ -247,10 +252,6 @@ ino <C-U> <C-G>u<C-U>
 if has('mouse')
   set mouse=a
 endif
-
-    " Enable filetype detection.
-filetype plugin indent on
-syntax enable
 
     " Only do this part when compiled with support for autocommands.
 " if has("autocmd")
