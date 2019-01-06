@@ -47,8 +47,8 @@ padding-right = 2
 module-margin-left = 1
 module-margin-right = 2
 
-font-0 = Hack:size=9;0
-font-1 = FontAwesome:size=10;1
+font-0 = DejaVu Sans:size=9;0
+font-1 = DejaVu Sans:size=10;1
 font-2 = Xirod:size=8;1
 
 modules-left = i3
@@ -81,7 +81,7 @@ module-margin-left = 1
 module-margin-right = 2
 
 font-0 = Hack:size=9;0
-font-1 = FontAwesome:size=10;1
+font-1 = Hack:size=10;1
 font-2 = Xirod:size=8;1
 
 modules-left = bspwm
@@ -185,10 +185,10 @@ label = %date% %time%
 type = internal/volume
 
 format-volume = <label-volume> <bar-volume>
-label-volume = VOL
+; label-volume = 🔉
 label-volume-foreground = ${root.foreground}
 
-label-muted = sound muted
+label-muted = MUTED
 
 bar-volume-width = 10
 bar-volume-foreground-0 = #A3BE8C
