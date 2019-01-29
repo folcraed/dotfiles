@@ -53,6 +53,8 @@ set noshowmode
 set conceallevel=3
 set concealcursor=nc
 set fcs=eob:\
+set spelllang=en_us
+set spellfile=~/.config/nvim/spell/en.utf-8.add
 
     " Set xdg-open to open links with gx
 let g:netrw_browsex_viewer = "xdg-open"
@@ -164,6 +166,10 @@ nno <silent><leader>c :bp\|bd #<CR>
 
     " This makes unrecognized code files use shell syntax highlighting
 nno <F5> :set syntax=sh<cr>
+
+    "Turn on and off spell checking
+map <silent><F6> :set spell<cr>
+map <silent><F7> :set nospell<cr>
 
     "Makes moving throught windows more sane
 nno <A-j> <C-w>j
