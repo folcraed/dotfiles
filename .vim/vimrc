@@ -10,23 +10,24 @@ endif
     " Call and/or install plugins with vim-plug
 call plug#begin('~/.vim/plugged')
 
-Plug 'https://github.com/ctrlpvim/ctrlp.vim.git'
-Plug 'https://github.com/scrooloose/nerdtree.git'
-Plug 'https://github.com/itchyny/lightline.vim'
-Plug 'https://github.com/taohexxx/lightline-buffer'
-" Plug 'https://github.com/mkarmona/materialbox.git'
-" Plug 'https://github.com/arcticicestudio/nord-vim'
-Plug 'https://github.com/joshdick/onedark.vim'
-" Plug 'https://github.com/lifepillar/vim-solarized8'
-Plug 'https://github.com/lilydjwg/colorizer'
-Plug 'https://github.com/tpope/vim-commentary.git'
-Plug 'https://github.com/tpope/vim-fugitive.git'
-Plug 'https://github.com/godlygeek/tabular.git'
-Plug 'https://github.com/eugen0329/vim-esearch'
-Plug 'https://github.com/majutsushi/tagbar'
-Plug 'https://github.com/lvht/tagbar-markdown'
-Plug 'https://github.com/ryanoasis/vim-devicons'
-Plug 'https://github.com/plasticboy/vim-markdown.git'
+" Plug 'https://github.com/ctrlpvim/ctrlp.vim.git'
+Plug 'Shougo/denite.nvim'
+Plug 'scrooloose/nerdtree'
+Plug 'itchyny/lightline.vim'
+Plug 'taohexxx/lightline-buffer'
+" Plug 'mkarmona/materialbox.git'
+" Plug 'arcticicestudio/nord-vim'
+Plug 'joshdick/onedark.vim'
+" Plug 'lifepillar/vim-solarized8'
+Plug 'lilydjwg/colorizer'
+Plug 'tpope/vim-commentary'
+Plug 'tpope/vim-fugitive'
+Plug 'godlygeek/tabular'
+Plug 'eugen0329/vim-esearch'
+Plug 'majutsushi/tagbar'
+Plug 'lvht/tagbar-markdown'
+Plug 'ryanoasis/vim-devicons'
+Plug 'plasticboy/vim-markdown'
 
 call plug#end()
 
@@ -121,6 +122,52 @@ let g:lightline = {
     \ }
     " --}} End of Lightline settings
 
+    "Denite settings copied from 
+" reset 50% winheight on window resize
+augroup deniteresize
+  autocmd!
+  autocmd VimResized,VimEnter * call denite#custom#option('default',
+        \'winheight', winheight(0) / 2)
+augroup end
+
+call denite#custom#option('default', {
+      \ 'prompt': '❯'
+      \ })
+
+call denite#custom#var('file_rec', 'command',
+      \ ['rg', '--files', '--glob', '!.git'])
+call denite#custom#var('grep', 'command', ['rg'])
+call denite#custom#var('grep', 'default_opts',
+      \ ['--hidden', '--vimgrep', '--smart-case'])
+call denite#custom#var('grep', 'recursive_opts', [])
+call denite#custom#var('grep', 'pattern_opt', ['--regexp'])
+call denite#custom#var('grep', 'separator', ['--'])
+call denite#custom#var('grep', 'final_opts', [])
+call denite#custom#map('insert', '<Esc>', '<denite:enter_mode:normal>',
+      \'noremap')
+call denite#custom#map('normal', '<Esc>', '<NOP>',
+      \'noremap')
+call denite#custom#map('insert', '<C-v>', '<denite:do_action:vsplit>',
+      \'noremap')
+call denite#custom#map('normal', '<C-v>', '<denite:do_action:vsplit>',
+      \'noremap')
+call denite#custom#map('normal', 'dw', '<denite:delete_word_after_caret>',
+      \'noremap')
+
+nnoremap <C-p> :<C-u>Denite file_rec<CR>
+nnoremap <leader>s :<C-u>Denite buffer<CR>
+nnoremap <leader><Space>s :<C-u>DeniteBufferDir buffer<CR>
+nnoremap <leader>8 :<C-u>DeniteCursorWord grep:. -mode=normal<CR>
+nnoremap <leader>/ :<C-u>Denite grep:. -mode=normal<CR>
+nnoremap <leader><Space>/ :<C-u>DeniteBufferDir grep:. -mode=normal<CR>
+nnoremap <leader>d :<C-u>DeniteBufferDir file_rec<CR>
+nnoremap <leader>r :<C-u>Denite -resume -cursor-pos=+1<CR>
+nnoremap <leader>lr :<C-u>Denite references -mode=normal<CR>
+
+hi link deniteMatchedChar Special
+    " End Denite settings
+
+
     " Set up colorschemes
 let g:onedark_terminal_italics = 1
 " let g:onedark_termcolors = 256
@@ -199,10 +246,10 @@ imap <C-v> <ESC>"+pa
 nno <leader>w :%s/\s\+$//<cr>:let @/=''<cr>
 
     " Control keys for CtrlP to open it in different modes
-let g:ctrlp_map = '<C-p>'
-let g:ctrlp_cmd = 'CtrlP'
-nno <leader>b :CtrlPBuffer<cr>
-nno <leader>p :CtrlPMRU<cr>
+" let g:ctrlp_map = '<C-p>'
+" let g:ctrlp_cmd = 'CtrlP'
+" nno <leader>b :CtrlPBuffer<cr>
+" nno <leader>p :CtrlPMRU<cr>
 
     " zoom a vim pane, <C-w>- to re-balance
 nno <leader>+ :wincmd =<cr>:wincmd \|<cr>
