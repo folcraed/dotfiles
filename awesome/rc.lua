@@ -16,10 +16,6 @@ local menubar = require("menubar")
 local hotkeys_popup = require("awful.hotkeys_popup").widget
 -- local collision = require("collision")
 
--- Enable hotkeys help widget for VIM and other apps
--- when client with a matching name is opened:
--- require("awful.hotkeys_popup.keys")
-
 -- {{{ Error handling
 
 --| Check if awesome encountered an error during startup and fell back to
@@ -350,20 +346,6 @@ globalkeys = awful.util.table.join(
         end,
         {description = "go back", group = "client"}),
 
-    -- -- Move/Resize floating windows
-    -- awful.key({ modkey, altkey }, "Next",  function () awful.client.relative_move( 20,  20, -40, -40 ) end,
-    --           {description = "Increase floating window size", group = "client" }),
-    -- awful.key({ modkey, altkey }, "Prior", function () awful.client.relative_move(-20, -20,  40,  40 ) end,
-    --           {description = "Decrease floating window size", group = "client" }),
-    -- awful.key({ modkey, altkey }, "Down",  function () awful.client.relative_move(  0,  20,   0,   0 ) end,
-    --           {description = "Move floating window down", group = "client" }),
-    -- awful.key({ modkey, altkey }, "Up",    function () awful.client.relative_move(  0, -20,   0,   0 ) end,
-    --           {description = "Move floating window up", group = "client" }),
-    -- awful.key({ modkey, altkey }, "Left",  function () awful.client.relative_move(-20,   0,   0,   0 ) end,
-    --           {description = "Move floating window left", group = "client" }),
-    -- awful.key({ modkey, altkey }, "Right", function () awful.client.relative_move( 20,   0,   0,   0 ) end,
-    --           {description = "Move floating window right", group = "client" }),
-
     -- Standard program
     awful.key({ modkey,           }, "Return", function () awful.spawn(terminal) end,
               {description = "open a terminal", group = "launcher"}),
@@ -392,6 +374,7 @@ globalkeys = awful.util.table.join(
     -- Volume control
     awful.key({ }, "XF86AudioRaiseVolume", function () awful.spawn("pactl set-sink-volume 1 +5%") end),
     awful.key({ }, "XF86AudioLowerVolume", function () awful.spawn("pactl set-sink-volume 1 -5%") end),
+    awful.key({ }, "XF86AudioMute", function () awful.spawn("pactl set-sink-mute 1 toggle") end),
 
     awful.key({ modkey, "Control" }, "n",
               function ()
