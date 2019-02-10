@@ -274,6 +274,7 @@ awful.screen.connect_for_each_screen(function(s)
 end)
 -- }}}
 
+-- NOTE: Really want to get rid of this and just use keybindings without the graphics.
 -- Call collision for it's keybindings
 -- collision()
 
