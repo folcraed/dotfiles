@@ -3,25 +3,20 @@
     " Call and/or install plugins with vim-plug
 call plug#begin('~/.config/nvim/plugged')
 
-Plug 'https://github.com/ctrlpvim/ctrlp.vim.git'
-Plug 'https://github.com/scrooloose/nerdtree.git'
-Plug 'https://github.com/itchyny/lightline.vim'
-Plug 'https://github.com/taohexxx/lightline-buffer'
-" Plug 'https://github.com/mkarmona/materialbox.git'
-" Plug 'https://github.com/arcticicestudio/nord-vim'
-Plug 'https://github.com/joshdick/onedark.vim'
-" Plug 'https://github.com/KeitaNakamura/neodark.vim'
-" Plug 'https://github.com/lifepillar/vim-solarized8'
-Plug 'https://github.com/lilydjwg/colorizer'
-Plug 'https://github.com/tpope/vim-commentary.git'
-Plug 'https://github.com/tpope/vim-fugitive.git'
-" Plug 'https://github.com/tpope/vim-markdown.git'
-" Plug 'https://github.com/plasticboy/vim-markdown.git'
-Plug 'https://github.com/godlygeek/tabular.git'
-Plug 'https://github.com/eugen0329/vim-esearch'
-Plug 'https://github.com/majutsushi/tagbar'
-Plug 'https://github.com/lvht/tagbar-markdown'
-Plug 'https://github.com/ryanoasis/vim-devicons'
+Plug 'ctrlpvim/ctrlp.vim'
+Plug 'scrooloose/nerdtree'
+Plug 'itchyny/lightline.vim'
+Plug 'taohexxx/lightline-buffer'
+Plug 'joshdick/onedark.vim'
+Plug 'lilydjwg/colorizer'
+Plug 'plasticboy/vim-markdown'
+Plug 'tpope/vim-commentary'
+Plug 'tpope/vim-fugitive'
+Plug 'godlygeek/tabular'
+Plug 'eugen0329/vim-esearch'
+Plug 'majutsushi/tagbar'
+Plug 'lvht/tagbar-markdown'
+Plug 'ryanoasis/vim-devicons'
 
 call plug#end()
 
@@ -59,13 +54,14 @@ set spellfile=~/.config/nvim/spell/en.utf-8.add
     " Set xdg-open to open links with gx
 let g:netrw_browsex_viewer = "xdg-open"
 
-    " Settings for vim-markdown
-" let g:vim_markdown_folding_level = 5
-" let g:vim_markdown_folding_disabled = 1
-" let g:vim_markdown_follow_anchor = 1
-" let g:vim_markdown_autowrite = 1
-" let g:markdown_enable_conceal = 1
+    " Key to format tables in markdown
 nno <leader>t :TableFormat<cr>
+
+    " Settings for Vim-Markdown
+let g:vim_markdown_conceal = 0
+let g:vim_markdown_folding_disabled = 1
+let g:vim_markdown_follow_anchor = 1
+let g:vim_markdown_autowrite = 1
 
     " --{{ Settings for vim-esearch
     " It uses <leader>ff to search

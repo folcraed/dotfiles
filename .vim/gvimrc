@@ -12,8 +12,11 @@ set background=dark
 " colorscheme hybrid_material
 " let g:airline_theme='hybrid'
 
+" Spacegray colors
+colorscheme spacegray
+
 " Pure Onedark theme
-colorscheme onedark
+" colorscheme onedark
 " let g:airline_theme='onedark'
 
 " Solarized theme

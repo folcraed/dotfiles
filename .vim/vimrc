@@ -1,5 +1,4 @@
 " ====== vimrc by Rob Boudreau ======
-" ====== Last change:	13 Sep 2018 ======
 
     " Set font and some optionsfor GVim
 if has('gui_running')
@@ -10,8 +9,8 @@ endif
     " Call and/or install plugins with vim-plug
 call plug#begin('~/.vim/plugged')
 
-" Plug 'https://github.com/ctrlpvim/ctrlp.vim.git'
-Plug 'Shougo/denite.nvim'
+Plug 'ctrlpvim/ctrlp.vim'
+" Plug 'Shougo/denite.nvim'
 Plug 'scrooloose/nerdtree'
 Plug 'itchyny/lightline.vim'
 Plug 'taohexxx/lightline-buffer'
@@ -67,12 +66,16 @@ set autoindent
 set nobackup
 set nowritebackup
 set noshowmode
+set display=lastline
+set spelllang=en_us
+set spellfile=~/.config/nvim/spell/en.utf-8.add
 " set foldenable
 
     " Settings for Vim-Markdown
+let g:vim_markdown_conceal = 0
 let g:vim_markdown_folding_disabled = 1
 let g:vim_markdown_follow_anchor = 1
-" let g:vim_markdown_autowrite = 1
+let g:vim_markdown_autowrite = 1
 nno <leader>t :TableFormat<cr>
 
     " --{{ Settings for vim-esearch
@@ -96,7 +99,7 @@ let g:netrw_browsex_viewer = "xdg-open"
 
     " --{{ Settings for Lightline
 let g:lightline = {
-    \ 'colorscheme': 'one',
+    \ 'colorscheme': 'Tomorrow_Night_Eighties',
     \ 'tabline': {
     \   'left': [ [ 'bufferinfo' ],
     \             [ 'separator' ],
@@ -122,62 +125,17 @@ let g:lightline = {
     \ }
     " --}} End of Lightline settings
 
-    "Denite settings copied from 
-" reset 50% winheight on window resize
-augroup deniteresize
-  autocmd!
-  autocmd VimResized,VimEnter * call denite#custom#option('default',
-        \'winheight', winheight(0) / 2)
-augroup end
-
-call denite#custom#option('default', {
-      \ 'prompt': '❯'
-      \ })
-
-call denite#custom#var('file_rec', 'command',
-      \ ['rg', '--files', '--glob', '!.git'])
-call denite#custom#var('grep', 'command', ['rg'])
-call denite#custom#var('grep', 'default_opts',
-      \ ['--hidden', '--vimgrep', '--smart-case'])
-call denite#custom#var('grep', 'recursive_opts', [])
-call denite#custom#var('grep', 'pattern_opt', ['--regexp'])
-call denite#custom#var('grep', 'separator', ['--'])
-call denite#custom#var('grep', 'final_opts', [])
-call denite#custom#map('insert', '<Esc>', '<denite:enter_mode:normal>',
-      \'noremap')
-call denite#custom#map('normal', '<Esc>', '<NOP>',
-      \'noremap')
-call denite#custom#map('insert', '<C-v>', '<denite:do_action:vsplit>',
-      \'noremap')
-call denite#custom#map('normal', '<C-v>', '<denite:do_action:vsplit>',
-      \'noremap')
-call denite#custom#map('normal', 'dw', '<denite:delete_word_after_caret>',
-      \'noremap')
-
-nnoremap <C-p> :<C-u>Denite file_rec<CR>
-nnoremap <leader>s :<C-u>Denite buffer<CR>
-nnoremap <leader><Space>s :<C-u>DeniteBufferDir buffer<CR>
-nnoremap <leader>8 :<C-u>DeniteCursorWord grep:. -mode=normal<CR>
-nnoremap <leader>/ :<C-u>Denite grep:. -mode=normal<CR>
-nnoremap <leader><Space>/ :<C-u>DeniteBufferDir grep:. -mode=normal<CR>
-nnoremap <leader>d :<C-u>DeniteBufferDir file_rec<CR>
-nnoremap <leader>r :<C-u>Denite -resume -cursor-pos=+1<CR>
-nnoremap <leader>lr :<C-u>Denite references -mode=normal<CR>
-
-hi link deniteMatchedChar Special
-    " End Denite settings
-
-
     " Set up colorschemes
-let g:onedark_terminal_italics = 1
+" let g:onedark_terminal_italics = 1
 " let g:onedark_termcolors = 256
 " let g:one_allow_italics = 1
 
 set background=dark
-colorscheme onedark
+" colorscheme onedark
 " colorscheme one
 " colorscheme solarized8
 " colorscheme nord
+colorscheme spacegray
 " colorscheme hybrid_material
 " colorscheme base16-ocean
 " colorscheme materialbox
@@ -185,7 +143,11 @@ colorscheme onedark
     " --{{{ Start of key mappings
 
     " This is to open markdown in okular
-nno <silent><F9> :!okular %:p<cr>
+nno <silent><F9> :!okular %:p &<cr><cr>
+
+    "Turn on and off spell checking
+map <silent><F6> :set spell<cr>
+map <silent><F7> :set nospell<cr>
 
     " These are for auto-brackets
 ino " ""<ESC>i
@@ -246,10 +208,10 @@ imap <C-v> <ESC>"+pa
 nno <leader>w :%s/\s\+$//<cr>:let @/=''<cr>
 
     " Control keys for CtrlP to open it in different modes
-" let g:ctrlp_map = '<C-p>'
-" let g:ctrlp_cmd = 'CtrlP'
-" nno <leader>b :CtrlPBuffer<cr>
-" nno <leader>p :CtrlPMRU<cr>
+let g:ctrlp_map = '<C-p>'
+let g:ctrlp_cmd = 'CtrlP'
+nno <leader>b :CtrlPBuffer<cr>
+nno <leader>p :CtrlPMRU<cr>
 
     " zoom a vim pane, <C-w>- to re-balance
 nno <leader>+ :wincmd =<cr>:wincmd \|<cr>
@@ -259,7 +221,7 @@ nno <leader>- :wincmd =<cr>
     " and put it on the left side
 nno <F8> :TagbarToggle<cr>
 ino <F8> :TagbarToggle<cr>
-let g:tagbar_left=1
+let g:tagbar_left=0
 
     " Snippets
 nno <leader>= o==================================================<cr><ESC>
@@ -299,29 +261,6 @@ ino <C-U> <C-G>u<C-U>
 if has('mouse')
   set mouse=a
 endif
-
-    " Only do this part when compiled with support for autocommands.
-" if has("autocmd")
-
-"     " Put these in an autocmd group, so that we can delete them easily.
-" augroup vimrcEx
-" au!
-
-"     " When editing a file, always jump to the last known cursor position.
-"     " Don't do it when the position is invalid or when inside an event handler
-"     " (happens when dropping a file on gvim).
-"     " Also don't do it when the mark is in the first line, that is the default
-"     " position when opening a file.
-"   autocmd BufReadPost *
-"     \ if line("'\"") > 1 && line("'\"") <= line("$") |
-"     \   exe normal! g`\"" |
-"     \ endif
-
-"   augroup END
-
-" else
-
-" endif  has("autocmd")
 
     " Convenient command to see the difference between the current buffer and the
     " file it was loaded from, thus the changes you made.
