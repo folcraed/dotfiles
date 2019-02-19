@@ -80,7 +80,7 @@ let g:table_mode_corner='|'
     " --{{ Settings for vim-esearch
 let g:esearch = {
   \ 'adapter':    'rg',
-  \ 'backend':    'system',
+  \ 'backend':    'vim8',
   \ 'out':        'qflist',
   \ 'batch_size': 1000,
   \ 'use':        ['word_under_cursor'],
