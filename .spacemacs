@@ -1,4 +1,7 @@
 ;; -*- mode: emacs-lisp -*-
+;; This config is not used by me anymore, I have my own Emacs config now
+;; So it may be deleted at any time.
+;;
 ;; This file is loaded by Spacemacs at startup.
 ;; It must be stored in your home directory.
 
