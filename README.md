@@ -1,7 +1,7 @@
 # My dotfiles
 
-Mostly things I experiment with. Some of them I use daily, some
-I try out and go back to once in a while to see how they've improved.
+Mostly things I experiment with. Some of them I use daily, some I set
+and forget, some I haven't looked at or changed in a long time.
 
 There's really nothing fancy or world changing here, it's just my
 playground. Files here are subject to change at any time.
