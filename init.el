@@ -165,9 +165,17 @@
   (setq projectile-completion-system 'helm))
 (define-key projectile-mode-map (kbd "C-c p") 'projectile-command-map)
 
-;;==============================================
+;;===============================================
+;;  Magit
+;;===============================================
+
+(use-package magit
+  :ensure t
+  :bind ("C-x g" . magit-status))
+
+;;===============================================
 ;; Some personal keybindings
-;;==============================================
+;;===============================================
 
 (define-prefix-command 'z-map)
 (global-set-key (kbd "C-z") 'z-map)
@@ -199,10 +207,10 @@
  '(frame-background-mode (quote dark))
  '(global-visual-line-mode t)
  '(helm-ag-base-command "rg --no-heading")
- '(org-startup-folded 'content)
+ '(org-startup-folded (quote content))
  '(package-selected-packages
    (quote
-    (diminish helm-rg helm-swoop atom-one-dark-theme avy company org helm-ag color-theme-sanityinc-tomorrow winum eyebrowse spaceline helm org-bullets which-key use-package)))
+    (magit diminish helm-rg helm-swoop atom-one-dark-theme avy company org helm-ag color-theme-sanityinc-tomorrow winum eyebrowse spaceline helm org-bullets which-key use-package)))
  '(tool-bar-mode nil)
  '(vc-annotate-background nil)
  '(vc-annotate-color-map
