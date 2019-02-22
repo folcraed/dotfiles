@@ -1,6 +1,11 @@
-;; Setting up my own Emacs. W.I.P
+;; Emacs settings Ver 0.1
+;; File or commit timestamp show when last updated.
 
 (setq inhibit-startup-message t)
+
+;;==============================================
+;;  Set up repositories
+;;==============================================
 
 (require 'package)
 (setq package-enable-at-startup nil)
