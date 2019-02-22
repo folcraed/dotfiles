@@ -114,7 +114,7 @@
       '(("t" "Todo" entry (file+headline "~/Dropbox/Notes/agenda.org" "Todos")
 	 "* TODO %t %?")
 	("c" "Changes" entry (file+headline "~/Dropbox/Notes/agenda.org" "Changes")
-	 "* %?\n %t\n")
+	 "* %t %?")
 	("g" "Genealogy" entry (file+headline "~/Dropbox/Notes/agenda.org" "Todos")
 	 "* TODO %t %?\n %a\n %?\n")))
 
