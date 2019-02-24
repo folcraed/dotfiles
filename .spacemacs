@@ -362,13 +362,14 @@ you should place your code here."
      ("\\.pdf\\'" . "xdg-open %s"))))
   (setq org-capture-templates
         '(("t" "Todo" entry (file+headline "~/Dropbox/Notes/agenda.org" "Todos")
-           "* TODO %?\n %t\n")
+           "* TODO %t %?")
           ("c" "Changes" entry (file+headline "~/Dropbox/Notes/agenda.org" "Changes")
-           "* %?\n %t\n")
+           "* %t %?")
           ("g" "Genealogy" entry (file+headline "~/Dropbox/Notes/agenda.org" "Todos")
-           "* TODO %?\n %t\n %a\n %?")))
+           "* TODO %t %?\n %a\n %?")))
   (org-projectile-per-project)
   (setq org-projectile-per-project-filepath "todo.org")
+  (setq-default org-startup-folded (quote content))
   (setq-default org-display-custom-times t)
   (setq org-time-stamp-custom-formats '("[%a %b %e %Y]" . "<%a %b %e %Y %H:%M>"))
   (setq-default org-hide-emphasis-markers t)
@@ -387,7 +388,7 @@ This function is called at the very end of Spacemacs initialization."
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
    (quote
-    (evil-magit doom-modeline helm magit transient all-the-icons treemacs yasnippet xterm-color ws-butler writeroom-mode winum which-key web-mode web-beautify volatile-highlights uuidgen use-package treemacs-projectile treemacs-evil toc-org tagedit symon string-inflection spaceline-all-the-icons smeargle slim-mode shrink-path shell-pop scss-mode sass-mode restart-emacs ranger rainbow-delimiters pug-mode prettier-js popwin pfuture persp-mode pcre2el password-generator paradox ox-epub overseer orgit org-projectile org-preview-html org-present org-pomodoro org-mime org-download org-bullets org-brain open-junk-file nameless multi-term move-text monokai-theme mmm-mode markdown-toc magit-svn magit-gitflow macrostep lv lorem-ipsum link-hint indent-guide impatient-mode hungry-delete ht hl-todo highlight-parentheses highlight-numbers highlight-indentation helm-xref helm-themes helm-swoop helm-purpose helm-projectile helm-org-rifle helm-mode-manager helm-make helm-gitignore helm-git-grep helm-flx helm-descbinds helm-css-scss helm-company helm-ag golden-ratio gnuplot gitignore-templates gitconfig-mode gitattributes-mode git-timemachine git-messenger git-link git-commit gh-md fuzzy font-lock+ flyspell-correct-helm flx-ido fill-column-indicator eyebrowse expand-region evil-visualstar evil-visual-mark-mode evil-unimpaired evil-tutor evil-surround evil-org evil-numbers evil-nerd-commenter evil-matchit evil-lisp-state evil-lion evil-indent-plus evil-iedit-state evil-goggles evil-exchange evil-escape evil-ediff evil-cleverparens evil-args evil-anzu eval-sexp-fu eshell-z eshell-prompt-extras esh-help emmet-mode elisp-slime-nav eldoc-eval editorconfig dumb-jump dotenv-mode diminish define-word counsel-projectile company-web company-statistics column-enforce-mode color-theme-sanityinc-tomorrow clean-aindent-mode centered-cursor-mode auto-highlight-symbol auto-dictionary auto-compile atom-one-dark-theme aggressive-indent ace-window ace-link ace-jump-helm-line ac-ispell))))
+    (web-mode orgit magit-svn evil-nerd-commenter evil-magit dumb-jump doom-modeline color-theme-sanityinc-tomorrow aggressive-indent counsel company helm magit-popup magit transient haml-mode all-the-icons powerline treemacs ace-window dash org-plus-contrib evil yasnippet xterm-color ws-butler writeroom-mode winum which-key web-beautify volatile-highlights uuidgen use-package treemacs-projectile treemacs-evil toc-org tagedit symon swiper string-inflection spaceline-all-the-icons smeargle slim-mode shrink-path shell-pop scss-mode sass-mode restart-emacs ranger rainbow-delimiters pug-mode prettier-js popwin pfuture persp-mode pcre2el password-generator paradox ox-epub overseer org-projectile org-preview-html org-present org-pomodoro org-mime org-download org-bullets org-brain open-junk-file nameless multi-term move-text monokai-theme mmm-mode markdown-toc magit-gitflow macrostep lv lorem-ipsum link-hint indent-guide impatient-mode hungry-delete ht hl-todo highlight-parentheses highlight-numbers highlight-indentation helm-xref helm-themes helm-swoop helm-purpose helm-projectile helm-org-rifle helm-mode-manager helm-make helm-gitignore helm-git-grep helm-flx helm-descbinds helm-css-scss helm-company helm-ag goto-chg golden-ratio gnuplot gitignore-templates gitconfig-mode gitattributes-mode git-timemachine git-messenger git-link git-commit gh-md fuzzy font-lock+ flyspell-correct-helm flx-ido fill-column-indicator eyebrowse expand-region evil-visualstar evil-visual-mark-mode evil-unimpaired evil-tutor evil-surround evil-org evil-numbers evil-matchit evil-lisp-state evil-lion evil-indent-plus evil-iedit-state evil-goggles evil-exchange evil-escape evil-ediff evil-cleverparens evil-args evil-anzu eval-sexp-fu eshell-z eshell-prompt-extras esh-help emmet-mode elisp-slime-nav eldoc-eval editorconfig dotenv-mode diminish define-word counsel-projectile company-web company-statistics column-enforce-mode clean-aindent-mode centered-cursor-mode auto-highlight-symbol auto-dictionary auto-compile atom-one-dark-theme ace-link ace-jump-helm-line ac-ispell))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.

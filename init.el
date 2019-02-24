@@ -215,7 +215,7 @@
  '(org-startup-folded (quote content))
  '(package-selected-packages
    (quote
-    (magit diminish helm-rg helm-swoop atom-one-dark-theme avy company org helm-ag color-theme-sanityinc-tomorrow winum eyebrowse spaceline helm org-bullets which-key use-package)))
+    (magit projectile diminish helm-rg helm-swoop atom-one-dark-theme avy company org helm-ag color-theme-sanityinc-tomorrow winum eyebrowse spaceline helm org-bullets which-key use-package)))
  '(tool-bar-mode nil)
  '(vc-annotate-background nil)
  '(vc-annotate-color-map
