@@ -56,7 +56,7 @@
   :ensure t
   :diminish "C"
   :config
-  (setq company-idle-delay 2)
+  (setq company-idle-delay 1)
   (setq company-minimum-prefix-length 3)
   (global-company-mode t))
 

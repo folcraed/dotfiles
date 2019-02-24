@@ -344,7 +344,7 @@ you should place your code here."
                 create-lockfiles nil
                 auto-save-default nil)
   (setq-default tab-width 4 indent-tabs-mode nil)
-  (setq company-idle-delay 2)
+  (setq company-idle-delay 1)
   (global-visual-line-mode t)
   (define-key evil-normal-state-map (kbd "j") 'evil-next-visual-line)
   (define-key evil-normal-state-map (kbd "k") 'evil-previous-visual-line)
