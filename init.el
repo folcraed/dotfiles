@@ -60,17 +60,18 @@
   (setq company-minimum-prefix-length 3)
   (global-company-mode t))
 
-;;==============================================
-;;  Spaceline
-;;==============================================
+;;===============================================
+;;  Doom modeline
+;;===============================================
 
-(use-package spaceline
-  :demand t
-  :init
-  (setq powerline-default-separator 'curve)
-  :config
-  (require 'spaceline-config)
-  (spaceline-spacemacs-theme))
+(use-package doom-modeline
+  :ensure t
+  :hook (after-init . doom-modeline-mode))
+(setq doom-modeline-height 18)
+(setq doom-modeline-minor-modes 1)
+(setq doom-modeline-major-mode-color-icon 1)
+(setq doom-modeline-buffer-file-name-style 'relative-from-project)
+(setq column-number-mode 1)
 
 ;;==============================================
 ;;  Winum settings
@@ -124,38 +125,45 @@
 (setq org-agenda-files (directory-files-recursively "~/Dropbox/Notes" "\.org$"))
 
 ;;==============================================
-;;  Helm settings
+;;  Ivy, Counsel and friends
 ;;==============================================
 
-(use-package helm
+(use-package counsel
+  :ensure t)
+;;  :map ivy-minibuffer-map)
+
+(use-package ivy
   :ensure t
-  :bind (("M-x" . helm-M-x)
-        ("C-x C-f" . helm-find-files)
-        ("C-x b" . helm-buffers-list))
-  :init
-        (setq helm-M-x_fuzzy-match t
-              helm-autoresize-mode t
-              helm-autoresize-max-height 30
-              helm-autoresize-min-height 20
-              helm-split-window-inside-p t)
+  :diminish (ivy-mode)
+  :bind (("C-x b" . ivy-switch-buffer))
   :config
-  (helm-mode 1))
+  (ivy-mode 1)
+  (setq ivy-use-virtual-buffers t)
+  (setq ivy-count-format "%d%d ")
+  (setq ivy-display-style 'fancy))
 
-(use-package helm-swoop
+(use-package swiper
   :ensure t
-  :bind (("M-i" . helm-swoop)
-        ("C-x M-i" . helm-swoop-back-to-last-point)
-        ("C-c M-i" . helm-multi-swoop)
-        ("M-I" . helm-multi-swoop-all))
+  :bind (("M-i" . swiper)
+        ("M-x" . counsel-M-x)
+        ("C-x C-f" . counsel-find-file))
+  :config
+  (progn
+    (ivy-mode 1)
+    (setq ivy-use-virtual-buffers t)
+    (setq ivy-display-style 'fancy)))
+
+;;==============================================
+;;  Flyspell stuff
+;;==============================================
+
+(use-package flyspell-correct
+  :ensure t)
+  
+(use-package flyspell-correct-ivy
+  :bind ("C-;" . flyspell-correct-wrapper)
   :init
-        (setq helm-swoop-split-with-multiple-windows t
-              helm-swoop-split-direction 'split-window-vertically))
-
-(use-package helm-rg
-  :ensure t)
-
-(use-package helm-flyspell
-  :ensure t)
+  (setq flyspell-correct-interface #'flyspell-correct-ivy))
 
 ;;==============================================
 ;; Projectile
@@ -167,7 +175,7 @@
   :diminish "P"
   :config
   (projectile-global-mode)
-  (setq projectile-completion-system 'helm))
+  (setq projectile-completion-system 'ivy))
 (define-key projectile-mode-map (kbd "C-c p") 'projectile-command-map)
 
 ;;===============================================
@@ -185,9 +193,9 @@
 (define-prefix-command 'z-map)
 (global-set-key (kbd "C-z") 'z-map)
 (define-key z-map (kbd "c") 'org-capture)
-(define-key z-map (kbd "r") 'helm-rg)
-(define-key z-map (kbd "s") 'helm-flyspell-correct)
-(define-key z-map (kbd "k") 'helm-show-kill-ring)
+(define-key z-map (kbd "r") 'counsel-rg)
+(define-key z-map (kbd "s") 'flyspell-correct-wrapper)
+;; (define-key z-map (kbd "k") 'helm-show-kill-ring)
 (define-key z-map (kbd "f") 'flyspell-buffer)
 (define-key z-map (kbd "F") 'flyspell-mode)
 
@@ -215,7 +223,8 @@
  '(org-startup-folded (quote content))
  '(package-selected-packages
    (quote
-    (magit projectile diminish helm-rg helm-swoop atom-one-dark-theme avy company org helm-ag color-theme-sanityinc-tomorrow winum eyebrowse spaceline helm org-bullets which-key use-package)))
+    (flyspell-correct flyspell-correct-ivy magit projectile diminish atom-one-dark-theme doom-modeline all-the-icons undo-tree avy company org color-theme-sanityinc-tomorrow winum eyebrowse ivy counsel swiper org-bullets which-key use-package)))
+ '(scroll-bar-mode nil)
  '(tool-bar-mode nil)
  '(vc-annotate-background nil)
  '(vc-annotate-color-map
@@ -244,5 +253,5 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(default ((t (:inherit nil :stipple nil :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight normal :height 116 :width normal :foundry "CYEL" :family "Iosevka")))))
+ '(default ((t (:inherit nil :stipple nil :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight normal :height 124 :width normal :foundry "CYEL" :family "Iosevka")))))
 (put 'dired-find-alternate-file 'disabled nil)
