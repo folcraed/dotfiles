@@ -129,8 +129,10 @@
 ;;==============================================
 
 (use-package counsel
-  :ensure t)
-;;  :map ivy-minibuffer-map)
+  :ensure t
+  :bind (("M-x" . counsel-M-x)
+         ("C-S-p" . counsel-M-x)
+         ("C-x C-f" . counsel-find-file)))
 
 (use-package ivy
   :ensure t
@@ -144,9 +146,7 @@
 
 (use-package swiper
   :ensure t
-  :bind (("M-i" . swiper)
-        ("M-x" . counsel-M-x)
-        ("C-x C-f" . counsel-find-file))
+  :bind (("M-i" . swiper))
   :config
   (progn
     (ivy-mode 1)
@@ -161,6 +161,7 @@
   :ensure t)
   
 (use-package flyspell-correct-ivy
+  :ensure t
   :bind ("C-;" . flyspell-correct-wrapper)
   :init
   (setq flyspell-correct-interface #'flyspell-correct-ivy))
@@ -171,7 +172,6 @@
 
 (use-package projectile
   :ensure t
-;;  :bind ("C-c p" . projectile-command-map)
   :diminish "P"
   :config
   (projectile-global-mode)
@@ -194,10 +194,12 @@
 (global-set-key (kbd "C-z") 'z-map)
 (define-key z-map (kbd "c") 'org-capture)
 (define-key z-map (kbd "r") 'counsel-rg)
-(define-key z-map (kbd "s") 'flyspell-correct-wrapper)
+(define-key z-map (kbd "s") 'flyspell-correct-at-point)
 ;; (define-key z-map (kbd "k") 'helm-show-kill-ring)
 (define-key z-map (kbd "f") 'flyspell-buffer)
 (define-key z-map (kbd "F") 'flyspell-mode)
+(global-set-key (kbd "C-p") 'projectile-find-file)
+(global-set-key (kbd "C-b") 'projectile-switch-to-buffer)
 
 ;;==============================================
 ;; Custom settings
@@ -219,11 +221,11 @@
  '(flycheck-color-mode-line-face-to-color (quote mode-line-buffer-id))
  '(frame-background-mode (quote dark))
  '(global-visual-line-mode t)
- '(helm-ag-base-command "rg --no-heading")
+ '(menu-bar-mode nil)
  '(org-startup-folded (quote content))
  '(package-selected-packages
    (quote
-    (flyspell-correct flyspell-correct-ivy magit projectile diminish atom-one-dark-theme doom-modeline all-the-icons undo-tree avy company org color-theme-sanityinc-tomorrow winum eyebrowse ivy counsel swiper org-bullets which-key use-package)))
+    (flyspell-correct-ivy flyspell-correct magit projectile diminish atom-one-dark-theme doom-modeline all-the-icons undo-tree avy company org color-theme-sanityinc-tomorrow winum eyebrowse ivy counsel swiper org-bullets which-key use-package)))
  '(scroll-bar-mode nil)
  '(tool-bar-mode nil)
  '(vc-annotate-background nil)
