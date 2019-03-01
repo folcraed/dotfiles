@@ -132,7 +132,8 @@
   :ensure t
   :bind (("M-x" . counsel-M-x)
          ("C-S-p" . counsel-M-x)
-         ("C-x C-f" . counsel-find-file)))
+         ("C-x C-f" . counsel-find-file)
+         ("M-o" . counsel-outline)))
 
 (use-package ivy
   :ensure t
@@ -146,7 +147,8 @@
 
 (use-package swiper
   :ensure t
-  :bind (("M-i" . swiper))
+  :bind (("M-i" . swiper)
+         ("M-I" . swiper-all))
   :config
   (progn
     (ivy-mode 1)
@@ -195,11 +197,14 @@
 (define-key z-map (kbd "c") 'org-capture)
 (define-key z-map (kbd "r") 'counsel-rg)
 (define-key z-map (kbd "s") 'flyspell-correct-at-point)
-;; (define-key z-map (kbd "k") 'helm-show-kill-ring)
+(define-key z-map (kbd "k") 'counsel-yank-po)
 (define-key z-map (kbd "f") 'flyspell-buffer)
 (define-key z-map (kbd "F") 'flyspell-mode)
 (global-set-key (kbd "C-p") 'projectile-find-file)
 (global-set-key (kbd "C-b") 'projectile-switch-to-buffer)
+(global-set-key (kbd "C-s") 'save-buffer)
+(global-set-key (kbd "C-f") 'isearch-forward)
+(global-set-key (kbd "M-f") 'goto-line)
 
 ;;==============================================
 ;; Custom settings
@@ -222,7 +227,7 @@
  '(frame-background-mode (quote dark))
  '(global-visual-line-mode t)
  '(menu-bar-mode nil)
- '(org-startup-folded (quote content))
+ '(org-startup-folded nil)
  '(package-selected-packages
    (quote
     (flyspell-correct-ivy flyspell-correct magit projectile diminish atom-one-dark-theme doom-modeline all-the-icons undo-tree avy company org color-theme-sanityinc-tomorrow winum eyebrowse ivy counsel swiper org-bullets which-key use-package)))
