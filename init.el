@@ -26,14 +26,6 @@
 
 (use-package diminish
   :ensure t)
-;;==============================================
-;;  Sanity settings
-;;==============================================
-
-(setq-default make-backup-files nil
-	      backup-inhibited t
-	      create-lockfiles nil
-	      auto-save-default nil)
 
 ;;==============================================
 ;;  Misc packages
@@ -133,7 +125,9 @@
   :bind (("M-x" . counsel-M-x)
          ("C-S-p" . counsel-M-x)
          ("C-x C-f" . counsel-find-file)
-         ("M-o" . counsel-outline)))
+         ("M-o" . counsel-outline))
+  :config
+  (setq counsel-outline-display-style 'headline))
 
 (use-package ivy
   :ensure t
@@ -143,7 +137,9 @@
   (ivy-mode 1)
   (setq ivy-use-virtual-buffers t)
   (setq ivy-count-format "%d%d ")
-  (setq ivy-display-style 'fancy))
+  (setq ivy-display-style 'fancy)
+  (setq ivy-height 16
+        ivy-fixed-height-minibuffer t))
 
 (use-package swiper
   :ensure t
@@ -205,6 +201,19 @@
 (global-set-key (kbd "C-s") 'save-buffer)
 (global-set-key (kbd "C-f") 'isearch-forward)
 (global-set-key (kbd "M-f") 'goto-line)
+
+
+;;==============================================
+;;  Sanity settings
+;;==============================================
+
+(setq-default make-backup-files nil
+	      backup-inhibited t
+	      create-lockfiles nil
+	      auto-save-default nil)
+
+(add-hook 'minibuffer-setup-hook
+	  (lambda () (setq truncate-lines nil)))
 
 ;;==============================================
 ;; Custom settings
