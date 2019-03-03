@@ -1,7 +1,15 @@
-;; Emacs settings Ver 0.1
+;; Emacs settings Ver 0.2
 ;; File or commit timestamp show when last updated.
 
 (setq inhibit-startup-message t)
+(menu-bar-mode 0)
+(tool-bar-mode 0)
+(scroll-bar-mode 0)
+(setq-default display-line-numbers t)
+(set-default-font "Iosevka 12")
+(put 'dired-find-alternate-file 'disabled nil)
+(global-visual-line-mode t)
+;; (display-line-numbers t)
 
 ;;==============================================
 ;;  Set up repositories
@@ -109,12 +117,13 @@
 	("c" "Changes" entry (file+headline "~/Dropbox/Notes/agenda.org" "Changes")
 	 "* %t %?")
 	("g" "Genealogy" entry (file+headline "~/Dropbox/Notes/agenda.org" "Todos")
-	 "* TODO %t %?\n %a\n %?\n")))
+	 "* TODO %t %?\n %a\n")))
 
 (setq-default org-display-custom-times t)
 (setq org-time-stamp-custom-formats '("[%a %b %e %Y]" . "<%a %b %e %Y %H:%M>"))
 (setq-default org-hide-emphasis-markers t)
 (setq org-agenda-files (directory-files-recursively "~/Dropbox/Notes" "\.org$"))
+(setq org-startup-folded nil)
 
 ;;==============================================
 ;;  Ivy, Counsel and friends
@@ -139,7 +148,9 @@
   (setq ivy-count-format "%d%d ")
   (setq ivy-display-style 'fancy)
   (setq ivy-height 16
-        ivy-fixed-height-minibuffer t))
+        ivy-fixed-height-minibuffer t)
+  (setq ivy-re-builders-alist
+      '((t . ivy--regex-ignore-order))))
 
 (use-package swiper
   :ensure t
@@ -215,6 +226,8 @@
 (add-hook 'minibuffer-setup-hook
 	  (lambda () (setq truncate-lines nil)))
 
+(show-paren-mode 1)
+
 ;;==============================================
 ;; Custom settings
 ;;==============================================
@@ -224,50 +237,18 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(ansi-color-faces-vector
-   [default bold shadow italic underline bold bold-italic bold])
- '(beacon-color "#f2777a")
- '(custom-enabled-themes (quote (atom-one-dark)))
+ '(custom-enabled-themes (quote (sanityinc-tomorrow-eighties)))
  '(custom-safe-themes
    (quote
     ("39464ed440476d616c5671ff4d9cfc2393846132390e0d80e611dfa0b4bd6983" "bf5bdab33a008333648512df0d2b9d9710bdfba12f6a768c7d2c438e1092b633" "628278136f88aa1a151bb2d6c8a86bf2b7631fbea5f0f76cba2a0079cd910f7d" default)))
- '(display-line-numbers t)
  '(flycheck-color-mode-line-face-to-color (quote mode-line-buffer-id))
  '(frame-background-mode (quote dark))
- '(global-visual-line-mode t)
- '(menu-bar-mode nil)
- '(org-startup-folded nil)
  '(package-selected-packages
    (quote
-    (flyspell-correct-ivy flyspell-correct magit projectile diminish atom-one-dark-theme doom-modeline all-the-icons undo-tree avy company org color-theme-sanityinc-tomorrow winum eyebrowse ivy counsel swiper org-bullets which-key use-package)))
- '(scroll-bar-mode nil)
- '(tool-bar-mode nil)
- '(vc-annotate-background nil)
- '(vc-annotate-color-map
-   (quote
-    ((20 . "#f2777a")
-     (40 . "#f99157")
-     (60 . "#ffcc66")
-     (80 . "#99cc99")
-     (100 . "#66cccc")
-     (120 . "#6699cc")
-     (140 . "#cc99cc")
-     (160 . "#f2777a")
-     (180 . "#f99157")
-     (200 . "#ffcc66")
-     (220 . "#99cc99")
-     (240 . "#66cccc")
-     (260 . "#6699cc")
-     (280 . "#cc99cc")
-     (300 . "#f2777a")
-     (320 . "#f99157")
-     (340 . "#ffcc66")
-     (360 . "#99cc99"))))
- '(vc-annotate-very-old-color nil))
+    (flyspell-correct-ivy flyspell-correct magit projectile diminish atom-one-dark-theme doom-modeline all-the-icons undo-tree avy company org color-theme-sanityinc-tomorrow winum eyebrowse ivy counsel swiper org-bullets which-key use-package))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(default ((t (:inherit nil :stipple nil :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight normal :height 124 :width normal :foundry "CYEL" :family "Iosevka")))))
-(put 'dired-find-alternate-file 'disabled nil)
+ )
