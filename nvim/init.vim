@@ -77,7 +77,7 @@ let g:esearch = {
 
     " --{{ Settings for Lightline
 let g:lightline = {
-    \ 'colorscheme': 'one',
+    \ 'colorscheme': 'Tomorrow_Night_Eighties',
     \ 'tabline': {
     \   'left': [ [ 'bufferinfo' ],
     \             [ 'separator' ],
@@ -105,9 +105,9 @@ let g:lightline = {
 
     " --{{ Set up colorschemes
 " let g:neodark#background = '#2b303b'
-let g:onedark_terminal_italics = 1
-" let g:spacegray_use_italics = 1
-" let g:spacegray_underline_search = 1
+" let g:onedark_terminal_italics = 1
+let g:spacegray_use_italics = 1
+let g:spacegray_underline_search = 1
 " let g:onedark_termcolors = 256
 " let g:one_allow_italics = 1
 " let g:nord_italic = 1
@@ -115,8 +115,8 @@ let g:onedark_terminal_italics = 1
 
 set background=dark
 " colorscheme neodark
-colorscheme onedark
-" colorscheme spacegray
+" colorscheme onedark
+colorscheme spacegray
 " colorscheme solarized8
 " colorscheme materialbox
 " colorscheme base16-ocean
