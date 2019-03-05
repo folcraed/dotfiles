@@ -149,8 +149,16 @@
   (setq ivy-display-style 'fancy)
   (setq ivy-height 16
         ivy-fixed-height-minibuffer t)
-  (setq ivy-re-builders-alist
-      '((t . ivy--regex-ignore-order))))
+  (setq ivy-initial-inputs-alist
+      '((org-refile . "^")
+        (org-agenda-refile . "^")
+        (org-capture-refile . "^")
+        (counsel-M-x . "")
+        (counsel-describe-function . "^")
+        (counsel-describe-variable . "^")
+        (counsel-org-capture . "^")
+        (Man-completion-table . "^")
+        (woman . "^"))))
 
 (use-package swiper
   :ensure t
