@@ -226,7 +226,7 @@ let g:NERDTreeDirArrowCollapsible = '▾'
 nno <silent><leader>e :edit .<cr>
 
     " Save a admin file from regular user
-nno <silent><leader>r :w !sudo tee %
+nno <silent><leader>r :w !sudo tee % .
 
     " Don't use Ex mode, use Q for formatting
 map Q gq
