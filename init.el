@@ -1,4 +1,4 @@
-;; Emacs settings Ver 0.2
+;; Emacs settings Ver 0.3
 ;; File or commit timestamp show when last updated.
 
 (setq inhibit-startup-message t)
@@ -43,10 +43,10 @@
   :ensure t
   :config (which-key-mode))
 
-(use-package eyebrowse
+(use-package perspective
   :ensure t
-  :config
-  (eyebrowse-mode t))
+  :config (persp-mode))
+(require 'persp-projectile)
 
 (use-package avy
   :ensure t
@@ -215,11 +215,12 @@
 (define-key z-map (kbd "k") 'counsel-yank-po)
 (define-key z-map (kbd "f") 'flyspell-buffer)
 (define-key z-map (kbd "F") 'flyspell-mode)
+(define-key z-map (kbd "p") 'projectile-persp-switch-project)
 (global-set-key (kbd "C-p") 'projectile-find-file)
 (global-set-key (kbd "C-b") 'projectile-switch-to-buffer)
 (global-set-key (kbd "C-s") 'save-buffer)
 (global-set-key (kbd "C-f") 'isearch-forward)
-(global-set-key (kbd "M-f") 'goto-line)
+(global-set-key (kbd "M-l") 'goto-line)
 
 
 ;;==============================================
@@ -253,10 +254,11 @@
  '(frame-background-mode (quote dark))
  '(package-selected-packages
    (quote
-    (railscasts-reloaded-theme flyspell-correct-ivy flyspell-correct magit projectile diminish atom-one-dark-theme doom-modeline all-the-icons undo-tree avy company org color-theme-sanityinc-tomorrow winum eyebrowse ivy counsel swiper org-bullets which-key use-package))))
+    (persp-projectile perspective railscasts-reloaded-theme flyspell-correct-ivy flyspell-correct magit projectile diminish atom-one-dark-theme doom-modeline all-the-icons undo-tree avy company org color-theme-sanityinc-tomorrow winum ivy counsel swiper org-bullets which-key use-package)))
+ '(persp-modestring-dividers (quote ("(" ")" "|"))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- )
+ '(persp-selected-face ((t (:foreground "orange" :weight bold)))))
