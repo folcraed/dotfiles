@@ -138,9 +138,8 @@
 	 ("C-p" . helm-find-files)
 	 ("M-o" . helm-org-in-buffer-headings))
   :init (setq helm-M-x_fuzzy-match 1
-	      helm-autoresize-mode 1
-	      helm-autoresize-max-height 12
-	      helm-autoresize-min-height 10
+	      helm-autoresize-mode 0
+	      helm-display-buffer-default-height 13
 	      helm-split-window-inside-p 1)
   :config
   (helm-mode 1))
