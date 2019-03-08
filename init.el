@@ -1,4 +1,4 @@
-;; Emacs settings Ver 0.3
+;; Emacs settings Ver 0.4
 ;; File or commit timestamp show when last updated.
 
 (setq inhibit-startup-message t)
@@ -9,7 +9,6 @@
 (set-default-font "Iosevka 12")
 (put 'dired-find-alternate-file 'disabled nil)
 (global-visual-line-mode t)
-;; (display-line-numbers t)
 
 ;;==============================================
 ;;  Set up repositories
@@ -41,6 +40,7 @@
 
 (use-package which-key
   :ensure t
+  :diminish "K"
   :config (which-key-mode))
 
 (use-package perspective
@@ -50,7 +50,7 @@
 
 (use-package avy
   :ensure t
-  :bind ("M-s" . avy-goto-word-1))
+  :bind ("M-j" . avy-goto-word-1))
 
 (use-package company
   :ensure t
@@ -126,62 +126,50 @@
 (setq org-startup-folded nil)
 
 ;;==============================================
-;;  Ivy, Counsel and friends
+;;  Helm and friends
 ;;==============================================
 
-(use-package counsel
+(use-package helm
   :ensure t
-  :bind (("M-x" . counsel-M-x)
-         ("C-S-p" . counsel-M-x)
-         ("C-x C-f" . counsel-find-file)
-         ("M-o" . counsel-outline))
+  :diminish "H"
+  :bind (("M-x" . helm-M-x)
+	 ("C-S-p" . helm-M-x)
+	 ("C-b" . helm-buffers-list)
+	 ("C-p" . helm-find-files)
+	 ("M-o" . helm-org-in-buffer-headings))
+  :init (setq helm-M-x_fuzzy-match 1
+	      helm-autoresize-mode 1
+	      helm-autoresize-max-height 12
+	      helm-autoresize-min-height 10
+	      helm-split-window-inside-p 1)
   :config
-  (setq counsel-outline-display-style 'headline))
+  (helm-mode 1))
 
-(use-package ivy
+(use-package helm-swoop
   :ensure t
-  :diminish (ivy-mode)
-  :bind (("C-x b" . ivy-switch-buffer))
-  :config
-  (ivy-mode 1)
-  (setq ivy-use-virtual-buffers t)
-  (setq ivy-count-format "%d%d ")
-  (setq ivy-display-style 'fancy)
-  (setq ivy-height 16
-        ivy-fixed-height-minibuffer t)
-  (setq ivy-initial-inputs-alist
-      '((org-refile . "^")
-        (org-agenda-refile . "^")
-        (org-capture-refile . "^")
-        (counsel-M-x . "")
-        (counsel-describe-function . "^")
-        (counsel-describe-variable . "^")
-        (counsel-org-capture . "^")
-        (Man-completion-table . "^")
-        (woman . "^"))))
+  :bind (("C-f" . helm-swoop)
+	  ("C-F" . helm-multi-swoop-all))
+  :init (setq helm-swoop-split-with-multiple-windows t
+	      helm-swoop-split=direction 'split-window-vertically))
+(require 'helm-swoop)
 
-(use-package swiper
-  :ensure t
-  :bind (("M-i" . swiper)
-         ("M-I" . swiper-all))
-  :config
-  (progn
-    (ivy-mode 1)
-    (setq ivy-use-virtual-buffers t)
-    (setq ivy-display-style 'fancy)))
+(use-package helm-rg
+  :ensure t)
+
+(use-package helm-projectile
+  :ensure t)
 
 ;;==============================================
 ;;  Flyspell stuff
 ;;==============================================
 
 (use-package flyspell-correct
-  :ensure t)
-  
-(use-package flyspell-correct-ivy
   :ensure t
-  :bind ("C-;" . flyspell-correct-wrapper)
-  :init
-  (setq flyspell-correct-interface #'flyspell-correct-ivy))
+  :diminish "S")
+  
+(use-package helm-flyspell
+  :ensure t
+  :bind ("C-;" . helm-flyspell-correct))
 
 ;;==============================================
 ;; Projectile
@@ -192,7 +180,7 @@
   :diminish "P"
   :config
   (projectile-global-mode)
-  (setq projectile-completion-system 'ivy))
+  (setq projectile-completion-system 'helm))
 (define-key projectile-mode-map (kbd "C-c p") 'projectile-command-map)
 
 ;;===============================================
@@ -204,24 +192,31 @@
   :bind ("C-x g" . magit-status))
 
 ;;===============================================
+;;  Multiple Cursors
+;;===============================================
+
+(use-package multiple-cursors
+  :ensure t)
+  
+;;===============================================
 ;; Some personal keybindings
 ;;===============================================
 
 (define-prefix-command 'z-map)
 (global-set-key (kbd "C-z") 'z-map)
 (define-key z-map (kbd "c") 'org-capture)
-(define-key z-map (kbd "r") 'counsel-rg)
-(define-key z-map (kbd "s") 'flyspell-correct-at-point)
-(define-key z-map (kbd "k") 'counsel-yank-po)
+(define-key z-map (kbd "r") 'helm-rg)
+(define-key z-map (kbd "s") 'helm-flyspell-correct)
+(define-key z-map (kbd "k") 'helm-show-kill-ring)
 (define-key z-map (kbd "f") 'flyspell-buffer)
 (define-key z-map (kbd "F") 'flyspell-mode)
-(define-key z-map (kbd "p") 'projectile-persp-switch-project)
+(define-key z-map (kbd "p") 'persp-switch)
 (global-set-key (kbd "C-p") 'projectile-find-file)
 (global-set-key (kbd "C-b") 'projectile-switch-to-buffer)
 (global-set-key (kbd "C-s") 'save-buffer)
-(global-set-key (kbd "C-f") 'isearch-forward)
 (global-set-key (kbd "M-l") 'goto-line)
-
+(global-set-key (kbd "C->") 'mc/mark-next-like-this)
+(global-set-key (kbd "C-<") 'mc/mark-previous-like-this)
 
 ;;==============================================
 ;;  Sanity settings
@@ -254,7 +249,7 @@
  '(frame-background-mode (quote dark))
  '(package-selected-packages
    (quote
-    (persp-projectile perspective railscasts-reloaded-theme flyspell-correct-ivy flyspell-correct magit projectile diminish atom-one-dark-theme doom-modeline all-the-icons undo-tree avy company org color-theme-sanityinc-tomorrow winum ivy counsel swiper org-bullets which-key use-package)))
+    (multiple-cursors helm-flyspell helm helm-projectile helm-swoop persp-projectile perspective railscasts-reloaded-theme flyspell-correct magit projectile diminish atom-one-dark-theme doom-modeline all-the-icons undo-tree avy company org color-theme-sanityinc-tomorrow winum org-bullets which-key use-package)))
  '(persp-modestring-dividers (quote ("(" ")" "|"))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
