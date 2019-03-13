@@ -77,7 +77,7 @@ let g:esearch = {
 
     " --{{ Settings for Lightline
 let g:lightline = {
-    \ 'colorscheme': 'Tomorrow_Night_Eighties',
+    \ 'colorscheme': 'one',
     \ 'tabline': {
     \   'left': [ [ 'bufferinfo' ],
     \             [ 'separator' ],
@@ -117,6 +117,7 @@ set background=dark
 " colorscheme neodark
 " colorscheme onedark
 colorscheme spacegray
+" colorscheme Tomorrow-Night
 " colorscheme solarized8
 " colorscheme materialbox
 " colorscheme base16-ocean

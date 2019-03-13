@@ -35,6 +35,16 @@
   :ensure t)
 
 ;;==============================================
+;; wakib - Saner keybindings
+;;==============================================
+
+(use-package wakib-keys
+  :ensure t
+  :diminish "W")
+(require 'wakib-keys)
+(wakib-keys 1)
+
+;;==============================================
 ;;  Misc packages
 ;;==============================================
 
@@ -117,7 +127,35 @@
 	("c" "Changes" entry (file+headline "~/Dropbox/Notes/agenda.org" "Changes")
 	 "* %t %?")
 	("g" "Genealogy" entry (file+headline "~/Dropbox/Notes/agenda.org" "Todos")
-	 "* TODO %t %?\n %a\n")))
+	 "* TODO %t %?\n %a\n")
+	("a" "Article" entry (file+headline "~/Dropbox/Notes/research.org" "Article")
+	 "* %?")
+	("b" "Births" entry (file+headline "~/Dropbox/Notes/research.org" "Births")
+	 "* %?")
+	("p" "Baptisms" entry (file+headline "~/Dropbox/Notes/research.org" "Baptisms")
+	 "* %?")
+	("h" "Biographical" entry (file+headline "~/Dropbox/Notes/research.org" "Biographical")
+	 "* %?")
+	("u" "Census" entry (file+headline "~/Dropbox/Notes/research.org" "Census")
+	 "* %?")
+	("d" "Deaths" entry (file+headline "~/Dropbox/Notes/research.org" "Deaths")
+	 "* %?")
+	("n" "DNA" entry (file+headline "~/Dropbox/Notes/research.org" "DNA")
+	 "* %?")
+	("i" "Immigration" entry (file+headline "~/Dropbox/Notes/research.org" "Immigration")
+	 "* %?")
+	("m" "Marriage" entry (file+headline "~/Dropbox/Notes/research.org" "Marriage")
+	 "* %?")
+	("y" "Military" entry (file+headline "~/Dropbox/Notes/research.org" "Military")
+	 "* %?")
+	("l" "Possibility" entry (file+headline "~/Dropbox/Notes/research.org" "Possibility")
+	 "* %?")
+	("f" "Reference" entry (file+headline "~/Dropbox/Notes/research.org" "Reference")
+	 "* %?")
+	("r" "Residence" entry (file+headline "~/Dropbox/Notes/research.org" "Residence")
+	 "* %?")
+	("w" "Witness" entry (file+headline "~/Dropbox/Notes/research.org" "Witness")
+	 "* %?")))
 
 (setq-default org-display-custom-times t)
 (setq org-time-stamp-custom-formats '("[%a %b %e %Y]" . "<%a %b %e %Y %H:%M>"))
@@ -132,11 +170,6 @@
 (use-package helm
   :ensure t
   :diminish "H"
-  :bind (("M-x" . helm-M-x)
-	 ("C-S-p" . helm-M-x)
-	 ("C-b" . helm-buffers-list)
-	 ("C-p" . helm-find-files)
-	 ("M-o" . helm-org-in-buffer-headings))
   :init (setq helm-M-x_fuzzy-match 1
 	      helm-autoresize-mode 0
 	      helm-display-buffer-default-height 13
@@ -146,8 +179,6 @@
 
 (use-package helm-swoop
   :ensure t
-  :bind (("C-f" . helm-swoop)
-	  ("C-F" . helm-multi-swoop-all))
   :init (setq helm-swoop-split-with-multiple-windows t
 	      helm-swoop-split=direction 'split-window-vertically))
 (require 'helm-swoop)
@@ -180,15 +211,14 @@
   :config
   (projectile-global-mode)
   (setq projectile-completion-system 'helm))
-(define-key projectile-mode-map (kbd "C-c p") 'projectile-command-map)
+(define-key projectile-mode-map (kbd "C-d p") 'projectile-command-map)
 
 ;;===============================================
 ;;  Magit
 ;;===============================================
 
 (use-package magit
-  :ensure t
-  :bind ("C-x g" . magit-status))
+  :ensure t)
 
 ;;===============================================
 ;;  Multiple Cursors
@@ -204,13 +234,22 @@
 (define-prefix-command 'z-map)
 (global-set-key (kbd "C-z") 'z-map)
 (define-key z-map (kbd "c") 'org-capture)
+(define-key z-map (kbd "a") 'org-agenda)
+(define-key z-map (kbd "t") 'org-time-stamp)
 (define-key z-map (kbd "r") 'helm-rg)
 (define-key z-map (kbd "s") 'helm-flyspell-correct)
 (define-key z-map (kbd "k") 'helm-show-kill-ring)
 (define-key z-map (kbd "f") 'flyspell-buffer)
 (define-key z-map (kbd "F") 'flyspell-mode)
 (define-key z-map (kbd "p") 'persp-switch)
+(define-key z-map (kbd "d") 'projectile-switch-project)
+(global-set-key (kbd "C-S-p") 'helm-M-x)
+(global-set-key (kbd "M-x") 'helm-M-x)
 (global-set-key (kbd "C-p") 'projectile-find-file)
+(global-set-key (kbd "C-b") 'helm-buffers-list)
+(global-set-key (kbd "M-o") 'helm-org-in-buffer-headings)
+(global-set-key (kbd "C-f") 'helm-swoop)
+(global-set-key (kbd "C-F") 'helm-multi-swoop-all)
 (global-set-key (kbd "C-b") 'projectile-switch-to-buffer)
 (global-set-key (kbd "C-s") 'save-buffer)
 (global-set-key (kbd "M-l") 'goto-line)
@@ -248,7 +287,7 @@
  '(frame-background-mode (quote dark))
  '(package-selected-packages
    (quote
-    (multiple-cursors helm-flyspell helm helm-projectile helm-swoop persp-projectile perspective railscasts-reloaded-theme flyspell-correct magit projectile diminish atom-one-dark-theme doom-modeline all-the-icons undo-tree avy company org color-theme-sanityinc-tomorrow winum org-bullets which-key use-package)))
+    (wakib-keys rainbow-delimiters multiple-cursors helm-flyspell helm helm-projectile helm-swoop persp-projectile perspective railscasts-reloaded-theme flyspell-correct magit projectile diminish atom-one-dark-theme doom-modeline all-the-icons undo-tree avy company org color-theme-sanityinc-tomorrow winum org-bullets which-key use-package)))
  '(persp-modestring-dividers (quote ("(" ")" "|"))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.

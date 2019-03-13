@@ -1,0 +1,59 @@
+! special
+*.foreground:   #a7a7a7
+*.background:   #1e1e1e
+*.cursorColor:  #a7a7a7
+
+! black
+*.color0:       #1e1e1e
+*.color8:       #5f5a60
+
+! red
+*.color1:       #cf6a4c
+*.color9:       #cf6a4c
+
+! green
+*.color2:       #8f9d6a
+*.color10:      #8f9d6a
+
+! yellow
+*.color3:       #f9ee98
+*.color11:      #f9ee98
+
+! blue
+*.color4:       #7587a6
+*.color12:      #7587a6
+
+! magenta
+*.color5:       #9b859d
+*.color13:      #9b859d
+
+! cyan
+*.color6:       #afc4db
+*.color14:      #afc4db
+
+! white
+*.color7:       #a7a7a7
+*.color15:      #ffffff
+
+! Generic term settings
+Xcursor.theme: default
+Xcursor.size: 16
+! xterm*VT100.Translations: <Key>BackSpace: string(0x7F)
+! *ttyModes: erase ^?
+
+! Render setting for cairo -> pango -> gtk
+Xft.dpi:        81
+Xft.autohint:   0
+Xft.lcdfilter:  lcddefault
+Xft.antialias:  1
+Xft.hinting:    1
+Xft.rgba:       rgb
+Xft.hintstyle:  hintslight
+
+! Settings for Rofi
+rofi.color-enable: true
+! State             bg           fg        bgalt       hlbg        hlfg
+rofi.color-normal: #282c34,    #56b6c2,    #282c34,    #546E7A,    #F3F3F3
+rofi.color-active: #282c34,    #d19a66,    #282c34,    #546E7A,    #F3F3F3
+rofi.color-window: #282c34,    #282c34
+
