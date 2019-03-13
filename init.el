@@ -40,7 +40,7 @@
 
 (use-package wakib-keys
   :ensure t
-  :diminish "W")
+  :diminish wakib-keys)
 (require 'wakib-keys)
 (wakib-keys 1)
 
@@ -241,8 +241,7 @@
 (define-key z-map (kbd "k") 'helm-show-kill-ring)
 (define-key z-map (kbd "f") 'flyspell-buffer)
 (define-key z-map (kbd "F") 'flyspell-mode)
-(define-key z-map (kbd "p") 'persp-switch)
-(define-key z-map (kbd "d") 'projectile-switch-project)
+(define-key z-map (kbd "p") 'projectile-switch-project)
 (global-set-key (kbd "C-S-p") 'helm-M-x)
 (global-set-key (kbd "M-x") 'helm-M-x)
 (global-set-key (kbd "C-p") 'projectile-find-file)
@@ -269,7 +268,6 @@
 	  (lambda () (setq truncate-lines nil)))
 
 (show-paren-mode 1)
-
 ;;==============================================
 ;; Custom settings
 ;;==============================================
