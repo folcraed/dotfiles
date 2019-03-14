@@ -124,7 +124,7 @@
 (setq org-capture-templates
       '(("t" "Todo" entry (file+headline "~/Dropbox/Notes/agenda.org" "Todos")
 	 "* TODO %t %?")
-	("c" "Changes" entry (file+headline "~/Dropbox/Notes/agenda.org" "Changes")
+	("c" "Changes" entry (file+headline "~/Dropbox/Notes/changes.org" "Changes")
 	 "* %t %?")
 	("g" "Genealogy" entry (file+headline "~/Dropbox/Notes/agenda.org" "Todos")
 	 "* TODO %t %?\n %a\n")
