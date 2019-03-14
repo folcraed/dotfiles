@@ -1,0 +1,776 @@
+# You can edit this file by hand, but it's recommended not to do that.
+
+# Marks:
+'H
+	/home/rob/
+	..
+1468804597
+'a
+	/home/rob/.i3
+	config
+1474162699
+'b
+	/home/rob/bin/
+	..
+1468804597
+'c
+	/home/rob/.config
+	..
+1468883417
+'d
+	/home/rob/Downloads
+	..
+1470057152
+'e
+	/etc
+	..
+1476844993
+'g
+	/home/rob/Dropbox/Genealogy
+	..
+1470057183
+'h
+	/home/rob/
+	..
+1468804597
+'n
+	/home/rob/Dropbox/Docs/Notes
+	..
+1475330587
+'p
+	/home/rob/Dropbox/Settings/dotfiles
+	..
+1474310627
+'t
+	/home/rob/Temp
+	..
+1475378377
+'u
+	/usr/share
+	..
+1470110096
+'v
+	/home/rob/Videos
+	..
+1470185416
+'x
+	/home/rob/Dropbox
+	Genealogy
+1496103841
+
+# Bookmarks:
+
+# TUI:
+al
+q0
+v2
+ov
+m-1
+l2
+r2
+
+# Left window history (oldest to newest):
+d/usr/share/fish/completions
+	..
+0
+d/usr/share/fish
+	completions
+1
+d/usr/share
+	zsh
+55
+d/usr/share/zsh
+	5.3.1
+1
+d/usr/share/zsh/5.3.1
+	functions
+1
+d/usr/share/zsh/5.3.1/functions
+	..
+0
+d/usr/share/zsh/5.3.1
+	functions
+1
+d/usr/share/zsh
+	5.3.1
+1
+d/usr/share
+	zsh-syntax-highlighting
+56
+d/usr/share/zsh-syntax-highlighting
+	zsh-syntax-highlighting.zsh
+4
+d/usr/share
+	zsh-syntax-highlighting
+56
+d/usr/share/zsh-syntax-highlighting
+	zsh-syntax-highlighting.zsh
+4
+d/home/rob
+	.dropbox
+5
+d/home/rob/.dropbox
+	instance1
+1
+d/home/rob/.dropbox/instance1
+	..
+0
+d/home/rob/.dropbox
+	instance_db
+2
+d/home/rob/.dropbox/instance_db
+	..
+0
+d/home/rob/.dropbox
+	machine_storage
+4
+d/home/rob/.dropbox/machine_storage
+	..
+0
+d/home/rob/.dropbox
+	..
+0
+d/home/rob
+	.dropbox
+5
+d/home/rob/.dropbox
+	instance1
+1
+d/home/rob/.dropbox/instance1
+	..
+0
+d/home/rob/.dropbox
+	instance_db
+2
+d/home/rob/.dropbox/instance_db
+	..
+0
+d/home/rob/.dropbox
+	logs
+3
+d/home/rob/.dropbox/logs
+	0
+1
+d/home/rob/.dropbox/logs/0
+	..
+0
+d/home/rob/.dropbox/logs
+	1
+2
+d/home/rob/.dropbox/logs/1
+	..
+0
+d/home/rob/.dropbox/logs
+	1
+2
+d/home/rob/.dropbox
+	machine_storage
+4
+d/home/rob/.dropbox/machine_storage
+	..
+0
+d/home/rob/.dropbox
+	machine_storage
+4
+d/home/rob
+	.gitconfig
+46
+d/usr/share
+	..
+0
+d/usr
+	libexec
+5
+d/usr/libexec
+	..
+0
+d/usr
+	src
+9
+d/usr/src
+	..
+0
+d/usr
+	share
+8
+d/usr/share
+	git-core
+10
+d/usr/share/git-core
+	templates
+1
+d/usr/share/git-core/templates
+	branches
+1
+d/usr/share/git-core/templates/branches
+	..
+0
+d/usr/share/git-core/templates
+	hooks
+2
+d/usr/share/git-core/templates/hooks
+	..
+0
+d/usr/share/git-core/templates
+	info
+3
+d/usr/share/git-core/templates/info
+	..
+0
+d/usr/share/git-core/templates
+	info
+3
+d/usr/share/git-core
+	templates
+1
+d/usr/share
+	gitk
+12
+d/usr/share/gitk
+	lib
+1
+d/usr/share/gitk/lib
+	msgs
+1
+d/usr/share/gitk/lib/msgs
+	..
+0
+d/usr/share/gitk/lib
+	msgs
+1
+d/usr/share/gitk
+	lib
+1
+d/usr/share
+	gitweb
+13
+d/usr/share/gitweb
+	static
+1
+d/usr/share/gitweb/static
+	..
+0
+d/usr/share/gitweb
+	static
+1
+d/usr/share
+	doc
+5
+d/usr/share/doc
+	git
+23
+d/usr/share/doc/git
+	..
+0
+d/usr/share/doc
+	git
+23
+d/usr/share
+	doc
+5
+d/usr
+	lib64
+4
+d/usr/lib64
+	git
+49
+d/usr/lib64/git
+	git-core
+1
+d/usr/lib64/git/git-core
+	mergetools
+1
+d/usr/lib64/git/git-core/mergetools
+	..
+0
+d/usr/lib64/git/git-core
+	mergetools
+1
+d/usr/lib64/git
+	git-core
+1
+d/usr/lib64
+	gnome-keyring
+52
+d/usr/lib64/gnome-keyring
+	devel
+1
+d/usr/lib64/gnome-keyring/devel
+	..
+0
+d/usr/lib64/gnome-keyring
+	devel
+1
+d/usr/lib64
+	..
+0
+d/usr
+	include
+2
+d/usr/include
+	..
+0
+d/usr
+	libexec
+5
+d/usr/libexec
+	..
+0
+d/usr
+	share
+8
+d/usr/share
+	appdata
+10
+d/usr
+	bin
+1
+d/usr/bin
+	gifclip
+4
+d/usr
+	libexec
+5
+d/usr/libexec
+	..
+0
+d/usr
+	share
+8
+d/usr/share
+	git-core
+11
+d/usr/share/git-core
+	templates
+1
+d/usr/share/git-core/templates
+	info
+3
+d/usr/share/git-core
+	templates
+1
+d/usr/share
+	gir-1.0
+10
+d/usr/share/gir-1.0
+	GstNet-1.0.gir
+4
+d/usr/share
+	gir-1.0
+10
+d/usr
+	share
+8
+d/home/rob
+	.config
+3
+d/home/rob/.config
+	autostart
+2
+d/home/rob/.config/autostart
+	tracker.desktop
+8
+d
+
+# Right window history (oldest to newest):
+D/home/rob
+	.config
+3
+D/home/rob/.config
+	termite
+4
+D/home/rob/.config/termite
+	config
+6
+D/home/rob/.config
+	QtProject
+3
+D/home/rob/.config/QtProject
+	..
+0
+D/home/rob/.config
+	caja
+8
+D/home/rob/.config/caja
+	..
+0
+D/home/rob/.config
+	configstore
+11
+D/home/rob/.config/configstore
+	..
+0
+D/home/rob/.config
+	fontconfig
+17
+D/home/rob/.config/fontconfig
+	..
+0
+D/home/rob/.config
+	session
+50
+D/home/rob/.config/session
+	..
+0
+D/home/rob/.config
+	smtube
+15
+D/home/rob
+	.nv
+24
+D/home/rob/.nv
+	..
+0
+D/home/rob
+	.parallel
+26
+D/home/rob/.parallel
+	tmp
+1
+D/home/rob/.parallel/tmp
+	..
+0
+D/home/rob/.parallel
+	tmp
+1
+D/home/rob
+	.pki
+27
+D/home/rob/.pki
+	nssdb
+1
+D/home/rob/.pki/nssdb
+	..
+0
+D/home/rob/.pki
+	nssdb
+1
+D/home/rob
+	.themes
+31
+D/home/rob/.themes
+	..
+0
+D/home/rob
+	.uml
+33
+D/home/rob/.uml
+	..
+0
+D/home/rob
+	.local
+11
+D/home/rob/.local
+	share
+1
+D/home/rob/.local/share
+	color-schemes
+6
+D/home/rob/.local/share/color-schemes
+	..
+0
+D/home/rob/.local/share
+	data
+7
+D/home/rob/.local/share/data
+	..
+0
+D/home/rob/.local/share
+	icons
+22
+D/home/rob/.local/share/icons
+	..
+0
+D/home/rob/.local/share
+	keyrings
+30
+D/home/rob/.local/share/keyrings
+	..
+0
+D/home/rob/.local/share
+	mc
+9
+D/home/rob
+	.dropbox
+5
+D/home/rob/.dropbox
+	..
+0
+D/home/rob
+	.config
+3
+D/home/rob/.config
+	autostart
+2
+D/home/rob/.config/autostart
+	dropbox.desktop
+2
+D/home/rob/.config
+	autostart
+2
+D/home/rob
+	.dropbox
+5
+D/home/rob/.dropbox
+	..
+0
+D/home/rob
+	.dropbox-dist
+6
+D/usr/share
+	..
+0
+D/usr
+	bin
+1
+D/usr/bin
+	dbwrap_tool
+4
+D/usr
+	share
+8
+D/usr/share
+	git-core
+10
+D/usr/share/git-core
+	templates
+1
+D/usr/share/git-core/templates
+	hooks
+2
+D/usr/share/git-core/templates/hooks
+	..
+0
+D/usr/share/git-core/templates
+	info
+3
+D/usr/share/git-core/templates/info
+	..
+0
+D/usr/share/git-core/templates
+	branches
+1
+D/usr/share/git-core/templates/branches
+	..
+0
+D/usr/share/git-core/templates
+	branches
+1
+D/usr/share/git-core
+	templates
+1
+D/usr/share
+	git-gui
+11
+D/usr/share/git-gui
+	lib
+1
+D/usr/share/git-gui/lib
+	..
+0
+D/usr/share/git-gui
+	lib
+1
+D/usr/share
+	gitk
+12
+D/usr/share/gitk
+	lib
+1
+D/usr/share/gitk/lib
+	msgs
+1
+D/usr/share/gitk/lib/msgs
+	..
+0
+D/usr/share/gitk/lib
+	msgs
+1
+D/usr/share/gitk
+	lib
+1
+D/usr/share
+	gitweb
+13
+D/usr/share/gitweb
+	static
+1
+D/usr/share/gitweb/static
+	..
+0
+D/usr/share/gitweb
+	static
+1
+D/usr/share
+	doc
+40
+D/usr/share/doc
+	git
+23
+D/usr/share/doc/git
+	..
+0
+D/usr/share/doc
+	git
+23
+D/usr/share/doc/git
+	..
+0
+D/usr/share/doc
+	libgphoto2
+4
+D/usr/share
+	gir-1.0
+9
+D/usr/share/gir-1.0
+	TrackerControl-1.0.gir
+39
+D/usr/share
+	doc
+40
+D/usr/share/doc
+	git
+23
+D/usr/share/doc/git
+	..
+0
+D/usr/share/doc
+	git
+23
+D/home/rob
+	.dbus
+4
+D/home/rob/.dbus
+	..
+0
+D/home/rob
+	.config
+3
+D/home/rob/.config
+	vifm
+28
+D/home/rob/.config/vifm
+	..
+0
+D/home/rob/.config
+	vifm
+28
+D/home/rob
+	Dropbox
+23
+D/home/rob/Dropbox
+	Settings
+9
+D/home/rob/Dropbox/Settings
+	dotfiles
+8
+D/home/rob/Dropbox/Settings/dotfiles
+	.i3
+2
+D/home/rob/Dropbox/Settings/dotfiles/.i3
+	..
+0
+D/home/rob/Dropbox/Settings/dotfiles
+	nvim
+5
+D
+
+# Command line history (oldest to newest):
+:?
+:mkdir lualessons
+:slink config
+:rlink config
+:marks
+:c
+:help
+:rename
+:nohl
+:trashes!
+:trashes?
+:q
+
+# Search history (oldest to newest):
+/Timothy
+/Lewis
+/Gunner
+/Helen
+/McDonn
+/Henry
+/xfc
+/xfce
+/gtk
+
+# Prompt history (oldest to newest):
+pKing_Arthurs_Britain-Part_3
+pTime_Team_S08-E01_Norman_Lincolnshire
+p.xinitrc
+pawesome4keys
+p1851 Wales Census-1
+p1851 Wales Census-2
+p1861 Wales Census-1
+p1861 Wales Census-2
+pDenis Donovan Death Possible Apr-1851
+pKing_Arthurs_Britain-Part_2
+pTime_Team_S02-E05_The_Saxon_Graves_Winterbourne_Gunner_Wiltshire
+pTime_Team_Special_18-The_King_of_Bling
+pPease Land Sale Approval
+pPease Land Division Order 1842
+pPease Land Sale Approval 1843
+pCornelius Pease Will 1811-1
+pCornelius Pease Will 1811-2
+pCornelius Pease Will 1811-3
+pDeed Index-Pease 1
+pTime_Team_S05-E06_Aston_Eyre_Shropshire
+pCornelius Pease Deeds
+pCornelius Pease Deeds-2
+pCornelius Pease Deeds-1
+pAdam Pease Deeds-1
+pAdam Pease Deeds-2
+pJonathan Pease Probate-1840
+pJonathan Pease Creditors Limited
+pJonathan Pease Account Settlement
+pJonathan Pease Land Auction
+pTime_Team_Special_20-Britains_Stone_Age_Tsunami
+pTime_Team_Special_37_Dover_Castle
+pTime_Team_Special_57_Britains_Bronze_Age_Mummies
+pTime_Team_Special_49_Secrets_of_the_Saxon_Gold
+pTime_Team_Special_21-Journey_to_Stonehenge_Durrington_Walls
+pDigging_for_Britain_S02E02_Vikings_Invaders
+pDigging_for_Britain_S3-E2_West.mp4
+pBBC_The_Story_of_Ireland_1of5_Age_of_Invasions
+pJohn Behringer Marriage
+p1892 NY Census-Behringer
+p1870 US Censu-Behringer-1
+p1870 US Census-Behringer-2
+p1870 US Census-Behringer-1
+p1877 Buffalo City Directory
+pnvim.conf
+pinit.vim
+
+# Local filter history (oldest to newest):
+|*Walsh*
+|Martin
+
+# Registers:
+""/home/rob/.local/share/Trash/000_awesome-3.5.9
+
+# Directory stack (oldest to newest):
+
+# Trash content:
+t/home/rob/.local/share/Trash/000_command_socket
+	/home/rob/.dropbox/command_socket
+t/home/rob/.local/share/Trash/000_iface_socket
+	/home/rob/.dropbox/iface_socket
+t/home/rob/.local/share/Trash/000_awesome-3.5.9
+	/home/rob/Dropbox/Settings/dotfiles/awesome-3.5.9
+
+# State:
+f
+i1
+[.0
+[F
+F
+I1
+].0
+]F
+s0
