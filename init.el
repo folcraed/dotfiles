@@ -285,7 +285,7 @@
  '(frame-background-mode (quote dark))
  '(package-selected-packages
    (quote
-    (wakib-keys rainbow-delimiters multiple-cursors helm-flyspell helm helm-projectile helm-swoop persp-projectile perspective railscasts-reloaded-theme flyspell-correct magit projectile diminish atom-one-dark-theme doom-modeline all-the-icons undo-tree avy company org color-theme-sanityinc-tomorrow winum org-bullets which-key use-package)))
+    (wakib-keys rainbow-delimiters multiple-cursors helm-flyspell helm helm-projectile helm-swoop helm-rg persp-projectile perspective railscasts-reloaded-theme flyspell-correct magit projectile diminish atom-one-dark-theme doom-modeline all-the-icons undo-tree avy company org color-theme-sanityinc-tomorrow winum org-bullets which-key use-package)))
  '(persp-modestring-dividers (quote ("(" ")" "|"))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
