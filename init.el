@@ -268,6 +268,8 @@
 	  (lambda () (setq truncate-lines nil)))
 
 (show-paren-mode 1)
+(diminish 'auto-revert-mode)
+(diminish 'eldoc-mode)
 ;;==============================================
 ;; Custom settings
 ;;==============================================
