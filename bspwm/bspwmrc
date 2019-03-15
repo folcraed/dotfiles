@@ -4,11 +4,12 @@ sxhkd &
 polybar bspwmbar &
 gnome-keyring-daemon -s &
 /usr/lib64/polkit-gnome/polkit-gnome-authentication-agent-1 &
+ssh-agent &
 # ibus-daemon -s -d &
 /home/rob/.fehbg &
 compton &
 # tracker daemon -s &
-/home/rob/.dropbox-dist/dropboxd &
+dropbox start -i &
 dbus-launch dunst &
 # nm-applet &
 xclip &

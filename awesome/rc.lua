@@ -637,11 +637,11 @@ end
 
 run_once("gnome-keyring-daemon -s")
 run_once("/usr/lib64/polkit-gnome/polkit-gnome-authentication-agent-1")
--- run_once("ibus-daemon -s -d")
+run_once("ssh-agent")
 run_once("compton")
 run_once("clipit")
 run_once("xclip")
 -- run_once("nm-applet")
 -- run_once("tracker daemon -s")
-run_once("/home/rob/.dropbox-dist/dropboxd")
+run_once("dropbox start -i")
 run_once("recollindex -w 30 -m")
