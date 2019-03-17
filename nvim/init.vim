@@ -58,7 +58,7 @@ let g:netrw_browsex_viewer = "xdg-open"
 nno <leader>t :TableFormat<cr>
 
     " Settings for Vim-Markdown
-let g:vim_markdown_conceal = 0
+let g:vim_markdown_conceal = 1
 let g:vim_markdown_folding_disabled = 1
 let g:vim_markdown_follow_anchor = 1
 let g:vim_markdown_autowrite = 1
