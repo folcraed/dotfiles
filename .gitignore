@@ -2,4 +2,5 @@
 nvim/plugged/*
 */.vscode
 awesome/collision
-vifm/vifmin*
+vifm/vifminfo
+vifm/vifminfo_[0-9]
