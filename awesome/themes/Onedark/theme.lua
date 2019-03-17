@@ -13,7 +13,7 @@ theme.collision_focus_padding = 5
 
 -- Theme fonts
 theme.font          = "Hack 11"
-theme.taglist_font  = "Xirod 11"
+theme.taglist_font  = "Xirod 10"
 
 -- Theme coloring
 theme.bg_normal     = "#2b303b"
@@ -75,7 +75,7 @@ theme.titlebar_maximized_button_focus_active_hover = profileConfigPath.."themes/
 theme.titlebar_maximized_button_focus_active_press = profileConfigPath.."themes/Onedark/titlebar/maximized_focus_active_press.png"
 
 -- Wallpaper
-theme.wallpaper = "/home/rob/Dropbox/Photos/Backgrounds/NightSea.jpg"
+theme.wallpaper = "/home/rob/Pictures/NightSea.jpg"
 
 -- Layout icons
 theme.layout_fairh = profileConfigPath.."themes/Onedark/layouts/fairh.png"

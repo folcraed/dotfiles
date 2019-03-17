@@ -45,7 +45,7 @@ set inccommand=split
 set nobackup
 set nowritebackup
 set noshowmode
-set conceallevel=3
+set conceallevel=2
 set concealcursor=nc
 set fcs=eob:\
 set spelllang=en_us

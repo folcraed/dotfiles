@@ -1,4 +1,4 @@
---[[ Configuration for Awesome 4.x modified by folraed
+--[[ Configuration for Awesome 4.3 modified by folraed
      Uses some custon icons, but otherwise sticks to
      using available and stock Awesome libraries and
      extensions. Initially created for Awesome 4.2 ]]
@@ -122,13 +122,8 @@ menubar.utils.terminal = terminal -- Set the terminal for applications that requ
 markup  = lain.util.markup
 spacer = wibox.widget.textbox(" | ")
 mytextclock = wibox.widget.textclock("%a %b %e, %l:%M %P")
-local calendar = lain.widget.cal()
-lain.widget.cal({
-    attach_to = {mytextclock},
-    notification_preset = {
-        font = "Hack 10",
-        fg = "#93a1a1"},
-})
+local month_calendar = awful.widget.calendar_popup.month()
+month_calendar:attach( mytextclock, "tr" )
 myweather   = lain.widget.weather({
     city_id = 5666639,
     units   = "imperial",
