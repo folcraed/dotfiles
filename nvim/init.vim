@@ -96,9 +96,14 @@ let g:lightline = {
     \ },
     \ 'component_function': {
     \   'bufferinfo': 'lightline#buffer#bufferinfo',
+    \   'gitbranch': 'fugitive#head',
     \ },
     \ 'component': {
     \   'separator': '',
+    \ },
+    \ 'active': {
+    \   'left': [ ['mode', 'paste'],
+    \             ['gitbranch', 'readonly', 'filename', 'modified']]
     \ },
     \ }
     " --}} End of Lightline settings
