@@ -6,7 +6,7 @@
 (tool-bar-mode 0)
 (scroll-bar-mode 0)
 (setq-default display-line-numbers t)
-(set-default-font "Iosevka 12")
+(set-default-font "Hack 12")
 (put 'dired-find-alternate-file 'disabled nil)
 (global-visual-line-mode t)
 
@@ -242,6 +242,7 @@
 (define-key z-map (kbd "f") 'flyspell-buffer)
 (define-key z-map (kbd "F") 'flyspell-mode)
 (define-key z-map (kbd "p") 'projectile-switch-project)
+(define-key z-map (kbd "o") 'org-open-at-point)
 (global-set-key (kbd "C-S-p") 'helm-M-x)
 (global-set-key (kbd "M-x") 'helm-M-x)
 (global-set-key (kbd "C-p") 'projectile-find-file)

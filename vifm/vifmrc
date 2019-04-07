@@ -214,7 +214,7 @@ filextype */
         \ dolphin %f &,
 
 " Script and config files
-filextype *.lua,*.sh,*.conf,*rc,*.org
+filextype *.lua,*.sh,*.conf,*rc,*.md
         \ {Open with Nvim}
         \ nvim %f,
         \ {Open with Sublime}
