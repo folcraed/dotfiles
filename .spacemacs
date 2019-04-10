@@ -1,6 +1,5 @@
 ;; -*- mode: emacs-lisp -*-
-;; This config is not used by me anymore, I have my own Emacs config now
-;; So it may be deleted at any time.
+;; File is subject to changes at any time, I experiment a lot ;-)
 ;;
 ;; This file is loaded by Spacemacs at startup.
 ;; It must be stored in your home directory.
@@ -154,7 +153,8 @@ values."
    ;; refer to the DOCUMENTATION.org for more info on how to create your own
    ;; spaceline theme. Value can be a symbol or list with additional properties.
    ;; (default '(spacemacs :separator wave :separator-scale 1.5))
-   dotspacemacs-mode-line-theme '(spacemacs :separator curve :separator-scale 1.4)
+   ;; dotspacemacs-mode-line-theme '(spacemacs :separator curve :separator-scale 1.4)
+   dotspacemacs-mode-line-theme '(doom)
    ;; If non nil the cursor color matches the state color in GUI Emacs.
    dotspacemacs-colorize-cursor-according-to-state t
    ;; Default font, or prioritized list of fonts. `powerline-scale' allows to
@@ -348,6 +348,7 @@ you should place your code here."
   (define-key evil-normal-state-map (kbd "j") 'evil-next-visual-line)
   (define-key evil-normal-state-map (kbd "k") 'evil-previous-visual-line)
   (global-set-key (kbd "<f8>") 'flyspell-mode)
+  (setq-default doom-modeline-height 18)
   (setq-default powerline-height 18)
   (setq ranger-override-dired t)
   (setq browse-url-browser-function 'browse-url-generic
