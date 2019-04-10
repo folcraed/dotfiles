@@ -250,7 +250,6 @@
 (global-set-key (kbd "M-o") 'helm-org-in-buffer-headings)
 (global-set-key (kbd "C-f") 'helm-swoop)
 (global-set-key (kbd "C-F") 'helm-multi-swoop-all)
-(global-set-key (kbd "C-b") 'projectile-switch-to-buffer)
 (global-set-key (kbd "C-s") 'save-buffer)
 (global-set-key (kbd "M-l") 'goto-line)
 (global-set-key (kbd "C->") 'mc/mark-next-like-this)
