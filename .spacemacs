@@ -377,6 +377,7 @@ you should place your code here."
   (global-visual-line-mode t)
   (define-key evil-normal-state-map (kbd "j") 'evil-next-visual-line)
   (define-key evil-normal-state-map (kbd "k") 'evil-previous-visual-line)
+  (spacemacs/set-leader-keys-for-major-mode 'org-mode "o" 'helm-org-in-buffer-headings)
   (global-set-key (kbd "<f8>") 'flyspell-mode)
   (setq-default doom-modeline-height 19)
   (setq-default powerline-height 19)
