@@ -379,6 +379,7 @@ you should place your code here."
   (spacemacs/set-leader-keys-for-major-mode 'org-mode "o" 'helm-org-in-buffer-headings)
   (global-set-key (kbd "<f8>") 'flyspell-mode)
   (setq-default doom-modeline-height 19)
+  (setq doom-modeline-buffer-file-name-style 'relative-from-project)
   (setq-default powerline-height 19)
   (setq ranger-override-dired t)
   (setq browse-url-browser-function 'browse-url-generic
