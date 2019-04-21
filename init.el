@@ -56,6 +56,8 @@
 (use-package perspective
   :ensure t
   :config (persp-mode))
+(use-package persp-projectile
+  :ensure t)
 (require 'persp-projectile)
 
 (use-package avy
@@ -272,6 +274,13 @@
 (show-paren-mode 1)
 (diminish 'auto-revert-mode)
 (diminish 'eldoc-mode)
+
+;;==============================================
+;; Theme
+;;==============================================
+(use-package atom-one-dark-theme
+  :ensure t)
+
 ;;==============================================
 ;; Custom settings
 ;;==============================================
