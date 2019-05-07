@@ -3,7 +3,7 @@
 ---------------------------
 
 local theme = {}
-profileConfigPath = "/home/rob/Dropbox/Settings/dotfiles/awesome/"
+profileConfigPath = "/home/rob/dotfiles/awesome/"
 
 -- Setting for the Collision keybindings lib
 theme.collision_resize_width = 10

@@ -368,8 +368,8 @@ globalkeys = awful.util.table.join(
               {description = "select previous", group = "layout"}),
 
     -- Volume control
-    awful.key({ }, "XF86AudioRaiseVolume", function () awful.spawn("pactl set-sink-volume 1 +5%") end),
-    awful.key({ }, "XF86AudioLowerVolume", function () awful.spawn("pactl set-sink-volume 1 -5%") end),
+    awful.key({ }, "XF86AudioRaiseVolume", function () awful.spawn("pactl set-sink-volume 1 +3%") end),
+    awful.key({ }, "XF86AudioLowerVolume", function () awful.spawn("pactl set-sink-volume 1 -3%") end),
     awful.key({ }, "XF86AudioMute", function () awful.spawn("pactl set-sink-mute 1 toggle") end),
 
     awful.key({ modkey, "Control" }, "n",
@@ -631,7 +631,7 @@ end
 -- | Autostart | --
 
 run_once("gnome-keyring-daemon -s")
-run_once("/usr/lib64/polkit-gnome/polkit-gnome-authentication-agent-1")
+run_once("/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1")
 run_once("ssh-agent")
 run_once("compton")
 run_once("clipit")
@@ -639,4 +639,4 @@ run_once("xclip")
 -- run_once("nm-applet")
 -- run_once("tracker daemon -s")
 run_once("dropbox start -i")
-run_once("recollindex -w 30 -m")
+-- run_once("recollindex -w 30 -m")

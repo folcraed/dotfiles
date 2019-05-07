@@ -18,7 +18,7 @@ Plug 'godlygeek/tabular'
 Plug 'eugen0329/vim-esearch'
 Plug 'majutsushi/tagbar'
 Plug 'lvht/tagbar-markdown'
-Plug 'ryanoasis/vim-devicons'
+" Plug 'ryanoasis/vim-devicons'
 
 call plug#end()
 
