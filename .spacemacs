@@ -389,9 +389,9 @@ you should place your code here."
   (setq-default org-file-apps
    (quote
     ((auto-mode . emacs)
-     ("\\.png\\'" . "setsid -w sxiv %s")
-     ("\\.jpg\\'" . "setsid -w sxiv %s")
-     ("\\.pdf\\'" . "setsid -w zathura %s"))))
+     ("\\.png\\'" . "xdg-open %s")
+     ("\\.jpg\\'" . "xdg-open %s")
+     ("\\.pdf\\'" . "xdg-open %s"))))
 (setq org-capture-templates
       '(("t" "Todo" entry (file+headline "~/Dropbox/Notes/agenda.org" "Todos")
 	 "* TODO %t %?")
