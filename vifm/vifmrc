@@ -17,10 +17,10 @@ set number
 " Selected color scheme
 
 " colorscheme solarized-dark
-colorscheme onedark
+" colorscheme onedark
 " colorscheme material
 " colorscheme spacegray
-" colorscheme tomorrow
+colorscheme tomorrow
 
 set timefmt=%D\ %H:%M
 set wildmenu
