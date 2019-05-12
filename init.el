@@ -38,11 +38,11 @@
 ;; wakib - Saner keybindings
 ;;==============================================
 
-(use-package wakib-keys
-  :ensure t
-  :diminish wakib-keys)
-(require 'wakib-keys)
-(wakib-keys 1)
+;; (use-package wakib-keys
+;;   :ensure t
+;;   :diminish wakib-keys)
+;; (require 'wakib-keys)
+;; (wakib-keys 1)
 
 ;;==============================================
 ;;  Misc packages
@@ -198,7 +198,7 @@
 (use-package flyspell-correct
   :ensure t
   :diminish "S")
-  
+
 (use-package helm-flyspell
   :ensure t
   :bind ("C-;" . helm-flyspell-correct))
@@ -228,7 +228,7 @@
 
 (use-package multiple-cursors
   :ensure t)
-  
+
 ;;===============================================
 ;; Some personal keybindings
 ;;===============================================
@@ -247,17 +247,17 @@
 (define-key z-map (kbd "o") 'org-open-at-point)
 (define-key z-map (kbd "q") 'quoted-insert)
 (define-key z-map (kbd "g") 'magit-status)
-(global-set-key (kbd "C-S-p") 'helm-M-x)
+;; (global-set-key (kbd "C-S-p") 'helm-M-x)
 (global-set-key (kbd "M-x") 'helm-M-x)
-(global-set-key (kbd "C-p") 'projectile-find-file)
-(global-set-key (kbd "C-b") 'helm-buffers-list)
+;; (global-set-key (kbd "C-p") 'projectile-find-file)
+;; (global-set-key (kbd "C-b") 'helm-buffers-list)
 (global-set-key (kbd "M-o") 'helm-org-in-buffer-headings)
-(global-set-key (kbd "C-f") 'helm-swoop)
-(global-set-key (kbd "C-F") 'helm-multi-swoop-all)
-(global-set-key (kbd "C-s") 'save-buffer)
+;; (global-set-key (kbd "C-f") 'helm-swoop)
+;; (global-set-key (kbd "C-F") 'helm-multi-swoop-all)
+;; (global-set-key (kbd "C-s") 'save-buffer)
 (global-set-key (kbd "M-l") 'goto-line)
-(global-set-key (kbd "C->") 'mc/mark-next-like-this)
-(global-set-key (kbd "C-<") 'mc/mark-previous-like-this)
+;; (global-set-key (kbd "C->") 'mc/mark-next-like-this)
+;; (global-set-key (kbd "C-<") 'mc/mark-previous-like-this)
 
 ;;==============================================
 ;;  Sanity settings
