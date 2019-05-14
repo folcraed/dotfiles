@@ -2,7 +2,7 @@
 ;; File or commit timestamp show when last updated.
 
 (setq inhibit-startup-message t)
-(menu-bar-mode 0)
+;; (menu-bar-mode 0)
 (tool-bar-mode 0)
 (scroll-bar-mode 0)
 (setq-default display-line-numbers t)
@@ -164,6 +164,7 @@
 (setq-default org-hide-emphasis-markers t)
 (setq org-agenda-files (directory-files-recursively "~/Dropbox/Notes" "\.org$"))
 (setq org-startup-folded nil)
+(setq org-tags-column 80)
 
 ;;==============================================
 ;;  Helm and friends
@@ -237,6 +238,8 @@
 (global-set-key (kbd "C-z") 'z-map)
 (define-key z-map (kbd "c") 'org-capture)
 (define-key z-map (kbd "a") 'org-agenda)
+(define-key z-map (kbd "b") 'helm-buffers-list)
+(define-key z-map (kbd "l") 'helm-projectile)
 (define-key z-map (kbd "t") 'org-time-stamp)
 (define-key z-map (kbd "r") 'helm-rg)
 (define-key z-map (kbd "s") 'helm-flyspell-correct)

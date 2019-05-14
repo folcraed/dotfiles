@@ -434,6 +434,7 @@ you should place your code here."
   (setq org-time-stamp-custom-formats '("[%a %e %b %Y]" . "<%a %e %b %Y %H:%M>"))
   (setq-default org-hide-emphasis-markers t)
   (setq org-agenda-files (directory-files-recursively "~/Dropbox/Notes" "\.org$")))
+  (setq org-tags-column 80)
 
 (defun dotspacemacs/emacs-custom-settings ()
   "Emacs custom settings.
