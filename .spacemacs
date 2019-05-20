@@ -43,7 +43,7 @@ values."
      auto-completion
      ;; better-defaults
      emacs-lisp
-     ;; git
+     git
      ;; markdown
      org
      (shell :variables
@@ -152,7 +152,7 @@ values."
    ;; refer to the DOCUMENTATION.org for more info on how to create your own
    ;; spaceline theme. Value can be a symbol or list with additional properties.
    ;; (default '(spacemacs :separator wave :separator-scale 1.5))
-   dotspacemacs-mode-line-theme '(spacemacs :separator slant :separator-scale 2.0)
+   dotspacemacs-mode-line-theme '(spacemacs :separator curve :separator-scale 1.2)
    ;; dotspacemacs-mode-line-theme '(doom)
    ;; If non nil the cursor color matches the state color in GUI Emacs.
    dotspacemacs-colorize-cursor-according-to-state t
@@ -161,8 +161,7 @@ values."
    dotspacemacs-default-font '("Ubuntu Mono"
                                :size 14
                                :weight normal
-                               :width normal
-                               :powerline-scale 2.0)
+                               :width normal)
    ;; The leader key
    dotspacemacs-leader-key "SPC"
    ;; The key used for Emacs commands (M-x) (after pressing on the leader key).
@@ -381,7 +380,7 @@ you should place your code here."
   (global-set-key (kbd "<f8>") 'flyspell-mode)
   (setq-default doom-modeline-height 19)
   (setq doom-modeline-buffer-file-name-style 'relative-from-project)
-  (setq-default powerline-height 18)
+  (setq-default powerline-height 16)
   (setq ranger-override-dired t)
   (setq browse-url-browser-function 'browse-url-generic
         browse-url-generic-program "xdg-open")
