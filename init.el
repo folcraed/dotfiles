@@ -2,7 +2,7 @@
 ;; File or commit timestamp show when last updated.
 
 (setq inhibit-startup-message t)
-;; (menu-bar-mode 0)
+(menu-bar-mode 0)
 (tool-bar-mode 0)
 (scroll-bar-mode 0)
 (setq-default display-line-numbers t)
@@ -35,16 +35,6 @@
   :ensure t)
 
 ;;==============================================
-;; wakib - Saner keybindings
-;;==============================================
-
-;; (use-package wakib-keys
-;;   :ensure t
-;;   :diminish wakib-keys)
-;; (require 'wakib-keys)
-;; (wakib-keys 1)
-
-;;==============================================
 ;;  Misc packages
 ;;==============================================
 
@@ -71,6 +61,10 @@
   (setq company-idle-delay 1)
   (setq company-minimum-prefix-length 3)
   (global-company-mode t))
+
+(use-package rainbow-delimiters
+  :ensure t)
+(add-hook 'prog-mode-hook #'rainbow-delimiters-mode)
 
 ;;===============================================
 ;;  Doom modeline
@@ -214,7 +208,7 @@
   :config
   (projectile-global-mode)
   (setq projectile-completion-system 'helm))
-(define-key projectile-mode-map (kbd "C-d p") 'projectile-command-map)
+(define-key projectile-mode-map (kbd "C-x p") 'projectile-command-map)
 
 ;;===============================================
 ;;  Magit
@@ -224,11 +218,34 @@
   :ensure t)
 
 ;;===============================================
-;;  Multiple Cursors
+;; Elfeed and goodies
 ;;===============================================
 
-(use-package multiple-cursors
+(use-package elfeed
   :ensure t)
+
+(use-package elfeed-goodies
+  :ensure t)
+(elfeed-goodies/setup)
+
+  (setq elfeed-feeds
+    '("https://sachachua.com/blog/category/emacs-news/feed/"
+	  "https://forum.manjaro.org/c/announcements.rss"
+      "https://feeds.feedburner.com/d0od"
+      "https://feeds.arstechnica.com/arstechnica/index/"
+      "https://viking-archaeology-blog.blogspot.com/feeds/posts/default"
+      "https://www.gnome-look.org/gnome-look-content.rdf"
+      "https://www.heritagedaily.com/feed"
+      "https://planet.ubuntu.com/rss20.xml"
+      "https://www.linuxinsider.com/perl/syndication/rssfull.pl"
+      "https://www.linuxjournal.com/node/feed"
+      "https://planetkde.org/rss20.xml"
+      "https://www.zdnet.com/blog/open-source/rss.xml"
+      "https://www.phoronix.com/rss.php"
+      "https://www.kde.org/dotkdeorg.rdf"
+      "https://planet.gnome.org/rss20.xml"
+      "https://feeds.feedburner.com/familyhistorydaily"))
+(setq shr-inhibit-images t)
 
 ;;===============================================
 ;; Some personal keybindings
@@ -238,7 +255,7 @@
 (global-set-key (kbd "C-z") 'z-map)
 (define-key z-map (kbd "c") 'org-capture)
 (define-key z-map (kbd "a") 'org-agenda)
-(define-key z-map (kbd "b") 'helm-buffers-list)
+(define-key z-map (kbd "b") 'helm-mini)
 (define-key z-map (kbd "l") 'helm-projectile)
 (define-key z-map (kbd "t") 'org-time-stamp)
 (define-key z-map (kbd "r") 'helm-rg)
@@ -250,17 +267,16 @@
 (define-key z-map (kbd "o") 'org-open-at-point)
 (define-key z-map (kbd "q") 'quoted-insert)
 (define-key z-map (kbd "g") 'magit-status)
+(define-key z-map (kbd "n") 'org-toggle-narrow-to-subtree)
 ;; (global-set-key (kbd "C-S-p") 'helm-M-x)
 (global-set-key (kbd "M-x") 'helm-M-x)
-;; (global-set-key (kbd "C-p") 'projectile-find-file)
-;; (global-set-key (kbd "C-b") 'helm-buffers-list)
+(global-set-key (kbd "C-p") 'projectile-find-file)
+(global-set-key (kbd "C-b") 'helm-mini)
 (global-set-key (kbd "M-o") 'helm-org-in-buffer-headings)
-;; (global-set-key (kbd "C-f") 'helm-swoop)
+(global-set-key (kbd "C-f") 'helm-swoop)
 ;; (global-set-key (kbd "C-F") 'helm-multi-swoop-all)
 ;; (global-set-key (kbd "C-s") 'save-buffer)
 (global-set-key (kbd "M-l") 'goto-line)
-;; (global-set-key (kbd "C->") 'mc/mark-next-like-this)
-;; (global-set-key (kbd "C-<") 'mc/mark-previous-like-this)
 
 ;;==============================================
 ;;  Sanity settings
@@ -293,7 +309,7 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(custom-enabled-themes (quote (atom-one-dark)))
+ '(custom-enabled-themes (quote (sanityinc-tomorrow-eighties)))
  '(custom-safe-themes
    (quote
     ("06f0b439b62164c6f8f84fdda32b62fb50b6d00e8b01c2208e55543a6337433a" "1d079355c721b517fdc9891f0fda927fe3f87288f2e6cc3b8566655a64ca5453" "9be1d34d961a40d94ef94d0d08a364c3d27201f3c98c9d38e36f10588469ea57" "3380a2766cf0590d50d6366c5a91e976bdc3c413df963a0ab9952314b4577299" "f7ef6451d988d6e2fc86deea398eee02b3371703d88f265d31a011bd240dcf99" "f56393685517a0c58952a5fefdc45e29b52cc1798688992d112f7c299325a889" "39464ed440476d616c5671ff4d9cfc2393846132390e0d80e611dfa0b4bd6983" "bf5bdab33a008333648512df0d2b9d9710bdfba12f6a768c7d2c438e1092b633" "628278136f88aa1a151bb2d6c8a86bf2b7631fbea5f0f76cba2a0079cd910f7d" default)))
