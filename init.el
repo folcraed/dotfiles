@@ -62,6 +62,14 @@
   (setq company-minimum-prefix-length 3)
   (global-company-mode t))
 
+(use-package iedit
+  :ensure t)
+
+(use-package expand-region
+  :ensure t
+  :config 
+  (global-set-key (kbd "C-=") 'er/expand-region))
+
 (use-package rainbow-delimiters
   :ensure t)
 (add-hook 'prog-mode-hook #'rainbow-delimiters-mode)
@@ -73,7 +81,7 @@
 (use-package doom-modeline
   :ensure t
   :hook (after-init . doom-modeline-mode))
-(setq doom-modeline-height 18)
+(setq doom-modeline-height 15)
 (setq doom-modeline-minor-modes 1)
 (setq doom-modeline-major-mode-color-icon 1)
 (setq doom-modeline-buffer-file-name-style 'relative-from-project)
@@ -157,7 +165,8 @@
 (setq org-time-stamp-custom-formats '("[%a %b %e %Y]" . "<%a %b %e %Y %H:%M>"))
 (setq-default org-hide-emphasis-markers t)
 (setq org-agenda-files (directory-files-recursively "~/Dropbox/Notes" "\.org$"))
-(setq org-startup-folded nil)
+(setq org-startup-folded t)
+(setq org-startup-indented t)
 (setq org-tags-column 80)
 
 ;;==============================================
@@ -255,7 +264,7 @@
 (global-set-key (kbd "C-z") 'z-map)
 (define-key z-map (kbd "c") 'org-capture)
 (define-key z-map (kbd "a") 'org-agenda)
-(define-key z-map (kbd "b") 'helm-mini)
+(define-key z-map (kbd "b") 'persp-switch)
 (define-key z-map (kbd "l") 'helm-projectile)
 (define-key z-map (kbd "t") 'org-time-stamp)
 (define-key z-map (kbd "r") 'helm-rg)
@@ -263,6 +272,7 @@
 (define-key z-map (kbd "k") 'helm-show-kill-ring)
 (define-key z-map (kbd "f") 'flyspell-buffer)
 (define-key z-map (kbd "F") 'flyspell-mode)
+(define-key z-map (kbd "i") 'iedit-mode)
 (define-key z-map (kbd "p") 'projectile-switch-project)
 (define-key z-map (kbd "o") 'org-open-at-point)
 (define-key z-map (kbd "q") 'quoted-insert)
@@ -277,6 +287,7 @@
 ;; (global-set-key (kbd "C-F") 'helm-multi-swoop-all)
 ;; (global-set-key (kbd "C-s") 'save-buffer)
 (global-set-key (kbd "M-l") 'goto-line)
+(global-set-key (kbd "M-;") 'comment-line)
 
 ;;==============================================
 ;;  Sanity settings
@@ -317,7 +328,7 @@
  '(frame-background-mode (quote dark))
  '(package-selected-packages
    (quote
-    (wakib-keys rainbow-delimiters multiple-cursors helm-flyspell helm helm-projectile helm-swoop helm-rg persp-projectile perspective railscasts-reloaded-theme flyspell-correct magit projectile diminish atom-one-dark-theme doom-modeline all-the-icons undo-tree avy company org color-theme-sanityinc-tomorrow winum org-bullets which-key use-package)))
+    (expand-region iedit rainbow-delimiters helm-flyspell helm helm-projectile helm-swoop helm-rg persp-projectile perspective flyspell-correct magit projectile diminish atom-one-dark-theme doom-modeline all-the-icons undo-tree avy company org color-theme-sanityinc-tomorrow winum org-bullets which-key use-package)))
  '(persp-modestring-dividers (quote ("(" ")" "|"))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
