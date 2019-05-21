@@ -54,6 +54,7 @@ values."
      ;; pdf
      ;; syntax-checking
      ranger
+     elfeed
      ;; version-control
      )
    ;; List of additional packages that will be installed without being
@@ -152,8 +153,8 @@ values."
    ;; refer to the DOCUMENTATION.org for more info on how to create your own
    ;; spaceline theme. Value can be a symbol or list with additional properties.
    ;; (default '(spacemacs :separator wave :separator-scale 1.5))
-   dotspacemacs-mode-line-theme '(spacemacs :separator curve :separator-scale 1.2)
-   ;; dotspacemacs-mode-line-theme '(doom)
+   ;; dotspacemacs-mode-line-theme '(spacemacs :separator curve :separator-scale 1.2)
+   dotspacemacs-mode-line-theme '(doom)
    ;; If non nil the cursor color matches the state color in GUI Emacs.
    dotspacemacs-colorize-cursor-according-to-state t
    ;; Default font, or prioritized list of fonts. `powerline-scale' allows to
@@ -434,7 +435,24 @@ you should place your code here."
   (setq-default org-hide-emphasis-markers t)
   (setq org-agenda-files (directory-files-recursively "~/Dropbox/Notes" "\.org$")))
   (setq org-tags-column 80)
-
+  (setq elfeed-feeds
+    '("https://sachachua.com/blog/category/emacs-news/feed/"
+	  "https://forum.manjaro.org/c/announcements.rss"
+      "https://feeds.feedburner.com/d0od"
+      "https://feeds.arstechnica.com/arstechnica/index/"
+      "https://viking-archaeology-blog.blogspot.com/feeds/posts/default"
+      "https://www.gnome-look.org/gnome-look-content.rdf"
+      "https://www.heritagedaily.com/feed"
+      "https://planet.ubuntu.com/rss20.xml"
+      "https://www.linuxinsider.com/perl/syndication/rssfull.pl"
+      "https://www.linuxjournal.com/node/feed"
+      "https://planetkde.org/rss20.xml"
+      "https://www.zdnet.com/blog/open-source/rss.xml"
+      "https://www.phoronix.com/rss.php"
+      "https://www.kde.org/dotkdeorg.rdf"
+      "https://planet.gnome.org/rss20.xml"
+      "https://feeds.feedburner.com/familyhistorydaily"))
+(setq shr-inhibit-images t)
 (defun dotspacemacs/emacs-custom-settings ()
   "Emacs custom settings.
 This is an auto-generated function, do not modify its content directly, use
