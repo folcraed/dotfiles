@@ -14,7 +14,7 @@ dbus-launch dunst &
 # nm-applet &
 xclip &
 clipit &
-recollindex -w 60 -m &
+# recollindex -w 60 -m &
 
 bspc monitor -d I II III IV V VI VII VIII IX X
 
