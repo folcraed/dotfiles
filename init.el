@@ -1,4 +1,4 @@
-;; Emacs settings Ver 0.4
+;; Emacs settings Ver 0.5
 ;; File or commit timestamp show when last updated.
 
 (setq inhibit-startup-message t)
@@ -178,7 +178,7 @@
   :diminish "H"
   :init (setq helm-M-x_fuzzy-match 1
 	      helm-autoresize-mode 0
-	      helm-display-buffer-default-height 13
+	      helm-display-buffer-default-height 18
 	      helm-split-window-inside-p 1)
   :config
   (helm-mode 1))
@@ -239,20 +239,21 @@
 
   (setq elfeed-feeds
     '("https://sachachua.com/blog/category/emacs-news/feed/"
-	  "https://forum.manjaro.org/c/announcements.rss"
-      "https://feeds.feedburner.com/d0od"
-      "https://feeds.arstechnica.com/arstechnica/index/"
+      "https://forum.manjaro.org/c/announcements.rss"
+      "http://feeds.feedburner.com/d0od"
+      "http://feeds.arstechnica.com/arstechnica/index/"
       "https://viking-archaeology-blog.blogspot.com/feeds/posts/default"
       "https://www.gnome-look.org/gnome-look-content.rdf"
       "https://www.heritagedaily.com/feed"
       "https://planet.ubuntu.com/rss20.xml"
       "https://www.linuxinsider.com/perl/syndication/rssfull.pl"
       "https://www.linuxjournal.com/node/feed"
-      "https://planetkde.org/rss20.xml"
+      "http://planetkde.org/rss20.xml"
       "https://www.zdnet.com/blog/open-source/rss.xml"
       "https://www.phoronix.com/rss.php"
-      "https://www.kde.org/dotkdeorg.rdf"
-      "https://planet.gnome.org/rss20.xml"
+      "http://www.kde.org/dotkdeorg.rdf"
+      "http://jonathanabennett.github.io/rss.xml"
+      "http://planet.gnome.org/rss20.xml"
       "https://feeds.feedburner.com/familyhistorydaily"))
 (setq shr-inhibit-images t)
 
