@@ -6,7 +6,7 @@
 (tool-bar-mode 0)
 (scroll-bar-mode 0)
 (setq-default display-line-numbers t)
-(set-default-font "Hack 12")
+(set-default-font "Ubuntu Mono 13")
 (put 'dired-find-alternate-file 'disabled nil)
 (global-visual-line-mode t)
 
@@ -165,7 +165,7 @@
 (setq org-time-stamp-custom-formats '("[%a %b %e %Y]" . "<%a %b %e %Y %H:%M>"))
 (setq-default org-hide-emphasis-markers t)
 (setq org-agenda-files (directory-files-recursively "~/Dropbox/Notes" "\.org$"))
-(setq org-startup-folded t)
+(setq org-startup-folded nil)
 (setq org-startup-indented t)
 (setq org-tags-column 80)
 
@@ -243,6 +243,7 @@
       "http://feeds.feedburner.com/d0od"
       "http://feeds.arstechnica.com/arstechnica/index/"
       "https://viking-archaeology-blog.blogspot.com/feeds/posts/default"
+      "http://archaeology-in-europe.blogspot.com/feeds/posts/default"
       "https://www.gnome-look.org/gnome-look-content.rdf"
       "https://www.heritagedaily.com/feed"
       "https://planet.ubuntu.com/rss20.xml"
@@ -321,7 +322,7 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(custom-enabled-themes (quote (sanityinc-tomorrow-eighties)))
+ '(custom-enabled-themes (quote (atom-one-dark)))
  '(custom-safe-themes
    (quote
     ("06f0b439b62164c6f8f84fdda32b62fb50b6d00e8b01c2208e55543a6337433a" "1d079355c721b517fdc9891f0fda927fe3f87288f2e6cc3b8566655a64ca5453" "9be1d34d961a40d94ef94d0d08a364c3d27201f3c98c9d38e36f10588469ea57" "3380a2766cf0590d50d6366c5a91e976bdc3c413df963a0ab9952314b4577299" "f7ef6451d988d6e2fc86deea398eee02b3371703d88f265d31a011bd240dcf99" "f56393685517a0c58952a5fefdc45e29b52cc1798688992d112f7c299325a889" "39464ed440476d616c5671ff4d9cfc2393846132390e0d80e611dfa0b4bd6983" "bf5bdab33a008333648512df0d2b9d9710bdfba12f6a768c7d2c438e1092b633" "628278136f88aa1a151bb2d6c8a86bf2b7631fbea5f0f76cba2a0079cd910f7d" default)))
