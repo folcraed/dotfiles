@@ -53,7 +53,7 @@ values."
                      spell-checking-enable-by-default nil)
      ;; pdf
      ;; syntax-checking
-     ranger
+     treemacs
      elfeed
      ;; version-control
      )
@@ -141,8 +141,8 @@ values."
    ;; List of themes, the first of the list is loaded when spacemacs starts.
    ;; Press <SPC> T n to cycle to the next theme in the list (works great
    ;; with 2 themes variants, one dark and one light)
-   dotspacemacs-themes '(sanityinc-tomorrow-eighties
-                         atom-one-dark
+   dotspacemacs-themes '(atom-one-dark
+                         sanityinc-tomorrow-eighties
                          monokai
                          spacemacs-dark
                          spacemacs-light)
@@ -441,6 +441,7 @@ you should place your code here."
       "https://feeds.feedburner.com/d0od"
       "https://feeds.arstechnica.com/arstechnica/index/"
       "https://viking-archaeology-blog.blogspot.com/feeds/posts/default"
+      "http://archaeology-in-europe.blogspot.com/feeds/posts/default"
       "https://www.gnome-look.org/gnome-look-content.rdf"
       "https://www.heritagedaily.com/feed"
       "https://planet.ubuntu.com/rss20.xml"
@@ -450,6 +451,7 @@ you should place your code here."
       "https://www.zdnet.com/blog/open-source/rss.xml"
       "https://www.phoronix.com/rss.php"
       "https://www.kde.org/dotkdeorg.rdf"
+      "http://jonathanabennett.github.io/rss.xml"
       "https://planet.gnome.org/rss20.xml"
       "https://feeds.feedburner.com/familyhistorydaily"))
 (setq shr-inhibit-images t)
