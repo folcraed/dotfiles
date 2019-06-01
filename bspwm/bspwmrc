@@ -10,7 +10,7 @@ ssh-agent &
 compton &
 # tracker daemon -s &
 dropbox start -i &
-dbus-launch dunst &
+# dbus-launch dunst &
 # nm-applet &
 xclip &
 clipit &
