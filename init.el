@@ -230,7 +230,9 @@
 ;;  Lua mode for Awesome editing
 ;;===============================================
 (use-package lua-mode
-  :ensure t)
+  :ensure t
+  :config
+  (setq lua-indent-level 4))
 
 ;;===============================================
 ;; Elfeed and goodies
