@@ -14,7 +14,6 @@ local beautiful = require("beautiful")
 local naughty = require("naughty")
 local menubar = require("menubar")
 local hotkeys_popup = require("awful.hotkeys_popup").widget
--- local collision = require("collision")
 
 -- {{{ Setting a sane icon default for naughty.notify
 naughty.config.defaults['icon_size'] = 32
@@ -278,10 +277,6 @@ awful.screen.connect_for_each_screen(function(s)
 end)
 -- }}}
 
--- NOTE: Really want to get rid of this and just use keybindings without the graphics.
--- Call collision for it's keybindings
--- collision()
-
 -- {{{ Mouse bindings
 root.buttons(awful.util.table.join(
     awful.button({ }, 3, function () mymainmenu:toggle() end),
@@ -291,8 +286,6 @@ root.buttons(awful.util.table.join(
 -- }}}
 
 -- {{{ Key bindings
-
---| Some bindings might conflict with collision, watch for it |--
 
 globalkeys = awful.util.table.join(
     awful.key({ modkey,           }, "s",      hotkeys_popup.show_help,
@@ -423,15 +416,27 @@ clientkeys = awful.util.table.join(
         end,
         {description = "toggle fullscreen", group = "client"}),
     awful.key({ modkey, "Shift"   }, "c",      function (c) c:kill()                         end,
-              {description = "close", group = "client"}),
+        {description = "close", group = "client"}),
+    awful.key({ modkey }, "Next",  function (c) c:relative_move( 20,  20, -40, -40) end,
+        {description = "decrease float size", group = "client"}),
+    awful.key({ modkey }, "Prior", function (c) c:relative_move(-20, -20,  40,  40) end,
+        {description = "increase float size", group = "client"}),
+    awful.key({ modkey, "Control" }, "Down",  function (c) c:relative_move(  0,  20,   0,   0) end,
+        {description = "move float down", group = "client"}),
+    awful.key({ modkey, "Control" }, "Up",    function (c) c:relative_move(  0, -20,   0,   0) end,
+        {description = "move float up", group = "client"}),
+    awful.key({ modkey, "Control" }, "Left",  function (c) c:relative_move(-20,   0,   0,   0) end,
+        {description = "move float left", group = "client"}),
+    awful.key({ modkey, "Control" }, "Right", function (c) c:relative_move( 20,   0,   0,   0) end,
+        {description = "move float right", group = "client"}),
     awful.key({ modkey, "Control" }, "space",  awful.client.floating.toggle                     ,
-              {description = "toggle floating", group = "client"}),
+        {description = "toggle floating", group = "client"}),
     awful.key({ modkey, "Control" }, "Return", function (c) c:swap(awful.client.getmaster()) end,
-              {description = "move to master", group = "client"}),
+        {description = "move to master", group = "client"}),
     awful.key({ modkey,           }, "o",      function (c) c:move_to_screen()               end,
-              {description = "move to screen", group = "client"}),
+        {description = "move to screen", group = "client"}),
     awful.key({ modkey,           }, "t",      function (c) c.ontop = not c.ontop            end,
-              {description = "toggle keep on top", group = "client"}),
+        {description = "toggle keep on top", group = "client"}),
     awful.key({ modkey,           }, "n",
         function (c)
             -- The client currently has the input focus, so it cannot be
