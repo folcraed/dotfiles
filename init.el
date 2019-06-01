@@ -227,6 +227,12 @@
   :ensure t)
 
 ;;===============================================
+;;  Lua mode for Awesome editing
+;;===============================================
+(use-package lua-mode
+  :ensure t)
+
+;;===============================================
 ;; Elfeed and goodies
 ;;===============================================
 
@@ -286,6 +292,7 @@
 (global-set-key (kbd "C-b") 'helm-mini)
 (global-set-key (kbd "M-o") 'helm-org-in-buffer-headings)
 (global-set-key (kbd "C-f") 'helm-swoop)
+(global-set-key (kbd "C-o") 'org-open-at-point)
 ;; (global-set-key (kbd "C-F") 'helm-multi-swoop-all)
 ;; (global-set-key (kbd "C-s") 'save-buffer)
 (global-set-key (kbd "M-l") 'goto-line)
@@ -330,7 +337,7 @@
  '(frame-background-mode (quote dark))
  '(package-selected-packages
    (quote
-    (expand-region iedit rainbow-delimiters helm-flyspell helm helm-projectile helm-swoop helm-rg persp-projectile perspective flyspell-correct magit projectile diminish atom-one-dark-theme doom-modeline all-the-icons undo-tree avy company org color-theme-sanityinc-tomorrow winum org-bullets which-key use-package)))
+    (lua-mode expand-region iedit rainbow-delimiters helm-flyspell helm helm-projectile helm-swoop helm-rg persp-projectile perspective flyspell-correct magit projectile diminish atom-one-dark-theme doom-modeline all-the-icons undo-tree avy company org color-theme-sanityinc-tomorrow winum org-bullets which-key use-package)))
  '(persp-modestring-dividers (quote ("(" ")" "|"))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
