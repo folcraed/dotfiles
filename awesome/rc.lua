@@ -16,6 +16,9 @@ local menubar = require("menubar")
 local hotkeys_popup = require("awful.hotkeys_popup").widget
 -- local collision = require("collision")
 
+-- {{{ Setting a sane icon default for naughty.notify
+naughty.config.defaults['icon_size'] = 32
+
 -- {{{ Error handling
 
 --| Check if awesome encountered an error during startup and fell back to
@@ -149,7 +152,11 @@ local mymem = lain.widget.mem({
         widget:set_markup(markup("#6c71c4", " " .. mem_now.used .. "Mb " .. mem_now.perc .. "% "))
     end
 })
-
+local volume = lain.widget.alsa({
+    settings = function()
+        widget:set_markup(markup("#2aa198", " Vol: " .. volume_now.level .. "% "))
+    end
+})
 --| Create a wibox for each screen and add it |--
 
 local taglist_buttons = awful.util.table.join(
@@ -251,6 +258,8 @@ awful.screen.connect_for_each_screen(function(s)
         s.mytasklist, -- Middle widget
         { -- Right widgets
             layout = wibox.layout.fixed.horizontal,
+            spacer,
+            volume,
             spacer,
             mycpu,
             spacer,
