@@ -43,6 +43,7 @@ values."
      auto-completion
      ;; better-defaults
      emacs-lisp
+     lua
      git
      ;; markdown
      org
@@ -53,8 +54,9 @@ values."
                      spell-checking-enable-by-default nil)
      ;; pdf
      ;; syntax-checking
-     treemacs
+     ;; treemacs
      elfeed
+     ranger
      ;; version-control
      )
    ;; List of additional packages that will be installed without being
@@ -382,6 +384,7 @@ you should place your code here."
   (setq-default doom-modeline-height 19)
   (setq doom-modeline-buffer-file-name-style 'relative-from-project)
   (setq-default powerline-height 16)
+  (setq lua-indent-level 4)
   (setq ranger-override-dired t)
   (setq browse-url-browser-function 'browse-url-generic
         browse-url-generic-program "xdg-open")
