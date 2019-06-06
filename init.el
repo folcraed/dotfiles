@@ -111,7 +111,12 @@
 
 (use-package org
   :ensure t
-  :pin org)
+  :pin org
+  :config
+  (setq-default org-hide-emphasis-markers t)
+  (setq org-startup-folded nil)
+  (setq org-startup-indented t)
+  (setq org-tags-column 80))
 
 (use-package org-bullets
   :ensure t
@@ -163,11 +168,7 @@
 
 (setq-default org-display-custom-times t)
 (setq org-time-stamp-custom-formats '("[%a %b %e %Y]" . "<%a %b %e %Y %H:%M>"))
-(setq-default org-hide-emphasis-markers t)
 (setq org-agenda-files (directory-files-recursively "~/Dropbox/Notes" "\.org$"))
-(setq org-startup-folded nil)
-(setq org-startup-indented t)
-(setq org-tags-column 80)
 
 ;;==============================================
 ;;  Helm and friends
@@ -315,6 +316,17 @@
 (show-paren-mode 1)
 (diminish 'auto-revert-mode)
 (diminish 'eldoc-mode)
+
+(defun rob-scroll-down ()
+      (interactive)
+      (scroll-up 1))
+
+(defun rob-scroll-up ()
+      (interactive)
+      (scroll-down 1))
+
+(global-set-key (kbd "M-n") 'rob-scroll-down)
+(global-set-key (kbd "M-p") 'rob-scroll-up)
 
 ;;==============================================
 ;; Theme
