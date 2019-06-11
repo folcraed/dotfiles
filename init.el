@@ -28,10 +28,9 @@
   (package-install 'use-package))
 
 ;;==============================================
-;;  Diminish for the rest
+;;  Minion for the rest
 ;;==============================================
-
-(use-package diminish
+(use-package minions
   :ensure t)
 
 ;;==============================================
@@ -40,7 +39,6 @@
 
 (use-package which-key
   :ensure t
-  :diminish "K"
   :config (which-key-mode))
 
 (use-package perspective
@@ -56,7 +54,6 @@
 
 (use-package company
   :ensure t
-  :diminish "C"
   :config
   (setq company-idle-delay 1)
   (setq company-minimum-prefix-length 3)
@@ -83,6 +80,7 @@
   :hook (after-init . doom-modeline-mode))
 (setq doom-modeline-height 15)
 (setq doom-modeline-minor-modes 1)
+(minions-mode 1)
 (setq doom-modeline-major-mode-color-icon 1)
 (setq doom-modeline-buffer-file-name-style 'relative-from-project)
 (setq column-number-mode 1)
@@ -176,7 +174,6 @@
 
 (use-package helm
   :ensure t
-  :diminish "H"
   :init (setq helm-M-x_fuzzy-match 1
 	      helm-autoresize-mode 0
 	      helm-display-buffer-default-height 18
@@ -201,8 +198,7 @@
 ;;==============================================
 
 (use-package flyspell-correct
-  :ensure t
-  :diminish "S")
+  :ensure t)
 
 (use-package helm-flyspell
   :ensure t
@@ -214,7 +210,6 @@
 
 (use-package projectile
   :ensure t
-  :diminish "P"
   :config
   (projectile-global-mode)
   (setq projectile-completion-system 'helm))
@@ -289,15 +284,12 @@
 (define-key z-map (kbd "q") 'quoted-insert)
 (define-key z-map (kbd "g") 'magit-status)
 (define-key z-map (kbd "n") 'org-toggle-narrow-to-subtree)
-;; (global-set-key (kbd "C-S-p") 'helm-M-x)
 (global-set-key (kbd "M-x") 'helm-M-x)
 (global-set-key (kbd "C-p") 'projectile-find-file)
 (global-set-key (kbd "C-b") 'helm-mini)
 (global-set-key (kbd "M-o") 'helm-org-in-buffer-headings)
 (global-set-key (kbd "C-f") 'helm-swoop)
 (global-set-key (kbd "C-o") 'org-open-at-point)
-;; (global-set-key (kbd "C-F") 'helm-multi-swoop-all)
-;; (global-set-key (kbd "C-s") 'save-buffer)
 (global-set-key (kbd "M-l") 'goto-line)
 (global-set-key (kbd "M-;") 'comment-line)
 
@@ -314,8 +306,6 @@
 	  (lambda () (setq truncate-lines nil)))
 
 (show-paren-mode 1)
-(diminish 'auto-revert-mode)
-(diminish 'eldoc-mode)
 
 (defun rob-scroll-down ()
       (interactive)
