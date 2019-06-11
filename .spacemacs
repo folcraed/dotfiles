@@ -431,7 +431,7 @@ you should place your code here."
 	 "* %?")))
   (org-projectile-per-project)
   (setq org-projectile-per-project-filepath "todo.org")
-  (setq-default org-startup-folded (quote content))
+  (setq-default org-startup-folded (quote showall))
   (setq org-startup-indented t)
   (setq-default org-display-custom-times t)
   (setq org-time-stamp-custom-formats '("[%a %e %b %Y]" . "<%a %e %b %Y %H:%M>"))
