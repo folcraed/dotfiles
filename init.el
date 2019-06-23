@@ -5,10 +5,13 @@
 (menu-bar-mode 0)
 (tool-bar-mode 0)
 (scroll-bar-mode 0)
-(setq-default display-line-numbers t)
+;; (global-display-line-numbers-mode)
 (set-default-font "Ubuntu Mono 13")
 (put 'dired-find-alternate-file 'disabled nil)
-(global-visual-line-mode t)
+(global-visual-line-mode 1)
+;; This is suppose to fix ??? displaying instead
+;; of line numbers in modeline
+(setq line-number-display-limit-width 2000000)
 
 ;;==============================================
 ;;  Set up repositories
@@ -70,6 +73,12 @@
 (use-package rainbow-delimiters
   :ensure t)
 (add-hook 'prog-mode-hook #'rainbow-delimiters-mode)
+
+(use-package pdf-tools
+  :ensure t
+  :pin manual
+  :config
+  (pdf-tools-install))
 
 ;;===============================================
 ;;  Doom modeline
@@ -231,17 +240,15 @@
   (setq lua-indent-level 4))
 
 ;;===============================================
-;; Elfeed and goodies
+;; Elfeed
 ;;===============================================
 
 (use-package elfeed
-  :ensure t)
+  :ensure t
+  :config
+  (setq elfeed-db-directory "~/Dropbox/elfeed"))
 
-(use-package elfeed-goodies
-  :ensure t)
-(elfeed-goodies/setup)
-
-  (setq elfeed-feeds
+(setq elfeed-feeds
     '("https://sachachua.com/blog/category/emacs-news/feed/"
       "https://forum.manjaro.org/c/announcements.rss"
       "http://feeds.feedburner.com/d0od"
@@ -259,6 +266,7 @@
       "http://www.kde.org/dotkdeorg.rdf"
       "http://jonathanabennett.github.io/rss.xml"
       "http://planet.gnome.org/rss20.xml"
+      "https://www.johngrenham.com/blog/feed/"
       "https://feeds.feedburner.com/familyhistorydaily"))
 (setq shr-inhibit-images t)
 
@@ -350,3 +358,4 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(persp-selected-face ((t (:foreground "orange" :weight bold)))))
+(put 'narrow-to-region 'disabled nil)
