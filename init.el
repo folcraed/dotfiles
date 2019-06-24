@@ -81,6 +81,17 @@
   (pdf-tools-install))
 
 ;;===============================================
+;;  Multiple Cursors
+;;===============================================
+(use-package multiple-cursors
+  :ensure t)
+(global-set-key (kbd "C-c m c") 'mc/edit-lines)
+(global-set-key (kbd "C->") 'mc/mark-next-like-this)
+(global-set-key (kbd "C-<") 'mc/mark-previous-like-this)
+(global-set-key (kbd "C-M->") 'mc/skip-to-next-like-this)
+(global-set-key (kbd "C-M-<") 'mc/skip-to-previous-like-this)
+
+;;===============================================
 ;;  Doom modeline
 ;;===============================================
 
@@ -350,7 +361,7 @@
  '(org-export-backends (quote (ascii html md odt)))
  '(package-selected-packages
    (quote
-    (lua-mode expand-region iedit rainbow-delimiters helm-flyspell helm helm-projectile helm-swoop helm-rg persp-projectile perspective flyspell-correct magit projectile diminish atom-one-dark-theme doom-modeline all-the-icons undo-tree avy company org color-theme-sanityinc-tomorrow winum org-bullets which-key use-package)))
+    (multiple-cursors lua-mode expand-region iedit rainbow-delimiters helm-flyspell helm helm-projectile helm-swoop helm-rg persp-projectile perspective flyspell-correct magit projectile diminish atom-one-dark-theme doom-modeline all-the-icons undo-tree avy company org color-theme-sanityinc-tomorrow winum org-bullets which-key use-package)))
  '(persp-modestring-dividers (quote ("(" ")" "|"))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
