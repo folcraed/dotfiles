@@ -64,6 +64,7 @@
 
 (use-package iedit
   :ensure t)
+(require 'iedit)
 
 (use-package expand-region
   :ensure t
@@ -221,8 +222,7 @@
   :ensure t)
 
 (use-package helm-flyspell
-  :ensure t
-  :bind ("C-;" . helm-flyspell-correct))
+  :ensure t)
 
 ;;==============================================
 ;; Projectile
@@ -361,7 +361,7 @@
  '(org-export-backends (quote (ascii html md odt)))
  '(package-selected-packages
    (quote
-    (multiple-cursors lua-mode expand-region iedit rainbow-delimiters helm-flyspell helm helm-projectile helm-swoop helm-rg persp-projectile perspective flyspell-correct magit projectile diminish atom-one-dark-theme doom-modeline all-the-icons undo-tree avy company org color-theme-sanityinc-tomorrow winum org-bullets which-key use-package)))
+    (multiple-cursors lua-mode expand-region pdf-tools minions elfeed iedit rainbow-delimiters helm-flyspell helm helm-projectile helm-swoop helm-rg persp-projectile perspective flyspell-correct magit projectile atom-one-dark-theme doom-modeline all-the-icons undo-tree avy company org color-theme-sanityinc-tomorrow winum org-bullets which-key use-package)))
  '(persp-modestring-dividers (quote ("(" ")" "|"))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
