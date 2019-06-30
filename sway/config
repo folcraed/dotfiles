@@ -47,7 +47,7 @@ exec swayidle -w timeout 900 'swaymsg "output * dpms off"' resume 'swaymsg "outp
 # Read `man 5 sway-input` for more information about this section.
 
 # Font
-font pango:Hack 9
+font pango:Hack 11
 
 #Set tile gaps
 gaps inner 10
