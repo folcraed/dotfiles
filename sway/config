@@ -219,6 +219,6 @@ exec --no-startup-id /usr/lib64/polkit-gnome/polkit-gnome-authentication-agent-1
 exec --no-startup-id xset s off
 exec --no-startup-id clipit
 exec --no-startup-id dropbox start -i
-
+exec xrdb -load ~/.Xresources
 
 # vim: ft=sh
