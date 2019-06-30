@@ -224,6 +224,8 @@
 (use-package helm-flyspell
   :ensure t)
 
+(setq ispell-program-name "aspell")
+
 ;;==============================================
 ;; Projectile
 ;;==============================================
