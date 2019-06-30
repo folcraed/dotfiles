@@ -106,6 +106,7 @@ label:focus {
 
 #memory {
     background-color: #C678DD;
+    color: #000000;
 }
 
 #backlight {
@@ -146,6 +147,7 @@ label:focus {
 
 #temperature {
     background-color: #56B6C2;
+    color: #000000;
 }
 
 #temperature.critical {
