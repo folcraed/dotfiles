@@ -52,10 +52,10 @@ values."
             shell-default-position 'bottom)
      (spell-checking :variables
                      spell-checking-enable-by-default nil)
-     ;; pdf
+     pdf
      ;; syntax-checking
      ;; treemacs
-     ;; elfeed
+     elfeed
      ;; version-control
      )
    ;; List of additional packages that will be installed without being
@@ -377,6 +377,7 @@ you should place your code here."
   (setq ispell-program-name "aspell")
   (setq company-idle-delay 1)
   (global-visual-line-mode t)
+  (setq line-number-display-limit-width 2000000)
   (define-key evil-normal-state-map (kbd "j") 'evil-next-visual-line)
   (define-key evil-normal-state-map (kbd "k") 'evil-previous-visual-line)
   (spacemacs/set-leader-keys-for-major-mode 'org-mode "o" 'helm-org-in-buffer-headings)
@@ -438,6 +439,7 @@ you should place your code here."
   (setq-default org-hide-emphasis-markers t)
   (setq org-agenda-files (directory-files-recursively "~/Dropbox/Notes" "\.org$")))
   (setq org-tags-column 80)
+  (setq elfeed-db-directory "~/Dropbox/elfeed")
   (setq elfeed-feeds
     '("https://sachachua.com/blog/category/emacs-news/feed/"
 	  "https://forum.manjaro.org/c/announcements.rss"
@@ -456,6 +458,7 @@ you should place your code here."
       "https://www.kde.org/dotkdeorg.rdf"
       "http://jonathanabennett.github.io/rss.xml"
       "https://planet.gnome.org/rss20.xml"
+      "https://www.johngrenham.com/blog/feed/"
       "https://feeds.feedburner.com/familyhistorydaily"))
 (setq shr-inhibit-images t)
 (defun dotspacemacs/emacs-custom-settings ()
