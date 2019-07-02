@@ -148,7 +148,7 @@ local mycpu = lain.widget.cpu({
 })
 local mymem = lain.widget.mem({
     settings = function()
-        widget:set_markup(markup("#6c71c4", " " .. mem_now.used .. "Mb " .. mem_now.perc .. "% "))
+        widget:set_markup(markup("#6c71c4", " " .. mem_now.used .. " Mb " .. mem_now.perc .. "% "))
     end
 })
 local volume = lain.widget.alsa({
