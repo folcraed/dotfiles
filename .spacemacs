@@ -73,6 +73,9 @@ values."
                                     fancy-battery
                                     yasnippet-snippets
                                     auto-yasnippet
+                                    elfeed-goodies
+                                    elfeed-org
+                                    elfeed-web
                                     helm-c-yasnippet
                                     google-translate)
    ;; Defines the behaviour of Spacemacs when installing packages.
@@ -288,7 +291,7 @@ values."
    ;;                       text-mode
    ;;   :size-limit-kb 1000)
    ;; (default nil)
-   dotspacemacs-line-numbers 't
+   dotspacemacs-line-numbers nil
    ;; Code folding method. Possible values are `evil' and `origami'.
    ;; (default 'evil)
    dotspacemacs-folding-method 'evil
