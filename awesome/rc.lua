@@ -271,7 +271,6 @@ awful.screen.connect_for_each_screen(function(s)
             mytextclock,
             spacer,
             wibox.widget.systray()
---            s.mylayoutbox,
         },
     }
 end)
@@ -627,26 +626,12 @@ client.connect_signal("focus", function(c) c.border_color = beautiful.border_foc
 client.connect_signal("unfocus", function(c) c.border_color = beautiful.border_normal end)
 -- }}}
 
--- | run_once | --
-
-function run_once(cmd)
-  findme = cmd
-  firstspace = cmd:find(" ")
-  if firstspace then
-     findme = cmd:sub(0, firstspace-1)
-  end
-  awful.spawn.with_shell("pgrep -u $USER -x " .. findme .. " > /dev/null || (" .. cmd .. ")")
-end
-
 -- | Autostart | --
 
-run_once("gnome-keyring-daemon -s")
-run_once("/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1")
-run_once("ssh-agent")
-run_once("compton")
-run_once("clipit")
-run_once("xclip")
--- run_once("nm-applet")
--- run_once("tracker daemon -s")
-run_once("dropbox start -i")
--- run_once("recollindex -w 30 -m")
+awful.spawn.once("gnome-keyring-daemon -s")
+awful.spawn.once("/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1")
+awful.spawn.once("ssh-agent")
+awful.spawn.once("compton")
+awful.spawn.once("clipit")
+awful.spawn.once("xclip")
+awful.spawn.once("dropbox start -i")
