@@ -225,7 +225,9 @@
   :ensure t)
 
 (setq ispell-program-name "aspell")
-
+(global-set-key (kbd "<f8>") 'flyspell-mode)
+(global-set-key (kbd "C-<f8>") 'flyspell-buffer)
+(global-set-key (kbd "M-<f8>") 'helm-flyspell-correct)
 ;;==============================================
 ;; Projectile
 ;;==============================================
@@ -295,10 +297,7 @@
 (define-key z-map (kbd "l") 'helm-projectile)
 (define-key z-map (kbd "t") 'org-time-stamp)
 (define-key z-map (kbd "r") 'helm-rg)
-(define-key z-map (kbd "s") 'helm-flyspell-correct)
 (define-key z-map (kbd "k") 'helm-show-kill-ring)
-(define-key z-map (kbd "f") 'flyspell-buffer)
-(define-key z-map (kbd "F") 'flyspell-mode)
 (define-key z-map (kbd "i") 'iedit-mode)
 (define-key z-map (kbd "p") 'projectile-switch-project)
 (define-key z-map (kbd "o") 'org-open-at-point)
@@ -338,6 +337,15 @@
 
 (global-set-key (kbd "M-n") 'rob-scroll-down)
 (global-set-key (kbd "M-p") 'rob-scroll-up)
+(electric-pair-mode 1)
+(defvar org-electric-pairs '((?\* . ?\*) (?/ . ?/) (?= . ?=)
+                             (?\_ . ?\_) (?~ . ?~) (?+ . ?+)) "Electric pairs for org-mode.")
+
+(defun org-add-electric-pairs ()
+  (setq-local electric-pair-pairs (append electric-pair-pairs org-electric-pairs))
+  (setq-local electric-pair-text-pairs electric-pair-pairs))
+
+(add-hook 'org-mode-hook 'org-add-electric-pairs)
 
 ;;==============================================
 ;; Theme
