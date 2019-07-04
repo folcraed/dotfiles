@@ -46,6 +46,7 @@ values."
      lua
      git
      ;; markdown
+     multiple-cursors
      org
      (shell :variables
             shell-default-height 30
@@ -219,7 +220,7 @@ values."
    ;; auto-save the file in-place, `cache' to auto-save the file to another
    ;; file stored in the cache directory and `nil' to disable auto-saving.
    ;; (default 'cache)
-   dotspacemacs-auto-save-file-location nil
+   dotspacemacs-auto-save-file-location 'cache
    ;; Maximum number of rollback slots to keep in the cache. (default 5)
    dotspacemacs-max-rollback-slots 5
    ;; If non nil, `helm' will try to minimize the space it uses. (default nil)
@@ -240,7 +241,7 @@ values."
    dotspacemacs-enable-paste-transient-state nil
    ;; Which-key delay in seconds. The which-key buffer is the popup listing
    ;; the commands bound to the current keystroke sequence. (default 0.4)
-   dotspacemacs-which-key-delay 0.4
+   dotspacemacs-which-key-delay 0.3
    ;; Which-key frame position. Possible values are `right', `bottom' and
    ;; `right-then-bottom'. right-then-bottom tries to display the frame to the
    ;; right; if there is insufficient space it displays it at the bottom.
@@ -346,6 +347,14 @@ values."
    dotspacemacs-gc-cons '(16777216 0.1)
    ))
 
+(defun dotspacemacs/user-env ()
+  "Environment variables setup.
+This function defines the environment variables for your Emacs session. By
+default it calls `spacemacs/load-spacemacs-env' which loads the environment
+variables declared in `~/.spacemacs.env' or `~/.spacemacs.d/.spacemacs.env'.
+See the header of this file for more information."
+  (spacemacs/load-spacemacs-env))
+
 (defun dotspacemacs/user-init ()
   "Initialization for user code:
 This function is called immediately after `dotspacemacs/init', before layer
@@ -395,9 +404,9 @@ you should place your code here."
   (setq-default org-file-apps
    (quote
     ((auto-mode . emacs)
-     ("\\.png\\'" . "xdg-open %s")
-     ("\\.jpg\\'" . "xdg-open %s")
-     ("\\.pdf\\'" . "xdg-open %s"))))
+     ("\\.png\\'" . "sxiv %s")
+     ("\\.jpg\\'" . "sxiv %s")
+     ("\\.pdf\\'" . "zathura %s"))))
 (setq org-capture-templates
       '(("t" "Todo" entry (file+headline "~/Dropbox/Notes/agenda.org" "Todos")
 	 "* TODO %t %?")
