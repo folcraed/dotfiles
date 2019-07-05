@@ -2,7 +2,7 @@
 ;; File or commit timestamp show when last updated.
 
 (setq inhibit-startup-message t)
-(menu-bar-mode 0)
+;; (menu-bar-mode 0)
 (tool-bar-mode 0)
 (scroll-bar-mode 0)
 ;; (global-display-line-numbers-mode)
@@ -337,15 +337,6 @@
 
 (global-set-key (kbd "M-n") 'rob-scroll-down)
 (global-set-key (kbd "M-p") 'rob-scroll-up)
-(electric-pair-mode 1)
-(defvar org-electric-pairs '((?\* . ?\*) (?/ . ?/) (?= . ?=)
-                             (?\_ . ?\_) (?~ . ?~) (?+ . ?+)) "Electric pairs for org-mode.")
-
-(defun org-add-electric-pairs ()
-  (setq-local electric-pair-pairs (append electric-pair-pairs org-electric-pairs))
-  (setq-local electric-pair-text-pairs electric-pair-pairs))
-
-(add-hook 'org-mode-hook 'org-add-electric-pairs)
 
 ;;==============================================
 ;; Theme
