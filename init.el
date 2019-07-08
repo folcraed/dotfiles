@@ -307,6 +307,12 @@
 (global-set-key (kbd "M-g") 'goto-line)
 (global-set-key (kbd "M-l") 'persp-switch)
 (global-set-key (kbd "M-;") 'comment-line)
+(define-key org-mode-map (kbd "<C-M-S-left>") nil)
+(define-key org-mode-map (kbd "<C-M-S-right>") nil)
+(global-set-key (kbd "<C-M-S-left>") 'shrink-window-horizontally)
+(global-set-key (kbd "<C-M-S-right>") 'enlarge-window-horizontally)
+(global-set-key (kbd "<C-M-S-down>") 'shrink-window)
+(global-set-key (kbd "<C-M-S-up>") 'enlarge-window)
 
 ;;==============================================
 ;;  Sanity settings
