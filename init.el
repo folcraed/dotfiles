@@ -297,7 +297,6 @@
 (define-key z-map (kbd "r") 'helm-rg)
 (define-key z-map (kbd "k") 'helm-show-kill-ring)
 (define-key z-map (kbd "i") 'iedit-mode)
-(define-key z-map (kbd "q") 'quoted-insert)
 (define-key z-map (kbd "n") 'org-toggle-narrow-to-subtree)
 (global-set-key (kbd "M-x") 'helm-M-x)
 (global-set-key (kbd "C-p") 'projectile-find-file)
