@@ -206,6 +206,9 @@
 (setq enable-recursive-minibuffers t)
 (setq ivy-count-format "%d/%d ")
 
+(use-package smex
+  :ensure t)
+
 ;;==============================================
 ;;  Flyspell stuff
 ;;==============================================
@@ -357,7 +360,7 @@
  '(org-export-backends (quote (ascii html md odt)))
  '(package-selected-packages
    (quote
-    (flyspell-correct-ivy counsel-projectile ivy multiple-cursors lua-mode expand-region pdf-tools minions elfeed iedit rainbow-delimiters persp-projectile perspective flyspell-correct magit projectile atom-one-dark-theme doom-modeline all-the-icons undo-tree avy company org color-theme-sanityinc-tomorrow winum org-bullets which-key use-package)))
+    (smex flyspell-correct-ivy counsel-projectile ivy multiple-cursors lua-mode expand-region pdf-tools minions elfeed iedit rainbow-delimiters persp-projectile perspective flyspell-correct magit projectile atom-one-dark-theme doom-modeline all-the-icons undo-tree avy company org color-theme-sanityinc-tomorrow winum org-bullets which-key use-package)))
  '(persp-modestring-dividers (quote ("(" ")" "|"))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
