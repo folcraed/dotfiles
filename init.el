@@ -188,31 +188,23 @@
 (setq-default org-display-custom-times t)
 (setq org-time-stamp-custom-formats '("[%a %b %e %Y]" . "<%a %b %e %Y %H:%M>"))
 (setq org-agenda-files (directory-files-recursively "~/Dropbox/Notes" "\.org$"))
+(setq org-goto-interface 'outline-path-completion)
+(setq org-outline-path-complete-in-steps nil)
 
 ;;==============================================
-;;  Helm and friends
+;;  Ivy and friends
 ;;==============================================
 
-(use-package helm
-  :ensure t
-  :init (setq helm-M-x_fuzzy-match 1
-	      helm-autoresize-mode 0
-	      helm-display-buffer-default-height 18
-	      helm-split-window-inside-p 1)
-  :config
-  (helm-mode 1))
-
-(use-package helm-swoop
-  :ensure t
-  :init (setq helm-swoop-split-with-multiple-windows t
-	      helm-swoop-split=direction 'split-window-vertically))
-(require 'helm-swoop)
-
-(use-package helm-rg
+(use-package ivy
   :ensure t)
 
-(use-package helm-projectile
+(use-package counsel-projectile
   :ensure t)
+
+(ivy-mode 1)
+(setq ivy-use-virtual-buffers t)
+(setq enable-recursive-minibuffers t)
+(setq ivy-count-format "%d/%d ")
 
 ;;==============================================
 ;;  Flyspell stuff
@@ -221,13 +213,15 @@
 (use-package flyspell-correct
   :ensure t)
 
-(use-package helm-flyspell
-  :ensure t)
+(use-package flyspell-correct-ivy
+  :ensure t
+  :init
+  (setq flyspell-correct-interface #'flyspell-correct-ivy))
 
 (setq ispell-program-name "aspell")
 (global-set-key (kbd "<f8>") 'flyspell-mode)
 (global-set-key (kbd "C-<f8>") 'flyspell-buffer)
-(global-set-key (kbd "M-<f8>") 'helm-flyspell-correct)
+(global-set-key (kbd "M-<f8>") 'flyspell-correct-wrapper)
 ;;==============================================
 ;; Projectile
 ;;==============================================
@@ -236,7 +230,7 @@
   :ensure t
   :config
   (projectile-global-mode)
-  (setq projectile-completion-system 'helm))
+  (setq projectile-completion-system 'ivy))
 (define-key projectile-mode-map (kbd "C-x p") 'projectile-command-map)
 
 ;;===============================================
@@ -289,20 +283,20 @@
 ;; Some personal keybindings
 ;;===============================================
 
-(define-prefix-command 'z-map)
-(global-set-key (kbd "C-z") 'z-map)
-(define-key z-map (kbd "c") 'org-capture)
-(define-key z-map (kbd "a") 'org-agenda)
-(define-key z-map (kbd "t") 'org-time-stamp)
-(define-key z-map (kbd "r") 'helm-rg)
-(define-key z-map (kbd "k") 'helm-show-kill-ring)
-(define-key z-map (kbd "i") 'iedit-mode)
-(define-key z-map (kbd "n") 'org-toggle-narrow-to-subtree)
-(global-set-key (kbd "M-x") 'helm-M-x)
-(global-set-key (kbd "C-p") 'projectile-find-file)
-(global-set-key (kbd "C-b") 'helm-mini)
-(global-set-key (kbd "M-o") 'helm-org-in-buffer-headings)
-(global-set-key (kbd "C-f") 'helm-swoop)
+(define-prefix-command 'd-map)
+(global-set-key (kbd "C-d") 'd-map)
+(define-key d-map (kbd "c") 'org-capture)
+(define-key d-map (kbd "a") 'org-agenda)
+(define-key d-map (kbd "t") 'org-time-stamp)
+(define-key d-map (kbd "r") 'counsel-projectile-rg)
+(define-key d-map (kbd "k") 'counsel-yank-pop)
+(define-key d-map (kbd "i") 'iedit-mode)
+(define-key d-map (kbd "n") 'org-toggle-narrow-to-subtree)
+(global-set-key (kbd "M-x") 'counsel-M-x)
+(global-set-key (kbd "C-p") 'counsel-projectile-find-file)
+(global-set-key (kbd "C-b") 'counsel-projectile-switch-to-buffer)
+(global-set-key (kbd "M-o") 'org-goto)
+(global-set-key (kbd "C-f") 'swiper)
 (global-set-key (kbd "C-o") 'org-open-at-point)
 (global-set-key (kbd "M-g") 'goto-line)
 (global-set-key (kbd "M-l") 'persp-switch)
@@ -363,7 +357,7 @@
  '(org-export-backends (quote (ascii html md odt)))
  '(package-selected-packages
    (quote
-    (multiple-cursors lua-mode expand-region pdf-tools minions elfeed iedit rainbow-delimiters helm-flyspell helm helm-projectile helm-swoop helm-rg persp-projectile perspective flyspell-correct magit projectile atom-one-dark-theme doom-modeline all-the-icons undo-tree avy company org color-theme-sanityinc-tomorrow winum org-bullets which-key use-package)))
+    (flyspell-correct-ivy counsel-projectile ivy multiple-cursors lua-mode expand-region pdf-tools minions elfeed iedit rainbow-delimiters persp-projectile perspective flyspell-correct magit projectile atom-one-dark-theme doom-modeline all-the-icons undo-tree avy company org color-theme-sanityinc-tomorrow winum org-bullets which-key use-package)))
  '(persp-modestring-dividers (quote ("(" ")" "|"))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
