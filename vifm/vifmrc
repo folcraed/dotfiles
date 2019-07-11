@@ -91,7 +91,7 @@ command! reload :write | restart
 " The %a macro is ignored.  To use a % you must put %%.
 
 " Pdf
-filextype *.pdf okular %c &, zathura %c &, atril %c
+filextype *.pdf zathura %c &, okular %c &, atril %c
 fileviewer *.pdf pdftotext -nopgbrk %c -
 
 " PostScript
