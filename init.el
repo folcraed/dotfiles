@@ -204,7 +204,10 @@
 (ivy-mode 1)
 (setq ivy-use-virtual-buffers t)
 (setq enable-recursive-minibuffers t)
-(setq ivy-count-format "%d/%d ")
+(setq ivy-count-format "(%d/%d) ")
+(setq ivy-height 14)
+(setq ivy-re-builders-alist
+      '((t . ivy--regex-ignore-order)))
 
 (use-package smex
   :ensure t)
@@ -291,7 +294,7 @@
 (define-key d-map (kbd "c") 'org-capture)
 (define-key d-map (kbd "a") 'org-agenda)
 (define-key d-map (kbd "t") 'org-time-stamp)
-(define-key d-map (kbd "r") 'counsel-projectile-rg)
+; (define-key d-map (kbd "r") 'counsel-projectile-rg)
 (define-key d-map (kbd "k") 'counsel-yank-pop)
 (define-key d-map (kbd "i") 'iedit-mode)
 (define-key d-map (kbd "n") 'org-toggle-narrow-to-subtree)
@@ -299,7 +302,8 @@
 (global-set-key (kbd "C-p") 'counsel-projectile-find-file)
 (global-set-key (kbd "C-b") 'counsel-projectile-switch-to-buffer)
 (global-set-key (kbd "M-o") 'org-goto)
-(global-set-key (kbd "C-f") 'swiper)
+(global-set-key (kbd "C-f") 'counsel-projectile-rg)
+(global-set-key (kbd "C-s") 'swiper)
 (global-set-key (kbd "C-o") 'org-open-at-point)
 (global-set-key (kbd "M-g") 'goto-line)
 (global-set-key (kbd "M-l") 'persp-switch)
