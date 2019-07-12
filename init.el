@@ -58,8 +58,8 @@
 (use-package company
   :ensure t
   :config
-  (setq company-idle-delay 1)
-  (setq company-minimum-prefix-length 3)
+  (setq company-idle-delay 1
+	company-minimum-prefix-length 3)
   (global-company-mode t))
 
 (use-package iedit
@@ -99,12 +99,12 @@
 (use-package doom-modeline
   :ensure t
   :hook (after-init . doom-modeline-mode))
-(setq doom-modeline-height 15)
-(setq doom-modeline-minor-modes 1)
+(setq doom-modeline-height 15
+      doom-modeline-minor-modes 1
+      doom-modeline-major-mode-color-icon 1
+      doom-modeline-buffer-file-name-style 'relative-from-project
+      column-number-mode 1)
 (minions-mode 1)
-(setq doom-modeline-major-mode-color-icon 1)
-(setq doom-modeline-buffer-file-name-style 'relative-from-project)
-(setq column-number-mode 1)
 
 ;;==============================================
 ;;  Winum settings
@@ -133,9 +133,9 @@
   :pin org
   :config
   (setq-default org-hide-emphasis-markers t)
-  (setq org-startup-folded nil)
-  (setq org-startup-indented t)
-  (setq org-tags-column 80))
+  (setq org-startup-folded nil
+	org-startup-indented t
+	org-tags-column 80))
 
 (use-package org-bullets
   :ensure t
@@ -186,10 +186,10 @@
 	 "* %?")))
 
 (setq-default org-display-custom-times t)
-(setq org-time-stamp-custom-formats '("[%a %b %e %Y]" . "<%a %b %e %Y %H:%M>"))
-(setq org-agenda-files (directory-files-recursively "~/Dropbox/Notes" "\.org$"))
-(setq org-goto-interface 'outline-path-completion)
-(setq org-outline-path-complete-in-steps nil)
+(setq org-time-stamp-custom-formats '("[%a %b %e %Y]" . "<%a %b %e %Y %H:%M>")
+      org-agenda-files (directory-files-recursively "~/Dropbox/Notes" "\.org$")
+      org-goto-interface 'outline-path-completion
+      org-outline-path-complete-in-steps nil)
 
 ;;==============================================
 ;;  Ivy and friends
@@ -202,12 +202,11 @@
   :ensure t)
 
 (ivy-mode 1)
-(setq ivy-use-virtual-buffers t)
-(setq enable-recursive-minibuffers t)
-(setq ivy-count-format "(%d/%d) ")
-(setq ivy-height 14)
-(setq ivy-re-builders-alist
-      '((t . ivy--regex-ignore-order)))
+(setq ivy-use-virtual-buffers t
+      enable-recursive-minibuffers t
+      ivy-count-format "(%d/%d) "
+      ivy-height 14
+      ivy-re-builders-alist '((t . ivy--regex-ignore-order)))
 
 (use-package smex
   :ensure t)
