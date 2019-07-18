@@ -203,24 +203,28 @@
       org-outline-path-complete-in-steps nil)
 
 ;;==============================================
-;;  Ivy and friends
+;;  Helm and friends
 ;;==============================================
 
-(use-package ivy
+(use-package helm
+  :ensure t
+  :init (setq helm-M-x_fuzzy-match 1
+              helm-autoresize-mode 0
+              helm-display-buffer-default-height 18
+              helm-split-window-inside-p 1)
+  :config
+  (helm-mode 1))
+
+(use-package helm-swoop
+  :ensure t
+  :init (setq helm-swoop-split-with-multiple-windows t
+              helm-swoop-split=direction 'split-window-vertically))
+(require 'helm-swoop)
+
+(use-package helm-rg
   :ensure t)
 
-(use-package counsel-projectile
-  :ensure t)
-
-(ivy-mode 1)
-(setq ivy-use-virtual-buffers t
-      enable-recursive-minibuffers t
-      ivy-count-format "(%d/%d) "
-      ivy-height 14
-      ivy-re-builders-alist
-      '((t . ivy--regex-ignore-order)))
-
-(use-package smex
+(use-package helm-projectile
   :ensure t)
 
 ;;==============================================
@@ -230,10 +234,10 @@
 (use-package flyspell-correct
   :ensure t)
 
-(use-package flyspell-correct-ivy
+(use-package flyspell-correct-helm
   :ensure t
   :init
-  (setq flyspell-correct-interface #'flyspell-correct-ivy))
+  (setq flyspell-correct-interface #'flyspell-correct-helm))
 
 (setq ispell-program-name "aspell")
 (global-set-key (kbd "<f8>") 'flyspell-mode)
@@ -247,7 +251,7 @@
   :ensure t
   :config
   (projectile-global-mode)
-  (setq projectile-completion-system 'ivy))
+  (setq projectile-completion-system 'helm))
 (define-key projectile-mode-map (kbd "C-x p") 'projectile-command-map)
 
 ;;===============================================
@@ -305,17 +309,16 @@
 (define-key d-map (kbd "c") 'org-capture)
 (define-key d-map (kbd "a") 'org-agenda)
 (define-key d-map (kbd "t") 'org-time-stamp)
-(define-key d-map (kbd "r") 'counsel-projectile-rg)
-(define-key d-map (kbd "s") 'ivy-resume)
+(define-key d-map (kbd "k") 'helm-show-kill-ring)
 (define-key d-map (kbd "i") 'iedit-mode)
 (define-key d-map (kbd "n") 'org-toggle-narrow-to-subtree)
-(define-key d-map (kbd "w") 'swiper-thing-at-point)
-(global-set-key (kbd "M-x") 'counsel-M-x)
-(global-set-key (kbd "C-p") 'counsel-projectile-find-file)
-(global-set-key (kbd "C-b") 'counsel-projectile-switch-to-buffer)
-(global-set-key (kbd "M-o") 'org-goto)
-(global-set-key (kbd "C-f") 'counsel-projectile-rg)
-(global-set-key (kbd "C-s") 'swiper)
+(define-key d-map (kbd "s") 'helm-swoop)
+(global-set-key (kbd "M-x") 'helm-M-x)
+(global-set-key (kbd "C-p") 'projectile-find-file)
+(global-set-key (kbd "C-b") 'helm-mini)
+(global-set-key (kbd "M-o") 'helm-org-in-buffer-headings)
+(global-set-key (kbd "C-f") 'helm-rg)
+(global-set-key (kbd "C-s") 'helm-swoop-without-pre-input)
 (global-set-key (kbd "C-o") 'org-open-at-point)
 (global-set-key (kbd "M-g") 'goto-line)
 (global-set-key (kbd "M-l") 'persp-switch)
@@ -380,16 +383,8 @@
  '(org-export-backends (quote (ascii html md odt)))
  '(package-selected-packages
    (quote
-    (dired-narrow doom-themes smex flyspell-correct-ivy counsel-projectile ivy multiple-cursors lua-mode expand-region pdf-tools minions elfeed iedit rainbow-delimiters persp-projectile perspective flyspell-correct magit projectile atom-one-dark-theme doom-modeline all-the-icons undo-tree avy company org color-theme-sanityinc-tomorrow winum org-bullets which-key use-package)))
+    (helm helm-swoop helm-rg helm-projectile flyspell-correct-helm dired-narrow doom-themes smex multiple-cursors lua-mode expand-region pdf-tools minions elfeed iedit rainbow-delimiters persp-projectile perspective flyspell-correct magit projectile atom-one-dark-theme doom-modeline all-the-icons undo-tree avy company org color-theme-sanityinc-tomorrow winum org-bullets which-key use-package)))
  '(persp-modestring-dividers (quote ("(" ")" "|")))
- '(tetris-x-colors
-   [[229 192 123]
-    [97 175 239]
-    [209 154 102]
-    [224 108 117]
-    [152 195 121]
-    [198 120 221]
-    [86 182 194]])
  '(vc-annotate-background "#282c34")
  '(vc-annotate-color-map
    (list
