@@ -22,7 +22,7 @@
 (add-to-list 'package-archives
 	     '("melpa" . "https://melpa.org/packages/"))
 (add-to-list 'package-archives
-         '("org" . "https://orgmode.org/elpa/"))
+	     '("org" . "https://orgmode.org/elpa/"))
 
 (package-initialize)
 
@@ -81,6 +81,9 @@
   :config
   (pdf-tools-install))
 
+(use-package dired-narrow
+  :ensure t)
+
 ;;===============================================
 ;;  Multiple Cursors
 ;;===============================================
@@ -93,7 +96,7 @@
 (global-set-key (kbd "C-M-<") 'mc/skip-to-previous-like-this)
 
 ;;===============================================
-;;  Doom modeline
+;;  Doom modeline & theme
 ;;===============================================
 
 (use-package doom-modeline
@@ -105,6 +108,14 @@
       doom-modeline-buffer-file-name-style 'relative-from-project
       column-number-mode 1)
 (minions-mode 1)
+
+(use-package doom-themes
+  :ensure t
+  :config
+  (setq doom-themes-enable-bold t
+	doom-themes-enable-italic t))
+(load-theme 'doom-one t)
+(doom-themes-org-config)
 
 ;;==============================================
 ;;  Winum settings
@@ -206,7 +217,8 @@
       enable-recursive-minibuffers t
       ivy-count-format "(%d/%d) "
       ivy-height 14
-      ivy-re-builders-alist '((t . ivy--regex-ignore-order)))
+      ivy-re-builders-alist
+      '((t . ivy--regex-ignore-order)))
 
 (use-package smex
   :ensure t)
@@ -293,10 +305,11 @@
 (define-key d-map (kbd "c") 'org-capture)
 (define-key d-map (kbd "a") 'org-agenda)
 (define-key d-map (kbd "t") 'org-time-stamp)
-; (define-key d-map (kbd "r") 'counsel-projectile-rg)
-(define-key d-map (kbd "k") 'counsel-yank-pop)
+(define-key d-map (kbd "r") 'counsel-projectile-rg)
+(define-key d-map (kbd "s") 'ivy-resume)
 (define-key d-map (kbd "i") 'iedit-mode)
 (define-key d-map (kbd "n") 'org-toggle-narrow-to-subtree)
+(define-key d-map (kbd "w") 'swiper-thing-at-point)
 (global-set-key (kbd "M-x") 'counsel-M-x)
 (global-set-key (kbd "C-p") 'counsel-projectile-find-file)
 (global-set-key (kbd "C-b") 'counsel-projectile-switch-to-buffer)
@@ -342,8 +355,8 @@
 ;;==============================================
 ;; Theme
 ;;==============================================
-(use-package atom-one-dark-theme
-  :ensure t)
+;; (use-package atom-one-dark-theme
+;;   :ensure t)
 
 ;;==============================================
 ;; Custom settings
@@ -354,17 +367,51 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(custom-enabled-themes (quote (atom-one-dark)))
+ '(custom-enabled-themes (quote (doom-one)))
  '(custom-safe-themes
    (quote
-    ("06f0b439b62164c6f8f84fdda32b62fb50b6d00e8b01c2208e55543a6337433a" "1d079355c721b517fdc9891f0fda927fe3f87288f2e6cc3b8566655a64ca5453" "9be1d34d961a40d94ef94d0d08a364c3d27201f3c98c9d38e36f10588469ea57" "3380a2766cf0590d50d6366c5a91e976bdc3c413df963a0ab9952314b4577299" "f7ef6451d988d6e2fc86deea398eee02b3371703d88f265d31a011bd240dcf99" "f56393685517a0c58952a5fefdc45e29b52cc1798688992d112f7c299325a889" "39464ed440476d616c5671ff4d9cfc2393846132390e0d80e611dfa0b4bd6983" "bf5bdab33a008333648512df0d2b9d9710bdfba12f6a768c7d2c438e1092b633" "628278136f88aa1a151bb2d6c8a86bf2b7631fbea5f0f76cba2a0079cd910f7d" default)))
+    ("669e02142a56f63861288cc585bee81643ded48a19e36bfdf02b66d745bcc626" "84da7b37214b4ac095a55518502dfa82633bee74f64daf6e1785322e77516f96" "06f0b439b62164c6f8f84fdda32b62fb50b6d00e8b01c2208e55543a6337433a" "1d079355c721b517fdc9891f0fda927fe3f87288f2e6cc3b8566655a64ca5453" "9be1d34d961a40d94ef94d0d08a364c3d27201f3c98c9d38e36f10588469ea57" "3380a2766cf0590d50d6366c5a91e976bdc3c413df963a0ab9952314b4577299" "f7ef6451d988d6e2fc86deea398eee02b3371703d88f265d31a011bd240dcf99" "f56393685517a0c58952a5fefdc45e29b52cc1798688992d112f7c299325a889" "39464ed440476d616c5671ff4d9cfc2393846132390e0d80e611dfa0b4bd6983" "bf5bdab33a008333648512df0d2b9d9710bdfba12f6a768c7d2c438e1092b633" "628278136f88aa1a151bb2d6c8a86bf2b7631fbea5f0f76cba2a0079cd910f7d" default)))
  '(flycheck-color-mode-line-face-to-color (quote mode-line-buffer-id))
  '(frame-background-mode (quote dark))
+ '(jdee-db-active-breakpoint-face-colors (cons "#1B2229" "#51afef"))
+ '(jdee-db-requested-breakpoint-face-colors (cons "#1B2229" "#98be65"))
+ '(jdee-db-spec-breakpoint-face-colors (cons "#1B2229" "#3f444a"))
+ '(objed-cursor-color "#ff6c6b")
  '(org-export-backends (quote (ascii html md odt)))
  '(package-selected-packages
    (quote
-    (smex flyspell-correct-ivy counsel-projectile ivy multiple-cursors lua-mode expand-region pdf-tools minions elfeed iedit rainbow-delimiters persp-projectile perspective flyspell-correct magit projectile atom-one-dark-theme doom-modeline all-the-icons undo-tree avy company org color-theme-sanityinc-tomorrow winum org-bullets which-key use-package)))
- '(persp-modestring-dividers (quote ("(" ")" "|"))))
+    (dired-narrow doom-themes smex flyspell-correct-ivy counsel-projectile ivy multiple-cursors lua-mode expand-region pdf-tools minions elfeed iedit rainbow-delimiters persp-projectile perspective flyspell-correct magit projectile atom-one-dark-theme doom-modeline all-the-icons undo-tree avy company org color-theme-sanityinc-tomorrow winum org-bullets which-key use-package)))
+ '(persp-modestring-dividers (quote ("(" ")" "|")))
+ '(tetris-x-colors
+   [[229 192 123]
+    [97 175 239]
+    [209 154 102]
+    [224 108 117]
+    [152 195 121]
+    [198 120 221]
+    [86 182 194]])
+ '(vc-annotate-background "#282c34")
+ '(vc-annotate-color-map
+   (list
+    (cons 20 "#98be65")
+    (cons 40 "#b4be6c")
+    (cons 60 "#d0be73")
+    (cons 80 "#ECBE7B")
+    (cons 100 "#e6ab6a")
+    (cons 120 "#e09859")
+    (cons 140 "#da8548")
+    (cons 160 "#d38079")
+    (cons 180 "#cc7cab")
+    (cons 200 "#c678dd")
+    (cons 220 "#d974b7")
+    (cons 240 "#ec7091")
+    (cons 260 "#ff6c6b")
+    (cons 280 "#cf6162")
+    (cons 300 "#9f585a")
+    (cons 320 "#6f4e52")
+    (cons 340 "#5B6268")
+    (cons 360 "#5B6268")))
+ '(vc-annotate-very-old-color nil))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
