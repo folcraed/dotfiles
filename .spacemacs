@@ -398,10 +398,10 @@ you should place your code here."
   (define-key evil-normal-state-map (kbd "<up>") 'evil-previous-visual-line)
   (global-set-key (kbd "<f8>") 'flyspell-mode)
   (setq-default doom-modeline-height 19)
-  (setq doom-modeline-buffer-file-name-style 'relative-from-project)
-  (setq doom-modeline-major-mode-color-icon 1)
-  (setq doom-modeline-persp-name nil)
-  (setq doom-modeline-minor-modes nil)
+  (setq doom-modeline-buffer-file-name-style 'relative-from-project
+        doom-modeline-major-mode-color-icon 1
+        doom-modeline-persp-name nil
+        doom-modeline-minor-modes nil)
   ;; (setq-default powerline-height 16)
   (setq lua-indent-level 4)
   (setq browse-url-browser-function 'browse-url-generic
