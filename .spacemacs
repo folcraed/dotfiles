@@ -57,7 +57,7 @@ values."
                      spell-checking-enable-by-default nil)
      pdf
      ;; syntax-checking
-     ;; treemacs
+     treemacs
      elfeed
      ;; version-control
      )
@@ -383,6 +383,8 @@ layers configuration.
 This is the place where most of your configurations should be done. Unless it is
 explicitly specified that a variable should be set before a package is loaded,
 you should place your code here."
+  (spacemacs/set-leader-keys "mxl" 'org-store-link)
+  (spacemacs/set-leader-keys-for-major-mode 'org-mode "xl" 'org-store-link)
   (setq-default make-backup-files nil
                 backup-inhibited t
                 create-lockfiles nil
