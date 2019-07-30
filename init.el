@@ -314,6 +314,7 @@
 (define-key d-map (kbd "i") 'iedit-mode)
 (define-key d-map (kbd "f") 'dired-narrow)
 (define-key d-map (kbd "n") 'org-toggle-narrow-to-subtree)
+(define-key d-map (kbd "r") 'helm-resume)
 (define-key d-map (kbd "s") 'helm-swoop)
 (global-set-key (kbd "M-x") 'helm-M-x)
 (global-set-key (kbd "C-p") 'projectile-find-file)
