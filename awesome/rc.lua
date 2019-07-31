@@ -50,7 +50,7 @@ end
 
 --| Get the theme |--
 
-local theme_path = string.format("%s/.config/awesome/themes/%s/theme.lua", os.getenv("HOME"), "Onedark")
+local theme_path = string.format("%s/.config/awesome/themes/%s/theme.lua", os.getenv("HOME"), "Doomlight")
 beautiful.init(theme_path)
 
 
@@ -132,30 +132,26 @@ myweather   = lain.widget.weather({
     settings = function()
         descr = weather_now["weather"][1]["description"]:lower()
         units = math.floor(weather_now["main"]["temp"])
-        widget:set_markup(markup("#93a1a1", " " .. descr .. " @ " .. units .. "°F "))
+        widget:set_markup(markup("#a626a4", " " .. descr .. " @ " .. units .. "°F "))
     end
 })
 local cputemp = lain.widget.temp({
     tempfile = "/sys/class/thermal/thermal_zone2/temp",
     settings = function()
-      widget:set_markup(markup("#2aa198", " " .. coretemp_now .. "°C"))
+      widget:set_markup(markup("#50a14f", " " .. coretemp_now .. "°C"))
     end
 })
 local mycpu = lain.widget.cpu({
     settings = function()
-        widget:set_markup(markup("#b58900", " " .. cpu_now[1].usage .. "% " .. cpu_now[2].usage .. "% " .. cpu_now[3].usage .. "% " .. cpu_now[4].usage .. "% "))
+        widget:set_markup(markup("#da8548", " " .. cpu_now[1].usage .. "% " .. cpu_now[2].usage .. "% " .. cpu_now[3].usage .. "% " .. cpu_now[4].usage .. "% "))
     end
 })
 local mymem = lain.widget.mem({
     settings = function()
-        widget:set_markup(markup("#6c71c4", " " .. mem_now.used .. " Mb " .. mem_now.perc .. "% "))
+        widget:set_markup(markup("#005478", " " .. mem_now.used .. " Mb " .. mem_now.perc .. "% "))
     end
 })
-local volume = lain.widget.alsa({
-    settings = function()
-        widget:set_markup(markup("#2aa198", " Vol: " .. volume_now.level .. "% "))
-    end
-})
+
 --| Create a wibox for each screen and add it |--
 
 local taglist_buttons = awful.util.table.join(
@@ -257,8 +253,6 @@ awful.screen.connect_for_each_screen(function(s)
         s.mytasklist, -- Middle widget
         { -- Right widgets
             layout = wibox.layout.fixed.horizontal,
-            spacer,
-            volume,
             spacer,
             mycpu,
             spacer,
@@ -635,3 +629,4 @@ awful.spawn.once("compton")
 awful.spawn.once("clipit")
 awful.spawn.once("xclip")
 awful.spawn.once("dropbox start -i")
+awful.spawn.once("pasystray -t")
