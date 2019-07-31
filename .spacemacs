@@ -55,8 +55,8 @@
    dotspacemacs-startup-buffer-responsive t
    dotspacemacs-scratch-mode 'text-mode
    dotspacemacs-new-empty-buffer-major-mode 'text-mode
-   dotspacemacs-themes '(doom-one-light
-                         doom-one
+   dotspacemacs-themes '(doom-one
+                         doom-one-light
                          monokai
                          spacemacs-dark
                          spacemacs-light)
@@ -131,7 +131,7 @@
   (define-key evil-normal-state-map (kbd "k") 'evil-previous-visual-line)
   (define-key evil-normal-state-map (kbd "<up>") 'evil-previous-visual-line)
   (global-set-key (kbd "<f8>") 'flyspell-mode)
-  (setq-default doom-modeline-height 19)
+  (setq-default doom-modeline-height 16)
   (setq doom-modeline-buffer-file-name-style 'relative-from-project
         doom-modeline-major-mode-color-icon 1
         doom-modeline-persp-name nil
