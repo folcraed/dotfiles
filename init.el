@@ -17,7 +17,7 @@
 ;;==============================================
 ;;  Set up repositories
 ;;==============================================
-
+(setq gnutls-algorithm-priority "NORMAL:-VERS-TLS1.3")
 (require 'package)
 (setq package-enable-at-startup nil)
 (add-to-list 'package-archives
@@ -83,6 +83,9 @@
   (pdf-tools-install))
 
 (use-package dired-narrow
+  :ensure t)
+
+(use-package rainbow-mode
   :ensure t)
 
 ;;===============================================
@@ -356,7 +359,7 @@
  '(org-export-backends (quote (ascii html md odt)))
  '(package-selected-packages
    (quote
-    (helm helm-swoop helm-rg helm-projectile flyspell-correct-helm dired-narrow doom-themes smex multiple-cursors lua-mode expand-region pdf-tools minions elfeed iedit rainbow-delimiters persp-projectile perspective flyspell-correct magit projectile doom-modeline all-the-icons undo-tree avy company org winum org-bullets which-key use-package)))
+    (rainbow-mode helm helm-swoop helm-rg helm-projectile flyspell-correct-helm dired-narrow doom-themes smex multiple-cursors lua-mode expand-region pdf-tools minions elfeed iedit rainbow-delimiters persp-projectile perspective flyspell-correct magit projectile doom-modeline all-the-icons undo-tree avy company org winum org-bullets which-key use-package)))
  '(persp-modestring-dividers (quote ("(" ")" "|"))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
