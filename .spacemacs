@@ -1,5 +1,6 @@
 ;; -*- mode: emacs-lisp -*-
 ;; File is subject to changes at any time, I experiment a lot ;-)
+(setq gnutls-algorithm-priority "NORMAL:-VERS-TLS1.3")
 
 (defun dotspacemacs/layers ()
   (setq-default
@@ -28,6 +29,7 @@
      elfeed
      )
    dotspacemacs-additional-packages '(doom-themes
+                                      rainbow-mode
                                       org-preview-html)
    dotspacemacs-frozen-packages '()
    dotspacemacs-excluded-packages '(vi-tilde-fringe
@@ -119,7 +121,8 @@
   (setq-default make-backup-files nil
                 backup-inhibited t
                 create-lockfiles nil
-                auto-save-default nil)
+                auto-save-default nil
+                size-indication-mode 1)
   (setq-default tab-width 4 indent-tabs-mode nil)
   (setq ispell-program-name "aspell")
   (global-company-mode)
@@ -195,7 +198,7 @@
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
    (quote
-    (csv-mode srefactor yapfify stickyfunc-enhance importmagic epc ctable concurrent deferred xcscope ggtags flycheck counsel-gtags web-mode orgit magit-svn evil-nerd-commenter evil-magit dumb-jump doom-modeline aggressive-indent counsel company magit-popup magit transient haml-mode all-the-icons powerline ace-window dash org-plus-contrib evil yasnippet xterm-color ws-butler writeroom-mode winum which-key web-beautify volatile-highlights uuidgen use-package toc-org tagedit symon swiper string-inflection spaceline-all-the-icons smeargle slim-mode shrink-path shell-pop scss-mode sass-mode restart-emacs rainbow-delimiters pug-mode prettier-js popwin pfuture persp-mode pcre2el password-generator paradox overseer org-projectile org-preview-html org-present org-pomodoro org-mime org-download org-bullets org-brain open-junk-file nameless multi-term move-text monokai-theme mmm-mode markdown-toc magit-gitflow macrostep lv lorem-ipsum link-hint indent-guide impatient-mode hungry-delete ht hl-todo highlight-parentheses highlight-numbers highlight-indentation goto-chg golden-ratio gnuplot gitignore-templates gitconfig-mode gitattributes-mode git-timemachine git-messenger git-link git-commit gh-md fuzzy font-lock+ flx-ido fill-column-indicator eyebrowse expand-region evil-visualstar evil-visual-mark-mode evil-unimpaired evil-tutor evil-surround evil-org evil-numbers evil-matchit evil-lisp-state evil-lion evil-indent-plus evil-iedit-state evil-goggles evil-exchange evil-escape evil-ediff evil-cleverparens evil-args evil-anzu eval-sexp-fu eshell-z eshell-prompt-extras esh-help emmet-mode elisp-slime-nav eldoc-eval editorconfig dotenv-mode diminish define-word counsel-projectile company-web company-statistics column-enforce-mode clean-aindent-mode centered-cursor-mode auto-highlight-symbol auto-dictionary auto-compile ace-link ac-ispell))))
+    (rainbow-mode csv-mode srefactor yapfify stickyfunc-enhance importmagic epc ctable concurrent deferred xcscope ggtags flycheck counsel-gtags web-mode orgit magit-svn evil-nerd-commenter evil-magit dumb-jump doom-modeline aggressive-indent counsel company magit-popup magit transient haml-mode all-the-icons powerline ace-window dash org-plus-contrib evil yasnippet xterm-color ws-butler writeroom-mode winum which-key web-beautify volatile-highlights uuidgen use-package toc-org tagedit symon swiper string-inflection spaceline-all-the-icons smeargle slim-mode shrink-path shell-pop scss-mode sass-mode restart-emacs rainbow-delimiters pug-mode prettier-js popwin pfuture persp-mode pcre2el password-generator paradox overseer org-projectile org-preview-html org-present org-pomodoro org-mime org-download org-bullets org-brain open-junk-file nameless multi-term move-text monokai-theme mmm-mode markdown-toc magit-gitflow macrostep lv lorem-ipsum link-hint indent-guide impatient-mode hungry-delete ht hl-todo highlight-parentheses highlight-numbers highlight-indentation goto-chg golden-ratio gnuplot gitignore-templates gitconfig-mode gitattributes-mode git-timemachine git-messenger git-link git-commit gh-md fuzzy font-lock+ flx-ido fill-column-indicator eyebrowse expand-region evil-visualstar evil-visual-mark-mode evil-unimpaired evil-tutor evil-surround evil-org evil-numbers evil-matchit evil-lisp-state evil-lion evil-indent-plus evil-iedit-state evil-goggles evil-exchange evil-escape evil-ediff evil-cleverparens evil-args evil-anzu eval-sexp-fu eshell-z eshell-prompt-extras esh-help emmet-mode elisp-slime-nav eldoc-eval editorconfig dotenv-mode diminish define-word counsel-projectile company-web company-statistics column-enforce-mode clean-aindent-mode centered-cursor-mode auto-highlight-symbol auto-dictionary auto-compile ace-link ac-ispell))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
