@@ -5,16 +5,12 @@ polybar bspwmbar &
 gnome-keyring-daemon -s &
 /usr/lib64/polkit-gnome/polkit-gnome-authentication-agent-1 &
 ssh-agent &
-# ibus-daemon -s -d &
 /home/rob/.fehbg &
 compton &
-# tracker daemon -s &
 dropbox start -i &
 # dbus-launch dunst &
-# nm-applet &
 xclip &
 clipit &
-# recollindex -w 60 -m &
 
 bspc monitor -d I II III IV V VI VII VIII IX X
 
@@ -35,4 +31,3 @@ bspc rule -a okular state=floating
 bspc rule -a rofi focus=on
 bspc rule -a Cherrytree state=floating
 bspc rule -a Zathura state=floating
-bspc rule -a Recoll state=floating
