@@ -7,7 +7,7 @@
 (tool-bar-mode 0)
 (scroll-bar-mode 0)
 ;; (global-display-line-numbers-mode)
-(set-default-font "Ubuntu Mono 13")
+(set-default-font "Ubuntu Mono-13")
 (put 'dired-find-alternate-file 'disabled nil)
 (global-visual-line-mode 1)
 ;; This is suppose to fix ??? displaying instead
@@ -54,7 +54,9 @@
 
 (use-package avy
   :ensure t
-  :bind ("M-j" . avy-goto-word-1))
+  :config
+  (setq avy-case-fold-search nil)
+  :bind ("M-j" . avy-goto-char-2))
 
 (use-package company
   :ensure t
@@ -288,6 +290,7 @@
 (define-key d-map (kbd "a") 'org-agenda)
 (define-key d-map (kbd "t") 'org-time-stamp)
 (define-key d-map (kbd "k") 'helm-show-kill-ring)
+(define-key d-map (kbd "l") 'org-store-link)
 (define-key d-map (kbd "i") 'iedit-mode)
 (define-key d-map (kbd "f") 'dired-narrow)
 (define-key d-map (kbd "n") 'org-toggle-narrow-to-subtree)
