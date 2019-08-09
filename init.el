@@ -191,7 +191,8 @@
   :init (setq helm-M-x_fuzzy-match 1
               helm-autoresize-mode 0
               helm-display-buffer-default-height 18
-              helm-split-window-inside-p 1)
+              helm-split-window-inside-p 1
+              helm-descbinds-window-style 'same-window)
   :config
   (helm-mode 1))
 
