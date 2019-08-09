@@ -127,12 +127,14 @@
   (setq ispell-program-name "aspell")
   (global-company-mode)
   (setq company-idle-delay 1)
+  (setq avy-case-fold-search nil)
   (global-visual-line-mode t)
   (setq line-number-display-limit-width 2000000)
   (define-key evil-normal-state-map (kbd "j") 'evil-next-visual-line)
   (define-key evil-normal-state-map (kbd "<down>") 'evil-next-visual-line)
   (define-key evil-normal-state-map (kbd "k") 'evil-previous-visual-line)
   (define-key evil-normal-state-map (kbd "<up>") 'evil-previous-visual-line)
+  (define-key evil-normal-state-map (kbd "gs") 'avy-goto-char-timer)
   (global-set-key (kbd "<f8>") 'flyspell-mode)
   (setq-default doom-modeline-height 16)
   (setq doom-modeline-buffer-file-name-style 'relative-from-project
@@ -189,7 +191,7 @@
       "https://planet.gnome.org/rss20.xml"
       "https://www.johngrenham.com/blog/feed/"
       "https://feeds.feedburner.com/familyhistorydaily"))
-(setq shr-inhibit-images t)
+;; (setq shr-inhibit-images t)
 (defun dotspacemacs/emacs-custom-settings ()
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
