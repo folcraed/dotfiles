@@ -146,6 +146,7 @@
   (setq browse-url-browser-function 'browse-url-generic
         browse-url-generic-program "xdg-open")
   (setq-default org-startup-with-inline-images nil)
+  (setq org-bullets-bullet-list '("◉" "○" "✸"))
   (setq-default org-file-apps
    (quote
     ((auto-mode . emacs)
