@@ -104,7 +104,7 @@
   (setq peep-dired-ignored-extensions '("mkv" "webm" "mp4" "mp3" "ogg" "iso")))
 
 (setq delete-by-moving-to-trash t
-      dired-listing-switches "-AFhlv --group-directories-first"
+      dired-listing-switches "-ahlv --group-directories-first"
       wdired-create-parent-directories t
       dired-dwim-target t)
 
@@ -226,6 +226,9 @@
 (use-package helm-projectile
   :ensure t)
 
+(use-package helm-org
+  :ensure t)
+
 ;;==============================================
 ;;  Flyspell stuff
 ;;==============================================
@@ -318,7 +321,8 @@
 (global-set-key (kbd "M-x") 'helm-M-x)
 (global-set-key (kbd "C-p") 'projectile-find-file)
 (global-set-key (kbd "C-b") 'helm-mini)
-(global-set-key (kbd "M-o") 'helm-org-in-buffer-headings)
+;; (global-set-key (kbd "M-o") 'helm-org-in-buffer-headings)
+(global-set-key (kbd "M-o") 'org-goto)
 (global-set-key (kbd "C-f") 'helm-rg)
 (global-set-key (kbd "C-s") 'helm-swoop-without-pre-input)
 (global-set-key (kbd "C-o") 'org-open-at-point)
@@ -382,7 +386,7 @@
  '(org-export-backends (quote (ascii html md odt)))
  '(package-selected-packages
    (quote
-    (peep-dired rainbow-mode helm helm-swoop helm-rg helm-projectile flyspell-correct-helm dired-narrow doom-themes smex multiple-cursors lua-mode expand-region pdf-tools minions elfeed iedit rainbow-delimiters persp-projectile perspective flyspell-correct magit projectile doom-modeline all-the-icons undo-tree avy company org winum org-bullets which-key use-package)))
+    (peep-dired rainbow-mode helm helm-swoop helm-rg helm-projectile helm-org flyspell-correct-helm dired-narrow doom-themes smex multiple-cursors lua-mode expand-region pdf-tools minions elfeed iedit rainbow-delimiters persp-projectile perspective flyspell-correct magit projectile doom-modeline all-the-icons undo-tree avy company org winum org-bullets which-key use-package)))
  '(persp-modestring-dividers (quote ("(" ")" "|"))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
