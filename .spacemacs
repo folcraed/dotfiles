@@ -30,6 +30,8 @@
      )
    dotspacemacs-additional-packages '(doom-themes
                                       rainbow-mode
+                                      dired-narrow
+                                      peep-dired
                                       org-preview-html)
    dotspacemacs-frozen-packages '()
    dotspacemacs-excluded-packages '(vi-tilde-fringe
@@ -143,6 +145,13 @@
         doom-modeline-minor-modes nil)
   ;; (setq-default powerline-height 16)
   (setq lua-indent-level 4)
+  (setq delete-by-moving-to-trash t)
+  (setq dired-listing-switches "-lah1v --group-directories-first")
+  (setq wdired-create-parent-directories t)
+  (setq dired-dwim-target t)
+  (setq peep-dired-cleanup-on-disable t)
+  (setq peep-dired-ignored-extensions '("mkv" "webm" "mp4" "mp3" "ogg" "iso"))
+  (evil-define-key 'normal dired-mode-map "P" 'peep-dired)
   (setq browse-url-browser-function 'browse-url-generic
         browse-url-generic-program "xdg-open")
   (setq-default org-startup-with-inline-images nil)
