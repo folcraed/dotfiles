@@ -58,6 +58,8 @@ modules-right = volume filesystem memory cpu temperature date
 tray-position = right
 tray-padding = 2
 tray-detached = false
+wm-restack = i3
+override-redirect = true
 
 [bar/bspwmbar]
 width = 100%
@@ -91,6 +93,8 @@ modules-right = volume filesystem memory cpu temperature date
 tray-position = right
 tray-padding = 2
 tray-detached = false
+wm-restack = bspwm
+override-redirect = true
 
 [module/xwindow]
 type = internal/xwindow
