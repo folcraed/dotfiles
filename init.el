@@ -1,4 +1,4 @@
-;; Emacs settings Ver 0.6
+;; My Emacs settings Ver 0.7
 ;; File or commit timestamp show when last updated.
 
 (setq inhibit-startup-message t)
