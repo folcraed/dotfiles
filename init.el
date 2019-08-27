@@ -56,7 +56,7 @@
   :ensure t
   :config
   (setq avy-case-fold-search nil)
-  :bind ("M-j" . avy-goto-char-2))
+  :bind ("M-j" . avy-goto-char-timer))
 
 (use-package company
   :ensure t
@@ -175,7 +175,8 @@
 (use-package org-bullets
   :ensure t
   :config
-  (add-hook 'org-mode-hook (lambda () (org-bullets-mode 1))))
+  (add-hook 'org-mode-hook (lambda () (org-bullets-mode 1)))
+  (setq org-bullets-bullet-list '("◉" "○" "✸")))
 
 (setq-default org-file-apps
 	      (quote
@@ -213,6 +214,7 @@
               helm-descbinds-window-style 'same-window)
   :config
   (helm-mode 1))
+(require 'helm-config)
 
 (use-package helm-swoop
   :ensure t
@@ -321,10 +323,10 @@
 (global-set-key (kbd "M-x") 'helm-M-x)
 (global-set-key (kbd "C-p") 'projectile-find-file)
 (global-set-key (kbd "C-b") 'helm-mini)
-;; (global-set-key (kbd "M-o") 'helm-org-in-buffer-headings)
-(global-set-key (kbd "M-o") 'org-goto)
+(global-set-key (kbd "M-o") 'helm-org-in-buffer-headings)
+; (global-set-key (kbd "M-o") 'org-goto)
 (global-set-key (kbd "C-f") 'helm-rg)
-(global-set-key (kbd "C-s") 'helm-swoop-without-pre-input)
+;; (global-set-key (kbd "C-s") 'helm-swoop-without-pre-input)
 (global-set-key (kbd "C-o") 'org-open-at-point)
 (global-set-key (kbd "M-g") 'goto-line)
 (global-set-key (kbd "M-l") 'persp-switch)
