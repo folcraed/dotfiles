@@ -25,6 +25,7 @@
                      spell-checking-enable-by-default nil)
      pdf
      treemacs
+     python
      search-engine
      elfeed
      )
@@ -120,6 +121,7 @@
 (defun dotspacemacs/user-config ()
   (spacemacs/set-leader-keys "mxl" 'org-store-link)
   (spacemacs/set-leader-keys-for-major-mode 'org-mode "xl" 'org-store-link)
+  (spacemacs/set-leader-keys-for-major-mode 'org-mode "h" 'helm-org-in-buffer-headings)
   (setq-default make-backup-files nil
                 backup-inhibited t
                 create-lockfiles nil
