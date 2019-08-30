@@ -154,6 +154,9 @@
   (setq peep-dired-cleanup-on-disable t)
   (setq peep-dired-ignored-extensions '("mkv" "webm" "mp4" "mp3" "ogg" "iso"))
   (evil-define-key 'normal dired-mode-map "P" 'peep-dired)
+  (evil-define-key 'normal peep-dired-mode-map (kbd "j") 'peep-dired-next-file
+    (kbd "k") 'peep-dired-prev-file)
+  (add-hook 'peep-dired-hook 'evil-normalize-keymaps)
   (setq browse-url-browser-function 'browse-url-generic
         browse-url-generic-program "xdg-open")
   (setq-default org-startup-with-inline-images nil)
