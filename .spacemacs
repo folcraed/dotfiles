@@ -25,7 +25,12 @@
                      spell-checking-enable-by-default nil)
      pdf
      treemacs
-     python
+     lsp
+     syntax-checking
+     (python :variables
+             python-backend 'lsp
+             python-lsp-server 'pyls
+             python-formatter 'yapf)
      search-engine
      elfeed
      )
