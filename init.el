@@ -274,39 +274,6 @@
   (setq lua-indent-level 4))
 
 ;;===============================================
-;; Python environment
-;;===============================================
-
-(use-package lsp-mode
-  :ensure t
-  :hook (python-mode . lsp)
-  :config
-  (setq lsp-enable-snippet nil))
-
-;; (use-package lsp-ui
-;;   :ensure t
-;;   :commands lsp-ui-mode)
-
-(use-package company-lsp
-  :ensure t
-  :commands company-lsp)
-
-(use-package helm-lsp
-  :ensure t
-  :commands helm-lsp-workspace-symbol)
-
-(use-package flycheck
-  :ensure t
-  :init (global-flycheck-mode t))
-;; Hopefully turn OFF flymake
-(flymake-mode -1)
-
-(defun lsp-set-cfg ()
-  (let ((lsp-cfg `(:pyls (:configurationSources ("flake8")))))
-        (lsp--set-configuration lsp-cfg)))
-
-  (add-hook 'lsp-after-initialize-hook 'lsp-set-cfg)
-;;===============================================
 ;; Elfeed
 ;;===============================================
 
@@ -417,12 +384,10 @@
  '(custom-safe-themes
    (quote
     ("34c99997eaa73d64b1aaa95caca9f0d64229871c200c5254526d0062f8074693" "ab9456aaeab81ba46a815c00930345ada223e1e7c7ab839659b382b52437b9ea" "49ec957b508c7d64708b40b0273697a84d3fee4f15dd9fc4a9588016adee3dad" "669e02142a56f63861288cc585bee81643ded48a19e36bfdf02b66d745bcc626" "84da7b37214b4ac095a55518502dfa82633bee74f64daf6e1785322e77516f96" "06f0b439b62164c6f8f84fdda32b62fb50b6d00e8b01c2208e55543a6337433a" "1d079355c721b517fdc9891f0fda927fe3f87288f2e6cc3b8566655a64ca5453" "9be1d34d961a40d94ef94d0d08a364c3d27201f3c98c9d38e36f10588469ea57" "3380a2766cf0590d50d6366c5a91e976bdc3c413df963a0ab9952314b4577299" "f7ef6451d988d6e2fc86deea398eee02b3371703d88f265d31a011bd240dcf99" "f56393685517a0c58952a5fefdc45e29b52cc1798688992d112f7c299325a889" "39464ed440476d616c5671ff4d9cfc2393846132390e0d80e611dfa0b4bd6983" "bf5bdab33a008333648512df0d2b9d9710bdfba12f6a768c7d2c438e1092b633" "628278136f88aa1a151bb2d6c8a86bf2b7631fbea5f0f76cba2a0079cd910f7d" default)))
- '(flycheck-color-mode-line-face-to-color (quote mode-line-buffer-id))
- '(lsp-prefer-flymake nil)
  '(org-export-backends (quote (ascii html md odt)))
  '(package-selected-packages
    (quote
-    (lsp-mode company-lsp helm-lsp flycheck peep-dired rainbow-mode helm helm-swoop helm-rg helm-projectile helm-org flyspell-correct-helm dired-narrow doom-themes smex multiple-cursors lua-mode expand-region pdf-tools minions elfeed iedit rainbow-delimiters persp-projectile perspective flyspell-correct magit projectile doom-modeline all-the-icons undo-tree avy company org winum org-bullets which-key use-package)))
+    (peep-dired rainbow-mode helm helm-swoop helm-rg helm-projectile helm-org flyspell-correct-helm dired-narrow doom-themes smex multiple-cursors lua-mode expand-region pdf-tools minions elfeed iedit rainbow-delimiters persp-projectile perspective flyspell-correct magit projectile doom-modeline all-the-icons undo-tree avy company org winum org-bullets which-key use-package)))
  '(persp-modestring-dividers (quote ("(" ")" "|"))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
