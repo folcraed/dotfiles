@@ -50,13 +50,13 @@ end
 
 --| Get the theme |--
 
-local theme_path = string.format("%s/.config/awesome/themes/%s/theme.lua", os.getenv("HOME"), "Doomlight")
+local theme_path = string.format("%s/.config/awesome/themes/%s/theme.lua", os.getenv("HOME"), "Onedark")
 beautiful.init(theme_path)
 
 
 --| Default terminal and editor |--
 
-terminal = "termite"
+terminal = "konsole"
 editor = os.getenv("EDITOR") or "nvim"
 editor_cmd = terminal .. " -e " .. editor
 
@@ -68,13 +68,13 @@ altkey = "Mod1"
 --| Table of layouts to cover with awful.layout.inc, order matters. |--
 
 awful.layout.layouts = {
-    awful.layout.suit.floating,
     awful.layout.suit.tile,
     awful.layout.suit.tile.left,
     awful.layout.suit.tile.bottom,
     awful.layout.suit.tile.top,
     awful.layout.suit.fair,
     awful.layout.suit.fair.horizontal,
+    awful.layout.suit.floating,
 }
 -- }}}
 
@@ -126,29 +126,20 @@ spacer = wibox.widget.textbox(" | ")
 mytextclock = wibox.widget.textclock("%a %b %e, %l:%M %P")
 local month_calendar = awful.widget.calendar_popup.month()
 month_calendar:attach( mytextclock, "tr" )
-myweather   = lain.widget.weather({
-    city_id = 5666639,
-    units   = "imperial",
-    settings = function()
-        descr = weather_now["weather"][1]["description"]:lower()
-        units = math.floor(weather_now["main"]["temp"])
-        widget:set_markup(markup("#a626a4", " " .. descr .. " @ " .. units .. "°F "))
-    end
-})
 local cputemp = lain.widget.temp({
     tempfile = "/sys/class/thermal/thermal_zone2/temp",
     settings = function()
-      widget:set_markup(markup("#50a14f", " " .. coretemp_now .. "°C"))
+      widget:set_markup(markup("#98c379", " " .. coretemp_now .. "°C"))
     end
 })
 local mycpu = lain.widget.cpu({
     settings = function()
-        widget:set_markup(markup("#da8548", " " .. cpu_now[1].usage .. "% " .. cpu_now[2].usage .. "% " .. cpu_now[3].usage .. "% " .. cpu_now[4].usage .. "% "))
+        widget:set_markup(markup("#e5c07b", " " .. cpu_now[1].usage .. "% " .. cpu_now[2].usage .. "% " .. cpu_now[3].usage .. "% " .. cpu_now[4].usage .. "% "))
     end
 })
 local mymem = lain.widget.mem({
     settings = function()
-        widget:set_markup(markup("#005478", " " .. mem_now.used .. " Mb " .. mem_now.perc .. "% "))
+        widget:set_markup(markup("#61afef", " " .. mem_now.used .. " Mb " .. mem_now.perc .. "% "))
     end
 })
 
@@ -259,8 +250,6 @@ awful.screen.connect_for_each_screen(function(s)
             mymem,
             spacer,
             cputemp,
-            spacer,
-            myweather,
             spacer,
             mytextclock,
             spacer,
@@ -397,7 +386,7 @@ globalkeys = awful.util.table.join(
               {description = "show the menubar", group = "launcher"}),
 
     -- Rofi
-    awful.key({ modkey }, "p", function () awful.spawn('rofi -show drun -sidebar-mode -font "Hack 10" -width "20" -opacity "90" -terminal "termite"') end,
+    awful.key({ modkey }, "p", function () awful.spawn('rofi -show drun -sidebar-mode -font "Hack 10" -width "20" -opacity "90" -terminal "konsole"') end,
               {description = "Run Rofi", group = "launcher"})
 )
 
@@ -620,13 +609,25 @@ client.connect_signal("focus", function(c) c.border_color = beautiful.border_foc
 client.connect_signal("unfocus", function(c) c.border_color = beautiful.border_normal end)
 -- }}}
 
+--- | run_once | --
+
+function run_once(cmd)
+  findme = cmd
+  firstspace = cmd:find(" ")
+  if firstspace then
+     findme = cmd:sub(0, firstspace-1)
+  end
+  awful.spawn.with_shell("pgrep -u $USER -x " .. findme .. " > /dev/null || (" .. cmd .. ")")
+end
+
 -- | Autostart | --
 
-awful.spawn.once("gnome-keyring-daemon -s")
-awful.spawn.once("/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1")
-awful.spawn.once("ssh-agent")
-awful.spawn.once("compton")
-awful.spawn.once("clipit")
-awful.spawn.once("xclip")
-awful.spawn.once("dropbox start -i")
-awful.spawn.once("pasystray -t")
+run_once("gnome-keyring-daemon -s")
+run_once("/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1")
+run_once("ssh-agent")
+run_once("compton")
+run_once("clipit")
+run_once("xclip")
+run_once("pasystray --volume-inc=3 -t")
+-- run_once("tracker daemon -s")
+run_once("dropbox start -i")
