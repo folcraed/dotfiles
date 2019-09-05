@@ -25,12 +25,6 @@
                      spell-checking-enable-by-default nil)
      pdf
      treemacs
-     lsp
-     syntax-checking
-     (python :variables
-             python-backend 'lsp
-             python-lsp-server 'pyls
-             python-formatter 'yapf)
      search-engine
      elfeed
      )
@@ -65,8 +59,8 @@
    dotspacemacs-startup-buffer-responsive t
    dotspacemacs-scratch-mode 'text-mode
    dotspacemacs-new-empty-buffer-major-mode 'text-mode
-   dotspacemacs-themes '(doom-one
-                         doom-one-light
+   dotspacemacs-themes '(doom-one-light
+                         doom-one
                          monokai
                          spacemacs-dark
                          spacemacs-light)
