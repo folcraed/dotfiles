@@ -187,6 +187,7 @@
   (setq elfeed-db-directory "~/Dropbox/elfeed")
   (setq elfeed-feeds
     '("https://sachachua.com/blog/category/emacs-news/feed/"
+      "https://opensource.com/feed"
 	  "https://forum.manjaro.org/c/announcements.rss"
       "https://feeds.feedburner.com/d0od"
       "https://feeds.arstechnica.com/arstechnica/index/"
