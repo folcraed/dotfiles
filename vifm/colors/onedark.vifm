@@ -22,11 +22,11 @@
 
 highlight clear
 
-highlight Win             cterm=none ctermfg=default    ctermbg=none
+highlight Win             cterm=none ctermfg=15         ctermbg=none
 
 highlight TopLine         cterm=none ctermfg=blue       ctermbg=none
 highlight TopLineSel      cterm=none ctermfg=blue       ctermbg=none
-highlight StatusLine      cterm=none ctermfg=252        ctermbg=8
+highlight StatusLine      cterm=none ctermfg=15         ctermbg=8
 highlight Border          cterm=none ctermfg=blue       ctermbg=none
 
 highlight Selected        cterm=bold ctermfg=5          ctermbg=default
