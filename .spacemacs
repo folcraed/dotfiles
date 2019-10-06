@@ -59,8 +59,9 @@
    dotspacemacs-startup-buffer-responsive t
    dotspacemacs-scratch-mode 'text-mode
    dotspacemacs-new-empty-buffer-major-mode 'text-mode
-   dotspacemacs-themes '(doom-one
+   dotspacemacs-themes '(doom-tomorrow-night
                          doom-one-light
+                         doom-one
                          monokai
                          spacemacs-dark
                          spacemacs-light)
