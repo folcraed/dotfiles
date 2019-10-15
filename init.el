@@ -312,16 +312,17 @@
 
 (define-prefix-command 'd-map)
 (global-set-key (kbd "C-d") 'd-map)
-(define-key d-map (kbd "c") 'org-capture)
 (define-key d-map (kbd "a") 'org-agenda)
-(define-key d-map (kbd "t") 'org-time-stamp)
+(define-key d-map (kbd "c") 'org-capture)
+(define-key d-map (kbd "f") 'dired-narrow)
+(define-key d-map (kbd "h") 'org-remove-occur-highlights)
+(define-key d-map (kbd "i") 'iedit-mode)
 (define-key d-map (kbd "k") 'helm-show-kill-ring)
 (define-key d-map (kbd "l") 'org-store-link)
-(define-key d-map (kbd "i") 'iedit-mode)
-(define-key d-map (kbd "f") 'dired-narrow)
 (define-key d-map (kbd "n") 'org-toggle-narrow-to-subtree)
 (define-key d-map (kbd "r") 'helm-resume)
 (define-key d-map (kbd "s") 'helm-swoop)
+(define-key d-map (kbd "t") 'org-time-stamp)
 (global-set-key (kbd "M-x") 'helm-M-x)
 (global-set-key (kbd "C-p") 'projectile-find-file)
 (global-set-key (kbd "C-b") 'helm-mini)
@@ -381,7 +382,7 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(custom-enabled-themes (quote (doom-tomorrow-night)))
+ '(custom-enabled-themes (quote (doom-one-light)))
  '(custom-safe-themes
    (quote
     ("7f74a3b9a1f5e3d31358b48b8f8a1154aab2534fae82c9e918fb389fca776788" "e7666261f46e2f4f42fd1f9aa1875bdb81d17cc7a121533cad3e0d724f12faf2" "f951343d4bbe5a90dba0f058de8317ca58a6822faa65d8463b0e751a07ec887c" "a2286409934b11f2f3b7d89b1eaebb965fd63bc1e0be1c159c02e396afb893c8" "0fe9f7a04e7a00ad99ecacc875c8ccb4153204e29d3e57e9669691e6ed8340ce" "d6f04b6c269500d8a38f3fabadc1caa3c8fdf46e7e63ee15605af75a09d5441e" "2d1fe7c9007a5b76cea4395b0fc664d0c1cfd34bb4f1860300347cdad67fb2f9" "728eda145ad16686d4bbb8e50d540563573592013b10c3e2defc493f390f7d83" "34c99997eaa73d64b1aaa95caca9f0d64229871c200c5254526d0062f8074693" "ab9456aaeab81ba46a815c00930345ada223e1e7c7ab839659b382b52437b9ea" "49ec957b508c7d64708b40b0273697a84d3fee4f15dd9fc4a9588016adee3dad" "669e02142a56f63861288cc585bee81643ded48a19e36bfdf02b66d745bcc626" "84da7b37214b4ac095a55518502dfa82633bee74f64daf6e1785322e77516f96" "06f0b439b62164c6f8f84fdda32b62fb50b6d00e8b01c2208e55543a6337433a" "1d079355c721b517fdc9891f0fda927fe3f87288f2e6cc3b8566655a64ca5453" "9be1d34d961a40d94ef94d0d08a364c3d27201f3c98c9d38e36f10588469ea57" "3380a2766cf0590d50d6366c5a91e976bdc3c413df963a0ab9952314b4577299" "f7ef6451d988d6e2fc86deea398eee02b3371703d88f265d31a011bd240dcf99" "f56393685517a0c58952a5fefdc45e29b52cc1798688992d112f7c299325a889" "39464ed440476d616c5671ff4d9cfc2393846132390e0d80e611dfa0b4bd6983" "bf5bdab33a008333648512df0d2b9d9710bdfba12f6a768c7d2c438e1092b633" "628278136f88aa1a151bb2d6c8a86bf2b7631fbea5f0f76cba2a0079cd910f7d" default)))
