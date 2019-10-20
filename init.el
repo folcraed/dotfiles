@@ -398,7 +398,7 @@
  ;; If there is more than one, they won't work right.
  '(font-lock-comment-delimiter-face ((t (:inherit font-lock-comment-face))))
  '(font-lock-comment-face ((t (:foreground "#5B6268" :slant italic))))
- '(italic ((t (:slant italic :height 115 :family "Ubuntu"))))
+ '(italic ((t (:slant italic :height 120 :family "Ubuntu"))))
  '(org-table ((t (:foreground "#b751b6" :family "Ubuntu Mono"))))
  '(persp-selected-face ((t (:foreground "orange" :weight bold))))
  '(variable-pitch ((t (:family "Ubuntu")))))
