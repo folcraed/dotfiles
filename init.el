@@ -169,6 +169,7 @@
   :pin org
   :config
   (setq-default org-hide-emphasis-markers t)
+  (add-hook 'org-mode-hook 'variable-pitch-mode)
   (setq org-startup-folded nil
 	org-startup-indented t
 	org-tags-column 80))
@@ -397,5 +398,8 @@
  ;; If there is more than one, they won't work right.
  '(font-lock-comment-delimiter-face ((t (:inherit font-lock-comment-face))))
  '(font-lock-comment-face ((t (:foreground "#5B6268" :slant italic))))
- '(persp-selected-face ((t (:foreground "orange" :weight bold)))))
+ '(italic ((t (:slant italic :height 115 :family "Ubuntu"))))
+ '(org-table ((t (:foreground "#b751b6" :family "Ubuntu Mono"))))
+ '(persp-selected-face ((t (:foreground "orange" :weight bold))))
+ '(variable-pitch ((t (:family "Ubuntu")))))
 (put 'narrow-to-region 'disabled nil)
