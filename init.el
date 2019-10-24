@@ -169,7 +169,6 @@
   :pin org
   :config
   (setq-default org-hide-emphasis-markers t)
-  (add-hook 'org-mode-hook 'variable-pitch-mode)
   (setq org-startup-folded nil
 	org-startup-indented t
 	org-tags-column 80))
@@ -396,10 +395,7 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(font-lock-comment-delimiter-face ((t (:inherit font-lock-comment-face))))
  '(font-lock-comment-face ((t (:foreground "#5B6268" :slant italic))))
- '(italic ((t (:slant italic :height 120 :family "Ubuntu"))))
- '(org-table ((t (:foreground "#b751b6" :family "Ubuntu Mono"))))
- '(persp-selected-face ((t (:foreground "orange" :weight bold))))
- '(variable-pitch ((t (:family "Ubuntu")))))
+ '(font-lock-comment-delimiter-face ((t (:inherit font-lock-comment-face))))
+ '(persp-selected-face ((t (:foreground "orange" :weight bold)))))
 (put 'narrow-to-region 'disabled nil)
