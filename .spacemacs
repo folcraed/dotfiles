@@ -26,7 +26,6 @@
      pdf
      treemacs
      search-engine
-     elfeed
      )
    dotspacemacs-additional-packages '(doom-themes
                                       rainbow-mode
@@ -37,10 +36,8 @@
    dotspacemacs-excluded-packages '(vi-tilde-fringe
                                     neotree
                                     fancy-battery
+                                    yasnippet
                                     auto-yasnippet
-                                    elfeed-goodies
-                                    elfeed-org
-                                    elfeed-web
                                     google-translate)
    dotspacemacs-install-packages 'used-only))
 
@@ -160,7 +157,7 @@
   (setq browse-url-browser-function 'browse-url-generic
         browse-url-generic-program "xdg-open")
   (setq-default org-startup-with-inline-images nil)
-  (setq org-bullets-bullet-list '("◉" "○" "✸"))
+  (setq org-bullets-bullet-list '("◉" "○" "●"))
   (setq-default org-file-apps
    (quote
     ((auto-mode . emacs)
@@ -185,28 +182,6 @@
   (setq-default org-hide-emphasis-markers t)
   (setq org-agenda-files (directory-files-recursively "~/Dropbox/Notes" "\.org$")))
   (setq org-tags-column 80)
-  (setq elfeed-db-directory "~/Dropbox/elfeed")
-  (setq elfeed-feeds
-    '("https://sachachua.com/blog/category/emacs-news/feed/"
-      "https://opensource.com/feed"
-	  "https://forum.manjaro.org/c/announcements.rss"
-      "https://feeds.feedburner.com/d0od"
-      "https://feeds.arstechnica.com/arstechnica/index/"
-      "https://viking-archaeology-blog.blogspot.com/feeds/posts/default"
-      "http://archaeology-in-europe.blogspot.com/feeds/posts/default"
-      "https://www.gnome-look.org/gnome-look-content.rdf"
-      "https://www.heritagedaily.com/feed"
-      "https://planet.ubuntu.com/rss20.xml"
-      "https://www.linuxinsider.com/perl/syndication/rssfull.pl"
-      "https://www.linuxjournal.com/node/feed"
-      "https://planetkde.org/rss20.xml"
-      "https://www.zdnet.com/blog/open-source/rss.xml"
-      "https://www.phoronix.com/rss.php"
-      "https://www.kde.org/dotkdeorg.rdf"
-      "http://jonathanabennett.github.io/rss.xml"
-      "https://planet.gnome.org/rss20.xml"
-      "https://www.johngrenham.com/blog/feed/"
-      "https://feeds.feedburner.com/familyhistorydaily"))
 ;; (setq shr-inhibit-images t)
 (defun dotspacemacs/emacs-custom-settings ()
 (custom-set-variables
