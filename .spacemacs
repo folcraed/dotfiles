@@ -56,9 +56,9 @@
    dotspacemacs-startup-buffer-responsive t
    dotspacemacs-scratch-mode 'text-mode
    dotspacemacs-new-empty-buffer-major-mode 'text-mode
-   dotspacemacs-themes '(doom-one
+   dotspacemacs-themes '(doom-one-light
                          doom-tomorrow-night
-                         doom-one-light
+                         doom-one
                          monokai
                          spacemacs-dark
                          spacemacs-light)
@@ -116,9 +116,7 @@
   )
 
 (defun dotspacemacs/user-config ()
-  (spacemacs/set-leader-keys "mxl" 'org-store-link)
   (spacemacs/set-leader-keys-for-major-mode 'org-mode "xl" 'org-store-link)
-  (spacemacs/set-leader-keys-for-major-mode 'org-mode "h" 'helm-org-in-buffer-headings)
   (setq-default make-backup-files nil
                 backup-inhibited t
                 create-lockfiles nil
@@ -169,8 +167,6 @@
 	 "* TODO %t %?")
 	("c" "Changes" entry (file+headline "~/Dropbox/Notes/changes.org" "Changes")
 	 "* %t %?")
-	("r" "Reference" entry (file+headline "~/Dropbox/Notes/Reference.org" "Refile")
-	 "* %?")
 	("s" "Software" entry (file+headline "~/Dropbox/Notes/Software.org" "Refile")
 	 "* %?")))
   (org-projectile-per-project)
