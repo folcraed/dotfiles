@@ -85,6 +85,9 @@
   :config
   (pdf-tools-install))
 
+(use-package org-pdfview
+  :ensure t)
+
 (use-package rainbow-mode
   :ensure t)
 
@@ -103,6 +106,16 @@
   :config
   (setq peep-dired-cleanup-on-disable t)
   (setq peep-dired-ignored-extensions '("mkv" "webm" "mp4" "mp3" "ogg" "iso")))
+
+(use-package dired-subtree
+  :after dired
+  :config
+  (bind-key "<tab>" #'dired-subtree-toggle dired-mode-map))
+
+(use-package all-the-icons-dired
+  :ensure t)
+
+(add-hook 'dired-mode-hook 'all-the-icons-dired-mode)
 
 (setq delete-by-moving-to-trash t
       dired-listing-switches "-ahlv --group-directories-first"
@@ -183,22 +196,20 @@
 	      (quote
 	       ((auto-mode . emacs)
 		("\\.png\\'" . "sxiv %s")
-		("\\.jpg\\'" . "sxiv %s")
-		("\\.pdf\\'" . "zathura %s"))))
+		("\\.jpg\\'" . "sxiv %s"))))
+;;		("\\.pdf\\'" . "zathura %s"))))
 
 (setq org-capture-templates
       '(("t" "Todo" entry (file+headline "~/Dropbox/Notes/agenda.org" "Todos")
 	 "* TODO %t %?")
 	("c" "Changes" entry (file+headline "~/Dropbox/Notes/changes.org" "Changes")
 	 "* %t %?")
-	("r" "Reference" entry (file+headline "~/Dropbox/Notes/Reference.org" "Refile")
-	 "* %?")
 	("s" "Software" entry (file+headline "~/Dropbox/Notes/Software.org" "Refile")
 	 "* %?")))
 
 (setq-default org-display-custom-times t)
 (setq org-time-stamp-custom-formats '("[%a %b %e %Y]" . "<%a %b %e %Y %H:%M>")
-      org-agenda-files (directory-files-recursively "~/Dropbox/Notes" "\.org$")
+      org-agenda-files (quote ("~/Dropbox/Notes/agenda.org"))
       org-goto-interface 'outline-path-completion
       org-outline-path-complete-in-steps nil)
 
@@ -275,38 +286,6 @@
   (setq lua-indent-level 4))
 
 ;;===============================================
-;; Elfeed
-;;===============================================
-
-(use-package elfeed
-  :ensure t
-  :config
-  (setq elfeed-db-directory "~/Dropbox/elfeed"))
-
-(setq elfeed-feeds
-    '("https://sachachua.com/blog/category/emacs-news/feed/"
-      "https://forum.manjaro.org/c/announcements.rss"
-      "https://opensource.com/feed"
-      "http://feeds.feedburner.com/d0od"
-      "http://feeds.arstechnica.com/arstechnica/index/"
-      "https://viking-archaeology-blog.blogspot.com/feeds/posts/default"
-      "http://archaeology-in-europe.blogspot.com/feeds/posts/default"
-      "https://www.gnome-look.org/gnome-look-content.rdf"
-      "https://www.heritagedaily.com/feed"
-      "https://planet.ubuntu.com/rss20.xml"
-      "https://www.linuxinsider.com/perl/syndication/rssfull.pl"
-      "https://www.linuxjournal.com/node/feed"
-      "http://planetkde.org/rss20.xml"
-      "https://www.zdnet.com/blog/open-source/rss.xml"
-      "https://www.phoronix.com/rss.php"
-      "http://www.kde.org/dotkdeorg.rdf"
-      "http://jonathanabennett.github.io/rss.xml"
-      "http://planet.gnome.org/rss20.xml"
-      "https://www.johngrenham.com/blog/feed/"
-      "https://feeds.feedburner.com/familyhistorydaily"))
-;; (setq shr-inhibit-images t)
-
-;;===============================================
 ;; Some personal keybindings
 ;;===============================================
 
@@ -319,9 +298,11 @@
 (define-key d-map (kbd "i") 'iedit-mode)
 (define-key d-map (kbd "k") 'helm-show-kill-ring)
 (define-key d-map (kbd "l") 'org-store-link)
-(define-key d-map (kbd "n") 'org-toggle-narrow-to-subtree)
+(define-key d-map (kbd "n") 'org-narrow-to-subtree)
 (define-key d-map (kbd "r") 'helm-resume)
 (define-key d-map (kbd "t") 'org-time-stamp)
+(define-key d-map (kbd "w") 'widen)
+(define-key d-map (kbd "x") 'kill-buffer-and-window)
 (global-set-key (kbd "M-x") 'helm-M-x)
 (global-set-key (kbd "C-p") 'projectile-find-file)
 (global-set-key (kbd "C-b") 'helm-mini)
@@ -405,14 +386,14 @@
  '(org-export-backends (quote (ascii html md odt)))
  '(package-selected-packages
    (quote
-    (tablist peep-dired rainbow-mode helm helm-swoop helm-rg helm-projectile helm-org flyspell-correct-helm dired-narrow doom-themes smex multiple-cursors lua-mode expand-region pdf-tools minions elfeed iedit rainbow-delimiters persp-projectile perspective flyspell-correct magit projectile doom-modeline all-the-icons undo-tree avy company org winum org-bullets which-key use-package)))
+    (all-the-icons-dired dired-subtree org-pdfview tablist peep-dired rainbow-mode helm helm-swoop helm-rg helm-projectile helm-org flyspell-correct-helm dired-narrow doom-themes smex multiple-cursors lua-mode expand-region pdf-tools minions iedit rainbow-delimiters persp-projectile perspective flyspell-correct magit projectile doom-modeline all-the-icons undo-tree avy company org winum org-bullets which-key use-package)))
  '(persp-modestring-dividers (quote ("(" ")" "|"))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(font-lock-comment-face ((t (:foreground "#5B6268" :slant italic))))
  '(font-lock-comment-delimiter-face ((t (:inherit font-lock-comment-face))))
+ '(font-lock-comment-face ((t (:foreground "#5B6268" :slant italic))))
  '(persp-selected-face ((t (:foreground "orange" :weight bold)))))
 (put 'narrow-to-region 'disabled nil)
