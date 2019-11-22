@@ -30,6 +30,8 @@
    dotspacemacs-additional-packages '(doom-themes
                                       rainbow-mode
                                       dired-narrow
+                                      all-the-icons-dired
+                                      dired-subtree
                                       peep-dired
                                       org-preview-html)
    dotspacemacs-frozen-packages '()
@@ -144,11 +146,13 @@
   (setq lua-indent-level 4)
   (setq delete-by-moving-to-trash t)
   (setq dired-listing-switches "-lah1v --group-directories-first")
+  (add-hook 'dired-mode-hook 'all-the-icons-dired-mode)
   (setq wdired-create-parent-directories t)
   (setq dired-dwim-target t)
   (setq peep-dired-cleanup-on-disable t)
   (setq peep-dired-ignored-extensions '("mkv" "webm" "mp4" "mp3" "ogg" "iso"))
   (evil-define-key 'normal dired-mode-map "P" 'peep-dired)
+  (evil-define-key 'normal dired-mode-map "o" 'dired-subtree-toggle)
   (evil-define-key 'normal peep-dired-mode-map (kbd "j") 'peep-dired-next-file
     (kbd "k") 'peep-dired-prev-file)
   (add-hook 'peep-dired-hook 'evil-normalize-keymaps)
@@ -160,8 +164,8 @@
    (quote
     ((auto-mode . emacs)
      ("\\.png\\'" . "sxiv %s")
-     ("\\.jpg\\'" . "sxiv %s")
-     ("\\.pdf\\'" . "zathura %s"))))
+     ("\\.jpg\\'" . "sxiv %s"))))
+;;     ("\\.pdf\\'" . "zathura %s"))))
 (setq org-capture-templates
       '(("t" "Todo" entry (file+headline "~/Dropbox/Notes/agenda.org" "Todos")
 	 "* TODO %t %?")
