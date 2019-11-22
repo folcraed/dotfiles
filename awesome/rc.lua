@@ -625,7 +625,7 @@ end
 run_once("gnome-keyring-daemon -s")
 run_once("/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1")
 run_once("ssh-agent")
-run_once("compton")
+run_once("picom")
 run_once("clipit")
 run_once("xclip")
 run_once("pasystray --volume-inc=3 -t")
