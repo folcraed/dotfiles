@@ -43,7 +43,7 @@ Xcursor.size: 16
 ! *ttyModes: erase ^?
 
 ! Render setting for cairo -> pango -> gtk
-Xft.dpi:        81
+Xft.dpi:        92
 Xft.autohint:   0
 Xft.lcdfilter:  lcddefault
 Xft.antialias:  1
@@ -58,9 +58,3 @@ rofi.color-normal: #282c34,    #56b6c2,    #282c34,    #546E7A,    #F3F3F3
 rofi.color-active: #282c34,    #d19a66,    #282c34,    #546E7A,    #F3F3F3
 rofi.color-window: #282c34,    #282c34
 
-! Settings for URxvt
-URxvt.skipBuiltinGlyphs:True
-URxvt.font:xft:font:Cousine Nerd Font:pixelsize=10:minspace=False
-URxvt.letterSpace:-1
-URxvt.scrollBar:False
-URxvt.geometry:132x42
