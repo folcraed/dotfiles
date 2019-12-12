@@ -1,5 +1,5 @@
 ;; -*- lexical-binding: t -*-
-;; My Emacs settings Ver 0.7
+;; My Emacs settings Ver 0.8
 ;; File or commit timestamp show when last updated.
 
 (setq inhibit-startup-message t)
@@ -182,9 +182,10 @@
   :pin org
   :config
   (setq-default org-hide-emphasis-markers t)
+  (add-hook 'org-mode-hook 'variable-pitch-mode)
   (setq org-startup-folded nil
 	org-startup-indented t
-	org-tags-column 80))
+	org-tags-column -80))
 
 (use-package org-bullets
   :ensure t
@@ -400,5 +401,7 @@
  ;; If there is more than one, they won't work right.
  '(font-lock-comment-delimiter-face ((t (:inherit font-lock-comment-face))))
  '(font-lock-comment-face ((t (:foreground "#5B6268" :slant italic))))
- '(persp-selected-face ((t (:foreground "orange" :weight bold)))))
+ '(org-table ((t (:family "Ubuntu Mono"))))
+ '(persp-selected-face ((t (:foreground "orange" :weight bold))))
+ '(variable-pitch ((t (:family "Ubuntu")))))
 (put 'narrow-to-region 'disabled nil)
