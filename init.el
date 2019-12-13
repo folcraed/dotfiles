@@ -8,7 +8,7 @@
 (tool-bar-mode 0)
 (scroll-bar-mode 0)
 ;; (global-display-line-numbers-mode)
-(set-default-font "Ubuntu Mono-12")
+(set-default-font "Hack 11")
 (put 'dired-find-alternate-file 'disabled nil)
 (global-visual-line-mode 1)
 ;; This is suppose to fix ??? displaying instead
@@ -182,7 +182,6 @@
   :pin org
   :config
   (setq-default org-hide-emphasis-markers t)
-  (add-hook 'org-mode-hook 'variable-pitch-mode)
   (setq org-startup-folded nil
 	org-startup-indented t
 	org-tags-column -80))
@@ -385,6 +384,7 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
+ '(cursor-type (quote (bar . 3)))
  '(custom-enabled-themes (quote (doom-one-light)))
  '(custom-safe-themes
    (quote
@@ -401,7 +401,5 @@
  ;; If there is more than one, they won't work right.
  '(font-lock-comment-delimiter-face ((t (:inherit font-lock-comment-face))))
  '(font-lock-comment-face ((t (:foreground "#5B6268" :slant italic))))
- '(org-table ((t (:family "Ubuntu Mono"))))
- '(persp-selected-face ((t (:foreground "orange" :weight bold))))
- '(variable-pitch ((t (:family "Ubuntu")))))
+ '(persp-selected-face ((t (:foreground "orange" :weight bold)))))
 (put 'narrow-to-region 'disabled nil)

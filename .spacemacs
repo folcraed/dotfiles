@@ -66,8 +66,8 @@
                          spacemacs-light)
    dotspacemacs-mode-line-theme '(doom)
    dotspacemacs-colorize-cursor-according-to-state t
-   dotspacemacs-default-font '("Ubuntu Mono"
-                               :size 14
+   dotspacemacs-default-font '("Hack"
+                               :size 12
                                :weight normal
                                :width normal)
    dotspacemacs-leader-key "SPC"
@@ -180,8 +180,9 @@
   (setq-default org-display-custom-times t)
   (setq org-time-stamp-custom-formats '("[%a %e %b %Y]" . "<%a %e %b %Y %H:%M>"))
   (setq-default org-hide-emphasis-markers t)
-  (setq org-agenda-files (directory-files-recursively "~/Dropbox/Notes" "\.org$")))
-  (setq org-tags-column 80)
+  (setq org-directory "~/Dropbox/Notes")
+  (setq org-agenda-files (directory-files-recursively "~/Dropbox/Notes" "\.org$"))
+  (setq org-tags-column 80))
 ;; (setq shr-inhibit-images t)
 (defun dotspacemacs/emacs-custom-settings ()
 (custom-set-variables
