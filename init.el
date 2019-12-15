@@ -1,5 +1,5 @@
 ;; -*- lexical-binding: t -*-
-;; My Emacs settings Ver 0.8
+;; My Emacs settings Ver 0.9
 ;; File or commit timestamp show when last updated.
 
 (setq inhibit-startup-message t)
@@ -65,6 +65,12 @@
   (setq company-idle-delay 1
 	company-minimum-prefix-length 3)
   (global-company-mode t))
+
+(use-package company-posframe
+  :ensure t
+  :after (company)
+  :config
+  (company-posframe-mode 1))
 
 (use-package iedit
   :ensure t)
@@ -184,7 +190,8 @@
   (setq-default org-hide-emphasis-markers t)
   (setq org-startup-folded nil
 	org-startup-indented t
-	org-tags-column -80))
+	org-ellipsis " ➥"
+	org-tags-column -110))
 
 (use-package org-bullets
   :ensure t
@@ -300,10 +307,8 @@
 (define-key d-map (kbd "c") 'org-capture)
 (define-key d-map (kbd "f") 'dired-narrow)
 (define-key d-map (kbd "h") 'org-remove-occur-highlights)
-(define-key d-map (kbd "i") 'iedit-mode)
 (define-key d-map (kbd "k") 'helm-show-kill-ring)
 (define-key d-map (kbd "l") 'org-store-link)
-(define-key d-map (kbd "n") 'org-narrow-to-subtree)
 (define-key d-map (kbd "r") 'helm-resume)
 (define-key d-map (kbd "t") 'org-time-stamp)
 (define-key d-map (kbd "w") 'widen)
@@ -357,6 +362,25 @@
                          (display-buffer-in-side-window)
                          (inhibit-same-window . t)
                          (window-height . 0.3)))
+
+;;==============================================
+;; Narrow or widen whatever I'm working on
+;;==============================================
+
+(defun narrow-or-widen-dwim (p)
+  (interactive "P")
+  (declare (interactive-only))
+  (cond ((and (buffer-narrowed-p) (not p)) (widen))
+	((region-active-p)
+	 (narrow-to-region (region-beginning) (region-end)))
+	((derived-mode-p 'org-mode)
+	 (cond ((ignore-errors (org-edit-src-code))
+		(delete-other-windows))
+	       ((org-at-block-p)
+		(org-narrow-to-block))
+	       (t (org-narrow-to-subtree))))
+	(t (narrow-to-defun))))
+(define-key ctl-x-map "n" #'narrow-or-widen-dwim)
 
 ;;==============================================
 ;; Sane copy org link to clipboard function
