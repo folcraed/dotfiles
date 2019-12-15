@@ -12,7 +12,8 @@
    '(csv
      (helm :variables spacemacs-helm-rg-max-column-number nil)
      theming
-     auto-completion
+     (auto-completion :variables
+                      auto-completion-use-company-box t)
      emacs-lisp
      lua
      git
