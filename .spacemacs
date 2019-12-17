@@ -119,6 +119,22 @@
   )
 
 (defun dotspacemacs/user-config ()
+;;==============================================
+;; Sane copy org link to clipboard function
+;;==============================================
+
+  (defun my-org-export-url ()
+    (interactive)
+    (let* ((link-info (assoc :link (org-context)))
+	   (text (when link-info
+		   (buffer-substring-no-properties (or (cadr link-info) (point-min))
+						   (or (caddr link-info) (point-max))))))
+      (if (not text)
+	  (error "Not in org link!")
+	(string-match org-bracket-link-regexp text)
+	(kill-new (substring text (match-beginning 1) (match-end 1))))))
+  (global-set-key (kbd "C-c e") 'my-org-export-url)
+
   (spacemacs/set-leader-keys-for-major-mode 'org-mode "xl" 'org-store-link)
   (setq-default make-backup-files nil
                 backup-inhibited t
@@ -160,6 +176,7 @@
   (setq browse-url-browser-function 'browse-url-generic
         browse-url-generic-program "xdg-open")
   (setq-default org-startup-with-inline-images nil)
+  (setq org-ellipsis " ➥")
   (setq org-bullets-bullet-list '("◉" "○" "●"))
   (setq-default org-file-apps
    (quote
@@ -182,8 +199,8 @@
   (setq org-time-stamp-custom-formats '("[%a %e %b %Y]" . "<%a %e %b %Y %H:%M>"))
   (setq-default org-hide-emphasis-markers t)
   (setq org-directory "~/Dropbox/Notes")
-  (setq org-agenda-files (directory-files-recursively "~/Dropbox/Notes" "\.org$"))
-  (setq org-tags-column 80))
+  (setq org-agenda-files (quote ("~/Dropbox/Notes/agenda.org")))
+  (setq org-tags-column -110))
 ;; (setq shr-inhibit-images t)
 (defun dotspacemacs/emacs-custom-settings ()
 (custom-set-variables
