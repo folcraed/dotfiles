@@ -146,10 +146,11 @@
 (use-package doom-modeline
   :ensure t
   :hook (after-init . doom-modeline-mode)
-  :config
+  :init
   (setq doom-modeline-height 15
-	doom-modeline-minor-modes 1
-	doom-modeline-major-mode-color-icon 1
+	doom-modeline-minor-modes t
+	doom-modeline-major-mode-color-icon t
+	doom-modeline-buffer-modification-icon t
 	doom-modeline-buffer-file-name-style 'relative-from-project
 	column-number-mode 1))
 (minions-mode 1)
@@ -188,16 +189,17 @@
   :pin org
   :config
   (setq-default org-hide-emphasis-markers t)
+  (add-hook 'org-mode-hook 'variable-pitch-mode)
   (setq org-startup-folded nil
 	org-startup-indented t
 	org-ellipsis " ➥"
-	org-tags-column -110))
+	org-tags-column 0))
 
 (use-package org-bullets
   :ensure t
   :config
   (add-hook 'org-mode-hook (lambda () (org-bullets-mode 1)))
-  (setq org-bullets-bullet-list '("◉" "○" "●")))
+  (setq org-bullets-bullet-list '("●" "○" "◉")))
 
 (setq-default org-file-apps
 	      (quote
@@ -253,7 +255,7 @@
 
 (use-package helm-org-rifle
   :ensure t
-  :bind ("M-f" . 'helm-org-rifle-org-directory))
+  :bind ("M-s r" . 'helm-org-rifle-org-directory))
 
 ;;==============================================
 ;;  Flyspell stuff
@@ -305,20 +307,19 @@
 (global-set-key (kbd "C-d") 'd-map)
 (define-key d-map (kbd "a") 'org-agenda)
 (define-key d-map (kbd "c") 'org-capture)
-(define-key d-map (kbd "f") 'dired-narrow)
-(define-key d-map (kbd "h") 'org-remove-occur-highlights)
+(define-key d-map (kbd "n") 'dired-narrow)
 (define-key d-map (kbd "k") 'helm-show-kill-ring)
 (define-key d-map (kbd "l") 'org-store-link)
 (define-key d-map (kbd "r") 'helm-resume)
 (define-key d-map (kbd "t") 'org-time-stamp)
-(define-key d-map (kbd "w") 'widen)
 (define-key d-map (kbd "x") 'kill-buffer-and-window)
 (global-set-key (kbd "M-x") 'helm-M-x)
+(global-set-key (kbd "M-s w") 'helm-swoop)
+(global-set-key (kbd "M-s g") 'helm-rg)
+(global-set-key (kbd "M-s s") 'helm-swoop-without-pre-input)
 (global-set-key (kbd "C-p") 'projectile-find-file)
 (global-set-key (kbd "C-b") 'helm-mini)
 (global-set-key (kbd "M-o") 'helm-org-in-buffer-headings)
-(global-set-key (kbd "C-f") 'helm-rg)
-(global-set-key (kbd "C-s") 'helm-swoop)
 (global-set-key (kbd "C-o") 'org-open-at-point)
 (global-set-key (kbd "M-g") 'goto-line)
 (global-set-key (kbd "M-l") 'persp-switch)
@@ -425,5 +426,7 @@
  ;; If there is more than one, they won't work right.
  '(font-lock-comment-delimiter-face ((t (:inherit font-lock-comment-face))))
  '(font-lock-comment-face ((t (:foreground "#5B6268" :slant italic))))
+ '(org-table ((t (:family "Hack"))))
+ '(variable-pitch ((t (:family "Noto Sans"))))
  '(persp-selected-face ((t (:foreground "orange" :weight bold)))))
 (put 'narrow-to-region 'disabled nil)
