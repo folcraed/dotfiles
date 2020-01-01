@@ -68,7 +68,7 @@
    dotspacemacs-mode-line-theme '(doom)
    dotspacemacs-colorize-cursor-according-to-state t
    dotspacemacs-default-font '("Hack"
-                               :size 12
+                               :size 13
                                :weight normal
                                :width normal)
    dotspacemacs-leader-key "SPC"
@@ -152,11 +152,12 @@
   (define-key evil-normal-state-map (kbd "<down>") 'evil-next-visual-line)
   (define-key evil-normal-state-map (kbd "k") 'evil-previous-visual-line)
   (define-key evil-normal-state-map (kbd "<up>") 'evil-previous-visual-line)
-  (define-key evil-normal-state-map (kbd "gs") 'avy-goto-char-timer)
+  (define-key evil-normal-state-map (kbd "gj") 'avy-goto-char-timer)
   (global-set-key (kbd "<f8>") 'flyspell-mode)
-  (setq-default doom-modeline-height 16)
+  (setq-default doom-modeline-height 15)
   (setq doom-modeline-buffer-file-name-style 'relative-from-project
-        doom-modeline-major-mode-color-icon 1
+        doom-modeline-major-mode-color-icon t
+	doom-modeline-buffer-modification-icon t
         doom-modeline-persp-name nil
         doom-modeline-minor-modes nil)
   ;; (setq-default powerline-height 16)
@@ -176,8 +177,14 @@
   (setq browse-url-browser-function 'browse-url-generic
         browse-url-generic-program "xdg-open")
   (setq-default org-startup-with-inline-images nil)
+  ;; Hopefully this will set variable-pitch font for org
+  (put 'variable-pitch 'customized-face '((t (:family "Noto Sans" :size 13))))
+  ;; (face-spec-set 'variable-pitch '((t (:inherit default))))
+  ;; (set-face-attribute 'variable-pitch nil :family "Noto Sans 13")
+  (with-eval-after-load 'org
+    (add-hook 'org-mode-hook 'variable-pitch-mode))
   (setq org-ellipsis " ➥")
-  (setq org-bullets-bullet-list '("◉" "○" "●"))
+  (setq org-bullets-bullet-list '("●" "○" "◉"))
   (setq-default org-file-apps
    (quote
     ((auto-mode . emacs)
@@ -200,7 +207,7 @@
   (setq-default org-hide-emphasis-markers t)
   (setq org-directory "~/Dropbox/Notes")
   (setq org-agenda-files (quote ("~/Dropbox/Notes/agenda.org")))
-  (setq org-tags-column -110))
+  (setq org-tags-column 100))
 ;; (setq shr-inhibit-images t)
 (defun dotspacemacs/emacs-custom-settings ()
 (custom-set-variables
@@ -216,6 +223,7 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
+ '(org-table ((t (:family "Hack"))))
  '(font-lock-comment-face ((t (:slant italic)))))
 )
 
