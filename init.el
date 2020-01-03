@@ -7,7 +7,7 @@
 ;; (menu-bar-mode 0)
 (tool-bar-mode 0)
 (scroll-bar-mode 0)
-;; (global-display-line-numbers-mode)
+(prefer-coding-system 'utf-8)
 (set-default-font "Hack 11")
 (put 'dired-find-alternate-file 'disabled nil)
 (global-visual-line-mode 1)
@@ -66,11 +66,13 @@
 	company-minimum-prefix-length 3)
   (global-company-mode t))
 
-(use-package company-posframe
+(use-package company-box
   :ensure t
-  :after (company)
+  :hook (company-mode . company-box-mode)
   :config
-  (company-posframe-mode 1))
+  (setq company-box-backends-colors nil
+	company-box-max-candidates 1000
+	company-box-doc-enable nil))
 
 (use-package iedit
   :ensure t)
@@ -409,15 +411,16 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
+ '(company-box-enable-icon nil)
  '(cursor-type (quote (bar . 3)))
  '(custom-enabled-themes (quote (doom-one-light)))
  '(custom-safe-themes
    (quote
-    ("6cbf6003e137485fb3f904e76fb15bc48abc386540f43f54e2a47a9884e679f6" "7f74a3b9a1f5e3d31358b48b8f8a1154aab2534fae82c9e918fb389fca776788" "e7666261f46e2f4f42fd1f9aa1875bdb81d17cc7a121533cad3e0d724f12faf2" "f951343d4bbe5a90dba0f058de8317ca58a6822faa65d8463b0e751a07ec887c" "a2286409934b11f2f3b7d89b1eaebb965fd63bc1e0be1c159c02e396afb893c8" "0fe9f7a04e7a00ad99ecacc875c8ccb4153204e29d3e57e9669691e6ed8340ce" "d6f04b6c269500d8a38f3fabadc1caa3c8fdf46e7e63ee15605af75a09d5441e" "2d1fe7c9007a5b76cea4395b0fc664d0c1cfd34bb4f1860300347cdad67fb2f9" "728eda145ad16686d4bbb8e50d540563573592013b10c3e2defc493f390f7d83" "34c99997eaa73d64b1aaa95caca9f0d64229871c200c5254526d0062f8074693" "ab9456aaeab81ba46a815c00930345ada223e1e7c7ab839659b382b52437b9ea" "49ec957b508c7d64708b40b0273697a84d3fee4f15dd9fc4a9588016adee3dad" "669e02142a56f63861288cc585bee81643ded48a19e36bfdf02b66d745bcc626" "84da7b37214b4ac095a55518502dfa82633bee74f64daf6e1785322e77516f96" "06f0b439b62164c6f8f84fdda32b62fb50b6d00e8b01c2208e55543a6337433a" "1d079355c721b517fdc9891f0fda927fe3f87288f2e6cc3b8566655a64ca5453" "9be1d34d961a40d94ef94d0d08a364c3d27201f3c98c9d38e36f10588469ea57" "3380a2766cf0590d50d6366c5a91e976bdc3c413df963a0ab9952314b4577299" "f7ef6451d988d6e2fc86deea398eee02b3371703d88f265d31a011bd240dcf99" "f56393685517a0c58952a5fefdc45e29b52cc1798688992d112f7c299325a889" "39464ed440476d616c5671ff4d9cfc2393846132390e0d80e611dfa0b4bd6983" "bf5bdab33a008333648512df0d2b9d9710bdfba12f6a768c7d2c438e1092b633" "628278136f88aa1a151bb2d6c8a86bf2b7631fbea5f0f76cba2a0079cd910f7d" default)))
+    ("b9dda6ca36e825766dfada5274cf18d8a5bce70676b786e3260094e0cd8c0e62" "6cbf6003e137485fb3f904e76fb15bc48abc386540f43f54e2a47a9884e679f6" "7f74a3b9a1f5e3d31358b48b8f8a1154aab2534fae82c9e918fb389fca776788" "e7666261f46e2f4f42fd1f9aa1875bdb81d17cc7a121533cad3e0d724f12faf2" "f951343d4bbe5a90dba0f058de8317ca58a6822faa65d8463b0e751a07ec887c" "a2286409934b11f2f3b7d89b1eaebb965fd63bc1e0be1c159c02e396afb893c8" "0fe9f7a04e7a00ad99ecacc875c8ccb4153204e29d3e57e9669691e6ed8340ce" "d6f04b6c269500d8a38f3fabadc1caa3c8fdf46e7e63ee15605af75a09d5441e" "2d1fe7c9007a5b76cea4395b0fc664d0c1cfd34bb4f1860300347cdad67fb2f9" "728eda145ad16686d4bbb8e50d540563573592013b10c3e2defc493f390f7d83" "34c99997eaa73d64b1aaa95caca9f0d64229871c200c5254526d0062f8074693" "ab9456aaeab81ba46a815c00930345ada223e1e7c7ab839659b382b52437b9ea" "49ec957b508c7d64708b40b0273697a84d3fee4f15dd9fc4a9588016adee3dad" "669e02142a56f63861288cc585bee81643ded48a19e36bfdf02b66d745bcc626" "84da7b37214b4ac095a55518502dfa82633bee74f64daf6e1785322e77516f96" "06f0b439b62164c6f8f84fdda32b62fb50b6d00e8b01c2208e55543a6337433a" "1d079355c721b517fdc9891f0fda927fe3f87288f2e6cc3b8566655a64ca5453" "9be1d34d961a40d94ef94d0d08a364c3d27201f3c98c9d38e36f10588469ea57" "3380a2766cf0590d50d6366c5a91e976bdc3c413df963a0ab9952314b4577299" "f7ef6451d988d6e2fc86deea398eee02b3371703d88f265d31a011bd240dcf99" "f56393685517a0c58952a5fefdc45e29b52cc1798688992d112f7c299325a889" "39464ed440476d616c5671ff4d9cfc2393846132390e0d80e611dfa0b4bd6983" "bf5bdab33a008333648512df0d2b9d9710bdfba12f6a768c7d2c438e1092b633" "628278136f88aa1a151bb2d6c8a86bf2b7631fbea5f0f76cba2a0079cd910f7d" default)))
  '(org-export-backends (quote (ascii html md odt)))
  '(package-selected-packages
    (quote
-    (helm-org-rifle all-the-icons-dired dired-subtree org-pdfview tablist peep-dired rainbow-mode helm helm-swoop helm-rg helm-projectile helm-org flyspell-correct-helm dired-narrow doom-themes smex multiple-cursors lua-mode expand-region pdf-tools minions iedit rainbow-delimiters persp-projectile perspective flyspell-correct magit projectile doom-modeline all-the-icons undo-tree avy company org winum org-bullets which-key use-package)))
+    (company-box helm-org-rifle all-the-icons-dired dired-subtree org-pdfview tablist peep-dired rainbow-mode helm helm-swoop helm-rg helm-projectile helm-org flyspell-correct-helm dired-narrow doom-themes smex multiple-cursors lua-mode expand-region pdf-tools minions iedit rainbow-delimiters persp-projectile perspective flyspell-correct magit projectile doom-modeline all-the-icons undo-tree avy company org winum org-bullets which-key use-package)))
  '(persp-modestring-dividers (quote ("(" ")" "|"))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
@@ -427,6 +430,6 @@
  '(font-lock-comment-delimiter-face ((t (:inherit font-lock-comment-face))))
  '(font-lock-comment-face ((t (:foreground "#5B6268" :slant italic))))
  '(org-table ((t (:family "Hack"))))
- '(variable-pitch ((t (:family "Noto Sans"))))
- '(persp-selected-face ((t (:foreground "orange" :weight bold)))))
+ '(persp-selected-face ((t (:foreground "orange" :weight bold))))
+ '(variable-pitch ((t (:family "Noto Sans")))))
 (put 'narrow-to-region 'disabled nil)
