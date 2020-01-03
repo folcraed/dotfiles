@@ -68,7 +68,7 @@
    dotspacemacs-mode-line-theme '(doom)
    dotspacemacs-colorize-cursor-according-to-state t
    dotspacemacs-default-font '("Hack"
-                               :size 13
+                               :size 14
                                :weight normal
                                :width normal)
    dotspacemacs-leader-key "SPC"
@@ -122,7 +122,6 @@
 ;;==============================================
 ;; Sane copy org link to clipboard function
 ;;==============================================
-
   (defun my-org-export-url ()
     (interactive)
     (let* ((link-info (assoc :link (org-context)))
@@ -134,8 +133,9 @@
 	(string-match org-bracket-link-regexp text)
 	(kill-new (substring text (match-beginning 1) (match-end 1))))))
   (global-set-key (kbd "C-c e") 'my-org-export-url)
-
-  (spacemacs/set-leader-keys-for-major-mode 'org-mode "xl" 'org-store-link)
+;;==============================================================================
+;; My preferred defaults
+;;==============================================================================
   (setq-default make-backup-files nil
                 backup-inhibited t
                 create-lockfiles nil
@@ -147,22 +147,32 @@
   (setq company-idle-delay 1)
   (setq avy-case-fold-search nil)
   (global-visual-line-mode t)
+  (prefer-coding-system 'utf-8)
   (setq line-number-display-limit-width 2000000)
+  (setq lua-indent-level 4)
+  (setq delete-by-moving-to-trash t)
+;;==============================================================================
+;; Custom keybindings
+;;==============================================================================
+  (spacemacs/set-leader-keys-for-major-mode 'org-mode "xl" 'org-store-link)
   (define-key evil-normal-state-map (kbd "j") 'evil-next-visual-line)
   (define-key evil-normal-state-map (kbd "<down>") 'evil-next-visual-line)
   (define-key evil-normal-state-map (kbd "k") 'evil-previous-visual-line)
   (define-key evil-normal-state-map (kbd "<up>") 'evil-previous-visual-line)
   (define-key evil-normal-state-map (kbd "gj") 'avy-goto-char-timer)
   (global-set-key (kbd "<f8>") 'flyspell-mode)
+;;==============================================================================
+;; Doom modeline settings
+;;==============================================================================
   (setq-default doom-modeline-height 15)
   (setq doom-modeline-buffer-file-name-style 'relative-from-project
         doom-modeline-major-mode-color-icon t
-	doom-modeline-buffer-modification-icon t
+        doom-modeline-buffer-modification-icon t
         doom-modeline-persp-name nil
         doom-modeline-minor-modes nil)
-  ;; (setq-default powerline-height 16)
-  (setq lua-indent-level 4)
-  (setq delete-by-moving-to-trash t)
+;;==============================================================================
+;; Dired settings
+;;==============================================================================
   (setq dired-listing-switches "-lah1v --group-directories-first")
   (add-hook 'dired-mode-hook 'all-the-icons-dired-mode)
   (setq wdired-create-parent-directories t)
@@ -176,11 +186,10 @@
   (add-hook 'peep-dired-hook 'evil-normalize-keymaps)
   (setq browse-url-browser-function 'browse-url-generic
         browse-url-generic-program "xdg-open")
+;;==============================================================================
+;; Org settings
+;;==============================================================================
   (setq-default org-startup-with-inline-images nil)
-  ;; Hopefully this will set variable-pitch font for org
-  (put 'variable-pitch 'customized-face '((t (:family "Noto Sans" :size 13))))
-  ;; (face-spec-set 'variable-pitch '((t (:inherit default))))
-  ;; (set-face-attribute 'variable-pitch nil :family "Noto Sans 13")
   (with-eval-after-load 'org
     (add-hook 'org-mode-hook 'variable-pitch-mode))
   (setq org-ellipsis " ➥")
@@ -208,8 +217,14 @@
   (setq org-directory "~/Dropbox/Notes")
   (setq org-agenda-files (quote ("~/Dropbox/Notes/agenda.org")))
   (setq org-tags-column 100))
-;; (setq shr-inhibit-images t)
+;;==============================================================================
+;; Emacs Custom settings
+;;==============================================================================
 (defun dotspacemacs/emacs-custom-settings ()
+  "Emacs custom settings.
+This is an auto-generated function, do not modify its content directly, use
+Emacs customize menu instead.
+This function is called at the very end of Spacemacs initialization."
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -217,13 +232,14 @@
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
    (quote
-    (rainbow-mode csv-mode srefactor yapfify stickyfunc-enhance importmagic epc ctable concurrent deferred xcscope ggtags flycheck counsel-gtags web-mode orgit magit-svn evil-nerd-commenter evil-magit dumb-jump doom-modeline aggressive-indent counsel company magit-popup magit transient haml-mode all-the-icons powerline ace-window dash org-plus-contrib evil yasnippet xterm-color ws-butler writeroom-mode winum which-key web-beautify volatile-highlights uuidgen use-package toc-org tagedit symon swiper string-inflection spaceline-all-the-icons smeargle slim-mode shrink-path shell-pop scss-mode sass-mode restart-emacs rainbow-delimiters pug-mode prettier-js popwin pfuture persp-mode pcre2el password-generator paradox overseer org-projectile org-preview-html org-present org-pomodoro org-mime org-download org-bullets org-brain open-junk-file nameless multi-term move-text monokai-theme mmm-mode markdown-toc magit-gitflow macrostep lv lorem-ipsum link-hint indent-guide impatient-mode hungry-delete ht hl-todo highlight-parentheses highlight-numbers highlight-indentation goto-chg golden-ratio gnuplot gitignore-templates gitconfig-mode gitattributes-mode git-timemachine git-messenger git-link git-commit gh-md fuzzy font-lock+ flx-ido fill-column-indicator eyebrowse expand-region evil-visualstar evil-visual-mark-mode evil-unimpaired evil-tutor evil-surround evil-org evil-numbers evil-matchit evil-lisp-state evil-lion evil-indent-plus evil-iedit-state evil-goggles evil-exchange evil-escape evil-ediff evil-cleverparens evil-args evil-anzu eval-sexp-fu eshell-z eshell-prompt-extras esh-help emmet-mode elisp-slime-nav eldoc-eval editorconfig dotenv-mode diminish define-word counsel-projectile company-web company-statistics column-enforce-mode clean-aindent-mode centered-cursor-mode auto-highlight-symbol auto-dictionary auto-compile ace-link ac-ispell))))
+    (ansi package-build shut-up epl git commander f s rainbow-mode csv-mode srefactor yapfify stickyfunc-enhance importmagic epc ctable concurrent deferred xcscope ggtags flycheck counsel-gtags web-mode orgit magit-svn evil-nerd-commenter evil-magit dumb-jump doom-modeline aggressive-indent counsel company magit-popup magit transient haml-mode all-the-icons powerline ace-window dash org-plus-contrib evil yasnippet xterm-color ws-butler writeroom-mode winum which-key web-beautify volatile-highlights uuidgen use-package toc-org tagedit symon swiper string-inflection spaceline-all-the-icons smeargle slim-mode shrink-path shell-pop scss-mode sass-mode restart-emacs rainbow-delimiters pug-mode prettier-js popwin pfuture persp-mode pcre2el password-generator paradox overseer org-projectile org-preview-html org-present org-pomodoro org-mime org-download org-bullets org-brain open-junk-file nameless multi-term move-text monokai-theme mmm-mode markdown-toc magit-gitflow macrostep lv lorem-ipsum link-hint indent-guide impatient-mode hungry-delete ht hl-todo highlight-parentheses highlight-numbers highlight-indentation goto-chg golden-ratio gnuplot gitignore-templates gitconfig-mode gitattributes-mode git-timemachine git-messenger git-link git-commit gh-md fuzzy font-lock+ flx-ido fill-column-indicator eyebrowse expand-region evil-visualstar evil-visual-mark-mode evil-unimpaired evil-tutor evil-surround evil-org evil-numbers evil-matchit evil-lisp-state evil-lion evil-indent-plus evil-iedit-state evil-goggles evil-exchange evil-escape evil-ediff evil-cleverparens evil-args evil-anzu eval-sexp-fu eshell-z eshell-prompt-extras esh-help emmet-mode elisp-slime-nav eldoc-eval editorconfig dotenv-mode diminish define-word counsel-projectile company-web company-statistics column-enforce-mode clean-aindent-mode centered-cursor-mode auto-highlight-symbol auto-dictionary auto-compile ace-link ac-ispell))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
+ '(font-lock-comment-face ((t (:slant italic))))
  '(org-table ((t (:family "Hack"))))
- '(font-lock-comment-face ((t (:slant italic)))))
+ '(variable-pitch ((t (:family "Noto Sans")))))
 )
 
