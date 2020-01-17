@@ -1,5 +1,5 @@
 ;; -*- lexical-binding: t -*-
-;; My Emacs settings Ver 0.9
+;; My Emacs settings Ver 0.91
 ;; File or commit timestamp show when last updated.
 
 (setq inhibit-startup-message t)
@@ -8,7 +8,7 @@
 (tool-bar-mode 0)
 (scroll-bar-mode 0)
 (prefer-coding-system 'utf-8)
-(set-default-font "Hack 11")
+(set-default-font "JetBrains Mono 11")
 (put 'dired-find-alternate-file 'disabled nil)
 (global-visual-line-mode 1)
 ;; This is suppose to fix ??? displaying instead
@@ -418,7 +418,7 @@
  ;; If there is more than one, they won't work right.
  '(font-lock-comment-delimiter-face ((t (:inherit font-lock-comment-face))))
  '(font-lock-comment-face ((t (:foreground "#5B6268" :slant italic))))
- '(org-table ((t (:family "Hack"))))
+ '(org-table ((t (:family "JetBrains Mono"))))
  '(persp-selected-face ((t (:foreground "orange" :weight bold))))
  '(variable-pitch ((t (:family "Noto Sans")))))
 (put 'narrow-to-region 'disabled nil)
