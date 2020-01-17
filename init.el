@@ -247,10 +247,6 @@
 (use-package helm-org
   :ensure t)
 
-(use-package helm-org-rifle
-  :ensure t
-  :bind ("M-s r" . 'helm-org-rifle-org-directory))
-
 ;;==============================================
 ;;  Flyspell stuff
 ;;==============================================
@@ -311,6 +307,7 @@
 (global-set-key (kbd "M-s w") 'helm-swoop)
 (global-set-key (kbd "M-s g") 'helm-rg)
 (global-set-key (kbd "M-s s") 'helm-swoop-without-pre-input)
+(global-set-key (kbd "M-s o") 'helm-multi-swoop-org)
 (global-set-key (kbd "C-p") 'projectile-find-file)
 (global-set-key (kbd "C-b") 'helm-mini)
 (global-set-key (kbd "M-o") 'helm-org-in-buffer-headings)
@@ -412,7 +409,7 @@
  '(org-export-backends (quote (ascii html md odt)))
  '(package-selected-packages
    (quote
-    (company-box helm-org-rifle all-the-icons-dired dired-subtree tablist peep-dired rainbow-mode helm helm-swoop helm-rg helm-projectile helm-org flyspell-correct-helm dired-narrow doom-themes smex multiple-cursors lua-mode expand-region minions iedit rainbow-delimiters persp-projectile perspective flyspell-correct magit projectile doom-modeline all-the-icons undo-tree avy company org winum org-bullets which-key use-package)))
+    (company-box all-the-icons-dired dired-subtree tablist peep-dired rainbow-mode helm helm-swoop helm-rg helm-projectile helm-org flyspell-correct-helm dired-narrow doom-themes smex multiple-cursors lua-mode expand-region minions iedit rainbow-delimiters persp-projectile perspective flyspell-correct magit projectile doom-modeline all-the-icons undo-tree avy company org winum org-bullets which-key use-package)))
  '(persp-modestring-dividers (quote ("(" ")" "|"))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
