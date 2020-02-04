@@ -33,6 +33,12 @@
   (package-install 'use-package))
 
 ;;==============================================
+;;  Keep keyring up to date
+;;==============================================
+(use-package gnu-elpa-keyring-update
+  :ensure t)
+
+;;==============================================
 ;;  Minion for the rest
 ;;==============================================
 (use-package minions
@@ -409,7 +415,7 @@
  '(org-export-backends (quote (ascii html md odt)))
  '(package-selected-packages
    (quote
-    (company-box all-the-icons-dired dired-subtree tablist peep-dired rainbow-mode helm helm-swoop helm-rg helm-projectile helm-org flyspell-correct-helm dired-narrow doom-themes smex multiple-cursors lua-mode expand-region minions iedit rainbow-delimiters persp-projectile perspective flyspell-correct magit projectile doom-modeline all-the-icons undo-tree avy company org winum org-bullets which-key use-package)))
+    (gnu-elpa-keyring-update company-box all-the-icons-dired dired-subtree tablist peep-dired rainbow-mode helm helm-swoop helm-rg helm-projectile helm-org flyspell-correct-helm dired-narrow doom-themes smex multiple-cursors lua-mode expand-region minions iedit rainbow-delimiters persp-projectile perspective flyspell-correct magit projectile doom-modeline all-the-icons undo-tree avy company org winum org-bullets which-key use-package)))
  '(persp-modestring-dividers (quote ("(" ")" "|"))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
