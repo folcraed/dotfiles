@@ -162,7 +162,9 @@ filextype *.bmp,*.jpg,*.jpeg,*.png,*.gif,*.xpm,*tif,*.tiff
         \ {View in eom}
         \ eom %f &,
 fileviewer *.bmp,*.jpg,*.jpeg,*.png,*.gif,*.xpm
-        \ imgv %px %py %pw %ph %f
+        \ kitty icat --silent --place=%pwx%ph@%pxx%py %c
+        \ %pc
+        \kitty icat --silent --clear
 
 " MD5
 filetype *.md5
