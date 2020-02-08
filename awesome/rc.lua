@@ -56,7 +56,7 @@ beautiful.init(theme_path)
 
 --| Default terminal and editor |--
 
-terminal = "konsole"
+terminal = "kitty"
 editor = os.getenv("EDITOR") or "nvim"
 editor_cmd = terminal .. " -e " .. editor
 
@@ -386,7 +386,7 @@ globalkeys = awful.util.table.join(
               {description = "show the menubar", group = "launcher"}),
 
     -- Rofi
-    awful.key({ modkey }, "p", function () awful.spawn('rofi -show drun -sidebar-mode -font "Hack 10" -width "20" -opacity "90" -terminal "konsole"') end,
+    awful.key({ modkey }, "p", function () awful.spawn('rofi -show drun -sidebar-mode -font "Hack 10" -width "20" -opacity "90" -terminal "kitty"') end,
               {description = "Run Rofi", group = "launcher"})
 )
 
