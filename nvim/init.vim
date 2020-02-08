@@ -11,15 +11,12 @@ Plug 'itchyny/lightline.vim'
 Plug 'taohexxx/lightline-buffer'
 Plug 'joshdick/onedark.vim'
 Plug 'lilydjwg/colorizer'
-Plug 'plasticboy/vim-markdown'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-fugitive'
 Plug 'godlygeek/tabular'
 Plug 'eugen0329/vim-esearch'
-Plug 'majutsushi/tagbar'
-Plug 'lvht/tagbar-markdown'
-" Plug 'ryanoasis/vim-devicons'
+Plug 'Scuilion/markdown-drawer'
 
 call plug#end()
 
@@ -66,14 +63,6 @@ let g:netrw_browsex_viewer = "xdg-open"
 nno <leader>t :TableFormat<cr>
 
 "==================================================
-" Settings for Vim-Markdown
-"==================================================
-let g:vim_markdown_conceal = 1
-let g:vim_markdown_folding_disabled = 1
-let g:vim_markdown_follow_anchor = 1
-let g:vim_markdown_autowrite = 1
-
-"==================================================
 " --{{ Settings for vim-esearch
 " It uses <leader>ff to search
 "==================================================
@@ -112,6 +101,13 @@ let g:ctrlp_max_files = 0
 let g:ctrlp_show_hidden = 1
 let g:ctrlp_switch_buffer = 'Et'
 let g:ctrlp_working_path_mode = 'w'
+
+"==================================================
+" Settings for Markdown drawer
+"==================================================
+let g:markdrawer_drawer_max_levels = 4 " max levels to display
+let g:markdrawer_toc = 'index' " displays as a TOC
+let g:markdrawer_width = "50"
 
 "==================================================
 " --{{ Settings for Lightline
@@ -288,9 +284,8 @@ nno <F3> :wa<Bar>exe "mksession! " . v:this_session<CR>
 " Toogle the markdown outline view.
 " and open it on the left side
 "==================================================
-nno <silent><F8> :TagbarToggle<cr>
-ino <silent><F8> :TagbarToggle<cr>
-let g:tagbar_left=0
+nno <silent><F8> :MarkDrawer<cr>
+ino <silent><F8> :MarkDrawer<cr>
 
 "==================================================
 " Snippets
