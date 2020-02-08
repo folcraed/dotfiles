@@ -4,11 +4,11 @@
 
 # terminal emulator
 super + Return
-    termite
+    kitty
 
 # program launcher
 super + p
-    rofi -show drun -sidebar-mode -font "Hack 9" -width "20" -opacity "90" -terminal "termite"
+    rofi -show drun -sidebar-mode -font "Hack 9" -width "20" -opacity "90" -terminal "kitty"
 
 # make sxhkd reload its configuration files:
 super + Escape
