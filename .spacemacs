@@ -59,15 +59,15 @@
    dotspacemacs-startup-buffer-responsive t
    dotspacemacs-scratch-mode 'text-mode
    dotspacemacs-new-empty-buffer-major-mode 'text-mode
-   dotspacemacs-themes '(doom-one-light
+   dotspacemacs-themes '(doom-one
                          doom-tomorrow-night
-                         doom-one
+                         doom-one-light
                          monokai
                          spacemacs-dark
                          spacemacs-light)
    dotspacemacs-mode-line-theme '(doom)
    dotspacemacs-colorize-cursor-according-to-state t
-   dotspacemacs-default-font '("Hack"
+   dotspacemacs-default-font '("JetBrains Mono"
                                :size 14
                                :weight normal
                                :width normal)
@@ -216,7 +216,7 @@
   (setq-default org-hide-emphasis-markers t)
   (setq org-directory "~/Dropbox/Notes")
   (setq org-agenda-files (quote ("~/Dropbox/Notes/agenda.org")))
-  (setq org-tags-column 100))
+  (setq org-tags-column 0))
 ;;==============================================================================
 ;; Emacs Custom settings
 ;;==============================================================================
@@ -239,7 +239,7 @@ This function is called at the very end of Spacemacs initialization."
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(font-lock-comment-face ((t (:slant italic))))
- '(org-table ((t (:family "Hack"))))
+ '(org-table ((t (:family "JetBrains Mono"))))
  '(variable-pitch ((t (:family "Noto Sans")))))
 )
 
