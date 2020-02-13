@@ -397,6 +397,10 @@
     (kill-new (substring text (match-beginning 1) (match-end 1))))))
 (global-set-key (kbd "C-c e") 'my-org-export-url)
 
+;;==============================================
+;; Starts a server for terminal frames
+;;==============================================
+(server-start)
 
 ;;==============================================
 ;; Custom settings
@@ -408,7 +412,7 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(company-box-enable-icon nil)
- '(cursor-type (quote (bar . 3)))
+ '(cursor-type (quote (bar . 2)))
  '(custom-enabled-themes (quote (doom-one)))
  '(custom-safe-themes
    (quote
@@ -423,6 +427,7 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
+ '(cursor ((t (:background "chartreuse"))))
  '(font-lock-comment-delimiter-face ((t (:inherit font-lock-comment-face))))
  '(font-lock-comment-face ((t (:foreground "#5B6268" :slant italic))))
  '(org-table ((t (:family "JetBrains Mono"))))
