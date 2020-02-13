@@ -219,7 +219,7 @@
 
 (setq-default org-display-custom-times t)
 (setq org-time-stamp-custom-formats '("[%a %b %e %Y]" . "<%a %b %e %Y %H:%M>")
-      org-agenda-files (quote ("~/Dropbox/Notes/agenda.org"))
+      org-agenda-files (quote ("~/Dropbox/Notes/"))
       org-goto-interface 'outline-path-completion
       org-outline-path-complete-in-steps nil)
 
