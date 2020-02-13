@@ -4,11 +4,11 @@
 
 # terminal emulator
 super + Return
-    kitty
+    konsole
 
 # program launcher
 super + p
-    rofi -show drun -sidebar-mode -font "Hack 9" -width "20" -opacity "90" -terminal "kitty"
+    rofi -show drun -sidebar-mode -font "Hack 9" -width "20" -opacity "90" -terminal "konsole"
 
 # make sxhkd reload its configuration files:
 super + Escape
@@ -146,4 +146,4 @@ super + alt + {Left,Down,Up,Right}
 #
 
 super + e
-      emacsclient -c -a "emacs"
+      emacs
