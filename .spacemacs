@@ -102,6 +102,7 @@
    dotspacemacs-smartparens-strict-mode nil
    dotspacemacs-smart-closing-parenthesis t
    dotspacemacs-highlight-delimiters 'all
+   dotspacemacs-enable-server nil
    dotspacemacs-persistent-server nil
    dotspacemacs-search-tools '("rg" "grep")
    dotspacemacs-frame-title-format "%b - %I"
@@ -190,8 +191,8 @@
 ;; Org settings
 ;;==============================================================================
   (setq-default org-startup-with-inline-images nil)
-  (with-eval-after-load 'org
-    (add-hook 'org-mode-hook 'variable-pitch-mode))
+  ;; (with-eval-after-load 'org
+  ;;   (add-hook 'org-mode-hook 'variable-pitch-mode))
   (setq org-ellipsis " ➥")
   (setq org-bullets-bullet-list '("●" "○" "◉"))
   (setq-default org-file-apps
@@ -215,7 +216,7 @@
   (setq org-time-stamp-custom-formats '("[%a %e %b %Y]" . "<%a %e %b %Y %H:%M>"))
   (setq-default org-hide-emphasis-markers t)
   (setq org-directory "~/Dropbox/Notes")
-  (setq org-agenda-files (quote ("~/Dropbox/Notes/agenda.org")))
+  (setq org-agenda-files (quote ("~/Dropbox/Notes/")))
   (setq org-tags-column 0))
 ;;==============================================================================
 ;; Emacs Custom settings
@@ -239,7 +240,7 @@ This function is called at the very end of Spacemacs initialization."
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(font-lock-comment-face ((t (:slant italic))))
- '(org-table ((t (:family "JetBrains Mono"))))
- '(variable-pitch ((t (:family "Noto Sans")))))
-)
+ ;; '(org-table ((t (:family "JetBrains Mono")))))
+ ;; '(variable-pitch ((t (:family "Noto Sans")))))
+))
 
