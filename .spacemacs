@@ -68,7 +68,7 @@
    dotspacemacs-mode-line-theme '(doom)
    dotspacemacs-colorize-cursor-according-to-state t
    dotspacemacs-default-font '("JetBrains Mono"
-                               :size 14
+                               :size 13
                                :weight normal
                                :width normal)
    dotspacemacs-leader-key "SPC"
