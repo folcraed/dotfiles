@@ -5,7 +5,8 @@
 "==================================================
 call plug#begin('~/.config/nvim/plugged')
 
-Plug 'ctrlpvim/ctrlp.vim'
+Plug 'junegunn/fzf'
+Plug 'junegunn/fzf.vim'
 Plug 'scrooloose/nerdtree'
 Plug 'itchyny/lightline.vim'
 Plug 'taohexxx/lightline-buffer'
@@ -16,6 +17,7 @@ Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-fugitive'
 Plug 'godlygeek/tabular'
 Plug 'eugen0329/vim-esearch'
+Plug 'masukomi/vim-markdown-folding', { 'for': 'markdown' }
 Plug 'Scuilion/markdown-drawer'
 
 call plug#end()
@@ -48,9 +50,11 @@ set nowritebackup
 set noshowmode
 set conceallevel=2
 set concealcursor=nc
+set foldcolumn=2
 set fcs=eob:\
 set spelllang=en_us
 set spellfile=~/.config/nvim/spell/en.utf-8.add
+let mapleader = " "
  
 "==================================================
 " Set xdg-open to open links with gx
@@ -89,25 +93,23 @@ let g:NERDTreeDirArrowCollapsible = '▾'
 nno <silent><leader>e :edit .<cr>
 
 "==================================================
-" Settings CtrlP
+" Settings for FZF
 "==================================================
-let g:ctrlp_map = '<C-p>'
-let g:ctrlp_cmd = 'CtrlP'
-nno <leader>b :CtrlPBuffer<cr>
-nno <leader>p :CtrlPMRU<cr>
-let g:ctrlp_by_filename = 1
-let g:ctrlp_mac_depth = 3
-let g:ctrlp_max_files = 0
-let g:ctrlp_show_hidden = 1
-let g:ctrlp_switch_buffer = 'Et'
-let g:ctrlp_working_path_mode = 'w'
+let g:fzf_buffers_jump = 1
 
 "==================================================
 " Settings for Markdown drawer
 "==================================================
-let g:markdrawer_drawer_max_levels = 4 " max levels to display
+let g:markdrawer_drawer_max_levels = 5 " max levels to display
 let g:markdrawer_toc = 'index' " displays as a TOC
 let g:markdrawer_width = "50"
+
+"==================================================
+" Settings for Markdown folding
+"==================================================
+if has ("autocmd")
+    filetype plugin indent on
+endif
 
 "==================================================
 " --{{ Settings for Lightline
@@ -173,6 +175,16 @@ colorscheme onedark
 "==================================================
 
 "==================================================
+" FZF Keybindings
+"==================================================
+nno <silent><leader>o :Files<cr>
+nno <silent><leader>O :FZF ~<cr>
+nno <silent><leader>b :Buffers<cr>
+nno <silent><leader>l :BLines<cr>
+nno <silent><leader>p :Lines<cr>
+nno <leader>g :Rg
+
+"==================================================
 " This opens markdown in okular
 "==================================================
 nno <silent><F9> :!okular %:p &<cr><cr>
@@ -203,7 +215,7 @@ nno <A-down> <C-W>-
 "==================================================
 " This turns off search highlighting
 "==================================================
-nno <silent><leader>\ :noh<cr>
+nno <silent><leader>h :noh<cr>
 
 "==================================================
 "Make moving back and forth in buffers easier
@@ -282,7 +294,6 @@ nno <F3> :wa<Bar>exe "mksession! " . v:this_session<CR>
 
 "==================================================
 " Toogle the markdown outline view.
-" and open it on the left side
 "==================================================
 nno <silent><F8> :MarkDrawer<cr>
 ino <silent><F8> :MarkDrawer<cr>
