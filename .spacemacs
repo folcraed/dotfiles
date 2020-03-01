@@ -160,7 +160,6 @@
   (define-key evil-normal-state-map (kbd "<down>") 'evil-next-visual-line)
   (define-key evil-normal-state-map (kbd "k") 'evil-previous-visual-line)
   (define-key evil-normal-state-map (kbd "<up>") 'evil-previous-visual-line)
-  (define-key evil-normal-state-map (kbd "gj") 'avy-goto-char-timer)
   (global-set-key (kbd "<f8>") 'flyspell-mode)
 ;;==============================================================================
 ;; Doom modeline settings
