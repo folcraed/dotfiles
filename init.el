@@ -5,7 +5,7 @@
 (setq inhibit-startup-message t)
 (setq ring-bell-function 'ignore)
 (fset 'yes-or-no-p 'y-or-n-p)
-;; (menu-bar-mode 0)
+(menu-bar-mode 0)
 (tool-bar-mode 0)
 (scroll-bar-mode 0)
 (prefer-coding-system 'utf-8)
@@ -87,7 +87,7 @@
 
 (use-package expand-region
   :ensure t
-  :config 
+  :config
   (global-set-key (kbd "C-=") 'er/expand-region))
 
 (use-package rainbow-delimiters
@@ -199,7 +199,7 @@
   :ensure t
   :config
   (add-hook 'org-mode-hook (lambda () (org-bullets-mode 1)))
-  (setq org-bullets-bullet-list '("●" "○" "◉")))
+  (setq org-bullets-bullet-list '("●" "○")))
 
 (setq-default org-file-apps
 	      (quote
@@ -224,6 +224,8 @@
       org-agenda-files (quote ("~/Dropbox/Notes/"))
       org-goto-interface 'outline-path-completion
       org-outline-path-complete-in-steps nil)
+
+;; (require 'org-tempo)
 
 ;;==============================================
 ;;  Helm and friends
@@ -265,12 +267,13 @@
 (use-package flyspell-correct-helm
   :ensure t
   :init
-  (setq flyspell-correct-interface #'flyspell-correct-helm))
-
-(setq ispell-program-name "aspell")
-(global-set-key (kbd "<f8>") 'flyspell-mode)
+  (setq flyspell-correct-interface #'flyspell-correct-helm
+        ispell-program-name "aspell"
+        ispell-dictionary "en_US"
+        ispell-local-dictionary "american"))
 (global-set-key (kbd "C-<f8>") 'flyspell-buffer)
-(global-set-key (kbd "M-<f8>") 'flyspell-correct-at-point)
+(global-set-key (kbd "<f8>") 'flyspell-correct-at-point)
+
 ;;==============================================
 ;; Projectile
 ;;==============================================
@@ -306,6 +309,7 @@
 (define-key d-map (kbd "n") 'dired-narrow)
 (define-key d-map (kbd "k") 'helm-show-kill-ring)
 (define-key d-map (kbd "r") 'helm-resume)
+(define-key d-map (kbd "s") 'flyspell-mode)
 (define-key d-map (kbd "t") 'org-time-stamp)
 (define-key d-map (kbd "x") 'kill-buffer-and-window)
 (global-set-key (kbd "C-c a") 'org-agenda)
@@ -409,7 +413,7 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(company-box-enable-icon nil)
- '(cursor-type (quote (bar . 2)))
+ ;; '(cursor-type (quote (bar . 2)))
  '(custom-enabled-themes (quote (doom-one-light)))
  '(custom-safe-themes
    (quote
