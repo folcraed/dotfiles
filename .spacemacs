@@ -59,9 +59,9 @@
    dotspacemacs-startup-buffer-responsive t
    dotspacemacs-scratch-mode 'text-mode
    dotspacemacs-new-empty-buffer-major-mode 'text-mode
-   dotspacemacs-themes '(doom-one
+   dotspacemacs-themes '(doom-one-light
                          doom-tomorrow-night
-                         doom-one-light
+                         doom-one
                          monokai
                          spacemacs-dark
                          spacemacs-light)
@@ -205,6 +205,8 @@
 	 "* TODO %t %?")
 	("c" "Changes" entry (file+headline "~/Dropbox/Notes/changes.org" "Changes")
 	 "* %t %?")
+	("j" "Jots" entry (file+headline "~/Dropbox/Notes/jots.org" "Refile")
+	 "* %?")
 	("s" "Software" entry (file+headline "~/Dropbox/Notes/Software.org" "Refile")
 	 "* %?")))
   (org-projectile-per-project)
