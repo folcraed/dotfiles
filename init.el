@@ -9,7 +9,7 @@
 (tool-bar-mode 0)
 (scroll-bar-mode 0)
 (prefer-coding-system 'utf-8)
-(set-default-font "JetBrains Mono 10")
+(set-default-font "JetBrains Mono 11")
 (put 'dired-find-alternate-file 'disabled nil)
 (global-visual-line-mode 1)
 ;; This is suppose to fix ??? displaying instead
