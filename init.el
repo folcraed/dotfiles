@@ -1,5 +1,5 @@
 ;; -*- lexical-binding: t -*-
-;; My Emacs settings Ver 0.92
+;; My Emacs settings Ver 0.93
 ;; File or commit timestamp show when last updated.
 
 (setq inhibit-startup-message t)
@@ -129,17 +129,6 @@
       dired-dwim-target t)
 
 ;;===============================================
-;;  Multiple Cursors
-;;===============================================
-(use-package multiple-cursors
-  :ensure t)
-(global-set-key (kbd "C-c m c") 'mc/edit-lines)
-(global-set-key (kbd "C->") 'mc/mark-next-like-this)
-(global-set-key (kbd "C-<") 'mc/mark-previous-like-this)
-(global-set-key (kbd "C-M->") 'mc/skip-to-next-like-this)
-(global-set-key (kbd "C-M-<") 'mc/skip-to-previous-like-this)
-
-;;===============================================
 ;;  Doom modeline & theme
 ;;===============================================
 
@@ -225,7 +214,7 @@
       org-goto-interface 'outline-path-completion
       org-outline-path-complete-in-steps nil)
 
-;; (require 'org-tempo)
+;; (require 'org-tempo) <--This will be needed in Org 9.2 and above
 
 ;;==============================================
 ;;  Helm and friends
@@ -291,14 +280,6 @@
 
 (use-package magit
   :ensure t)
-
-;;===============================================
-;;  Lua mode for Awesome editing
-;;===============================================
-(use-package lua-mode
-  :ensure t
-  :config
-  (setq lua-indent-level 4))
 
 ;;===============================================
 ;; Some personal keybindings
@@ -367,6 +348,7 @@
                          (display-buffer-in-side-window)
                          (inhibit-same-window . t)
                          (window-height . 0.3)))
+(cua-mode t)
 
 ;;==============================================
 ;; Narrow or widen whatever I'm working on
@@ -421,7 +403,7 @@
  '(org-export-backends (quote (ascii html md odt)))
  '(package-selected-packages
    (quote
-    (winum which-key use-package undo-tree tablist rainbow-mode rainbow-delimiters persp-projectile peep-dired org-bullets multiple-cursors minions magit lua-mode iedit helm-swoop helm-rg helm-projectile helm-org gnu-elpa-keyring-update flyspell-correct-helm expand-region doom-themes doom-modeline dired-subtree dired-narrow company-box avy all-the-icons-dired)))
+    (winum which-key use-package undo-tree tablist rainbow-mode rainbow-delimiters persp-projectile peep-dired org-bullets minions magit iedit helm-swoop helm-rg helm-projectile helm-org gnu-elpa-keyring-update flyspell-correct-helm expand-region doom-themes doom-modeline dired-subtree dired-narrow company-box avy all-the-icons-dired)))
  '(persp-modestring-dividers (quote ("(" ")" "|"))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
