@@ -33,8 +33,7 @@ set tabstop=4
 set shiftwidth=4
 set history=50
 set linebreak
-set ignorecase
-set smartcase
+set ignorecase smartcase
 set wildmode=list:longest,full
 set ttimeoutlen=50
 set dir=~/Temp
