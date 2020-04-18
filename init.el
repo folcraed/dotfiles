@@ -4,6 +4,8 @@
 
 (setq inhibit-startup-message t)
 (setq ring-bell-function 'ignore)
+(setq frame-title-format "Emacs")
+(setq icon-title-format "Emacs")
 (fset 'yes-or-no-p 'y-or-n-p)
 (menu-bar-mode 0)
 (tool-bar-mode 0)
