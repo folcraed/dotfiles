@@ -25,6 +25,7 @@
      (spell-checking :variables
                      spell-checking-enable-by-default nil)
      pdf
+     elfeed
      treemacs
      search-engine
      )
@@ -39,6 +40,8 @@
    dotspacemacs-excluded-packages '(vi-tilde-fringe
                                     neotree
                                     fancy-battery
+                                    elfeed-goodies
+                                    elfeed-web
                                     yasnippet
                                     auto-yasnippet
                                     google-translate)
@@ -59,9 +62,9 @@
    dotspacemacs-startup-buffer-responsive t
    dotspacemacs-scratch-mode 'text-mode
    dotspacemacs-new-empty-buffer-major-mode 'text-mode
-   dotspacemacs-themes '(doom-one-light
+   dotspacemacs-themes '(doom-one
                          doom-tomorrow-night
-                         doom-one
+                         doom-one-light
                          monokai
                          spacemacs-dark
                          spacemacs-light)
@@ -139,11 +142,15 @@
 ;;==============================================================================
   (setq-default make-backup-files nil
                 backup-inhibited t
+                frame-title-format "Spacemacs"
+                icon-title-format "Spacemacs"
                 create-lockfiles nil
                 auto-save-default nil
                 size-indication-mode 1)
   (setq-default tab-width 4 indent-tabs-mode nil)
-  (setq ispell-program-name "aspell")
+  (setq ispell-program-name "aspell"
+        ispell-dictionary "en_US"
+        ispell-local-dictionary "american")
   (global-company-mode)
   (setq company-idle-delay 1)
   (setq avy-case-fold-search nil)
@@ -193,7 +200,7 @@
   ;; (with-eval-after-load 'org
   ;;   (add-hook 'org-mode-hook 'variable-pitch-mode))
   (setq org-ellipsis " ➥")
-  (setq org-bullets-bullet-list '("●" "○" "◉"))
+  (setq org-bullets-bullet-list '("●" "○"))
   (setq-default org-file-apps
    (quote
     ((auto-mode . emacs)
@@ -213,12 +220,48 @@
   (setq org-projectile-per-project-filepath "todo.org")
   (setq-default org-startup-folded (quote showall))
   (setq org-startup-indented t)
+  (setq org-todo-keywords
+      '((sequence "TODO" "WORKING" "DONE")))
   (setq-default org-display-custom-times t)
   (setq org-time-stamp-custom-formats '("[%a %e %b %Y]" . "<%a %e %b %Y %H:%M>"))
   (setq-default org-hide-emphasis-markers t)
   (setq org-directory "~/Dropbox/Notes")
   (setq org-agenda-files (quote ("~/Dropbox/Notes/")))
   (setq org-tags-column 0))
+;==============================================================================
+;; Elfeed feed list
+;;==============================================================================
+(setq elfeed-feeds
+      '(("https://forum.manjaro.org/c/announcements.rss" Linux)
+        ("http://feeds.feedburner.com/d0od" Linux)
+        ("https://blog.ubuntu.com/feed" Linux)
+        ("https://gramps-project.org/blog/feed/" Genealogy)
+        ("https://kubuntu.org/news/feed" Linux)
+        ("http://feeds.arstechnica.com/arstechnica/index/" News)
+        ("http://viking-archaeology-blog.blogspot.com/feeds/posts/default" News)
+        ("https://www.gnome-look.org/gnome-look-content.rdf" Linux)
+        ("http://archaeology-in-europe.blogspot.com/feeds/posts/default" News)
+        ("https://sachachua.com/blog/category/emacs-news/feed/" Linux)
+        ("https://www.sciencenews.org/feed" News)
+        ("https://pryorfrancis.wordpress.com/feed/" Blog)
+        ("https://www.heritagedaily.com/feed" Genealogy)
+        ("http://planet.ubuntu.com/rss20.xml" Linux)
+        ("https://www.linuxinsider.com/perl/syndication/rssfull.pl" Linux)
+        ("http://planetkde.org/rss20.xml" Linux)
+        ("https://www.zdnet.com/blog/open-source/rss.xml" Linux)
+        ("https://www.phoronix.com/rss.php" News)
+        ("http://www.kde.org/dotkdeorg.rdf" Linux)
+        ("https://opensource.com/feed" Linux)
+        ("http://planet.gnome.org/rss20.xml" Linux)
+        ("https://www.ancestry.com/boards/surnames.walsh/rss.xml" Genealogy)
+        ("https://www.ancestry.com/boards/surnames.carroll/rss.xml" Genealogy)
+        ("http://feeds.feedburner.com/familyhistorydaily" Genealogy)
+        ("https://www.ancestry.com/boards/surnames.galletly/rss.xml" Genealogy)
+        ("https://www.ancestry.com/boards/surnames.speed/rss.xml" Genealogy)
+        ("http://blogs.ancestry.com/ancestry/feed/" Genealogy)
+        ("https://www.ancestry.com/boards/surnames.donovan/rss.xml" Genealogy)
+        ("https://www.johngrenham.com/blog/feed/" Genealogy)
+        ("https://www.ancestry.com/boards/surnames.durkin/rss.xml" Genealogy)))
 ;;==============================================================================
 ;; Emacs Custom settings
 ;;==============================================================================
@@ -232,6 +275,7 @@ This function is called at the very end of Spacemacs initialization."
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
+ '(company-box-enable-icon nil)
  '(package-selected-packages
    (quote
     (ansi package-build shut-up epl git commander f s rainbow-mode csv-mode srefactor yapfify stickyfunc-enhance importmagic epc ctable concurrent deferred xcscope ggtags flycheck counsel-gtags web-mode orgit magit-svn evil-nerd-commenter evil-magit dumb-jump doom-modeline aggressive-indent counsel company magit-popup magit transient haml-mode all-the-icons powerline ace-window dash org-plus-contrib evil yasnippet xterm-color ws-butler writeroom-mode winum which-key web-beautify volatile-highlights uuidgen use-package toc-org tagedit symon swiper string-inflection spaceline-all-the-icons smeargle slim-mode shrink-path shell-pop scss-mode sass-mode restart-emacs rainbow-delimiters pug-mode prettier-js popwin pfuture persp-mode pcre2el password-generator paradox overseer org-projectile org-preview-html org-present org-pomodoro org-mime org-download org-bullets org-brain open-junk-file nameless multi-term move-text monokai-theme mmm-mode markdown-toc magit-gitflow macrostep lv lorem-ipsum link-hint indent-guide impatient-mode hungry-delete ht hl-todo highlight-parentheses highlight-numbers highlight-indentation goto-chg golden-ratio gnuplot gitignore-templates gitconfig-mode gitattributes-mode git-timemachine git-messenger git-link git-commit gh-md fuzzy font-lock+ flx-ido fill-column-indicator eyebrowse expand-region evil-visualstar evil-visual-mark-mode evil-unimpaired evil-tutor evil-surround evil-org evil-numbers evil-matchit evil-lisp-state evil-lion evil-indent-plus evil-iedit-state evil-goggles evil-exchange evil-escape evil-ediff evil-cleverparens evil-args evil-anzu eval-sexp-fu eshell-z eshell-prompt-extras esh-help emmet-mode elisp-slime-nav eldoc-eval editorconfig dotenv-mode diminish define-word counsel-projectile company-web company-statistics column-enforce-mode clean-aindent-mode centered-cursor-mode auto-highlight-symbol auto-dictionary auto-compile ace-link ac-ispell))))
