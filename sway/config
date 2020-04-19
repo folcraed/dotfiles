@@ -14,15 +14,15 @@ set $down j
 set $up k
 set $right l
 # Your preferred terminal emulator
-set $term kitty
+set $term alacritty
 # Your preferred application launcher
-set $menu rofi -show drun -sidebar-mode -font "Ubuntu Mono 10" -width "20" -opacity "90" -terminal "kitty"
+set $menu rofi -show drun -sidebar-mode -font "JetBrains Mono 11" -width "20" -opacity "90" -terminal "alacritty"
 
 
 ### Output configuration
 #
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
-output * bg /home/rob/Pictures/sailingship-Solarized.jpg fill
+output * bg /home/rob/Pictures/Darkest_Hour.jpg fill
 #
 # Example configuration:
 #
@@ -31,7 +31,7 @@ output * bg /home/rob/Pictures/sailingship-Solarized.jpg fill
 # You can get the names of your outputs by running: swaymsg -t get_outputs
 
 exec swayidle -w timeout 900 'swaymsg "output * dpms off"' resume 'swaymsg "output * dpms on"'
-
+exec export QT_QPA_PLATFORM=wayland
 ### Input configuration
 #
 # Example configuration:
@@ -47,13 +47,15 @@ exec swayidle -w timeout 900 'swaymsg "output * dpms off"' resume 'swaymsg "outp
 # Read `man 5 sway-input` for more information about this section.
 
 # Font
-font pango:Hack 11
+font pango:"Noto Sans" 11
 
 #Set tile gaps
 gaps inner 10
 
 # Set the border for windows
 default_border pixel 1
+titlebar_border_thickness 0
+titlebar_padding 2
 
 ### Key bindings
 #
@@ -217,7 +219,7 @@ include /etc/sway/config.d/*
 exec --no-startup-id gnome-keyring-daemon -s
 exec --no-startup-id /usr/lib64/polkit-gnome/polkit-gnome-authentication-agent-1
 exec --no-startup-id xset s off
-exec --no-startup-id clipit
+exec --no-startup-id mako
 exec --no-startup-id dropbox start -i
 exec xrdb -load ~/.Xresources
 
