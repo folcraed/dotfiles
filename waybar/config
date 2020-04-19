@@ -1,7 +1,7 @@
 {
     "layer": "top", // Waybar at top layer
-    // "position": "bottom", // Waybar position (top|bottom|left|right)
-    "height": 24, // Waybar height (to be removed for auto height)
+    "position": "top", // Waybar position (top|bottom|left|right)
+    "height": 20, // Waybar height (to be removed for auto height)
     // "width": 1280, // Waybar width
     // Choose the order of the modules
     "modules-left": ["sway/workspaces", "sway/mode"],
@@ -38,7 +38,8 @@
         "spacing": 10
     },
     "clock": {
-        "tooltip-format": "{:%Y-%m-%d | %H:%M}",
+        "format": "{:%I:%M %p}",
+        "tooltip-format": "{:%a %e %b %Y | %I:%M %p}",
         "format-alt": "{:%Y-%m-%d}"
     },
     "cpu": {
