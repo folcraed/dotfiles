@@ -11,6 +11,7 @@ Plug 'scrooloose/nerdtree'
 Plug 'itchyny/lightline.vim'
 Plug 'taohexxx/lightline-buffer'
 Plug 'joshdick/onedark.vim'
+Plug 'arcticicestudio/nord-vim'
 Plug 'lilydjwg/colorizer'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-commentary'
@@ -114,7 +115,7 @@ endif
 " --{{ Settings for Lightline
 "==================================================
 let g:lightline = {
-    \ 'colorscheme': 'one',
+    \ 'colorscheme': 'nord',
     \ 'tabline': {
     \   'left': [ [ 'bufferinfo' ],
     \             [ 'separator' ],
@@ -149,23 +150,23 @@ let g:lightline = {
 " --{{ Set up colorschemes
 "==================================================
 " let g:neodark#background = '#2b303b'
-let g:onedark_terminal_italics = 1
+" let g:onedark_terminal_italics = 1
 " let g:spacegray_use_italics = 1
 " let g:spacegray_underline_search = 1
 " let g:onedark_termcolors = 256
 " let g:one_allow_italics = 1
-" let g:nord_italic = 1
-" let g:nord_italic_comments = 1
+let g:nord_italic = 1
+let g:nord_italic_comments = 1
 
 set background=dark
 " colorscheme neodark
-colorscheme onedark
+" colorscheme onedark
 " colorscheme spacegray
 " colorscheme Tomorrow-Night
 " colorscheme solarized8
 " colorscheme materialbox
 " colorscheme base16-ocean
-" colorscheme nord
+colorscheme nord
 " colorscheme hybrid_material
 " --}} End of colorschemes
 
