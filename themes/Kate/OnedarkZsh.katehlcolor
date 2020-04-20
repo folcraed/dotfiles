@@ -1,0 +1,30 @@
+[Highlighting Zsh - Schema Onedark]
+Alerts:Alert Level 1=28,ffe85848,ffe85848,1,0,0,0,ff451e1a,ff000000,,---
+Alerts:Alert Level 2=28,ffca9219,ffca9219,1,0,0,0,ff451e1a,ff000000,,---
+Alerts:Alert Level 3=28,ff81ca2d,ff81ca2d,1,0,0,0,ff4b2f35,,,---
+Alerts:Normal Text=0,ffabb2bf,ffabb2bf,0,0,0,0,,,,---
+Alerts:Region Marker=25,ff88c0d0,ff88c0d0,0,0,0,0,ff2e3e45,,,---
+Zsh:Backquote=1,ffc678dd,ffc678dd,1,0,0,0,,,,---
+Zsh:Builtin=1,ff61afef,ff000000,1,0,0,0,,,,---
+Zsh:Command=1,ffd19a66,ff000000,1,0,0,0,,,,---
+Zsh:Comment=21,ff5c6370,ff5c6370,0,1,0,0,,,,---
+Zsh:Control=1,ffc678dd,ffc678dd,1,0,0,0,,,,---
+Zsh:Error=30,ffbe5046,ffbe5046,0,0,0,1,,,,---
+Zsh:Escape=16,ff56b6c2,ff56b6c2,0,0,0,0,,,,---
+Zsh:Expression=29,ff98c379,ff98c379,0,0,0,0,,,,---
+Zsh:Function=2,ffe5c07b,ffe5c07b,0,0,0,0,,,,---
+Zsh:Keyword=1,ffc678dd,ffc678dd,1,0,0,0,,,,---
+Zsh:Normal Text=0,ffabb2bf,ffabb2bf,0,0,0,0,,,,---
+Zsh:Option=0,ffabb2bf,ffabb2bf,0,0,0,0,,,,---
+Zsh:Path=0,ffabb2bf,ffabb2bf,0,0,0,0,,,,---
+Zsh:Redirection=1,ff223388,ff000000,1,0,0,0,,,,---
+Zsh:String DoubleQ=12,ffed6e75,ffba616a,0,0,0,0,,,,---
+Zsh:String Escape=16,ff56b6c2,ff56b6c2,0,0,0,0,,,,---
+Zsh:String SingleQ=12,ffed6e75,ffba616a,0,0,0,0,,,,---
+Zsh:String Transl.=12,ffed6e75,ffba616a,0,0,0,0,,,,---
+Zsh:Variable=29,ff98c379,ff98c379,0,0,0,0,,,,---
+
+[KateHLColors]
+full schema=false
+highlight=Zsh
+schema=Onedark
