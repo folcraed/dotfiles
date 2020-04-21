@@ -183,6 +183,7 @@
   :ensure t
   :pin org
   :config
+  (add-hook 'org-mode-hook 'variable-pitch-mode)
   (setq-default org-hide-emphasis-markers t)
   (setq org-startup-folded nil
 	org-startup-indented t
@@ -443,6 +444,8 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(company-box-enable-icon nil)
+ '(cua-normal-cursor-color "#d8dee9")
+ '(cursor-type (quote (bar . 2)))
  '(custom-enabled-themes (quote (doom-one)))
  '(custom-safe-themes
    (quote
@@ -460,5 +463,7 @@
  '(cursor ((t (:background "#61AFEF"))))
  '(font-lock-comment-delimiter-face ((t (:inherit font-lock-comment-face))))
  '(font-lock-comment-face ((t (:foreground "#5B6268" :slant italic))))
- '(persp-selected-face ((t (:foreground "orange" :weight bold)))))
+ '(org-table ((t (:foreground "#a9a1e1" :family "JetBrains Mono"))))
+ '(persp-selected-face ((t (:foreground "orange" :weight bold))))
+ '(variable-pitch ((t (:family "Noto Mono")))))
 (put 'narrow-to-region 'disabled nil)
