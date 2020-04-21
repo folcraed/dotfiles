@@ -465,5 +465,5 @@
  '(font-lock-comment-face ((t (:foreground "#5B6268" :slant italic))))
  '(org-table ((t (:foreground "#a9a1e1" :family "JetBrains Mono"))))
  '(persp-selected-face ((t (:foreground "orange" :weight bold))))
- '(variable-pitch ((t (:family "Noto Mono")))))
+ '(variable-pitch ((t (:family "Noto Sans")))))
 (put 'narrow-to-region 'disabled nil)
