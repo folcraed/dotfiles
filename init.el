@@ -292,44 +292,6 @@
   :ensure t)
 
 ;;===============================================
-;; Elfeed
-;;===============================================
-(use-package elfeed
-  :ensure t)
-
-(setq elfeed-feeds
-      '(("https://forum.manjaro.org/c/announcements.rss" Linux)
-        ("http://feeds.feedburner.com/d0od" Linux)
-        ("https://blog.ubuntu.com/feed" Linux)
-        ("https://gramps-project.org/blog/feed/" Genealogy)
-        ("https://kubuntu.org/news/feed" Linux)
-        ("http://feeds.arstechnica.com/arstechnica/index/" News)
-        ("http://viking-archaeology-blog.blogspot.com/feeds/posts/default" News)
-        ("https://www.gnome-look.org/gnome-look-content.rdf" Linux)
-        ("http://archaeology-in-europe.blogspot.com/feeds/posts/default" News)
-        ("https://sachachua.com/blog/category/emacs-news/feed/" Linux)
-        ("https://www.sciencenews.org/feed" News)
-        ("https://pryorfrancis.wordpress.com/feed/" Blog)
-        ("https://www.heritagedaily.com/feed" Genealogy)
-        ("http://planet.ubuntu.com/rss20.xml" Linux)
-        ("https://www.linuxinsider.com/perl/syndication/rssfull.pl" Linux)
-        ("http://planetkde.org/rss20.xml" Linux)
-        ("https://www.zdnet.com/blog/open-source/rss.xml" Linux)
-        ("https://www.phoronix.com/rss.php" News)
-        ("http://www.kde.org/dotkdeorg.rdf" Linux)
-        ("https://opensource.com/feed" Linux)
-        ("http://planet.gnome.org/rss20.xml" Linux)
-        ("https://www.ancestry.com/boards/surnames.walsh/rss.xml" Genealogy)
-        ("https://www.ancestry.com/boards/surnames.carroll/rss.xml" Genealogy)
-        ("http://feeds.feedburner.com/familyhistorydaily" Genealogy)
-        ("https://www.ancestry.com/boards/surnames.galletly/rss.xml" Genealogy)
-        ("https://www.ancestry.com/boards/surnames.speed/rss.xml" Genealogy)
-        ("http://blogs.ancestry.com/ancestry/feed/" Genealogy)
-        ("https://www.ancestry.com/boards/surnames.donovan/rss.xml" Genealogy)
-        ("https://www.johngrenham.com/blog/feed/" Genealogy)
-        ("https://www.ancestry.com/boards/surnames.durkin/rss.xml" Genealogy)))
-
-;;===============================================
 ;; Some personal keybindings
 ;;===============================================
 
@@ -454,7 +416,7 @@
  '(org-export-backends (quote (ascii html md odt)))
  '(package-selected-packages
    (quote
-    (elfeed rg winum which-key use-package undo-tree tablist rainbow-mode rainbow-delimiters persp-projectile peep-dired org-bullets minions magit iedit helm-swoop helm-rg helm-projectile helm-org gnu-elpa-keyring-update flyspell-correct-helm expand-region doom-themes doom-modeline dired-subtree dired-narrow company-box avy all-the-icons-dired)))
+    (rg winum which-key use-package undo-tree tablist rainbow-mode rainbow-delimiters persp-projectile peep-dired org-bullets minions magit iedit helm-swoop helm-rg helm-projectile helm-org gnu-elpa-keyring-update flyspell-correct-helm expand-region doom-themes doom-modeline dired-subtree dired-narrow company-box avy all-the-icons-dired)))
  '(persp-modestring-dividers (quote ("(" ")" "|"))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
