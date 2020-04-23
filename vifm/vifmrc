@@ -17,8 +17,8 @@ set number
 " Selected color scheme
 
 " colorscheme solarized-dark
-" colorscheme onedark
-colorscheme Nord
+colorscheme onedark
+" colorscheme Nord
 " colorscheme spacegray
 " colorscheme tomorrow
 
