@@ -12,7 +12,7 @@ Plug 'itchyny/lightline.vim'
 Plug 'taohexxx/lightline-buffer'
 Plug 'joshdick/onedark.vim'
 Plug 'arcticicestudio/nord-vim'
-Plug 'lilydjwg/colorizer'
+Plug 'norcalli/nvim-colorizer.lua'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-fugitive'
@@ -55,7 +55,7 @@ set fcs=eob:\
 set spelllang=en_us
 set spellfile=~/.config/nvim/spell/en.utf-8.add
 let mapleader = " "
- 
+
 "==================================================
 " Set xdg-open to open links with gx
 "==================================================
@@ -115,7 +115,7 @@ endif
 " --{{ Settings for Lightline
 "==================================================
 let g:lightline = {
-    \ 'colorscheme': 'nord',
+    \ 'colorscheme': 'one',
     \ 'tabline': {
     \   'left': [ [ 'bufferinfo' ],
     \             [ 'separator' ],
@@ -150,23 +150,23 @@ let g:lightline = {
 " --{{ Set up colorschemes
 "==================================================
 " let g:neodark#background = '#2b303b'
-" let g:onedark_terminal_italics = 1
+let g:onedark_terminal_italics = 1
 " let g:spacegray_use_italics = 1
 " let g:spacegray_underline_search = 1
 " let g:onedark_termcolors = 256
 " let g:one_allow_italics = 1
-let g:nord_italic = 1
-let g:nord_italic_comments = 1
+" let g:nord_italic = 1
+" let g:nord_italic_comments = 1
 
 set background=dark
 " colorscheme neodark
-" colorscheme onedark
+colorscheme onedark
 " colorscheme spacegray
 " colorscheme Tomorrow-Night
 " colorscheme solarized8
 " colorscheme materialbox
 " colorscheme base16-ocean
-colorscheme nord
+" colorscheme nord
 " colorscheme hybrid_material
 " --}} End of colorschemes
 
@@ -327,7 +327,7 @@ ino <C-U> <C-G>u<C-U>
 " Only do this part when compiled with support for autocommands.
 "==================================================
 if has("autocmd")
-
+lua require'colorizer'.setup()
 "==================================================
 " Put these in an autocmd group, so that we can delete them easily.
 "==================================================
