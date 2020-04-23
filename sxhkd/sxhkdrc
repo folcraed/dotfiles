@@ -4,11 +4,11 @@
 
 # terminal emulator
 super + Return
-    konsole
+    alacritty
 
 # program launcher
 super + p
-    rofi -show drun -sidebar-mode -font "Hack 9" -width "20" -opacity "90" -terminal "konsole"
+    rofi -show drun -sidebar-mode -font "Hack 9" -width "20" -opacity "90" -terminal "alacritty"
 
 # make sxhkd reload its configuration files:
 super + Escape
