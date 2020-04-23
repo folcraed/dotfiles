@@ -56,7 +56,7 @@ beautiful.init(theme_path)
 
 --| Default terminal and editor |--
 
-terminal = "kitty"
+terminal = "alacritty"
 editor = os.getenv("EDITOR") or "nvim"
 editor_cmd = terminal .. " -e " .. editor
 
@@ -68,13 +68,13 @@ altkey = "Mod1"
 --| Table of layouts to cover with awful.layout.inc, order matters. |--
 
 awful.layout.layouts = {
+    awful.layout.suit.floating,
     awful.layout.suit.tile,
     awful.layout.suit.tile.left,
     awful.layout.suit.tile.bottom,
     awful.layout.suit.tile.top,
     awful.layout.suit.fair,
     awful.layout.suit.fair.horizontal,
-    awful.layout.suit.floating,
 }
 -- }}}
 
@@ -386,7 +386,7 @@ globalkeys = awful.util.table.join(
               {description = "show the menubar", group = "launcher"}),
 
     -- Rofi
-    awful.key({ modkey }, "p", function () awful.spawn('rofi -show drun -sidebar-mode -font "Hack 10" -width "20" -opacity "90" -terminal "kitty"') end,
+    awful.key({ modkey }, "p", function () awful.spawn('rofi -show drun -sidebar-mode -font "Hack 10" -width "20" -opacity "90" -terminal "alacritty"') end,
               {description = "Run Rofi", group = "launcher"})
 )
 
