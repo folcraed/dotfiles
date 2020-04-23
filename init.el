@@ -336,6 +336,7 @@
 (define-prefix-command 'd-map)
 (global-set-key (kbd "C-d") 'd-map)
 (define-key d-map (kbd "g") 'rg)
+(define-key d-map (kbd "i") 'org-table-insert-row)
 (define-key d-map (kbd "n") 'dired-narrow)
 (define-key d-map (kbd "k") 'helm-show-kill-ring)
 (define-key d-map (kbd "r") 'helm-resume)
