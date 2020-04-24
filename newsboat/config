@@ -1,0 +1,36 @@
+##########################################
+# Newsboat configuration
+# Created 18 Arp 2020
+##########################################
+
+## Basics
+
+auto-reload yes
+browser "falkon"
+datetime-format "%b %d"
+download-path "~/Downloads"
+download-retries 1
+download-timeout 30
+history-limit 300
+notify-always yes
+notify-beep no
+notify-format "Newsboat: finished reload, %f unread feeds (%n unread articles total)"
+notify-program "notify-send"
+save-path "~/Dropbox/Articles"
+
+## Color scheme
+color background          color7     default
+color listnormal          color15    default
+color listnormal_unread   color2     default
+color listfocus           color0     color12
+color listfocus_unread    color0     color2
+color info                color0     color15
+color article             color15    default
+
+# highlights
+highlight article "^(Feed|Link):.*$" color3 default bold
+highlight article "^(Title|Date|Author):.*$" color5 default bold
+highlight article "https?://[^ ]+" color4 default underline
+highlight article "\\[[0-9]+\\]" color10 default bold
+highlight article "\\[image\\ [0-9]+\\]" color11 default bold
+highlight feedlist "^─.*$" color6 color236 bold
