@@ -26,8 +26,6 @@ call plug#end()
 "==================================================
 " Set global options
 "==================================================
-set termguicolors
-set guifont=Iosevka:h12
 set encoding=utf-8
 set expandtab
 set tabstop=4
@@ -158,7 +156,7 @@ let g:onedark_terminal_italics = 1
 " let g:nord_italic = 1
 " let g:nord_italic_comments = 1
 
-set background=dark
+set background=dark termguicolors
 " colorscheme neodark
 colorscheme onedark
 " colorscheme spacegray
@@ -168,6 +166,10 @@ colorscheme onedark
 " colorscheme base16-ocean
 " colorscheme nord
 " colorscheme hybrid_material
+
+" Make sure terminal background isn't overwritten
+hi! Normal ctermbg=NONE guibg=NONE
+hi! NonText ctermbg=NONE guibg=NONE guifg=NONE ctermfg=NONE
 " --}} End of colorschemes
 
 "==================================================
