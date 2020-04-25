@@ -8,7 +8,7 @@ ssh-agent &
 /home/rob/.fehbg &
 picom &
 dropbox start -i &
-# dbus-launch dunst &
+dunst &
 xclip &
 clipit &
 
