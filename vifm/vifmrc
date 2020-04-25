@@ -216,7 +216,7 @@ filextype */
         \ dolphin %f &,
 
 " Script and config files
-filextype *.lua,*.sh,*.conf,*rc,*.md
+filextype *.lua,*.sh,*.conf,*rc,*.md,*.js,*.py
         \ {Open with Nvim}
         \ nvim %f,
         \ {Open with Sublime}
@@ -225,8 +225,7 @@ filextype *.lua,*.sh,*.conf,*rc,*.md
         \ emacs %f,
         \ {open with GVim}
         \ gvim %f,
-fileviewer *.lua,*.sh,*.conf highlight --out-format=xterm256 %f
-" fileviewer *.lua,*.sh,*.conf,*rc hlite %f
+fileviewer *.lua,*.sh,*.conf,*rc,*.md,*.js,*.py env -uCOLORTERM bat --color=always --wrap=never --pager=never %c -p
 
 set vifminfo=dhistory,savedirs,chistory,state,tui,shistory,
     \phistory,fhistory,dirstack,registers,bookmarks,bmarks
