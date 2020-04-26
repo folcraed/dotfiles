@@ -6,7 +6,7 @@
 ## Basics
 
 auto-reload yes
-browser "falkon"
+browser "qutebrowser"
 datetime-format "%b %d"
 download-path "~/Downloads"
 download-retries 1
