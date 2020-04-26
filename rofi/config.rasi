@@ -1,0 +1,18 @@
+configuration {
+/*	To see all options run rofi -dump-config */
+    modi: "window,run,ssh,drun";
+	width: 25;
+	font: "JetBrains Mono 12";
+	terminal: "alacritty";
+	run-command: "{cmd}";
+	run-shell-command: "{terminal} -e {cmd}";
+	sidebar-mode: true;
+	hide-scrollbar: true;
+	dpi: 92;
+/*	theme: ;*/
+	color-normal: "#282c34, #abb2bf, #282c34, #a3be8c, #282c34";
+/*	color-urgent: ;*/
+	color-active: "#282c34, #e5c07b, #282c34, #a3be8c, #282c34";
+	color-window: "#282c34, #3b4252";
+}
+/* vim:ft=css
