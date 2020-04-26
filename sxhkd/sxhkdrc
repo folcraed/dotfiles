@@ -8,7 +8,7 @@ super + Return
 
 # program launcher
 super + p
-    rofi -show drun -sidebar-mode -font "Hack 9" -width "20" -opacity "90" -terminal "alacritty"
+    rofi -show drun
 
 # make sxhkd reload its configuration files:
 super + Escape
