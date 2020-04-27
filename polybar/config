@@ -53,8 +53,8 @@ padding-right = 2
 module-margin-left = 1
 module-margin-right = 2
 
-font-0 = DejaVu Sans:size=9;0
-font-1 = DejaVu Sans:size=10;1
+font-0 = Noto Sans:size=9;0
+font-1 = Noto Sans:size=10;1
 font-2 = Xirod:size=8;1
 
 modules-left = i3
@@ -66,6 +66,16 @@ tray-padding = 2
 tray-detached = false
 wm-restack = i3
 override-redirect = true
+
+[module/i3]
+type = internal/i3
+format = <label-state> <label-mode>
+index-sort = true
+wrapping-scroll = false
+strip-wsnumbers = true
+label-mode-padding = 1
+label-mode-foreground = #000
+label-mode-background = ${colors.primary}
 
 [bar/bspwmbar]
 monitor = HDMI-A-0
@@ -91,7 +101,7 @@ module-margin-left = 1
 module-margin-right = 2
 
 font-0 = DejaVu Sans Mono:style=bold:size=9;0
-font-1 = DejaVu Sans Mono:style=Bold:size=9;1
+font-1 = DejaVu Sans Mono:style=bold:size=9;1
 font-2 = Xirod:size=8;1
 
 modules-left = bspwm
@@ -126,16 +136,6 @@ label-urgent-padding = 1
 label-empty = %index%
 label-empty-foreground = ${colors.foreground-alt}
 label-empty-padding = 1
-
-[module/i3]
-type = internal/i3
-format = <label-state> <label-mode>
-index-sort = true
-wrapping-scroll = false
-strip-wsnumbers = true
-label-mode-padding = 1
-label-mode-foreground = #000
-label-mode-background = ${colors.primary}
 
 ; focused = Active workspace on focused monitor
 ; %index% produces workspace number, %name% produces workspace name
@@ -187,10 +187,10 @@ label = RAM %gb_used% %gb_free%
 label-foreground = ${colors.green}
 bar-used-indicator =
 bar-used-width = 24
-bar-used-foreground-0 = #55aa55
-bar-used-foreground-1 = #557755
-bar-used-foreground-2 = #f5a70a
-bar-used-foreground-3 = #ff5555
+bar-used-foreground-0 = #98C379
+bar-used-foreground-1 = #56B6C2
+bar-used-foreground-2 = #BF616A
+bar-used-foreground-3 = #E06C75
 bar-used-fill = ▐
 bar-used-empty = ▐
 bar-used-empty-foreground = #444444
