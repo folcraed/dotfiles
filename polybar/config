@@ -1,21 +1,23 @@
-;=====================================================
+;=================================================
 ;
 ;   To learn more about how to configure Polybar
 ;   go to https://github.com/jaagr/polybar
 ;
 ;   The README contains alot of information
 ;
-;=====================================================
+;=================================================
 
 [colors]
-; Onedark colors
-background = #2E3440
+;=================================================
+;   My preferred colorscheme, Onedark
+;=================================================
+background = #282c34
 background-alt = #3B4252
-foreground = #D8DEE9
-foreground-alt = #4C566A
+foreground = #abb2bf
+foreground-alt = #616e88
 primary = #B48EAD
-secondary = #BF616A
-alert = #F50A4D
+secondary = #d19a66
+alert = #be5046
 green = #98C379
 yellow = #E5C07B
 blue = #61AFEF
@@ -23,61 +25,14 @@ magenta = #C678DD
 cyan = #56B6C2
 red = #E06C75
 
-; Solarized colors
-;background = #002B36
-;background-alt = #073642
-;foreground = #93A1A1
-;foreground-alt = #586E75
-;primary = #657B83
-;secondary = #2AA198
-;alert = #DC322F
-
-[bar/i3bar]
-width = 100%
-height = 24
-radius = 0
-fixed-center = true
-
-background = ${colors.background}
-foreground = ${colors.foreground}
-
-line-size = 3
-line-color = #93A1A1
-
-border-size = 1
-border-color = #002B36
-
-padding-left = 0
-padding-right = 2
-
-module-margin-left = 1
-module-margin-right = 2
-
-font-0 = Noto Sans:size=9;0
-font-1 = Noto Sans:size=10;1
-font-2 = Xirod:size=8;1
-
-modules-left = i3
-modules-center = xwindow
-modules-right = pulseaudio filesystem memory cpu temperature date
-
-tray-position = right
-tray-padding = 2
-tray-detached = false
-wm-restack = i3
-override-redirect = true
-
-[module/i3]
-type = internal/i3
-format = <label-state> <label-mode>
-index-sort = true
-wrapping-scroll = false
-strip-wsnumbers = true
-label-mode-padding = 1
-label-mode-foreground = #000
-label-mode-background = ${colors.primary}
 
 [bar/bspwmbar]
+;=================================================
+;   Setup bar defaults for bspwm
+;
+;   A very simple bar, few glyphs with fonts
+;   commonly found in any *nix installation.
+;=================================================
 monitor = HDMI-A-0
 width = 100%
 height = 22
@@ -88,11 +43,10 @@ background = ${colors.background}
 foreground = ${colors.foreground}
 
 line-size = 3
-line-color = #C678DD
-; line-color = #93A1A1
+line-color = &{colors.magenta}
 
 border-size = 1
-border-color = #002B36
+border-color = ${colors.background}
 
 padding-left = 0
 padding-right = 2
@@ -102,11 +56,11 @@ module-margin-right = 2
 
 font-0 = DejaVu Sans Mono:style=bold:size=9;0
 font-1 = DejaVu Sans Mono:style=bold:size=9;1
-font-2 = Xirod:size=8;1
+font-2 = DejaVu Sans:size=9;1
 
 modules-left = bspwm
 modules-center = xwindow
-modules-right = pulseaudio memory cpu temperature date
+modules-right = temperature memory cpu pulseaudio date
 
 tray-position = right
 tray-padding = 2
@@ -114,9 +68,13 @@ tray-detached = false
 wm-restack = bspwm
 override-redirect = true
 
+;=================================================
+;   Setup modules used
+;=================================================
 [module/xwindow]
 type = internal/xwindow
 label = %title:0:40:...%
+label-foreground = ${colors.foreground}
 
 [module/bspwm]
 type = internal/bspwm
@@ -137,29 +95,14 @@ label-empty = %index%
 label-empty-foreground = ${colors.foreground-alt}
 label-empty-padding = 1
 
-; focused = Active workspace on focused monitor
-; %index% produces workspace number, %name% produces workspace name
-label-focused = %name%
-label-focused-background = ${module/bspwm.label-focused-background}
-label-focused-underline = ${module/bspwm.label-focused-underline}
-label-focused-padding = ${module/bspwm.label-focused-padding}
-label-focused-font = 3
-
-; unfocused = Inactive workspace on any monitor
 label-unfocused = %name%
 label-unfocused-padding = ${module/bspwm.label-occupied-padding}
 label-unfocused-font = 3
 
-; visible = Active workspace on unfocused monitor
 label-visible = %name%
 label-visible-background = ${self.label-focused-background}
 label-visible-underline = ${self.label-focused-underline}
 label-visible-padding = ${self.label-focused-padding}
-
-; urgent = Workspace with urgency hint set
-label-urgent = %name%
-label-urgent-background = ${module/bspwm.label-urgent-background}
-label-urgent-padding = ${module/bspwm.label-urgent-padding}
 
 [module/cpu]
 type = internal/cpu
@@ -178,7 +121,6 @@ ramp-coreload-5 = ▆
 ramp-coreload-6 = ▇
 ramp-coreload-7 = █
 
-
 [module/memory]
 type = internal/memory
 interval = 2
@@ -187,13 +129,13 @@ label = RAM %gb_used% %gb_free%
 label-foreground = ${colors.green}
 bar-used-indicator =
 bar-used-width = 24
-bar-used-foreground-0 = #98C379
-bar-used-foreground-1 = #56B6C2
-bar-used-foreground-2 = #BF616A
-bar-used-foreground-3 = #E06C75
+bar-used-foreground-0 = ${colors.green}
+bar-used-foreground-1 = ${colors.blue}
+bar-used-foreground-2 = ${colors.yellow}
+bar-used-foreground-3 = ${colors.red}
 bar-used-fill = ▐
 bar-used-empty = ▐
-bar-used-empty-foreground = #444444
+bar-used-empty-foreground = ${colors.background-alt}
 
 [module/date]
 type = internal/date
@@ -211,12 +153,10 @@ sink = alsa_output.pci-0000_00_1b.0.analog-stereo
 use-ui-max = false
 interval = 3
 format-volume = <ramp-volume> <label-volume>
-label-volume-foreground = ${colors.blue}
+label-volume-foreground = ${colors.magenta}
 label-muted = MUTED
 label-muted-foreground = ${colors.red}
-
-; Only applies if <ramp-volume> is used
-ramp-volume-foreground = ${colors.blue}
+ramp-volume-foreground = ${colors.red}
 ramp-volume-0 = ▂ 
 ramp-volume-1 = ▅
 ramp-volume-2 = █
@@ -228,9 +168,10 @@ warn-temperature = 60
 format = <label>
 format-warn = <label-warn>
 label = %temperature-c%
-label-foreground = ${colors.magenta}
+label-foreground = ${colors.blue}
 label-warn = %temperature-c%
-label-warn-foreground = ${colors.secondary}
+label-warn-foreground = ${colors.foreground}
+label-warn-background = ${colors.red}
 
 [settings]
 screenchange-reload = true
