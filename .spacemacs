@@ -17,7 +17,6 @@
      emacs-lisp
      lua
      git
-     multiple-cursors
      org
      (shell :variables
             shell-default-height 30
@@ -25,7 +24,7 @@
      (spell-checking :variables
                      spell-checking-enable-by-default nil)
      pdf
-     elfeed
+     (elfeed :variables rmh-elfeed-org-files (list "~/Dropbox/Notes/elfeed.org"))
      treemacs
      search-engine
      )
@@ -162,6 +161,8 @@
 ;;==============================================================================
 ;; Custom keybindings
 ;;==============================================================================
+  (spacemacs/declare-prefix "o" "custom")
+  (spacemacs/set-leader-keys "or" 'rainbow-mode)
   (spacemacs/set-leader-keys-for-major-mode 'org-mode "xl" 'org-store-link)
   (define-key evil-normal-state-map (kbd "j") 'evil-next-visual-line)
   (define-key evil-normal-state-map (kbd "<down>") 'evil-next-visual-line)
@@ -223,42 +224,8 @@
   (setq-default org-hide-emphasis-markers t)
   (setq org-directory "~/Dropbox/Notes")
   (setq org-agenda-files (quote ("~/Dropbox/Notes/")))
-  (setq org-tags-column 0)
+  (setq org-tags-column 0))
 
-;==============================================================================
-;; Elfeed feed list
-;;==============================================================================
-(setq elfeed-feeds
-      '(("https://forum.manjaro.org/c/announcements.rss" Linux)
-        ("http://feeds.feedburner.com/d0od" Linux)
-        ("https://blog.ubuntu.com/feed" Linux)
-        ("https://gramps-project.org/blog/feed/" Genealogy)
-        ("https://kubuntu.org/news/feed" Linux)
-        ("http://feeds.arstechnica.com/arstechnica/index/" News)
-        ("http://viking-archaeology-blog.blogspot.com/feeds/posts/default" News)
-        ("https://www.gnome-look.org/gnome-look-content.rdf" Linux)
-        ("http://archaeology-in-europe.blogspot.com/feeds/posts/default" News)
-        ("https://sachachua.com/blog/category/emacs-news/feed/" Linux)
-        ("https://www.sciencenews.org/feed" News)
-        ("https://pryorfrancis.wordpress.com/feed/" Blog)
-        ("https://www.heritagedaily.com/feed" Genealogy)
-        ("http://planet.ubuntu.com/rss20.xml" Linux)
-        ("https://www.linuxinsider.com/perl/syndication/rssfull.pl" Linux)
-        ("http://planetkde.org/rss20.xml" Linux)
-        ("https://www.zdnet.com/blog/open-source/rss.xml" Linux)
-        ("https://www.phoronix.com/rss.php" News)
-        ("http://www.kde.org/dotkdeorg.rdf" Linux)
-        ("https://opensource.com/feed" Linux)
-        ("http://planet.gnome.org/rss20.xml" Linux)
-        ("https://www.ancestry.com/boards/surnames.walsh/rss.xml" Genealogy)
-        ("https://www.ancestry.com/boards/surnames.carroll/rss.xml" Genealogy)
-        ("http://feeds.feedburner.com/familyhistorydaily" Genealogy)
-        ("https://www.ancestry.com/boards/surnames.galletly/rss.xml" Genealogy)
-        ("https://www.ancestry.com/boards/surnames.speed/rss.xml" Genealogy)
-        ("http://blogs.ancestry.com/ancestry/feed/" Genealogy)
-        ("https://www.ancestry.com/boards/surnames.donovan/rss.xml" Genealogy)
-        ("https://www.johngrenham.com/blog/feed/" Genealogy)
-        ("https://www.ancestry.com/boards/surnames.durkin/rss.xml" Genealogy))))
 ;;==============================================================================
 ;; Emacs Custom settings
 ;;==============================================================================
