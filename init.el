@@ -183,7 +183,6 @@
   :ensure t
   :pin org
   :config
-  (add-hook 'org-mode-hook 'variable-pitch-mode)
   (setq-default org-hide-emphasis-markers t)
   (setq org-startup-folded nil
 	org-startup-indented t
@@ -290,6 +289,19 @@
 
 (use-package magit
   :ensure t)
+
+;;===============================================
+;; Elfeed
+;;===============================================
+(use-package elfeed
+  :ensure t)
+
+(use-package elfeed-org
+  :ensure t)
+
+(elfeed-org)
+(setq rmh-elfeed-org-files (list "~/Dropbox/Notes/elfeed.org"))
+
 
 ;;===============================================
 ;; Some personal keybindings
@@ -416,17 +428,14 @@
  '(org-export-backends (quote (ascii html md odt)))
  '(package-selected-packages
    (quote
-    (rg winum which-key use-package undo-tree tablist rainbow-mode rainbow-delimiters persp-projectile peep-dired org-bullets minions magit iedit helm-swoop helm-rg helm-projectile helm-org gnu-elpa-keyring-update flyspell-correct-helm expand-region doom-themes doom-modeline dired-subtree dired-narrow company-box avy all-the-icons-dired)))
+    (elfeed elfeed-org rg winum which-key use-package undo-tree tablist rainbow-mode rainbow-delimiters persp-projectile peep-dired org-bullets minions magit iedit helm-swoop helm-rg helm-projectile helm-org gnu-elpa-keyring-update flyspell-correct-helm expand-region doom-themes doom-modeline dired-subtree dired-narrow company-box avy all-the-icons-dired)))
  '(persp-modestring-dividers (quote ("(" ")" "|"))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(cursor ((t (:background "#61AFEF"))))
- '(font-lock-comment-delimiter-face ((t (:inherit font-lock-comment-face))))
  '(font-lock-comment-face ((t (:foreground "#5B6268" :slant italic))))
- '(org-table ((t (:foreground "#a9a1e1" :family "JetBrains Mono"))))
- '(persp-selected-face ((t (:foreground "orange" :weight bold))))
- '(variable-pitch ((t (:family "Noto Sans")))))
+ '(font-lock-comment-delimiter-face ((t (:inherit font-lock-comment-face))))
+ '(persp-selected-face ((t (:foreground "orange" :weight bold)))))
 (put 'narrow-to-region 'disabled nil)
