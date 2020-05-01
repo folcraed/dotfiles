@@ -308,7 +308,7 @@ nno <leader>= o==================================================<cr><ESC>
 "==================================================
 " Save a admin file from regular user
 "==================================================
-nno <silent><leader>r :w !sudo tee % .
+nno <silent><leader>r :w !sudo tee %
 
 "==================================================
 " Don't use Ex mode, use Q for formatting
