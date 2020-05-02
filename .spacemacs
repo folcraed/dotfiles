@@ -134,7 +134,6 @@
 	  (error "Not in org link!")
 	(string-match org-bracket-link-regexp text)
 	(kill-new (substring text (match-beginning 1) (match-end 1))))))
-  (global-set-key (kbd "C-c e") 'my-org-export-url)
 ;;==============================================================================
 ;; My preferred defaults
 ;;==============================================================================
@@ -163,7 +162,8 @@
 ;;==============================================================================
   (spacemacs/declare-prefix "o" "custom")
   (spacemacs/set-leader-keys "or" 'rainbow-mode)
-  (spacemacs/set-leader-keys-for-major-mode 'org-mode "xl" 'org-store-link)
+  (spacemacs/set-leader-keys "oe" 'my-org-export-url)
+  (spacemacs/set-leader-keys-for-major-mode 'org-mode "ol" 'org-store-link)
   (define-key evil-normal-state-map (kbd "j") 'evil-next-visual-line)
   (define-key evil-normal-state-map (kbd "<down>") 'evil-next-visual-line)
   (define-key evil-normal-state-map (kbd "k") 'evil-previous-visual-line)
