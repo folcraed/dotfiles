@@ -302,7 +302,6 @@
 (elfeed-org)
 (setq rmh-elfeed-org-files (list "~/Dropbox/Notes/elfeed.org"))
 
-
 ;;===============================================
 ;; Some personal keybindings
 ;;===============================================
@@ -313,6 +312,7 @@
 (define-key d-map (kbd "i") 'org-table-insert-row)
 (define-key d-map (kbd "n") 'dired-narrow)
 (define-key d-map (kbd "k") 'helm-show-kill-ring)
+(define-key d-map (kbd "l") 'org-insert-link)
 (define-key d-map (kbd "r") 'helm-resume)
 (define-key d-map (kbd "s") 'flyspell-mode)
 (define-key d-map (kbd "t") 'org-time-stamp)
@@ -435,7 +435,7 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(font-lock-comment-face ((t (:foreground "#5B6268" :slant italic))))
  '(font-lock-comment-delimiter-face ((t (:inherit font-lock-comment-face))))
+ '(font-lock-comment-face ((t (:foreground "#5B6268" :slant italic))))
  '(persp-selected-face ((t (:foreground "orange" :weight bold)))))
 (put 'narrow-to-region 'disabled nil)
