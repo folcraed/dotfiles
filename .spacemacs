@@ -9,13 +9,11 @@
    dotspacemacs-ask-for-lazy-installation t
    dotspacemacs-configuration-layer-path '()
    dotspacemacs-configuration-layers
-   '(csv
-     (helm :variables spacemacs-helm-rg-max-column-number nil)
+   '((helm :variables spacemacs-helm-rg-max-column-number nil)
      theming
      (auto-completion :variables
                       auto-completion-use-company-box t)
      emacs-lisp
-     lua
      git
      org
      (shell :variables
@@ -23,8 +21,6 @@
             shell-default-position 'bottom)
      (spell-checking :variables
                      spell-checking-enable-by-default nil)
-     pdf
-     (elfeed :variables rmh-elfeed-org-files (list "~/Dropbox/Notes/elfeed.org"))
      treemacs
      search-engine
      )
@@ -38,8 +34,6 @@
    dotspacemacs-excluded-packages '(vi-tilde-fringe
                                     neotree
                                     fancy-battery
-                                    elfeed-goodies
-                                    elfeed-web
                                     yasnippet
                                     auto-yasnippet
                                     google-translate)
@@ -106,7 +100,7 @@
    dotspacemacs-enable-server nil
    dotspacemacs-persistent-server nil
    dotspacemacs-search-tools '("rg" "grep")
-   dotspacemacs-frame-title-format "%b - %I"
+   dotspacemacs-frame-title-format "Spacemacs"
    dotspacemacs-icon-title-format nil
    dotspacemacs-whitespace-cleanup nil
    ))
@@ -154,7 +148,6 @@
   (global-visual-line-mode t)
   (prefer-coding-system 'utf-8)
   (setq line-number-display-limit-width 2000000)
-  (setq lua-indent-level 4)
   (setq delete-by-moving-to-trash t)
   (setq shr-max-image-proportion 0.5)
 ;;==============================================================================
@@ -162,7 +155,7 @@
 ;;==============================================================================
   (spacemacs/declare-prefix "o" "custom")
   (spacemacs/set-leader-keys "or" 'rainbow-mode)
-  (spacemacs/set-leader-keys "oe" 'my-org-export-url)
+  (spacemacs/set-leader-keys-for-major-mode 'org-mode "oe" 'my-org-export-url)
   (spacemacs/set-leader-keys-for-major-mode 'org-mode "ol" 'org-store-link)
   (define-key evil-normal-state-map (kbd "j") 'evil-next-visual-line)
   (define-key evil-normal-state-map (kbd "<down>") 'evil-next-visual-line)
@@ -203,6 +196,7 @@
    (quote
     ((auto-mode . emacs)
      ("\\.png\\'" . "sxiv %s")
+     ("\\.pdf\\'" . "okular %s")
      ("\\.jpg\\'" . "sxiv %s"))))
 (setq org-capture-templates
       '(("t" "Todo" entry (file+headline "~/Dropbox/Notes/agenda.org" "Todos")
@@ -243,7 +237,7 @@ This function is called at the very end of Spacemacs initialization."
  '(cursor-type (quote (bar . 2)))
  '(package-selected-packages
    (quote
-    (ansi package-build shut-up epl git commander f s rainbow-mode csv-mode srefactor yapfify stickyfunc-enhance importmagic epc ctable concurrent deferred xcscope ggtags flycheck counsel-gtags web-mode orgit magit-svn evil-nerd-commenter evil-magit dumb-jump doom-modeline aggressive-indent counsel company magit-popup magit transient haml-mode all-the-icons powerline ace-window dash org-plus-contrib evil yasnippet xterm-color ws-butler writeroom-mode winum which-key web-beautify volatile-highlights uuidgen use-package toc-org tagedit symon swiper string-inflection spaceline-all-the-icons smeargle slim-mode shrink-path shell-pop scss-mode sass-mode restart-emacs rainbow-delimiters pug-mode prettier-js popwin pfuture persp-mode pcre2el password-generator paradox overseer org-projectile org-preview-html org-present org-pomodoro org-mime org-download org-bullets org-brain open-junk-file nameless multi-term move-text monokai-theme mmm-mode markdown-toc magit-gitflow macrostep lv lorem-ipsum link-hint indent-guide impatient-mode hungry-delete ht hl-todo highlight-parentheses highlight-numbers highlight-indentation goto-chg golden-ratio gnuplot gitignore-templates gitconfig-mode gitattributes-mode git-timemachine git-messenger git-link git-commit gh-md fuzzy font-lock+ flx-ido fill-column-indicator eyebrowse expand-region evil-visualstar evil-visual-mark-mode evil-unimpaired evil-tutor evil-surround evil-org evil-numbers evil-matchit evil-lisp-state evil-lion evil-indent-plus evil-iedit-state evil-goggles evil-exchange evil-escape evil-ediff evil-cleverparens evil-args evil-anzu eval-sexp-fu eshell-z eshell-prompt-extras esh-help emmet-mode elisp-slime-nav eldoc-eval editorconfig dotenv-mode diminish define-word counsel-projectile company-web company-statistics column-enforce-mode clean-aindent-mode centered-cursor-mode auto-highlight-symbol auto-dictionary auto-compile ace-link ac-ispell)))
+    (ansi package-build shut-up epl git commander f s rainbow-mode srefactor yapfify stickyfunc-enhance importmagic epc ctable concurrent deferred xcscope ggtags flycheck counsel-gtags web-mode orgit magit-svn evil-nerd-commenter evil-magit dumb-jump doom-modeline aggressive-indent counsel company magit-popup magit transient haml-mode all-the-icons powerline ace-window dash org-plus-contrib evil yasnippet xterm-color ws-butler writeroom-mode winum which-key web-beautify volatile-highlights uuidgen use-package toc-org tagedit symon swiper string-inflection spaceline-all-the-icons smeargle slim-mode shrink-path shell-pop scss-mode sass-mode restart-emacs rainbow-delimiters pug-mode prettier-js popwin pfuture persp-mode pcre2el password-generator paradox overseer org-projectile org-preview-html org-present org-pomodoro org-mime org-download org-bullets org-brain open-junk-file nameless multi-term move-text monokai-theme mmm-mode markdown-toc magit-gitflow macrostep lv lorem-ipsum link-hint indent-guide impatient-mode hungry-delete ht hl-todo highlight-parentheses highlight-numbers highlight-indentation goto-chg golden-ratio gnuplot gitignore-templates gitconfig-mode gitattributes-mode git-timemachine git-messenger git-link git-commit gh-md fuzzy font-lock+ flx-ido fill-column-indicator eyebrowse expand-region evil-visualstar evil-visual-mark-mode evil-unimpaired evil-tutor evil-surround evil-org evil-numbers evil-matchit evil-lisp-state evil-lion evil-indent-plus evil-iedit-state evil-goggles evil-exchange evil-escape evil-ediff evil-cleverparens evil-args evil-anzu eval-sexp-fu eshell-z eshell-prompt-extras esh-help emmet-mode elisp-slime-nav eldoc-eval editorconfig dotenv-mode diminish define-word counsel-projectile company-web company-statistics column-enforce-mode clean-aindent-mode centered-cursor-mode auto-highlight-symbol auto-dictionary auto-compile ace-link ac-ispell)))
  '(paradox-github-token t))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
