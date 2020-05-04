@@ -184,7 +184,7 @@ nno <silent><leader>O :FZF ~<cr>
 nno <silent><leader>b :Buffers<cr>
 nno <silent><leader>l :BLines<cr>
 nno <silent><leader>p :Lines<cr>
-nno <leader>g :Rg
+nno <leader>g :Rg<cr>
 
 "==================================================
 " This opens markdown in okular
@@ -235,6 +235,12 @@ nno <silent><S-tab> :tabprev
 " This closes the currently viewed buffer and loads the last in the window
 "==================================================
 nno <silent><leader>c :bp\|bd #<CR>
+
+"==================================================
+" Insert today's date at the cursor
+"==================================================
+:nno <F4> "=strftime("%a %d %b %Y")<cr>P
+:ino <F4> <C-R>=strftime("%a %d %b %Y")<cr>
 
 "==================================================
 " This makes unrecognized code files use shell syntax highlighting
