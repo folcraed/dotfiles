@@ -253,8 +253,9 @@
   :ensure t)
 
 (use-package helm-org
-  :ensure t)
-
+  :ensure t
+  :init (setq helm-org-format-outline-path 1))
+(require 'helm-org)
 ;;==============================================
 ;;  Flyspell stuff
 ;;==============================================
