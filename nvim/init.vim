@@ -113,7 +113,7 @@ endif
 " --{{ Settings for Lightline
 "==================================================
 let g:lightline = {
-    \ 'colorscheme': 'one',
+    \ 'colorscheme': 'onedark',
     \ 'tabline': {
     \   'left': [ [ 'bufferinfo' ],
     \             [ 'separator' ],
