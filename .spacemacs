@@ -101,7 +101,7 @@
    dotspacemacs-persistent-server nil
    dotspacemacs-search-tools '("rg" "grep")
    dotspacemacs-frame-title-format "Spacemacs"
-   dotspacemacs-icon-title-format nil
+   dotspacemacs-icon-title-format "Spacemacs"
    dotspacemacs-whitespace-cleanup nil
    ))
 
@@ -133,8 +133,6 @@
 ;;==============================================================================
   (setq-default make-backup-files nil
                 backup-inhibited t
-                frame-title-format "Spacemacs"
-                icon-title-format "Spacemacs"
                 create-lockfiles nil
                 auto-save-default nil
                 size-indication-mode 1)
