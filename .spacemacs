@@ -16,6 +16,8 @@
      emacs-lisp
      git
      org
+     (elfeed :variables
+             rmh-elfeed-org-files (list "~/Dropbox/Notes/elfeed.org"))
      (shell :variables
             shell-default-height 30
             shell-default-position 'bottom)
@@ -34,6 +36,8 @@
    dotspacemacs-excluded-packages '(vi-tilde-fringe
                                     neotree
                                     fancy-battery
+                                    elfeed-goodies
+                                    elfeed-web
                                     yasnippet
                                     auto-yasnippet
                                     google-translate)
