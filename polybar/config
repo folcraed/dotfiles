@@ -60,7 +60,7 @@ font-2 = DejaVu Sans:size=9;1
 
 modules-left = bspwm
 modules-center = xwindow
-modules-right = temperature memory cpu pulseaudio date
+modules-right = cpu temperature memory pulseaudio date
 
 tray-position = right
 tray-padding = 2
