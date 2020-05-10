@@ -8,8 +8,8 @@ call plug#begin('~/.config/nvim/plugged')
 Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim'
 Plug 'scrooloose/nerdtree'
-Plug 'itchyny/lightline.vim'
-Plug 'taohexxx/lightline-buffer'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
 Plug 'joshdick/onedark.vim'
 Plug 'norcalli/nvim-colorizer.lua'
 Plug 'tpope/vim-surround'
@@ -109,39 +109,22 @@ if has ("autocmd")
 endif
 
 "==================================================
-" --{{ Settings for Lightline
+" --{{ Settings for Airline
 "==================================================
-let g:lightline = {
-    \ 'colorscheme': 'onedark',
-    \ 'tabline': {
-    \   'left': [ [ 'bufferinfo' ],
-    \             [ 'separator' ],
-    \             [ 'bufferbefore', 'buffercurrent', 'bufferafter' ], ],
-    \   'right': [ [ 'close' ], ],
-    \ },
-    \ 'component_expand': {
-    \   'buffercurrent': 'lightline#buffer#buffercurrent',
-    \   'bufferbefore': 'lightline#buffer#bufferbefore',
-    \   'bufferafter': 'lightline#buffer#bufferafter',
-    \ },
-    \ 'component_type': {
-    \   'buffercurrent': 'tabsel',
-    \   'bufferbefore': 'raw',
-    \   'bufferafter': 'raw',
-    \ },
-    \ 'component_function': {
-    \   'bufferinfo': 'lightline#buffer#bufferinfo',
-    \   'gitbranch': 'fugitive#head',
-    \ },
-    \ 'component': {
-    \   'separator': '',
-    \ },
-    \ 'active': {
-    \   'left': [ ['mode', 'paste'],
-    \             ['gitbranch', 'readonly', 'filename', 'modified']]
-    \ },
-    \ }
-" --}} End of Lightline settings
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#left_sep = ''
+let g:airline#extensions#tabline#left_alt_sep = ''
+let g:airline#extensions#tabline#right_sep = ''
+let g:airline#extensions#tabline#right_alt_sep = ''
+let g:airline#extensions#tabline#formatter = 'unique_tail'
+let g:airline_powerline_fonts = 1
+let g:airline_left_sep = ''
+let g:airline_right_sep = ''
+let g:airline_left_alt_sep = ''
+let g:airline_right_alt_sep = ''
+let g:airline_theme = 'base16_spacemacs'
+
+" --}} End of Airline settings
 
 "==================================================
 " --{{ Set up colorschemes
