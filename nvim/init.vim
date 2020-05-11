@@ -15,10 +15,10 @@ Plug 'norcalli/nvim-colorizer.lua'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-fugitive'
+Plug 'easymotion/vim-easymotion'
 Plug 'godlygeek/tabular'
 Plug 'eugen0329/vim-esearch'
 Plug 'masukomi/vim-markdown-folding', { 'for': 'markdown' }
-Plug 'Scuilion/markdown-drawer'
 
 call plug#end()
 
@@ -95,13 +95,6 @@ nno <silent><leader>e :edit .<cr>
 let g:fzf_buffers_jump = 1
 
 "==================================================
-" Settings for Markdown drawer
-"==================================================
-let g:markdrawer_drawer_max_levels = 5 " max levels to display
-let g:markdrawer_toc = 'index' " displays as a TOC
-let g:markdrawer_width = "50"
-
-"==================================================
 " Settings for Markdown folding
 "==================================================
 if has ("autocmd")
@@ -122,7 +115,7 @@ let g:airline_left_sep = ''
 let g:airline_right_sep = ''
 let g:airline_left_alt_sep = ''
 let g:airline_right_alt_sep = ''
-let g:airline_theme = 'base16_spacemacs'
+let g:airline_theme = 'onedark'
 
 " --}} End of Airline settings
 
@@ -164,8 +157,8 @@ hi! NonText ctermbg=NONE guibg=NONE guifg=NONE ctermfg=NONE
 nno <silent><leader>o :Files<cr>
 nno <silent><leader>O :FZF ~<cr>
 nno <silent><leader>b :Buffers<cr>
-nno <silent><leader>l :BLines<cr>
-nno <silent><leader>p :Lines<cr>
+nno <silent><leader>s :BLines<cr>
+nno <silent><leader>f :Lines<cr>
 nno <leader>g :Rg<cr>
 
 "==================================================
@@ -281,12 +274,6 @@ nno <leader>- :wincmd =<cr>
 "==================================================
 nno <F2> :source ~/Dropbox/Docs/Notes/Session.vim<CR>
 nno <F3> :wa<Bar>exe "mksession! " . v:this_session<CR>
-
-"==================================================
-" Toogle the markdown outline view.
-"==================================================
-nno <silent><F8> :MarkDrawer<cr>
-ino <silent><F8> :MarkDrawer<cr>
 
 "==================================================
 " Snippets
