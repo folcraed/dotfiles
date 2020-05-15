@@ -320,6 +320,7 @@
 (define-key d-map (kbd "s") 'flyspell-mode)
 (define-key d-map (kbd "t") 'org-time-stamp)
 (define-key d-map (kbd "x") 'kill-buffer-and-window)
+(define-key helm-map (kbd "<tab>") 'helm-execute-persistent-action)
 (global-set-key (kbd "C-c a") 'org-agenda)
 (global-set-key (kbd "C-c c") 'org-capture)
 (global-set-key (kbd "C-c l") 'org-store-link)
