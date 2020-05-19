@@ -123,7 +123,7 @@ menubar.utils.terminal = terminal -- Set the terminal for applications that requ
 
 markup  = lain.util.markup
 spacer = wibox.widget.textbox(" | ")
-mytextclock = wibox.widget.textclock("%a %b %e, %l:%M %P")
+mytextclock = wibox.widget.textclock("%a %b %e %l:%M %P")
 local month_calendar = awful.widget.calendar_popup.month()
 month_calendar:attach( mytextclock, "tr" )
 local cputemp = lain.widget.temp({
