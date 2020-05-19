@@ -5,34 +5,28 @@
 local theme = {}
 profileConfigPath = "/home/rob/dotfiles/awesome/"
 
--- Setting for the Collision keybindings lib
-theme.collision_resize_width = 10
-theme.Collision_shape_width = 20
-theme.collision_shape_height = 20
-theme.collision_focus_padding = 5
-
 -- Theme fonts
 theme.font          = "Hack 11"
 theme.taglist_font  = "Xirod 10"
 
 -- Theme coloring
-theme.bg_normal     = "#2b303b"
-theme.bg_focus      = "#2b303b"
-theme.bg_urgent     = "#bf616a"
-theme.bg_alternate  = "#bf616a"
+theme.bg_normal     = "#282C34"
+theme.bg_focus      = "#282C34"
+theme.bg_urgent     = "#e06c75"
+theme.bg_alternate  = "#e06c75"
 theme.bg_minimize   = "#96b5b4"
 theme.bg_systray    = theme.bg_normal
 
-theme.fg_normal     = "#60AEEE"
-theme.fg_focus      = "#E4BF7A"
+theme.fg_normal     = "#61AFEF"
+theme.fg_focus      = "#E5C07B"
 theme.fg_urgent     = "#ffffff"
-theme.fg_minimize   = "#2b303b"
+theme.fg_minimize   = "#282C34"
 
 theme.useless_gap   = 5
 theme.border_width  = 1
-theme.border_normal = "#2b303b"
-theme.border_focus  = "#2b303b"
-theme.border_marked = "#bf616a"
+theme.border_normal = "#282C34"
+theme.border_focus  = "#61AFEF"
+theme.border_marked = "#e06c75"
 
 -- Display the taglist highlights
 theme.taglist_squares_sel   = profileConfigPath.."themes/Onedark/taglist/linefw.png"
