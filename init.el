@@ -35,6 +35,9 @@
   (package-refresh-contents)
   (package-install 'use-package))
 
+(eval-when-compile
+  (require 'use-package))
+
 ;;==============================================
 ;;  Keep keyring up to date
 ;;==============================================
