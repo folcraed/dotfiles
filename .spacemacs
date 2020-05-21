@@ -9,7 +9,7 @@
    dotspacemacs-ask-for-lazy-installation t
    dotspacemacs-configuration-layer-path '()
    dotspacemacs-configuration-layers
-   '(markdown
+   '(
      (helm :variables spacemacs-helm-rg-max-column-number nil)
      theming
      (auto-completion :variables
