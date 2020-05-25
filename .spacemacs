@@ -31,8 +31,7 @@
                                       rainbow-mode
                                       dired-narrow
                                       dired-subtree
-                                      peep-dired
-                                      org-preview-html)
+                                      peep-dired)
    dotspacemacs-frozen-packages '()
    dotspacemacs-excluded-packages '(vi-tilde-fringe
                                     neotree
