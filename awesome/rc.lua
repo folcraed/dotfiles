@@ -162,31 +162,6 @@ local taglist_buttons = awful.util.table.join(
                     awful.button({ }, 5, function(t) awful.tag.viewprev(t.screen) end)
                 )
 
-local tasklist_buttons = awful.util.table.join(
-                     awful.button({ }, 1, function (c)
-                                              if c == client.focus then
-                                                  c.minimized = true
-                                              else
-                                                  -- Without this, the following
-                                                  -- :isvisible() makes no sense
-                                                  c.minimized = false
-                                                  if not c:isvisible() and c.first_tag then
-                                                      c.first_tag:view_only()
-                                                  end
-                                                  -- This will also un-minimize
-                                                  -- the client, if needed
-                                                  client.focus = c
-                                                  c:raise()
-                                              end
-                                          end),
-                     awful.button({ }, 3, client_menu_toggle_fn()),
-                     awful.button({ }, 4, function ()
-                                              awful.client.focus.byidx(1)
-                                          end),
-                     awful.button({ }, 5, function ()
-                                              awful.client.focus.byidx(-1)
-                                          end))
-
 local function set_wallpaper(s)
     -- Wallpaper
     if beautiful.wallpaper then
@@ -223,8 +198,8 @@ awful.screen.connect_for_each_screen(function(s)
     -- Create a taglist widget
     s.mytaglist = awful.widget.taglist(s, awful.widget.taglist.filter.all, taglist_buttons)
 
-    -- Create a tasklist widget
-    s.mytasklist = awful.widget.tasklist(s, awful.widget.tasklist.filter.currenttags, tasklist_buttons)
+    -- Create a spacer for middle of bar
+    s.myspreader = awful.widget.textbox
 
     -- Create the wibox
     s.mywibox = awful.wibar({ position = "top", screen = s })
@@ -239,12 +214,12 @@ awful.screen.connect_for_each_screen(function(s)
             s.mytaglist,
             spacer,
             s.mypromptbox,
-            spacer,
+            -- spacer,
         },
-        s.mytasklist, -- Middle widget
+        s.myspreader, -- Puts blank space in middle
         { -- Right widgets
             layout = wibox.layout.fixed.horizontal,
-            spacer,
+            -- spacer,
             mycpu,
             spacer,
             mymem,
@@ -517,14 +492,13 @@ awful.rules.rules = {
           "mpv",
           "Zathura",
           "vlc",
-          "Gcolor2",  -- kalarm.
+          "Gcolor2",  -- Color picker
           "okular"},
 
         name = {
           "Event Tester",  -- xev.
         },
         role = {
-          "AlarmWindow",  -- Thunderbird's calendar.
           "pop-up",       -- e.g. Google Chrome's (detached) Developer Tools.
         }
       }, properties = { floating = true }},
