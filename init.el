@@ -309,9 +309,17 @@
 (setq rmh-elfeed-org-files (list "~/Dropbox/Notes/elfeed.org"))
 
 ;;===============================================
+;; Lua for Awesome
+;;===============================================
+(use-package lua-mode
+  :ensure t)
+(add-to-list 'auto-mode-alist '("\\.lua$" . lua-mode))
+(add-to-list 'interpreter-mode-alist '("lua" . lua-mode))
+(setq lua-indent-level 4)
+
+;;===============================================
 ;; Some personal keybindings
 ;;===============================================
-
 (define-prefix-command 'd-map)
 (global-set-key (kbd "C-d") 'd-map)
 (define-key d-map (kbd "g") 'rg)
