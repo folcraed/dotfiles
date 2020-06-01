@@ -492,7 +492,6 @@ awful.rules.rules = {
           "mpv",
           "Zathura",
           "vlc",
-          "Gcolor2",  -- Color picker
           "okular"},
 
         name = {
