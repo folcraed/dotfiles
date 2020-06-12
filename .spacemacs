@@ -58,9 +58,9 @@
    dotspacemacs-startup-buffer-responsive t
    dotspacemacs-scratch-mode 'text-mode
    dotspacemacs-new-empty-buffer-major-mode 'text-mode
-   dotspacemacs-themes '(doom-one
+   dotspacemacs-themes '(doom-one-light
                          doom-tomorrow-night
-                         doom-one-light
+                         doom-one
                          monokai
                          spacemacs-dark
                          spacemacs-light)
@@ -194,7 +194,11 @@
 ;;==============================================================================
   (setq-default org-startup-with-inline-images nil)
   (setq org-ellipsis " ➥")
-  (setq org-bullets-bullet-list '("●" "○"))
+  (setq org-superstar-headline-bullets-list '("●" "○"))
+  (setq org-superstar-item-bullet-alist
+  '((?* . ?•)
+    (?+ . ?◦)
+    (?- . ?•)))
   (setq-default org-file-apps
    (quote
     ((auto-mode . emacs)
