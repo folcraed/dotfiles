@@ -3,7 +3,7 @@
 color normal lightgray 0
 color status black blue
 color underline brightgreen 0
-color overstrike brightred 0
+color overstrike red 0
 
 % Keybindings
 
