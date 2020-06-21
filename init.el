@@ -1,5 +1,5 @@
 ;; -*- lexical-binding: t -*-
-;; My Emacs settings Ver 0.95
+;; My Emacs settings Ver 0.96
 ;; File or commit timestamp show when last updated.
 
 (setq inhibit-startup-message t)
@@ -14,6 +14,7 @@
 (set-default-font "JetBrains Mono 11")
 (put 'dired-find-alternate-file 'disabled nil)
 (global-visual-line-mode 1)
+(global-hl-line-mode 1)
 ;; This is suppose to fix ??? displaying instead
 ;; of line numbers in modeline
 (setq line-number-display-limit-width 2000000)
@@ -195,11 +196,15 @@
 	org-ellipsis " ➥"
 	org-tags-column 0))
 
-(use-package org-bullets
+(use-package org-superstar
   :ensure t
   :config
-  (add-hook 'org-mode-hook (lambda () (org-bullets-mode 1)))
-  (setq org-bullets-bullet-list '("●" "○")))
+  (add-hook 'org-mode-hook (lambda () (org-superstar-mode 1)))
+  (setq org-superstar-headline-bullets-list '("●" "○"))
+  (setq org-superstar-item-bullet-alist
+        '((?* . ?•)
+          (?+ . ?◦)
+          (?- . ?•))))
 
 (setq-default org-file-apps
 	      (quote
@@ -443,7 +448,7 @@
  '(org-export-backends (quote (ascii html md odt)))
  '(package-selected-packages
    (quote
-    (lua-mode org org-plus-contrib elfeed elfeed-org rg winum which-key use-package undo-tree tablist rainbow-mode rainbow-delimiters persp-projectile peep-dired org-bullets minions magit iedit helm-swoop helm-rg helm-projectile helm-org gnu-elpa-keyring-update flyspell-correct-helm expand-region doom-themes doom-modeline dired-subtree dired-narrow company-box avy all-the-icons-dired)))
+    (lua-mode org org-plus-contrib elfeed elfeed-org rg winum which-key use-package undo-tree tablist rainbow-mode rainbow-delimiters persp-projectile peep-dired org-superstar minions magit iedit helm-swoop helm-rg helm-projectile helm-org gnu-elpa-keyring-update flyspell-correct-helm expand-region doom-themes doom-modeline dired-subtree dired-narrow company-box avy all-the-icons-dired)))
  '(persp-modestring-dividers (quote ("(" ")" "|"))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
