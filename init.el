@@ -231,6 +231,7 @@
 (setq org-time-stamp-custom-formats '("[%a %b %e %Y]" . "<%a %b %e %Y %H:%M>")
       org-agenda-files (quote ("~/Dropbox/Notes/"))
       org-goto-interface 'outline-path-completion
+      org-use-tag-inheritance nil
       org-outline-path-complete-in-steps nil)
 
 ;; (require 'org-tempo) <--This will be needed in Org 9.2 and above

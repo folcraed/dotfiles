@@ -225,6 +225,7 @@
   (setq-default org-hide-emphasis-markers t)
   (setq org-directory "~/Dropbox/Notes")
   (setq org-agenda-files (quote ("~/Dropbox/Notes/")))
+  (setq org-use-tag-inheritance nil)
   (setq org-tags-column 0))
 
 ;;==============================================================================
