@@ -5,7 +5,6 @@
 "==================================================
 call plug#begin('~/.config/nvim/plugged')
 
-Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim'
 Plug 'scrooloose/nerdtree'
 Plug 'vim-airline/vim-airline'
