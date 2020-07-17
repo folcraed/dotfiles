@@ -186,6 +186,7 @@
   :ensure t
   :pin org
   :config
+  (add-hook 'org-mode-hook 'variable-pitch-mode 1)
   (setq-default org-hide-emphasis-markers t)
   (setq org-startup-folded nil
 	org-startup-indented t
@@ -472,5 +473,9 @@
  ;; If there is more than one, they won't work right.
  '(font-lock-comment-delimiter-face ((t (:inherit font-lock-comment-face))))
  '(font-lock-comment-face ((t (:foreground "#5B6268" :slant italic))))
+ '(variable-pitch ((t (:size 14 :weight normal :width normal :family "Noto Sans"))))
+ '(org-block ((t (:inherit (shadow fixed-pitch)))))
+ '(org-table ((t (:inherit (shadow fixed-pitch)))))
+ '(org-code ((t (:inherit (shadow fixed-pitch)))))
  '(persp-selected-face ((t (:foreground "orange" :weight bold)))))
 (put 'narrow-to-region 'disabled nil)
