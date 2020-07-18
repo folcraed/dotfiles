@@ -11,7 +11,6 @@
 (tool-bar-mode 0)
 (scroll-bar-mode 0)
 (prefer-coding-system 'utf-8)
-(set-default-font "JetBrains Mono 11")
 (put 'dired-find-alternate-file 'disabled nil)
 (global-visual-line-mode 1)
 (global-hl-line-mode 1)
@@ -409,6 +408,9 @@
                          (inhibit-same-window . t)
                          (window-height . 0.3)))
 (cua-mode t)
+(set-face-attribute 'default nil :font "JetBrains Mono-11")
+(set-face-attribute 'fixed-pitch nil :font "JetBrains Mono-11")
+(set-face-attribute 'variable-pitch nil :font "Noto Sans-11")
 
 ;;==============================================
 ;; Narrow or widen whatever I'm working on
@@ -455,7 +457,7 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(company-box-enable-icon nil)
- '(cua-normal-cursor-color "#d8dee9")
+ '(cua-normal-cursor-color "#61afef")
  '(cursor-type (quote (bar . 2)))
  '(custom-enabled-themes (quote (doom-one-light)))
  '(custom-safe-themes
@@ -465,7 +467,7 @@
  '(package-selected-packages
    (quote
     (lua-mode org org-plus-contrib elfeed elfeed-org rg winum which-key use-package undo-tree tablist rainbow-mode rainbow-delimiters persp-projectile peep-dired org-superstar minions magit iedit helm-swoop helm-rg helm-projectile helm-org gnu-elpa-keyring-update flyspell-correct-helm expand-region doom-themes doom-modeline dired-subtree dired-narrow company-box avy all-the-icons-dired)))
- '(persp-modestring-dividers (quote ("(" ")" "|"))))
+ '(persp-modestring-dividers (quote ("[" "]" "|"))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -473,7 +475,6 @@
  ;; If there is more than one, they won't work right.
  '(font-lock-comment-delimiter-face ((t (:inherit font-lock-comment-face))))
  '(font-lock-comment-face ((t (:foreground "#5B6268" :slant italic))))
- '(variable-pitch ((t (:size 14 :weight normal :width normal :family "Noto Sans"))))
  '(org-block ((t (:inherit (shadow fixed-pitch)))))
  '(org-table ((t (:inherit (shadow fixed-pitch)))))
  '(org-code ((t (:inherit (shadow fixed-pitch)))))
