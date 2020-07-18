@@ -11,6 +11,7 @@ dropbox start -i &
 dunst &
 xclip &
 clipit &
+emacs -daemon &
 
 bspc monitor -d I II III IV V VI VII VIII
 
