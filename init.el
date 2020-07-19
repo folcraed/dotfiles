@@ -303,7 +303,14 @@
 ;; Elfeed
 ;;===============================================
 (use-package elfeed
-  :ensure t)
+  :ensure t
+  :bind (("C-c w" . elfeed)
+	 :map elfeed-search-mode-map
+	 ("n" . (lambda () (interactive) (next-line) (call-interactively 'elfeed-search-show-entry)))
+	 ("p" . (lambda () (interactive) (previous-line) (call-interactively 'elfeed-search-show-entry))))
+  :config
+  (setq elfeed-show-entry-switch 'display-buffer)
+  (setq elfeed-search-remain-on-entry t))
 
 (use-package elfeed-org
   :ensure t)
