@@ -1,5 +1,5 @@
 ;; -*- lexical-binding: t -*-
-;; My Emacs settings Ver 0.96
+;; My Emacs settings Ver 0.97
 ;; File or commit timestamp show when last updated.
 
 (setq inhibit-startup-message t)
@@ -110,7 +110,9 @@
 ;;==============================================
 
 (use-package dired-narrow
-  :ensure t)
+  :after dired
+  :config
+  (bind-key "/" #'dired-narrow dired-mode-map))
 
 (use-package peep-dired
   :ensure t
@@ -300,42 +302,6 @@
   :ensure t)
 
 ;;===============================================
-;; Elfeed
-;;===============================================
-(use-package elfeed
-  :ensure t
-  :bind (("C-c w" . elfeed)
-	 :map elfeed-search-mode-map
-	 ("n" . (lambda () (interactive) (next-line) (call-interactively 'elfeed-search-show-entry)))
-	 ("p" . (lambda () (interactive) (previous-line) (call-interactively 'elfeed-search-show-entry))))
-  :config
-  (setq elfeed-show-entry-switch 'display-buffer)
-  (setq elfeed-search-remain-on-entry t))
-
-(use-package elfeed-org
-  :ensure t)
-
-(elfeed-org)
-(setq rmh-elfeed-org-files (list "~/Dropbox/Notes/elfeed.org"))
-
-(defun elfeed-v-mpv (url)
-  "Watch a video from URL in MPV"
-  (async-shell-command (format "mpv '%s'" url)))
-
-(defun elfeed-view-mpv (&optional use-generic-p)
-  "Youtube-feed link"
-  (interactive "P")
-  (let ((entries (elfeed-search-selected)))
-    (cl-loop for entry in entries
-	     do (elfeed-untag entry 'unread)
-	     when (elfeed-entry-link entry)
-	     do (elfeed-v-mpv it))
-    (mapc #'elfeed-search-update-entry entries)
-    (unless (use-region-p) (forward-line))))
-
-(define-key elfeed-search-mode-map (kbd "v") 'elfeed-view-mpv)
-
-;;===============================================
 ;; Lua for Awesome
 ;;===============================================
 (use-package lua-mode
@@ -351,7 +317,6 @@
 (global-set-key (kbd "C-d") 'd-map)
 (define-key d-map (kbd "g") 'rg)
 (define-key d-map (kbd "i") 'org-table-insert-row)
-(define-key d-map (kbd "n") 'dired-narrow)
 (define-key d-map (kbd "k") 'helm-show-kill-ring)
 (define-key d-map (kbd "l") 'org-insert-link)
 (define-key d-map (kbd "r") 'helm-resume)
@@ -478,7 +443,7 @@
  '(org-export-backends (quote (ascii html md odt)))
  '(package-selected-packages
    (quote
-    (lua-mode org org-plus-contrib elfeed elfeed-org rg winum which-key use-package undo-tree tablist rainbow-mode rainbow-delimiters persp-projectile peep-dired org-superstar minions magit iedit helm-swoop helm-rg helm-projectile helm-org gnu-elpa-keyring-update flyspell-correct-helm expand-region doom-themes doom-modeline dired-subtree dired-narrow company-box avy all-the-icons-dired)))
+    (lua-mode org org-plus-contrib rg winum which-key use-package undo-tree tablist rainbow-mode rainbow-delimiters persp-projectile peep-dired org-superstar minions magit iedit helm-swoop helm-rg helm-projectile helm-org gnu-elpa-keyring-update flyspell-correct-helm expand-region doom-themes doom-modeline dired-subtree dired-narrow company-box avy all-the-icons-dired)))
  '(persp-modestring-dividers (quote ("[" "]" "|"))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
