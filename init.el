@@ -146,7 +146,7 @@
   :ensure t
   :hook (after-init . doom-modeline-mode)
   :init
-  (setq doom-modeline-height 15
+  (setq doom-modeline-height 13
 	doom-modeline-minor-modes t
 	doom-modeline-major-mode-color-icon t
 	doom-modeline-buffer-modification-icon t
@@ -380,8 +380,8 @@
                          (inhibit-same-window . t)
                          (window-height . 0.3)))
 (cua-mode t)
-(set-face-attribute 'default nil :font "JetBrains Mono-11")
-(set-face-attribute 'fixed-pitch nil :font "JetBrains Mono-11")
+(set-face-attribute 'default nil :font "JetBrains Mono-10")
+(set-face-attribute 'fixed-pitch nil :font "JetBrains Mono-10")
 (set-face-attribute 'variable-pitch nil :font "Noto Sans-11")
 
 ;;==============================================
