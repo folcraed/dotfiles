@@ -381,7 +381,7 @@
                          (window-height . 0.3)))
 (cua-mode t)
 (set-face-attribute 'default nil :font "JetBrains Mono-10")
-(set-face-attribute 'fixed-pitch nil :font "JetBrains Mono-10")
+(set-face-attribute 'fixed-pitch nil :font "Noto Sans Mono-11")
 (set-face-attribute 'variable-pitch nil :font "Noto Sans-11")
 
 ;;==============================================
