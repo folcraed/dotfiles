@@ -233,6 +233,10 @@
       org-use-tag-inheritance nil
       org-outline-path-complete-in-steps nil)
 
+(setq org-refile-targets
+      '((nil :maxlevel . 2)
+	(org-agenda-files :maxlevel . 2)))
+
 ;; (require 'org-tempo) <--This will be needed in Org 9.2 and above
 
 ;;==============================================
@@ -380,9 +384,9 @@
                          (inhibit-same-window . t)
                          (window-height . 0.3)))
 (cua-mode t)
-(set-face-attribute 'default nil :font "JetBrains Mono-10")
-(set-face-attribute 'fixed-pitch nil :font "Noto Sans Mono-11")
-(set-face-attribute 'variable-pitch nil :font "Noto Sans-11")
+(set-face-attribute 'default nil :font "Ubuntu Mono-11")
+(set-face-attribute 'fixed-pitch nil :font "Ubuntu Mono-11")
+(set-face-attribute 'variable-pitch nil :font "Ubuntu-11")
 
 ;;==============================================
 ;; Narrow or widen whatever I'm working on
