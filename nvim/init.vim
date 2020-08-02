@@ -16,7 +16,6 @@ Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-fugitive'
 Plug 'easymotion/vim-easymotion'
 Plug 'godlygeek/tabular'
-Plug 'eugen0329/vim-esearch'
 Plug 'masukomi/vim-markdown-folding', { 'for': 'markdown' }
 
 call plug#end()
@@ -61,20 +60,6 @@ let g:netrw_browsex_viewer = "xdg-open"
 " Key to format tables in markdown
 "==================================================
 nno <leader>t :TableFormat<cr>
-
-"==================================================
-" --{{ Settings for vim-esearch
-" It uses <leader>ff to search
-"==================================================
-let g:esearch = {
-  \ 'adapter':    'rg',
-  \ 'backend':    'nvim',
-  \ 'out':        'qflist',
-  \ 'batch_size': 1000,
-  \ 'use':        ['word_under_cursor'],
-  \ 'default_mappings': 1,
-  \}
-" --}} end of settings for vim-esearch
 
 "==================================================
 " Settings for NerdTree so it's more sane
@@ -267,12 +252,6 @@ nno <leader>w :%s/\s\+$//<cr>:let @/=''<cr>
 "==================================================
 nno <leader>+ :wincmd =<cr>:wincmd \|<cr>
 nno <leader>- :wincmd =<cr>
-
-"==================================================
-" Session management. F2 loads the notes session, F3 saves it.
-"==================================================
-nno <F2> :source ~/Dropbox/Docs/Notes/Session.vim<CR>
-nno <F3> :wa<Bar>exe "mksession! " . v:this_session<CR>
 
 "==================================================
 " Snippets
