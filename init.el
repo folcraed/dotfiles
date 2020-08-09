@@ -1,5 +1,5 @@
 ;; -*- lexical-binding: t -*-
-;; My Emacs settings Ver 0.97
+;; My Emacs settings Ver 0.98
 ;; File or commit timestamp show when last updated.
 
 (setq inhibit-startup-message t)
@@ -276,6 +276,7 @@
   :ensure t
   :init (setq helm-org-format-outline-path 1))
 (require 'helm-org)
+
 ;;==============================================
 ;;  Flyspell stuff
 ;;==============================================
@@ -310,42 +311,6 @@
 
 (use-package magit
   :ensure t)
-
-;;===============================================
-;; Elfeed
-;;===============================================
-(use-package elfeed
-  :ensure t
-  :bind (("C-c w" . elfeed)
-	 :map elfeed-search-mode-map
-	 ("n" . (lambda () (interactive) (next-line) (call-interactively 'elfeed-search-show-entry)))
-	 ("p" . (lambda () (interactive) (previous-line) (call-interactively 'elfeed-search-show-entry))))
-  :config
-  (setq elfeed-show-entry-switch 'display-buffer)
-  (setq elfeed-search-remain-on-entry t))
-
-(use-package elfeed-org
-  :ensure t)
-
-(elfeed-org)
-(setq rmh-elfeed-org-files (list "~/Dropbox/Notes/elfeed.org"))
-
-(defun elfeed-v-mpv (url)
-  "Watch a video from URL in MPV"
-  (async-shell-command (format "mpv '%s'" url)))
-
-(defun elfeed-view-mpv (&optional use-generic-p)
-  "Youtube-feed link"
-  (interactive "P")
-  (let ((entries (elfeed-search-selected)))
-    (cl-loop for entry in entries
-	     do (elfeed-untag entry 'unread)
-	     when (elfeed-entry-link entry)
-	     do (elfeed-v-mpv it))
-    (mapc #'elfeed-search-update-entry entries)
-    (unless (use-region-p) (forward-line))))
-
-(define-key elfeed-search-mode-map (kbd "v") 'elfeed-view-mpv)
 
 ;;===============================================
 ;; Lua for Awesome
@@ -402,7 +367,9 @@
 	      create-lockfiles nil
 	      auto-save-default nil
 	      scroll-preserve-screen-position t
-	      size-indication-mode 1)
+	      size-indication-mode 1
+	      shr-max-image-proportion 0.9
+	      shr-image-animate nil)
 
 (add-hook 'minibuffer-setup-hook
 	  (lambda () (setq truncate-lines nil)))
@@ -489,7 +456,7 @@
  '(org-export-backends (quote (ascii html md odt)))
  '(package-selected-packages
    (quote
-    (lua-mode org org-plus-contrib rg winum which-key use-package undo-tree tablist rainbow-mode rainbow-delimiters persp-projectile peep-dired org-superstar minions magit iedit helm-swoop helm-rg helm-projectile helm-org gnu-elpa-keyring-update flyspell-correct-helm expand-region doom-themes doom-modeline dired-subtree dired-narrow company-box avy all-the-icons-dired elfeed elfeed-org transpose-frame)))
+    (lua-mode org org-plus-contrib rg winum which-key use-package undo-tree tablist rainbow-mode rainbow-delimiters persp-projectile peep-dired org-superstar minions magit iedit helm-swoop helm-rg helm-projectile helm-org gnu-elpa-keyring-update flyspell-correct-helm expand-region doom-themes doom-modeline dired-subtree dired-narrow company-box avy all-the-icons-dired transpose-frame)))
  '(persp-modestring-dividers (quote ("[" "]" "|"))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
