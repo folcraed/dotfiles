@@ -114,28 +114,13 @@
   :config
   (bind-key "/" #'dired-narrow dired-mode-map))
 
-(use-package peep-dired
-  :ensure t
-  :defer t
-  :bind (:map dired-mode-map
-              ("P" . peep-dired))
-  :config
-  (setq peep-dired-cleanup-on-disable t)
-  (setq peep-dired-ignored-extensions '("mkv" "webm" "mp4" "mp3" "ogg" "iso")))
-
 (use-package dired-subtree
   :after dired
   :config
   (bind-key "<tab>" #'dired-subtree-toggle dired-mode-map))
 
-(use-package all-the-icons-dired
-  :ensure t)
-
-(add-hook 'dired-mode-hook 'all-the-icons-dired-mode)
-
 (setq delete-by-moving-to-trash t
       dired-listing-switches "-ahlv --group-directories-first"
-      wdired-create-parent-directories t
       dired-dwim-target t)
 
 ;;===============================================
@@ -456,7 +441,7 @@
  '(org-export-backends (quote (ascii html md odt)))
  '(package-selected-packages
    (quote
-    (lua-mode org org-plus-contrib rg winum which-key use-package undo-tree tablist rainbow-mode rainbow-delimiters persp-projectile peep-dired org-superstar minions magit iedit helm-swoop helm-rg helm-projectile helm-org gnu-elpa-keyring-update flyspell-correct-helm expand-region doom-themes doom-modeline dired-subtree dired-narrow company-box avy all-the-icons-dired transpose-frame)))
+    (lua-mode org org-plus-contrib rg winum which-key use-package undo-tree tablist rainbow-mode rainbow-delimiters persp-projectile org-superstar minions magit iedit helm-swoop helm-rg helm-projectile helm-org gnu-elpa-keyring-update flyspell-correct-helm expand-region doom-themes doom-modeline dired-subtree dired-narrow company-box avy transpose-frame async)))
  '(persp-modestring-dividers (quote ("[" "]" "|"))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
