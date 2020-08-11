@@ -66,7 +66,7 @@
                          spacemacs-light)
    dotspacemacs-mode-line-theme '(doom)
    dotspacemacs-colorize-cursor-according-to-state t
-   dotspacemacs-default-font '("JetBrains Mono"
+   dotspacemacs-default-font '("Ubuntu Mono"
                                :size 14
                                :weight normal
                                :width normal)
@@ -153,6 +153,7 @@
   (setq delete-by-moving-to-trash t)
   (setq shr-max-image-proportion 0.5)
   (treemacs-resize-icons 16)
+
 ;;==============================================================================
 ;; Custom keybindings
 ;;==============================================================================
@@ -227,7 +228,7 @@
   (setq org-agenda-files (quote ("~/Dropbox/Notes/")))
   (setq org-use-tag-inheritance nil)
   (setq org-tags-column 0))
-
+(add-hook 'org-mode-hook 'variable-pitch-mode)
 ;;==============================================================================
 ;; Emacs Custom settings
 ;;==============================================================================
@@ -241,6 +242,7 @@ This function is called at the very end of Spacemacs initialization."
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
+ '(blink-cursor-mode nil)
  '(company-box-enable-icon nil)
  '(cursor-type (quote (bar . 2)))
  '(package-selected-packages
@@ -252,6 +254,11 @@ This function is called at the very end of Spacemacs initialization."
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(font-lock-comment-face ((t (:slant italic)))))
-)
-
+ '(cursor ((t (:foreground "#61AFEF"))))
+ '(fixed-pitch ((t (:family "Ubuntu Mono"))))
+ '(font-lock-comment-face ((t (:slant italic))))
+ '(org-block ((t (:inherit (shadow fixed-pitch)))))
+ '(org-code ((t (inherit (shadow fixed-pitch)))))
+ '(org-table ((t (:inherit (shadow fixed-pitch)))))
+ '(spacemacs-insert-face ((t (:foreground "#61afef"))))
+ '(variable-pitch ((t (:size 14 :weight normal :width normal :family "Ubuntu"))))))
