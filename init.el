@@ -320,6 +320,7 @@
 (global-set-key (kbd "M-x") 'helm-M-x)
 (global-set-key (kbd "M-s g") 'helm-rg)
 (global-set-key (kbd "M-s o") 'helm-occur)
+(global-set-key (kbd "M-s w") 'helm-occur-from-isearch)
 (global-set-key (kbd "C-p") 'projectile-find-file)
 (global-set-key (kbd "C-b") 'helm-mini)
 (global-set-key (kbd "M-o") 'helm-org-in-buffer-headings)
