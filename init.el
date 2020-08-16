@@ -245,12 +245,6 @@
   (helm-mode 1))
 (require 'helm-config)
 
-(use-package helm-swoop
-  :ensure t
-  :init (setq helm-swoop-split-with-multiple-windows t
-              helm-swoop-split=direction 'split-window-vertically))
-(require 'helm-swoop)
-
 (use-package helm-rg
   :ensure t)
 
@@ -324,10 +318,8 @@
 (global-set-key (kbd "C-c c") 'org-capture)
 (global-set-key (kbd "C-c l") 'org-store-link)
 (global-set-key (kbd "M-x") 'helm-M-x)
-(global-set-key (kbd "M-s w") 'helm-swoop)
 (global-set-key (kbd "M-s g") 'helm-rg)
-(global-set-key (kbd "M-s s") 'helm-swoop-without-pre-input)
-(global-set-key (kbd "M-s o") 'helm-multi-swoop-org)
+(global-set-key (kbd "M-s o") 'helm-occur)
 (global-set-key (kbd "C-p") 'projectile-find-file)
 (global-set-key (kbd "C-b") 'helm-mini)
 (global-set-key (kbd "M-o") 'helm-org-in-buffer-headings)
@@ -441,7 +433,7 @@
  '(org-export-backends (quote (ascii html md odt)))
  '(package-selected-packages
    (quote
-    (lua-mode org org-plus-contrib rg winum which-key use-package undo-tree tablist rainbow-mode rainbow-delimiters persp-projectile org-superstar minions magit iedit helm-swoop helm-rg helm-projectile helm-org gnu-elpa-keyring-update flyspell-correct-helm expand-region doom-themes doom-modeline dired-subtree dired-narrow company-box avy transpose-frame async)))
+    (lua-mode org org-plus-contrib rg winum which-key use-package undo-tree tablist rainbow-mode rainbow-delimiters persp-projectile org-superstar minions magit iedit helm-rg helm-projectile helm-org gnu-elpa-keyring-update flyspell-correct-helm expand-region doom-themes doom-modeline dired-subtree dired-narrow company-box avy transpose-frame async)))
  '(persp-modestring-dividers (quote ("[" "]" "|"))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
