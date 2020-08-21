@@ -265,7 +265,7 @@
 
 (use-package flyspell-correct-helm
   :ensure t
-  :init
+  :config
   (setq flyspell-correct-interface #'flyspell-correct-helm
         ispell-program-name "aspell"
         ispell-dictionary "en_US"
