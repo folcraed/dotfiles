@@ -29,8 +29,6 @@
 (add-to-list 'package-archives
 	     '("org" . "https://orgmode.org/elpa/"))
 
-(package-initialize)
-
 (unless (package-installed-p 'use-package)
   (package-refresh-contents)
   (package-install 'use-package))
@@ -120,7 +118,7 @@
 (use-package doom-modeline
   :ensure t
   :hook (after-init . doom-modeline-mode)
-  :init
+  :config
   (setq doom-modeline-height 13
 	doom-modeline-minor-modes t
 	doom-modeline-major-mode-color-icon t
@@ -243,7 +241,7 @@
 
 (use-package helm-org
   :ensure t
-  :init (setq helm-org-format-outline-path 1))
+  :config (setq helm-org-format-outline-path 1))
 (require 'helm-org)
 
 ;;==============================================
