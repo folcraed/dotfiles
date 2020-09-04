@@ -7,7 +7,7 @@ gnome-keyring-daemon -s &
 ssh-agent &
 /home/rob/.fehbg &
 picom &
-dropbox start -i &
+# dropbox start -i &
 dunst &
 xclip &
 clipit &
