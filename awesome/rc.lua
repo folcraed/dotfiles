@@ -68,13 +68,13 @@ altkey = "Mod1"
 --| Table of layouts to cover with awful.layout.inc, order matters. |--
 
 awful.layout.layouts = {
-    awful.layout.suit.floating,
     awful.layout.suit.tile,
     awful.layout.suit.tile.left,
     awful.layout.suit.tile.bottom,
     awful.layout.suit.tile.top,
     awful.layout.suit.fair,
     awful.layout.suit.fair.horizontal,
+    awful.layout.suit.floating,    
 }
 -- }}}
 
@@ -601,5 +601,5 @@ run_once("ssh-agent")
 run_once("picom")
 run_once("clipit")
 run_once("xclip")
-run_once("pasystray --volume-inc=3 -t")
+run_once("volctl")
 -- run_once("dropbox start -i")
