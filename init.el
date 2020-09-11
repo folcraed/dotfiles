@@ -71,7 +71,7 @@
 (use-package company
   :ensure t
   :config
-  (setq company-idle-delay 1
+  (setq company-idle-delay 0.5
 	company-minimum-prefix-length 3)
   (global-company-mode t))
 
@@ -80,7 +80,7 @@
   :hook (company-mode . company-box-mode)
   :config
   (setq company-box-backends-colors nil
-	company-box-max-candidates 1000
+	company-box-max-candidates 50
 	company-box-doc-enable nil))
 
 (use-package iedit
