@@ -166,7 +166,6 @@
   :ensure t
   :pin org
   :config
-  (add-hook 'org-mode-hook 'variable-pitch-mode 1)
   (setq-default org-hide-emphasis-markers t)
   (setq org-startup-folded nil
 	org-startup-indented t
@@ -249,15 +248,15 @@
 ;;==============================================
 
 (use-package flyspell-correct
-  :ensure t)
+  :after flyspell
+  :defer t)
 
 (use-package flyspell-correct-helm
-  :ensure t
-  :config
-  (setq flyspell-correct-interface #'flyspell-correct-helm
-        ispell-program-name "aspell"
-        ispell-dictionary "en_US"
-        ispell-local-dictionary "american"))
+  :after flyspell-correct)
+
+(setq ispell-program-name "aspell"
+      ispell-dictionary "en_US"
+      ispell-local-dictionary "american")
 (global-set-key (kbd "C-<f8>") 'flyspell-buffer)
 (global-set-key (kbd "<f8>") 'flyspell-correct-at-point)
 
@@ -378,9 +377,10 @@
                          (inhibit-same-window . t)
                          (window-height . 0.3)))
 (cua-mode t)
-(set-face-attribute 'default nil :font "Ubuntu Mono-11")
-(set-face-attribute 'fixed-pitch nil :font "Ubuntu Mono-11")
-(set-face-attribute 'variable-pitch nil :font "Ubuntu-11")
+(set-face-attribute 'default nil :font "JetBrains Mono-10")
+(set-face-attribute 'fixed-pitch nil :font "JetBrains Mono-10")
+(set-face-attribute 'variable-pitch nil :font "Noto Sans-10")
+(add-hook 'org-mode-hook 'variable-pitch-mode 1)
 
 ;;==============================================
 ;; Narrow or widen whatever I'm working on
