@@ -1,5 +1,5 @@
 ;; -*- lexical-binding: t -*-
-;; My Emacs settings Ver 0.98
+;; My Emacs settings Ver 0.99
 ;; File or commit timestamp show when last updated.
 
 (setq inhibit-startup-message t)
@@ -297,6 +297,23 @@
 (elfeed-org)
 (setq rmh-elfeed-org-files (list "~/Dropbox/Notes/elfeed.org"))
 
+(defun elfeed-v-mpv (url)
+  "Watch a video from URL in MPV"
+  (async-shell-command (format "mpv --ytdl '%s'" url)))
+
+(defun elfeed-view-mpv (&optional use-generic-p)
+  "Youtube-feed link"
+  (interactive "P")
+  (let ((entries (elfeed-search-selected)))
+    (cl-loop for entry in entries
+	     do (elfeed-untag entry 'unread)
+	     when (elfeed-entry-link entry)
+	     do (elfeed-v-mpv it))
+    (mapc #'elfeed-search-update-entry entries)
+    (unless (use-region-p) (forward-line))))
+
+(define-key elfeed-search-mode-map (kbd "v") 'elfeed-view-mpv)
+
 ;;===============================================
 ;; Lua for Awesome
 ;;===============================================
@@ -311,6 +328,9 @@
 ;;===============================================
 (define-prefix-command 'd-map)
 (global-set-key (kbd "C-d") 'd-map)
+(define-key d-map (kbd "a") 'rotate-frame-anticlockwise)
+(define-key d-map (kbd "c") 'rotate-frame-clockwise)
+(define-key d-map (kbd "f") 'projectile-find-file-other-window)
 (define-key d-map (kbd "g") 'rg)
 (define-key d-map (kbd "i") 'org-table-insert-row)
 (define-key d-map (kbd "k") 'helm-show-kill-ring)
