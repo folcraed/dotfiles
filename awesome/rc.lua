@@ -3,7 +3,7 @@
      using available and stock Awesome libraries and
      extensions. Initially created for Awesome 4.2 ]]
 
---| Get some default Awesome libraries |--
+-- Get some default Awesome libraries
 
 local gears = require("gears")
 local awful = require("awful")
@@ -15,12 +15,15 @@ local naughty = require("naughty")
 local menubar = require("menubar")
 local hotkeys_popup = require("awful.hotkeys_popup")
 
--- {{{ Setting a sane icon default for naughty.notify
+-- Setting a sane icon default for naughty.notify
+
 naughty.config.defaults['icon_size'] = 32
 
 -- {{{ Error handling
+
 -- Check if awesome encountered an error during startup and fell back to
 -- another config (This code will only ever execute for the fallback config)
+
 if awesome.startup_errors then
     naughty.notify({ preset = naughty.config.presets.critical,
                      title = "Oops, there were errors during startup!",
@@ -28,6 +31,7 @@ if awesome.startup_errors then
 end
 
 -- Handle runtime errors after startup
+
 do
     local in_error = false
     awesome.connect_signal("debug::error", function (err)
@@ -41,28 +45,30 @@ do
         in_error = false
     end)
 end
+
 -- }}}
 
 -- {{{ Set some Awesome defaults
 
---| Get the theme
+-- Get the theme
 
 local theme_path = string.format("%s/.config/awesome/themes/%s/theme.lua", os.getenv("HOME"), "Onedark")
 beautiful.init(theme_path)
 
 
---| Default terminal and editor
+-- Default terminal and editor
 
 terminal = "alacritty"
 editor = os.getenv("EDITOR") or "nvim"
 editor_cmd = terminal .. " -e " .. editor
 
---| Default modkey. |--
+-- Default modkey
 
 modkey = "Mod4"
 altkey = "Mod1"
 
--- Table of layouts to cover with awful.layout.inc, order matters.
+-- Table of layouts to cover with awful.layout.inc, order matters
+
 awful.layout.layouts = {
     awful.layout.suit.tile,
     awful.layout.suit.tile.left,
@@ -75,6 +81,7 @@ awful.layout.layouts = {
 -- }}}
 
 -- {{{ Helper functions
+
 local function client_menu_toggle_fn()
     local instance = nil
 
@@ -87,11 +94,12 @@ local function client_menu_toggle_fn()
         end
     end
 end
+
 -- }}}
 
 -- {{{ Menu
 
---| Create a launcher widget and a main menu |--
+-- Create a launcher widget and a main menu
 
 myawesomemenu = {
    { "hotkeys", function() hotkeys_popup.show_help(nil, awful.screen.focused()) end },
@@ -110,12 +118,14 @@ mylauncher = awful.widget.launcher({ image = beautiful.awesome_icon,
                                      menu = mymainmenu })
 
 -- Menubar configuration
+
 menubar.utils.terminal = terminal -- Set the terminal for applications that require it
+
 -- }}}
 
 -- {{{ Wibar
 
---| Create a few widgets |--
+-- Create a few widgets
 
 markup  = lain.util.markup
 spacer = wibox.widget.textbox(" | ")
@@ -139,7 +149,8 @@ local mymem = lain.widget.mem({
     end
 })
 
---| Create a wibox for each screen and add it
+-- Create a wibox for each screen and add it
+
 local taglist_buttons = gears.table.join(
                     awful.button({ }, 1, function(t) t:view_only() end),
                     awful.button({ modkey }, 1, function(t)
@@ -170,9 +181,11 @@ local function set_wallpaper(s)
 end
 
 -- Re-set wallpaper when a screen's geometry changes (e.g. different resolution)
+
 screen.connect_signal("property::geometry", set_wallpaper)
 
 awful.screen.connect_for_each_screen(function(s)
+	
     -- Wallpaper
     set_wallpaper(s)
 
@@ -230,17 +243,21 @@ awful.screen.connect_for_each_screen(function(s)
         },
     }
 end)
+
 -- }}}
 
 -- {{{ Mouse bindings
+
 root.buttons(gears.table.join(
     awful.button({ }, 3, function () mymainmenu:toggle() end),
     awful.button({ }, 4, awful.tag.viewnext),
     awful.button({ }, 5, awful.tag.viewprev)
 ))
+
 -- }}}
 
 -- {{{ Key bindings
+
 globalkeys = gears.table.join(
     awful.key({ modkey,           }, "s",      hotkeys_popup.show_help,
               { description="show help", group="awesome" }),
@@ -407,7 +424,8 @@ clientkeys = gears.table.join(
         { description = "maximize", group = "client" })
 )
 
--- Bind all key numbers to tags.
+-- Bind all key numbers to tags
+
 for i = 1, 9 do
     globalkeys = gears.table.join(globalkeys,
         -- View tag only.
@@ -470,11 +488,15 @@ clientbuttons = gears.table.join(
 )
 
 -- Set keys
+
 root.keys(globalkeys)
+
 -- }}}
 
 -- {{{ Rules
+
 -- Rules to apply to new clients (through the "manage" signal).
+
 awful.rules.rules = {
     -- All clients will match this rule.
     { rule = { },
@@ -512,10 +534,13 @@ awful.rules.rules = {
       }, properties = { titlebars_enabled = false }
     },
 }
+
 -- }}}
 
 -- {{{ Signals
+
 -- Signal function to execute when a new client appears.
+
 client.connect_signal("manage", function (c)
     -- Set the windows at the slave,
     -- i.e. put it at the end of others instead of setting it master.
@@ -530,6 +555,7 @@ client.connect_signal("manage", function (c)
 end)
 
 -- Add a titlebar if titlebars_enabled is set to true in the rules.
+
 client.connect_signal("request::titlebars", function(c)
     -- buttons for the titlebar
     local buttons = gears.table.join(
@@ -570,15 +596,17 @@ client.connect_signal("request::titlebars", function(c)
 end)
 
 -- Enable sloppy focus, so that focus follows mouse.
+
 client.connect_signal("mouse::enter", function(c)
     c:emit_signal("request::activate", "mouse_enter", { raise = false })
 end)
 
 client.connect_signal("focus", function(c) c.border_color = beautiful.border_focus end)
 client.connect_signal("unfocus", function(c) c.border_color = beautiful.border_normal end)
+
 -- }}}
 
---- | run_once | --
+--- run_once
 
 function run_once(cmd)
   findme = cmd
@@ -589,7 +617,7 @@ function run_once(cmd)
   awful.spawn.with_shell("pgrep -u $USER -x " .. findme .. " > /dev/null || (" .. cmd .. ")")
 end
 
--- | Autostart | --
+-- Autostart
 
 run_once("gnome-keyring-daemon -s")
 run_once("/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1")
