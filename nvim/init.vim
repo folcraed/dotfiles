@@ -17,6 +17,7 @@ Plug 'tpope/vim-fugitive'
 Plug 'easymotion/vim-easymotion'
 Plug 'godlygeek/tabular'
 Plug 'masukomi/vim-markdown-folding', { 'for': 'markdown' }
+Plug 'liuchengxu/vim-which-key'
 
 call plug#end()
 
@@ -104,6 +105,10 @@ let g:airline_theme = 'onedark'
 " --}} End of Airline settings
 
 "==================================================
+" --{{ Settings for Which-key
+"==================================================
+nnoremap <silent> <leader> :WhichKey '<Space>'<CR>
+
 " --{{ Set up colorschemes
 "==================================================
 " let g:neodark#background = '#2b303b'
