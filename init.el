@@ -361,6 +361,7 @@
 (global-set-key (kbd "<C-M-S-right>") 'enlarge-window-horizontally)
 (global-set-key (kbd "<C-M-S-down>") 'shrink-window)
 (global-set-key (kbd "<C-M-S-up>") 'enlarge-window)
+(global-set-key (kbd "<escape>") 'keyboard-escape-quit)
 
 ;;==============================================
 ;;  Sanity settings
