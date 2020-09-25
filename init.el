@@ -27,7 +27,7 @@
 (add-to-list 'package-archives
 	     '("melpa" . "https://melpa.org/packages/"))
 (add-to-list 'package-archives
-	     '("org" . "https://orgmode.org/elpa/"))
+	     '("org" . "https://orgmode.org/elpa/") t)
 
 (unless (package-installed-p 'use-package)
   (package-refresh-contents)
@@ -163,8 +163,8 @@
 ;;==============================================
 
 (use-package org
-  :ensure t
-;;  :pin org
+  :ensure org-plus-contrib
+  :pin org
   :config
   (setq-default org-hide-emphasis-markers t)
   (setq org-startup-folded nil
