@@ -17,7 +17,6 @@ Plug 'tpope/vim-fugitive'
 Plug 'easymotion/vim-easymotion'
 Plug 'godlygeek/tabular'
 Plug 'masukomi/vim-markdown-folding', { 'for': 'markdown' }
-Plug 'liuchengxu/vim-which-key'
 
 call plug#end()
 
@@ -72,12 +71,12 @@ let NERDTreeShowBookmarks=1
 let NERDTreeShowHidden=1
 let g:NERDTreeDirArrowExpandable = '▸'
 let g:NERDTreeDirArrowCollapsible = '▾'
-nno <silent><leader>e :edit .<cr>
 
 "==================================================
 " Settings for FZF
 "==================================================
 let g:fzf_buffers_jump = 1
+let g:fzf_layout = {'up':'~90%', 'window': { 'width': 0.8, 'height': 0.8,'yoffset':0.5,'xoffset': 0.5, 'border': 'sharp' } }
 
 "==================================================
 " Settings for Markdown folding
@@ -103,11 +102,6 @@ let g:airline_right_alt_sep = ''
 let g:airline_theme = 'onedark'
 
 " --}} End of Airline settings
-
-"==================================================
-" --{{ Settings for Which-key
-"==================================================
-nnoremap <silent> <leader> :WhichKey '<Space>'<CR>
 
 " --{{ Set up colorschemes
 "==================================================
@@ -144,7 +138,7 @@ hi! NonText ctermbg=NONE guibg=NONE guifg=NONE ctermfg=NONE
 " FZF Keybindings
 "==================================================
 nno <silent><leader>o :Files<cr>
-nno <silent><leader>O :FZF ~<cr>
+nno <silent><leader>a :FZF ~<cr>
 nno <silent><leader>b :Buffers<cr>
 nno <silent><leader>s :BLines<cr>
 nno <silent><leader>f :Lines<cr>
@@ -186,8 +180,8 @@ nno <silent><leader>h :noh<cr>
 "==================================================
 "Make moving back and forth in buffers easier
 "==================================================
-nno <silent><leader>[ :bp<cr>
-nno <silent><leader>] :bn<cr>
+nno <silent><leader>l :bp<cr>
+nno <silent><leader>r :bn<cr>
 
 "==================================================
 " Make moving back and forth in tabs easier
@@ -203,8 +197,8 @@ nno <silent><leader>c :bp\|bd #<CR>
 "==================================================
 " Insert today's date at the cursor
 "==================================================
-:nno <F4> "=strftime("%a %d %b %Y")<cr>P
-:ino <F4> <C-R>=strftime("%a %d %b %Y")<cr>
+nno <F4> "=strftime("%a %d %b %Y")<cr>P
+ino <F4> <C-R>=strftime("%a %d %b %Y")<cr>
 
 "==================================================
 " This makes unrecognized code files use shell syntax highlighting
@@ -255,23 +249,17 @@ nno <leader>w :%s/\s\+$//<cr>:let @/=''<cr>
 "==================================================
 " Zoom a vim pane, <C-w>- to re-balance
 "==================================================
-nno <leader>+ :wincmd =<cr>:wincmd \|<cr>
-nno <leader>- :wincmd =<cr>
+nno <leader>z :wincmd =<cr>:wincmd \|<cr>
+nno <leader>u :wincmd =<cr>
 
 "==================================================
 " Snippets
 "==================================================
-nno <leader>= o==================================================<cr><ESC>
 
 "==================================================
 " Save a admin file from regular user
 "==================================================
 nno <silent><leader>r :w !sudo tee %
-
-"==================================================
-" Don't use Ex mode, use Q for formatting
-"==================================================
-map Q gq
 
 "==================================================
 " CTRL-U in insert mode deletes a lot.  Use CTRL-G u to first break undo,
@@ -288,6 +276,7 @@ ino <C-U> <C-G>u<C-U>
 "==================================================
 if has("autocmd")
 lua require'colorizer'.setup()
+
 "==================================================
 " Put these in an autocmd group, so that we can delete them easily.
 "==================================================
