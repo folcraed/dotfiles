@@ -432,5 +432,4 @@
  '(org-table ((t (:inherit (shadow fixed-pitch)))))
  '(persp-selected-face ((t (:foreground "orange" :weight bold)))))
 (put 'narrow-to-region 'disabled nil)
-(provide 'init)
 ;;; init.el ends here
