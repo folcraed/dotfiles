@@ -126,8 +126,8 @@ colorscheme onedark
 " colorscheme hybrid_material
 
 " Make sure terminal background isn't overwritten
-hi! Normal ctermbg=NONE guibg=NONE
-hi! NonText ctermbg=NONE guibg=NONE guifg=NONE ctermfg=NONE
+hi! Normal ctermbg=NONE guibg='#232629'
+hi! NonText ctermbg=NONE guibg='#232629' guifg=NONE ctermfg=NONE
 " --}} End of colorschemes
 
 "==================================================
@@ -259,7 +259,7 @@ nno <leader>u :wincmd =<cr>
 "==================================================
 " Save a admin file from regular user
 "==================================================
-nno <silent><leader>r :w !sudo tee %
+nno <silent><leader>x :w !sudo tee %
 
 "==================================================
 " CTRL-U in insert mode deletes a lot.  Use CTRL-G u to first break undo,
