@@ -1,5 +1,5 @@
 ;; -*- lexical-binding: t -*-
-;; My Emacs settings Ver 0.99
+;; My Emacs settings Ver 1.0
 ;; File or commit timestamp show when last updated.
 
 (setq inhibit-startup-message t)
@@ -21,6 +21,7 @@
 ;;==============================================
 ;;  Set up repositories
 ;;==============================================
+
 (setq gnutls-algorithm-priority "NORMAL:-VERS-TLS1.3")
 (require 'package)
 (setq package-enable-at-startup nil)
@@ -39,28 +40,24 @@
 ;;==============================================
 ;;  Keep keyring up to date
 ;;==============================================
+
 (use-package gnu-elpa-keyring-update
   :ensure t)
 
 ;;==============================================
 ;;  Minion for the rest
 ;;==============================================
+
 (use-package minions
   :ensure t)
 
 ;;==============================================
 ;;  My necessary packages
 ;;==============================================
+
 (use-package which-key
   :ensure t
   :config (which-key-mode))
-
-(use-package perspective
-  :ensure t)
-(persp-mode)
-(use-package persp-projectile
-  :ensure t)
-(require 'persp-projectile)
 
 (use-package avy
   :ensure t
@@ -141,7 +138,6 @@
   :config
   (setq doom-themes-enable-bold t
 	doom-themes-enable-italic t))
-;; (doom-themes-org-config)
 
 ;;==============================================
 ;;  Winum settings
@@ -164,6 +160,7 @@
 ;;==============================================
 ;;  Transpose windows
 ;;==============================================
+
 (use-package transpose-frame
   :ensure t)
 
@@ -214,7 +211,7 @@
 
 (setq-default org-display-custom-times t)
 (setq org-time-stamp-custom-formats '("[%a %b %e %Y]" . "<%a %b %e %Y %H:%M>")
-      org-agenda-files (quote ("~/Dropbox/Notes/"))
+      org-agenda-files (quote ("~/Dropbox/Notes/agenda.org"))
       org-goto-interface 'outline-path-completion
       org-use-tag-inheritance nil
       org-outline-path-complete-in-steps nil)
@@ -223,33 +220,28 @@
       '((nil :maxlevel . 2)
 	(org-agenda-files :maxlevel . 2)))
 
-;; (require 'org-tempo) <--This will be needed in Org 9.2 and above
-
 ;;==============================================
-;;  Helm and friends
+;;  Ivy and friends
 ;;==============================================
 
-(use-package helm
-  :ensure t
-  :init (setq helm-M-x_fuzzy-match 1
-              helm-autoresize-mode 0
-              helm-display-buffer-default-height 18
-              helm-split-window-inside-p 1
-              helm-descbinds-window-style 'same-window)
-  :config
-  (helm-mode 1))
-(require 'helm-config)
+(use-package counsel
+  :ensure t)
+  
+(setq ivy-use-virtual-buffers t
+      ivy-count-format "(%d/%d)"
+      ivy-height 15)
+(ivy-mode 1)
 
-(use-package helm-rg
+(use-package ivy-rich
+  :ensure t)
+(ivy-rich-mode 1)
+
+(use-package prescient
   :ensure t)
 
-(use-package helm-projectile
+(use-package ivy-prescient
   :ensure t)
-
-(use-package helm-org
-  :ensure t
-  :config (setq helm-org-format-outline-path 1))
-(require 'helm-org)
+(ivy-prescient-mode 1)
 
 ;;==============================================
 ;;  Flyspell stuff
@@ -257,16 +249,16 @@
 
 (use-package flyspell-correct
   :after flyspell
-  :defer t)
+  :bind (:map flyspell-mode-map ("C-;" . flyspell-correct-wrapper)))
 
-(use-package flyspell-correct-helm
+(use-package flyspell-correct-ivy
+  :ensure t
   :after flyspell-correct)
 
 (setq ispell-program-name "aspell"
       ispell-dictionary "en_US"
       ispell-local-dictionary "american")
-(global-set-key (kbd "C-<f8>") 'flyspell-buffer)
-(global-set-key (kbd "<f8>") 'flyspell-correct-at-point)
+(global-set-key (kbd "<f8>") 'flyspell-buffer)
 
 ;;==============================================
 ;; Projectile
@@ -276,7 +268,7 @@
   :ensure t
   :config
   (projectile-global-mode)
-  (setq projectile-completion-system 'helm))
+  (setq projectile-completion-system 'ivy))
 (define-key projectile-mode-map (kbd "C-x p") 'projectile-command-map)
 
 ;;===============================================
@@ -289,6 +281,7 @@
 ;;===============================================
 ;; Lua for Awesome
 ;;===============================================
+
 (use-package lua-mode
   :ensure t)
 (add-to-list 'auto-mode-alist '("\\.lua$" . lua-mode))
@@ -298,6 +291,7 @@
 ;;===============================================
 ;; Some personal keybindings
 ;;===============================================
+
 (define-prefix-command 'd-map)
 (global-set-key (kbd "C-d") 'd-map)
 (define-key d-map (kbd "a") 'rotate-frame-anticlockwise)
@@ -305,26 +299,24 @@
 (define-key d-map (kbd "f") 'projectile-find-file-other-window)
 (define-key d-map (kbd "g") 'rg)
 (define-key d-map (kbd "i") 'org-table-insert-row)
-(define-key d-map (kbd "k") 'helm-show-kill-ring)
+(define-key d-map (kbd "k") 'counsel-yank-pop)
 (define-key d-map (kbd "l") 'org-insert-link)
-(define-key d-map (kbd "r") 'helm-resume)
+(define-key d-map (kbd "r") 'ivy-resume)
 (define-key d-map (kbd "s") 'flyspell-mode)
 (define-key d-map (kbd "t") 'org-time-stamp)
 (define-key d-map (kbd "x") 'kill-buffer-and-window)
-(define-key helm-map (kbd "<tab>") 'helm-execute-persistent-action)
 (global-set-key (kbd "C-c a") 'org-agenda)
 (global-set-key (kbd "C-c c") 'org-capture)
 (global-set-key (kbd "C-c l") 'org-store-link)
-(global-set-key (kbd "M-x") 'helm-M-x)
-(global-set-key (kbd "M-s g") 'helm-rg)
-(global-set-key (kbd "M-s o") 'helm-occur)
-(global-set-key (kbd "M-s w") 'helm-occur-from-isearch)
+(global-set-key (kbd "M-x") 'counsel-M-x)
+(global-set-key (kbd "M-s g") 'counsel-rg)
+(global-set-key (kbd "M-s o") 'swiper)
+(global-set-key (kbd "M-s w") 'ivy-occur)
 (global-set-key (kbd "C-p") 'projectile-find-file)
-(global-set-key (kbd "C-b") 'helm-mini)
-(global-set-key (kbd "M-c") 'helm-org-in-buffer-headings)
+(global-set-key (kbd "C-b") 'ivy-switch-buffer)
+(global-set-key (kbd "M-c") 'counsel-outline)
 (global-set-key (kbd "C-o") 'org-open-at-point)
 (global-set-key (kbd "M-g") 'goto-line)
-(global-set-key (kbd "M-l") 'persp-switch)
 (global-set-key (kbd "M-;") 'comment-line)
 (global-set-key (kbd "C-q") 'delete-frame)
 (define-key org-mode-map (kbd "<C-M-S-left>") nil)
@@ -334,6 +326,7 @@
 (global-set-key (kbd "<C-M-S-down>") 'shrink-window)
 (global-set-key (kbd "<C-M-S-up>") 'enlarge-window)
 (global-set-key (kbd "<escape>") 'keyboard-escape-quit)
+(define-key dired-mode-map (kbd "C-c o") 'dired-open-file)
 
 ;;==============================================
 ;;  Sanity settings
@@ -364,16 +357,14 @@
 (global-set-key (kbd "M-n") 'rob-scroll-down)
 (global-set-key (kbd "M-p") 'rob-scroll-up)
 
-(add-to-list 'display-buffer-alist
-             `(,(rx bos "*helm" (* not-newline) "*" eos)
-                         (display-buffer-in-side-window)
-                         (inhibit-same-window . t)
-                         (window-height . 0.3)))
 (cua-mode t)
 (set-face-attribute 'default nil :font "JetBrains Mono-10")
 (set-face-attribute 'fixed-pitch nil :font "JetBrains Mono-10")
 (set-face-attribute 'variable-pitch nil :font "Noto Sans-10")
 (add-hook 'org-mode-hook 'variable-pitch-mode 1)
+(setq counsel-rg-base-command
+      "rg --max-columns 500 --max-columns-preview --with-filename --no-heading --line-number %s")
+(setq ivy-truncate-lines nil)
 
 ;;==============================================
 ;; Narrow or widen whatever I'm working on
@@ -413,11 +404,6 @@
 (global-set-key (kbd "C-c e") 'my-org-export-url)
 
 ;;==============================================
-;; Start the server
-;;==============================================
-(server-start)
-
-;;==============================================
 ;; Custom settings
 ;;==============================================
 
@@ -444,7 +430,6 @@
  '(font-lock-comment-face ((t (:foreground "#5B6268" :slant italic))))
  '(org-block ((t (:inherit (shadow fixed-pitch)))))
  '(org-code ((t (:inherit (shadow fixed-pitch)))))
- '(org-table ((t (:inherit (shadow fixed-pitch)))))
- '(persp-selected-face ((t (:foreground "orange" :weight bold)))))
+ '(org-table ((t (:inherit (shadow fixed-pitch))))))
 (put 'narrow-to-region 'disabled nil)
 ;;; init.el ends here
