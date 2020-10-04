@@ -1,5 +1,5 @@
 ;; -*- lexical-binding: t -*-
-;; My Emacs settings Ver 1.0
+;; My Emacs settings Ver 0.99
 ;; File or commit timestamp show when last updated.
 
 (setq inhibit-startup-message t)
@@ -54,6 +54,13 @@
 (use-package which-key
   :ensure t
   :config (which-key-mode))
+
+(use-package perspective
+  :ensure t)
+(persp-mode)
+(use-package persp-projectile
+  :ensure t)
+(require 'persp-projectile)
 
 (use-package avy
   :ensure t
@@ -134,6 +141,7 @@
   :config
   (setq doom-themes-enable-bold t
 	doom-themes-enable-italic t))
+;; (doom-themes-org-config)
 
 ;;==============================================
 ;;  Winum settings
@@ -206,7 +214,7 @@
 
 (setq-default org-display-custom-times t)
 (setq org-time-stamp-custom-formats '("[%a %b %e %Y]" . "<%a %b %e %Y %H:%M>")
-      org-agenda-files (quote ("~/Dropbox/Notes/agenda.org"))
+      org-agenda-files (quote ("~/Dropbox/Notes/"))
       org-goto-interface 'outline-path-completion
       org-use-tag-inheritance nil
       org-outline-path-complete-in-steps nil)
@@ -214,6 +222,8 @@
 (setq org-refile-targets
       '((nil :maxlevel . 2)
 	(org-agenda-files :maxlevel . 2)))
+
+;; (require 'org-tempo) <--This will be needed in Org 9.2 and above
 
 ;;==============================================
 ;;  Helm and friends
@@ -314,6 +324,7 @@
 (global-set-key (kbd "M-c") 'helm-org-in-buffer-headings)
 (global-set-key (kbd "C-o") 'org-open-at-point)
 (global-set-key (kbd "M-g") 'goto-line)
+(global-set-key (kbd "M-l") 'persp-switch)
 (global-set-key (kbd "M-;") 'comment-line)
 (global-set-key (kbd "C-q") 'delete-frame)
 (define-key org-mode-map (kbd "<C-M-S-left>") nil)
@@ -323,7 +334,6 @@
 (global-set-key (kbd "<C-M-S-down>") 'shrink-window)
 (global-set-key (kbd "<C-M-S-up>") 'enlarge-window)
 (global-set-key (kbd "<escape>") 'keyboard-escape-quit)
-(define-key dired-mode-map (kbd "C-c o") 'dired-open-file)
 
 ;;==============================================
 ;;  Sanity settings
@@ -401,6 +411,11 @@
     (string-match org-bracket-link-regexp text)
     (kill-new (substring text (match-beginning 1) (match-end 1))))))
 (global-set-key (kbd "C-c e") 'my-org-export-url)
+
+;;==============================================
+;; Start the server
+;;==============================================
+(server-start)
 
 ;;==============================================
 ;; Custom settings
