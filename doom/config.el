@@ -25,7 +25,6 @@
 (setq-default org-display-custom-times t)
 (setq org-time-stamp-custom-formats '("[%a %b %e %Y]" . "<%a %b %e %Y %H:%M>")
       org-agenda-files (quote ("~/Dropbox/Notes/agenda.org"))
-      org-goto-interface 'outline-path-completion
       org-use-tag-inheritance nil
       org-outline-path-complete-in-steps nil
       org-ellipsis " ➥"
@@ -42,6 +41,18 @@
 (map! (:map org-mode-map
        :localleader
        :desc "Open link" "v" #'org-open-at-point))
+
+(map! :n "g s g" #'counsel-rg
+      :n "g s l" #'avy-goto-line)
+
+(add-hook! org-mode-hook 'variable-pitch-mode t)
+
+(custom-set-faces!
+ '(font-lock-comment-face :foreground "#5B6268" :slant italic)
+ '(org-block :inherit fixed-pitch)
+ '(org-code :inherit fixed-pitch)
+ '(org-table :inherit fixed-pitch))
+
 ;;==============================================
 ;; Sane copy org link to clipboard function
 ;;==============================================
