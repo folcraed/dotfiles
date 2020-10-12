@@ -194,9 +194,7 @@
 (setq-default org-display-custom-times t)
 (setq org-time-stamp-custom-formats '("[%a %b %e %Y]" . "<%a %b %e %Y %H:%M>")
       org-agenda-files (quote ("~/Dropbox/Notes/agenda.org"))
-      org-goto-interface 'outline-path-completion
-      org-use-tag-inheritance nil
-      org-outline-path-complete-in-steps nil)
+      org-use-tag-inheritance nil)
 
 (setq org-refile-targets
       '((nil :maxlevel . 2)
@@ -226,8 +224,7 @@
 ;;==============================================
 
 (use-package flyspell-correct
-  :after flyspell
-  :bind (:map flyspell-mode-map ("C-;" . flyspell-correct-wrapper)))
+  :after flyspell)
 
 (use-package flyspell-correct-ivy
   :after flyspell-correct)
@@ -278,6 +275,7 @@
 (define-key d-map (kbd "r") 'ivy-resume)
 (define-key d-map (kbd "s") 'flyspell-mode)
 (define-key d-map (kbd "t") 'org-time-stamp)
+(define-key d-map (kbd "w") 'flyspell-correct-wrapper)
 (define-key d-map (kbd "x") 'kill-buffer-and-window)
 (global-set-key (kbd "C-c a") 'org-agenda)
 (global-set-key (kbd "C-c c") 'org-capture)
@@ -335,8 +333,8 @@
 (cua-mode t)
 (set-face-attribute 'default nil :font "JetBrains Mono-10")
 (set-face-attribute 'fixed-pitch nil :font "JetBrains Mono-10")
-(set-face-attribute 'variable-pitch nil :font "Noto Sans-10")
-(add-hook 'org-mode-hook 'variable-pitch-mode 1)
+;; (set-face-attribute 'variable-pitch nil :font "Noto Sans-10")
+;; (add-hook 'org-mode-hook 'variable-pitch-mode 1)
 (setq counsel-rg-base-command
       "rg --max-columns 500 --max-columns-preview --with-filename --no-heading --line-number --color never %s")
 (setq ivy-truncate-lines nil)
@@ -403,9 +401,9 @@
  ;; If there is more than one, they won't work right.
  '(font-lock-comment-delimiter-face ((t (:inherit font-lock-comment-face))))
  '(font-lock-comment-face ((t (:foreground "#5B6268" :slant italic))))
- '(ivy-minibuffer-match-face-1 ((t (:foreground "#ECBE7B" :weight normal))))
- '(org-block ((t (:inherit (shadow fixed-pitch)))))
- '(org-code ((t (:inherit (shadow fixed-pitch)))))
- '(org-table ((t (:inherit (shadow fixed-pitch))))))
+ '(ivy-minibuffer-match-face-1 ((t (:foreground "#ECBE7B" :weight normal)))))
+ ;; '(org-block ((t (:inherit (shadow fixed-pitch)))))
+ ;; '(org-code ((t (:inherit (shadow fixed-pitch)))))
+ ;; '(org-table ((t (:inherit (shadow fixed-pitch))))))
 (put 'narrow-to-region 'disabled nil)
 ;;; init.el ends here
