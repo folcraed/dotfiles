@@ -259,7 +259,7 @@ nno <leader>u :wincmd =<cr>
 "==================================================
 " Save a admin file from regular user
 "==================================================
-nno <silent><leader>x :w !sudo tee %
+nno <silent><leader>x :w !sudo -S tee %
 
 "==================================================
 " CTRL-U in insert mode deletes a lot.  Use CTRL-G u to first break undo,
