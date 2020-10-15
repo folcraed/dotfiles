@@ -57,8 +57,7 @@
 
 (use-package avy
   :config
-  (setq avy-case-fold-search nil)
-  :bind ("M-j" . avy-goto-char-timer))
+  (setq avy-case-fold-search nil))
 
 (use-package company
   :config
@@ -286,6 +285,7 @@
 (evil-define-key 'normal 'global (kbd "<leader>g") 'counsel-rg)
 (evil-define-key 'normal 'global (kbd "<leader>h") 'counsel-outline)
 (evil-define-key 'normal 'global (kbd "<leader>i") 'org-table-insert-row)
+(evil-define-key 'normal 'global (kbd "<leader>j") 'avy-goto-char-timer)
 (evil-define-key 'normal 'global (kbd "<leader>k") 'counsel-yank-pop)
 (evil-define-key 'normal 'global (kbd "<leader>l") 'org-insert-link)
 (evil-define-key 'normal 'global (kbd "<leader>m") 'flyspell-mode)
@@ -299,6 +299,8 @@
 (evil-define-key 'normal 'global (kbd "<leader>y") 'org-store-link)
 (define-key evil-motion-state-map "j" #'evil-next-visual-line)
 (define-key evil-motion-state-map "k" #'evil-previous-visual-line)
+(define-key evil-motion-state-map ";" nil)
+(define-key evil-normal-state-map ";" 'evil-ex)
 (global-set-key (kbd "M-x") 'counsel-M-x)
 (define-key org-mode-map (kbd "<C-M-S-left>") nil)
 (define-key org-mode-map (kbd "<C-M-S-right>") nil)
