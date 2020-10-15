@@ -1,5 +1,5 @@
 ;; -*- lexical-binding: t -*-
-;; My Emacs settings Ver 1.0
+;; My Emacs settings Ver 1.1
 ;; File or commit timestamp show when last updated.
 
 (setq inhibit-startup-message t)
@@ -261,6 +261,7 @@
 ;;===============================================
 ;; Evil
 ;;===============================================
+
 (use-package evil)
 
 (use-package undo-fu)
@@ -278,6 +279,7 @@
 ;;===============================================
 ;; Some personal keybindings
 ;;===============================================
+
 (evil-define-key 'normal 'global (kbd "<leader>a") 'avy-goto-line)
 (evil-define-key 'normal 'global (kbd "<leader>b") 'ivy-switch-buffer)
 (evil-define-key 'normal 'global (kbd "<leader>c") 'org-capture)
@@ -340,11 +342,8 @@
 (global-set-key (kbd "M-n") 'rob-scroll-down)
 (global-set-key (kbd "M-p") 'rob-scroll-up)
 
-;; (cua-mode t)
 (set-face-attribute 'default nil :font "JetBrains Mono-10")
 (set-face-attribute 'fixed-pitch nil :font "JetBrains Mono-10")
-;; (set-face-attribute 'variable-pitch nil :font "Noto Sans-10")
-;; (add-hook 'org-mode-hook 'variable-pitch-mode 1)
 (setq counsel-rg-base-command
       "rg --max-columns 500 --max-columns-preview --with-filename --no-heading --line-number --color never %s")
 (setq ivy-truncate-lines nil)
