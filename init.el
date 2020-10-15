@@ -103,7 +103,7 @@
     (call-process "xdg-open" nil 0 nil file)))
 
 (put 'dired-find-alternate-file 'disabled nil)
-    
+
 ;;===============================================
 ;;  Doom modeline & theme
 ;;===============================================
@@ -205,7 +205,7 @@
 ;;==============================================
 
 (use-package counsel)
-  
+
 (setq ivy-use-virtual-buffers t
       ivy-count-format "(%d/%d)"
       ivy-height 15)
@@ -260,38 +260,46 @@
 (setq lua-indent-level 4)
 
 ;;===============================================
+;; Evil
+;;===============================================
+(use-package evil)
+
+(use-package undo-fu)
+
+(setq evil-move-beyond-eol t
+      evil-respect-visual-line-mode t
+      evil-vsplit-window-right t
+      evil-undo-system 'undo-fu)
+
+(require 'evil)
+(evil-mode 1)
+
+(evil-set-leader 'normal " ")
+
+;;===============================================
 ;; Some personal keybindings
 ;;===============================================
-
-(define-prefix-command 'd-map)
-(global-set-key (kbd "C-d") 'd-map)
-(define-key d-map (kbd "a") 'rotate-frame-anticlockwise)
-(define-key d-map (kbd "c") 'rotate-frame-clockwise)
-(define-key d-map (kbd "f") 'projectile-find-file-other-window)
-(define-key d-map (kbd "g") 'rg)
-(define-key d-map (kbd "i") 'org-table-insert-row)
-(define-key d-map (kbd "k") 'counsel-yank-pop)
-(define-key d-map (kbd "l") 'org-insert-link)
-(define-key d-map (kbd "r") 'ivy-resume)
-(define-key d-map (kbd "s") 'flyspell-mode)
-(define-key d-map (kbd "t") 'org-time-stamp)
-(define-key d-map (kbd "w") 'flyspell-correct-wrapper)
-(define-key d-map (kbd "x") 'kill-buffer-and-window)
-(global-set-key (kbd "C-c a") 'org-agenda)
-(global-set-key (kbd "C-c c") 'org-capture)
-(global-set-key (kbd "C-c l") 'org-store-link)
+(evil-define-key 'normal 'global (kbd "<leader>a") 'avy-goto-line)
+(evil-define-key 'normal 'global (kbd "<leader>b") 'ivy-switch-buffer)
+(evil-define-key 'normal 'global (kbd "<leader>c") 'org-capture)
+(evil-define-key 'normal 'global (kbd "<leader>f") 'projectile-find-file)
+(evil-define-key 'normal 'global (kbd "<leader>g") 'counsel-rg)
+(evil-define-key 'normal 'global (kbd "<leader>h") 'counsel-outline)
+(evil-define-key 'normal 'global (kbd "<leader>i") 'org-table-insert-row)
+(evil-define-key 'normal 'global (kbd "<leader>k") 'counsel-yank-pop)
+(evil-define-key 'normal 'global (kbd "<leader>l") 'org-insert-link)
+(evil-define-key 'normal 'global (kbd "<leader>m") 'flyspell-mode)
+(evil-define-key 'normal 'global (kbd "<leader>o") 'org-open-at-point)
+(evil-define-key 'normal 'global (kbd "<leader>p") 'projectile-find-file-other-window)
+(evil-define-key 'normal 'global (kbd "<leader>r") 'ivy-resume)
+(evil-define-key 'normal 'global (kbd "<leader>s") 'swiper)
+(evil-define-key 'normal 'global (kbd "<leader>t") 'org-time-stamp)
+(evil-define-key 'normal 'global (kbd "<leader>w") 'flyspell-correct-wrapper)
+(evil-define-key 'normal 'global (kbd "<leader>x") 'kill-buffer-and-window)
+(evil-define-key 'normal 'global (kbd "<leader>y") 'org-store-link)
+(define-key evil-motion-state-map "j" #'evil-next-visual-line)
+(define-key evil-motion-state-map "k" #'evil-previous-visual-line)
 (global-set-key (kbd "M-x") 'counsel-M-x)
-(global-set-key (kbd "M-s g") 'counsel-rg)
-(global-set-key (kbd "M-s o") 'swiper)
-(global-set-key (kbd "M-s w") 'ivy-occur)
-(global-set-key (kbd "C-p") 'projectile-find-file)
-(global-set-key (kbd "C-b") 'ivy-switch-buffer)
-(global-set-key (kbd "M-c") 'counsel-outline)
-(global-set-key (kbd "C-o") 'org-open-at-point)
-(global-set-key (kbd "M-g") 'avy-goto-line)
-(global-set-key (kbd "M-G") 'goto-line)
-(global-set-key (kbd "M-;") 'comment-line)
-(global-set-key (kbd "C-q") 'delete-frame)
 (define-key org-mode-map (kbd "<C-M-S-left>") nil)
 (define-key org-mode-map (kbd "<C-M-S-right>") nil)
 (global-set-key (kbd "<C-M-S-left>") 'shrink-window-horizontally)
@@ -330,7 +338,7 @@
 (global-set-key (kbd "M-n") 'rob-scroll-down)
 (global-set-key (kbd "M-p") 'rob-scroll-up)
 
-(cua-mode t)
+;; (cua-mode t)
 (set-face-attribute 'default nil :font "JetBrains Mono-10")
 (set-face-attribute 'fixed-pitch nil :font "JetBrains Mono-10")
 ;; (set-face-attribute 'variable-pitch nil :font "Noto Sans-10")
@@ -357,7 +365,7 @@
 		(org-narrow-to-block))
 	       (t (org-narrow-to-subtree))))
 	(t (narrow-to-defun))))
-(define-key d-map "n" #'narrow-or-widen-dwim)
+(global-set-key (kbd "<f5>") #'narrow-or-widen-dwim)
 
 ;;==============================================
 ;; Sane copy org link to clipboard function
@@ -393,7 +401,7 @@
    '("2f1518e906a8b60fac943d02ad415f1d8b3933a5a7f75e307e6e9a26ef5bf570" "76bfa9318742342233d8b0b42e824130b3a50dcc732866ff8e47366aed69de11" "2cdc13ef8c76a22daa0f46370011f54e79bae00d5736340a5ddfe656a767fddf" "f9cae16fd084c64bf0a9de797ef9caedc9ff4d463dd0288c30a3f89ecf36ca7e" "be9645aaa8c11f76a10bcf36aaf83f54f4587ced1b9b679b55639c87404e2499" "0ad7f1c71fd0289f7549f0454c9b12005eddf9b76b7ead32a24d9cb1d16cbcbd" "3e3a1caddeee4a73789ff10ba90b8394f4cd3f3788892577d7ded188e05d78f4" "37148381b35916d717945f3d0e1b2beb23c8b8383e5a7a879f1eaa4dde01d026" "845103fcb9b091b0958171653a4413ccfad35552bc39697d448941bcbe5a660d" "cb96a06ed8f47b07c014e8637bd0fd0e6c555364171504680ac41930cfe5e11e" "a83f05e5e2f2538376ea2bfdf9e3cd8b7f7593b16299238c1134c1529503fa88" "e1ef2d5b8091f4953fe17b4ca3dd143d476c106e221d92ded38614266cea3c8b" "a339f231e63aab2a17740e5b3965469e8c0b85eccdfb1f9dbd58a30bdad8562b" "bc836bf29eab22d7e5b4c142d201bcce351806b7c1f94955ccafab8ce5b20208" "615123f602c56139c8170c153208406bf467804785007cdc11ba73d18c3a248b" "e1ecb0536abec692b5a5e845067d75273fe36f24d01210bf0aa5842f2a7e029f" "99ea831ca79a916f1bd789de366b639d09811501e8c092c85b2cb7d697777f93" "b9dda6ca36e825766dfada5274cf18d8a5bce70676b786e3260094e0cd8c0e62" "6cbf6003e137485fb3f904e76fb15bc48abc386540f43f54e2a47a9884e679f6" "7f74a3b9a1f5e3d31358b48b8f8a1154aab2534fae82c9e918fb389fca776788" "e7666261f46e2f4f42fd1f9aa1875bdb81d17cc7a121533cad3e0d724f12faf2" "f951343d4bbe5a90dba0f058de8317ca58a6822faa65d8463b0e751a07ec887c" "a2286409934b11f2f3b7d89b1eaebb965fd63bc1e0be1c159c02e396afb893c8" "0fe9f7a04e7a00ad99ecacc875c8ccb4153204e29d3e57e9669691e6ed8340ce" "d6f04b6c269500d8a38f3fabadc1caa3c8fdf46e7e63ee15605af75a09d5441e" "2d1fe7c9007a5b76cea4395b0fc664d0c1cfd34bb4f1860300347cdad67fb2f9" "728eda145ad16686d4bbb8e50d540563573592013b10c3e2defc493f390f7d83" "34c99997eaa73d64b1aaa95caca9f0d64229871c200c5254526d0062f8074693" "ab9456aaeab81ba46a815c00930345ada223e1e7c7ab839659b382b52437b9ea" "49ec957b508c7d64708b40b0273697a84d3fee4f15dd9fc4a9588016adee3dad" "669e02142a56f63861288cc585bee81643ded48a19e36bfdf02b66d745bcc626" "84da7b37214b4ac095a55518502dfa82633bee74f64daf6e1785322e77516f96" "06f0b439b62164c6f8f84fdda32b62fb50b6d00e8b01c2208e55543a6337433a" "1d079355c721b517fdc9891f0fda927fe3f87288f2e6cc3b8566655a64ca5453" "9be1d34d961a40d94ef94d0d08a364c3d27201f3c98c9d38e36f10588469ea57" "3380a2766cf0590d50d6366c5a91e976bdc3c413df963a0ab9952314b4577299" "f7ef6451d988d6e2fc86deea398eee02b3371703d88f265d31a011bd240dcf99" "f56393685517a0c58952a5fefdc45e29b52cc1798688992d112f7c299325a889" "39464ed440476d616c5671ff4d9cfc2393846132390e0d80e611dfa0b4bd6983" "bf5bdab33a008333648512df0d2b9d9710bdfba12f6a768c7d2c438e1092b633" "628278136f88aa1a151bb2d6c8a86bf2b7631fbea5f0f76cba2a0079cd910f7d" default))
  '(org-export-backends '(ascii html md odt))
  '(package-selected-packages
-   '(org counsel flyspell-correct flyspell-correct-ivy ivy-rich prescient ivy-prescient lua-mode rg winum which-key use-package undo-tree tablist rainbow-mode rainbow-delimiters org-superstar minions magit iedit gnu-elpa-keyring-update expand-region doom-themes doom-modeline company company-box avy transpose-frame async)))
+   '(evil org counsel flyspell-correct flyspell-correct-ivy ivy-rich prescient ivy-prescient lua-mode rg winum which-key use-package undo-fu tablist rainbow-mode rainbow-delimiters org-superstar minions magit iedit gnu-elpa-keyring-update expand-region doom-themes doom-modeline company company-box avy transpose-frame async)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
