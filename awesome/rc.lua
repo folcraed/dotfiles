@@ -190,7 +190,7 @@ awful.screen.connect_for_each_screen(function(s)
     set_wallpaper(s)
 
     -- Each screen has its own tag table.
-    awful.tag({ "WEB", "VID", "DIR", "DOC", "INF", "GEN", "DEV", "IMG", "SYS" }, s, awful.layout.layouts[1])
+    awful.tag({ "WEB", "VID", "DIR", "DOC", "RSS", "GEN", "MAP", "IMG", "SYS" }, s, awful.layout.layouts[1])
 
     -- Create a promptbox for each screen
     s.mypromptbox = awful.widget.prompt()
@@ -249,9 +249,9 @@ end)
 -- {{{ Mouse bindings
 
 root.buttons(gears.table.join(
-    awful.button({ }, 3, function () mymainmenu:toggle() end),
-    awful.button({ }, 4, awful.tag.viewnext),
-    awful.button({ }, 5, awful.tag.viewprev)
+    awful.button({ }, 3, function () mymainmenu:toggle() end)
+    -- awful.button({ }, 4, awful.tag.viewnext),
+    -- awful.button({ }, 5, awful.tag.viewprev)
 ))
 
 -- }}}
@@ -377,7 +377,11 @@ globalkeys = gears.table.join(
 
     -- Rofi
     awful.key({ modkey }, "p", function () awful.spawn('rofi -show drun -sidebar-mode -font "Hack 10" -width "20" -opacity "90" -terminal "alacritty"') end,
-              { description = "Run Rofi", group = "launcher" })
+              { description = "Run Rofi", group = "launcher" }),
+
+    -- Flameshot
+    awful.key({ modkey }, "c", function () awful.spawn('flameshot gui') end,
+	{ description = "Run Flameshot", group = "launcher" })
 )
 
 clientkeys = gears.table.join(
@@ -389,17 +393,17 @@ clientkeys = gears.table.join(
         { description = "toggle fullscreen", group = "client" }),
     awful.key({ modkey, "Shift"   }, "c",      function (c) c:kill()                         end,
         { description = "close", group = "client" }),
-    awful.key({ modkey }, "Next",  function (c) c:relative_move( 20,  20, -40, -40) end,
+    awful.key({ modkey }, "Next",  function (c) c:relative_move( 10,  10, -10, -10) end,
         { description = "decrease float size", group = "client" }),
-    awful.key({ modkey }, "Prior", function (c) c:relative_move(-20, -20,  40,  40) end,
+    awful.key({ modkey }, "Prior", function (c) c:relative_move(-10, -10,  10,  10) end,
         { description = "increase float size", group = "client" }),
-    awful.key({ modkey, "Control" }, "Down",  function (c) c:relative_move(  0,  20,   0,   0) end,
+    awful.key({ modkey, "Control" }, "Down",  function (c) c:relative_move(  0,  10,   0,   0) end,
         { description = "move float down", group = "client" }),
-    awful.key({ modkey, "Control" }, "Up",    function (c) c:relative_move(  0, -20,   0,   0) end,
+    awful.key({ modkey, "Control" }, "Up",    function (c) c:relative_move(  0, -10,   0,   0) end,
         { description = "move float up", group = "client" }),
-    awful.key({ modkey, "Control" }, "Left",  function (c) c:relative_move(-20,   0,   0,   0) end,
+    awful.key({ modkey, "Control" }, "Left",  function (c) c:relative_move(-10,   0,   0,   0) end,
         { description = "move float left", group = "client" }),
-    awful.key({ modkey, "Control" }, "Right", function (c) c:relative_move( 20,   0,   0,   0) end,
+    awful.key({ modkey, "Control" }, "Right", function (c) c:relative_move( 10,   0,   0,   0) end,
         { description = "move float right", group = "client" }),
     awful.key({ modkey, "Control" }, "space",  awful.client.floating.toggle                     ,
         { description = "toggle floating", group = "client" }),
