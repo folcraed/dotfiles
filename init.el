@@ -267,7 +267,7 @@
 (use-package undo-fu)
 
 (setq evil-move-beyond-eol t
-      evil-respect-visual-line-mode t
+;;      evil-respect-visual-line-mode t
       evil-vsplit-window-right t
       evil-undo-system 'undo-fu)
 
@@ -339,8 +339,8 @@
       (interactive)
       (scroll-down 1))
 
-(global-set-key (kbd "M-n") 'rob-scroll-down)
-(global-set-key (kbd "M-p") 'rob-scroll-up)
+;; (global-set-key (kbd "M-n") 'rob-scroll-down)
+;; (global-set-key (kbd "M-p") 'rob-scroll-up)
 
 (add-to-list 'display-buffer-alist
              `(,(rx bos "*helm" (* not-newline) "*" eos)
