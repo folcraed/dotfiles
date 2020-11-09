@@ -79,6 +79,8 @@ command! make !!make %a
 command! mkcd :mkdir %a | cd %a
 command! vgrep nvim "+grep %a"
 command! reload :write | restart
+command! FZFlocate :set noquickview | :execute 'goto' fnameescape(term('locate $HOME | fzf --height 10 2>/dev/tty'))
+command! FZFfind :set noquickview | :execute 'goto' fnameescape(term('find | fzf --height 10 2>/dev/tty'))
 
 " ------------------------------------------------------------------------------
 
@@ -161,10 +163,6 @@ filextype *.bmp,*.jpg,*.jpeg,*.png,*.gif,*.xpm,*tif,*.tiff
         \ gwenview %c,
         \ {View in eom}
         \ eom %f &,
-fileviewer *.bmp,*.jpg,*.jpeg,*.png,*.gif,*.xpm
-        \ kitty icat --silent --place=%pwx%ph@%pxx%py %c
-        \ %pc
-        \ kitty icat --silent --clear
 
 " MD5
 filetype *.md5
@@ -286,3 +284,5 @@ nnoremap <f8> :delete<cr>
 " My mapping customizations
 nnoremap ; :
 nnoremap <delete> :!trash-put %f<cr>
+nnoremap <c-l> :FZFlocate<cr>
+nnoremap <c-f> :FZFfind<cr>
