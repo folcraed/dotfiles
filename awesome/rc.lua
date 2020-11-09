@@ -185,7 +185,7 @@ end
 screen.connect_signal("property::geometry", set_wallpaper)
 
 awful.screen.connect_for_each_screen(function(s)
-	
+
     -- Wallpaper
     set_wallpaper(s)
 
@@ -381,7 +381,7 @@ globalkeys = gears.table.join(
 
     -- Flameshot
     awful.key({ modkey }, "c", function () awful.spawn('flameshot gui') end,
-	{ description = "Run Flameshot", group = "launcher" })
+        { description = "Run Flameshot", group = "launcher" })
 )
 
 clientkeys = gears.table.join(
@@ -630,4 +630,5 @@ run_once("picom")
 run_once("clipit")
 run_once("xclip")
 run_once("volctl")
+run_once("recollindex -m")
 -- run_once("dropbox start -i")
