@@ -11,6 +11,7 @@ picom &
 dunst &
 xclip &
 clipit &
+recollindex -m &
 
 bspc monitor -d I II III IV V VI VII VIII
 
