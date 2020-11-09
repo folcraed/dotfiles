@@ -6,7 +6,6 @@
 call plug#begin('~/.config/nvim/plugged')
 
 Plug 'junegunn/fzf.vim'
-Plug 'scrooloose/nerdtree'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'joshdick/onedark.vim'
@@ -17,6 +16,7 @@ Plug 'tpope/vim-fugitive'
 Plug 'easymotion/vim-easymotion'
 Plug 'godlygeek/tabular'
 Plug 'masukomi/vim-markdown-folding', { 'for': 'markdown' }
+Plug 'vifm/vifm.vim'
 
 call plug#end()
 
@@ -62,15 +62,10 @@ let g:netrw_browsex_viewer = "xdg-open"
 nno <leader>t :TableFormat<cr>
 
 "==================================================
-" Settings for NerdTree so it's more sane
+" Settings for Vifm
 "==================================================
-nno <silent><leader>n :NERDTreeToggle<CR>
-autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
-let g:NERDTreeHijackNetrw=1
-let NERDTreeShowBookmarks=1
-let NERDTreeShowHidden=1
-let g:NERDTreeDirArrowExpandable = '▸'
-let g:NERDTreeDirArrowCollapsible = '▾'
+let g:vifm_embed_split=1
+nno <leader>v :Vifm<CR>
 
 "==================================================
 " Settings for FZF
