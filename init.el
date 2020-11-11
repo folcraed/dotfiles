@@ -178,11 +178,11 @@
   (org-roam-graph-executable "dot")
   (org-roam-graph-viewer "/usr/bin/firefox")
   :bind (:map org-roam-mode-map
-              (("C-c r l" . org-roam)
-               ("C-c r f" . org-roam-find-file)
-               ("C-c r g" . org-roam-graph))
+              (("C-c n l" . org-roam)
+               ("C-c n f" . org-roam-find-file)
+               ("C-c n g" . org-roam-graph))
               :map org-mode-map
-              (("C-c r i" . org-roam-insert))))
+              (("C-c n i" . org-roam-insert))))
 
 (setq-default org-file-apps
     (quote
