@@ -15,7 +15,6 @@ Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-fugitive'
 Plug 'easymotion/vim-easymotion'
 Plug 'godlygeek/tabular'
-Plug 'masukomi/vim-markdown-folding', { 'for': 'markdown' }
 Plug 'vifm/vifm.vim'
 
 call plug#end()
@@ -72,13 +71,6 @@ nno <leader>v :Vifm<CR>
 "==================================================
 let g:fzf_buffers_jump = 1
 let g:fzf_layout = {'up':'~90%', 'window': { 'width': 0.8, 'height': 0.8,'yoffset':0.5,'xoffset': 0.5, 'border': 'sharp' } }
-
-"==================================================
-" Settings for Markdown folding
-"==================================================
-if has ("autocmd")
-    filetype plugin indent on
-endif
 
 "==================================================
 " --{{ Settings for Airline
