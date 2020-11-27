@@ -152,14 +152,11 @@ type = internal/pulseaudio
 sink = alsa_output.pci-0000_00_1b.0.analog-stereo
 use-ui-max = false
 interval = 3
-format-volume = <ramp-volume> <label-volume>
+format-volume = <label-volume>
+label-volume = 🔉 %percentage%
 label-volume-foreground = ${colors.magenta}
-label-muted = MUTED
+label-muted = 🔇 MUTED
 label-muted-foreground = ${colors.red}
-ramp-volume-foreground = ${colors.red}
-ramp-volume-0 = ▂ 
-ramp-volume-1 = ▅
-ramp-volume-2 = █
 
 [module/temperature]
 type = internal/temperature
@@ -174,7 +171,7 @@ label-warn-foreground = ${colors.foreground}
 label-warn-background = ${colors.red}
 
 [settings]
-screenchange-reload = true
+screenchange-reload = false
 
 [global/wm]
 margin-top = 1
