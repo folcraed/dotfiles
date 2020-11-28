@@ -1,5 +1,5 @@
 --[[ Configuration for Awesome 4.3 modified by folraed
-     Uses some custon icons, but otherwise sticks to
+     Uses some custom icons, but otherwise sticks to
      using available and stock Awesome libraries and
      extensions. Initially created for Awesome 4.2 ]]
 
@@ -148,6 +148,11 @@ local mymem = lain.widget.mem({
         widget:set_markup(markup("#61afef", " " .. mem_now.used .. " Mb " .. mem_now.perc .. "% "))
     end
 })
+local myvolume = lain.widget.pulse({
+    settings = function()
+        widget:set_markup(markup("#c678dd", " " .. volume_now.left .. "% "))
+    end
+})
 
 -- Create a wibox for each screen and add it
 
@@ -236,6 +241,8 @@ awful.screen.connect_for_each_screen(function(s)
             mymem,
             spacer,
             cputemp,
+            spacer,
+            myvolume,
             spacer,
             mytextclock,
             spacer,
@@ -629,6 +636,6 @@ run_once("ssh-agent")
 run_once("picom")
 run_once("clipit")
 run_once("xclip")
-run_once("volctl")
+-- run_once("volctl")
 run_once("recollindex -m")
 -- run_once("dropbox start -i")
