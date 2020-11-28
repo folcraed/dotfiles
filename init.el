@@ -434,5 +434,5 @@
  ;; '(org-code ((t (:inherit (shadow fixed-pitch)))))
  ;; '(org-table ((t (:inherit (shadow fixed-pitch))))))
 (put 'narrow-to-region 'disabled nil)
-(server start)
+(server-start)
 ;;; init.el ends here
