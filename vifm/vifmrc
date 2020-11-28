@@ -138,12 +138,12 @@ fileviewer *.avi,*.mp4,*.wmv,*.dat,*.3gp,*.ogv,*.mkv,*.mpg,*.mpeg,*.vob,
 
 " Web
 filextype *.html,*.htm
-        \ {Open with Falkon}
-        \ falkon %f %i &,
+        \ {Open with Qutebrowser}
+        \ qutebrowser %f %i &,
         \ {Open with firefox}
         \ firefox %f &,
-        \ {Open with uzbl}
-        \ uzbl-browser %f %i &,
+        \ {Open with Falkon}
+        \ falkon %f %i &,
 fileviewer *.html,*.htm w3m %f
 
 " Object
