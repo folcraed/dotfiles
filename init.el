@@ -177,7 +177,7 @@
   (org-roam-db-location "~/Dropbox/Notes/roam/org-roam.db")
   (org-roam-graph-executable "dot")
   (org-roam-graph-extra-config '(("ranksep" . "1.75")))
-  (org-roam-graph-viewer "/usr/bin/qutebrowser")
+  (org-roam-graph-viewer "/usr/bin/firefox")
   :bind (:map org-roam-mode-map
               (("C-c n l" . org-roam)
                ("C-c n f" . org-roam-find-file)
