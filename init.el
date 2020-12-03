@@ -322,7 +322,7 @@
 (global-set-key (kbd "M-s o") 'helm-occur)
 (global-set-key (kbd "C-p") 'projectile-find-file)
 (global-set-key (kbd "C-b") 'helm-mini)
-(global-set-key (kbd "M-m") 'avy-push-mark)
+(global-set-key (kbd "M-m") 'push-mark-command)
 (global-set-key (kbd "M-b") 'avy-pop-mark)
 (global-set-key (kbd "M-o") 'helm-org-in-buffer-headings)
 (global-set-key (kbd "C-o") 'org-open-at-point)
