@@ -140,7 +140,8 @@ local cputemp = lain.widget.temp({
 })
 local mycpu = lain.widget.cpu({
     settings = function()
-        widget:set_markup(markup("#e5c07b", " " .. cpu_now[1].usage .. "% " .. cpu_now[2].usage .. "% " .. cpu_now[3].usage .. "% " .. cpu_now[4].usage .. "% "))
+        widget:set_markup(markup("#e5c07b", " " .. cpu_now[1].usage .. "% " .. cpu_now[2].usage .. 
+                                 "% " .. cpu_now[3].usage .. "% " .. cpu_now[4].usage .. "% "))
     end
 })
 local mymem = lain.widget.mem({
