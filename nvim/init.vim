@@ -48,6 +48,7 @@ set foldcolumn=2
 set fcs=eob:\
 set spelllang=en_us
 set spellfile=~/.config/nvim/spell/en.utf-8.add
+set termguicolors
 let mapleader = " "
 
 "==================================================
@@ -101,7 +102,7 @@ let g:onedark_terminal_italics = 1
 " let g:nord_italic = 1
 " let g:nord_italic_comments = 1
 
-set background=dark termguicolors
+" set background=dark termguicolors
 " colorscheme neodark
 colorscheme onedark
 " colorscheme spacegray
@@ -113,8 +114,9 @@ colorscheme onedark
 " colorscheme hybrid_material
 
 " Make sure terminal background isn't overwritten
-hi! Normal ctermbg=NONE guibg='#232629'
-hi! NonText ctermbg=NONE guibg='#232629' guifg=NONE ctermfg=NONE
+" hi! Normal ctermbg=NONE guibg='#232629'
+hi Normal guibg=NONE ctermbg=NONE
+" hi! NonText ctermbg=NONE guibg='#232629' guifg=NONE ctermfg=NONE
 " --}} End of colorschemes
 
 "==================================================
