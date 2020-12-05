@@ -1,0 +1,10 @@
+mode=drun
+sort_order=alphabetical
+insenitive=true
+term=alacritty
+gtk-dark=true
+layer=overlay
+always_parse_args=true
+allow_images=true
+image_size=16
+width=25%
