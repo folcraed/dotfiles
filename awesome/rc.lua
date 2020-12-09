@@ -140,7 +140,7 @@ local cputemp = lain.widget.temp({
 })
 local mycpu = lain.widget.cpu({
     settings = function()
-        widget:set_markup(markup("#e5c07b", " " .. cpu_now[1].usage .. "% " .. cpu_now[2].usage .. 
+        widget:set_markup(markup("#e5c07b", " " .. cpu_now[1].usage .. "% " .. cpu_now[2].usage ..
                                  "% " .. cpu_now[3].usage .. "% " .. cpu_now[4].usage .. "% "))
     end
 })
@@ -173,6 +173,29 @@ local taglist_buttons = gears.table.join(
                     awful.button({ }, 4, function(t) awful.tag.viewnext(t.screen) end),
                     awful.button({ }, 5, function(t) awful.tag.viewprev(t.screen) end)
                 )
+
+local tasklist_buttons = gears.table.join(
+                     awful.button({ }, 1, function (c)
+                                              if c == client.focus then
+                                                  c.minimized = true
+                                              else
+                                                  c:emit_signal(
+                                                      "request::activate",
+                                                      "tasklist",
+                                                      {raise = true}
+                                                  )
+                                              end
+                                          end),
+                     awful.button({ }, 3, function()
+                                              awful.menu.client_list({ theme = { width = 250 } })
+                                          end),
+                     awful.button({ }, 4, function ()
+                                              awful.client.focus.byidx(1)
+                                          end),
+                     awful.button({ }, 5, function ()
+                                              awful.client.focus.byidx(-1)
+                                          end))
+
 
 local function set_wallpaper(s)
     -- Wallpaper
@@ -215,8 +238,12 @@ awful.screen.connect_for_each_screen(function(s)
         buttons = taglist_buttons
     }
 
-    -- Create a spacer for middle of bar
-    s.myspreader = awful.widget.textbox
+    -- Create a tasklist widget
+    s.mytasklist = awful.widget.tasklist {
+        screen  = s,
+        filter  = awful.widget.tasklist.filter.currenttags,
+        buttons = tasklist_buttons
+    }
 
     -- Create the wibox
     s.mywibox = awful.wibar({ position = "top", screen = s })
@@ -233,7 +260,7 @@ awful.screen.connect_for_each_screen(function(s)
             s.mypromptbox,
             -- spacer,
         },
-        s.myspreader, -- Puts blank space in middle
+        s.mytasklist, -- Puts blank space in middle
         { -- Right widgets
             layout = wibox.layout.fixed.horizontal,
             -- spacer,
