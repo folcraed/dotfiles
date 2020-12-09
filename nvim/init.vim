@@ -65,7 +65,8 @@ nno <leader>t :TableFormat<cr>
 " Settings for Vifm
 "==================================================
 let g:vifm_embed_split=1
-nno <leader>v :Vifm<CR>
+nno <silent><leader>n :Vifm<CR>
+nno <silent><leader>v :VsplitVifm<CR>
 
 "==================================================
 " Settings for FZF
