@@ -349,6 +349,7 @@
 (evil-define-key 'normal 'global (kbd "<leader>rg") 'org-roam-graph)
 (evil-define-key 'normal 'global (kbd "<leader>ro") 'org-roam)
 (evil-define-key 'normal 'global (kbd "<leader>rs") 'org-roam-server-mode)
+(evil-define-key 'normal 'global (kbd "<leader>ru") 'org-roam-unlinked-references)
 (evil-define-key 'normal 'global (kbd "<leader>s") 'helm-occur)
 (evil-define-key 'normal 'global (kbd "<leader>t") 'org-time-stamp)
 (evil-define-key 'normal 'global (kbd "<leader>w") 'flyspell-correct-wrapper)
@@ -420,8 +421,21 @@
       (interactive)
       (scroll-down 1))
 
+(defun move-line-up ()
+  (interactive)
+  (transpose-lines 1)
+  (forward-line -2))
+
+(defun move-line-down ()
+  (interactive)
+  (forward-line 1)
+  (transpose-lines 1)
+  (forward-line -1))
+
 (global-set-key (kbd "M-n") 'rob-scroll-down)
 (global-set-key (kbd "M-p") 'rob-scroll-up)
+(global-set-key (kbd "M-S-<up>") 'move-line-up)
+(global-set-key (kbd "M-S-<down>") 'move-line-down)
 ;; (cua-mode t)
 
 (add-to-list 'display-buffer-alist
@@ -430,8 +444,8 @@
                (inhibit-same-window . t)
                (window-height . 0.3)))
 
-(set-face-attribute 'default nil :font "JetBrains Mono-10")
-(set-face-attribute 'fixed-pitch nil :font "JetBrains Mono-10")
+(set-face-attribute 'default nil :font "JetBrainsMono Nerd Font-10")
+(set-face-attribute 'fixed-pitch nil :font "JetBrainsMono Nerd Font-10")
 
 ;; ==============================================
 ;; Narrow or widen whatever I'm working on
