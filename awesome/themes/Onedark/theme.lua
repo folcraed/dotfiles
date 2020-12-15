@@ -69,7 +69,7 @@ theme.titlebar_maximized_button_focus_active_hover = profileConfigPath.."themes/
 theme.titlebar_maximized_button_focus_active_press = profileConfigPath.."themes/Onedark/titlebar/maximized_focus_active_press.png"
 
 -- Wallpaper
-theme.wallpaper = "/home/rob/Pictures/nature.jpg"
+theme.wallpaper = "/home/rob/Pictures/cityscape.jpg"
 
 -- Layout icons
 theme.layout_fairh = profileConfigPath.."themes/Onedark/layouts/fairh.png"
