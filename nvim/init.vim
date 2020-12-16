@@ -1,4 +1,4 @@
-" ====== init.vim by Rob Boudreau ======
+" ====== init.vim by folcred ======
 
 "==================================================
 " Call and/or install plugins with vim-plug
@@ -7,16 +7,16 @@ call plug#begin('~/.config/nvim/plugged')
 
 Plug 'junegunn/fzf.vim'
 Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
 Plug 'joshdick/onedark.vim'
 Plug 'norcalli/nvim-colorizer.lua'
+Plug 'sheerun/vim-polyglot'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-fugitive'
 Plug 'easymotion/vim-easymotion'
 Plug 'godlygeek/tabular'
 Plug 'vifm/vifm.vim'
-Plug 'vim-scripts/AutoComplPop'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 call plug#end()
 
@@ -43,8 +43,6 @@ set inccommand=split
 set nobackup
 set nowritebackup
 set noshowmode
-set conceallevel=2
-set concealcursor=nc
 set foldcolumn=2
 set fcs=eob:\
 set spelllang=en_us
@@ -92,37 +90,22 @@ let g:airline_left_sep = ''
 let g:airline_right_sep = ''
 let g:airline_left_alt_sep = ''
 let g:airline_right_alt_sep = ''
-let g:airline_theme = 'onedark'
 
 " --}} End of Airline settings
 
-" --{{ Set up colorschemes
 "==================================================
-" let g:neodark#background = '#2b303b'
+" Settings for CoC
+"==================================================
+let g:coc_node_path='/bin/node'
+
+"==================================================
+" Color Scheme
+"==================================================
 let g:onedark_terminal_italics = 1
-" let g:spacegray_use_italics = 1
-" let g:spacegray_underline_search = 1
-" let g:onedark_termcolors = 256
-" let g:one_allow_italics = 1
-" let g:nord_italic = 1
-" let g:nord_italic_comments = 1
-
-" set background=dark termguicolors
-" colorscheme neodark
+syntax on
 colorscheme onedark
-" colorscheme spacegray
-" colorscheme Tomorrow-Night
-" colorscheme solarized8
-" colorscheme materialbox
-" colorscheme base16-ocean
-" colorscheme nord
-" colorscheme hybrid_material
-
-" Make sure terminal background isn't overwritten
-" hi! Normal ctermbg=NONE guibg='#232629'
-hi Normal guibg=NONE ctermbg=NONE
-" hi! NonText ctermbg=NONE guibg='#232629' guifg=NONE ctermfg=NONE
-" --}} End of colorschemes
+let g:airline_theme = 'onedark'
+hi NORMAL guibg=NONE ctermbg=NONE
 
 "==================================================
 " --{{{ Start of key mappings }}}--
@@ -268,7 +251,7 @@ ino <C-U> <C-G>u<C-U>
 "==================================================
 " Only do this part when compiled with support for autocommands.
 "==================================================
-if has("autocmd")
+" if has("autocmd")
 lua require'colorizer'.setup()
 
 "==================================================
@@ -290,10 +273,6 @@ au!
     \ endif
 
   augroup END
-
-else
-
-endif " has("autocmd")
 
 "==================================================
 " Convenient command to see the difference between the current buffer and the
