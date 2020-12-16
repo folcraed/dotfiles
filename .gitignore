@@ -1,8 +1,6 @@
-**/plugged/*
-# nvim/plugged/*
+nvim/plugged/
 */.vscode
 awesome/collision
 vifm/vifminfo
 vifm/vifminfo*
-
 nvim/autoload/
