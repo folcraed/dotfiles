@@ -16,6 +16,7 @@ Plug 'tpope/vim-fugitive'
 Plug 'easymotion/vim-easymotion'
 Plug 'godlygeek/tabular'
 Plug 'vifm/vifm.vim'
+Plug 'vim-scripts/AutoComplPop'
 
 call plug#end()
 
@@ -48,6 +49,9 @@ set foldcolumn=2
 set fcs=eob:\
 set spelllang=en_us
 set spellfile=~/.config/nvim/spell/en.utf-8.add
+set complete+=kspell
+set completeopt=menuone,longest
+set shortmess+=c
 set termguicolors
 let mapleader = " "
 
