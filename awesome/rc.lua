@@ -323,8 +323,6 @@ globalkeys = gears.table.join(
         end,
         { description = "focus window on right", group = "client" }
     ),
-    awful.key({ modkey,           }, "w", function () mymainmenu:show() end,
-              { description = "show main menu", group = "awesome" }),
 
     -- Layout manipulation
     awful.key({ modkey, "Shift"   }, "Left", function () awful.client.swap.bydirection("left")    end,
@@ -412,7 +410,10 @@ globalkeys = gears.table.join(
 
     -- Rofi
     awful.key({ modkey }, "p", function () awful.spawn('rofi -show drun -sidebar-mode -font "Hack 10" -width "20" -opacity "90" -terminal "alacritty"') end,
-              { description = "Run Rofi", group = "launcher" }),
+              { description = "Rofi launcher", group = "launcher" }),
+
+    awful.key({ modkey }, "w", function () awful.spawn('rofi -show window -font "Hack 10" -width "20" -opacity "90"') end,
+              { description = "Rofi show windows", group = "launcher" }),
 
     -- Flameshot
     awful.key({ modkey }, "c", function () awful.spawn('flameshot gui') end,
