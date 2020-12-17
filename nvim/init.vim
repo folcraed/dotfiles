@@ -23,15 +23,13 @@ call plug#end()
 "==================================================
 " Set global options
 "==================================================
-set encoding=utf-8
 set expandtab
 set tabstop=4
 set shiftwidth=4
-set history=50
+set history=500
 set linebreak
 set ignorecase smartcase
 set wildmode=list:longest,full
-set ttimeoutlen=50
 set dir=~/Temp
 set splitbelow
 set splitright
@@ -102,7 +100,6 @@ let g:coc_node_path='/bin/node'
 " Color Scheme
 "==================================================
 let g:onedark_terminal_italics = 1
-syntax on
 colorscheme onedark
 let g:airline_theme = 'onedark'
 hi NORMAL guibg=NONE ctermbg=NONE
