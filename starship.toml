@@ -1,0 +1,17 @@
+[character]
+success_symbol = '[](green)'
+error_symbol = '[](red)'
+
+[git_branch]
+symbol = ' '
+
+[git_status]
+ahead = '  ($count)'
+behind = '  ($count)'
+diverged = ' '
+untracked = '  '
+stashed = '  '
+modified = '  ($count)'
+staged = '  '
+renamed = '  '
+deleted = '  '
