@@ -4,7 +4,6 @@
      extensions. Initially created for Awesome 4.2 ]]
 
 -- Get some default Awesome libraries
-
 local gears = require("gears")
 local awful = require("awful")
 require("awful.autofocus")
@@ -16,14 +15,12 @@ local menubar = require("menubar")
 local hotkeys_popup = require("awful.hotkeys_popup")
 
 -- Setting a sane icon default for naughty.notify
-
 naughty.config.defaults['icon_size'] = 32
 
 -- {{{ Error handling
 
 -- Check if awesome encountered an error during startup and fell back to
 -- another config (This code will only ever execute for the fallback config)
-
 if awesome.startup_errors then
     naughty.notify({ preset = naughty.config.presets.critical,
                      title = "Oops, there were errors during startup!",
@@ -31,7 +28,6 @@ if awesome.startup_errors then
 end
 
 -- Handle runtime errors after startup
-
 do
     local in_error = false
     awesome.connect_signal("debug::error", function (err)
@@ -51,24 +47,20 @@ end
 -- {{{ Set some Awesome defaults
 
 -- Get the theme
-
 local theme_path = string.format("%s/.config/awesome/themes/%s/theme.lua", os.getenv("HOME"), "Onedark")
 beautiful.init(theme_path)
 
 
 -- Default terminal and editor
-
 terminal = "alacritty"
 editor = os.getenv("EDITOR") or "nvim"
 editor_cmd = terminal .. " -e " .. editor
 
 -- Default modkey
-
 modkey = "Mod4"
 altkey = "Mod1"
 
 -- Table of layouts to cover with awful.layout.inc, order matters
-
 awful.layout.layouts = {
     awful.layout.suit.tile,
     awful.layout.suit.tile.left,
@@ -81,7 +73,6 @@ awful.layout.layouts = {
 -- }}}
 
 -- {{{ Helper functions
-
 local function client_menu_toggle_fn()
     local instance = nil
 
@@ -100,7 +91,6 @@ end
 -- {{{ Menu
 
 -- Create a launcher widget and a main menu
-
 myawesomemenu = {
    { "hotkeys", function() hotkeys_popup.show_help(nil, awful.screen.focused()) end },
    { "manual", terminal .. " -e man awesome" },
@@ -117,8 +107,8 @@ mymainmenu = awful.menu({ items = { { "awesome", myawesomemenu, beautiful.awesom
 mylauncher = awful.widget.launcher({ image = beautiful.awesome_icon,
                                      menu = mymainmenu })
 
--- Menubar configuration
 
+-- Menubar configuration
 menubar.utils.terminal = terminal -- Set the terminal for applications that require it
 
 -- }}}
@@ -126,16 +116,17 @@ menubar.utils.terminal = terminal -- Set the terminal for applications that requ
 -- {{{ Wibar
 
 -- Create a few widgets
-
 markup  = lain.util.markup
-spacer = wibox.widget.textbox(" | ")
-mytextclock = wibox.widget.textclock("%a %b %e %l:%M %P")
+
+spacer = wibox.widget.textbox("  ")
+
+mytextclock = wibox.widget.textclock(" %a %b %e %l:%M %P ")
 local month_calendar = awful.widget.calendar_popup.month()
 month_calendar:attach( mytextclock, "tr" )
 local cputemp = lain.widget.temp({
     tempfile = "/sys/class/thermal/thermal_zone2/temp",
     settings = function()
-      widget:set_markup(markup("#98c379", " " .. coretemp_now .. "°C"))
+      widget:set_markup(markup("#98c379", " " .. coretemp_now .. "°C "))
     end
 })
 local mycpu = lain.widget.cpu({
@@ -156,7 +147,6 @@ local myvolume = lain.widget.pulse({
 })
 
 -- Create a wibox for each screen and add it
-
 local taglist_buttons = gears.table.join(
                     awful.button({ }, 1, function(t) t:view_only() end),
                     awful.button({ modkey }, 1, function(t)
@@ -210,7 +200,6 @@ local function set_wallpaper(s)
 end
 
 -- Re-set wallpaper when a screen's geometry changes (e.g. different resolution)
-
 screen.connect_signal("property::geometry", set_wallpaper)
 
 awful.screen.connect_for_each_screen(function(s)
@@ -239,10 +228,29 @@ awful.screen.connect_for_each_screen(function(s)
     }
 
     -- Create a tasklist widget
-    s.mytasklist = awful.widget.tasklist {
-        screen  = s,
-        filter  = awful.widget.tasklist.filter.currenttags,
-        buttons = tasklist_buttons
+   s.mytasklist = awful.widget.tasklist {
+       screen   = s,
+       filter   = awful.widget.tasklist.filter.currenttags,
+       buttons  = tasklist_buttons,
+       style    = {
+           shape_border_width = 1,
+           shape_border_color = '#96b5b4',
+           shape  = gears.shape.rounded_bar,
+       },
+       layout   = {
+           spacing = 10,
+           spacing_widget = {
+               {
+                   forced_width = 5,
+                   shape        = gears.shape.circle,
+                   widget       = wibox.widget.separator
+               },
+               valign = 'center',
+               halign = 'center',
+               widget = wibox.container.place,
+           },
+           layout  = wibox.layout.flex.horizontal
+       },
     }
 
     -- Create the wibox
@@ -258,12 +266,11 @@ awful.screen.connect_for_each_screen(function(s)
             s.mytaglist,
             spacer,
             s.mypromptbox,
-            -- spacer,
         },
-        s.mytasklist, -- Puts blank space in middle
+        s.mytasklist, -- Puts blank space in middle when nothing open
         { -- Right widgets
             layout = wibox.layout.fixed.horizontal,
-            -- spacer,
+            spacer,
             mycpu,
             spacer,
             mymem,
@@ -465,7 +472,6 @@ clientkeys = gears.table.join(
 )
 
 -- Bind all key numbers to tags
-
 for i = 1, 9 do
     globalkeys = gears.table.join(globalkeys,
         -- View tag only.
@@ -528,7 +534,6 @@ clientbuttons = gears.table.join(
 )
 
 -- Set keys
-
 root.keys(globalkeys)
 
 -- }}}
@@ -536,7 +541,6 @@ root.keys(globalkeys)
 -- {{{ Rules
 
 -- Rules to apply to new clients (through the "manage" signal).
-
 awful.rules.rules = {
     -- All clients will match this rule.
     { rule = { },
@@ -580,7 +584,6 @@ awful.rules.rules = {
 -- {{{ Signals
 
 -- Signal function to execute when a new client appears.
-
 client.connect_signal("manage", function (c)
     -- Set the windows at the slave,
     -- i.e. put it at the end of others instead of setting it master.
@@ -595,7 +598,6 @@ client.connect_signal("manage", function (c)
 end)
 
 -- Add a titlebar if titlebars_enabled is set to true in the rules.
-
 client.connect_signal("request::titlebars", function(c)
     -- buttons for the titlebar
     local buttons = gears.table.join(
@@ -636,7 +638,6 @@ client.connect_signal("request::titlebars", function(c)
 end)
 
 -- Enable sloppy focus, so that focus follows mouse.
-
 client.connect_signal("mouse::enter", function(c)
     c:emit_signal("request::activate", "mouse_enter", { raise = false })
 end)
@@ -647,7 +648,6 @@ client.connect_signal("unfocus", function(c) c.border_color = beautiful.border_n
 -- }}}
 
 --- run_once
-
 function run_once(cmd)
   findme = cmd
   firstspace = cmd:find(" ")
@@ -658,7 +658,6 @@ function run_once(cmd)
 end
 
 -- Autostart
-
 run_once("gnome-keyring-daemon -s")
 run_once("/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1")
 run_once("ssh-agent")
