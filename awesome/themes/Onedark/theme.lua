@@ -32,6 +32,10 @@ theme.border_marked = "#e06c75"
 theme.taglist_squares_sel   = profileConfigPath.."themes/Onedark/taglist/linefw.png"
 theme.taglist_squares_unsel = profileConfigPath.."themes/Onedark/taglist/linew.png"
 
+-- Turn off the tasklist icons
+theme.tasklist_disable_icon = true
+
+-- Setup the menu
 theme.menu_submenu_icon = "/home/rob/.config/awesome/themes/Onedark/submenu.png"
 theme.menu_height = 15
 theme.menu_width  = 100
