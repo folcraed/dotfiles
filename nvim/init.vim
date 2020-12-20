@@ -58,11 +58,6 @@ let mapleader = " "
 let g:netrw_browsex_viewer = "xdg-open"
 
 "==================================================
-" Key to format tables in markdown
-"==================================================
-nno <leader>t :TableFormat<cr>
-
-"==================================================
 " Settings for Vifm
 "==================================================
 let g:vifm_embed_split=1
@@ -107,6 +102,11 @@ function! s:check_back_space() abort
   let col = col('.') - 1
   return !col || getline('.')[col - 1]  =~# '\s'
 endfunction
+
+" Make <CR> auto-select the first completion item and notify coc.nvim to
+" format on enter, <cr> could be remapped by other vim plugin
+inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm()
+        \: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
 
 " Use `[g` and `]g` to navigate diagnostics
 " Use `:CocDiagnostics` to get all diagnostics of current buffer in location list.
@@ -158,9 +158,10 @@ nno <silent><leader>f :Lines<cr>
 nno <leader>g :Rg<cr>
 
 "==================================================
-" This opens markdown in okular
+" Markdown settings
 "==================================================
 nno <silent><F9> :!okular %:p &<cr><cr>
+nno <silent><leader>t :Tabularize /\|<cr>
 
 "==================================================
 " These are for auto-brackets
