@@ -69,8 +69,9 @@
   :hook (company-mode . company-box-mode)
   :config
   (setq company-box-backends-colors nil
-	company-box-max-candidates 50
-	company-box-doc-enable nil))
+	company-box-doc-delay 0.2
+	company-box-max-candidates 50))
+	;; company-box-doc-enable nil))
 
 (use-package iedit)
 (require 'iedit)
@@ -339,7 +340,7 @@
 
 (add-hook 'prog-mode-hook #'lsp)
 
-(use-package lsp-ui)
+;; (use-package lsp-ui)
 
 ;; ===============================================
 ;; Some personal keybindings
@@ -347,16 +348,22 @@
 
 (evil-define-key 'normal 'global (kbd "<leader>a") 'avy-goto-line)
 (evil-define-key 'normal 'global (kbd "<leader>b") 'helm-mini)
-(evil-define-key 'normal 'global (kbd "<leader>c") 'org-capture)
+(evil-define-key 'normal 'global (kbd "<leader>ed") 'lsp-find-definition)
+(evil-define-key 'normal 'global (kbd "<leader>ef") 'lsp-format-buffer)
+(evil-define-key 'normal 'global (kbd "<leader>ei") 'lsp-imenu)
+(evil-define-key 'normal 'global (kbd "<leader>er") 'lsp-find-references)
 (evil-define-key 'normal 'global (kbd "<leader>f") 'projectile-find-file)
 (evil-define-key 'normal 'global (kbd "<leader>g") 'helm-rg)
-(evil-define-key 'normal 'global (kbd "<leader>h") 'helm-org-in-buffer-headings)
-(evil-define-key 'normal 'global (kbd "<leader>i") 'org-table-insert-row)
 (evil-define-key 'normal 'global (kbd "<leader>j") 'avy-goto-char-timer)
 (evil-define-key 'normal 'global (kbd "<leader>k") 'helm-show-kill-ring)
-(evil-define-key 'normal 'global (kbd "<leader>l") 'org-insert-link)
 (evil-define-key 'normal 'global (kbd "<leader>m") 'flyspell-mode)
-(evil-define-key 'normal 'global (kbd "<leader>o") 'org-open-at-point)
+(evil-define-key 'normal 'global (kbd "<leader>oc") 'org-capture)
+(evil-define-key 'normal 'global (kbd "<leader>oh") 'helm-org-in-buffer-headings)
+(evil-define-key 'normal 'global (kbd "<leader>oi") 'org-table-insert-row)
+(evil-define-key 'normal 'global (kbd "<leader>ol") 'org-insert-link)
+(evil-define-key 'normal 'global (kbd "<leader>oo") 'org-open-at-point)
+(evil-define-key 'normal 'global (kbd "<leader>ot") 'org-time-stamp)
+(evil-define-key 'normal 'global (kbd "<leader>oy") 'org-store-link)
 (evil-define-key 'normal 'global (kbd "<leader>p") 'projectile-find-file-other-window)
 (evil-define-key 'normal 'global (kbd "<leader>q") 'helm-resume)
 (evil-define-key 'normal 'global (kbd "<leader>ri") 'org-roam-insert)
@@ -366,10 +373,8 @@
 (evil-define-key 'normal 'global (kbd "<leader>rs") 'org-roam-server-mode)
 (evil-define-key 'normal 'global (kbd "<leader>ru") 'org-roam-unlinked-references)
 (evil-define-key 'normal 'global (kbd "<leader>s") 'helm-occur)
-(evil-define-key 'normal 'global (kbd "<leader>t") 'org-time-stamp)
 (evil-define-key 'normal 'global (kbd "<leader>w") 'flyspell-correct-wrapper)
 (evil-define-key 'normal 'global (kbd "<leader>x") 'kill-buffer-and-window)
-(evil-define-key 'normal 'global (kbd "<leader>y") 'org-store-link)
 (define-key evil-motion-state-map "j" #'evil-next-visual-line)
 (define-key evil-motion-state-map "k" #'evil-previous-visual-line)
 (define-key evil-motion-state-map "<down>" #'evil-next-visual-line)
@@ -512,7 +517,7 @@
    '(company-capf company-bbdb company-semantic company-files company-cmake company-clang
 		  (company-dabbrev-code company-gtags company-etags company-keywords)
 		  company-oddmuse company-dabbrev))
- '(company-box-enable-icon nil)
+;; '(company-box-enable-icon nil)
  '(cursor-type '(bar . 2))
  '(custom-enabled-themes '(doom-one))
  '(custom-safe-themes
