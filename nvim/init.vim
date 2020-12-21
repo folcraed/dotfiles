@@ -24,8 +24,8 @@ call plug#end()
 " Set global options
 "==================================================
 set expandtab
-set tabstop=4
-set shiftwidth=4
+set tabstop=2
+set shiftwidth=2
 set history=500
 set linebreak
 set ignorecase smartcase
