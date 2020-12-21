@@ -61,6 +61,7 @@ let g:netrw_browsex_viewer = "xdg-open"
 " Settings for Vifm
 "==================================================
 let g:vifm_embed_split=1
+let g:vifm_embed_cwd=1
 nno <silent><leader>n :Vifm<CR>
 nno <silent><leader>v :VsplitVifm<CR>
 
