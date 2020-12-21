@@ -238,10 +238,10 @@ awful.screen.connect_for_each_screen(function(s)
            shape  = gears.shape.rounded_bar,
        },
        layout   = {
-           spacing = 10,
+           spacing = 20,
            spacing_widget = {
                {
-                   forced_width = 5,
+                   forced_width = 10,
                    shape        = gears.shape.circle,
                    widget       = wibox.widget.separator
                },
