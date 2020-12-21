@@ -6,8 +6,8 @@ local theme = {}
 profileConfigPath = "/home/rob/dotfiles/awesome/"
 
 -- Theme fonts
-theme.font          = "JetBrains Mono 11"
-theme.taglist_font  = "JetBrains Mono 11"
+theme.font          = "JetBrains Mono 10"
+theme.taglist_font  = "JetBrains Mono 10"
 
 -- Theme coloring
 theme.bg_normal     = "#282C34"
