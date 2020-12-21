@@ -367,6 +367,10 @@ globalkeys = gears.table.join(
               { description = "increase master width factor", group = "layout" }),
     awful.key({ modkey,           }, "h",     function () awful.tag.incmwfact(-0.01)          end,
               { description = "decrease master width factor", group = "layout" }),
+    awful.key({ modkey,           }, "j",     function () awful.client.incwfact( 0.01)        end,
+              { description = "increase tiled window height", group = "layout" }),
+    awful.key({ modkey,           }, "k",     function () awful.client.incwfact(-0.01)        end,
+              { description = "decrease tiled window height", group = "layout" }),
     awful.key({ modkey, "Shift"   }, "h",     function () awful.tag.incnmaster( 1, nil, true) end,
               { description = "increase the number of master clients", group = "layout" }),
     awful.key({ modkey, "Shift"   }, "l",     function () awful.tag.incnmaster(-1, nil, true) end,
@@ -448,6 +452,14 @@ clientkeys = gears.table.join(
         { description = "move float left", group = "client" }),
     awful.key({ modkey, "Control" }, "Right", function (c) c:relative_move( 10,   0,   0,   0) end,
         { description = "move float right", group = "client" }),
+    awful.key({ modkey, altkey }, "j", function (c) c:relative_move( 0,   0,   0,   5) end,
+        { description = "Increase widow height", group = "client" }),
+    awful.key({ modkey, altkey }, "k", function (c) c:relative_move( 0,   0,   0,   -3) end,
+        { description = "Decrease widow height", group = "client" }),
+    awful.key({ modkey, altkey }, "h", function (c) c:relative_move( 0,   0,   5,   0) end,
+        { description = "Increase widow width", group = "client" }),
+    awful.key({ modkey, altkey }, "l", function (c) c:relative_move( 0,   0,   5,   0) end,
+        { description = "Decrease widow width", group = "client" }),
     awful.key({ modkey, "Control" }, "space",  awful.client.floating.toggle                     ,
         { description = "toggle floating", group = "client" }),
     awful.key({ modkey, "Control" }, "Return", function (c) c:swap(awful.client.getmaster()) end,
@@ -659,7 +671,8 @@ end
 
 -- Autostart
 run_once("gnome-keyring-daemon -s")
-run_once("/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1")
+run_once("setxkbmap -option caps:escape")
+run_once("/usr/lib/polkit-kde-authentication-agent-1")
 run_once("ssh-agent")
 run_once("picom")
 run_once("clipit")
