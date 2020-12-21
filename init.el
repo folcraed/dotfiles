@@ -13,6 +13,7 @@
 (prefer-coding-system 'utf-8)
 (global-visual-line-mode 1)
 (global-hl-line-mode 1)
+(electric-pair-mode 1)
 
 ;; This is suppose to fix ??? displaying instead
 ;; of line numbers in modeline
@@ -335,12 +336,19 @@
   :commands (lsp lsp-deferred)
   :init
   (setq lsp-keymap-prefix "C-c l")
-  :config
-  (lsp-enable-which-key-integration t))
+  :custom
+  (lsp-enable-which-key-integration t)
+  (lsp-modeline-diagnostics-mode t)
+  (lsp-enable-symbol-highlighting nil)
+  (lsp-headerline-breadcrumb-enable nil))
 
 (add-hook 'prog-mode-hook #'lsp)
 
-;; (use-package lsp-ui)
+(use-package lsp-ui
+  :custom
+  (lsp-ui-doc-enable t)
+  (lsp-ui-doc-position 'bottom)
+  (lsp-ui-doc-max-width 100))
 
 ;; ===============================================
 ;; Some personal keybindings
