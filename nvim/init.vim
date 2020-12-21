@@ -41,6 +41,7 @@ set inccommand=split
 set nobackup
 set nowritebackup
 set noshowmode
+set foldmethod=manual
 set foldcolumn=2
 set fcs=eob:\
 set spelllang=en_us
