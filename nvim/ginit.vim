@@ -1,5 +1,5 @@
 " Set the font for Neovim-qt
 if exists('g:GuiLoaded')
-    GuiFont! JetBrains\ Mono:h10
+    GuiFont! JetBrainsMono\ Nerd\ Font:h10
     GuiTabline 0
 endif
