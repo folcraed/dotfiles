@@ -14,7 +14,7 @@ set $down j
 set $up k
 set $right l
 # Your preferred terminal emulator
-set $term alacritty
+set $term kitty
 # Your preferred application launcher
 # set $menu rofi -show drun -sidebar-mode -font "JetBrains Mono 11" -width "20" -opacity "90" -terminal "alacritty"
 set $menu wofi -c ~/.config/wofi/config -s ~/.config/wofi/style.css -I
