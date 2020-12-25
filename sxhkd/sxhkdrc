@@ -24,7 +24,7 @@ XF86AudioRaiseVolume
 
 XF86AudioLowerVolume
     pactl set-sink-volume 1 -3%
-    
+
 XF86AudioMute
     pactl set-sink-mute 1 toggle
 
@@ -67,6 +67,14 @@ super + ctrl + {m,x,y,z}
 #
 # focus/swap
 #
+
+# focus the next/previous monitor
+super + bracket{left,right}
+	bspc monitor -f {prev,next}
+
+# send node to the next/previous monitor and follow
+super + ctrl + bracket{left,right}
+	bspc node -m {prev,next} --follow
 
 # focus the node in the given direction
 super + {_,shift + }{h,j,k,l}
