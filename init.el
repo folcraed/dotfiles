@@ -346,9 +346,11 @@
 
 (use-package lsp-ui
   :custom
-  (lsp-ui-doc-enable t)
-  (lsp-ui-doc-position 'bottom)
-  (lsp-ui-doc-max-width 100))
+  (lsp-ui-sideline-show-diagnostics t)
+  (lsp-ui-imenu-window-width 30)
+  (lsp-ui-peek-enable t))
+(define-key lsp-ui-mode-map [remap xref-find-definitions] #'lsp-ui-peek-find-definitions)
+(define-key lsp-ui-mode-map [remap xref-find-references] #'lsp-ui-peek-find-references)
 
 ;; ===============================================
 ;; Some personal keybindings
@@ -356,10 +358,10 @@
 
 (evil-define-key 'normal 'global (kbd "<leader>a") 'avy-goto-line)
 (evil-define-key 'normal 'global (kbd "<leader>b") 'helm-mini)
-(evil-define-key 'normal 'global (kbd "<leader>ed") 'lsp-find-definition)
-(evil-define-key 'normal 'global (kbd "<leader>ef") 'lsp-format-buffer)
-(evil-define-key 'normal 'global (kbd "<leader>ei") 'lsp-imenu)
-(evil-define-key 'normal 'global (kbd "<leader>er") 'lsp-find-references)
+(evil-define-key 'normal 'global (kbd "<leader>ld") #'lsp-ui-peek-find-definitions)
+(evil-define-key 'normal 'global (kbd "<leader>lf") 'lsp-format-buffer)
+(evil-define-key 'normal 'global (kbd "<leader>li") 'lsp-ui-imenu)
+(evil-define-key 'normal 'global (kbd "<leader>lr") #'lsp-ui-peek-find-references)
 (evil-define-key 'normal 'global (kbd "<leader>f") 'projectile-find-file)
 (evil-define-key 'normal 'global (kbd "<leader>g") 'helm-rg)
 (evil-define-key 'normal 'global (kbd "<leader>j") 'avy-goto-char-timer)
