@@ -68,9 +68,9 @@ super + ctrl + {m,x,y,z}
 # focus/swap
 #
 
-# focus the next/previous monitor
+# send the node to the next/previous monitor
 super + bracket{left,right}
-	bspc monitor -f {prev,next}
+	bspc node -m {prev,next}
 
 # send node to the next/previous monitor and follow
 super + ctrl + bracket{left,right}
