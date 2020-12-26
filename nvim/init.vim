@@ -169,7 +169,7 @@ nno <silent><leader>a :FZF ~<cr>
 nno <silent><leader>b :Buffers<cr>
 nno <silent><leader>s :BLines<cr>
 nno <silent><leader>f :Lines<cr>
-nno <leader>g :Rg<cr>
+nno <leader>r :Rg<cr>
 
 "==================================================
 " Markdown settings
@@ -209,7 +209,7 @@ nno <silent><leader>h :noh<cr>
 "Make moving back and forth in buffers easier
 "==================================================
 nno <silent><leader>l :bp<cr>
-nno <silent><leader>r :bn<cr>
+nno <silent><leader>h :bn<cr>
 
 "==================================================
 " Make moving back and forth in tabs easier
