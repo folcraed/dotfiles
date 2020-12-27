@@ -68,13 +68,13 @@ super + ctrl + {m,x,y,z}
 # focus/swap
 #
 
-# send the node to the next/previous monitor
-super + bracket{left,right}
-	bspc node -m {prev,next}
+# # send the node to the next/previous monitor
+# super + bracket{left,right}
+# 	bspc node -m {prev,next}
 
-# send node to the next/previous monitor and follow
-super + ctrl + bracket{left,right}
-	bspc node -m {prev,next} --follow
+# # send node to the next/previous monitor and follow
+# super + ctrl + bracket{left,right}
+# 	bspc node -m {prev,next} --follow
 
 # focus the node in the given direction
 super + {_,shift + }{h,j,k,l}
