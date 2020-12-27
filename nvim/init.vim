@@ -41,6 +41,7 @@ set inccommand=split
 set nobackup
 set nowritebackup
 set noshowmode
+set mouse=a
 set foldmethod=manual
 set foldcolumn=2
 set fcs=eob:\
@@ -65,12 +66,6 @@ let g:vifm_embed_split=1
 let g:vifm_embed_cwd=1
 nno <silent><leader>n :Vifm<CR>
 nno <silent><leader>v :VsplitVifm<CR>
-
-"==================================================
-" Settings for FZF
-"==================================================
-let g:fzf_buffers_jump = 1
-let g:fzf_layout = {'up':'~90%', 'window': { 'width': 0.8, 'height': 0.8,'yoffset':0.5,'xoffset': 0.5, 'border': 'sharp' } }
 
 "==================================================
 " --{{ Settings for Airline
@@ -120,6 +115,7 @@ nmap <silent> gd <Plug>(coc-definition)
 nmap <silent> gy <Plug>(coc-type-definition)
 nmap <silent> gi <Plug>(coc-implementation)
 nmap <silent> gr <Plug>(coc-references)
+nmap <silent> gn <Plug>(coc-rename)
 
 " Use K to show documentation in preview window.
 nnoremap <silent> K :call <SID>show_documentation()<CR>
@@ -149,6 +145,52 @@ augroup mygroup
   autocmd User CocJumpPlaceholder call CocActionAsync('showSignatureHelp')
 augroup end
 
+" Remap <C-f> and <C-b> for scroll float windows/popups.
+if has('nvim-0.4.0') || has('patch-8.2.0750')
+  nnoremap <silent><nowait><expr> <C-f> coc#float#has_scroll() ? coc#float#scroll(1) : "\<C-f>"
+  nnoremap <silent><nowait><expr> <C-b> coc#float#has_scroll() ? coc#float#scroll(0) : "\<C-b>"
+  inoremap <silent><nowait><expr> <C-f> coc#float#has_scroll() ? "\<c-r>=coc#float#scroll(1)\<cr>" : "\<Right>"
+  inoremap <silent><nowait><expr> <C-b> coc#float#has_scroll() ? "\<c-r>=coc#float#scroll(0)\<cr>" : "\<Left>"
+  vnoremap <silent><nowait><expr> <C-f> coc#float#has_scroll() ? coc#float#scroll(1) : "\<C-f>"
+  vnoremap <silent><nowait><expr> <C-b> coc#float#has_scroll() ? coc#float#scroll(0) : "\<C-b>"
+endif
+
+"==================================================
+" Settings for CoC FZF
+"==================================================
+let g:fzf_preview_command = 'bat --color=always --plain {-1}'
+let g:fzf_preview_lines_command = 'bat --color=always --plain --number'
+let g:fzf_preview_use_dev_icons = 1
+
+augroup fzf_preview
+  autocmd!
+  autocmd User fzf_preview#initialized call s:fzf_preview_settings()
+augroup END
+
+function! s:fzf_preview_settings() abort
+  let g:fzf_preview_command = 'COLORTERM=truecolor ' . g:fzf_preview_command
+  let g:fzf_preview_grep_preview_cmd = 'COLORTERM=truecolor ' . g:fzf_preview_grep_preview_cmd
+endfunction
+
+nmap <Leader>f [fzf-p]
+xmap <Leader>f [fzf-p]
+
+nnoremap <silent> [fzf-p]p     :<C-u>CocCommand fzf-preview.FromResources project_mru git<CR>
+nnoremap <silent> [fzf-p]gs    :<C-u>CocCommand fzf-preview.GitStatus<CR>
+nnoremap <silent> [fzf-p]ga    :<C-u>CocCommand fzf-preview.GitActions<CR>
+nnoremap <silent> [fzf-p]b     :<C-u>CocCommand fzf-preview.Buffers<CR>
+nnoremap <silent> [fzf-p]B     :<C-u>CocCommand fzf-preview.AllBuffers<CR>
+nnoremap <silent> [fzf-p]o     :<C-u>CocCommand fzf-preview.FromResources buffer project_mru<CR>
+nnoremap <silent> [fzf-p]j     :<C-u>CocCommand fzf-preview.Jumps<CR>
+nnoremap <silent> [fzf-p]gc    :<C-u>CocCommand fzf-preview.Changes<CR>
+nnoremap <silent> [fzf-p]/     :<C-u>CocCommand fzf-preview.Lines --add-fzf-arg=--no-sort --add-fzf-arg=--query="'"<CR>
+nnoremap <silent> [fzf-p]c     :<C-u>CocCommand fzf-preview.Lines --add-fzf-arg=--no-sort --add-fzf-arg=--query="'<C-r>=expand('<cword>')<CR>"<CR>
+nnoremap          [fzf-p]gr    :<C-u>CocCommand fzf-preview.ProjectGrep<Space>
+xnoremap          [fzf-p]gr    "sy:CocCommand   fzf-preview.ProjectGrep<Space>-F<Space>"<C-r>=substitute(substitute(@s, '\n', '', 'g'), '/', '\\/', 'g')<CR>"
+nnoremap <silent> [fzf-p]t     :<C-u>CocCommand fzf-preview.BufferTags<CR>
+nnoremap <silent> [fzf-p]q     :<C-u>CocCommand fzf-preview.QuickFix<CR>
+nnoremap <silent> [fzf-p]l     :<C-u>CocCommand fzf-preview.LocationList<CR>
+
 "==================================================
 " Color Scheme
 "==================================================
@@ -164,12 +206,12 @@ hi NORMAL guibg=NONE ctermbg=NONE
 "==================================================
 " FZF Keybindings
 "==================================================
-nno <silent><leader>o :Files<cr>
-nno <silent><leader>a :FZF ~<cr>
-nno <silent><leader>b :Buffers<cr>
-nno <silent><leader>s :BLines<cr>
-nno <silent><leader>f :Lines<cr>
-nno <leader>r :Rg<cr>
+nno <silent><leader>ff :Files<cr>
+" nno <silent><leader>a :FZF ~<cr>
+" nno <silent><leader>b :Buffers<cr>
+" nno <silent><leader>s :BLines<cr>
+" nno <silent><leader>f :Lines<cr>
+" nno <leader>r :Rg<cr>
 
 "==================================================
 " Markdown settings
@@ -203,13 +245,13 @@ nno <A-down> <C-W>-
 "==================================================
 " This turns off search highlighting
 "==================================================
-nno <silent><leader>h :noh<cr>
+nno <silent><leader>e :noh<cr>
 
 "==================================================
 "Make moving back and forth in buffers easier
 "==================================================
-nno <silent><leader>l :bp<cr>
-nno <silent><leader>h :bn<cr>
+nno <silent><leader>h :bp<cr>
+nno <silent><leader>l :bn<cr>
 
 "==================================================
 " Make moving back and forth in tabs easier
