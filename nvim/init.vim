@@ -64,8 +64,9 @@ let g:netrw_browsex_viewer = "xdg-open"
 "==================================================
 let g:vifm_embed_split=1
 let g:vifm_embed_cwd=1
-nno <silent><leader>n :Vifm<CR>
-nno <silent><leader>v :VsplitVifm<CR>
+nno <silent><leader>vn :Vifm<CR>
+nno <silent><leader>vv :VsplitVifm<CR>
+nno <silent><leader>vs :SplitVifm<CR>
 
 "==================================================
 " --{{ Settings for Airline
@@ -116,6 +117,7 @@ nmap <silent> gy <Plug>(coc-type-definition)
 nmap <silent> gi <Plug>(coc-implementation)
 nmap <silent> gr <Plug>(coc-references)
 nmap <silent> gn <Plug>(coc-rename)
+nmap <leader>gl :CocList<cr>
 
 " Use K to show documentation in preview window.
 nnoremap <silent> K :call <SID>show_documentation()<CR>
@@ -211,7 +213,7 @@ nno <silent><leader>ff :Files<cr>
 " nno <silent><leader>b :Buffers<cr>
 " nno <silent><leader>s :BLines<cr>
 " nno <silent><leader>f :Lines<cr>
-" nno <leader>r :Rg<cr>
+nno <leader>fr :Rg<cr>
 
 "==================================================
 " Markdown settings
@@ -306,8 +308,8 @@ nno <C-up> ddkP
 "==================================================
 " Copy and paste
 "==================================================
-vmap <C-c> "+yi
-vmap <C-x> "+c
+vmap <C-c> "+yi<ESC>
+vmap <C-x> "+c<ESC>
 vmap <C-v> c<ESC>"+p
 imap <C-v> <ESC>"+pa
 
