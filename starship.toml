@@ -1,6 +1,6 @@
 [character]
-success_symbol = '[](green)'
-error_symbol = '[](red)'
+success_symbol = '[next ](green)'
+error_symbol = '[next ](red)'
 
 [git_branch]
 symbol = ' '
