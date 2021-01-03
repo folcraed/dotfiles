@@ -298,18 +298,22 @@
 ;; ===============================================
 
 (use-package lsp-mode
+  :hook (lua-mode . lsp)
   :commands (lsp lsp-deferred)
   :init
   (setq lsp-keymap-prefix "C-c l")
   :config
-  (setq lsp-lua-diagnostics-disable "lowercase-global")
+  (setq lsp-clients-lua-language-server-bin "/usr/bin/lua-language-server"
+        lsp-clients-lua-language-server-install-dir "/usr/share/lua-language-server"
+        lsp-clients-lua-language-server-args "-E /usr/share/lua-language-server/main.lua"
+        lsp-lua-diagnostics-disable "lowercase-global")
   :custom
   (lsp-enable-which-key-integration t)
   (lsp-modeline-diagnostics-mode t)
   (lsp-enable-symbol-highlighting nil)
   (lsp-headerline-breadcrumb-enable nil))
 
-(add-hook 'prog-mode-hook #'lsp)
+;; (add-hook 'prog-mode-hook #'lsp)
 
 (use-package lsp-ui
   :custom
