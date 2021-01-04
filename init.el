@@ -298,12 +298,12 @@
 ;; ===============================================
 
 (use-package lsp-mode
-  :hook (lua-mode . lsp)
   :commands (lsp lsp-deferred)
   :init
   (setq lsp-keymap-prefix "C-c l")
   :config
-  (setq lsp-clients-lua-language-server-bin "/usr/bin/lua-language-server"
+  (setq lsp-clients-typescript-server-args "--stdio"
+        lsp-clients-lua-language-server-bin "/usr/bin/lua-language-server"
         lsp-clients-lua-language-server-install-dir "/usr/share/lua-language-server"
         lsp-clients-lua-language-server-args "-E /usr/share/lua-language-server/main.lua"
         lsp-lua-diagnostics-disable "lowercase-global")
@@ -313,7 +313,7 @@
   (lsp-enable-symbol-highlighting nil)
   (lsp-headerline-breadcrumb-enable nil))
 
-;; (add-hook 'prog-mode-hook #'lsp)
+(add-hook 'prog-mode-hook #'lsp)
 
 (use-package lsp-ui
   :custom
