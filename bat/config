@@ -1,2 +1,4 @@
 --paging=never
 --theme="TwoDark"
+--wrap=auto
+--terminal-width=120
