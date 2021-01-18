@@ -163,42 +163,6 @@ if has('nvim-0.4.0') || has('patch-8.2.0750')
 endif
 
 "==================================================
-" Settings for CoC FZF
-"==================================================
-let g:fzf_preview_command = 'bat --color=always --plain {-1}'
-let g:fzf_preview_lines_command = 'bat --color=always --plain --number'
-let g:fzf_preview_use_dev_icons = 1
-
-augroup fzf_preview
-  autocmd!
-  autocmd User fzf_preview#initialized call s:fzf_preview_settings()
-augroup END
-
-function! s:fzf_preview_settings() abort
-  let g:fzf_preview_command = 'COLORTERM=truecolor ' . g:fzf_preview_command
-  let g:fzf_preview_grep_preview_cmd = 'COLORTERM=truecolor ' . g:fzf_preview_grep_preview_cmd
-endfunction
-
-nmap <Leader>f [fzf-p]
-xmap <Leader>f [fzf-p]
-
-nnoremap <silent> [fzf-p]p     :<C-u>CocCommand fzf-preview.FromResources project_mru git<CR>
-nnoremap <silent> [fzf-p]gs    :<C-u>CocCommand fzf-preview.GitStatus<CR>
-nnoremap <silent> [fzf-p]ga    :<C-u>CocCommand fzf-preview.GitActions<CR>
-nnoremap <silent> [fzf-p]b     :<C-u>CocCommand fzf-preview.Buffers<CR>
-nnoremap <silent> [fzf-p]B     :<C-u>CocCommand fzf-preview.AllBuffers<CR>
-nnoremap <silent> [fzf-p]o     :<C-u>CocCommand fzf-preview.FromResources buffer project_mru<CR>
-nnoremap <silent> [fzf-p]j     :<C-u>CocCommand fzf-preview.Jumps<CR>
-nnoremap <silent> [fzf-p]gc    :<C-u>CocCommand fzf-preview.Changes<CR>
-nnoremap <silent> [fzf-p]/     :<C-u>CocCommand fzf-preview.Lines --add-fzf-arg=--no-sort --add-fzf-arg=--query="'"<CR>
-nnoremap <silent> [fzf-p]c     :<C-u>CocCommand fzf-preview.Lines --add-fzf-arg=--no-sort --add-fzf-arg=--query="'<C-r>=expand('<cword>')<CR>"<CR>
-nnoremap          [fzf-p]gr    :<C-u>CocCommand fzf-preview.ProjectGrep<Space>
-xnoremap          [fzf-p]gr    "sy:CocCommand   fzf-preview.ProjectGrep<Space>-F<Space>"<C-r>=substitute(substitute(@s, '\n', '', 'g'), '/', '\\/', 'g')<CR>"
-nnoremap <silent> [fzf-p]t     :<C-u>CocCommand fzf-preview.BufferTags<CR>
-nnoremap <silent> [fzf-p]q     :<C-u>CocCommand fzf-preview.QuickFix<CR>
-nnoremap <silent> [fzf-p]l     :<C-u>CocCommand fzf-preview.LocationList<CR>
-
-"==================================================
 " Color Scheme
 "==================================================
 let g:onedark_terminal_italics = 1
@@ -214,11 +178,11 @@ hi NORMAL guibg=NONE ctermbg=NONE
 " FZF Keybindings
 "==================================================
 nno <silent><leader>ff :Files<cr>
-" nno <silent><leader>a :FZF ~<cr>
-" nno <silent><leader>b :Buffers<cr>
-" nno <silent><leader>s :BLines<cr>
-" nno <silent><leader>f :Lines<cr>
-nno <leader>fr :Rg<cr>
+nno <silent><leader>fk :Maps<cr>
+nno <silent><leader>fb :Buffers<cr>
+nno <silent><leader>fl :BLines<cr>
+nno <silent><leader>fm :Marks<cr>
+nno <leader>fg :Rg<cr>
 
 "==================================================
 " Markdown settings
