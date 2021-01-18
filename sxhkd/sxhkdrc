@@ -64,6 +64,10 @@ super + {t,shift + t,f,s}
 super + ctrl + {m,x,y,z}
     bspc node -g {marked,locked,sticky,private}
 
+# set the window stacking order
+super + ctrl + {a,b,n}
+    bspc node -l {above,below,normal}
+
 #
 # focus/swap
 #
