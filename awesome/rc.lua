@@ -209,7 +209,16 @@ awful.screen.connect_for_each_screen(function(s)
     set_wallpaper(s)
 
     -- Each screen has its own tag table.
-    awful.tag({ "WEB", "VID", "DIR", "DOC", "RSS", "GEN", "MAP", "IMG", "SYS" }, s, awful.layout.layouts[1])
+    layouts = awful.layout.layouts
+    tags = {
+        settings = {
+            {names = {"WEB", "VID", "DIR", "COD", "RSS"},
+             layout = { layouts[1], layouts[1], layouts[1], layouts[1], layouts[1] }
+         },
+            {names = {"GEN", "MAP", "SYS", "DOC", "MSC"},
+             layout = { layouts[1], layouts[1], layouts[1], layouts[1], layouts[1] }
+     }}}
+     tags[s] = awful.tag(tags.settings[s.index].names, s, tags.settings[s.index].layout)
 
     -- Create a promptbox for each screen
     s.mypromptbox = awful.widget.prompt()
@@ -671,8 +680,8 @@ function run_once(cmd)
 end
 
 -- Autostart
-run_once("gnome-keyring-daemon -s")
 run_once("setxkbmap -option caps:escape")
+run_once("gnome-keyring-daemon --start --components=secrets")
 run_once("/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1")
 run_once("start-pulseaudio-x11")
 run_once("ssh-agent")
