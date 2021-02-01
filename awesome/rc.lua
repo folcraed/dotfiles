@@ -119,7 +119,7 @@ menubar.utils.terminal = terminal -- Set the terminal for applications that requ
 -- Create a few widgets
 markup  = lain.util.markup
 
-spacer = wibox.widget.textbox("  ")
+spacer = wibox.widget.textbox(" · ")
 
 mytextclock = wibox.widget.textclock(" %a %b %e %l:%M %P ")
 local month_calendar = awful.widget.calendar_popup.month()
@@ -244,14 +244,14 @@ awful.screen.connect_for_each_screen(function(s)
        buttons  = tasklist_buttons,
        style    = {
            shape_border_width = 1,
-           shape_border_color = '#96b5b4',
-           shape  = gears.shape.rounded_bar,
+           shape_border_color = '#282C34',
+           shape  = gears.shape.rounded_rect,
        },
        layout   = {
            spacing = 20,
            spacing_widget = {
                {
-                   forced_width = 10,
+                   forced_width = 5,
                    shape        = gears.shape.circle,
                    widget       = wibox.widget.separator
                },
