@@ -180,7 +180,7 @@ hi NORMAL guibg=NONE ctermbg=NONE
 nno <silent><leader>ff :Files<cr>
 nno <silent><leader>fk :Maps<cr>
 nno <silent><leader>fb :Buffers<cr>
-nno <silent><leader>fl :BLines<cr>
+nno <silent><leader>fw :BLines<cr>
 nno <silent><leader>fm :Marks<cr>
 nno <leader>fg :Rg<cr>
 
