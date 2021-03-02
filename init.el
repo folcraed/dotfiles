@@ -13,7 +13,7 @@
 (prefer-coding-system 'utf-8)
 (global-visual-line-mode 1)
 (global-hl-line-mode 1)
-(electric-pair-mode 1)
+;; (electric-pair-mode 1)
 
 ;; This is suppose to fix ??? displaying instead
 ;; of line numbers in modeline
@@ -62,7 +62,7 @@
 
 (use-package company
   :config
-  (setq company-idle-delay 0.3
+  (setq company-idle-delay 0.5
 	company-minimum-prefix-length 3))
 (add-hook 'after-init-hook 'global-company-mode)
 
@@ -124,13 +124,6 @@
   :config
   (setq doom-themes-enable-bold t
 	doom-themes-enable-italic t))
-
-;; ===============================================
-;;  Modus Themes
-;; ===============================================
-(use-package modus-themes
-  :config
-  (setq modus-themes-syntax 'alt-syntax))
 
 ;; ==============================================
 ;;  Winum settings
