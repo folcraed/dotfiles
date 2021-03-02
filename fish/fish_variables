@@ -1,0 +1,40 @@
+# This file contains fish universal variable definitions.
+# VERSION: 3.0
+SETUVAR --export BROWSER:qutebrowser
+SETUVAR --export EDITOR:nvim
+SETUVAR FZF_LEGACY_KEYBINDINGS:0
+SETUVAR --export NO_AT_BRIDGE:1
+SETUVAR --export PAGER:most
+SETUVAR VIRTUAL_ENV_DISABLE_PROMPT:1
+SETUVAR __fish_git_prompt_show_informative_status:true
+SETUVAR __fish_git_prompt_showstashstate:true
+SETUVAR __fish_initialized:3100
+SETUVAR fish_color_autosuggestion:3b4252
+SETUVAR fish_color_cancel:normal
+SETUVAR fish_color_command:98c379
+SETUVAR fish_color_comment:616e88
+SETUVAR fish_color_cwd:98c379
+SETUVAR fish_color_cwd_root:e06c75
+SETUVAR fish_color_end:c678dd
+SETUVAR fish_color_error:be5046
+SETUVAR fish_color_escape:56b6c2
+SETUVAR fish_color_history_current:normal
+SETUVAR fish_color_host:normal
+SETUVAR fish_color_host_remote:d19a66
+SETUVAR fish_color_match:normal
+SETUVAR fish_color_normal:normal
+SETUVAR fish_color_operator:5e81ac
+SETUVAR fish_color_param:61afef
+SETUVAR fish_color_quote:a3be8c
+SETUVAR fish_color_redirection:e5c07b
+SETUVAR fish_color_search_match:e5c07b
+SETUVAR fish_color_selection:abb2bf
+SETUVAR fish_color_status:e06c75
+SETUVAR fish_color_user:98c379
+SETUVAR fish_color_valid_path:normal
+SETUVAR fish_greeting:\x1d
+SETUVAR fish_key_bindings:fish_default_key_bindings
+SETUVAR fish_pager_color_completion:normal
+SETUVAR fish_pager_color_description:e5c07b
+SETUVAR fish_pager_color_prefix:abb2bf
+SETUVAR fish_pager_color_progress:5e81ac
