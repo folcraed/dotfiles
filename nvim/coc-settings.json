@@ -1,5 +1,9 @@
 {
   "Lua.diagnostics.disable": [
     "lowercase-global"
-  ]
+  ],
+  "diagnostic-languageserver.filetypes": {
+    "python": "flake8"
+  }
 }
+
