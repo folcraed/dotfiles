@@ -1,5 +1,5 @@
 ! Onedark colors
-*.foreground:   #abb2bf
+*.foreground:   #969ca8
 *.background:   #282c34
 *.cursorColor:  #abb2bf
 
@@ -33,7 +33,7 @@
 
 ! white
 *.color7:       #616E88
-*.color15:      #abb2bf
+*.color15:      #969ca8
 
 
 ! Generic term settings
