@@ -276,7 +276,7 @@
 (global-set-key (kbd "C-c f") 'projectile-find-file-other-window)
 (global-set-key (kbd "C-c i") 'org-table-insert-row)
 (global-set-key (kbd "C-c k") 'helm-show-kill-ring)
-(global-set-key (kbd "C-c q") 'helm-resume)
+(global-set-key (kbd "C-c m") 'helm-resume)
 (global-set-key (kbd "C-c rb") 'rotate-frame-anticlockwise)
 (global-set-key (kbd "C-c rc") 'rotate-frame-clockwise)
 (global-set-key (kbd "C-c rs") 'rotate-frame)
