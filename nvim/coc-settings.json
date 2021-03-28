@@ -7,10 +7,7 @@
     "python": {
       "command": "python",
       "args": [
-        "-mpyls",
-        "-vv",
-        "--log-file",
-        "/home/rob/Temp/lsp_python.log"
+        "-mpyls"
       ],
       "trace.server": "verbose",
       "filetypes": [
