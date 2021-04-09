@@ -43,7 +43,7 @@ background = ${colors.background}
 foreground = ${colors.foreground}
 
 line-size = 3
-line-color = &{colors.magenta}
+; line-color = &{colors.primary}
 
 border-size = 1
 border-color = ${colors.background}
