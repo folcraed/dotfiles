@@ -203,10 +203,6 @@ function cleanl
     sudo cp -r /tmp/en_US /usr/share/locale/
 end
 
-function tempcon --description "Converts between Celcius and Fahrenheit"
-    node /home/rob/code/learning/convert-temp.js
-end
-
 function icat
   kitty +kitten icat
 end
