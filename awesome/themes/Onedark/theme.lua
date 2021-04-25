@@ -3,7 +3,7 @@
 ---------------------------
 
 local theme = {}
-profileConfigPath = "/home/rob/dotfiles/awesome/"
+profileConfigPath = "/home/rob/.config/dotfiles/awesome/"
 
 -- Theme fonts
 theme.font          = "JetBrains Mono 10"
