@@ -125,7 +125,7 @@ mytextclock = wibox.widget.textclock(" %a %b %e %l:%M %P ")
 local month_calendar = awful.widget.calendar_popup.month()
 month_calendar:attach( mytextclock, "tr" )
 local cputemp = lain.widget.temp({
-    tempfile = "/sys/class/thermal/thermal_zone2/temp",
+    tempfile = "/sys/devices/virtual/thermal/thermal_zone2/temp",
     settings = function()
       widget:set_markup(markup("#98c379", " " .. coretemp_now .. "°C "))
     end
@@ -212,7 +212,7 @@ awful.screen.connect_for_each_screen(function(s)
     layouts = awful.layout.layouts
     tags = {
         settings = {
-            {names = {"WEB", "VID", "DIR", "COD", "RSS"},
+            {names = {"WEB", "VID", "DIR", "TXT", "RSS"},
              layout = { layouts[1], layouts[1], layouts[1], layouts[1], layouts[1] }
          },
             {names = {"GEN", "MAP", "SYS", "DOC", "MSC"},
