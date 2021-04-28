@@ -185,7 +185,7 @@ function pacc
 end
 
 function pacm
-    sudo pacman-mirrors -f 8
+    sudo pacman-mirrors -c United_States,Canada
 end
 
 function pamu
