@@ -74,7 +74,8 @@ override-redirect = true
 [module/xwindow]
 type = internal/xwindow
 label = %title:0:40:...%
-label-foreground = ${colors.foreground}
+label-foreground = ${colors.yellow}
+; label-foreground = ${colors.foreground}
 
 [module/bspwm]
 type = internal/bspwm
