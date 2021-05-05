@@ -212,6 +212,6 @@ font-2 = DejaVu Sans:size=9;1
 
 modules-left = bspwm
 modules-center = xwindow
-modules-right = cpu temperature memory pulseaudio date
+modules-right = date
 
 ; vim:ft=dosini
