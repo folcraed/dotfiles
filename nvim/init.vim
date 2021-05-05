@@ -137,9 +137,6 @@ function! s:show_documentation()
   endif
 endfunction
 
-" Symbol renaming.
-nmap <leader>rn <Plug>(coc-rename)
-
 " Formatting selected code.
 xmap <leader>F <Plug>(coc-format-selected)
 nmap <leader>F <Plug>(coc-format-selected)
@@ -180,11 +177,11 @@ hi NORMAL guibg=NONE ctermbg=NONE
 "==================================================
 " FZF Keybindings
 "==================================================
-nno <silent><leader>ff :Files<cr>
-nno <silent><leader>fk :Maps<cr>
-nno <silent><leader>fb :Buffers<cr>
-nno <silent><leader>fw :BLines<cr>
-nno <silent><leader>fm :Marks<cr>
+nno <silent><leader>f :Files<cr>
+nno <silent><leader>k :Maps<cr>
+nno <silent><leader>b :Buffers<cr>
+nno <silent><leader>s :BLines<cr>
+nno <silent><leader>m :Marks<cr>
 nno <leader>fg :Rg<cr>
 
 "==================================================
