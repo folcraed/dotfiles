@@ -360,7 +360,6 @@
 (set-face-attribute 'default nil :font "JetBrainsMono Nerd Font-10")
 (set-face-attribute 'fixed-pitch nil :font "JetBrainsMono Nerd Font-10")
 (set-face-attribute 'variable-pitch nil :font "Noto Sans-10")
-(add-hook 'org-mode-hook 'variable-pitch-mode 1)
 
 ;; ==============================================
 ;; Narrow or widen whatever I'm working on
@@ -424,9 +423,6 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(font-lock-comment-delimiter-face ((t (:inherit font-lock-comment-face))))
- '(font-lock-comment-face ((t (:foreground "#5B6268" :slant italic))))
- '(org-block ((t (:inherit (shadow fixed-pitch)))))
- '(org-code ((t (:inherit (shadow fixed-pitch)))))
- '(org-table ((t (:inherit (shadow fixed-pitch))))))
+ '(font-lock-comment-face ((t (:foreground "#5B6268" :slant italic)))))
 (put 'narrow-to-region 'disabled nil)
 ;;; init.el ends here
