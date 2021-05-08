@@ -1,4 +1,4 @@
-;; My Emacs settings Ver 1.5
+;; My Emacs settings Ver 1.6
 ;; File or commit timestamp show when last updated.
 
 (setq inhibit-startup-message t)
@@ -12,7 +12,6 @@
 (prefer-coding-system 'utf-8)
 (global-visual-line-mode 1)
 (global-hl-line-mode 1)
-;; (electric-pair-mode 1)
 
 ;; This is suppose to fix ??? displaying instead
 ;; of line numbers in modeline
@@ -424,4 +423,3 @@
  '(font-lock-comment-delimiter-face ((t (:inherit font-lock-comment-face))))
  '(font-lock-comment-face ((t (:foreground "#5B6268" :slant italic)))))
 (put 'narrow-to-region 'disabled nil)
-;;; init.el ends here
