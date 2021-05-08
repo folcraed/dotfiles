@@ -191,6 +191,10 @@ function pamu
     pamac update
 end
 
+function pams
+    pamac search $argv
+end
+
 function wv
 	cd /mnt/rob/Videos
     exa -l
