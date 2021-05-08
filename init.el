@@ -1,4 +1,3 @@
-;; -*- lexical-binding: t -*-
 ;; My Emacs settings Ver 1.5
 ;; File or commit timestamp show when last updated.
 
