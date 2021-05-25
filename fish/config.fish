@@ -51,6 +51,10 @@ function cdc
     cd ~/.config
 end
 
+function cdl
+    cd ~/code/learning
+end
+
 function dfh
 	df -h
 end
