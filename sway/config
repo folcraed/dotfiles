@@ -234,6 +234,8 @@ exec --no-startup-id xset s off
 exec --no-startup-id mako
 exec --no-startup-id ssh-agent
 exec --no-startup-id recollindex -m
+exec systemctl --user import-environment DISPLAY WAYLAND_DISPLAY SWAYSOCK
+exec hash dbus-update-activation-environment 2>/dev/null && dbus-update-activation-environment --systemd DISPLAY WAYLAND_DISPLAY SWAYSOCK
 # exec --no-startup-id dropbox start -i
 # exec xrdb -load ~/.Xresources
 include /etc/sway/config.d/*
