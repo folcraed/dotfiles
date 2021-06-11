@@ -180,9 +180,9 @@ hi NORMAL guibg=NONE ctermbg=NONE
 nno <silent><leader>f :Files<cr>
 nno <silent><leader>k :Maps<cr>
 nno <silent><leader>b :Buffers<cr>
-nno <silent><leader>s :BLines<cr>
+nno <silent><leader>/ :BLines<cr>
 nno <silent><leader>m :Marks<cr>
-nno <leader>fg :Rg<cr>
+nno <leader>s :Rg<cr>
 
 "==================================================
 " Markdown settings
