@@ -24,6 +24,7 @@ colorscheme onedark
 
 set timefmt=%D\ %H:%M
 set wildmenu
+set wildstyle=popup
 set ignorecase
 set smartcase
 set nohlsearch
