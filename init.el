@@ -227,8 +227,9 @@
 
 (setq ispell-program-name "aspell"
       ispell-dictionary "en_US"
-      ispell-local-dictionary "american")
-(global-set-key (kbd "<f8>") 'flyspell-buffer)
+      ispell-local-dictionary "american"
+      flyspell-issue-message-flag nil)
+(global-set-key (kbd "<f8>") 'flyspell-region)
 
 ;; ==============================================
 ;; Projectile
