@@ -214,3 +214,7 @@ end
 function icat
   kitty +kitten icat
 end
+
+function slt
+  systemctl list-timers
+end
