@@ -9,7 +9,7 @@ function fish_title
 end
 
 function bu
-	rsync -aiv /home/rob/Dropbox/ /run/media/rob/Backups
+	rsync -aiv --exclude='.comments/' /home/rob/Dropbox/ /run/media/rob/Backups
 end
 
 function bu2
