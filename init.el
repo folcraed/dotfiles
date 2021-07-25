@@ -178,7 +178,7 @@
 (setq org-directory "~/Dropbox/Notes")
 (setq org-capture-templates
       '(("t" "Todo" entry (file+headline "~/Dropbox/Notes/agenda.org" "Todos")
-         "* TODO %t %?")
+         "* TODO %?")
         ("c" "Changes" entry (file+headline "~/Dropbox/Notes/Software.org" "Changes")
          "* %t %?")
         ("j" "Jots" entry (file+headline "~/Dropbox/Notes/jots.org" "Refile")
