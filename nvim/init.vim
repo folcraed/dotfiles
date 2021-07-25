@@ -16,6 +16,7 @@ Plug 'easymotion/vim-easymotion'
 Plug 'godlygeek/tabular'
 Plug 'vifm/vifm.vim'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'luochen1990/rainbow'
 
 call plug#end()
 
@@ -168,6 +169,12 @@ let g:onedark_terminal_italics = 1
 colorscheme onedark
 let g:airline_theme = 'onedark'
 hi NORMAL guibg=NONE ctermbg=NONE
+
+"==================================================
+" Rainbow parenthesis
+"==================================================
+"Can be toggled with :RainbowToggle, set to 0 to turn off by default.
+let g:rainbow_active = 1
 
 "==================================================
 " --{{{ Start of key mappings }}}--
