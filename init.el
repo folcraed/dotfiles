@@ -295,6 +295,8 @@
 (global-set-key (kbd "<C-M-S-right>") 'enlarge-window-horizontally)
 (global-set-key (kbd "<C-M-S-down>") 'shrink-window)
 (global-set-key (kbd "<C-M-S-up>") 'enlarge-window)
+(global-set-key (kbd "<C-M-up>") 'org-table-move-row-up)
+(global-set-key (kbd "<C-M-down>") 'org-table-move-row-down)
 (global-set-key (kbd "<escape>") 'keyboard-escape-quit)
 (define-key dired-mode-map (kbd "C-c o") 'dired-open-file)
 
