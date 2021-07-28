@@ -53,6 +53,7 @@ vim.o.inccommand = 'nosplit'
 vim.o.hlsearch = false
 
 --Make line numbers default
+vim.wo.number = true
 vim.wo.relativenumber = true
 
 --Do not save when switching buffers
@@ -77,6 +78,10 @@ vim.o.smartcase = true
 --Decrease update time
 vim.o.updatetime = 250
 vim.wo.signcolumn = 'yes'
+
+--Set spelling options
+vim.o.spelllang = 'en_us'
+vim.o.spellfile = '~/.config/nvim/spell/en.utf-8.add'
 
 --Set colorscheme (order is important here)
 vim.o.termguicolors = true
