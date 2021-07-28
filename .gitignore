@@ -5,3 +5,6 @@ vifm/vifminfo
 vifm/vifminfo*
 nvim/autoload/
 nvim/spell
+old-nvim/
+nvim/NOTE.md
+tags
