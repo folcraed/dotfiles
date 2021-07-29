@@ -46,6 +46,9 @@ require('packer').startup(function()
 }
 end)
 
+--**************************
+--Options
+--**************************
 --Incremental live completion
 vim.o.inccommand = 'nosplit'
 
@@ -55,6 +58,9 @@ vim.o.hlsearch = false
 --Make line numbers default
 vim.wo.number = true
 vim.wo.relativenumber = true
+
+--Use spaces instead of tabs
+vim.o.expandtab = true
 
 --Do not save when switching buffers
 vim.o.hidden = true
@@ -70,6 +76,10 @@ vim.o.breakindent = true
 
 --Save undo history
 vim.cmd [[set undofile]]
+
+--Sane splits
+vim.o.splitbelow = true
+vim.o.splitright = true
 
 --Case insensitive searching UNLESS /C or capital in search
 vim.o.ignorecase = true
@@ -226,7 +236,7 @@ local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities.textDocument.completion.completionItem.snippetSupport = true
 
 -- Enable the following language servers
-local servers = { 'pyright' }
+local servers = { 'pyright', 'tsserver' }
 for _, lsp in ipairs(servers) do
   nvim_lsp[lsp].setup {
     on_attach = on_attach,
