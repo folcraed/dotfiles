@@ -93,11 +93,13 @@ vim.wo.signcolumn = 'yes'
 vim.o.spelllang = 'en_us'
 vim.o.spellfile = '~/.config/nvim/spell/en.utf-8.add'
 
+--Remove the tildes at the end of file
+vim.wo.fcs = 'eob: '
+
 --Set colorscheme (order is important here)
 vim.o.termguicolors = true
 vim.g.onedark_terminal_italics = 2
 vim.cmd [[colorscheme onedark]]
--- vim.o.hi NORMAL guibg=NONE ctermbg=NONE
 
 --Set statusbar
 require('eviline')
@@ -343,9 +345,9 @@ require('compe').setup {
     path = true,
     nvim_lsp = true,
     luasnip = true,
-    buffer = false,
+    buffer = true,
     calc = false,
-    nvim_lua = false,
+    nvim_lua = true,
     vsnip = false,
     ultisnips = false,
   },
