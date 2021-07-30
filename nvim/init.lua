@@ -71,8 +71,9 @@ vim.o.mouse = 'a'
 --Set gx to open files with default app
 vim.api.nvim_set_keymap('n', 'gx', ':!xdg-open <cfile><CR><ESC>', { noremap = true, silent = true })
 
---Enable break indent
+--Enable break indent and word wrapping
 vim.o.breakindent = true
+vim.o.linebreak = true
 
 --Save undo history
 vim.cmd [[set undofile]]
