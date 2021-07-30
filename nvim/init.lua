@@ -145,6 +145,18 @@ vim.api.nvim_set_keymap('i', '<F4>', '<C-R>=strftime("%a %d %b %Y")<CR>', { nore
 vim.api.nvim_set_keymap('', '<F6>', ':set spell<CR>', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('', '<F7>', ':set nospell<CR>', { noremap = true, silent = true })
 
+--Move line shortcuts
+vim.api.nvim_set_keymap('n', '<C-down>', ':m .+1<CR>==', { noremap = true})
+vim.api.nvim_set_keymap('n', '<C-up>', ':m .-2<CR>==', { noremap = true})
+vim.api.nvim_set_keymap('i', '<C-down>', '<Esc>:m .+1<CR>==gi', { noremap = true})
+vim.api.nvim_set_keymap('i', '<C-up>', '<Esc>:m .-2<CR>==gi', { noremap = true})
+
+--Resize window splits
+vim.api.nvim_set_keymap('n', '<A-left>', '<C-W>>', { noremap = true})
+vim.api.nvim_set_keymap('n', '<A-right>', '<C-W><', { noremap = true})
+vim.api.nvim_set_keymap('n', '<A-up>', '<C-W>+', { noremap = true})
+vim.api.nvim_set_keymap('n', '<A-down>', '<C-W>-', { noremap = true})
+
 --Map blankline
 vim.g.indent_blankline_char = '┊'
 vim.g.indent_blankline_filetype_exclude = { 'help', 'packer' }
@@ -238,7 +250,7 @@ local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities.textDocument.completion.completionItem.snippetSupport = true
 
 -- Enable the following language servers
-local servers = { 'pyright', 'tsserver' }
+local servers = { 'jedi_language_server', 'tsserver' }
 for _, lsp in ipairs(servers) do
   nvim_lsp[lsp].setup {
     on_attach = on_attach,
