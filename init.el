@@ -266,11 +266,13 @@
 ;; LSP Mode
 ;; ===============================================
 (use-package lsp-mode
+  :bind-keymap ("C-d" . lsp-command-map)
   :commands (lsp lsp-deferred)
   :init
-  (setq lsp-keymap-prefix "M-l")
+  (setq lsp-keymap-prefix "C-d")
+  :hook
+  (lsp-mode . lsp-enable-which-key-integration)
   :config
-  (lsp-enable-which-key-integration t)
   (setq lsp-clients-lua-language-server-command "/usr/bin/lua-language-server")
   (setq lsp-headerline-breadcrumb-enable nil)
   (setq lsp-enable-snippet nil))
@@ -279,8 +281,7 @@
   :hook (lsp-mode . lsp-ui-mode)
   :custom
   (lsp-ui-doc-position 'bottom)
-  (lsp-ui-sideline-enable nil)
-  (lsp-ui-sideline-show-hover nil))
+  (lsp-ui-sideline-show-code-actions nil))
 
 (use-package typescript-mode
   :hook ((typescript-mode . lsp-deferred)
@@ -444,7 +445,7 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(company-backends
-   '(company-capf company-bbdb company-semantic company-files company-cmake company-clang
+   '(company-capf company-files company-cmake company-clang
 		  (company-dabbrev-code company-gtags company-etags company-keywords)
 		  company-oddmuse company-dabbrev))
  '(cursor-type '(bar . 2))
