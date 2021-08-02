@@ -59,6 +59,8 @@
   (setq avy-case-fold-search nil))
 
 (use-package company
+  :bind (:map company-active-map
+	      ("<tab>" . company-auto-commit))
   :config
   (setq company-idle-delay 0.5
 	company-minimum-prefix-length 3))
@@ -215,6 +217,9 @@
   :config (setq helm-org-format-outline-path 1))
 (require 'helm-org)
 
+(use-package helm-lsp)
+(define-key lsp-mode-map [remap xref-find-apropos] #'helm-lsp-workspace-symbol)
+
 ;; ==============================================
 ;;  Flyspell stuff
 ;; ==============================================
@@ -256,6 +261,43 @@
          ("\\.md\\'" . gfm-mode)
          ("\\.markdown\\'" . markdown-mode))
   :init (setq markdown-open-command "okular"))
+
+;; ===============================================
+;; LSP Mode
+;; ===============================================
+(use-package lsp-mode
+  :commands (lsp lsp-deferred)
+  :init
+  (setq lsp-keymap-prefix "M-l")
+  :config
+  (lsp-enable-which-key-integration t)
+  (setq lsp-clients-lua-language-server-command "/usr/bin/lua-language-server")
+  (setq lsp-headerline-breadcrumb-enable nil)
+  (setq lsp-enable-snippet nil))
+
+(use-package lsp-ui
+  :hook (lsp-mode . lsp-ui-mode)
+  :custom
+  (lsp-ui-doc-position 'bottom)
+  (lsp-ui-sideline-enable nil)
+  (lsp-ui-sideline-show-hover nil))
+
+(use-package typescript-mode
+  :hook ((typescript-mode . lsp-deferred)
+	 (js-mode . lsp-deferred))
+  :config
+  (setq typescript-indent-level 2))
+
+(use-package python-mode
+  :hook (python-mode . lsp-deferred))
+
+(use-package lsp-jedi
+  :config
+  (with-eval-after-load "lsp-mode"
+    (add-to-list 'lsp-disabled-clients 'pyls)))
+
+(use-package lua-mode
+  :hook (lua-mode . lsp-deferred))
 
 ;; ===============================================
 ;; Some personal keybindings
@@ -408,7 +450,7 @@
  '(cursor-type '(bar . 2))
  '(org-export-backends '(ascii html md odt))
  '(package-selected-packages
-   '(org markdown-mode helm projectile flyspell-correct flyspell-correct-helm rg helm-rg helm-org helm-projectile winum which-key use-package tablist rainbow-mode rainbow-delimiters org-superstar minions magit iedit gnu-elpa-keyring-update expand-region doom-themes doom-modeline company company-box avy transpose-frame async)))
+   '(helm-lsp lua-mode python-mode lsp-jedi typescript-mode lsp-ui lsp-mode org markdown-mode helm projectile flyspell-correct flyspell-correct-helm rg helm-rg helm-org helm-projectile winum which-key use-package tablist rainbow-mode rainbow-delimiters org-superstar minions magit iedit gnu-elpa-keyring-update expand-region doom-themes doom-modeline company company-box avy transpose-frame async)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
