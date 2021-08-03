@@ -1,4 +1,4 @@
-;; My Emacs settings Ver 1.6
+;; My Emacs settings Ver 1.7
 ;; File or commit timestamp show when last updated.
 
 (setq inhibit-startup-message t)
@@ -9,6 +9,7 @@
 (menu-bar-mode 1)
 (tool-bar-mode 0)
 (scroll-bar-mode 0)
+(set-fringe-mode 10)
 (prefer-coding-system 'utf-8)
 (global-visual-line-mode 1)
 (global-hl-line-mode 1)
@@ -16,6 +17,9 @@
 ;; This is suppose to fix ??? displaying instead
 ;; of line numbers in modeline
 (setq line-number-display-limit-width 2000)
+
+;; Helps speed up LSP reads a little
+(setq read-process-output-max (* 1024 1024))
 
 ;; ==============================================
 ;;  Set up repositories
@@ -61,17 +65,17 @@
 (use-package company
   :bind (:map company-active-map
 	      ("<tab>" . company-auto-commit))
-  :config
-  (setq company-idle-delay 0.5
-	company-minimum-prefix-length 3))
+	(:map lsp-mode-map
+	      ("<tab>" . company-indent-or-complete-common))
+  :custom
+  (company-idle-delay 0.5)
+  (company-minimum-prefix-length 3))
 (add-hook 'after-init-hook 'global-company-mode)
 
 (use-package company-box
   :hook (company-mode . company-box-mode)
   :config
-  (setq company-box-backends-colors nil
-	company-box-doc-delay 0.2
-	company-box-max-candidates 50))
+  (setq company-box-doc-delay 0.5))
 
 (use-package iedit)
 (require 'iedit)
@@ -266,16 +270,18 @@
 ;; LSP Mode
 ;; ===============================================
 (use-package lsp-mode
-  :bind-keymap ("C-d" . lsp-command-map)
   :commands (lsp lsp-deferred)
   :init
-  (setq lsp-keymap-prefix "C-d")
+  (setq lsp-keymap-prefix "C-c l")
+  :bind-keymap ("C-c l" . lsp-command-map)
   :hook
   (lsp-mode . lsp-enable-which-key-integration)
   :config
   (setq lsp-clients-lua-language-server-command "/usr/bin/lua-language-server")
   (setq lsp-headerline-breadcrumb-enable nil)
-  (setq lsp-enable-snippet nil))
+  (setq lsp-enable-snippet nil)
+  (setq lsp-idle-delay 0.500)
+  (setq lsp-log-io nil))
 
 (use-package lsp-ui
   :hook (lsp-mode . lsp-ui-mode)
@@ -290,6 +296,7 @@
   (setq typescript-indent-level 2))
 
 (use-package python-mode
+  :ensure nil
   :hook (python-mode . lsp-deferred))
 
 (use-package lsp-jedi
@@ -299,6 +306,9 @@
 
 (use-package lua-mode
   :hook (lua-mode . lsp-deferred))
+
+(use-package flycheck
+  :init (global-flycheck-mode))
 
 ;; ===============================================
 ;; Some personal keybindings
@@ -317,7 +327,7 @@
 (global-set-key (kbd "C-c t") 'org-time-stamp)
 (global-set-key (kbd "C-c w") 'flyspell-correct-wrapper)
 (global-set-key (kbd "C-c x") 'kill-buffer-and-window)
-(global-set-key (kbd "C-c l") 'org-store-link)
+(global-set-key (kbd "C-c y") 'org-store-link)
 (global-set-key (kbd "M-x") 'helm-M-x)
 (global-set-key (kbd "M-s g") 'helm-rg)
 (global-set-key (kbd "M-f") 'helm-occur)
@@ -356,6 +366,7 @@
 	      shr-max-image-proportion 0.9
 	      shr-image-animate nil)
 
+(add-hook 'prog-mode-hook #'display-line-numbers-mode)
 (add-hook 'minibuffer-setup-hook
 	  (lambda () (setq truncate-lines nil)))
 
@@ -451,7 +462,7 @@
  '(cursor-type '(bar . 2))
  '(org-export-backends '(ascii html md odt))
  '(package-selected-packages
-   '(helm-lsp lua-mode python-mode lsp-jedi typescript-mode lsp-ui lsp-mode org markdown-mode helm projectile flyspell-correct flyspell-correct-helm rg helm-rg helm-org helm-projectile winum which-key use-package tablist rainbow-mode rainbow-delimiters org-superstar minions magit iedit gnu-elpa-keyring-update expand-region doom-themes doom-modeline company company-box avy transpose-frame async)))
+   '(flycheck helm-lsp lua-mode lsp-jedi typescript-mode lsp-ui lsp-mode org markdown-mode helm projectile flyspell-correct flyspell-correct-helm rg helm-rg helm-org helm-projectile winum which-key use-package tablist rainbow-mode rainbow-delimiters org-superstar minions magit iedit gnu-elpa-keyring-update expand-region doom-themes doom-modeline company company-box avy transpose-frame async)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
