@@ -64,7 +64,7 @@ function dop
 end
 
 function eN
-	nvim ~/.config/nvim/init.vim
+	nvim ~/.config/nvim/init.lua
 end
 
 function eZ
