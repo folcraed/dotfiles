@@ -52,9 +52,6 @@ end)
 --Incremental live completion
 vim.o.inccommand = 'nosplit'
 
---Set highlight on search
-vim.o.hlsearch = false
-
 --Make line numbers default
 vim.wo.number = true
 vim.wo.relativenumber = true
@@ -126,6 +123,9 @@ vim.api.nvim_set_keymap('i', '(', '()<ESC>i', { noremap = true, silent = true })
 --Keep searches centered in the page
 vim.api.nvim_set_keymap('n', 'n', 'nzzzv', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', 'N', 'Nzzzv', { noremap = true, silent = true })
+
+--Turn off search highlighting
+vim.api.nvim_set_keymap('n', '<leader>ch', ':nohl<CR>', { noremap = true, silent = true })
 
 --Copy and paste to system clipboard
 vim.api.nvim_set_keymap('v', '<C-c>', '\"+yi<ESC>', { noremap = true, silent = true })
