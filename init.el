@@ -150,7 +150,7 @@
   (setq org-startup-folded nil
 	org-startup-indented t
 	org-support-shift-select t
-	org-ellipsis " ➥"
+	org-ellipsis " ▼"
 	org-tags-column 0))
 
 (use-package org-superstar
