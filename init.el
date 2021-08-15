@@ -52,23 +52,18 @@
 ;;  My necessary packages
 ;; ==============================================
 
-(use-package which-key
-  :config (which-key-mode))
+(use-package which-key)
+(which-key-mode)
 
 (use-package avy
   :config
   (setq avy-case-fold-search nil))
 
 (use-package company
-  :bind (:map company-active-map
-	      ("<tab>" . company-auto-commit))
   :custom
   (company-idle-delay 0.5)
   (company-minimum-prefix-length 3))
 (add-hook 'after-init-hook 'global-company-mode)
-
-(use-package company-box
-  :hook (company-mode . company-box-mode))
 
 (use-package iedit)
 (require 'iedit)
@@ -404,7 +399,7 @@
  '(cursor-type '(bar . 2))
  '(org-export-backends '(ascii html md odt))
  '(package-selected-packages
-   '(org markdown-mode helm projectile flyspell-correct flyspell-correct-helm rg helm-rg helm-org helm-projectile winum which-key use-package tablist rainbow-mode rainbow-delimiters org-superstar minions magit iedit gnu-elpa-keyring-update expand-region doom-themes doom-modeline company company-box avy transpose-frame async)))
+   '(org markdown-mode helm projectile flyspell-correct flyspell-correct-helm rg helm-rg helm-org helm-projectile winum which-key use-package tablist rainbow-mode rainbow-delimiters org-superstar minions magit iedit gnu-elpa-keyring-update expand-region doom-themes doom-modeline company avy transpose-frame async)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
