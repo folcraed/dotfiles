@@ -73,7 +73,7 @@ vim.o.breakindent = true
 vim.o.linebreak = true
 
 --Save undo history
-vim.cmd [[set undofile]]
+vim.opt.undofile = true
 
 --Sane splits
 vim.o.splitbelow = true
