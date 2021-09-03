@@ -146,6 +146,9 @@ vim.api.nvim_set_keymap('i', '<F4>', '<C-R>=strftime("%a %d %b %Y")<CR>', { nore
 vim.api.nvim_set_keymap('', '<F6>', ':set spell<CR>', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('', '<F7>', ':set nospell<CR>', { noremap = true, silent = true })
 
+--Toggle Colorizer
+vim.api.nvim_set_keymap('', '<F10>', ':ColorizerToggle<CR>', { noremap = true, silent = true })
+
 --Move line shortcuts
 vim.api.nvim_set_keymap('n', '<C-down>', ':m .+1<CR>==', { noremap = true})
 vim.api.nvim_set_keymap('n', '<C-up>', ':m .-2<CR>==', { noremap = true})
@@ -418,5 +421,5 @@ vim.api.nvim_set_keymap('i', '<cr>', 'compe#confirm("<cr>")', { expr = true })
 vim.api.nvim_set_keymap('i', '<c-space>', 'compe#complete()', { expr = true })
 
 -- Colorize hex codes
-require('colorizer').setup()
+require 'colorizer'.setup()
 
