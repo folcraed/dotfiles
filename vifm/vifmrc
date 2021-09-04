@@ -94,7 +94,7 @@ command! FZFfind :set noquickview | :execute 'goto' fnameescape(term('find | fzf
 " The %a macro is ignored.  To use a % you must put %%.
 
 " Pdf
-filextype *.pdf zathura %c &, okular %c &, evince %c
+filextype *.pdf okular %c &, evince %c
 fileviewer *.pdf pdftotext -nopgbrk %c -
 
 " PostScript
