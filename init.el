@@ -211,7 +211,7 @@
         ((auto-mode . emacs)
         ("\\.png\\'" . "sxiv %s")
         ("\\.jpg\\'" . "sxiv %s")
-        ("\\.pdf\\'" . "zathura %s"))))
+        ("\\.pdf\\'" . "xdg-open %s"))))
 
 (setq org-directory "~/Dropbox/Notes")
 (setq org-capture-templates
