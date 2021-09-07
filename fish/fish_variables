@@ -1,6 +1,5 @@
 # This file contains fish universal variable definitions.
 # VERSION: 3.0
-SETUVAR --export BROWSER:qutebrowser
 SETUVAR --export EDITOR:nvim
 SETUVAR --export MICRO_TRUECOLOR:1
 SETUVAR FZF_LEGACY_KEYBINDINGS:0
