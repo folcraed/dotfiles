@@ -73,6 +73,14 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/rob/.local/share/nvim/site/pack/packer/start/LuaSnip"
   },
+  ["cmp-nvim-lsp"] = {
+    loaded = true,
+    path = "/home/rob/.local/share/nvim/site/pack/packer/start/cmp-nvim-lsp"
+  },
+  cmp_luasnip = {
+    loaded = true,
+    path = "/home/rob/.local/share/nvim/site/pack/packer/start/cmp_luasnip"
+  },
   ["galaxyline.nvim"] = {
     loaded = true,
     path = "/home/rob/.local/share/nvim/site/pack/packer/start/galaxyline.nvim"
@@ -85,13 +93,13 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/rob/.local/share/nvim/site/pack/packer/start/indent-blankline.nvim"
   },
+  ["nvim-cmp"] = {
+    loaded = true,
+    path = "/home/rob/.local/share/nvim/site/pack/packer/start/nvim-cmp"
+  },
   ["nvim-colorizer.lua"] = {
     loaded = true,
     path = "/home/rob/.local/share/nvim/site/pack/packer/start/nvim-colorizer.lua"
-  },
-  ["nvim-compe"] = {
-    loaded = true,
-    path = "/home/rob/.local/share/nvim/site/pack/packer/start/nvim-compe"
   },
   ["nvim-lspconfig"] = {
     loaded = true,
@@ -120,10 +128,6 @@ _G.packer_plugins = {
   ["plenary.nvim"] = {
     loaded = true,
     path = "/home/rob/.local/share/nvim/site/pack/packer/start/plenary.nvim"
-  },
-  ["popup.nvim"] = {
-    loaded = true,
-    path = "/home/rob/.local/share/nvim/site/pack/packer/start/popup.nvim"
   },
   ["telescope.nvim"] = {
     loaded = true,
