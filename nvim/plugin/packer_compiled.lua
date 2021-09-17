@@ -82,6 +82,7 @@ _G.packer_plugins = {
     path = "/home/rob/.local/share/nvim/site/pack/packer/start/cmp_luasnip"
   },
   ["galaxyline.nvim"] = {
+    config = { "\27LJ\1\0029\0\0\2\0\2\0\0044\0\0\0%\1\1\0>\0\2\1G\0\1\0\30galaxyline.themes.eviline\frequire\0" },
     loaded = true,
     path = "/home/rob/.local/share/nvim/site/pack/packer/start/galaxyline.nvim"
   },
@@ -156,6 +157,10 @@ _G.packer_plugins = {
 }
 
 time([[Defining packer_plugins]], false)
+-- Config for: galaxyline.nvim
+time([[Config for galaxyline.nvim]], true)
+try_loadstring("\27LJ\1\0029\0\0\2\0\2\0\0044\0\0\0%\1\1\0>\0\2\1G\0\1\0\30galaxyline.themes.eviline\frequire\0", "config", "galaxyline.nvim")
+time([[Config for galaxyline.nvim]], false)
 if should_profile then save_profiles() end
 
 end)

@@ -41,11 +41,12 @@ require('packer').startup(function()
   use 'vifm/vifm.vim' -- Powerful file manager
   use 'norcalli/nvim-colorizer.lua' -- Shows hex colors in the color
   use 'kyazdani42/nvim-web-devicons' -- Icons for the status line
-  use {
-  'glepnir/galaxyline.nvim',
-    branch = 'main',
+  use ({ 'NTBBloodbath/galaxyline.nvim',
+    config = function()
+      require("galaxyline.themes.eviline")
+    end,
     requires = {'kyazdani42/nvim-web-devicons', opt = true}
-}
+})
 end)
 
 --**************************
@@ -102,7 +103,7 @@ vim.g.onedark_terminal_italics = 2
 vim.cmd [[colorscheme onedark]]
 
 --Set statusbar
-require('eviline')
+-- require('eviline')
 
 --Remap space as leader key
 vim.api.nvim_set_keymap('', '<Space>', '<Nop>', { noremap = true, silent = true })
