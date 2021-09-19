@@ -1,4 +1,4 @@
-;; My Emacs settings Ver 1.8
+;; My Emacs settings Ver 1.9
 ;; File or commit timestamp show when last updated.
 
 (setq inhibit-startup-message t)
@@ -17,9 +17,6 @@
 ;; This is suppose to fix ??? displaying instead
 ;; of line numbers in modeline
 (setq line-number-display-limit-width 2000)
-
-;; Helps speed up LSP reads a little
-(setq read-process-output-max (* 1024 1024))
 
 ;; ==============================================
 ;;  Set up repositories
@@ -144,47 +141,6 @@
 (use-package transpose-frame)
 
 ;; ==============================================
-;;  LSP Setup
-;; ==============================================
-(use-package lsp-mode
-  :commands (lsp lsp-deferred)
-  :init
-  (setq lsp-keymap-prefix "C-c l")
-  :hook
-  (lsp-mode . lsp-enable-which-key-integration)
-  :config
-  (setq lsp-clients-lua-language-server-command "/usr/bin/lua-language-server")
-  (setq lsp-headerline-breadcrumb-enable nil)
-  (setq lsp-enable-snippet nil)
-  (setq lsp-idle-delay 0.500)
-  (setq lsp-log-io nil)
-  :bind-keymap ("C-c l" . lsp-command-map))
-
-(use-package lsp-ui
-  :config (setq lsp-ui-sideline-show-code-actions nil))
-
-(use-package python-mode
-  :ensure nil
-  :hook (python-mode . lsp-deferred))
-
-(use-package lsp-jedi
-  :config
-  (with-eval-after-load "lsp-mode"
-    (add-to-list 'lsp-disabled-clients 'pyls)))
-
-(use-package lua-mode
-  :hook (lua-mode . lsp-deferred))
-
-(use-package typescript-mode
-  :hook ((typescript-mode . lsp-deferred)
-	 (js-mode . lsp-deferred))
-  :config
-  (setq typescript-indent-level 2))
-
-(use-package flycheck
-  :init (global-flycheck-mode))
-
-;; ==============================================
 ;;  Org-mode
 ;; ==============================================
 
@@ -252,9 +208,6 @@
 (use-package helm-org
   :config (setq helm-org-format-outline-path 1))
 (require 'helm-org)
-
-(use-package helm-lsp)
-(define-key lsp-mode-map [remap xref-find-apropos] #'helm-lsp-workspace-symbol)
 
 ;; ==============================================
 ;;  Flyspell stuff
@@ -340,8 +293,6 @@
 (global-set-key (kbd "<C-M-down>") 'org-table-move-row-down)
 (global-set-key (kbd "<escape>") 'keyboard-escape-quit)
 (define-key dired-mode-map (kbd "C-c o") 'dired-open-file)
-(define-key lsp-ui-mode-map [remap xref-find-definitions] #'lsp-ui-peek-find-definitions)
-(define-key lsp-ui-mode-map [remap xref-find-references] #'lsp-ui-peek-find-references)
 
 ;; ==============================================
 ;;  Sanity settings
@@ -363,12 +314,12 @@
 (show-paren-mode 1)
 
 (defun rob-scroll-down ()
-      (interactive)
-      (scroll-up 1))
+  (interactive)
+  (scroll-up 1))
 
 (defun rob-scroll-up ()
-      (interactive)
-      (scroll-down 1))
+  (interactive)
+  (scroll-down 1))
 
 (defun move-line-up ()
   (interactive)
@@ -448,7 +399,7 @@
  '(cursor-type '(bar . 2))
  '(org-export-backends '(ascii html md odt))
  '(package-selected-packages
-   '(flycheck helm-lsp lua-mode lsp-jedi typescript-mode lsp-mode lsp-ui org markdown-mode helm projectile flyspell-correct flyspell-correct-helm rg helm-rg helm-org helm-projectile winum which-key use-package tablist rainbow-mode rainbow-delimiters org-superstar minions magit iedit gnu-elpa-keyring-update expand-region doom-themes doom-modeline company avy transpose-frame async)))
+   '(org markdown-mode helm projectile flyspell-correct flyspell-correct-helm rg helm-rg helm-org helm-projectile winum which-key use-package tablist rainbow-mode rainbow-delimiters org-superstar minions magit iedit gnu-elpa-keyring-update expand-region doom-themes doom-modeline company avy transpose-frame async)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
