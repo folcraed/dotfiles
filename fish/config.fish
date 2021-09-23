@@ -110,7 +110,7 @@ function fzk
 end
 
 function gcam
-	git commit -a -m $argv
+	git commit -a
 end
 
 function gcl
