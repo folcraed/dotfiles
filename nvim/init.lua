@@ -130,6 +130,9 @@ vim.api.nvim_set_keymap('n', 'N', 'Nzzzv', { noremap = true, silent = true })
 --Turn off search highlighting
 vim.api.nvim_set_keymap('n', '<leader>ch', ':nohl<CR>', { noremap = true, silent = true })
 
+--Change directory to current file directory
+vim.api.nvim_set_keymap('n', '<leader>cd', ':cd %:h<CR>', { noremap = true, silent = true })
+
 --Copy and paste to system clipboard
 vim.api.nvim_set_keymap('v', '<C-c>', '\"+yi<ESC>', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('v', '<C-x>', '+c<ESC>', { noremap = true, silent = true })
