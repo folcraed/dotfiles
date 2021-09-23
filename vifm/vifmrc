@@ -12,7 +12,7 @@ set undolevels=100
 set vimhelp
 set norunexec
 set noiec
-set number
+set rnu
 
 " Selected color scheme
 
