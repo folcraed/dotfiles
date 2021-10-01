@@ -92,7 +92,6 @@ vim.wo.signcolumn = 'yes'
 
 --Set spelling options
 vim.o.spelllang = 'en_us'
-vim.o.spellfile = '~/.config/nvim/spell/en.utf-8.add'
 
 --Remove the tildes at the end of file
 vim.wo.fcs = 'eob: '
