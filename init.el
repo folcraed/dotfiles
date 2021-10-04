@@ -65,6 +65,9 @@
   (company-minimum-prefix-length 3))
 (add-hook 'after-init-hook 'global-company-mode)
 
+(use-package company-posframe)
+(company-posframe-mode 1)
+  
 (use-package iedit)
 (require 'iedit)
 
@@ -389,7 +392,7 @@
 ;; Custom settings
 ;; ==============================================
 (setq custom-safe-themes t)
-(load-theme 'doom-one t)
+(load-theme 'doom-one-light t)
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
@@ -399,7 +402,7 @@
  '(cursor-type '(bar . 2))
  '(org-export-backends '(ascii html md odt))
  '(package-selected-packages
-   '(org markdown-mode helm projectile flyspell-correct flyspell-correct-helm rg helm-rg helm-org helm-projectile winum which-key use-package tablist rainbow-mode rainbow-delimiters org-superstar minions magit iedit gnu-elpa-keyring-update expand-region doom-themes doom-modeline company avy transpose-frame async)))
+   '(company-posframe org markdown-mode helm projectile flyspell-correct flyspell-correct-helm rg helm-rg helm-org helm-projectile winum which-key use-package tablist rainbow-mode rainbow-delimiters org-superstar minions magit iedit gnu-elpa-keyring-update expand-region doom-themes doom-modeline company avy transpose-frame async)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
