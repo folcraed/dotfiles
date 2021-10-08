@@ -1,0 +1,10 @@
+{
+    "basename": true,
+    "colorscheme": "one-dark",
+    "diffgutter": true,
+    "hlsearch": true,
+    "softwrap": true,
+    "statusformatl": "$(filename) $(modified)($(line),$(col)) $(status.paste)| ft:$(opt:filetype) | $(opt:encoding)",
+    "statusformatr": "$(status.branch) | $(status.size)",
+    "tabstospaces": true
+}
