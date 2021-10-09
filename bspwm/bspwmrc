@@ -3,7 +3,6 @@
 setxkbmap -option caps:escape &
 xsetroot -cursor_name left_ptr &
 /home/rob/.config/dotfiles/polybar/launch.sh &
-gnome-keyring-daemon --start --components=secrets &
 /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
 start-pulseaudio-x11 &
 ssh-agent &
@@ -12,6 +11,7 @@ picom &
 dunst &
 xclip &
 clipit &
+gnome-keyring-daemon --start --components=secrets &
 ibus-daemon -drxR &
 recollindex -m &
 sxhkd &
