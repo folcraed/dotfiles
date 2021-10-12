@@ -1,4 +1,4 @@
-;; My Emacs settings Ver 1.9
+;; My Emacs settings Ver 2.0
 ;; File or commit timestamp show when last updated.
 
 (setq inhibit-startup-message t)
@@ -82,6 +82,20 @@
 
 (use-package rg)
 (rg-enable-default-bindings)
+
+;; ==============================================
+;;  Project Setup (can remove some with Emacs 28
+;; ==============================================
+
+(defun rob-project-override (dir)
+  (let ((override (locate-dominating-file dir ".project")))
+    (if override
+	(cons 'vc override)
+      nil)))
+
+(use-package project
+  :config
+  (add-hook 'project-find-functions #'rob-project-override))
 
 ;; ==============================================
 ;;  Dired enhancements
@@ -206,7 +220,6 @@
 (helm-mode 1)
 
 (use-package helm-rg)
-(use-package helm-projectile)
 
 (use-package helm-org
   :config (setq helm-org-format-outline-path 1))
@@ -227,16 +240,6 @@
       ispell-local-dictionary "american"
       flyspell-issue-message-flag nil)
 (global-set-key (kbd "<f8>") 'flyspell-region)
-
-;; ==============================================
-;; Projectile
-;; ==============================================
-
-(use-package projectile
-  :config
-  (projectile-global-mode)
-  (setq projectile-completion-system 'helm))
-(define-key projectile-mode-map (kbd "C-x p") 'projectile-command-map)
 
 ;; ===============================================
 ;;  Magit
@@ -260,7 +263,6 @@
 
 (global-set-key (kbd "C-c a") 'org-agenda)
 (global-set-key (kbd "C-c c") 'org-capture)
-(global-set-key (kbd "C-c f") 'projectile-find-file-other-window)
 (global-set-key (kbd "C-c i") 'org-table-insert-row)
 (global-set-key (kbd "C-c k") 'helm-show-kill-ring)
 (global-set-key (kbd "M-s r") 'helm-resume)
@@ -275,7 +277,7 @@
 (global-set-key (kbd "M-x") 'helm-M-x)
 (global-set-key (kbd "M-s g") 'helm-rg)
 (global-set-key (kbd "M-f") 'helm-occur)
-(global-set-key (kbd "C-p") 'projectile-find-file)
+(global-set-key (kbd "C-p") 'helm-find-files)
 (global-set-key (kbd "C-b") 'helm-mini)
 (global-set-key (kbd "M-m") 'push-mark-command)
 (global-set-key (kbd "M-b") 'avy-pop-mark)
@@ -402,7 +404,7 @@
  '(cursor-type '(bar . 2))
  '(org-export-backends '(ascii html md odt))
  '(package-selected-packages
-   '(company-posframe org markdown-mode helm projectile flyspell-correct flyspell-correct-helm rg helm-rg helm-org helm-projectile winum which-key use-package tablist rainbow-mode rainbow-delimiters org-superstar minions magit iedit gnu-elpa-keyring-update expand-region doom-themes doom-modeline company avy transpose-frame async)))
+   '(company-posframe org markdown-mode helm flyspell-correct flyspell-correct-helm rg helm-rg helm-org winum which-key use-package tablist rainbow-mode rainbow-delimiters org-superstar minions magit iedit gnu-elpa-keyring-update expand-region doom-themes doom-modeline company avy transpose-frame async)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
