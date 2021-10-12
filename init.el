@@ -84,18 +84,10 @@
 (rg-enable-default-bindings)
 
 ;; ==============================================
-;;  Project Setup (can remove some with Emacs 28
+;;  Project Setup (can remove when Emacs 28)
 ;; ==============================================
 
-(defun rob-project-override (dir)
-  (let ((override (locate-dominating-file dir ".project")))
-    (if override
-	(cons 'vc override)
-      nil)))
-
-(use-package project
-  :config
-  (add-hook 'project-find-functions #'rob-project-override))
+(use-package project)
 
 ;; ==============================================
 ;;  Dired enhancements
