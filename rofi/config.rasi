@@ -1,11 +1,12 @@
 configuration {
 /*	To see all options run rofi -dump-config */
     modi: "window,run,filebrowser,drun";
-	font: "JetBrains Mono 12";
-	terminal: "alacritty";
+	font: "JetBrains Mono 11";
+	terminal: "kitty";
 	run-command: "{cmd}";
 	run-shell-command: "{terminal} -e {cmd}";
 	dpi: 92;
+        /* theme-str: "window { width: 30%; }"; */
 }
-@theme "fancy"
+@theme "Arc-Darker"
 /* vim:ft=css
