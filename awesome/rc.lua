@@ -212,10 +212,10 @@ awful.screen.connect_for_each_screen(function(s)
     layouts = awful.layout.layouts
     tags = {
         settings = {
-            {names = {"WEB", "VID", "DIR", "TXT", "RSS"},
+            {names = {"WEB", "VID", "DIR", "GEN", "RSS"},
              layout = { layouts[1], layouts[1], layouts[1], layouts[1], layouts[1] }
          },
-            {names = {"GEN", "MAP", "SYS", "DOC", "MSC"},
+            {names = {"TXT", "MAP", "SYS", "DOC", "MSC"},
              layout = { layouts[1], layouts[1], layouts[1], layouts[1], layouts[1] }
      }}}
      tags[s] = awful.tag(tags.settings[s.index].names, s, tags.settings[s.index].layout)
