@@ -158,4 +158,7 @@ super + alt + {Left,Down,Up,Right}
 #
 
 super + e
-      emacs
+    emacs
+
+super + alt + grave
+    dunstctl history-pop
