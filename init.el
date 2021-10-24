@@ -218,6 +218,24 @@
 (require 'helm-org)
 
 ;; ==============================================
+;;  Org-Roam
+;; ==============================================
+(use-package org-roam
+  :init
+  (setq org-roam-v2-ack t)
+  :custom
+  ((org-roam-directory "~/Dropbox/Notes/Roam")
+   (org-roam-graph-viewer nil))
+  :bind (("C-c n l" . org-roam-buffer-toggle)
+	 ("C-c n f" . org-roam-node-find)
+	 ("C-c n i" . org-roam-node-insert)
+	 ("C-c n g" . org-roam-graph)
+	 ("C-c n a" . org-roam-alias-add)
+	 ("C-c n o" . org-id-get-create))
+  :config
+  (org-roam-setup))
+
+;; ==============================================
 ;;  Flyspell stuff
 ;; ==============================================
 
