@@ -12,21 +12,21 @@ theme.taglist_font  = "JetBrains Mono 10"
 -- Theme coloring
 theme.bg_normal     = "#282C34"
 theme.bg_focus      = "#282C34"
-theme.bg_urgent     = "#e06c75"
+theme.bg_urgent     = "#FF6C6B"
 theme.bg_alternate  = "#e06c75"
 theme.bg_minimize   = "#96b5b4"
 theme.bg_systray    = theme.bg_normal
 
-theme.fg_normal     = "#61AFEF"
-theme.fg_focus      = "#E5C07B"
+theme.fg_normal     = "#51AFEF"
+theme.fg_focus      = "#ECBE7B"
 theme.fg_urgent     = "#ffffff"
 theme.fg_minimize   = "#282C34"
 
 theme.useless_gap   = 5
 theme.border_width  = 1
 theme.border_normal = "#282C34"
-theme.border_focus  = "#61AFEF"
-theme.border_marked = "#e06c75"
+theme.border_focus  = "#51AFEF"
+theme.border_marked = "#C678DD"
 
 -- Display the taglist highlights
 theme.taglist_squares_sel   = profileConfigPath.."themes/Onedark/taglist/linefw.png"
