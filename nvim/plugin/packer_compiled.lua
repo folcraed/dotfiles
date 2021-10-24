@@ -73,9 +73,21 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/rob/.local/share/nvim/site/pack/packer/start/LuaSnip"
   },
+  ["cmp-buffer"] = {
+    loaded = true,
+    path = "/home/rob/.local/share/nvim/site/pack/packer/start/cmp-buffer"
+  },
   ["cmp-nvim-lsp"] = {
     loaded = true,
     path = "/home/rob/.local/share/nvim/site/pack/packer/start/cmp-nvim-lsp"
+  },
+  ["cmp-nvim-lua"] = {
+    loaded = true,
+    path = "/home/rob/.local/share/nvim/site/pack/packer/start/cmp-nvim-lua"
+  },
+  ["cmp-path"] = {
+    loaded = true,
+    path = "/home/rob/.local/share/nvim/site/pack/packer/start/cmp-path"
   },
   cmp_luasnip = {
     loaded = true,
