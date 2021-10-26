@@ -414,7 +414,7 @@
  '(cursor-type '(bar . 2))
  '(org-export-backends '(ascii html md odt))
  '(package-selected-packages
-   '(company-posframe org markdown-mode helm flyspell-correct flyspell-correct-helm rg helm-rg helm-org winum which-key use-package tablist rainbow-mode rainbow-delimiters org-superstar minions magit iedit gnu-elpa-keyring-update expand-region doom-themes doom-modeline company avy transpose-frame async)))
+   '(org-roam project company-posframe org markdown-mode helm flyspell-correct flyspell-correct-helm rg helm-rg helm-org winum which-key use-package tablist rainbow-mode rainbow-delimiters org-superstar minions magit iedit gnu-elpa-keyring-update expand-region doom-themes doom-modeline company avy transpose-frame async)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
