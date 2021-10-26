@@ -1,39 +1,39 @@
 ! Onedark colors
-*.foreground:   #9ca0a4
+*.foreground:   #969ca8
 *.background:   #282c34
-*.cursorColor:  #DFDFDF
+*.cursorColor:  #abb2bf
 
 ! black
 *.color0:       #282c34
-*.color8:       #5b6268
+*.color8:       #3B4252
 
 ! red
 *.color1:       #e06c75
-*.color9:       #ff6c6b
+*.color9:       #be5046
 
 ! green
-*.color2:       #98be65
-*.color10:      #44b9b1
+*.color2:       #A3BE8C
+*.color10:      #98c379
 
 ! yellow
-*.color3:       #ecbe7b
-*.color11:      #da8548
+*.color3:       #e5c07b
+*.color11:      #d19a66
 
 ! blue
-*.color4:       #2257a0
-*.color12:      #51afef
+*.color4:       #5E81AC
+*.color12:      #61afef
 
 ! magenta
-*.color5:       #a9a1e1
+*.color5:       #B48EAD
 *.color13:      #c678dd
 
 ! cyan
-*.color6:       #5699af
-*.color14:      #46d9ff
+*.color6:       #88C0D0
+*.color14:      #56b6c2
 
 ! white
 *.color7:       #616E88
-*.color15:      #9ca0a4
+*.color15:      #969ca8
 
 
 ! Generic term settings
