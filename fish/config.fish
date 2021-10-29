@@ -158,7 +158,7 @@ function rgs --description "Searches current folder and shows 2 lines with match
 end
 
 function ytdl
-	youtube-dl $argv
+	yt-dlp --compat-options multistreams $argv
 end
 
 function pacs
