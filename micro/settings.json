@@ -1,6 +1,6 @@
 {
     "basename": true,
-    "colorscheme": "one-dark",
+    "colorscheme": "onedark-tc",
     "diffgutter": true,
     "hlsearch": true,
     "softwrap": true,

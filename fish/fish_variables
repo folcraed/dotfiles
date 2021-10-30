@@ -1,6 +1,6 @@
 # This file contains fish universal variable definitions.
 # VERSION: 3.0
-SETUVAR --export EDITOR:nvim
+SETUVAR --export EDITOR:micro
 SETUVAR --export MICRO_TRUECOLOR:1
 SETUVAR FZF_LEGACY_KEYBINDINGS:0
 SETUVAR --export NO_AT_BRIDGE:1
