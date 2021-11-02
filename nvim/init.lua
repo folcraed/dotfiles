@@ -24,7 +24,7 @@ require('packer').startup(function()
   use 'ludovicchabant/vim-gutentags' -- Automatic tags management
   -- UI to select things (files, grep results, open buffers...)
   use { 'nvim-telescope/telescope.nvim', requires = { 'nvim-lua/plenary.nvim' } }
-  use 'joshdick/onedark.vim' -- Theme inspired by Atom
+  use 'ful1e5/onedark.nvim' -- Theme inspired by Atom
   -- Add indentation guides even on blank lines
   use 'lukas-reineke/indent-blankline.nvim'
   -- Add git related info in the signs columns and popups
@@ -44,12 +44,9 @@ require('packer').startup(function()
   use 'vifm/vifm.vim' -- Powerful file manager
   use 'norcalli/nvim-colorizer.lua' -- Shows hex colors in the color
   use 'kyazdani42/nvim-web-devicons' -- Icons for the status line
-  use ({ 'NTBBloodbath/galaxyline.nvim',
-    config = function()
-      require("galaxyline.themes.eviline")
-    end,
+  use { 'nvim-lualine/lualine.nvim',
     requires = {'kyazdani42/nvim-web-devicons', opt = true}
-})
+}
 end)
 
 --**************************
@@ -99,13 +96,8 @@ vim.o.spelllang = 'en_us'
 --Remove the tildes at the end of file
 vim.wo.fcs = 'eob: '
 
---Set colorscheme (order is important here)
+--Set the terminal type
 vim.o.termguicolors = true
-vim.g.onedark_terminal_italics = 2
-vim.cmd [[colorscheme onedark]]
-
---Set statusbar
--- require('eviline')
 
 --Remap space as leader key
 vim.api.nvim_set_keymap('', '<Space>', '<Nop>', { noremap = true, silent = true })
@@ -324,8 +316,6 @@ for _, lsp in ipairs(servers) do
   }
 end
 
--- Example custom server
--- local sumneko_root_path = vim.fn.getenv("HOME").."/.local/bin/sumneko_lua" -- Change to your sumneko root installation
 local sumneko_binary = '/usr/bin/lua-language-server'
 
 -- Make runtime files discoverable to the server
@@ -413,4 +403,17 @@ cmp.setup {
 
 -- Colorize hex codes
 require 'colorizer'.setup()
+
+--Set statusbar
+require 'lualine'.setup {
+        options = {
+        theme = 'evil_lualine',
+        icons_enabled = true}
+}
+
+--Set colorscheme (order is important here)
+require("onedark").setup({
+        comment_style = "italic",
+        transparent = true,
+})
 
