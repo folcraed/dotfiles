@@ -1,4 +1,5 @@
 {
+    "aspell.check": "off",
     "basename": true,
     "colorscheme": "onedark-tc",
     "diffgutter": true,
