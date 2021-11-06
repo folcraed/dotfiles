@@ -1,6 +1,7 @@
-;; My Emacs settings Ver 2.0
+;; My Emacs settings Ver 2.1
 ;; File or commit timestamp show when last updated.
 
+(setq lexical-binding t)
 (setq inhibit-startup-message t)
 (setq ring-bell-function 'ignore)
 (setq frame-title-format "Emacs")
@@ -200,22 +201,52 @@
 	(org-agenda-files :maxlevel . 2)))
 
 ;; ==============================================
-;;  Helm and friends
+;;  Vertico and friends
 ;; ==============================================
-(use-package helm
-  :config (setq helm-M-x_fuzzy-match 1
-		helm-autoresize-mode 0
-		helm-display-buffer-default-height 18
-		helm-split-window-inside-p 1
-		helm-descbinds-window-style 'same-window))
-(require 'helm-config)
-(helm-mode 1)
+(use-package vertico
+  :init
+  (vertico-mode))
 
-(use-package helm-rg)
+(use-package orderless
+  :init
+  (setq completion-styles '(orderless)
+        completion-category-defaults nil
+        completion-category-overrides '((file (styles partial-completion)))))
 
-(use-package helm-org
-  :config (setq helm-org-format-outline-path 1))
-(require 'helm-org)
+(use-package consult
+  ;; Replace bindings. Lazily loaded due by `use-package'.
+  :bind (;; C-c bindings (mode-specific-map)
+         ("C-c h" . consult-history)
+         ("C-c m" . consult-mode-command)
+         ;; Other custom bindings
+         ("<help> a" . consult-apropos)            ;; orig. apropos-command
+         :map isearch-mode-map
+         ("M-e" . consult-isearch-history))         ;; orig. isearch-edit-string
+  :hook (completion-list-mode . consult-preview-at-point-mode)
+  :init
+  (setq register-preview-delay 0
+        register-preview-function #'consult-register-format)
+  (advice-add #'register-preview :override #'consult-register-window)
+  (advice-add #'completing-read-multiple :override #'consult-completing-read-multiple)
+  (setq xref-show-xrefs-function #'consult-xref
+        xref-show-definitions-function #'consult-xref)
+  :config
+  (consult-customize
+   consult-theme
+   :preview-key '(:debounce 0.2 any)
+   consult-ripgrep consult-git-grep consult-grep
+   consult-bookmark consult-recent-file consult-xref
+   consult--source-file consult--source-project-file consult--source-bookmark
+   :preview-key (kbd "M-."))
+  (setq consult-narrow-key "<") ;; (kbd "C-+")
+  (setq consult-project-root-function
+        (lambda ()
+          (when-let (project (project-current))
+            (car (project-roots project))))))
+
+(use-package marginalia
+  :init
+  (marginalia-mode))
 
 ;; ==============================================
 ;;  Org-Roam
@@ -226,10 +257,10 @@
   :custom
   ((org-roam-directory "~/Dropbox/Notes/Roam")
    (org-roam-graph-viewer nil))
-  :bind (("C-c n l" . org-roam-buffer-toggle)
-	 ("C-c n f" . org-roam-node-find)
+  :bind (("M-l" . org-roam-buffer-toggle)
+	 ("C-c f" . org-roam-node-find)
 	 ("M-i" . org-roam-node-insert)
-	 ("C-c n g" . org-roam-graph)
+	 ("C-c g" . org-roam-graph)
 	 ("M-a" . org-roam-alias-add)
 	 ("M-r" . org-id-get-create))
   :config
@@ -241,9 +272,6 @@
 
 (use-package flyspell-correct
   :after flyspell)
-
-(use-package flyspell-correct-helm
-  :after flyspell-correct)
 
 (setq ispell-program-name "aspell"
       ispell-dictionary "en_US"
@@ -274,8 +302,7 @@
 (global-set-key (kbd "C-c a") 'org-agenda)
 (global-set-key (kbd "C-c c") 'org-capture)
 (global-set-key (kbd "C-c i") 'org-table-insert-row)
-(global-set-key (kbd "C-c k") 'helm-show-kill-ring)
-(global-set-key (kbd "M-s r") 'helm-resume)
+(global-set-key (kbd "C-c k") 'consult-yank-from-kill-ring)
 (global-set-key (kbd "C-c rb") 'rotate-frame-anticlockwise)
 (global-set-key (kbd "C-c rc") 'rotate-frame-clockwise)
 (global-set-key (kbd "C-c rs") 'rotate-frame)
@@ -284,14 +311,13 @@
 (global-set-key (kbd "C-c w") 'flyspell-correct-wrapper)
 (global-set-key (kbd "C-c x") 'kill-buffer-and-window)
 (global-set-key (kbd "C-c y") 'org-store-link)
-(global-set-key (kbd "M-x") 'helm-M-x)
-(global-set-key (kbd "M-s g") 'helm-rg)
-(global-set-key (kbd "M-f") 'helm-occur)
-(global-set-key (kbd "C-p") 'helm-find-files)
-(global-set-key (kbd "C-b") 'helm-mini)
+(global-set-key (kbd "M-s g") 'consult-ripgrep)
+(global-set-key (kbd "M-f") 'consult-line)
+(global-set-key (kbd "C-p") 'find-file)
+(global-set-key (kbd "C-b") 'consult-buffer)
 (global-set-key (kbd "M-m") 'push-mark-command)
 (global-set-key (kbd "M-b") 'avy-pop-mark)
-(global-set-key (kbd "M-o") 'helm-org-in-buffer-headings)
+(global-set-key (kbd "M-o") 'consult-org-heading)
 (global-set-key (kbd "C-o") 'org-open-at-point)
 (global-set-key (kbd "M-g") 'avy-goto-line)
 (global-set-key (kbd "M-G") 'goto-line)
@@ -352,13 +378,6 @@
 (global-set-key (kbd "M-S-<up>") 'move-line-up)
 (global-set-key (kbd "M-S-<down>") 'move-line-down)
 (cua-mode t)
-
-(add-to-list 'display-buffer-alist
-             `(,(rx bos "*helm" (* not-newline) "*" eos)
-               (display-buffer-in-side-window)
-               (inhibit-same-window . t)
-               (window-height . 0.3)))
-
 (set-face-attribute 'default nil :font "JetBrainsMono Nerd Font-10")
 (set-face-attribute 'fixed-pitch nil :font "JetBrainsMono Nerd Font-10")
 (set-face-attribute 'variable-pitch nil :font "Noto Sans-10")
@@ -414,7 +433,7 @@
  '(cursor-type '(bar . 2))
  '(org-export-backends '(ascii html md odt))
  '(package-selected-packages
-   '(org-roam project company-posframe org markdown-mode helm flyspell-correct flyspell-correct-helm rg helm-rg helm-org winum which-key use-package tablist rainbow-mode rainbow-delimiters org-superstar minions magit iedit gnu-elpa-keyring-update expand-region doom-themes doom-modeline company avy transpose-frame async)))
+   '(vertico consult orderless marginalia org-roam project company-posframe org markdown-mode flyspell-correct rg winum which-key use-package tablist rainbow-mode rainbow-delimiters org-superstar minions magit iedit gnu-elpa-keyring-update expand-region doom-themes doom-modeline company avy transpose-frame async)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
