@@ -157,8 +157,8 @@ super + alt + {Left,Down,Up,Right}
 # Run applications
 #
 
-super + e
-    emacs
+super + c
+    flameshot gui
 
 super + alt + grave
     dunstctl history-pop
