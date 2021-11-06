@@ -7,7 +7,7 @@ xsetroot -cursor_name left_ptr &
 start-pulseaudio-x11 &
 ssh-agent &
 /home/rob/.fehbg &
-picom &
+picom --experimental-backends &
 dunst &
 xclip &
 clipit &
