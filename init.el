@@ -22,7 +22,6 @@
 ;; ==============================================
 ;;  Set up repositories
 ;; ==============================================
-
 (setq gnutls-algorithm-priority "NORMAL:-VERS-TLS1.3")
 (require 'package)
 (setq package-enable-at-startup nil)
@@ -40,19 +39,16 @@
 ;; ==============================================
 ;;  Keep keyring up to date
 ;; ==============================================
-
 (use-package gnu-elpa-keyring-update)
 
 ;; ==============================================
 ;;  Minion for the rest
 ;; ==============================================
-
 (use-package minions)
 
 ;; ==============================================
 ;;  My necessary packages
 ;; ==============================================
-
 (use-package which-key)
 (which-key-mode)
 
@@ -87,13 +83,11 @@
 ;; ==============================================
 ;;  Project Setup (can remove when Emacs 28)
 ;; ==============================================
-
 (use-package project)
 
 ;; ==============================================
 ;;  Dired enhancements
 ;; ==============================================
-
 (setq delete-by-moving-to-trash t
       dired-listing-switches "-ahlv --group-directories-first"
       dired-dwim-target t)
@@ -109,7 +103,6 @@
 ;; ===============================================
 ;;  Doom modeline & theme
 ;; ===============================================
-
 (use-package doom-modeline
   :hook (after-init . doom-modeline-mode)
   :config
@@ -130,7 +123,6 @@
 ;; ==============================================
 ;;  Winum settings
 ;; ==============================================
-
 (use-package winum
   :bind (("M-1" . winum-select-window-1)
          ("M-2" . winum-select-window-2)
@@ -147,13 +139,11 @@
 ;; ==============================================
 ;;  Transpose windows
 ;; ==============================================
-
 (use-package transpose-frame)
 
 ;; ==============================================
 ;;  Org-mode
 ;; ==============================================
-
 (use-package org
   :config
   (setq-default org-hide-emphasis-markers t)
@@ -185,7 +175,7 @@
          "* TODO %?")
         ("c" "Changes" entry (file+headline "~/Dropbox/Notes/Software.org" "Changes")
          "* %t %?")
-        ("j" "Jots" entry (file+headline "~/Dropbox/Notes/jots.org" "Refile")
+        ("j" "Jots" entry (file+headline "~/Dropbox/Notes/Notebook.org" "Refile")
          "* %?")))
 
 (setq org-todo-keywords
@@ -216,7 +206,6 @@
 (use-package consult
   ;; Replace bindings. Lazily loaded due by `use-package'.
   :bind (;; C-c bindings (mode-specific-map)
-         ("C-c h" . consult-history)
          ("C-c m" . consult-mode-command)
          ;; Other custom bindings
          ("<help> a" . consult-apropos)            ;; orig. apropos-command
@@ -249,27 +238,8 @@
   (marginalia-mode))
 
 ;; ==============================================
-;;  Org-Roam
-;; ==============================================
-(use-package org-roam
-  :init
-  (setq org-roam-v2-ack t)
-  :custom
-  ((org-roam-directory "~/Dropbox/Notes/Roam")
-   (org-roam-graph-viewer nil))
-  :bind (("M-l" . org-roam-buffer-toggle)
-	 ("C-c f" . org-roam-node-find)
-	 ("M-i" . org-roam-node-insert)
-	 ("C-c g" . org-roam-graph)
-	 ("M-a" . org-roam-alias-add)
-	 ("M-r" . org-id-get-create))
-  :config
-  (org-roam-setup))
-
-;; ==============================================
 ;;  Flyspell stuff
 ;; ==============================================
-
 (use-package flyspell-correct
   :after flyspell)
 
@@ -282,13 +252,11 @@
 ;; ===============================================
 ;;  Magit
 ;; ===============================================
-
 (use-package magit)
 
 ;; ===============================================
 ;; Markdown editing
 ;; ===============================================
-
 (use-package markdown-mode
   :mode (("README\\.md\\'" . gfm-mode)
          ("\\.md\\'" . gfm-mode)
@@ -298,7 +266,6 @@
 ;; ===============================================
 ;; Some personal keybindings
 ;; ===============================================
-
 (global-set-key (kbd "C-c a") 'org-agenda)
 (global-set-key (kbd "C-c c") 'org-capture)
 (global-set-key (kbd "C-c i") 'org-table-insert-row)
@@ -338,7 +305,6 @@
 ;; ==============================================
 ;;  Sanity settings
 ;; ==============================================
-
 (setq-default make-backup-files nil
 	      backup-inhibited t
 	      create-lockfiles nil
@@ -378,14 +344,13 @@
 (global-set-key (kbd "M-S-<up>") 'move-line-up)
 (global-set-key (kbd "M-S-<down>") 'move-line-down)
 (cua-mode t)
-(set-face-attribute 'default nil :font "JetBrainsMono Nerd Font-10")
-(set-face-attribute 'fixed-pitch nil :font "JetBrainsMono Nerd Font-10")
+(set-face-attribute 'default nil :font "JetBrainsMono-10")
+(set-face-attribute 'fixed-pitch nil :font "JetBrainsMono-10")
 (set-face-attribute 'variable-pitch nil :font "Noto Sans-10")
 
 ;; ==============================================
 ;; Narrow or widen whatever I'm working on
 ;; ==============================================
-
 (defun narrow-or-widen-dwim (p)
   "Makes it easier to switch between narrow and wide"
   (interactive "P")
@@ -405,7 +370,6 @@
 ;; ==============================================
 ;; Sane copy org link to clipboard function
 ;; ==============================================
-
 (defun my-org-export-url ()
   "Copies the org link to the clipboard"
   (interactive)
@@ -433,7 +397,7 @@
  '(cursor-type '(bar . 2))
  '(org-export-backends '(ascii html md odt))
  '(package-selected-packages
-   '(vertico consult orderless marginalia org-roam project company-posframe org markdown-mode flyspell-correct rg winum which-key use-package tablist rainbow-mode rainbow-delimiters org-superstar minions magit iedit gnu-elpa-keyring-update expand-region doom-themes doom-modeline company avy transpose-frame async)))
+   '(vertico consult orderless marginalia project company-posframe org markdown-mode flyspell-correct rg winum which-key use-package tablist rainbow-mode rainbow-delimiters org-superstar minions magit iedit gnu-elpa-keyring-update expand-region doom-themes doom-modeline company avy transpose-frame async)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
