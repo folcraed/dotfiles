@@ -405,14 +405,37 @@ cmp.setup {
 require 'colorizer'.setup()
 
 --Set statusbar
-require 'lualine'.setup {
+require ('lualine').setup({
         options = {
-        theme = 'evil_lualine',
-        icons_enabled = true}
-}
+        icons_enabled = true,
+        component_separators = { left = ' ', right = ' ' },
+        section_separators = { left = '', right = '' },
+        disabled_filetypes = {},
+        always_divide_middle = true,
+      },
+      sections = {
+        lualine_a = { 'mode' },
+        lualine_b = {{ 'branch', icon = '' },{ 'diff' }},
+        lualine_c = { 'filename' },
+        lualine_x = {{ 'diagnostics', sources = { 'nvim-lsp' } },{ 'filetype' }},
+        lualine_y = { 'progress' },
+        lualine_z = { 'location' }
+      },
+      inactive_sections = {
+        lualine_a = {},
+        lualine_b = {},
+        lualine_c = { 'filename' },
+        lualine_x = { 'location' },
+        lualine_y = {},
+        lualine_z = {}
+      },
+      tabline = {},
+      extensions = {}
+    })
+
 
 --Set colorscheme (order is important here)
-require("onedark").setup({
+require('onedark').setup({
         comment_style = "italic",
         transparent = true,
 })
