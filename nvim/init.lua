@@ -68,9 +68,6 @@ vim.o.hidden = true
 --Enable mouse mode
 vim.o.mouse = 'a'
 
---Set gx to open files with default app
-vim.api.nvim_set_keymap('n', 'gx', ':!xdg-open <cfile><CR><ESC>', { noremap = true, silent = true })
-
 --Enable break indent and word wrapping
 vim.o.breakindent = true
 vim.o.linebreak = true
@@ -107,6 +104,9 @@ vim.g.maplocalleader = ' '
 --Remap command key to something eaier
 vim.api.nvim_set_keymap('n', ';', ':', { noremap = true })
 
+--Set gx to open files with default app
+vim.api.nvim_set_keymap('n', 'gx', ':!xdg-open <cfile><CR><ESC>', { noremap = true, silent = true })
+
 --Remap for dealing with word wrap
 vim.api.nvim_set_keymap('n', 'k', "v:count == 0 ? 'gk' : 'k'", { noremap = true, expr = true, silent = true })
 vim.api.nvim_set_keymap('n', 'j', "v:count == 0 ? 'gj' : 'j'", { noremap = true, expr = true, silent = true })
@@ -123,6 +123,9 @@ vim.api.nvim_set_keymap('n', 'N', 'Nzzzv', { noremap = true, silent = true })
 
 --Turn off search highlighting
 vim.api.nvim_set_keymap('n', '<leader>ch', ':nohl<CR>', { noremap = true, silent = true })
+
+--Make Y yank from cursor to end of line
+vim.api.nvim_set_keymap('n', 'Y', 'y$', { noremap = true })
 
 --Change directory to current file directory
 vim.api.nvim_set_keymap('n', '<leader>cd', ':cd %:h<CR>', { noremap = true, silent = true })
