@@ -122,7 +122,7 @@ vim.api.nvim_set_keymap('n', 'n', 'nzzzv', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', 'N', 'Nzzzv', { noremap = true, silent = true })
 
 --Turn off search highlighting
-vim.api.nvim_set_keymap('n', '<leader>ch', ':nohl<CR>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '/<CR>', ':nohl<CR>', { noremap = true, silent = true })
 
 --Make Y yank from cursor to end of line
 vim.api.nvim_set_keymap('n', 'Y', 'y$', { noremap = true })
@@ -193,6 +193,16 @@ require('telescope').setup {
     },
   },
 }
+
+vim.api.nvim_exec(
+  [[
+  augroup Telescope
+    autocmd!
+    autocmd User TelescopePreviewerLoaded setlocal wrap
+  augroup end
+]],
+  false
+)
 
 --Settings for vifm
 vim.g.vifm_embed_split = 1
