@@ -20,6 +20,7 @@ set $term kitty
 #
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
 output * bg /home/rob/Pictures/cityscape.jpg fill
+output * subpixel rgb
 #
 # Example configuration:
 # Monitors
