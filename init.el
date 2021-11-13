@@ -26,7 +26,6 @@
 (require 'package)
 (setq package-enable-at-startup nil)
 (setq package-archives '(("melpa" . "https://melpa.org/packages/")
-			 ("org" . "https://orgmode.org/elpa/")
 			 ("elpa" . "https://elpa.gnu.org/packages/")))
 
 (unless (package-installed-p 'use-package)
@@ -286,7 +285,7 @@
 (global-set-key (kbd "M-b") 'avy-pop-mark)
 (global-set-key (kbd "M-o") 'consult-org-heading)
 (global-set-key (kbd "C-o") 'org-open-at-point)
-(global-set-key (kbd "M-g") 'avy-goto-line)
+(global-set-key (kbd "M-g g") 'avy-goto-line)
 (global-set-key (kbd "M-G") 'goto-line)
 (global-set-key (kbd "M-j") 'avy-goto-char-timer)
 (global-set-key (kbd "M-;") 'comment-line)
