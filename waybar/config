@@ -40,7 +40,7 @@
     "clock": {
         "format": "{:%I:%M %p}",
         "tooltip-format": "{:%a %e %b %Y | %I:%M %p}",
-        "format-alt": "{:%Y-%m-%d}"
+        "format-alt": "{:%a %e %b %Y}"
     },
     "cpu": {
         "format": "{usage}% ",
@@ -59,7 +59,7 @@
     },
     "pulseaudio": {
         // "scroll-step": 1, // %, can be a float
-        "format": "{volume}% {icon}🔉 {format_source}",
+        "format": "{volume}% {icon}",
         "format-bluetooth": "{volume}% {icon} {format_source}",
         "format-muted": " {format_source}",
         "format-source": "{volume}% ",
