@@ -25,12 +25,12 @@
     stack_duplicates = true
     hide_duplicate_count = false
     show_indicators = yes
-    icon_position = off
+    icon_position = left
     max_icon_size = 32
-    icon_path = /usr/share/icons/gnome/16x16/status/:/usr/share/icons/gnome/16x16/devices/
+    icon_path = /usr/share/icons/breeze-dark/status/16/:/usr/share/icons/breeze-dark/devices/16/
     sticky_history = yes
     history_length = 20
-    browser = /usr/bin/qutebrowser
+    browser = xdg-open
     always_run_script = true
     title = Dunst
     class = Dunst

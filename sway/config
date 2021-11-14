@@ -189,10 +189,11 @@ bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 1 toggle
     # If there are multiple scratchpad windows, this command cycles through them.
     bindsym $mod+minus scratchpad show
 
-# Default floating apps
+# Default app rules
 for_window [app_id="mpv"] floating enable
 for_window [class="Sxiv"] floating enable
 for_window [app_id="cherrytree"] floating enable
+for_window [app_id="ulauncher"] floating enable, border none
 
 #
 # Resizing containers:
@@ -229,14 +230,11 @@ bar {
 
 include /etc/sway/config.d/*
 
-# Application Rules
-for_window [app_id="ulauncher"] floating enable, border none
-
 # Startup apps
 exec --no-startup-id gnome-keyring-daemon --start --components=secrets
 exec --no-startup-id /usr/lib64/polkit-gnome/polkit-gnome-authentication-agent-1
 exec --no-startup-id xset s off
-exec --no-startup-id mako
+exec --no-startup-id dunst
 exec --no-startup-id ssh-agent
 exec --no-startup-id recollindex -m
 exec GDK_BACKEND=wayland ulauncher --hide-window
