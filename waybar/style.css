@@ -7,9 +7,9 @@
 }
 
 window#waybar {
-    background-color: rgba(43, 48, 59, 0.5);
-    border-bottom: 1px solid rgba(100, 114, 125, 0.5);
-    color: #ffffff;
+    background-color: rgba(46, 52, 64, 0.5);
+    border-bottom: 1px solid rgba(76, 86, 106, 0.5);
+    color: #ECEFF4;
     transition-property: background-color;
     transition-duration: .5s;
 }
@@ -23,7 +23,7 @@ window#waybar.empty {
     background-color: transparent;
 }
 window#waybar.solo {
-    background-color: #FFFFFF;
+    background-color: #ECEFF4;
 }
 */
 
@@ -40,54 +40,54 @@ window#waybar.chromium {
 #workspaces button {
     padding: 0 5px;
     background-color: transparent;
-    color: #ffffff;
+    color: #ECEFF4;
     border-bottom: 3px solid transparent;
 }
 
 #workspaces button.focused {
-    background-color: #4B5263;
-    border-bottom: 3px solid #61AFEF;
+    background-color: #4C556A;
+    border-bottom: 3px solid #5E81AC;
 }
 
 #workspaces button.urgent {
-    background-color: #BE5046;
+    background-color: #BF616A;
 }
 
 #mode {
-    background-color: #4B5263;
-    border-bottom: 3px solid #ffffff;
+    background-color: #4C556A;
+    border-bottom: 3px solid #ECEFF4;
 }
 
 #clock, #battery, #cpu, #memory, #temperature, #backlight, #network, #pulseaudio, #custom-media, #tray, #mode, #idle_inhibitor {
     padding: 0 10px;
     margin: 0 5px;
-    color: #ffffff;
+    color: #ECEFF4;
 }
 
 #clock {
-    background-color: #4B5263;
+    background-color: #434C5E;
 }
 
 #battery {
-    background-color: #ffffff;
+    background-color: #ECEFF4;
     color: #000000;
 }
 
 #battery.charging {
-    color: #ffffff;
+    color: #ECEFF4;
     background-color: #26A65B;
 }
 
 @keyframes blink {
     to {
-        background-color: #ffffff;
+        background-color: #ECEFF4;
         color: #000000;
     }
 }
 
 #battery.critical:not(.charging) {
     background-color: #f53c3c;
-    color: #ffffff;
+    color: #ECEFF4;
     animation-name: blink;
     animation-duration: 0.5s;
     animation-timing-function: linear;
@@ -96,16 +96,16 @@ window#waybar.chromium {
 }
 
 label:focus {
-    background-color: #000000;
+    background-color: #2E3440;
 }
 
 #cpu {
-    background-color: #98C379;
+    background-color: #A3BE8C;
     color: #000000;
 }
 
 #memory {
-    background-color: #C678DD;
+    background-color: #B48EAD;
     color: #000000;
 }
 
@@ -122,12 +122,12 @@ label:focus {
 }
 
 #pulseaudio {
-    background-color: #E5C07B;
+    background-color: #EBCB8B;
     color: #000000;
 }
 
 #pulseaudio.muted {
-    background-color: #E06C75;
+    background-color: #BF616A;
     color: #000000;
 }
 
@@ -146,24 +146,24 @@ label:focus {
 }
 
 #temperature {
-    background-color: #56B6C2;
+    background-color: #81A1C1;
     color: #000000;
 }
 
 #temperature.critical {
-    background-color: #BE5046;
+    background-color: #BF616A;
 }
 
 #tray {
-    background-color: #61AFEF;
+    background-color: #2E3440;
 }
 
 #idle_inhibitor {
-    background-color: #5C6370;
+    background-color: #434C5E;
 }
 
 #idle_inhibitor.activated {
-    background-color: #ABB2BF;
+    background-color: #A3BE8C;
     color: #282C34;
 }
 
