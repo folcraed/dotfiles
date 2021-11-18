@@ -61,9 +61,13 @@
   (company-minimum-prefix-length 3))
 (add-hook 'after-init-hook 'global-company-mode)
 
-(use-package company-posframe)
-(company-posframe-mode 1)
-  
+(use-package corfu
+  :custom
+  (corfu-auto t)
+  (corfu-quit-at-boundary t)
+  :init
+  (corfu-global-mode))
+
 (use-package iedit)
 (require 'iedit)
 
@@ -311,7 +315,8 @@
 	      scroll-preserve-screen-position t
 	      size-indication-mode 1
 	      shr-max-image-proportion 0.9
-	      shr-image-animate nil)
+	      shr-image-animate nil
+	      tab-always-indent 'complete)
 
 (add-hook 'prog-mode-hook #'display-line-numbers-mode)
 (add-hook 'minibuffer-setup-hook
@@ -404,12 +409,17 @@
  '(cursor-type '(bar . 2))
  '(org-export-backends '(ascii html md odt))
  '(package-selected-packages
-   '(vertico consult orderless marginalia project company-posframe org markdown-mode flyspell-correct rg winum which-key use-package tablist rainbow-mode rainbow-delimiters org-superstar minions magit iedit gnu-elpa-keyring-update expand-region doom-themes doom-modeline company avy transpose-frame async)))
+   '(company corfu vertico consult orderless marginalia project org markdown-mode flyspell-correct rg winum which-key use-package tablist rainbow-mode rainbow-delimiters org-superstar minions magit iedit gnu-elpa-keyring-update expand-region doom-themes doom-modeline avy transpose-frame async)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(font-lock-comment-delimiter-face ((t (:inherit font-lock-comment-face))))
- '(font-lock-comment-face ((t (:foreground "#5B6268" :slant italic)))))
+ '(font-lock-comment-face ((t (:foreground "#5B6268" :slant italic))))
+ '(org-code ((t (:inherit fixed-pitch))))
+ '(org-property-value ((t (:inherit fixed-pitch))) t)
+ '(org-table ((t (:inherit fixed-pitch))))
+ '(org-tag ((t (:inherit fixed-pitch))))
+ '(org-verbatim ((t (:inherit fixed-pitch)))))
 (put 'narrow-to-region 'disabled nil)
