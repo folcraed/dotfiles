@@ -1,5 +1,6 @@
-{
+[{
     "layer": "top",
+    "output": "DP-1",
     "position": "top",
     "height": 20,
     "modules-left": ["sway/workspaces", "sway/mode"],
@@ -49,4 +50,21 @@
         },
         "on-click": "pavucontrol"
    }
-}
+},
+{
+   "layer": "top",
+   "output": "HDMI-A-1",
+   "position": "top",
+   "height": 20,
+   "modules-left": ["sway/workspaces", "sway/mode"],
+   "modules-center": ["sway/window"],
+   "modules-right": ["clock"],
+   "sway/mode": {
+       "format": "<span style=\"italic\">{}</span>"
+   },
+   "clock": {
+       "format": "{:%I:%M %p}",
+       "tooltip-format": "{:%a %e %b %Y | %I:%M %p}",
+       "format-alt": "{:%a %e %b %Y}"
+   }
+}]
