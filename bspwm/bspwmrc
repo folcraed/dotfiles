@@ -30,7 +30,7 @@ bspc config gapless_monocle      true
 bspc config presel_feedback_color "#65737E"
 
 bspc rule -a Gimp state=floating follow=on
-bspc rule -a org-knopflerfish-framework-BundleThread state=floating
+bspc rule -a org-knopflerfish-framework-BundleThread state=floating center=true
 bspc rule -a Sxiv state=floating
 bspc rule -a mpv state=floating
 bspc rule -a okular state=floating
