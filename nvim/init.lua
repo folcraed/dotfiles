@@ -33,6 +33,7 @@ require('packer').startup(function()
   use 'nvim-treesitter/nvim-treesitter'
   -- Additional textobjects for treesitter
   use 'nvim-treesitter/nvim-treesitter-textobjects'
+  use 'p00f/nvim-ts-rainbow' -- Adds matching bracket colors
   use 'neovim/nvim-lspconfig' -- Collection of configurations for built-in LSP client
   use 'hrsh7th/nvim-cmp' -- Autocompletion plugin
   use 'hrsh7th/cmp-buffer'
@@ -240,6 +241,7 @@ vim.api.nvim_set_keymap('n', 'Y', 'y$', { noremap = true })
 -- Treesitter configuration
 -- Parsers must be installed manually via :TSInstall
 require('nvim-treesitter.configs').setup {
+  ensure_installed = "all",
   highlight = {
     enable = true, -- false will disable the whole extension
   },
@@ -286,6 +288,10 @@ require('nvim-treesitter.configs').setup {
         ['[M'] = '@function.outer',
         ['[]'] = '@class.outer',
       },
+    },
+    rainbow = {
+      enable = true,
+      max_file_lines = nil,
     },
   },
 }
