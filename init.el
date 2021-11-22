@@ -55,19 +55,6 @@
   :config
   (setq avy-case-fold-search nil))
 
-(use-package company
-  :custom
-  (company-idle-delay 0.5)
-  (company-minimum-prefix-length 3))
-(add-hook 'after-init-hook 'global-company-mode)
-
-(use-package corfu
-  :custom
-  (corfu-auto t)
-  (corfu-quit-at-boundary t)
-  :init
-  (corfu-global-mode))
-
 (use-package iedit)
 (require 'iedit)
 
@@ -239,6 +226,22 @@
 (use-package marginalia
   :init
   (marginalia-mode))
+
+(use-package company
+  :custom
+  (company-idle-delay 0.5)
+  (company-minimum-prefix-length 3)
+  :init
+  (global-company-mode))
+
+;; (add-hook 'after-init-hook 'global-company-mode)
+
+(use-package corfu
+  :custom
+  (corfu-auto t)
+  (corfu-quit-at-boundary t)
+  :config
+  (corfu-global-mode))
 
 ;; ==============================================
 ;;  Flyspell stuff
