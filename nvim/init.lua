@@ -5,15 +5,12 @@ if vim.fn.empty(vim.fn.glob(install_path)) > 0 then
   vim.fn.execute('!git clone https://github.com/wbthomason/packer.nvim ' .. install_path)
 end
 
-vim.api.nvim_exec(
-  [[
+vim.cmd [[
   augroup Packer
     autocmd!
     autocmd BufWritePost init.lua PackerCompile
   augroup end
-]],
-  false
-)
+]]
 
 local use = require('packer').use
 require('packer').startup(function()
@@ -195,15 +192,12 @@ require('telescope').setup {
   },
 }
 
-vim.api.nvim_exec(
-  [[
+vim.cmd [[
   augroup Telescope
     autocmd!
     autocmd User TelescopePreviewerLoaded setlocal wrap
   augroup end
-]],
-  false
-)
+]]
 
 --Settings for vifm
 vim.g.vifm_embed_split = 1
@@ -225,15 +219,12 @@ vim.api.nvim_set_keymap('n', '<leader>so', [[<cmd>lua require('telescope.builtin
 vim.api.nvim_set_keymap('n', '<leader>?', [[<cmd>lua require('telescope.builtin').oldfiles()<CR>]], { noremap = true, silent = true })
 
 -- Highlight on yank
-vim.api.nvim_exec(
-  [[
+vim.cmd [[
   augroup YankHighlight
     autocmd!
     autocmd TextYankPost * silent! lua vim.highlight.on_yank()
   augroup end
-]],
-  false
-)
+]]
 
 -- Y yank until the end of line
 vim.api.nvim_set_keymap('n', 'Y', 'y$', { noremap = true })
