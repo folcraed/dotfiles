@@ -234,14 +234,8 @@
   :init
   (global-company-mode))
 
-;; (add-hook 'after-init-hook 'global-company-mode)
-
-(use-package corfu
-  :custom
-  (corfu-auto t)
-  (corfu-quit-at-boundary t)
-  :config
-  (corfu-global-mode))
+(use-package company-posframe)
+(company-posframe-mode 1)
 
 ;; ==============================================
 ;;  Flyspell stuff
@@ -412,7 +406,7 @@
  '(cursor-type '(bar . 2))
  '(org-export-backends '(ascii html md odt))
  '(package-selected-packages
-   '(company corfu vertico consult orderless marginalia project org markdown-mode flyspell-correct rg winum which-key use-package tablist rainbow-mode rainbow-delimiters org-superstar minions magit iedit gnu-elpa-keyring-update expand-region doom-themes doom-modeline avy transpose-frame async)))
+   '(company-posframe company vertico consult orderless marginalia project org markdown-mode flyspell-correct rg winum which-key use-package tablist rainbow-mode rainbow-delimiters org-superstar minions magit iedit gnu-elpa-keyring-update expand-region doom-themes doom-modeline avy transpose-frame async)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
