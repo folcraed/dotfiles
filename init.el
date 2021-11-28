@@ -180,21 +180,6 @@
       '((nil :maxlevel . 2)
 	(org-agenda-files :maxlevel . 2)))
 
-(use-package org-roam
-  :init
-  (setq org-roam-v2-ack t)
-  :custom
-  ((org-roam-directory "~/Dropbox/Notes/Roam")
-   (org-roam-graph-viewer nil))
-  :bind (("M-l" . org-roam-buffer-toggle)
-	 ("C-c f" . org-roam-node-find)
-	 ("M-i" . org-roam-node-insert)
-	 ("C-c g" . org-roam-graph)
-	 ("M-a" . org-roam-alias-add)
-	 ("M-r" . org-id-get-create))
-  :config
-  (org-roam-setup))
-
 ;; ==============================================
 ;;  Vertico and friends
 ;; ==============================================
@@ -276,7 +261,8 @@
   :mode (("README\\.md\\'" . gfm-mode)
          ("\\.md\\'" . gfm-mode)
          ("\\.markdown\\'" . markdown-mode))
-  :custom (markdown-enable-wiki-links t)
+  :custom ((markdown-enable-wiki-links t)
+	   (markdown-wiki-link-alias-first nil))
   :init (setq markdown-open-command "okular"))
 
 ;; ===============================================
@@ -422,7 +408,7 @@
  '(cursor-type '(bar . 2))
  '(org-export-backends '(ascii html md odt))
  '(package-selected-packages
-   '(company-posframe company vertico consult orderless marginalia project org org-roam markdown-mode flyspell-correct rg winum which-key use-package tablist rainbow-mode rainbow-delimiters org-superstar minions magit iedit gnu-elpa-keyring-update expand-region doom-themes doom-modeline avy transpose-frame async)))
+   '(company-posframe company vertico consult orderless marginalia project org markdown-mode flyspell-correct rg winum which-key use-package tablist rainbow-mode rainbow-delimiters org-superstar minions magit iedit gnu-elpa-keyring-update expand-region doom-themes doom-modeline avy transpose-frame async)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
