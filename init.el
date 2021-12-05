@@ -347,7 +347,7 @@
 (cua-mode t)
 (set-face-attribute 'default nil :font "JetBrainsMono-10")
 (set-face-attribute 'fixed-pitch nil :font "JetBrainsMono-10")
-(set-face-attribute 'variable-pitch nil :font "Droid Sans-10")
+(set-face-attribute 'variable-pitch nil :font "Noto Sans-10")
 
 (add-hook 'org-mode-hook 'variable-pitch-mode)
 (custom-theme-set-faces
