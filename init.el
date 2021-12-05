@@ -299,8 +299,6 @@
 (global-set-key (kbd "<C-M-S-right>") 'enlarge-window-horizontally)
 (global-set-key (kbd "<C-M-S-down>") 'shrink-window)
 (global-set-key (kbd "<C-M-S-up>") 'enlarge-window)
-(global-set-key (kbd "<C-M-up>") 'org-table-move-row-up)
-(global-set-key (kbd "<C-M-down>") 'org-table-move-row-down)
 (global-set-key (kbd "<escape>") 'keyboard-escape-quit)
 (define-key dired-mode-map (kbd "C-c o") 'dired-open-file)
 
@@ -349,7 +347,7 @@
 (cua-mode t)
 (set-face-attribute 'default nil :font "JetBrainsMono-10")
 (set-face-attribute 'fixed-pitch nil :font "JetBrainsMono-10")
-(set-face-attribute 'variable-pitch nil :font "Noto Sans-10")
+(set-face-attribute 'variable-pitch nil :font "Droid Sans-10")
 
 (add-hook 'org-mode-hook 'variable-pitch-mode)
 (custom-theme-set-faces
