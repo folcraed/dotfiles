@@ -355,8 +355,10 @@
   '(org-code ((t (:inherit fixed-pitch))))
   '(org-property-value ((t (:inherit fixed-pitch))))
   '(org-table ((t (:inherit fixed-pitch))))
+  '(org-block ((t (:inherit fixed-pitch))))
   '(org-tag ((t (:inherit fixed-pitch))))
   '(org-verbatim ((t (:inherit fixed-pitch)))))
+
 ;; ==============================================
 ;; Narrow or widen whatever I'm working on
 ;; ==============================================
