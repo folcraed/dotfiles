@@ -415,10 +415,5 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(font-lock-comment-delimiter-face ((t (:inherit font-lock-comment-face))))
- '(font-lock-comment-face ((t (:foreground "#5B6268" :slant italic))))
- '(org-code ((t (:inherit fixed-pitch))))
- '(org-property-value ((t (:inherit fixed-pitch))) t)
- '(org-table ((t (:inherit fixed-pitch))))
- '(org-tag ((t (:inherit fixed-pitch))))
- '(org-verbatim ((t (:inherit fixed-pitch)))))
+ '(font-lock-comment-face ((t (:foreground "#5B6268" :slant italic)))))
 (put 'narrow-to-region 'disabled nil)
