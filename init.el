@@ -180,6 +180,32 @@
       '((nil :maxlevel . 2)
 	(org-agenda-files :maxlevel . 2)))
 
+(use-package org-roam
+  :init
+  (setq org-roam-v2-ack t)
+  :custom
+  ((org-roam-directory "~/Dropbox/Roam")
+   (org-roam-graph-viewer nil))
+  :bind (("M-l" . org-roam-buffer-toggle)
+	 ("C-c f" . org-roam-node-find)
+	 ("M-i" . org-roam-node-insert)
+	 ("C-c g" . org-roam-graph)
+	 ("M-a" . org-roam-alias-add)
+	 ("M-r" . org-id-get-create)
+	 ("M-t" . org-roam-tag-add))
+  :config
+  (org-roam-setup))
+
+(use-package websocket)
+(use-package simple-httpd)
+(use-package org-roam-ui
+  :after org-roam
+  :config
+    (setq org-roam-ui-sync-theme t
+          org-roam-ui-follow t
+          org-roam-ui-update-on-save t
+          org-roam-ui-open-on-start nil))
+
 ;; ==============================================
 ;;  Vertico and friends
 ;; ==============================================
@@ -408,12 +434,11 @@
  '(cursor-type '(bar . 2))
  '(org-export-backends '(ascii html md odt))
  '(package-selected-packages
-   '(company-posframe company vertico consult orderless marginalia project org markdown-mode flyspell-correct rg winum which-key use-package tablist rainbow-mode rainbow-delimiters org-superstar minions magit iedit gnu-elpa-keyring-update expand-region doom-themes doom-modeline avy transpose-frame async)))
+   '(org-roam-ui simple-httpd websocket company-posframe company vertico consult orderless marginalia project org org-roam markdown-mode flyspell-correct rg winum which-key use-package tablist rainbow-mode rainbow-delimiters org-superstar minions magit iedit gnu-elpa-keyring-update expand-region doom-themes doom-modeline avy transpose-frame async)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(font-lock-comment-delimiter-face ((t (:inherit font-lock-comment-face))))
- '(font-lock-comment-face ((t (:foreground "#5B6268" :slant italic)))))
+ )
 (put 'narrow-to-region 'disabled nil)
