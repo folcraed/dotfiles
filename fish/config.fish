@@ -16,14 +16,14 @@ function bu2
     rsync -aiv --delete --exclude='.comments/' /home/rob/Dropbox/Genealogy/ /mnt/rob/Dropbox/Genealogy &&
     rsync -aiv --delete --exclude='.comments/' /home/rob/Dropbox/Mindmaps/ /mnt/rob/Dropbox/Mindmaps &&
     rsync -aiv --delete --exclude='.comments/' /home/rob/Dropbox/Notes/ /mnt/rob/Dropbox/Notes &&
-    rsync -aiv --delete --exclude='.comments/' /home/rob/Dropbox/Maps/ /mnt/rob/Dropbox/Maps &&
+    rsync -aiv --delete --exclude='.comments/' /home/rob/Dropbox/Roam/ /mnt/rob/Dropbox/Roam &&
     rsync -aiv --delete --exclude='.comments/' /home/rob/Dropbox/Docs/ /mnt/rob/Dropbox/Docs &&
     rsync -aiv --delete --exclude='.comments/' /home/rob/.local/share/marble/bookmarks/ /mnt/rob/.local/share/marble/bookmarks &&
     rsync -aiv --delete --exclude='.comments/' ~/.googleearth/myplaces.kml /mnt/rob/.googleearth
     rsync -aiv --delete --exclude='.comments/' /home/rob/Dropbox/Genealogy/ /run/media/rob/Dropbox/Genealogy &&
     rsync -aiv --delete --exclude='.comments/' /home/rob/Dropbox/Mindmaps/ /run/media/rob/Dropbox/Mindmaps &&
     rsync -aiv --delete --exclude='.comments/' /home/rob/Dropbox/Notes/ /run/media/rob/Dropbox/Notes &&
-    rsync -aiv --delete --exclude='.comments/' /home/rob/Dropbox/Maps/ /mnt/rob/Dropbox/Maps &&
+    rsync -aiv --delete --exclude='.comments/' /home/rob/Dropbox/Roam/ /mnt/rob/Dropbox/Roam &&
     rsync -aiv --delete --exclude='.comments/' /home/rob/Dropbox/Docs/ /run/media/rob/Dropbox/Docs &&
     rsync -aiv --delete --exclude='.comments/' /home/rob/.local/share/marble/bookmarks/ /mnt/rob/.local/share/marble/bookmarks &&
     rsync -aiv --delete --exclude='.comments/' ~/.googleearth/myplaces.kml /run/media/rob/.googleearth
