@@ -66,7 +66,8 @@ titlebar_padding 2
     bindsym $mod+Shift+q kill
 
     # start your launcher
-    bindsym $mod+p exec ulauncher-toggle
+    # bindsym $mod+p exec ulauncher-toggle
+    bindsym $mod+p exec krunner
 
     # Drag floating windows by holding down $mod and left mouse button.
     # Resize them with right mouse button + $mod.
