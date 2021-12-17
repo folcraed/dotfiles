@@ -238,6 +238,7 @@ exec --no-startup-id xset s off
 exec --no-startup-id dunst
 exec --no-startup-id ssh-agent
 exec --no-startup-id recollindex -m
-exec GDK_BACKEND=wayland ulauncher --hide-window
+exec --no-startup-id krunner
+exec wl-paste -t text --watch clipman store
 include /etc/sway/config.d/*
 # vim: ft=sh
