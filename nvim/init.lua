@@ -17,7 +17,7 @@ require('packer').startup(function()
   use 'wbthomason/packer.nvim' -- Package manager
   use 'tpope/vim-fugitive' -- Git commands in nvim
   use 'tpope/vim-rhubarb' -- Fugitive-companion to interact with github
-  use 'tpope/vim-commentary' -- "gc" to comment visual regions/lines
+  use 'numToStr/Comment.nvim' -- "gc" to comment visual regions/lines
   use 'ludovicchabant/vim-gutentags' -- Automatic tags management
   -- UI to select things (files, grep results, open buffers...)
   use { 'nvim-telescope/telescope.nvim', requires = { 'nvim-lua/plenary.nvim' } }
@@ -162,6 +162,9 @@ vim.g.indent_blankline_filetype_exclude = { 'help', 'packer' }
 vim.g.indent_blankline_buftype_exclude = { 'terminal', 'nofile' }
 vim.g.indent_blankline_show_trailing_blankline_indent = false
 
+-- Enable Comment.nvim
+require('Comment').setup()
+
 -- Gitsigns
 require('gitsigns').setup {
   signs = {
@@ -221,7 +224,7 @@ vim.cmd [[
 -- Treesitter configuration
 -- Parsers must be installed manually via :TSInstall
 require('nvim-treesitter.configs').setup {
-  ensure_installed = "all",
+  ensure_installed = "maintained",
   highlight = {
     enable = true, -- false will disable the whole extension
   },
@@ -313,15 +316,12 @@ for _, lsp in ipairs(servers) do
   }
 end
 
-local sumneko_binary = '/usr/bin/lua-language-server'
-
 -- Make runtime files discoverable to the server
 local runtime_path = vim.split(package.path, ';')
 table.insert(runtime_path, 'lua/?.lua')
 table.insert(runtime_path, 'lua/?/init.lua')
 
 lspconfig.sumneko_lua.setup {
-  cmd = { sumneko_binary },
   on_attach = on_attach,
   capabilities = capabilities,
   settings = {
