@@ -348,7 +348,7 @@
 (cua-mode t)
 (set-face-attribute 'default nil :font "JetBrainsMono-10")
 (set-face-attribute 'fixed-pitch nil :font "JetBrainsMono-10")
-(set-face-attribute 'variable-pitch nil :font "Noto Sans-10")
+(set-face-attribute 'variable-pitch nil :font "Roboto-10")
 
 (add-hook 'org-mode-hook 'variable-pitch-mode)
 (custom-theme-set-faces
@@ -399,7 +399,7 @@
 ;; Custom settings
 ;; ==============================================
 (setq custom-safe-themes t)
-(load-theme 'doom-one t)
+(load-theme 'doom-one-light t)
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
@@ -409,12 +409,14 @@
  '(cursor-type '(bar . 2))
  '(org-export-backends '(ascii html md odt))
  '(package-selected-packages
-   '(company-posframe company vertico consult orderless marginalia project org markdown-mode flyspell-correct rg winum which-key use-package tablist rainbow-mode rainbow-delimiters org-superstar minions magit iedit gnu-elpa-keyring-update expand-region doom-themes doom-modeline avy transpose-frame async)))
+   '(company-posframe company vertico consult orderless marginalia project org markdown-mode flyspell-correct rg winum which-key use-package tablist rainbow-mode rainbow-delimiters org-superstar minions magit iedit gnu-elpa-keyring-update expand-region doom-themes doom-modeline avy transpose-frame async))
+ '(warning-suppress-log-types '((comp))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
+ '(font-lock-comment-face ((t (:foreground "#5B6268" :slant italic))))
  '(org-block ((t (:inherit fixed-pitch))))
  '(org-code ((t (:inherit fixed-pitch))))
  '(org-property-value ((t (:inherit fixed-pitch))) t)
