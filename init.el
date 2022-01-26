@@ -1,4 +1,4 @@
-;; My Emacs settings Ver 2.1
+;; My Emacs settings Ver 2.2
 ;; File or commit timestamp show when last updated.
 
 (setq lexical-binding t)
@@ -22,23 +22,18 @@
 ;; ==============================================
 ;;  Set up repositories
 ;; ==============================================
-(setq gnutls-algorithm-priority "NORMAL:-VERS-TLS1.3")
+;; (setq gnutls-algorithm-priority "NORMAL:-VERS-TLS1.3")
 (require 'package)
-(setq package-enable-at-startup nil)
+;; (setq package-enable-at-startup nil)
 (setq package-archives '(("melpa" . "https://melpa.org/packages/")
 			 ("elpa" . "https://elpa.gnu.org/packages/")))
+(package-initialize)
 
 (unless (package-installed-p 'use-package)
   (package-refresh-contents)
   (package-install 'use-package))
-
 (require 'use-package)
 (setq use-package-always-ensure t)
-
-;; ==============================================
-;;  Keep keyring up to date
-;; ==============================================
-(use-package gnu-elpa-keyring-update)
 
 ;; ==============================================
 ;;  Minion for the rest
@@ -409,7 +404,7 @@
  '(cursor-type '(bar . 2))
  '(org-export-backends '(ascii html md odt))
  '(package-selected-packages
-   '(company-posframe company vertico consult orderless marginalia project org markdown-mode flyspell-correct rg winum which-key use-package tablist rainbow-mode rainbow-delimiters org-superstar minions magit iedit gnu-elpa-keyring-update expand-region doom-themes doom-modeline avy transpose-frame async))
+   '(company-posframe company vertico consult orderless marginalia project org markdown-mode flyspell-correct rg winum which-key use-package tablist rainbow-mode rainbow-delimiters org-superstar minions magit iedit expand-region doom-themes doom-modeline avy transpose-frame async))
  '(warning-suppress-log-types '((comp))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
