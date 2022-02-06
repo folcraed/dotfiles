@@ -65,6 +65,8 @@
 (use-package rg)
 (rg-enable-default-bindings)
 
+(use-package fzf)
+
 ;; ==============================================
 ;;  Project Setup (can remove when Emacs 28)
 ;; ==============================================
@@ -277,6 +279,7 @@
 (global-set-key (kbd "C-c x") 'kill-buffer-and-window)
 (global-set-key (kbd "C-c y") 'org-store-link)
 (global-set-key (kbd "M-s g") 'consult-ripgrep)
+(global-set-key (kbd "M-s f") 'fzf-find-file)
 (global-set-key (kbd "M-f") 'consult-line)
 (global-set-key (kbd "C-p") 'find-file)
 (global-set-key (kbd "C-b") 'consult-buffer)
@@ -404,7 +407,7 @@
  '(cursor-type '(bar . 2))
  '(org-export-backends '(ascii html md odt))
  '(package-selected-packages
-   '(company-posframe company vertico consult orderless marginalia project org markdown-mode flyspell-correct rg winum which-key use-package tablist rainbow-mode rainbow-delimiters org-superstar minions magit iedit expand-region doom-themes doom-modeline avy transpose-frame async))
+   '(fzf company-posframe company vertico consult orderless marginalia project org markdown-mode flyspell-correct rg winum which-key use-package tablist rainbow-mode rainbow-delimiters org-superstar minions magit iedit expand-region doom-themes doom-modeline avy transpose-frame async))
  '(warning-suppress-log-types '((comp))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
