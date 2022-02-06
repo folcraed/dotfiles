@@ -195,6 +195,10 @@ function pams
     pamac search $argv
 end
 
+function pami
+    pamac install $argv
+end
+
 function wv
 	cd /mnt/rob/Videos
     exa -l
