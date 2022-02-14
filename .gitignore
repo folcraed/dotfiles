@@ -1,4 +1,4 @@
-nvim/plugin/*
+nvim/plugin/packer_compiled.lua
 */.vscode
 awesome/collision
 vifm/vifminfo
