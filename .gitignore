@@ -1,13 +1,10 @@
-nvim/plugged/
+nvim/plugin
 */.vscode
 awesome/collision
 vifm/vifminfo
 vifm/vifminfo*
 nvim/autoload/
 nvim/spell
-old-nvim/
-nvim/NOTE.md
 tags
 micro/plug
 micro/buffers
-ulauncher/user-themes
