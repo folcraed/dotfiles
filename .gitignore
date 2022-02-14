@@ -1,9 +1,8 @@
-nvim/plugin/
+nvim/plugin/*
 */.vscode
 awesome/collision
 vifm/vifminfo
 vifm/vifminfo*
-nvim/autoload/
 nvim/spell
 tags
 micro/plug
