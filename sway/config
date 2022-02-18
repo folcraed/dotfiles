@@ -1,51 +1,24 @@
-# Default config for sway
-#
-# Copy this to ~/.config/sway/config and edit it to your liking.
-#
-# Read `man 5 sway` for a complete reference.
-
-### Variables
-#
-# Logo key. Use Mod1 for Alt.
+# Set some keys
 set $mod Mod4
-# Home row direction keys, like vim
 set $left h
 set $down j
 set $up k
 set $right l
-# Your preferred terminal emulator
+# Set the terminal
 set $term kitty
 
-### Output configuration
-#
-# Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
+### Set the background and outputs
 output * bg /home/rob/Pictures/cityscape.jpg fill
 output * subpixel rgb
-#
-# Example configuration:
-# Monitors
 output DP-1 resolution 2560x1440 position 0 0
 output HDMI-A-1 resolution 1920x1080 position 2560 0
-#
-# You can get the names of your outputs by running: swaymsg -t get_outputs
+
+# NOTE: You can get the names of your outputs by running: swaymsg -t get_outputs
 
 exec swayidle -w timeout 900 'swaymsg "output * dpms off"' resume 'swaymsg "output * dpms on"'
-### Input configuration
-#
-# Example configuration:
-#
-#   input "2:14:SynPS/2_Synaptics_TouchPad" {
-#       dwt enabled
-#       tap enabled
-#       natural_scroll enabled
-#       middle_emulation enabled
-#   }
-#
-# You can get the names of your inputs by running: swaymsg -t get_inputs
-# Read `man 5 sway-input` for more information about this section.
 
 # Font
-font pango:"Noto Sans" 11
+font pango:"Roboto" 12
 
 #Set tile gaps
 gaps inner 10
@@ -56,30 +29,23 @@ titlebar_border_thickness 0
 titlebar_padding 2
 
 ### Key bindings
-#
-# Basics:
-#
+
     # start a terminal
     bindsym $mod+Return exec $term
 
     # kill focused window
     bindsym $mod+Shift+q kill
 
-    # start your launcher
-    # bindsym $mod+p exec ulauncher-toggle
+    # start the launcher
     bindsym $mod+p exec krunner
 
-    # Drag floating windows by holding down $mod and left mouse button.
-    # Resize them with right mouse button + $mod.
-    # Despite the name, also works for non-floating windows.
-    # Change normal to inverse to use left mouse button for resizing and right
     # mouse button for dragging.
     floating_modifier $mod normal
 
     # reload the configuration file
     bindsym $mod+Shift+c reload
 
-    # exit sway (logs you out of your wayland session)
+    # exit sway
     bindsym $mod+Shift+e exit
 
     # Take a screenshot
@@ -108,7 +74,7 @@ titlebar_padding 2
     bindsym $mod+Shift+Down move down
     bindsym $mod+Shift+Up move up
     bindsym $mod+Shift+Right move right
-#
+
 # Workspaces:
     # Workspaces to each monitor
     workspace 1 output DP-1
@@ -143,12 +109,9 @@ titlebar_padding 2
     bindsym $mod+Shift+8 move container to workspace 8
     bindsym $mod+Shift+9 move container to workspace 9
     bindsym $mod+Shift+0 move container to workspace 10
-#
+
 # Layout stuff:
-#
-    # You can "split" the current object of your focus with
-    # $mod+b or $mod+v, for horizontal and vertical splits
-    # respectively.
+
     bindsym $mod+n splith
     bindsym $mod+v splitv
 
@@ -177,12 +140,7 @@ bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 1 +3%
 bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 1 -3%
 bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 1 toggle
 
-#
 # Scratchpad:
-#
-    # Sway has a "scratchpad", which is a bag of holding for windows.
-    # You can send windows there and get them back later.
-
     # Move the currently focused window to the scratchpad
     bindsym $mod+Shift+minus move scratchpad
 
@@ -194,11 +152,8 @@ bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 1 toggle
 for_window [app_id="mpv"] floating enable
 for_window [class="Sxiv"] floating enable
 for_window [app_id="cherrytree"] floating enable
-for_window [app_id="ulauncher"] floating enable, border none
 
-#
 # Resizing containers:
-#
 mode "resize" {
     # left will shrink the containers width
     # right will grow the containers width
@@ -221,9 +176,7 @@ mode "resize" {
 }
 bindsym $mod+r mode "resize"
 
-#
 # Status Bar:
-#
 # Read `man 5 sway-bar` for more information about this section.
 bar {
     swaybar_command waybar
