@@ -1,4 +1,4 @@
-;; My Emacs settings Ver 2.2
+;; My Emacs settings Ver 2.3
 ;; File or commit timestamp show when last updated.
 
 (setq lexical-binding t)
@@ -22,11 +22,9 @@
 ;; ==============================================
 ;;  Set up repositories
 ;; ==============================================
-;; (setq gnutls-algorithm-priority "NORMAL:-VERS-TLS1.3")
 (require 'package)
-;; (setq package-enable-at-startup nil)
-(setq package-archives '(("melpa" . "https://melpa.org/packages/")
-			 ("elpa" . "https://elpa.gnu.org/packages/")))
+(setq package-archives '(("elpa" . "https://elpa.gnu.org/packages/")
+                         ("melpa" . "https://melpa.org/packages/")))
 (package-initialize)
 
 (unless (package-installed-p 'use-package)
@@ -213,7 +211,6 @@
    :preview-key '(:debounce 0.2 any)
    consult-ripgrep consult-git-grep consult-grep
    consult-bookmark consult-recent-file consult-xref
-   consult--source-file consult--source-project-file consult--source-bookmark
    :preview-key (kbd "M-."))
   (setq consult-narrow-key "<") ;; (kbd "C-+")
   (setq consult-project-root-function
