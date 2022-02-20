@@ -37,7 +37,7 @@ titlebar_padding 2
     bindsym $mod+Shift+q kill
 
     # start the launcher
-    bindsym $mod+p exec krunner
+    bindsym $mod+p exec krunner -platform wayland
 
     # mouse button for dragging.
     floating_modifier $mod normal
