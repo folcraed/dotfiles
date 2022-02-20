@@ -61,7 +61,7 @@
 (use-package rainbow-mode)
 
 (use-package rg)
-(rg-enable-default-bindings)
+(setq rg-use-transient-menu t)
 
 (use-package fzf)
 
