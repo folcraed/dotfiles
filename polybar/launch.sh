@@ -7,4 +7,5 @@ killall -q polybar
 while pgrep -x polybar >/dev/null; do sleep 1; done
 
 # Launch bar1 and bar2
-polybar bspwmbar & polybar bar2
+polybar --config=/home/rob/.config/dotfiles/polybar/config.ini bspwmbar &
+polybar --config=/home/rob/.config/dotfiles/polybar/config.ini bar2
