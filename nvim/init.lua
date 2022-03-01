@@ -40,6 +40,8 @@ require('packer').startup(function()
   use 'saadparwaiz1/cmp_luasnip'
   use 'L3MON4D3/LuaSnip' -- Snippets plugin
   use 'vifm/vifm.vim' -- Powerful file manager
+  use 'BurntSushi/ripgrep' -- Powerful search
+  use {'nvim-telescope/telescope-fzf-native.nvim', run = 'make' } --Faster sorting and searching
   use 'norcalli/nvim-colorizer.lua' -- Shows hex colors in the color
   use 'kyazdani42/nvim-web-devicons' -- Icons for the status line
   use { 'nvim-lualine/lualine.nvim',
@@ -182,8 +184,19 @@ require('telescope').setup {
         ['<C-d>'] = false,
       },
     },
+    vimgrep_arguments = {
+      "rg",
+      "--no-heading",
+      "--with-filename",
+      "--line-number",
+      "--column",
+      "--smart-case",
+      "--trim"
+    },
   },
 }
+
+require('telescope').load_extension('fzf')
 
 vim.cmd [[
   augroup Telescope
