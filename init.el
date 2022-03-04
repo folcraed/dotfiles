@@ -27,7 +27,6 @@
 (require 'package)
 (setq package-archives '(("elpa" . "https://elpa.gnu.org/packages/")
                          ("melpa" . "https://melpa.org/packages/")))
-(package-initialize)
 
 (unless (package-installed-p 'use-package)
   (package-refresh-contents)
