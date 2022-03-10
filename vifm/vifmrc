@@ -208,8 +208,8 @@ filetype *.zip,*.jar,*.war,*.ear,*.oxt,*.apkg
 fileviewer *.zip,*.jar,*.war,*.ear,*.oxt zip -sf %f
 
 " Office files
-filextype *.odt,*.doc,*.docx freeoffice-textmaker %f &
-filextype *.xls,*.xlsx,*.ods,*.csv freeoffice-planmaker %f &
+filextype *.odt,*.doc,*.docx libreoffice %f &
+filextype *.xls,*.xlsx,*.ods,*.csv libreoffice %f &
 filextype *.odp,*.pptx libreoffice %f &
 fileviewer *.doc catdoc %c
 fileviewer *.docx, docx2txt.pl %f -
