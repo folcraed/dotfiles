@@ -3,7 +3,7 @@
 setxkbmap -option caps:escape &
 xsetroot -cursor_name left_ptr &
 /home/rob/.config/dotfiles/polybar/launch.sh &
-/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
+/usr/lib/polkit-kde-authentication-agent-1 &
 start-pulseaudio-x11 &
 ssh-agent &
 /home/rob/.fehbg &
@@ -11,7 +11,8 @@ picom --experimental-backends &
 dunst &
 xclip &
 clipit &
-gnome-keyring-daemon --start --components=secrets &
+# gnome-keyring-daemon --start --components=secrets &
+/usr/lib/pam_kwallet_init &
 ibus-daemon -drxR &
 recollindex -m &
 sxhkd &
@@ -36,4 +37,3 @@ bspc rule -a mpv state=floating
 bspc rule -a okular state=floating
 bspc rule -a rofi focus=on
 bspc rule -a Cherrytree state=floating
-bspc rule -a Zathura state=floating
