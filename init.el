@@ -178,6 +178,27 @@
 	(org-agenda-files :maxlevel . 2)))
 
 ;; ==============================================
+;;  OpenStreetMap
+;; ==============================================
+(use-package osm
+  :bind (("C-c o h" . osm-home)
+         ("C-c o s" . osm-search)
+         ("C-c o v" . osm-server)
+         ("C-c o t" . osm-goto)
+         ("C-c o x" . osm-gpx-show)
+         ("C-c o j" . osm-bookmark-jump))
+
+  :custom
+  ;; Take a look at the customization group `osm' for more options.
+  (osm-server 'default) ;; Configure the tile server
+  (osm-copyright t)     ;; Display the copyright information
+
+  :init
+  ;; Load Org link support
+  (with-eval-after-load 'org
+    (require 'osm-ol)))
+
+;; ==============================================
 ;;  Vertico and friends
 ;; ==============================================
 (use-package vertico
@@ -284,6 +305,7 @@
 (global-set-key (kbd "C-c a") 'org-agenda)
 (global-set-key (kbd "C-c c") 'org-capture)
 (global-set-key (kbd "C-c i") 'org-table-insert-row)
+(global-set-key (kbd "C-c p") 'org-display-outline-path)
 (global-set-key (kbd "C-c k") 'consult-yank-from-kill-ring)
 (global-set-key (kbd "C-c rb") 'rotate-frame-anticlockwise)
 (global-set-key (kbd "C-c rc") 'rotate-frame-clockwise)
@@ -420,6 +442,7 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(cursor-type '(bar . 2))
+ '(org-agenda-files '("/home/rob/Dropbox/Notes/agenda.org"))
  '(org-export-backends '(ascii html md odt))
  '(package-selected-packages
    '(lsp-jedi lsp-mode fzf company-posframe company vertico consult orderless marginalia project org markdown-mode flyspell-correct rg winum which-key use-package tablist rainbow-mode rainbow-delimiters org-superstar minions magit iedit expand-region doom-themes doom-modeline avy transpose-frame async))
