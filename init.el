@@ -6,7 +6,7 @@
 (setq ring-bell-function 'ignore)
 (setq frame-title-format "Emacs")
 (setq icon-title-format "Emacs")
-(fset 'yes-or-no-p 'y-or-n-p)
+(setq use-short-answers t)
 (menu-bar-mode 1)
 (tool-bar-mode 0)
 (scroll-bar-mode 0)
@@ -85,6 +85,7 @@
     (call-process "xdg-open" nil 0 nil file)))
 
 (put 'dired-find-alternate-file 'disabled nil)
+(setq dired-kill-when-opening-new-dired-buffer t)
 
 ;; ===============================================
 ;;  Doom modeline & theme
@@ -445,7 +446,7 @@
  '(org-agenda-files '("/home/rob/Dropbox/Notes/agenda.org"))
  '(org-export-backends '(ascii html md odt))
  '(package-selected-packages
-   '(lsp-jedi lsp-mode fzf company-posframe company vertico consult orderless marginalia project org markdown-mode flyspell-correct rg winum which-key use-package tablist rainbow-mode rainbow-delimiters org-superstar minions magit iedit expand-region doom-themes doom-modeline avy transpose-frame async))
+   '(osm lsp-jedi lsp-mode fzf company-posframe company vertico consult orderless marginalia project org markdown-mode flyspell-correct rg winum which-key use-package tablist rainbow-mode rainbow-delimiters org-superstar minions magit iedit expand-region doom-themes doom-modeline avy transpose-frame async))
  '(warning-suppress-log-types '((comp))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
