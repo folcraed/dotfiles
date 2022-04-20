@@ -28,10 +28,8 @@
 (setq package-archives '(("elpa" . "https://elpa.gnu.org/packages/")
                          ("melpa" . "https://melpa.org/packages/")))
 
-(unless (package-installed-p 'use-package)
-  (package-refresh-contents)
-  (package-install 'use-package))
-(require 'use-package)
+(eval-when-compile
+  (require 'use-package))
 (setq use-package-always-ensure t)
 
 ;; ==============================================
@@ -65,11 +63,6 @@
 (setq rg-use-transient-menu t)
 
 (use-package fzf)
-
-;; ==============================================
-;;  Project Setup (can remove when Emacs 28)
-;; ==============================================
-(use-package project)
 
 ;; ==============================================
 ;;  Dired enhancements
@@ -171,7 +164,7 @@
 
 (setq-default org-display-custom-times t)
 (setq org-time-stamp-custom-formats '("[%a %b %e %Y]" . "<%a %b %e %Y %H:%M>")
-      org-agenda-files (quote ("~/Dropbox/Notes/agenda.org" "~/Dropbox/Roam/"))
+      org-agenda-files (quote ("~/Dropbox/Notes/agenda.org"))
       org-use-tag-inheritance nil)
 
 (setq org-refile-targets
@@ -443,7 +436,6 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(cursor-type '(bar . 2))
- '(org-agenda-files '("/home/rob/Dropbox/Notes/agenda.org"))
  '(org-export-backends '(ascii html md odt))
  '(package-selected-packages
    '(osm lsp-jedi lsp-mode fzf company-posframe company vertico consult orderless marginalia project org markdown-mode flyspell-correct rg winum which-key use-package tablist rainbow-mode rainbow-delimiters org-superstar minions magit iedit expand-region doom-themes doom-modeline avy transpose-frame async))
