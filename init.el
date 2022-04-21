@@ -173,27 +173,6 @@
 	(org-agenda-files :maxlevel . 2)))
 
 ;; ==============================================
-;;  OpenStreetMap
-;; ==============================================
-(use-package osm
-  :bind (("C-c o h" . osm-home)
-         ("C-c o s" . osm-search)
-         ("C-c o v" . osm-server)
-         ("C-c o t" . osm-goto)
-         ("C-c o x" . osm-gpx-show)
-         ("C-c o j" . osm-bookmark-jump))
-
-  :custom
-  ;; Take a look at the customization group `osm' for more options.
-  (osm-server 'default) ;; Configure the tile server
-  (osm-copyright t)     ;; Display the copyright information
-
-  :init
-  ;; Load Org link support
-  (with-eval-after-load 'org
-    (require 'osm-ol)))
-
-;; ==============================================
 ;;  Vertico and friends
 ;; ==============================================
 (use-package vertico
@@ -439,7 +418,7 @@
  '(cursor-type '(bar . 2))
  '(org-export-backends '(ascii html md odt))
  '(package-selected-packages
-   '(osm lsp-jedi lsp-mode fzf company-posframe company vertico consult orderless marginalia project org markdown-mode flyspell-correct rg winum which-key use-package tablist rainbow-mode rainbow-delimiters org-superstar minions magit iedit expand-region doom-themes doom-modeline avy transpose-frame async))
+   '(lsp-jedi lsp-mode fzf company-posframe company vertico consult orderless marginalia project org markdown-mode flyspell-correct rg winum which-key use-package tablist rainbow-mode rainbow-delimiters org-superstar minions magit iedit expand-region doom-themes doom-modeline avy transpose-frame async))
  '(warning-suppress-log-types '((comp))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
