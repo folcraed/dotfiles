@@ -17,7 +17,12 @@ require('packer').startup(function()
   use 'wbthomason/packer.nvim' -- Package manager
   use 'tpope/vim-fugitive' -- Git commands in nvim
   use 'tpope/vim-rhubarb' -- Fugitive-companion to interact with github
-  use 'numToStr/Comment.nvim' -- "gc" to comment visual regions/lines
+  use {'numToStr/Comment.nvim', -- "gc" to comment visual regions/lines
+        tag = 'v0.6',
+        config = function()
+                require('Comment').setup()
+        end
+}
   use 'ludovicchabant/vim-gutentags' -- Automatic tags management
   -- UI to select things (files, grep results, open buffers...)
   use { 'nvim-telescope/telescope.nvim', requires = { 'nvim-lua/plenary.nvim' } }
@@ -162,7 +167,7 @@ vim.g.indent_blankline_buftype_exclude = { 'terminal', 'nofile' }
 vim.g.indent_blankline_show_trailing_blankline_indent = false
 
 -- Enable Comment.nvim
-require('Comment').setup()
+-- require('Comment').setup()
 
 -- Gitsigns
 require('gitsigns').setup {
