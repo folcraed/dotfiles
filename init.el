@@ -1,4 +1,4 @@
-;; My Emacs settings Ver 2.4
+;; My Emacs settings Ver 2.5
 ;; File or commit timestamp show when last updated.
 
 (setq lexical-binding t)
@@ -27,6 +27,7 @@
 (require 'package)
 (setq package-archives '(("elpa" . "https://elpa.gnu.org/packages/")
                          ("melpa" . "https://melpa.org/packages/")))
+(package-initialize)
 
 (eval-when-compile
   (require 'use-package))
