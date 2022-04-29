@@ -11,8 +11,8 @@ picom --experimental-backends &
 dunst &
 xclip &
 clipit &
-# gnome-keyring-daemon --start --components=secrets &
-/usr/lib/pam_kwallet_init &
+gnome-keyring-daemon --start --foreground --components=secrets &
+# /usr/lib/pam_kwallet_init &
 ibus-daemon -drxR &
 recollindex -m &
 sxhkd &
