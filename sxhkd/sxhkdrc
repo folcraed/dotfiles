@@ -158,7 +158,7 @@ super + alt + {Left,Down,Up,Right}
 #
 
 super + c
-    flameshot gui
+    spectacle
 
 super + alt + grave
     dunstctl history-pop
