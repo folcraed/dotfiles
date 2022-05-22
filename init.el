@@ -101,6 +101,8 @@
   (setq doom-themes-enable-bold t
 	doom-themes-enable-italic t))
 
+(use-package all-the-icons)
+
 ;; ==============================================
 ;;  Winum settings
 ;; ==============================================
@@ -418,7 +420,7 @@
  '(cursor-type '(bar . 2))
  '(org-export-backends '(ascii html md odt))
  '(package-selected-packages
-   '(lsp-jedi lsp-mode fzf company-posframe company vertico consult orderless marginalia project org markdown-mode flyspell-correct rg winum which-key use-package tablist rainbow-mode rainbow-delimiters org-superstar minions magit iedit expand-region doom-themes doom-modeline avy transpose-frame async))
+   '(lsp-jedi lsp-mode fzf all-the-icons company-posframe company vertico consult orderless marginalia project org markdown-mode flyspell-correct rg winum which-key use-package tablist rainbow-mode rainbow-delimiters org-superstar minions magit iedit expand-region doom-themes doom-modeline avy transpose-frame async))
  '(warning-suppress-log-types '((comp))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
