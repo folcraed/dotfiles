@@ -2,7 +2,7 @@
 
 set vicmd=nvim
 set trashdir="~/.local/share/Trash"
-set shell=/bin/zsh
+set shell=/usr/bin/zsh
 set trash
 set history=100
 set nofollowlinks
@@ -13,6 +13,7 @@ set vimhelp
 set norunexec
 set noiec
 set rnu
+set dotfiles
 
 " Selected color scheme
 
