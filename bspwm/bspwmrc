@@ -1,5 +1,6 @@
 #! /bin/sh
 
+xrandr --output DP-1 --primary --output HDMI-1 --right-of DP-1 &
 setxkbmap -option caps:escape &
 xsetroot -cursor_name left_ptr &
 /home/rob/.config/dotfiles/polybar/launch.sh &
@@ -11,14 +12,14 @@ picom --experimental-backends &
 dunst &
 xclip &
 clipit &
-gnome-keyring-daemon --start --foreground --components=secrets &
+# gnome-keyring-daemon --start --foreground --components=secrets &
 # /usr/lib/pam_kwallet_init &
-ibus-daemon -drxR &
+# ibus-daemon -drxR &
 recollindex -m &
 sxhkd &
 
-bspc monitor DisplayPort-0 -d 1 2 3 4 5
-bspc monitor HDMI-A-0 -d 6 7 8 9 10
+bspc monitor DP-1 -d 1 2 3 4 5
+bspc monitor HDMI-1 -d 6 7 8 9 10
 
 bspc config border_width         2
 bspc config window_gap          10
