@@ -1,6 +1,9 @@
-;; My Emacs settings Ver 2.5
+;; My Emacs settings Ver 2.6
 ;; File or commit timestamp show when last updated.
 
+;; ==============================================
+;;  Set up some defaults
+;; ==============================================
 (setq lexical-binding t)
 (setq inhibit-startup-message t)
 (setq ring-bell-function 'ignore)
@@ -16,6 +19,10 @@
 (global-hl-line-mode 1)
 (setq gc-cons-threshold 100000000)
 (setq read-process-output-max (* 1024 1024))
+(cua-mode t)
+(set-face-attribute 'default nil :font "JetBrainsMono-10")
+(set-face-attribute 'fixed-pitch nil :font "JetBrainsMono-10")
+(set-face-attribute 'variable-pitch nil :font "Roboto-10")
 
 ;; This is suppose to fix ??? displaying instead
 ;; of line numbers in modeline
@@ -173,6 +180,32 @@
 (setq org-refile-targets
       '((nil :maxlevel . 2)
 	(org-agenda-files :maxlevel . 2)))
+
+(add-hook 'org-mode-hook 'variable-pitch-mode)
+(custom-theme-set-faces
+  'user
+  '(org-code ((t (:inherit fixed-pitch))))
+  '(org-property-value ((t (:inherit fixed-pitch))))
+  '(org-table ((t (:inherit fixed-pitch))))
+  '(org-block ((t (:inherit fixed-pitch))))
+  '(org-tag ((t (:inherit fixed-pitch))))
+  '(org-verbatim ((t (:inherit fixed-pitch)))))
+
+;; ==============================================
+;; Sane copy org link to clipboard function
+;; ==============================================
+(defun my-org-export-url ()
+  "Copies the org link to the clipboard"
+  (interactive)
+  (let* ((link-info (assoc :link (org-context)))
+	 (text (when link-info
+		 (buffer-substring-no-properties (or (cadr link-info) (point-min))
+						 (or (caddr link-info) (point-max))))))
+    (if (not text)
+	(error "Not in org link!")
+      (string-match org-bracket-link-regexp text)
+      (kill-new (substring text (match-beginning 1) (match-end 1))))))
+(global-set-key (kbd "C-c e") 'my-org-export-url)
 
 ;; ==============================================
 ;;  Vertico and friends
@@ -333,6 +366,9 @@
 
 (show-paren-mode 1)
 
+;; ==============================================
+;; Some line movement keys I find easier
+;; ==============================================
 (defun rob-scroll-down ()
   (interactive)
   (scroll-up 1))
@@ -356,20 +392,6 @@
 (global-set-key (kbd "M-p") 'rob-scroll-up)
 (global-set-key (kbd "M-S-<up>") 'move-line-up)
 (global-set-key (kbd "M-S-<down>") 'move-line-down)
-(cua-mode t)
-(set-face-attribute 'default nil :font "JetBrainsMono-10")
-(set-face-attribute 'fixed-pitch nil :font "JetBrainsMono-10")
-(set-face-attribute 'variable-pitch nil :font "Roboto-10")
-
-(add-hook 'org-mode-hook 'variable-pitch-mode)
-(custom-theme-set-faces
-  'user
-  '(org-code ((t (:inherit fixed-pitch))))
-  '(org-property-value ((t (:inherit fixed-pitch))))
-  '(org-table ((t (:inherit fixed-pitch))))
-  '(org-block ((t (:inherit fixed-pitch))))
-  '(org-tag ((t (:inherit fixed-pitch))))
-  '(org-verbatim ((t (:inherit fixed-pitch)))))
 
 ;; ==============================================
 ;; Narrow or widen whatever I'm working on
@@ -389,22 +411,6 @@
 	       (t (org-narrow-to-subtree))))
 	(t (narrow-to-defun))))
 (global-set-key (kbd "<f5>") #'narrow-or-widen-dwim)
-
-;; ==============================================
-;; Sane copy org link to clipboard function
-;; ==============================================
-(defun my-org-export-url ()
-  "Copies the org link to the clipboard"
-  (interactive)
-  (let* ((link-info (assoc :link (org-context)))
-	 (text (when link-info
-		 (buffer-substring-no-properties (or (cadr link-info) (point-min))
-						 (or (caddr link-info) (point-max))))))
-    (if (not text)
-	(error "Not in org link!")
-      (string-match org-bracket-link-regexp text)
-      (kill-new (substring text (match-beginning 1) (match-end 1))))))
-(global-set-key (kbd "C-c e") 'my-org-export-url)
 
 ;; ==============================================
 ;; Custom settings
@@ -427,11 +433,7 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(font-lock-comment-face ((t (:foreground "#9ca0a4" :slant italic))))
- '(org-block ((t (:inherit fixed-pitch))))
- '(org-code ((t (:inherit fixed-pitch))))
- '(org-property-value ((t (:inherit fixed-pitch))) t)
- '(org-table ((t (:inherit fixed-pitch))))
- '(org-tag ((t (:inherit fixed-pitch))))
- '(org-verbatim ((t (:inherit fixed-pitch)))))
+ '(font-lock-comment-face ((t (:foreground "#9ca0a4" :slant italic)))))
+
+;; Some package was overriding this, so put it last
 (put 'narrow-to-region 'disabled nil)
