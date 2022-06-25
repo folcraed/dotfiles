@@ -53,6 +53,7 @@ titlebar_padding 2
 #
 # Moving around:
 #
+    focus_follows_mouse no
     # Move your focus around
     bindsym $mod+$left focus left
     bindsym $mod+$down focus down
@@ -184,12 +185,12 @@ bar {
 
 # Startup apps
 # exec --no-startup-id gnome-keyring-daemon --start --components=secrets
-exec --no-startup-id /usr/lib64/polkit-gnome/polkit-gnome-authentication-agent-1
+exec --no-startup-id /usr/lib/polkit-kde-authentication-agent-1
 exec --no-startup-id xset s off
 exec --no-startup-id dunst
 exec --no-startup-id ssh-agent
 exec --no-startup-id recollindex -m
-exec --no-startup-id krunner
+exec --no-startup-id krunner -platform wayland
 exec wl-paste -t text --watch clipman store
 include /etc/sway/config.d/*
 # vim: ft=sh
