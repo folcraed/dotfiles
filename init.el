@@ -1,23 +1,16 @@
-;; My Emacs settings Ver 2.6
+;; My Emacs settings Ver 2.7
 ;; File or commit timestamp show when last updated.
+;; Some settings are in the early-init.el file
 
 ;; ==============================================
 ;;  Set up some defaults
 ;; ==============================================
 (setq lexical-binding t)
-(setq inhibit-startup-message t)
-(setq ring-bell-function 'ignore)
-(setq frame-title-format "Emacs")
-(setq icon-title-format "Emacs")
 (setq use-short-answers t)
-(menu-bar-mode 1)
-(tool-bar-mode 0)
-(scroll-bar-mode 0)
 (set-fringe-mode 10)
 (prefer-coding-system 'utf-8)
 (global-visual-line-mode 1)
 (global-hl-line-mode 1)
-(setq gc-cons-threshold 100000000)
 (setq read-process-output-max (* 1024 1024))
 (cua-mode t)
 (set-face-attribute 'default nil :font "JetBrainsMono-10")
@@ -27,12 +20,6 @@
 ;; This is suppose to fix ??? displaying instead
 ;; of line numbers in modeline
 (setq line-number-display-limit-width 2000)
-
-;; ==============================================
-;;  Set up repositories
-;; ==============================================
-(require 'package)
-(add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/"))
 
 (package-initialize)
 
@@ -208,7 +195,8 @@
 (global-set-key (kbd "C-c e") 'my-org-export-url)
 
 ;; ==============================================
-;; Get Org to show heading path via keybind defined later
+;; Get Org to show heading path so it can be
+;; assigned to a keybind defined later
 ;; ==============================================
 (defun rw/show-org-path ()
   "Shows the full heading path of the current org point"
@@ -428,20 +416,12 @@
 (load-theme 'doom-one-light t)
 
 (custom-set-variables
- ;; custom-set-variables was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
  '(cursor-type '(bar . 2))
  '(org-export-backends '(ascii html md odt))
  '(package-selected-packages
    '(lsp-jedi lsp-mode fzf all-the-icons company-posframe company vertico consult orderless marginalia project org markdown-mode flyspell-correct rg winum which-key use-package tablist rainbow-mode rainbow-delimiters org-superstar minions magit iedit expand-region doom-themes doom-modeline avy transpose-frame async))
  '(warning-suppress-log-types '((comp))))
 (custom-set-faces
- ;; custom-set-faces was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
  '(font-lock-comment-face ((t (:foreground "#9ca0a4" :slant italic)))))
 
 ;; Some package was overriding this, so put it last
