@@ -208,6 +208,14 @@
 (global-set-key (kbd "C-c e") 'my-org-export-url)
 
 ;; ==============================================
+;; Get Org to show heading path via keybind defined later
+;; ==============================================
+(defun rw/show-org-path ()
+  "Shows the full heading path of the current org point"
+  (interactive)
+  (org-display-outline-path nil t " > " nil))
+
+;; ==============================================
 ;;  Vertico and friends
 ;; ==============================================
 (use-package vertico
@@ -315,7 +323,7 @@
 (global-set-key (kbd "C-c a") 'org-agenda)
 (global-set-key (kbd "C-c c") 'org-capture)
 (global-set-key (kbd "C-c i") 'org-table-insert-row)
-(global-set-key (kbd "C-c p") 'org-display-outline-path)
+(global-set-key (kbd "C-c p") 'rw/show-org-path)
 (global-set-key (kbd "C-c k") 'consult-yank-from-kill-ring)
 (global-set-key (kbd "C-c rb") 'rotate-frame-anticlockwise)
 (global-set-key (kbd "C-c rc") 'rotate-frame-clockwise)
@@ -417,7 +425,7 @@
 ;; Custom settings
 ;; ==============================================
 (setq custom-safe-themes t)
-(load-theme 'doom-one t)
+(load-theme 'doom-one-light t)
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
