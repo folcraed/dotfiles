@@ -1,5 +1,6 @@
 set fish_greeting
 starship init fish | source
+set fzf_preview_dir_cmd exa --all --color=always
 
 #================================================
 # Functions
@@ -8,23 +9,15 @@ function fish_title
   echo (status current-command) ' '
 end
 
-function bu
-	rsync -aiv --exclude='.comments/' /home/rob/Dropbox/ /run/media/rob/Backups
-end
-
 function bu2
-    rsync -aiv --delete --exclude='.comments/' /home/rob/Dropbox/Genealogy/ /mnt/rob/Dropbox/Genealogy &&
-    rsync -aiv --delete --exclude='.comments/' /home/rob/Dropbox/Mindmaps/ /mnt/rob/Dropbox/Mindmaps &&
-    rsync -aiv --delete --exclude='.comments/' /home/rob/Dropbox/Notes/ /mnt/rob/Dropbox/Notes &&
-    rsync -aiv --delete --exclude='.comments/' /home/rob/Dropbox/Notebooks/ /mnt/rob/Dropbox/Notebooks &&
-    rsync -aiv --delete --exclude='.comments/' /home/rob/Dropbox/Docs/ /mnt/rob/Dropbox/Docs &&
-    rsync -aiv --delete --exclude='.comments/' ~/.googleearth/myplaces.kml /mnt/rob/.googleearth
-    rsync -aiv --delete --exclude='.comments/' /home/rob/Dropbox/Genealogy/ /run/media/rob/Dropbox/Genealogy &&
-    rsync -aiv --delete --exclude='.comments/' /home/rob/Dropbox/Mindmaps/ /run/media/rob/Dropbox/Mindmaps &&
-    rsync -aiv --delete --exclude='.comments/' /home/rob/Dropbox/Notes/ /run/media/rob/Dropbox/Notes &&
-    rsync -aiv --delete --exclude='.comments/' /home/rob/Dropbox/Notebooks/ /run/media/rob/Dropbox/Notebooks &&
-    rsync -aiv --delete --exclude='.comments/' /home/rob/Dropbox/Docs/ /run/media/rob/Dropbox/Docs &&
-    rsync -aiv --delete --exclude='.comments/' ~/.googleearth/myplaces.kml /run/media/rob/.googleearth
+        rsync -aiv --delete --exclude='.dtrash' --exclude='.comments/' ~/Dropbox/Genealogy/ /run/media/rob/1ebcd2df-55f7-4e18-b868-a1c06dc360f7/Dropbox/Genealogy
+        rsync -aiv --delete --exclude='.dtrash' --exclude='.comments/' ~/Dropbox/Mindmaps/ /run/media/rob/1ebcd2df-55f7-4e18-b868-a1c06dc360f7/Dropbox/Mindmaps
+        rsync -aiv --delete --exclude='.dtrash' --exclude='.comments/' ~/Dropbox/Notes/ /run/media/rob/1ebcd2df-55f7-4e18-b868-a1c06dc360f7/Dropbox/Notes
+        rsync -aiv --delete --exclude='.dtrash' --exclude='.comments/' ~/Dropbox/Notebooks/ /run/media/rob/1ebcd2df-55f7-4e18-b868-a1c06dc360f7/Dropbox/Notebooks
+        rsync -aiv --delete --exclude='.dtrash' --exclude='.comments/' ~/Dropbox/Docs/ /run/media/rob/1ebcd2df-55f7-4e18-b868-a1c06dc360f7/Dropbox/Docs
+        rsync -aiv --delete --exclude='.dtrash' --exclude='.comments/' ~/Dropbox/Carroll/ /run/media/rob/1ebcd2df-55f7-4e18-b868-a1c06dc360f7/Dropbox/Carroll
+        rsync -aiv --delete --exclude='.dtrash' --exclude='.comments/' ~/.googleearth/myplaces.kml /run/media/rob/1ebcd2df-55f7-4e18-b868-a1c06dc360f7/.googleearth
+        rsync -aiv --delete --exclude='.dtrash' --exclude='.comments/' ~/Videos/ /run/media/rob/1ebcd2df-55f7-4e18-b868-a1c06dc360f7/Videos
 end
 
 function cdd
@@ -63,16 +56,8 @@ function dfh
 	df -h
 end
 
-function dop
-    qutebrowser 'https://radar.weather.gov/lite/N0R/MSX_loop.gif'
-end
-
 function eN
 	nvim ~/.config/nvim/init.lua
-end
-
-function eZ
-    nvim ~/Dropbox/Settings/.zshrc
 end
 
 function ela --description "Searches folder for file pattern"
@@ -128,7 +113,7 @@ function la
 end
 
 function later
-    lynx 'https://forecast.weather.gov/MapClick.php?lat=46.8582&lon=-113.99&unit=0&lg=english&FcstType=text&TextType=1'
+        lynx "https://forecast.weather.gov/MapClick.php?CityName=Missoula&state=MT&site=MSO&lat=46.9181&lon=-114.153&unit=0&lg=english&FcstType=text&TextType=1"
 end
 
 function lg
