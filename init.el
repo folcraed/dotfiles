@@ -266,15 +266,21 @@
   :init
   (setq lsp-keymap-prefix "C-c l")
   (setq lsp-enable-symbol-highlighting nil)
+  :config
+  (lsp-enable-which-key-integration t)
   :hook
   (python-mode . lsp-deferred)
-  (lsp-mode . lsp-enable-which-key-integration))
+  (go-mode . lsp-deferred))
 
 (use-package lsp-jedi
   :config
   (with-eval-after-load "lsp-mode"
     (add-to-list 'lsp-disabled-clients 'pyls)
     (add-to-list 'lsp-enabled-clients 'jedi)))
+
+(use-package go-mode)
+(with-eval-after-load "lsp-mode"
+  (add-to-list 'lsp-enabled-clients 'gopls))
 
 ;; ==============================================
 ;;  Flyspell stuff
@@ -416,13 +422,27 @@
 (load-theme 'doom-one-light t)
 
 (custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
  '(cursor-type '(bar . 2))
  '(org-export-backends '(ascii html md odt))
  '(package-selected-packages
-   '(lsp-jedi lsp-mode fzf all-the-icons company-posframe company vertico consult orderless marginalia project org markdown-mode flyspell-correct rg winum which-key use-package tablist rainbow-mode rainbow-delimiters org-superstar minions magit iedit expand-region doom-themes doom-modeline avy transpose-frame async))
+   '(go-mode lsp-jedi lsp-mode fzf all-the-icons company-posframe company vertico consult orderless marginalia project org markdown-mode flyspell-correct rg winum which-key use-package tablist rainbow-mode rainbow-delimiters org-superstar minions magit iedit expand-region doom-themes doom-modeline avy transpose-frame async))
  '(warning-suppress-log-types '((comp))))
 (custom-set-faces
- '(font-lock-comment-face ((t (:foreground "#9ca0a4" :slant italic)))))
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(font-lock-comment-face ((t (:foreground "#9ca0a4" :slant italic))))
+ '(org-block ((t (:inherit fixed-pitch))))
+ '(org-code ((t (:inherit fixed-pitch))))
+ '(org-property-value ((t (:inherit fixed-pitch))) t)
+ '(org-table ((t (:inherit fixed-pitch))))
+ '(org-tag ((t (:inherit fixed-pitch))))
+ '(org-verbatim ((t (:inherit fixed-pitch)))))
 
 ;; Some package was overriding this, so put it last
 (put 'narrow-to-region 'disabled nil)
