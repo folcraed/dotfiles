@@ -259,6 +259,8 @@
 (use-package company-posframe)
 (company-posframe-mode 1)
 
+(use-package consult-lsp)
+
 ;; ==============================================
 ;;  Programming
 ;; ==============================================
@@ -429,7 +431,7 @@
  '(cursor-type '(bar . 2))
  '(org-export-backends '(ascii html md odt))
  '(package-selected-packages
-   '(go-mode lsp-jedi lsp-mode fzf all-the-icons company-posframe company vertico consult orderless marginalia project org markdown-mode flyspell-correct rg winum which-key use-package tablist rainbow-mode rainbow-delimiters org-superstar minions magit iedit expand-region doom-themes doom-modeline avy transpose-frame async))
+   '(consult-lsp go-mode lsp-jedi lsp-mode fzf all-the-icons company-posframe company vertico consult orderless marginalia project org markdown-mode flyspell-correct rg winum which-key use-package tablist rainbow-mode rainbow-delimiters org-superstar minions magit iedit expand-region doom-themes doom-modeline avy transpose-frame async))
  '(warning-suppress-log-types '((comp))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
