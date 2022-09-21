@@ -10,14 +10,14 @@ function fish_title
 end
 
 function bu2
-        rsync -aiv --delete --exclude='.dtrash' --exclude='.comments/' ~/Dropbox/Genealogy/ /run/media/rob/1ebcd2df-55f7-4e18-b868-a1c06dc360f7/Dropbox/Genealogy
-        rsync -aiv --delete --exclude='.dtrash' --exclude='.comments/' ~/Dropbox/Mindmaps/ /run/media/rob/1ebcd2df-55f7-4e18-b868-a1c06dc360f7/Dropbox/Mindmaps
-        rsync -aiv --delete --exclude='.dtrash' --exclude='.comments/' ~/Dropbox/Notes/ /run/media/rob/1ebcd2df-55f7-4e18-b868-a1c06dc360f7/Dropbox/Notes
-        rsync -aiv --delete --exclude='.dtrash' --exclude='.comments/' ~/Dropbox/Notebooks/ /run/media/rob/1ebcd2df-55f7-4e18-b868-a1c06dc360f7/Dropbox/Notebooks
-        rsync -aiv --delete --exclude='.dtrash' --exclude='.comments/' ~/Dropbox/Docs/ /run/media/rob/1ebcd2df-55f7-4e18-b868-a1c06dc360f7/Dropbox/Docs
-        rsync -aiv --delete --exclude='.dtrash' --exclude='.comments/' ~/Dropbox/Carroll/ /run/media/rob/1ebcd2df-55f7-4e18-b868-a1c06dc360f7/Dropbox/Carroll
-        rsync -aiv --delete --exclude='.dtrash' --exclude='.comments/' ~/.googleearth/myplaces.kml /run/media/rob/1ebcd2df-55f7-4e18-b868-a1c06dc360f7/.googleearth
-        rsync -aiv --delete --exclude='.dtrash' --exclude='.comments/' ~/Videos/ /run/media/rob/1ebcd2df-55f7-4e18-b868-a1c06dc360f7/Videos
+        rsync -aiv --delete --exclude='.dtrash' --exclude='.comments/' ~/Dropbox/Genealogy/ /run/media/rob/backup/Dropbox/Genealogy
+        rsync -aiv --delete --exclude='.dtrash' --exclude='.comments/' ~/Dropbox/Mindmaps/ /run/media/rob/backup/Dropbox/Mindmaps
+        rsync -aiv --delete --exclude='.dtrash' --exclude='.comments/' ~/Dropbox/Notes/ /run/media/rob/backup/Dropbox/Notes
+        rsync -aiv --delete --exclude='.dtrash' --exclude='.comments/' ~/Dropbox/Notebooks/ /run/media/rob/backup/Dropbox/Notebooks
+        rsync -aiv --delete --exclude='.dtrash' --exclude='.comments/' ~/Dropbox/Docs/ /run/media/rob/backup/Dropbox/Docs
+        rsync -aiv --delete --exclude='.dtrash' --exclude='.comments/' ~/Dropbox/Carroll/ /run/media/rob/backup/Dropbox/Carroll
+        rsync -aiv --delete --exclude='.dtrash' --exclude='.comments/' ~/.googleearth/myplaces.kml /run/media/rob/backup/.googleearth
+        rsync -aiv --delete --exclude='.dtrash' --exclude='.comments/' ~/Videos/ /run/media/rob/backup/Videos
 end
 
 function cdd
@@ -125,7 +125,7 @@ function lt
 end
 
 function now
-    curl https://tgftp.nws.noaa.gov/data/observations/metar/decoded/KMSO.TXT
+    curl --retry-max-time 5 --retry 5 https://tgftp.nws.noaa.gov/data/observations/metar/decoded/KMSO.TXT
 end
 
 function rgs --description "Searches current folder and shows 2 lines with match"
