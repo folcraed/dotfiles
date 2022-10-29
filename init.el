@@ -314,6 +314,12 @@
 	   (markdown-wiki-link-search-type '(parent-directories)))
   :init (setq markdown-open-command "okular"))
 
+;; Use default apps for handling URLs in markdown
+(setq browse-url-handlers
+   '(("\\.pdf\\'" . browse-url-xdg-open)
+     ("\\.jpg\\'" . browse-url-xdg-open)
+     ("\\.png\\'" . browse-url-xdg-open)))
+
 ;; ===============================================
 ;; Some personal keybindings
 ;; ===============================================
