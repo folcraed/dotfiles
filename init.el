@@ -1,6 +1,6 @@
-;; My Emacs settings Ver 2.7
+;; Rob's Emacs settings
 ;; File or commit timestamp show when last updated.
-;; Some settings are in the early-init.el file
+;; Startup settings are in the early-init.el file
 
 ;; ==============================================
 ;;  Set up some defaults
