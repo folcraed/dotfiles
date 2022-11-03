@@ -1,0 +1,6 @@
+# Color settings for the mixer
+color ctl_label black cyan
+color menu black cyan
+color infomsg black blue
+color textbox black cyan
+color textfield black cyan
