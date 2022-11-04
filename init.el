@@ -273,7 +273,8 @@
   (lsp-enable-which-key-integration t)
   :hook
   (python-mode . lsp-deferred)
-  (go-mode . lsp-deferred))
+  (go-mode . lsp-deferred)
+  (lua-mode . lsp-deferred))
 
 (use-package lsp-jedi
   :config
@@ -284,6 +285,12 @@
 (use-package go-mode)
 (with-eval-after-load "lsp-mode"
   (add-to-list 'lsp-enabled-clients 'gopls))
+
+(use-package lua-mode)
+(add-to-list 'auto-mode-alist '("\\.lua$" . lua-mode))
+(add-to-list 'interpreter-mode-alist '("lua" . lua-mode))
+(with-eval-after-load "lsp-mode"
+  (add-to-list 'lsp-enabled-clients 'lua-language-server))
 
 ;; ==============================================
 ;;  Flyspell stuff
@@ -455,8 +462,7 @@
  '(cursor-type '(bar . 2))
  '(org-export-backends '(ascii html md odt))
  '(package-selected-packages
-   '(consult-lsp go-mode lsp-jedi lsp-mode fzf all-the-icons vertico consult orderless marginalia company company-posframe project org markdown-mode flyspell-correct rg winum which-key use-package tablist rainbow-mode rainbow-delimiters org-superstar minions magit iedit expand-region doom-themes doom-modeline avy transpose-frame async))
- '(warning-suppress-log-types '((comp))))
+   '(lua-mode consult-lsp go-mode lsp-jedi lsp-mode fzf all-the-icons vertico consult orderless marginalia company company-posframe project org markdown-mode flyspell-correct rg winum which-key use-package tablist rainbow-mode rainbow-delimiters org-superstar minions magit iedit expand-region doom-themes doom-modeline avy transpose-frame async)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
