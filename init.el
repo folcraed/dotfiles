@@ -267,15 +267,17 @@
 ;; ==============================================
 (use-package lsp-mode
   :init
-  (setq lsp-keymap-prefix "C-c l")
+  (setq lsp-keymap-prefix "C-c l") ;; Needed for which-key
   (setq lsp-enable-symbol-highlighting nil)
   (setq lsp-headerline-breadcrumb-enable nil)
   :config
   (lsp-enable-which-key-integration t)
+  :bind-keymap ("C-c l" . lsp-command-map) ;; Needed to actually bind the keys
   :hook
   (python-mode . lsp-deferred)
   (go-mode . lsp-deferred)
   (lua-mode . lsp-deferred))
+(define-key lsp-mode-map (kbd "s-l") nil) ;; Needed to kill the default keys
 
 (use-package lsp-jedi
   :config
