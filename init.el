@@ -269,6 +269,7 @@
   :init
   (setq lsp-keymap-prefix "C-c l")
   (setq lsp-enable-symbol-highlighting nil)
+  (setq lsp-headerline-breadcrumb-enable nil)
   :config
   (lsp-enable-which-key-integration t)
   :hook
