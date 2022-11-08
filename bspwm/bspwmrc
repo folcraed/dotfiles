@@ -5,10 +5,9 @@ setxkbmap -option caps:ctrl_modifier &
 xsetroot -cursor_name left_ptr &
 /home/rob/.config/dotfiles/polybar/launch.sh &
 /usr/lib/polkit-kde-authentication-agent-1 &
-start-pulseaudio-x11 &
 ssh-agent &
 /home/rob/.fehbg &
-picom --experimental-backends &
+picom &
 dunst &
 xclip &
 clipit &
