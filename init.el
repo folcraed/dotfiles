@@ -452,10 +452,24 @@
 (global-set-key (kbd "C-x 3") 'split-and-follow-vertically)
 
 ;; ==============================================
+;; Select all inside delimiters Vim-like
+;; ==============================================
+(defun rw/select-text-in-delimiters ()
+  "Select text between the nearest left and right delimiters."
+  (interactive)
+  (let (start end)
+    (skip-chars-backward "^<>([{\"'")
+    (setq start (point))
+    (skip-chars-forward "^<>)]}\"'")
+    (setq end (point))
+    (set-mark start)))
+(global-set-key (kbd "C-+") 'rw/select-text-in-delimiters)
+
+;; ==============================================
 ;; Custom settings
 ;; ==============================================
 (setq custom-safe-themes t)
-(load-theme 'doom-one t)
+(load-theme 'doom-one-light t)
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
