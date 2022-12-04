@@ -21,11 +21,13 @@ require('packer').startup(function()
   use 'norcalli/nvim-colorizer.lua' -- Shows hex colors in the color
   use 'kyazdani42/nvim-web-devicons' -- Icons for the status line
   use { 'nvim-lualine/lualine.nvim',
-    requires = {'kyazdani42/nvim-web-devicons', opt = true}
+         requires = {'kyazdani42/nvim-web-devicons', opt = true}
 }
   use { 'nvim-telescope/telescope.nvim', branch = '0.1.x',
          requires = (('nvim-lua/plenary.nvim'))
 }
+  use { 'TimUntersberger/neogit',
+         requires = 'nvim-lua/plenary.nvim' }
   use { 'nvim-telescope/telescope-fzf-native.nvim', run = 'make'}
 end)
 
@@ -176,6 +178,14 @@ vim.api.nvim_set_keymap('n', '<leader>fg', [[<cmd>Telescope live_grep<CR>]], { n
 vim.api.nvim_set_keymap('n', '<leader>fb', [[<cmd>Telescope buffers<CR>]], { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '<leader>fh', [[<cmd>Telescope help_tags<CR>]], { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '<leader>fs', [[<cmd>Telescope current_buffer_fuzzy_find<CR>]], { noremap = true, silent = true })
+
+-- Setup Neogit
+require("neogit").setup {
+  disable_commit_confirmation = true,
+}
+
+-- Keys for Neogit
+vim.api.nvim_set_keymap('n', '<leader>gg', [[<cmd>Neogit<CR>]], { noremap = true, silent = true })
 
 -- Highlight on yank
 vim.cmd [[
