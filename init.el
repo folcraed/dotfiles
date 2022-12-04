@@ -28,6 +28,93 @@
 (setq use-package-always-ensure t)
 
 ;; ==============================================
+;;  Org-mode
+;; ==============================================
+(use-package org
+  :config
+  (setq-default org-hide-emphasis-markers t)
+  (setq org-startup-folded nil
+	org-startup-indented t
+	org-support-shift-select t
+	org-ellipsis " ▼"
+	org-tags-column 0
+	org-use-tag-inheritance nil))
+
+(use-package org-superstar
+  :config
+  (add-hook 'org-mode-hook (lambda () (org-superstar-mode 1)))
+  (setq org-superstar-headline-bullets-list '("●" "○"))
+  (setq org-superstar-item-bullet-alist
+        '((?* . ?•)
+          (?+ . ?◦)
+          (?- . ?•))))
+
+(setq-default org-file-apps
+    (quote
+        ((auto-mode . emacs)
+        ("\\.png\\'" . "sxiv %s")
+        ("\\.jpg\\'" . "sxiv %s")
+        ("\\.pdf\\'" . "xdg-open %s"))))
+
+(setq org-directory "~/Dropbox/Notes")
+(setq org-capture-templates
+      '(("t" "Todo" entry (file+headline "~/Dropbox/Notes/agenda.org" "Todos")
+         "* TODO %?")
+        ("g" "Genealogy" entry (file+headline "~/Dropbox/Notes/agenda.org" "Todos")
+         "* TODO %a %?")
+        ("c" "Changes" entry (file+headline "~/Dropbox/Notes/Software.org" "Changes")
+         "* %t %?")
+        ("j" "Jots" entry (file+headline "~/Dropbox/Notes/Notebook.org" "Refile")
+         "* %?")))
+
+(setq org-todo-keywords
+      '((sequence "TODO" "WORKING" "DONE")))
+
+(setq-default org-display-custom-times t)
+(setq org-time-stamp-custom-formats '("[%a %b %e %Y]" . "<%a %b %e %Y %H:%M>")
+      org-agenda-files (quote ("~/Dropbox/Notes/agenda.org"))
+      org-use-tag-inheritance nil)
+
+(setq org-refile-targets
+      '((nil :maxlevel . 2)
+	(org-agenda-files :maxlevel . 2)))
+
+(add-hook 'org-mode-hook 'variable-pitch-mode)
+(custom-theme-set-faces
+  'user
+  '(org-code ((t (:inherit fixed-pitch))))
+  '(org-property-value ((t (:inherit fixed-pitch))))
+  '(org-table ((t (:inherit fixed-pitch))))
+  '(org-block ((t (:inherit fixed-pitch))))
+  '(org-tag ((t (:inherit fixed-pitch))))
+  '(org-verbatim ((t (:inherit fixed-pitch)))))
+
+;; ==============================================
+;; Sane copy org link to clipboard function
+;; ==============================================
+(defun my-org-export-url ()
+  "Copies the org link to the clipboard"
+  (interactive)
+  (let* ((link-info (assoc :link (org-context)))
+	 (text (when link-info
+		 (buffer-substring-no-properties (or (cadr link-info) (point-min))
+						 (or (caddr link-info) (point-max))))))
+    (if (not text)
+	(error "Not in org link!")
+      (string-match org-bracket-link-regexp text)
+      (kill-new (substring text (match-beginning 1) (match-end 1))))))
+(global-set-key (kbd "C-c e") 'my-org-export-url)
+
+;; ==============================================
+;; Get Org to show heading path so it can be
+;; assigned to a keybind defined later
+;; ==============================================
+(defun rw/show-org-path ()
+  "Shows the full heading path of the current org point"
+  (interactive)
+  (org-display-outline-path nil t " > " nil))
+
+;; ==============================================
 ;;  Minion for the rest
 ;; ==============================================
 (use-package minions)
@@ -117,93 +204,6 @@
 ;;  Transpose windows
 ;; ==============================================
 (use-package transpose-frame)
-
-;; ==============================================
-;;  Org-mode
-;; ==============================================
-(use-package org
-  :config
-  (setq-default org-hide-emphasis-markers t)
-  (setq org-startup-folded nil
-	org-startup-indented t
-	org-support-shift-select t
-	org-ellipsis " ▼"
-	org-tags-column 0
-	org-use-tag-inheritance nil))
-
-(use-package org-superstar
-  :config
-  (add-hook 'org-mode-hook (lambda () (org-superstar-mode 1)))
-  (setq org-superstar-headline-bullets-list '("●" "○"))
-  (setq org-superstar-item-bullet-alist
-        '((?* . ?•)
-          (?+ . ?◦)
-          (?- . ?•))))
-
-(setq-default org-file-apps
-    (quote
-        ((auto-mode . emacs)
-        ("\\.png\\'" . "sxiv %s")
-        ("\\.jpg\\'" . "sxiv %s")
-        ("\\.pdf\\'" . "xdg-open %s"))))
-
-(setq org-directory "~/Dropbox/Notes")
-(setq org-capture-templates
-      '(("t" "Todo" entry (file+headline "~/Dropbox/Notes/agenda.org" "Todos")
-         "* TODO %?")
-        ("g" "Genealogy" entry (file+headline "~/Dropbox/Notes/agenda.org" "Todos")
-         "* TODO %a %?")
-        ("c" "Changes" entry (file+headline "~/Dropbox/Notes/Software.org" "Changes")
-         "* %t %?")
-        ("j" "Jots" entry (file+headline "~/Dropbox/Notes/Notebook.org" "Refile")
-         "* %?")))
-
-(setq org-todo-keywords
-      '((sequence "TODO" "WORKING" "DONE")))
-
-(setq-default org-display-custom-times t)
-(setq org-time-stamp-custom-formats '("[%a %b %e %Y]" . "<%a %b %e %Y %H:%M>")
-      org-agenda-files (quote ("~/Dropbox/Notes/agenda.org"))
-      org-use-tag-inheritance nil)
-
-(setq org-refile-targets
-      '((nil :maxlevel . 2)
-	(org-agenda-files :maxlevel . 2)))
-
-(add-hook 'org-mode-hook 'variable-pitch-mode)
-(custom-theme-set-faces
-  'user
-  '(org-code ((t (:inherit fixed-pitch))))
-  '(org-property-value ((t (:inherit fixed-pitch))))
-  '(org-table ((t (:inherit fixed-pitch))))
-  '(org-block ((t (:inherit fixed-pitch))))
-  '(org-tag ((t (:inherit fixed-pitch))))
-  '(org-verbatim ((t (:inherit fixed-pitch)))))
-
-;; ==============================================
-;; Sane copy org link to clipboard function
-;; ==============================================
-(defun my-org-export-url ()
-  "Copies the org link to the clipboard"
-  (interactive)
-  (let* ((link-info (assoc :link (org-context)))
-	 (text (when link-info
-		 (buffer-substring-no-properties (or (cadr link-info) (point-min))
-						 (or (caddr link-info) (point-max))))))
-    (if (not text)
-	(error "Not in org link!")
-      (string-match org-bracket-link-regexp text)
-      (kill-new (substring text (match-beginning 1) (match-end 1))))))
-(global-set-key (kbd "C-c e") 'my-org-export-url)
-
-;; ==============================================
-;; Get Org to show heading path so it can be
-;; assigned to a keybind defined later
-;; ==============================================
-(defun rw/show-org-path ()
-  "Shows the full heading path of the current org point"
-  (interactive)
-  (org-display-outline-path nil t " > " nil))
 
 ;; ==============================================
 ;;  Vertico and friends
@@ -480,7 +480,7 @@
  '(cursor-type '(bar . 2))
  '(org-export-backends '(ascii html md odt))
  '(package-selected-packages
-   '(lua-mode consult-lsp go-mode lsp-jedi lsp-mode fzf all-the-icons vertico consult orderless marginalia company company-posframe project org markdown-mode flyspell-correct rg winum which-key use-package tablist rainbow-mode rainbow-delimiters org-superstar minions magit iedit expand-region doom-themes doom-modeline avy transpose-frame async)))
+   '(org lua-mode consult-lsp go-mode lsp-jedi lsp-mode fzf all-the-icons vertico consult orderless marginalia company company-posframe project markdown-mode flyspell-correct rg winum which-key use-package tablist rainbow-mode rainbow-delimiters org-superstar minions magit iedit expand-region doom-themes doom-modeline avy transpose-frame async)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
