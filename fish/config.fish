@@ -124,6 +124,10 @@ function lt
 	exa -alh --sort=modified
 end
 
+function mconv
+    ffmpeg -f concat -safe 0 -i files.txt -c copy Time_Team.webm
+end
+
 function now
     curl --retry-max-time 5 --retry 5 https://tgftp.nws.noaa.gov/data/observations/metar/decoded/KMSO.TXT
 end
