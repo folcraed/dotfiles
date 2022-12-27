@@ -37,7 +37,7 @@
 
 
 ! Generic term settings
-Xcursor.theme: default
+Xcursor.theme: breeze_cursors
 Xcursor.size: 16
 ! xterm*VT100.Translations: <Key>BackSpace: string(0x7F)
 ! *ttyModes: erase ^?
