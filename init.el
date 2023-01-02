@@ -221,7 +221,7 @@
 (use-package consult
   ;; Replace bindings. Lazily loaded due by `use-package'.
   :bind (;; C-c bindings (mode-specific-map)
-         ("C-c m" . consult-mode-command)
+         ("C-c d" . consult-mode-command)
          ;; Other custom bindings
          ("<help> a" . consult-apropos)            ;; orig. apropos-command
          :map isearch-mode-map
