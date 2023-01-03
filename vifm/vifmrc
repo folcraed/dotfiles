@@ -264,6 +264,9 @@ nnoremap yd :!echo %d | xclip -selection clip %i<cr>
 " Yank current file path into the clipboard
 nnoremap yf :!echo %c:p | xclip -selection clip %i<cr>
 
+" Yank current file path to Wayland clipboard
+nnoremap yw :!echo %c:p | wl-copy %i<cr>
+
 " Mappings for faster renaming
 nnoremap I cw<c-a>
 nnoremap cc cw<c-u>
