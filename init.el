@@ -6,6 +6,12 @@
 ;;  Set up some defaults
 ;; ==============================================
 (setq lexical-binding t)
+(push '(tool-bar-lines . 0) default-frame-alist)
+(push '(menu-bar-lines . 0) default-frame-alist)
+(push '(vertical-scroll-bars) default-frame-alist)
+(setq ring-bell-function 'ignore)
+(setq frame-title-format "Emacs")
+(setq icon-title-format "Emacs")
 (setq use-short-answers t)
 (set-fringe-mode 10)
 (prefer-coding-system 'utf-8)
