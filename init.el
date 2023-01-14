@@ -6,12 +6,6 @@
 ;;  Set up some defaults
 ;; ==============================================
 (setq lexical-binding t)
-(push '(tool-bar-lines . 0) default-frame-alist)
-(push '(menu-bar-lines . 0) default-frame-alist)
-(push '(vertical-scroll-bars) default-frame-alist)
-(setq ring-bell-function 'ignore)
-(setq frame-title-format "Emacs")
-(setq icon-title-format "Emacs")
 (setq use-short-answers t)
 (set-fringe-mode 10)
 (prefer-coding-system 'utf-8)
@@ -475,7 +469,7 @@
 ;; Custom settings
 ;; ==============================================
 (setq custom-safe-themes t)
-(load-theme 'doom-one-light t)
+(load-theme 'doom-one t)
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
