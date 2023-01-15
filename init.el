@@ -480,7 +480,8 @@
  '(cursor-type '(bar . 2))
  '(org-export-backends '(ascii html md odt))
  '(package-selected-packages
-   '(lua-mode consult-lsp go-mode lsp-jedi lsp-mode fzf all-the-icons vertico consult orderless marginalia company company-posframe project markdown-mode flyspell-correct rg winum which-key use-package tablist rainbow-mode rainbow-delimiters org-superstar minions magit iedit expand-region doom-themes doom-modeline avy transpose-frame async)))
+   '(lua-mode consult-lsp go-mode lsp-jedi lsp-mode fzf all-the-icons vertico consult orderless marginalia company company-posframe project markdown-mode flyspell-correct rg winum which-key use-package tablist rainbow-mode rainbow-delimiters org-superstar minions magit iedit expand-region doom-themes doom-modeline avy transpose-frame async))
+ '(project-vc-extra-root-markers '("project.txt")))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
