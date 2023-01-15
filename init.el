@@ -115,6 +115,16 @@
   (org-display-outline-path nil t " > " nil))
 
 ;; ==============================================
+;;  Org insert a file link (keybind below)
+;; ==============================================
+(defun rw/insert-file-link ()
+  (interactive)
+  (let ((current-prefix-arg '(4))) ;; emulates C-u
+    (call-interactively 'org-insert-link)))
+
+(define-key org-mode-map (kbd "C-c f") 'rw/insert-file-link)
+
+;; ==============================================
 ;;  Minion for the rest
 ;; ==============================================
 (use-package minions)
