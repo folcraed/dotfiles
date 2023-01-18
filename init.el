@@ -270,41 +270,6 @@
 (use-package company-posframe)
 (company-posframe-mode 1)
 
-(use-package consult-lsp)
-
-;; ==============================================
-;;  Programming
-;; ==============================================
-(use-package lsp-mode
-  :init
-  (setq lsp-keymap-prefix "C-c l") ;; Needed for which-key
-  (setq lsp-enable-symbol-highlighting nil)
-  (setq lsp-headerline-breadcrumb-enable nil)
-  :config
-  (lsp-enable-which-key-integration t)
-  :bind-keymap ("C-c l" . lsp-command-map) ;; Needed to actually bind the keys
-  :hook
-  (python-mode . lsp-deferred)
-  (go-mode . lsp-deferred)
-  (lua-mode . lsp-deferred))
-(define-key lsp-mode-map (kbd "s-l") nil) ;; Needed to kill the default keys
-
-(use-package lsp-jedi
-  :config
-  (with-eval-after-load "lsp-mode"
-    (add-to-list 'lsp-disabled-clients 'pyls)
-    (add-to-list 'lsp-enabled-clients 'jedi)))
-
-(use-package go-mode)
-(with-eval-after-load "lsp-mode"
-  (add-to-list 'lsp-enabled-clients 'gopls))
-
-(use-package lua-mode)
-(add-to-list 'auto-mode-alist '("\\.lua$" . lua-mode))
-(add-to-list 'interpreter-mode-alist '("lua" . lua-mode))
-(with-eval-after-load "lsp-mode"
-  (add-to-list 'lsp-enabled-clients 'lua-language-server))
-
 ;; ==============================================
 ;;  Flyspell stuff
 ;; ==============================================
@@ -490,7 +455,7 @@
  '(cursor-type '(bar . 2))
  '(org-export-backends '(ascii html md odt))
  '(package-selected-packages
-   '(lua-mode consult-lsp go-mode lsp-jedi lsp-mode fzf all-the-icons vertico consult orderless marginalia company company-posframe project markdown-mode flyspell-correct rg winum which-key use-package tablist rainbow-mode rainbow-delimiters org-superstar minions magit iedit expand-region doom-themes doom-modeline avy transpose-frame async))
+   '(fzf all-the-icons vertico consult orderless marginalia company company-posframe project markdown-mode flyspell-correct rg winum which-key use-package tablist rainbow-mode rainbow-delimiters org-superstar minions magit iedit expand-region doom-themes doom-modeline avy transpose-frame async))
  '(project-vc-extra-root-markers '("project.txt")))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
