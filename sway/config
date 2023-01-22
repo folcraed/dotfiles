@@ -4,10 +4,12 @@ set $left h
 set $down j
 set $up k
 set $right l
+
 # Set the terminal
 set $term konsole
 
 ### Set the background and outputs
+# NOTE: You can get the names of your outputs by running: swaymsg -t get_outputs
 output DP-1 resolution 2560x1440 position 0 0
 output HDMI-A-1 resolution 1920x1080 position 2560 0
 output * subpixel rgb
@@ -16,8 +18,7 @@ output * bg /home/rob/Pictures/cityscape.jpg fill
 # Set the mouse pointer theme and size
 seat seat0 xcursor_theme breeze_cursors 24
 
-# NOTE: You can get the names of your outputs by running: swaymsg -t get_outputs
-
+# Set the screen timeout
 exec swayidle -w timeout 900 'swaymsg "output * dpms off"' resume 'swaymsg "output * dpms on"'
 
 # Font
@@ -53,15 +54,16 @@ titlebar_padding 2
 
     # Take a screenshot
     bindsym $mod+Shift+p exec grim -g "$(slurp -d)" $(xdg-user-dir PICTURES)/$(date +'%s.png')
-#
-# Moving around:
-#
+
+### Moving around:
     focus_follows_mouse no
+
     # Move your focus around
     bindsym $mod+$left focus left
     bindsym $mod+$down focus down
     bindsym $mod+$up focus up
     bindsym $mod+$right focus right
+
     # or use $mod+[up|down|left|right]
     bindsym $mod+Left focus left
     bindsym $mod+Down focus down
@@ -73,6 +75,7 @@ titlebar_padding 2
     bindsym $mod+Shift+$down move down
     bindsym $mod+Shift+$up move up
     bindsym $mod+Shift+$right move right
+
     # ditto, with arrow keys
     bindsym $mod+Shift+Left move left
     bindsym $mod+Shift+Down move down
@@ -80,6 +83,7 @@ titlebar_padding 2
     bindsym $mod+Shift+Right move right
 
 # Workspaces:
+
     # Workspaces to each monitor
     workspace 1 output DP-1
     workspace 2 output DP-1
@@ -91,6 +95,7 @@ titlebar_padding 2
     workspace 8 output HDMI-A-1
     workspace 9 output HDMI-A-1
     workspace 10 output HDMI-A-1
+
     # switch to workspace
     bindsym $mod+1 workspace 1
     bindsym $mod+2 workspace 2
@@ -102,6 +107,7 @@ titlebar_padding 2
     bindsym $mod+8 workspace 8
     bindsym $mod+9 workspace 9
     bindsym $mod+0 workspace 10
+
     # move focused container to workspace
     bindsym $mod+Shift+1 move container to workspace 1; workspace 1
     bindsym $mod+Shift+2 move container to workspace 2; workspace 2
@@ -114,7 +120,7 @@ titlebar_padding 2
     bindsym $mod+Shift+9 move container to workspace 9; workspace 9
     bindsym $mod+Shift+0 move container to workspace 10; workspace 10
 
-# Layout stuff:
+### Layout stuff:
 
     bindsym $mod+n splith
     bindsym $mod+v splitv
