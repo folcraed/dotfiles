@@ -9,7 +9,7 @@
 window#waybar {
     background-color: rgba(40, 44, 52, 0.5);
     border-bottom: 1px solid rgba(29, 32, 40, 0.5);
-    color: #61AFEF;
+    color: #E5C07B;
     transition-property: background-color;
     transition-duration: .5s;
 }
@@ -84,6 +84,7 @@ window#waybar.hidden {
 
 #idle_inhibitor {
     background-color: transparent;
+    color: #2980b9;
 }
 
 #idle_inhibitor.activated {
