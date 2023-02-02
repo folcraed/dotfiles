@@ -29,8 +29,12 @@ gaps inner 10
 
 # Set the border for windows
 default_border pixel 1
+default_floating_border pixel 1
 titlebar_border_thickness 0
 titlebar_padding 2
+
+# Set how new tiled windows layout
+default_orientation auto
 
 ### Key bindings
 
