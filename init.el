@@ -296,7 +296,8 @@
          ("\\.markdown\\'" . markdown-mode))
   :custom ((markdown-enable-wiki-links t)
 	   (markdown-wiki-link-alias-first nil)
-	   (markdown-wiki-link-search-type '(parent-directories)))
+	   (markdown-wiki-link-search-type '(parent-directories))
+	   (markdown-hide-markup t))
   :init (setq markdown-open-command "okular"))
 
 ;; Use default apps for handling URLs in markdown
