@@ -15,7 +15,7 @@
 (cua-mode t)
 (set-face-attribute 'default nil :font "JetBrainsMono-10")
 (set-face-attribute 'fixed-pitch nil :font "JetBrainsMono-10")
-(set-face-attribute 'variable-pitch nil :font "Roboto-10")
+(set-face-attribute 'variable-pitch nil :font "NotoSans-10")
 
 ;; This is suppose to fix ??? displaying instead
 ;; of line numbers in modeline
@@ -329,7 +329,7 @@
 (global-set-key (kbd "C-b") 'consult-buffer)
 (global-set-key (kbd "M-m") 'push-mark-command)
 (global-set-key (kbd "M-b") 'avy-pop-mark)
-(global-set-key (kbd "M-o") 'consult-org-heading)
+(global-set-key (kbd "M-o") 'consult-outline)
 (global-set-key (kbd "C-o") 'org-open-at-point)
 (global-set-key (kbd "M-g g") 'avy-goto-line)
 (global-set-key (kbd "M-G") 'goto-line)
