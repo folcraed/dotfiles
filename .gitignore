@@ -8,3 +8,7 @@ tags
 micro/plug
 micro/buffers
 nvim/plugin/packer_compiled.lua
+nvim-bak
+nvim/LICENSE
+nvim/README.md
+
