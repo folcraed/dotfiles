@@ -7,3 +7,5 @@ vim.keymap.set(
   require("telescope.builtin").resume,
   { noremap = true, silent = true, desc = "Resume last search" }
 )
+
+vim.keymap.set("n", "<leader>fc", ":cd %:h<CR>", { noremap = true, silent = true, desc = "Switch to CWD" })
