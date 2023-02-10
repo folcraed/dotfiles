@@ -1,3 +1,7 @@
+require("notify").setup({
+  background_colour = "#000000",
+})
+
 return {
   "folke/tokyonight.nvim",
   opts = {
