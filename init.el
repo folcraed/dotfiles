@@ -224,9 +224,10 @@
 
 (use-package orderless
   :init
-  (setq completion-styles '(orderless)
-        completion-category-defaults nil
-        completion-category-overrides '((file (styles partial-completion)))))
+  :custom
+  (completion-styles '(orderless basic))
+  (completion-category-defaults nil)
+  (completion-category-overrides '((file (styles basic partial-completion)))))
 
 (use-package consult
   ;; Replace bindings. Lazily loaded due by `use-package'.
@@ -260,15 +261,32 @@
   :init
   (marginalia-mode))
 
-(use-package company
+(use-package corfu
   :custom
-  (company-idle-delay 0.5)
-  (company-minimum-prefix-length 3)
+  (corfu-auto t)
+  ;; :bind (:map corfu-map
+  ;; 	      ("TAB" . completion-at-point))
   :init
-  (global-company-mode))
+  (global-corfu-mode))
 
-(use-package company-posframe)
-(company-posframe-mode 1)
+(setq corfu-auto-delay 0
+      completion-styles '(orderless))
+
+(use-package cape
+  :bind ("C-c p f" . cape-file)
+  :init
+  (add-to-list 'completion-at-point-functions #'cape-file)
+  (add-to-list 'completion-at-point-functions #'cape-dabbrev))
+
+;; (use-package company
+;;   :custom
+;;   (company-idle-delay 0.5)
+;;   (company-minimum-prefix-length 3)
+;;   :init
+;;   (global-company-mode))
+
+;; (use-package company-posframe)
+;; (company-posframe-mode 1)
 
 ;; ==============================================
 ;;  Flyspell stuff
@@ -456,7 +474,7 @@
  '(cursor-type '(bar . 2))
  '(org-export-backends '(ascii html md odt))
  '(package-selected-packages
-   '(fzf all-the-icons vertico consult orderless marginalia company company-posframe project markdown-mode flyspell-correct rg winum which-key use-package tablist rainbow-mode rainbow-delimiters org-superstar minions magit iedit expand-region doom-themes doom-modeline avy transpose-frame async))
+   '(fzf all-the-icons vertico consult orderless marginalia corfu cape project markdown-mode flyspell-correct rg winum which-key use-package tablist rainbow-mode rainbow-delimiters org-superstar minions magit iedit expand-region doom-themes doom-modeline avy transpose-frame async))
  '(project-vc-extra-root-markers '("project.txt")))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
