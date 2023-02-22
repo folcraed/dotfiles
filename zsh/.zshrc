@@ -133,7 +133,7 @@ alias ts='tracker search -l 100 $s'
 alias rgl='rg -a -l $s'
 alias rgs='rg -C 2 $s'
 alias slt='systemctl list-timers'
-alias rect='recoll -t -a $s'
+alias rf='recoll -t -a $s'
 
 # Some alias' for git
 alias ga='git add'

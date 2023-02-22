@@ -206,6 +206,6 @@ function slt
   systemctl list-timers
 end
 
-function rect
+function rf
   recoll -t -a $argv
 end
