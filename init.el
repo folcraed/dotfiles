@@ -265,8 +265,6 @@
 (use-package corfu
   :custom
   (corfu-auto t)
-  ;; :bind (:map corfu-map
-  ;; 	      ("TAB" . completion-at-point))
   :init
   (global-corfu-mode))
 
@@ -278,16 +276,6 @@
   :init
   (add-to-list 'completion-at-point-functions #'cape-file)
   (add-to-list 'completion-at-point-functions #'cape-dabbrev))
-
-;; (use-package company
-;;   :custom
-;;   (company-idle-delay 0.5)
-;;   (company-minimum-prefix-length 3)
-;;   :init
-;;   (global-company-mode))
-
-;; (use-package company-posframe)
-;; (company-posframe-mode 1)
 
 ;; ==============================================
 ;;  Flyspell stuff
@@ -343,6 +331,7 @@
 (global-set-key (kbd "C-c x") 'kill-buffer-and-window)
 (global-set-key (kbd "C-c y") 'org-store-link)
 (global-set-key (kbd "M-s g") 'consult-ripgrep)
+(global-set-key (kbd "M-s b") 'rgrep)
 (global-set-key (kbd "M-s f") 'fzf-find-file)
 (global-set-key (kbd "M-f") 'consult-line)
 (global-set-key (kbd "C-p") 'find-file)
