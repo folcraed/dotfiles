@@ -71,8 +71,7 @@ alias al='cat ~/.zshrc | grep alias'
 alias Z='source ~/.zshrc && clear'
 alias vim='nvim'
 alias bs='baloosearch $s'
-alias bu='rsync -aiv --exclude=".comments/" ~/Dropbox/ /run/media/rob/Backups'
-alias bu2='~/scripts/bu2m.sh'
+## alias bu2='~/scripts/bu2m.sh'
 alias cdb='cd ~/Dropbox'
 alias cdt='cd ~/Temp'
 alias cdD='cd ~/Downloads'
@@ -158,6 +157,7 @@ fo() {
 }
 
 # Simple calculator
+# Copied from https://github.com/addyosmani/dotfiles/.functions
 function calc() {
         local result=""
         result="$(printf "scale=10;$*\n" | bc --mathlib | tr -d '\\\n')"
@@ -174,7 +174,19 @@ function calc() {
         fi
         printf "\n"
 }
-# Copied from https://github.com/addyosmani/dotfiles/.functions
+
+function bu2() {
+        rsync -aiv --delete --exclude='.dtrash' --exclude='.comments/' ~/Dropbox/Genealogy/ /run/media/rob/backup/Dropbox/Genealogy
+        rsync -aiv --delete --exclude='.dtrash' --exclude='.comments/' ~/Dropbox/Mindmaps/ /run/media/rob/backup/Dropbox/Mindmaps
+        rsync -aiv --exclude='.dtrash' --exclude='.comments/' ~/Dropbox/Notes/ /run/media/rob/backup/Dropbox/Notes
+        rsync -aiv --delete --exclude='.dtrash' --exclude='.comments/' ~/Dropbox/Notebook/ /run/media/rob/backup/Dropbox/Notebook
+        rsync -aiv --delete --exclude='.dtrash' --exclude='.comments/' ~/Dropbox/Docs/ /run/media/rob/backup/Dropbox/Docs
+        rsync -aiv --delete --exclude='.dtrash' --exclude='.comments/' ~/Dropbox/Carroll/ /run/media/rob/backup/Dropbox/Carroll
+        rsync -aiv --delete --exclude='.dtrash' --exclude='.comments/' ~/.googleearth/myplaces.kml /run/media/rob/backup/.googleearth
+        rsync -aiv --delete --exclude='.dtrash' --exclude='.comments/' ~/Videos/ /run/media/rob/backup/Videos
+        rsync -aiv --delete --exclude='.dtrash' --exclude='.comments/' ~/.local/bin/ /run/media/rob/backup/.local/bin
+        rsync -aiv --delete --exclude='.dtrash' --exclude='.comments' --exclude='.git/' ~/scripts/ /run/media/rob/backup/scripts
+}
 
 ## Initialize Starship prompt
 eval "$(starship init zsh)"
