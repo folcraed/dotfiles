@@ -50,6 +50,10 @@ function cdl
     cd ~/code/learning
 end
 
+function clrc
+    sudo sysctl vm.drop_caches=1
+end
+
 function dfh
 	df -h
 end

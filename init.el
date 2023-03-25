@@ -338,6 +338,7 @@
 (global-set-key (kbd "C-b") 'consult-buffer)
 (global-set-key (kbd "M-m") 'push-mark-command)
 (global-set-key (kbd "M-b") 'avy-pop-mark)
+(global-set-key (kbd "M-l") 'markdown-follow-link-at-point)
 (global-set-key (kbd "M-o") 'consult-outline)
 (global-set-key (kbd "C-o") 'org-open-at-point)
 (global-set-key (kbd "M-g g") 'avy-goto-line)
