@@ -15,7 +15,6 @@
 (cua-mode t)
 (set-face-attribute 'default nil :font "JetBrainsMono-10")
 (set-face-attribute 'fixed-pitch nil :font "JetBrainsMono-10")
-(set-face-attribute 'variable-pitch nil :font "NotoSans-10")
 
 ;; This is suppose to fix ??? displaying instead
 ;; of line numbers in modeline
@@ -78,16 +77,6 @@
 (setq org-refile-targets
       '((nil :maxlevel . 2)
 	(org-agenda-files :maxlevel . 2)))
-
-(add-hook 'org-mode-hook 'variable-pitch-mode)
-(custom-theme-set-faces
-  'user
-  '(org-code ((t (:inherit fixed-pitch))))
-  '(org-property-value ((t (:inherit fixed-pitch))))
-  '(org-table ((t (:inherit fixed-pitch))))
-  '(org-block ((t (:inherit fixed-pitch))))
-  '(org-tag ((t (:inherit fixed-pitch))))
-  '(org-verbatim ((t (:inherit fixed-pitch)))))
 
 ;; ==============================================
 ;; Sane copy org link to clipboard function
@@ -314,6 +303,12 @@
      ("\\.png\\'" . browse-url-xdg-open)))
 
 ;; ===============================================
+;; Lua editing
+;; ===============================================
+(use-package lua-mode)
+(add-to-list 'interpreter-mode-alist '("lua" . lua-mode))
+
+;; ===============================================
 ;; Some personal keybindings
 ;; ===============================================
 (global-set-key (kbd "C-c a") 'org-agenda)
@@ -466,20 +461,14 @@
  '(cursor-type '(bar . 2))
  '(org-export-backends '(ascii html md odt))
  '(package-selected-packages
-   '(fzf all-the-icons vertico consult orderless marginalia corfu cape project markdown-mode flyspell-correct rg winum which-key use-package tablist rainbow-mode rainbow-delimiters org-superstar minions magit iedit expand-region doom-themes doom-modeline avy transpose-frame async))
+   '(lua-mode fzf all-the-icons vertico consult orderless marginalia corfu cape project markdown-mode flyspell-correct rg winum which-key use-package tablist rainbow-mode rainbow-delimiters org-superstar minions magit iedit expand-region doom-themes doom-modeline avy transpose-frame async))
  '(project-vc-extra-root-markers '("project.txt")))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(font-lock-comment-face ((t (:foreground "#9ca0a4" :slant italic))))
- '(org-block ((t (:inherit fixed-pitch))))
- '(org-code ((t (:inherit fixed-pitch))))
- '(org-property-value ((t (:inherit fixed-pitch))) t)
- '(org-table ((t (:inherit fixed-pitch))))
- '(org-tag ((t (:inherit fixed-pitch))))
- '(org-verbatim ((t (:inherit fixed-pitch)))))
+ '(font-lock-comment-face ((t (:foreground "#9ca0a4" :slant italic)))))
 
 ;; Some package was overriding this, so put it last
 (put 'narrow-to-region 'disabled nil)
