@@ -303,6 +303,12 @@
      ("\\.png\\'" . browse-url-xdg-open)))
 
 ;; ===============================================
+;; Lua editing
+;; ===============================================
+(use-package lua-mode)
+(add-to-list 'interpreter-mode-alist '("lua" . lua-mode))
+
+;; ===============================================
 ;; Some personal keybindings
 ;; ===============================================
 (global-set-key (kbd "C-c a") 'org-agenda)
@@ -455,7 +461,7 @@
  '(cursor-type '(bar . 2))
  '(org-export-backends '(ascii html md odt))
  '(package-selected-packages
-   '(fzf all-the-icons vertico consult orderless marginalia corfu cape project markdown-mode flyspell-correct rg winum which-key use-package tablist rainbow-mode rainbow-delimiters org-superstar minions magit iedit expand-region doom-themes doom-modeline avy transpose-frame async))
+   '(lua-mode fzf all-the-icons vertico consult orderless marginalia corfu cape project markdown-mode flyspell-correct rg winum which-key use-package tablist rainbow-mode rainbow-delimiters org-superstar minions magit iedit expand-region doom-themes doom-modeline avy transpose-frame async))
  '(project-vc-extra-root-markers '("project.txt")))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
