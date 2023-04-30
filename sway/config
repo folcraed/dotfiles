@@ -13,7 +13,7 @@ set $term konsole
 output DP-1 resolution 2560x1440 position 0 0
 output HDMI-A-1 resolution 1920x1080 position 2560 0
 output * subpixel rgb
-output * bg /home/rob/Pictures/cityscape.jpg fill
+output * bg /home/rob/Pictures/eilean_donan_castle.jpg fill
 
 # Set the mouse pointer theme and size
 seat seat0 xcursor_theme breeze_cursors 24
