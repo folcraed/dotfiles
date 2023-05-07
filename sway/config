@@ -203,6 +203,7 @@ bar {
 exec --no-startup-id /usr/lib/polkit-kde-authentication-agent-1
 exec --no-startup-id xset s off
 exec --no-startup-id dunst
+exec --no-startup-id udiskie -t
 exec --no-startup-id ssh-agent
 exec --no-startup-id recollindex -m
 exec --no-startup-id krunner -platform wayland
