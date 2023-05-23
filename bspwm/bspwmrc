@@ -9,6 +9,7 @@ ssh-agent &
 /home/rob/.fehbg &
 picom &
 dunst &
+udiskie -t &
 xclip &
 clipit &
 # gnome-keyring-daemon --start --foreground --components=secrets &

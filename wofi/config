@@ -1,7 +1,6 @@
-mode=drun
 sort_order=alphabetical
 insenitive=true
-term=alacritty
+term=kitty
 layer=overlay
 always_parse_args=true
 allow_images=true

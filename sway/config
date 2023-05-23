@@ -6,14 +6,14 @@ set $up k
 set $right l
 
 # Set the terminal
-set $term konsole
+set $term kitty --single-instance
 
 ### Set the background and outputs
 # NOTE: You can get the names of your outputs by running: swaymsg -t get_outputs
 output DP-1 resolution 2560x1440 position 0 0
 output HDMI-A-1 resolution 1920x1080 position 2560 0
 output * subpixel rgb
-output * bg /home/rob/Pictures/cityscape.jpg fill
+output * bg /home/rob/Pictures/eilean_donan_castle.jpg fill
 
 # Set the mouse pointer theme and size
 seat seat0 xcursor_theme breeze_cursors 24
@@ -198,11 +198,15 @@ bar {
     swaybar_command waybar
 }
 
+# Focus the main monitor on startup
+exec swaymsg focus output DP-1
+
 # Startup apps
 # exec --no-startup-id gnome-keyring-daemon --start --components=secrets
 exec --no-startup-id /usr/lib/polkit-kde-authentication-agent-1
 exec --no-startup-id xset s off
 exec --no-startup-id dunst
+exec --no-startup-id udiskie -t
 exec --no-startup-id ssh-agent
 exec --no-startup-id recollindex -m
 exec --no-startup-id krunner -platform wayland
