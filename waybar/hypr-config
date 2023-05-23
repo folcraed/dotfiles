@@ -1,0 +1,65 @@
+[{
+    "layer": "top",
+    "output": "DP-1",
+    "position": "top",
+    "height": 20,
+    "modules-left": ["wlr/workspaces"],
+    "modules-right": ["idle_inhibitor", "pulseaudio", "cpu", "memory", "temperature", "clock", "tray"],
+    "sway/mode": {
+        "format": "<span style=\"italic\">{}</span>"
+    },
+    "idle_inhibitor": {
+        "format": "{icon}",
+        "format-icons": {
+            "activated": "",
+            "deactivated": ""
+        }
+    },
+    "tray": {
+        // "icon-size": 16,
+        "spacing": 10
+    },
+    "clock": {
+        "format": "{:%I:%M %p}",
+        "tooltip-format": "{:%a %e %b %Y | %I:%M %p}",
+        "format-alt": "{:%a %e %b %Y}"
+    },
+    "cpu": {
+        "format": "{usage}% ",
+        "interval": 2,
+        "tooltip": false
+    },
+    "memory": {
+        "format": "{}% "
+    },
+    "temperature": {
+        "thermal-zone": 2,
+        "critical-threshold": 70,
+        "interval": 2,
+        "format": "{temperatureC}°C {icon}",
+        "format-icons": ["", "", ""]
+    },
+    "pulseaudio": {
+        "format": "{volume}% {icon}",
+        "format-muted": " {format_source}",
+        "format-source": "{volume}% ",
+        "format-source-muted": "",
+        "format-icons": {
+            "default": ["", "", ""]
+        },
+        "on-click": "pavucontrol"
+    }
+},
+{
+   "layer": "top",
+   "output": "HDMI-A-1",
+   "position": "top",
+   "height": 20,
+   "modules-left": ["wlr/workspaces"],
+   "modules-right": ["clock"],
+   "clock": {
+       "format": "{:%I:%M %p}",
+       "tooltip-format": "{:%a %e %b %Y | %I:%M %p}",
+       "format-alt": "{:%a %e %b %Y}"
+   }
+}]
