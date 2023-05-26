@@ -1,0 +1,4 @@
+# Default settings for swayimg
+sway = no
+font = Jetbrains Mono
+font-size = 10
