@@ -3,8 +3,7 @@
     "output": "DP-1",
     "position": "top",
     "height": 20,
-    "modules-left": ["sway/workspaces", "sway/mode"],
-    "modules-center": ["sway/window"],
+    "modules-left": ["wlr/workspaces"],
     "modules-right": ["idle_inhibitor", "pulseaudio", "cpu", "memory", "temperature", "clock", "tray"],
     "sway/mode": {
         "format": "<span style=\"italic\">{}</span>"
@@ -56,12 +55,8 @@
    "output": "HDMI-A-1",
    "position": "top",
    "height": 20,
-   "modules-left": ["sway/workspaces", "sway/mode"],
-   "modules-center": ["sway/window"],
+   "modules-left": ["wlr/workspaces"],
    "modules-right": ["clock"],
-   "sway/mode": {
-       "format": "<span style=\"italic\">{}</span>"
-   },
    "clock": {
        "format": "{:%I:%M %p}",
        "tooltip-format": "{:%a %e %b %Y | %I:%M %p}",

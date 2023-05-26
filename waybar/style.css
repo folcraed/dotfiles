@@ -8,9 +8,7 @@
 }
 
 window#waybar {
-    background: #282C34;
-    background-color: rgba(40, 44, 52, 0.8);
-    border-bottom: 3px solid rgba(43, 48, 59, 0.5);
+    background: rgba(40, 44, 52, 0.1);
     color: #e5c07b;
     transition-property: background-color;
     transition-duration: .5s;
@@ -27,6 +25,7 @@ tooltip {
 }
 
 tooltip label {
+  background: #282c34;
   color: #abb2bf;
 }
 
@@ -41,9 +40,9 @@ window#waybar.solo {
 
 #workspaces button {
     padding: 0 0.7em;
-    background-color: transparent;
+    background-color: #282c34;
     color: #f8f8f2;
-    box-shadow: inset 0 -3px transparent;
+    box-shadow: inset 0 -3px #3b4252;
 }
 
 #workspaces button:hover {
@@ -51,7 +50,7 @@ window#waybar.solo {
     box-shadow: inset 0 -3px #ffffff;
 }
 
-#workspaces button.focused {
+#workspaces button.active {
     background-color: #5e81ac;
     box-shadow: inset 0 -3px #61afef;
 }
