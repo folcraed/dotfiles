@@ -5,9 +5,7 @@
     "height": 20,
     "modules-left": ["wlr/workspaces"],
     "modules-right": ["idle_inhibitor", "pulseaudio", "cpu", "memory", "temperature", "clock", "tray"],
-    "sway/mode": {
-        "format": "<span style=\"italic\">{}</span>"
-    },
+    "modules-center": ["hyprland/window"],
     "idle_inhibitor": {
         "format": "{icon}",
         "format-icons": {
@@ -48,6 +46,10 @@
             "default": ["", "", ""]
         },
         "on-click": "pavucontrol"
+    },
+    "hyprland/window": {
+        "format": "{}",
+	"separate-outputs": true
     }
 },
 {
@@ -57,9 +59,14 @@
    "height": 20,
    "modules-left": ["wlr/workspaces"],
    "modules-right": ["clock"],
+   "modules-center": ["hyprland/window"],
    "clock": {
        "format": "{:%I:%M %p}",
        "tooltip-format": "{:%a %e %b %Y | %I:%M %p}",
        "format-alt": "{:%a %e %b %Y}"
+   },
+   "hyprland/window": {
+       "format": "{}",
+       "separate-outputs": true
    }
 }]

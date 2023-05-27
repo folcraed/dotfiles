@@ -160,8 +160,8 @@ fileviewer *.jpg,*.png,*jpeg
         \kitty +kitten icat --transfer-mode=file --place=%pwx%ph@%pxx%py --clear
 
 filextype *.bmp,*.jpg,*.jpeg,*.png,*.gif,*.xpm,*tif,*.tiff
-        \ {View in sxiv}
-        \ sxiv %c &,
+        \ {View in swayimg}
+        \ swayimg %c &,
         \ {View in feh}
         \ feh -g 640x640 %c &,
         \ {View in gwenview}
@@ -255,8 +255,8 @@ nnoremap O :!nvim %f<cr>
 " Open file in the background using its default program
 nnoremap gb :file &<cr>l
 
-" Open folder of images in sxiv
-nnoremap gv :!sxiv -t %d &<cr>
+" Open folder of images in swayimg
+nnoremap gv :!swayimg %d &<cr>
 
 " Yank current directory path into the clipboard
 nnoremap yd :!echo %d | xclip -selection clip %i<cr>
