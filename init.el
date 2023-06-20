@@ -113,6 +113,9 @@
 
 (define-key org-mode-map (kbd "C-c f") 'rw/insert-file-link)
 
+;; Use the shortcuts for source and quote blocks
+(require 'org-tempo)
+
 ;; ==============================================
 ;;  Minion for the rest
 ;; ==============================================

@@ -21,6 +21,10 @@ function bu2
         rsync -aiv --delete --exclude='.dtrash' --exclude='.comments' --exclude='.git' ~/scripts/ /run/media/rob/backup/scripts
 end
 
+function ccache --description "Clears memory buffers and cache"
+	 sudo sh -c 'echo 1 > /proc/sys/vm/drop_caches'
+end
+
 function cdd
 	cd ~/.config/dotfiles
 end

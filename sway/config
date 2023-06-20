@@ -45,7 +45,7 @@ default_orientation auto
     bindsym $mod+Shift+q kill
 
     # start the launcher
-    bindsym $mod+p exec krunner -platform wayland
+    bindsym $mod+p exec rofi -show drun
 
     # mouse button for dragging.
     floating_modifier $mod normal
@@ -209,7 +209,6 @@ exec --no-startup-id dunst
 exec --no-startup-id udiskie -t
 exec --no-startup-id ssh-agent
 exec --no-startup-id recollindex -m
-exec --no-startup-id krunner -platform wayland
 exec wl-paste -t text --watch clipman store
 include /etc/sway/config.d/*
 # vim: ft=sh
