@@ -20,7 +20,7 @@ deleted = '  '
 symbol = ' '
 
 [lua]
-symbol = ' '
+symbol = ' '
 
 [golang]
 symbol = ' '
