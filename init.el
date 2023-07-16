@@ -338,6 +338,8 @@
 (global-set-key (kbd "M-j") 'avy-goto-char-timer)
 (global-set-key (kbd "M-;") 'comment-line)
 (global-set-key (kbd "C-q") 'delete-frame)
+(define-key org-mode-map (kbd "<C-M-up>") 'org-table-move-row-up)
+(define-key org-mode-map (kbd "<C-M-down>") 'org-table-move-row-down)
 (define-key org-mode-map (kbd "<C-M-S-left>") nil)
 (define-key org-mode-map (kbd "<C-M-S-right>") nil)
 (global-set-key (kbd "<C-M-S-left>") 'shrink-window-horizontally)
