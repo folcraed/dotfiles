@@ -2,7 +2,7 @@
     all: unset;
     border: none;
     border-radius: 8px;
-    font-family: Roboto;
+    font-family: Noto Sans;
     font-size: 12px;
     min-height: 0;
 }
