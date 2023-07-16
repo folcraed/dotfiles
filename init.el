@@ -273,7 +273,6 @@
       ispell-dictionary "en_US"
       ispell-local-dictionary "american"
       flyspell-issue-message-flag nil)
-(global-set-key (kbd "<f8>") 'flyspell-mode)
 
 ;; ===============================================
 ;;  Magit
@@ -316,7 +315,9 @@
 (global-set-key (kbd "C-c rb") 'rotate-frame-anticlockwise)
 (global-set-key (kbd "C-c rc") 'rotate-frame-clockwise)
 (global-set-key (kbd "C-c rs") 'rotate-frame)
+(global-set-key (kbd "<f6>") 'electric-pair-mode)
 (global-set-key (kbd "<f7>") 'flyspell-buffer)
+(global-set-key (kbd "<f8>") 'flyspell-mode)
 (global-set-key (kbd "<f9>") 'flyspell-region)
 (global-set-key (kbd "C-c t") 'org-time-stamp)
 (global-set-key (kbd "C-c w") 'flyspell-correct-wrapper)
