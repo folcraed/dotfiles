@@ -220,7 +220,7 @@
   :custom
   (completion-styles '(orderless basic))
   (completion-category-defaults nil)
-  (completion-category-overrides '((file (styles basic partial-completion)))))
+  (completion-category-overrides '((file (styles . (partial-completion))))))
 
 (use-package consult
   ;; Replace bindings. Lazily loaded due by `use-package'.
@@ -255,7 +255,7 @@
   (global-corfu-mode))
 
 (setq corfu-auto-delay 0
-      completion-styles '(orderless))
+      completion-styles '(orderless basic))
 
 (use-package cape
   :bind ("C-c p f" . cape-file)
