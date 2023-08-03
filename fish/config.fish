@@ -143,7 +143,7 @@ function rgs --description "Searches current folder and shows 2 lines with match
 end
 
 function ytdl
-	yt-dlp $argv
+	yt-dlp --compat-options multistreams -4 $argv
 end
 
 function pacs
