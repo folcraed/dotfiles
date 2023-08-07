@@ -252,10 +252,13 @@
 (use-package corfu
   :custom
   (corfu-auto t)
+  :bind
+  (:map corfu-map
+	("RET" . nil))
   :init
   (global-corfu-mode))
 
-(setq corfu-auto-delay 0
+(setq corfu-auto-delay 0.5
       completion-styles '(orderless basic))
 
 (use-package cape
