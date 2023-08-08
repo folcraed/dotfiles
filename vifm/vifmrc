@@ -46,7 +46,7 @@ mark h ~/
 " ------------------------------------------------------------------------------
 
 " file types icons
-set classify='  :dir:/,  :exe:,  :reg:,  :link:,  ::*.md::,  ::*.js::,  ::*.py,,*.pyc,,*.pyo::'
+set classify='  :dir:/,  :exe:,  :reg:,  :link:,  ::*.md::,  ::*.js::,  ::*.py,,*.pyc,,*.pyo::,  ::*.lua::,  ::*.go::,󰘦  ::*.json::,  ::*.el::,  ::*.org::'
 " various file names
 set classify+='  ::../::,  ::*.sh::,  ::*.[hc]pp::,  ::*.[hc]::,  ::/^copying|license$/::,  ::.git/,,*.git/::,  ::*.epub,,*.fb2,,*.djvu::,  ::*.pdf::,  ::*.htm,,*.html,,**.[sx]html,,*.xml::'
 " archives
@@ -56,7 +56,7 @@ set classify+='  ::*.bmp,,*.gif,,*.jpeg,,*.jpg,,*.ico,,*.png,,*.ppm,,*.svg,,*
 " audio
 set classify+='  ::*.aac,,*.anx,,*.asf,,*.au,,*.axa,,*.flac,,*.m2a,,*.m4a,,*.mid,,*.midi,,*.mp3,,*.mpc,,*.oga,,*.ogg,,*.ogx,,*.ra,,*.ram,,*.rm,,*.spx,,*.wav,,*.wma,,*.ac3::'
 " media
-set classify+=' ::*.avi,,*.ts,,*.axv,,*.divx,,*.m2v,,*.m4p,,*.m4v,,.mka,,*.mkv,,*.mov,,*.webm,,*.mp4,,*.flv,,*.mp4v,,*.mpeg,,*.mpg,,*.nuv,,*.ogv,,*.pbm,,*.pgm,,*.qt,,*.vob,,*.wmv,,*.xvid::'
+set classify+='  ::*.avi,,*.ts,,*.axv,,*.divx,,*.m2v,,*.m4p,,*.m4v,,.mka,,*.mkv,,*.mov,,*.webm,,*.mp4,,*.flv,,*.mp4v,,*.mpeg,,*.mpg,,*.nuv,,*.ogv,,*.pbm,,*.pgm,,*.qt,,*.vob,,*.wmv,,*.xvid::'
 " office files
 set classify+='  ::*.doc,,*.odt,,*.docx::,  ::*.xls,,*.ods,,*.xls[mx]::,  ::*.pptx,,*.ppt::'
 
