@@ -22,8 +22,7 @@
 
 (package-initialize)
 
-(eval-when-compile
-  (require 'use-package))
+(require 'use-package)
 (setq use-package-always-ensure t)
 
 ;; ==============================================
@@ -307,6 +306,14 @@
 ;; ===============================================
 (use-package lua-mode)
 (add-to-list 'interpreter-mode-alist '("lua" . lua-mode))
+
+;; ===============================================
+;; Eglot extra language servers
+;; ===============================================
+(with-eval-after-load 'eglot
+  (add-to-list 'eglot-server-programs
+	       '(python-mode . "jedi-language-server")
+	       '(lua-mode . "lua-language-server")))
 
 ;; ===============================================
 ;; Some personal keybindings
