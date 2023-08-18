@@ -310,9 +310,6 @@
 (use-package lua-mode)
 (add-to-list 'interpreter-mode-alist '("lua" . lua-mode))
 
-(use-package go-mode)
-(add-to-list 'auto-mode-alist '("\\.go\\'" . go-mode))
-
 ;; ===============================================
 ;; Eglot extra language servers
 ;; ===============================================
@@ -320,29 +317,6 @@
   (add-to-list 'eglot-server-programs
 	       '(python-mode . "jedi-language-server")
 	       '(lua-mode . "lua-language-server")))
-
-;; ===============================================
-;; Tree sitter languages
-;; ===============================================
-(setq treesit-language-source-alist
-      '((bash "https://github.com/tree-sitter/tree-sitter-bash")
-	(elisp "https://github.com/Wilfred/tree-sitter-elisp")
-	(go "https://github.com/tree-sitter/tree-sitter-go")
-	(javascript "https://github.com/tree-sitter/tree-sitter-javascript" "master" "src")
-	(json "https://github.com/tree-sitter/tree-sitter-json")
-	(markdown "https://github.com/ikatyang/tree-sitter-markdown")
-	(python "https://github.com/tree-sitter/tree-sitter-python")
-	(toml "https://github.com/tree-sitter/tree-sitter-toml")
-	(yaml "https://github.com/ikatyang/tree-sitter-yaml")))
-
-;; Use tree-sitter to do syntax in these modes
-(setq major-mode-remap-alist
-      '((yaml-mode . yaml-ts-mode)
-	(bash-mode . bash-ts-mode)
-	(js2-mode . js-ts-mode)
-	(json-mode . json-ts-mode)
-	(go-mode . go-ts-mode)
-	(python-mode . python-ts-mode)))
 
 ;; ===============================================
 ;; Some personal keybindings
