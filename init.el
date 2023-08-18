@@ -230,7 +230,7 @@
   :bind (;; C-c bindings (mode-specific-map)
          ("C-c d" . consult-mode-command)
          ;; Other custom bindings
-         ("<help> a" . consult-apropos)            ;; orig. apropos-command
+         ;; ("<help> a" . consult-apropos)            ;; orig. apropos-command
          :map isearch-mode-map
          ("M-e" . consult-isearch-history))         ;; orig. isearch-edit-string
   :hook (completion-list-mode . consult-preview-at-point-mode)
