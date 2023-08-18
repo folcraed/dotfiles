@@ -177,6 +177,9 @@
 	doom-modeline-buffer-modification-icon t
 	doom-modeline-buffer-encoding nil
 	doom-modeline-buffer-file-name-style 'relative-from-project
+	doom-modeline-env-enable-python t
+	doom-modeline-env-enable-go t
+	doom-modeline-env-version t
 	column-number-mode 1))
 (minions-mode 1)
 
@@ -302,10 +305,13 @@
      ("\\.png\\'" . browse-url-xdg-open)))
 
 ;; ===============================================
-;; Lua editing
+;; Programming
 ;; ===============================================
 (use-package lua-mode)
 (add-to-list 'interpreter-mode-alist '("lua" . lua-mode))
+
+(use-package go-mode)
+(add-to-list 'auto-mode-alist '("\\.go\\'" . go-mode))
 
 ;; ===============================================
 ;; Eglot extra language servers
