@@ -13,6 +13,17 @@
             "deactivated": ""
         }
     },
+    "wlr/workspaces": {
+        "active-only": false,
+        "all-outputs": true,
+        "format": "{icon}",
+        "format-icons": {
+            "urgent": "◯",
+            "active": "⦿",
+            "default": "⬤",
+            "sort-by-number": true
+        }
+    },
     "tray": {
         // "icon-size": 16,
         "spacing": 10
