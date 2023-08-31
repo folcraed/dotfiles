@@ -7,3 +7,4 @@ foo.*
 *.log
 data
 lua/plugins/example.lua
+lazy.lock.json
