@@ -147,8 +147,6 @@
 (rg-enable-default-bindings)
 (setq rg-use-transient-menu t)
 
-(use-package fzf)
-
 ;; ==============================================
 ;;  Dired enhancements
 ;; ==============================================
@@ -339,7 +337,7 @@
 (global-set-key (kbd "C-c y") 'org-store-link)
 (global-set-key (kbd "M-s g") 'consult-ripgrep)
 (global-set-key (kbd "M-s b") 'rgrep)
-(global-set-key (kbd "M-s f") 'fzf-find-file)
+(global-set-key (kbd "M-s f") 'consult-fd)
 (global-set-key (kbd "M-f") 'consult-line)
 (global-set-key (kbd "C-p") 'find-file)
 (global-set-key (kbd "C-b") 'consult-buffer)
@@ -477,7 +475,7 @@
  '(cursor-type '(bar . 2))
  '(org-export-backends '(ascii html md odt))
  '(package-selected-packages
-   '(lua-mode fzf all-the-icons vertico consult orderless marginalia corfu cape project markdown-mode flyspell-correct rg winum which-key use-package tablist rainbow-mode rainbow-delimiters org-superstar minions magit iedit expand-region doom-themes doom-modeline avy transpose-frame async))
+   '(lua-mode all-the-icons vertico consult orderless marginalia corfu cape project markdown-mode flyspell-correct rg winum which-key use-package tablist rainbow-mode rainbow-delimiters org-superstar minions magit iedit expand-region doom-themes doom-modeline avy transpose-frame async))
  '(project-vc-extra-root-markers '("project.txt")))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
