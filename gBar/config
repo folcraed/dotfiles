@@ -87,10 +87,10 @@ AudioNumbers: false
 # AudioMaxVolume: 120 # Audio can't get above 120%
 
 # The network adapter to use. You can query /sys/class/net for all possible values
-NetworkAdapter: enp1s0
+# NetworkAdapter: enp1s0
 
 # Disables the network widget when set to false
-NetworkWidget: true
+NetworkWidget: false
 
 # Enables tray icons
 EnableSNI: true
