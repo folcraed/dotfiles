@@ -90,7 +90,7 @@
 						 (or (caddr link-info) (point-max))))))
     (if (not text)
 	(error "Not in org link!")
-      (string-match org-bracket-link-regexp text)
+      (string-match org-link-bracket-re text)
       (kill-new (substring text (match-beginning 1) (match-end 1))))))
 (global-set-key (kbd "C-c e") 'my-org-export-url)
 
