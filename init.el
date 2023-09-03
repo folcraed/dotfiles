@@ -259,7 +259,8 @@
   (global-corfu-mode))
 
 (setq corfu-auto-delay 0.5
-      completion-styles '(orderless basic))
+      completion-styles '(orderless basic)
+      corfu-preview-current t)
 
 (use-package cape
   :bind ("C-c p f" . cape-file)
