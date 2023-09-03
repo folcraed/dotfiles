@@ -494,3 +494,5 @@
 
 ;; Some package was overriding this, so put it last
 (put 'narrow-to-region 'disabled nil)
+(provide 'init)
+;;; init.el ends here.
