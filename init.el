@@ -308,6 +308,12 @@
 (use-package lua-mode)
 (add-to-list 'interpreter-mode-alist '("lua" . lua-mode))
 
+(use-package flycheck)
+(add-hook 'after-init-hook #'global-flycheck-mode)
+(flymake-mode -1)
+
+(use-package blacken)
+
 ;; ===============================================
 ;; Eglot extra language servers
 ;; ===============================================
