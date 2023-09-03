@@ -82,7 +82,7 @@
 ;; Sane copy org link to clipboard function
 ;; ==============================================
 (defun my-org-export-url ()
-  "Copies the org link to the clipboard"
+  "Copies the org link to the clipboard."
   (interactive)
   (let* ((link-info (assoc :link (org-context)))
 	 (text (when link-info
@@ -99,7 +99,7 @@
 ;; assigned to a keybind defined later
 ;; ==============================================
 (defun rw/show-org-path ()
-  "Shows the full heading path of the current org point"
+  "Show the full heading path of the current org point."
   (interactive)
   (org-display-outline-path nil t " > " nil))
 
@@ -107,6 +107,7 @@
 ;;  Org insert a file link (keybind below)
 ;; ==============================================
 (defun rw/insert-file-link ()
+    "Insert a file link at the current point."
   (interactive)
   (let ((current-prefix-arg '(4))) ;; emulates C-u
     (call-interactively 'org-insert-link)))
@@ -155,7 +156,7 @@
       dired-dwim-target t)
 
 (defun dired-open-file ()
-  "In dired, open the file named on this line."
+  "In Dired, open the file named on this line."
   (interactive)
   (let* ((file (dired-get-filename nil t)))
     (call-process "xdg-open" nil 0 nil file)))
@@ -394,19 +395,23 @@
 ;; Some line movement keys I find easier
 ;; ==============================================
 (defun rob-scroll-down ()
+  "Scrolls the page down by one line at a time."
   (interactive)
   (scroll-up 1))
 
 (defun rob-scroll-up ()
+  "Scrolls the page up by one line at a time."
   (interactive)
   (scroll-down 1))
 
 (defun move-line-up ()
+  "Move the cursor line up."
   (interactive)
   (transpose-lines 1)
   (forward-line -2))
 
 (defun move-line-down ()
+  "Move the cursor line down."
   (interactive)
   (forward-line 1)
   (transpose-lines 1)
@@ -421,7 +426,7 @@
 ;; Narrow or widen whatever I'm working on
 ;; ==============================================
 (defun narrow-or-widen-dwim (p)
-  "Makes it easier to switch between narrow and wide"
+  "Make it easier to switch between narrow and wide P."
   (interactive "P")
   (declare (interactive-only))
   (cond ((and (buffer-narrowed-p) (not p)) (widen))
@@ -440,6 +445,7 @@
 ;; Move to the new window when opened
 ;; ==============================================
 (defun split-and-follow-horizontally ()
+  "Split the window horizontally and go to new split."
   (interactive)
   (split-window-below)
   (balance-windows)
@@ -447,6 +453,7 @@
 (global-set-key (kbd "C-x 2") 'split-and-follow-horizontally)
 
 (defun split-and-follow-vertically ()
+    "Split the window vertically and go to new split."
   (interactive)
   (split-window-right)
   (balance-windows)
@@ -482,7 +489,7 @@
  '(cursor-type '(bar . 2))
  '(org-export-backends '(ascii html md odt))
  '(package-selected-packages
-   '(lua-mode all-the-icons vertico consult orderless marginalia corfu cape project markdown-mode flyspell-correct rg winum which-key use-package tablist rainbow-mode rainbow-delimiters org-superstar minions magit iedit expand-region doom-themes doom-modeline avy transpose-frame async))
+   '(blacken flycheck lua-mode all-the-icons vertico consult orderless marginalia corfu cape project markdown-mode flyspell-correct rg winum which-key use-package tablist rainbow-mode rainbow-delimiters org-superstar minions magit iedit expand-region doom-themes doom-modeline avy transpose-frame async))
  '(project-vc-extra-root-markers '("project.txt")))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
