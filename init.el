@@ -305,26 +305,6 @@
      ("\\.png\\'" . browse-url-xdg-open)))
 
 ;; ===============================================
-;; Programming
-;; ===============================================
-(use-package lua-mode)
-(add-to-list 'interpreter-mode-alist '("lua" . lua-mode))
-
-(use-package flycheck)
-(add-hook 'after-init-hook #'global-flycheck-mode)
-(flymake-mode -1)
-
-(use-package blacken)
-
-;; ===============================================
-;; Eglot extra language servers
-;; ===============================================
-(with-eval-after-load 'eglot
-  (add-to-list 'eglot-server-programs
-	       '(python-mode . "jedi-language-server")
-	       '(lua-mode . "lua-language-server")))
-
-;; ===============================================
 ;; Some personal keybindings
 ;; ===============================================
 (global-set-key (kbd "C-c a") 'org-agenda)
@@ -489,7 +469,7 @@
  '(cursor-type '(bar . 2))
  '(org-export-backends '(ascii html md odt))
  '(package-selected-packages
-   '(blacken flycheck lua-mode all-the-icons vertico consult orderless marginalia corfu cape project markdown-mode flyspell-correct rg winum which-key use-package tablist rainbow-mode rainbow-delimiters org-superstar minions magit iedit expand-region doom-themes doom-modeline avy transpose-frame async))
+   '(all-the-icons vertico consult orderless marginalia corfu cape project markdown-mode flyspell-correct rg winum which-key use-package tablist rainbow-mode rainbow-delimiters org-superstar minions magit iedit expand-region doom-themes doom-modeline avy transpose-frame async))
  '(project-vc-extra-root-markers '("project.txt")))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
