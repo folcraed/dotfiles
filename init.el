@@ -72,7 +72,7 @@
 (setq-default org-export-headline-levels 6)
 (setq org-time-stamp-custom-formats '("[%a %b %e %Y]" . "<%a %b %e %Y %H:%M>")
       org-agenda-files (quote ("~/Dropbox/Notes/agenda.org"))
-      org-use-tag-inheritance nil)
+      org-id-link-to-org-use-id 'use-existing)
 
 (setq org-refile-targets
       '((nil :maxlevel . 2)
