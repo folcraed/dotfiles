@@ -142,6 +142,10 @@ function rgs --description "Searches current folder and shows 2 lines with match
     rg -C 2 --max-depth 1 $argv
 end
 
+function rsemacs --description "Restarts the emacs daemon"
+    systemctl --user restart emacs
+end
+
 function ytdl
 	yt-dlp --compat-options multistreams -4 $argv
 end
