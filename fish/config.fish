@@ -1,37 +1,37 @@
 set fish_greeting
 starship init fish | source
-set fzf_preview_dir_cmd exa --all --color=always
+set fzf_preview_dir_cmd eza --all --color=always
 
 #================================================
 # Functions
 #================================================
 function fish_title
-  echo (status current-command) ' '
+    echo (status current-command) ' '
 end
 
 function bu2
-        rsync -aiv --delete --exclude='.dtrash' --exclude='.comments/' ~/Dropbox/Genealogy/ /run/media/rob/backup/Dropbox/Genealogy
-        rsync -aiv --delete --exclude='.dtrash' --exclude='.comments/' ~/Dropbox/Mindmaps/ /run/media/rob/backup/Dropbox/Mindmaps
-        rsync -aiv --exclude='.dtrash' --exclude='.comments/' ~/Dropbox/Notes/ /run/media/rob/backup/Dropbox/Notes
-        rsync -aiv --delete --exclude='.dtrash' --exclude='.comments/' ~/Dropbox/Docs/ /run/media/rob/backup/Dropbox/Docs
-        rsync -aiv --exclude='.dtrash' --exclude='.comments/' --exclude='.obsidian' ~/Dropbox/Notebook/ /run/media/rob/backup/Dropbox/Notebook
-        rsync -aiv --delete --exclude='.dtrash' --exclude='.comments/' ~/Dropbox/Carroll/ /run/media/rob/backup/Dropbox/Carroll
-        rsync -aiv --delete --exclude='.dtrash' --exclude='.comments/' ~/.googleearth/myplaces.kml /run/media/rob/backup/.googleearth
-        rsync -aiv --delete --exclude='.dtrash' --exclude='.comments/' ~/Videos/ /run/media/rob/backup/Videos
-        rsync -aiv --delete --exclude='.dtrash' --exclude='.comments/' ~/.local/bin/ /run/media/rob/backup/.local/bin
-        rsync -aiv --delete --exclude='.dtrash' --exclude='.comments' --exclude='.git' ~/scripts/ /run/media/rob/backup/scripts
+    rsync -aiv --delete --exclude='.dtrash' --exclude='.comments/' ~/Dropbox/Genealogy/ /run/media/rob/backup/Dropbox/Genealogy
+    rsync -aiv --delete --exclude='.dtrash' --exclude='.comments/' ~/Dropbox/Mindmaps/ /run/media/rob/backup/Dropbox/Mindmaps
+    rsync -aiv --exclude='.dtrash' --exclude='.comments/' ~/Dropbox/Notes/ /run/media/rob/backup/Dropbox/Notes
+    rsync -aiv --delete --exclude='.dtrash' --exclude='.comments/' ~/Dropbox/Docs/ /run/media/rob/backup/Dropbox/Docs
+    rsync -aiv --exclude='.dtrash' --exclude='.comments/' --exclude='.obsidian' ~/Dropbox/Notebook/ /run/media/rob/backup/Dropbox/Notebook
+    rsync -aiv --delete --exclude='.dtrash' --exclude='.comments/' ~/Dropbox/Carroll/ /run/media/rob/backup/Dropbox/Carroll
+    rsync -aiv --delete --exclude='.dtrash' --exclude='.comments/' ~/.googleearth/myplaces.kml /run/media/rob/backup/.googleearth
+    rsync -aiv --delete --exclude='.dtrash' --exclude='.comments/' ~/Videos/ /run/media/rob/backup/Videos
+    rsync -aiv --delete --exclude='.dtrash' --exclude='.comments/' ~/.local/bin/ /run/media/rob/backup/.local/bin
+    rsync -aiv --delete --exclude='.dtrash' --exclude='.comments' --exclude='.git' ~/scripts/ /run/media/rob/backup/scripts
 end
 
 function ccache --description "Clears memory buffers and cache"
-	 sudo sh -c 'echo 1 > /proc/sys/vm/drop_caches'
+    sudo sh -c 'echo 1 > /proc/sys/vm/drop_caches'
 end
 
 function cdd
-	cd ~/.config/dotfiles
+    cd ~/.config/dotfiles
 end
 
 function cdt
-	cd ~/Temp
+    cd ~/Temp
 end
 
 function cdn
@@ -39,11 +39,11 @@ function cdn
 end
 
 function cdg
-	cd ~/Dropbox/Genealogy
+    cd ~/Dropbox/Genealogy
 end
 
 function cdm
-	cd ~/Dropbox/Mindmaps
+    cd ~/Dropbox/Mindmaps
 end
 
 function cdc
@@ -59,55 +59,55 @@ function clrc
 end
 
 function dfh
-	df -h
+    df -h
 end
 
 function eN
-	nvim ~/.config/nvim/init.lua
+    nvim ~/.config/nvim/init.lua
 end
 
 function ela --description "Searches folder for file pattern"
-	exa -la $argv
+    eza -la $argv
 end
 
 function extract --description "Expand or extract bundled & compressed files"
-  set --local ext (echo $argv[1] | awk -F. '{print $NF}')
-  switch $ext
-    case tar  # non-compressed, just bundled
-      tar -xvf $argv[1]
-    case gz
-      if test (echo $argv[1] | awk -F. '{print $(NF-1)}') = tar  # tar bundle compressed with gzip
-        tar -zxvf $argv[1]
-      else  # single gzip
-        gunzip $argv[1]
-      end
-    case tgz  # same as tar.gz
-      tar -zxvf $argv[1]
-    case bz2  # tar compressed with bzip2
-      tar -jxvf $argv[1]
-    case rar
-      unrar x $argv[1]
-    case zip
-      unzip $argv[1]
-    case '*'
-      echo "unknown extension"
-  end
+    set --local ext (echo $argv[1] | awk -F. '{print $NF}')
+    switch $ext
+        case tar # non-compressed, just bundled
+            tar -xvf $argv[1]
+        case gz
+            if test (echo $argv[1] | awk -F. '{print $(NF-1)}') = tar # tar bundle compressed with gzip
+                tar -zxvf $argv[1]
+            else # single gzip
+                gunzip $argv[1]
+            end
+        case tgz # same as tar.gz
+            tar -zxvf $argv[1]
+        case bz2 # tar compressed with bzip2
+            tar -jxvf $argv[1]
+        case rar
+            unrar x $argv[1]
+        case zip
+            unzip $argv[1]
+        case '*'
+            echo "unknown extension"
+    end
 end
 
 function gcam
-	git commit -a
+    git commit -a
 end
 
 function gcl
-	git clone $argv
+    git clone $argv
 end
 
 function gp
-	git push
+    git push
 end
 
 function gst
-	git status
+    git status
 end
 
 function jvac
@@ -115,19 +115,19 @@ function jvac
 end
 
 function la
-	exa -alh $argv
+    eza -alh $argv
 end
 
 function later
-        lynx "https://forecast.weather.gov/MapClick.php?CityName=Missoula&state=MT&site=MSO&lat=46.9181&lon=-114.153&unit=0&lg=english&FcstType=text&TextType=1"
+    lynx "https://forecast.weather.gov/MapClick.php?CityName=Missoula&state=MT&site=MSO&lat=46.9181&lon=-114.153&unit=0&lg=english&FcstType=text&TextType=1"
 end
 
 function lg
-	exa -alh --git
+    eza -alh --git
 end
 
 function lt
-	exa -alh --sort=modified
+    eza -alh --sort=modified
 end
 
 function mconv
@@ -147,7 +147,7 @@ function rsemacs --description "Restarts the emacs daemon"
 end
 
 function ytdl
-	yt-dlp --compat-options multistreams -4 $argv
+    yt-dlp --compat-options multistreams -4 $argv
 end
 
 function pacs
@@ -199,25 +199,25 @@ function pami
 end
 
 function wv
-	cd /mnt/rob/Videos
-    exa -l
+    cd /mnt/rob/Videos
+    eza -l
 end
 
 function cleanl
     sudo cp -r /usr/share/locale/en_US /tmp/ &&
-    sudo rm -r /usr/share/locale &&
-    sudo mkdir /usr/share/locale &&
-    sudo cp -r /tmp/en_US /usr/share/locale/
+        sudo rm -r /usr/share/locale &&
+        sudo mkdir /usr/share/locale &&
+        sudo cp -r /tmp/en_US /usr/share/locale/
 end
 
 function icat
-  kitty +kitten icat
+    kitty +kitten icat
 end
 
 function slt
-  systemctl list-timers
+    systemctl list-timers
 end
 
 function rf
-  recoll -t -a $argv
+    recoll -t -a $argv
 end
