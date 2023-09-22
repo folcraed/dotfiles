@@ -36,7 +36,8 @@
 	org-support-shift-select t
 	org-ellipsis " ▼"
 	org-tags-column 0
-	org-use-tag-inheritance nil))
+	org-use-tag-inheritance nil
+	org-hide-leading-stars t))
 
 (use-package org-superstar
   :config
@@ -70,9 +71,11 @@
 
 (setq-default org-display-custom-times t)
 (setq-default org-export-headline-levels 6)
-(setq org-time-stamp-custom-formats '("[%a %b %e %Y]" . "<%a %b %e %Y %H:%M>")
+(setq org-time-stamp-custom-formats '("%a %b %e %Y" . "%a %b %e %Y %H:%M")
       org-agenda-files (quote ("~/Dropbox/Notes/agenda.org"))
-      org-id-link-to-org-use-id 'use-existing)
+      org-id-link-to-org-use-id 'use-existing
+      org-keep-stored-link-after-insertion t
+      org-link-file-path-type 'noabbrev)
 
 (setq org-refile-targets
       '((nil :maxlevel . 2)
