@@ -51,8 +51,8 @@
 (setq-default org-file-apps
     (quote
         ((auto-mode . emacs)
-        ("\\.png\\'" . "sxiv %s")
-        ("\\.jpg\\'" . "sxiv %s")
+        ("\\.png\\'" . "xdg-open %s")
+        ("\\.jpg\\'" . "xdg-open %s")
         ("\\.pdf\\'" . "xdg-open %s"))))
 
 (setq org-directory "~/Dropbox/Notes")
