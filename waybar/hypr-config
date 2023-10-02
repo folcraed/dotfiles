@@ -3,7 +3,7 @@
     "output": "DP-1",
     "position": "top",
     "height": 20,
-    "modules-left": ["wlr/workspaces"],
+    "modules-left": ["hyprland/workspaces"],
     "modules-right": ["idle_inhibitor", "pulseaudio", "cpu", "memory", "temperature", "clock", "tray"],
     "modules-center": ["hyprland/window"],
     "idle_inhibitor": {
@@ -13,16 +13,25 @@
             "deactivated": ""
         }
     },
-    "wlr/workspaces": {
+    "hyprland/workspaces": {
         "active-only": false,
         "all-outputs": true,
         "format": "{icon}",
         "format-icons": {
+            "1": "➀",
+            "2": "➁",
+            "3": "➂",
+            "4": "➃",
+            "5": "➄",
+            "6": "➅",
+            "7": "➆",
+            "8": "➇",
+            "9": "➈",
             "urgent": "◯",
             "active": "⦿",
             "default": "⬤",
-            "sort-by-number": true
-        }
+        },
+        "sort-by-number": true
     },
     "tray": {
         // "icon-size": 16,
@@ -46,7 +55,7 @@
         "critical-threshold": 70,
         "interval": 2,
         "format": "{temperatureC}°C {icon}",
-        "format-icons": ["", "", ""]
+        "format-icons": [""]
     },
     "pulseaudio": {
         "format": "{volume}% {icon}",
@@ -60,24 +69,24 @@
     },
     "hyprland/window": {
         "format": "{}",
-	"separate-outputs": true
+      	"separate-outputs": true
     }
-},
-{
-   "layer": "top",
-   "output": "HDMI-A-1",
-   "position": "top",
-   "height": 20,
-   "modules-left": ["wlr/workspaces"],
-   "modules-right": ["clock"],
-   "modules-center": ["hyprland/window"],
-   "clock": {
-       "format": "{:%I:%M %p}",
-       "tooltip-format": "{:%a %e %b %Y | %I:%M %p}",
-       "format-alt": "{:%a %e %b %Y}"
-   },
-   "hyprland/window": {
-       "format": "{}",
-       "separate-outputs": true
-   }
 }]
+# {
+#    "layer": "top",
+#    "output": "HDMI-A-1",
+#    "position": "top",
+#    "height": 20,
+#    "modules-left": ["wlr/workspaces"],
+#    "modules-right": ["clock"],
+#    "modules-center": ["hyprland/window"],
+#    "clock": {
+#        "format": "{:%I:%M %p}",
+#        "tooltip-format": "{:%a %e %b %Y | %I:%M %p}",
+#        "format-alt": "{:%a %e %b %Y}"
+#    },
+#    "hyprland/window": {
+#        "format": "{}",
+#        "separate-outputs": true
+#    }
+# }]
