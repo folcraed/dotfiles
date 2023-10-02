@@ -26,6 +26,7 @@ font pango:"Roboto" 12
 
 #Set tile gaps
 gaps inner 10
+gaps outer 10
 
 # Set the border for windows
 default_border pixel 1
