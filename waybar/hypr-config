@@ -3,7 +3,7 @@
     "output": "DP-1",
     "position": "top",
     "height": 20,
-    "modules-left": ["hyprland/workspaces"],
+    "modules-left": ["hyprland/workspaces", "wlr/taskbar"],
     "modules-right": ["idle_inhibitor", "pulseaudio", "cpu", "memory", "temperature", "clock", "tray"],
     "modules-center": ["hyprland/window"],
     "idle_inhibitor": {
@@ -23,7 +23,7 @@
             "default": "",
         },
         "persistent_workspaces": {
-            "*": 9
+            "*": 9,
         },
         "sort-by-number": true
     },
@@ -76,21 +76,3 @@
       	"separate-outputs": true
     }
 }]
-# {
-#    "layer": "top",
-#    "output": "HDMI-A-1",
-#    "position": "top",
-#    "height": 20,
-#    "modules-left": ["wlr/workspaces"],
-#    "modules-right": ["clock"],
-#    "modules-center": ["hyprland/window"],
-#    "clock": {
-#        "format": "{:%I:%M %p}",
-#        "tooltip-format": "{:%a %e %b %Y | %I:%M %p}",
-#        "format-alt": "{:%a %e %b %Y}"
-#    },
-#    "hyprland/window": {
-#        "format": "{}",
-#        "separate-outputs": true
-#    }
-# }]
