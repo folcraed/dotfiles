@@ -16,22 +16,26 @@
     "hyprland/workspaces": {
         "active-only": false,
         "all-outputs": true,
-        "format": "{icon}",
+        "format": "{}",
         "format-icons": {
-            "1": "➀",
-            "2": "➁",
-            "3": "➂",
-            "4": "➃",
-            "5": "➄",
-            "6": "➅",
-            "7": "➆",
-            "8": "➇",
-            "9": "➈",
-            "urgent": "◯",
-            "active": "⦿",
-            "default": "⬤",
+            "urgent": "",
+            "active": "",
+            "default": "",
+        },
+        "persistent_workspaces": {
+            "*": 9
         },
         "sort-by-number": true
+    },
+    "wlr/taskbar": {
+        "format": "{icon}",
+        "icon-size": 16,
+        "tooltip-format": "{title}",
+        "on-click": "activate",
+        "on-click-middle": "close",
+        "rewrite": {
+            "Firefox Web Browser": "Firefox",
+        }
     },
     "tray": {
         // "icon-size": 16,
