@@ -2,7 +2,7 @@
     all: unset;
     border: none;
     border-radius: 8px;
-    font-family: Noto Sans;
+    font-family: 'Noto Sans', FontAwesome;
     font-size: 13px;
     min-height: 0;
 }
@@ -29,32 +29,48 @@ tooltip label {
   color: #abb2bf;
 }
 
+#workspaces {
+    background: #5e81ac;
+    margin: 2px 2px 3px 2px;
+    padding: 0px 1px;
+    border-radius: 8px;
+    border:0px;
+    font-weight: bold;
+    font-style: normal;
+    font-size:13px;
+    color:#5e81ac;
+}
+
 #workspaces button {
-    padding: 0 0.7em;
+    padding: 0 0.5em;
+    margin: 2 4 2 4px;
     background-color: #282c34;
     color: #98C379;
-    box-shadow: inset 0 -3px #3b4252;
 }
 
 #workspaces button:hover {
-    background: rgba(0, 0, 0, 0.2);
-    box-shadow: inset 0 -3px #ffffff;
+    background: #98c379;
+    color: #ffffff;
 }
 
 #workspaces button.active {
-    background-color: #5e81ac;
-    color: #f8f8f2;
-    box-shadow: inset 0 -3px #61afef;
+    background-color: #98c379;
+    color: #282c34;
 }
 
 #workspaces button.urgent {
     background-color: #eb4d4b;
 }
 
-#mode {
-    background-color: #d19a66;
-    border-bottom: 3px solid #e5c07b;
-    color: #000000;
+#taskbar {
+    background: #abb2bf;
+    padding:0 0.7em;
+    border-radius: 8px;
+}
+
+#taskbar button {
+    margin:0;
+    padding: 0px 5px 0px 5px;
 }
 
 #clock,
@@ -63,9 +79,9 @@ tooltip label {
 #temperature,
 #pulseaudio,
 #tray,
-#mode,
 #idle_inhibitor,
 #window,
+#taskbar,
 #workspaces {
     margin: 0 4px;
 }
