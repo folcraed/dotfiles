@@ -30,12 +30,10 @@
     "wlr/taskbar": {
         "format": "{icon}",
         "icon-size": 16,
+        "active-first": true,
         "tooltip-format": "{title}",
         "on-click": "activate",
         "on-click-middle": "close",
-        "rewrite": {
-            "Firefox Web Browser": "Firefox",
-        }
     },
     "tray": {
         // "icon-size": 16,
