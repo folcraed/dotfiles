@@ -51,8 +51,8 @@ function cdc
     cd ~/.config
 end
 
-function cdl
-    cd ~/code/learning
+function cdp
+    cd ~/Projects
 end
 
 function clrc
