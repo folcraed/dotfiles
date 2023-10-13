@@ -26,10 +26,9 @@ font pango:"Roboto" 12
 
 #Set tile gaps
 gaps inner 10
-gaps outer 10
 
 # Set the border for windows
-default_border pixel 1
+default_border pixel 2
 default_floating_border pixel 1
 titlebar_border_thickness 0
 titlebar_padding 2
@@ -200,6 +199,11 @@ bindsym $mod+r mode "resize"
 # Read `man 5 sway-bar` for more information about this section.
 bar {
     swaybar_command waybar
+}
+
+input "type:keyboard" {
+    xkb_layout us
+    xkb_options caps:ctrl_modifier
 }
 
 # Focus the main monitor on startup
