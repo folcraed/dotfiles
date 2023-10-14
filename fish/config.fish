@@ -222,3 +222,9 @@ end
 function rf
     recoll -t -a $argv
 end
+
+function gitclean
+    for file in (cat .gitignore)
+        git rm -r --cached $file
+    end
+end
