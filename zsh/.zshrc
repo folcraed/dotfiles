@@ -126,15 +126,12 @@ alias london='TZ="Europe/London" date'
 alias sydney='TZ="Australia/Sydney" date'
 alias now='curl https://tgftp.nws.noaa.gov/data/observations/metar/decoded/KMSO.TXT'
 alias later='lynx "https://forecast.weather.gov/MapClick.php?CityName=Missoula&state=MT&site=MSO&lat=46.9181&lon=-114.153&unit=0&lg=english&FcstType=text&TextType=1"'
-alias dop='falkon "https://radar.weather.gov/lite/N0R/MSX_loop.gif"'
-alias ports='sudo netstat -tulanp'
 alias free='free -th'
 alias dfh='df -h'
 alias xo='xdg-open $f'
 alias ts='tracker search -l 100 $s'
 alias rgl='rg -a -l $s'
 alias rgs='rg -C 2 $s'
-alias rsemacs='systemctl --user restart emacs'
 alias slt='systemctl list-timers'
 alias rf='recoll -t -a $s'
 
@@ -149,6 +146,11 @@ alias gup='git pull'
 alias gcl='git clone'
 
 ## Functions
+gitclean() {
+    for file in `cat .gitignore` ; do
+	git rm -r --cached $file; done
+}
+
 cda() {
   local dir
   dir=$(find ${1:-.} -type d 2> /dev/null | fzf +m) && cd "$dir"
@@ -170,8 +172,8 @@ function calc() {
         if [[ "$result" == *.* ]]; then
                 # improve the output for decimal numbers
                 printf "$result" |
-                sed -e 's/^\./0./'        `# add "0" for cases like ".5"` \
-                    -e 's/^-\./-0./'      `# add "0" for cases like "-.5"`\
+                sed -e 's/^\./0./'        # add "0" for cases like ".5"
+                    -e 's/^-\./-0./'      # add "0" for cases like "-.5"
                     -e 's/0*$//;s/\.$//'   # remove trailing zeros
         else
                 printf "$result"
@@ -188,7 +190,7 @@ function bu2() {
         rsync -aiv --delete --exclude='.dtrash' --exclude='.comments/' ~/Dropbox/Carroll/ /run/media/rob/backup/Dropbox/Carroll
         rsync -aiv --delete --exclude='.dtrash' --exclude='.comments/' ~/.googleearth/myplaces.kml /run/media/rob/backup/.googleearth
         rsync -aiv --delete --exclude='.dtrash' --exclude='.comments/' ~/Videos/ /run/media/rob/backup/Videos
-        rsync -aiv --exclude='.dtrash' --exclude='.comments/' ~/Projects/ /run/media/rob/backup/Projects
+        rsync -aiv --exclude='.git/' --exclude='.comments/' ~/Projects/ /run/media/rob/backup/Projects
         rsync -aiv --delete --exclude='.dtrash' --exclude='.comments/' ~/.local/bin/ /run/media/rob/backup/.local/bin
         rsync -aiv --delete --exclude='.dtrash' --exclude='.comments' --exclude='.git/' ~/scripts/ /run/media/rob/backup/scripts
 }

@@ -28,6 +28,7 @@
         "sort-by-number": true
     },
     "wlr/taskbar": {
+        "all-outputs": true,
         "format": "{icon}",
         "icon-size": 16,
         "active-first": true,
