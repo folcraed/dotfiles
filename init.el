@@ -308,6 +308,49 @@
      ("\\.png\\'" . browse-url-xdg-open)))
 
 ;; ===============================================
+;; Evil mode
+;; ===============================================
+(setq evil-respect-visual-line-mode t)
+(setq evil-want-keybinding nil)
+
+(use-package evil)
+(evil-mode 1)
+(setq evil-split-window-below t
+      evil-split-window-right t)
+
+(use-package evil-collection
+  :after evil
+  :config
+  (evil-collection-init))
+
+(evil-set-leader 'normal (kbd "SPC"))
+(evil-define-key 'normal 'global (kbd ";") 'evil-ex)
+
+(evil-define-key 'normal 'global (kbd "<leader>ba") 'kill-buffer-and-window)
+(evil-define-key 'normal 'global (kbd "<leader>bb") 'consult-buffer)
+(evil-define-key 'normal 'global (kbd "<leader>bk") 'kill-buffer)
+(evil-define-key 'normal 'global (kbd "<leader>bw") 'delete-window)
+(evil-define-key 'normal 'global (kbd "<leader>fa") 'consult-fd)
+(evil-define-key 'normal 'global (kbd "<leader>ff") 'find-file)
+(evil-define-key 'normal 'global (kbd "<leader>fp") 'project-switch-project)
+(evil-define-key 'normal 'global (kbd "<leader>rr") 'consult-register)
+(evil-define-key 'normal 'global (kbd "<leader>rm") 'consult-yank-from-kill-ring)
+(evil-define-key 'normal 'global (kbd "<leader>sg") 'consult-ripgrep)
+(evil-define-key 'normal 'global (kbd "<leader>sh") 'consult-outline)
+(evil-define-key 'normal 'global (kbd "<leader>sp") 'rw/show-org-path)
+(evil-define-key 'normal 'global (kbd "<leader>sr") 'rgrep)
+(evil-define-key 'normal 'global (kbd "<leader>sw") 'consult-line)
+(evil-define-key 'normal 'global (kbd "<leader>wl") 'rotate-frame-anticlockwise)
+(evil-define-key 'normal 'global (kbd "<leader>wr") 'rotate-frame-clockwise)
+
+(which-key-add-key-based-replacements
+  "SPC b" "Buffers"
+  "SPC f" "File"
+  "SPC r" "Registers"
+  "SPC s" "Search"
+  "SPC w" "Window")
+
+;; ===============================================
 ;; Some personal keybindings
 ;; ===============================================
 (global-set-key (kbd "C-c a") 'org-agenda)
@@ -472,7 +515,7 @@
  '(cursor-type '(bar . 2))
  '(org-export-backends '(ascii html md odt))
  '(package-selected-packages
-   '(all-the-icons vertico consult orderless marginalia corfu cape project markdown-mode flyspell-correct rg winum which-key use-package tablist rainbow-mode rainbow-delimiters org-superstar minions magit iedit expand-region doom-themes doom-modeline avy transpose-frame async))
+   '(evil-collection evil all-the-icons vertico consult orderless marginalia corfu cape project markdown-mode flyspell-correct rg winum which-key use-package tablist rainbow-mode rainbow-delimiters org-superstar minions magit iedit expand-region doom-themes doom-modeline avy transpose-frame async))
  '(project-vc-extra-root-markers '("project.txt")))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
