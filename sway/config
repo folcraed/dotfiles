@@ -171,6 +171,7 @@ for_window [app_id="kcalc"] floating enable
 for_window [app_id="gramps"] floating enable
 for_window [class="Sxiv"] floating enable
 for_window [app_id="recoll"] floating enable
+for_window [app_id="org.kde.okular"] floating enable
 
 # Resizing containers:
 mode "resize" {
