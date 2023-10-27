@@ -458,6 +458,21 @@
 (global-set-key (kbd "C-+") 'rw/select-text-in-delimiters)
 
 ;; ==============================================
+;; Sort selection by common delimiter
+;; Found in the EmacsWiki
+;; ==============================================
+(defun sort-words (reverse beg end)
+  "Sort words in region alphabetically, in REVERSE if negative.
+    Prefixed with negative \\[universal-argument], sorts in reverse.
+  
+    The variable `sort-fold-case' determines whether alphabetic case
+    affects the sort order.
+  
+    See `sort-regexp-fields'."
+  (interactive "*P\nr")
+  (sort-regexp-fields reverse "\\w+" "\\&" beg end))
+
+;; ==============================================
 ;; Custom settings
 ;; ==============================================
 (setq custom-safe-themes t)
