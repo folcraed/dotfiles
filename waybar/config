@@ -20,7 +20,6 @@
         "all-outputs": true,
         "format": "{icon}",
         "icon-size": 16,
-        "active-first": true,
         "tooltip-format": "{title}",
         "on-click": "activate",
         "on-click-middle": "close",
