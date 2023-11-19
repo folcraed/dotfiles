@@ -198,11 +198,6 @@ function pami
     pamac install $argv
 end
 
-function wv
-    cd /mnt/rob/Videos
-    eza -l
-end
-
 function cleanl
     sudo cp -r /usr/share/locale/en_US /tmp/ &&
         sudo rm -r /usr/share/locale &&
