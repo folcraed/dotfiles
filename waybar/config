@@ -3,12 +3,9 @@
     "output": "DP-1",
     "position": "top",
     "height": 20,
-    "modules-left": ["sway/workspaces", "sway/mode", "wlr/taskbar"],
-    "modules-center": ["sway/window"],
+    "modules-left": ["hyprland/workspaces", "wlr/taskbar"],
     "modules-right": ["idle_inhibitor", "pulseaudio", "cpu", "memory", "temperature", "clock", "tray"],
-    "sway/mode": {
-        "format": "<span style=\"italic\">{}</span>"
-    },
+    "modules-center": ["hyprland/window"],
     "idle_inhibitor": {
         "format": "{icon}",
         "format-icons": {
@@ -16,10 +13,25 @@
             "deactivated": ""
         }
     },
+    "hyprland/workspaces": {
+        "active-only": false,
+        "all-outputs": true,
+        "format": "{}",
+        "format-icons": {
+            "urgent": "",
+            "active": "",
+            "default": "",
+        },
+        "persistent_workspaces": {
+            "*": 9,
+        },
+        "sort-by-number": true
+    },
     "wlr/taskbar": {
         "all-outputs": true,
         "format": "{icon}",
         "icon-size": 16,
+        "active-first": true,
         "tooltip-format": "{title}",
         "on-click": "activate",
         "on-click-middle": "close",
@@ -46,7 +58,7 @@
         "critical-threshold": 70,
         "interval": 2,
         "format": "{temperatureC}°C {icon}",
-        "format-icons": ["", "", ""]
+        "format-icons": [""]
     },
     "pulseaudio": {
         "format": "{volume}% {icon}",
@@ -57,5 +69,9 @@
             "default": ["", "", ""]
         },
         "on-click": "pavucontrol"
+    },
+    "hyprland/window": {
+        "format": "{}",
+      	"separate-outputs": true
     }
 }]

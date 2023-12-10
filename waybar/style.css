@@ -44,16 +44,16 @@ tooltip label {
 #workspaces button {
     padding: 0 0.5em;
     margin: 2 4 2 4px;
-    background-color: #282c34;
-    color: #98C379;
+    background-color: #abb2bf;
+    color: #282c34;
 }
 
-#workspaces button:hover {
-    background: #98c379;
-    color: #ffffff;
+#workspaces button.empty {
+    background: #282c34;
+    color: #abb2bf;
 }
 
-#workspaces button.focused {
+#workspaces button.active {
     background-color: #98c379;
     color: #282c34;
 }
