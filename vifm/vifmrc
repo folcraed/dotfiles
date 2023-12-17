@@ -219,7 +219,7 @@ filextype */
         \ dolphin %f &,
 
 " Script and config files
-filextype *.lua,*.sh,*.conf,*rc,*.md,*.js,*.py,*.toml,*.go
+filextype *.lua,*.sh,*.conf,*rc,*.md,*.js,*.py,*.toml,*.go,*.css,config
         \ {Open with Nvim}
         \ nvim %f,
         \ {Open with Kate}
