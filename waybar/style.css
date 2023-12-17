@@ -162,6 +162,11 @@ label:focus {
     background-color: #eb4d4b;
 }
 
+#tray menu {
+  background: #282c34;
+  color: #abb2bf;
+}
+
 #idle_inhibitor {
     padding: 0 0.7em;
     background-color: #44475a;
