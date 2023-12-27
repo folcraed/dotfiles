@@ -13,8 +13,8 @@
 (global-hl-line-mode 1)
 (setq read-process-output-max (* 1024 1024))
 (cua-mode t)
-(set-face-attribute 'default nil :font "JetBrainsMono-10")
-(set-face-attribute 'fixed-pitch nil :font "JetBrainsMono-10")
+(set-face-attribute 'default nil :font "JetBrainsMono" :height 105)
+(set-face-attribute 'fixed-pitch nil :font "JetBrainsMono" :height 105)
 
 ;; This is suppose to fix ??? displaying instead
 ;; of line numbers in modeline
