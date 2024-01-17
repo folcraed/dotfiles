@@ -387,13 +387,13 @@
   (interactive)
   (scroll-down 1))
 
-(defun move-line-up ()
+(defun rob-move-line-up ()
   "Move the cursor line up."
   (interactive)
   (transpose-lines 1)
   (forward-line -2))
 
-(defun move-line-down ()
+(defun rob-move-line-down ()
   "Move the cursor line down."
   (interactive)
   (forward-line 1)
@@ -402,8 +402,8 @@
 
 (global-set-key (kbd "M-n") 'rob-scroll-down)
 (global-set-key (kbd "M-p") 'rob-scroll-up)
-(global-set-key (kbd "M-S-<up>") 'move-line-up)
-(global-set-key (kbd "M-S-<down>") 'move-line-down)
+(global-set-key (kbd "M-S-<up>") 'rob-move-line-up)
+(global-set-key (kbd "M-S-<down>") 'rob-move-line-down)
 
 ;; ==============================================
 ;; Narrow or widen whatever I'm working on
