@@ -343,6 +343,7 @@
 (global-set-key (kbd "M-G") 'goto-line)
 (global-set-key (kbd "M-j") 'avy-goto-char-timer)
 (global-set-key (kbd "M-;") 'comment-line)
+(global-set-key (kbd "M-#") 'dictionary-lookup-definition)
 (global-set-key (kbd "C-q") 'delete-frame)
 (define-key org-mode-map (kbd "<C-M-up>") 'org-table-move-row-up)
 (define-key org-mode-map (kbd "<C-M-down>") 'org-table-move-row-down)
