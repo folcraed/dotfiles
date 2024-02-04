@@ -138,20 +138,9 @@ alias gup='git pull'
 alias gcl='git clone'
 
 ## Functions
-gitclean() {
-    for file in `cat .gitignore` ; do
-	git rm -r --cached $file; done
-}
-
-cda() {
-  local dir
-  dir=$(find ${1:-.} -type d 2> /dev/null | fzf +m) && cd "$dir"
-}
-
-
-fo() {
-  IFS=$'\n' files=($(fzf --query="$1" --multi --select-1 --exit-0))
-  [[ -n "$files" ]] && xdg-open "${files[@]}"
+function gitclean() {
+  for file in `cat .gitignore` ; do
+    git rm -r --cached $file; done
 }
 
 # Simple calculator
