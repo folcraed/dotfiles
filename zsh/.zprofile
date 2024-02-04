@@ -12,3 +12,9 @@ export QT_QPA_PLATFORMTHEME="kde"
 # export MICRO_TRUECOLOR=1
 export LYNX_LSS="$HOME/lynx.lss"
 export _JAVA_AWT_WM_NONREPARENTING=1
+export FREEPLANE_JAVA_HOME=/usr/lib/jvm/java-17-openjdk/
+export GOPATH=$HOME/Projects/go
+
+if [ "$XDG_SESSION_TYPE" = "wayland" ]; then
+    export MOZ_ENABLE_WAYLAND=1
+fi
