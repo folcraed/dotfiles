@@ -146,34 +146,34 @@ function gitclean() {
 # Simple calculator
 # Copied from https://github.com/addyosmani/dotfiles/.functions
 function calc() {
-        local result=""
-        result="$(printf "scale=10;$*\n" | bc --mathlib | tr -d '\\\n')"
-        #                       └─ default (when `--mathlib` is used) is 20
-        #
-        if [[ "$result" == *.* ]]; then
-                # improve the output for decimal numbers
-                printf "$result" |
-                sed -e 's/^\./0./'        # add "0" for cases like ".5"
-                    -e 's/^-\./-0./'      # add "0" for cases like "-.5"
-                    -e 's/0*$//;s/\.$//'   # remove trailing zeros
-        else
-                printf "$result"
-        fi
-        printf "\n"
+  local result=""
+  result="$(printf "scale=10;$*\n" | bc --mathlib | tr -d '\\\n')"
+  #                       └─ default (when `--mathlib` is used) is 20
+  #
+  if [[ "$result" == *.* ]]; then
+    # improve the output for decimal numbers
+    printf "$result" |
+    sed -e 's/^\./0./'        # add "0" for cases like ".5"
+        -e 's/^-\./-0./'      # add "0" for cases like "-.5"
+        -e 's/0*$//;s/\.$//'   # remove trailing zeros
+  else
+    printf "$result"
+  fi
+  printf "\n"
 }
 
 function bu2() {
-        rsync -aiv --delete --exclude='.dtrash' --exclude='.comments/' ~/Dropbox/Genealogy/ /run/media/rob/backup/Dropbox/Genealogy
-        rsync -aiv --delete --exclude='.dtrash' --exclude='.comments/' ~/Dropbox/Mindmaps/ /run/media/rob/backup/Dropbox/Mindmaps
-        rsync -aiv --exclude='.dtrash' --exclude='.comments/' ~/Dropbox/Notes/ /run/media/rob/backup/Dropbox/Notes
-        rsync -aiv --delete --exclude='.dtrash' --exclude='.comments/' ~/Dropbox/Docs/ /run/media/rob/backup/Dropbox/Docs
-        rsync -aiv --delete --exclude='.dtrash' --exclude='.comments/' ~/Dropbox/Carroll/ /run/media/rob/backup/Dropbox/Carroll
-        rsync -aiv --delete --exclude='.dtrash' --exclude='.comments/' ~/.googleearth/myplaces.kml /run/media/rob/backup/.googleearth
+  rsync -aiv --delete --exclude='.dtrash' --exclude='.comments/' ~/Dropbox/Genealogy/ /run/media/rob/backup/Dropbox/Genealogy
+  rsync -aiv --delete --exclude='.dtrash' --exclude='.comments/' ~/Dropbox/Mindmaps/ /run/media/rob/backup/Dropbox/Mindmaps
+  rsync -aiv --exclude='.dtrash' --exclude='.comments/' ~/Dropbox/Notes/ /run/media/rob/backup/Dropbox/Notes
+  rsync -aiv --delete --exclude='.dtrash' --exclude='.comments/' ~/Dropbox/Docs/ /run/media/rob/backup/Dropbox/Docs
+  rsync -aiv --delete --exclude='.dtrash' --exclude='.comments/' ~/Dropbox/Carroll/ /run/media/rob/backup/Dropbox/Carroll
+  rsync -aiv --delete --exclude='.dtrash' --exclude='.comments/' ~/.googleearth/myplaces.kml /run/media/rob/backup/.googleearth
 	rsync -aiv --delete ~/.local/share/marble/bookmarks/bookmarks.kml /run/media/rob/backup/marble
-        rsync -aiv --delete --exclude='.dtrash' --exclude='.comments/' ~/Videos/ /run/media/rob/backup/Videos
-        rsync -aiv --exclude='.git/' --exclude='.comments/' ~/Projects/ /run/media/rob/backup/Projects
-        rsync -aiv --delete --exclude='.dtrash' --exclude='.comments/' ~/.local/bin/ /run/media/rob/backup/.local/bin
-        rsync -aiv --delete --exclude='.dtrash' --exclude='.comments' --exclude='.git/' ~/scripts/ /run/media/rob/backup/scripts
+  rsync -aiv --delete --exclude='.dtrash' --exclude='.comments/' ~/Videos/ /run/media/rob/backup/Videos
+  rsync -aiv --exclude='.git/' --exclude='.comments/' ~/Projects/ /run/media/rob/backup/Projects
+  rsync -aiv --delete --exclude='.dtrash' --exclude='.comments/' ~/.local/bin/ /run/media/rob/backup/.local/bin
+  rsync -aiv --delete --exclude='.dtrash' --exclude='.comments' --exclude='.git/' ~/scripts/ /run/media/rob/backup/scripts
 }
 
 ## Initialize Starship prompt
