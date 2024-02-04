@@ -3,3 +3,5 @@
 -- Add any additional options here
 vim.opt.linebreak = true
 vim.opt.autochdir = true
+vim.opt.shiftwidth = 4
+vim.opt.tabstop = 4
