@@ -386,6 +386,7 @@
 	      size-indication-mode 1
 	      shr-max-image-proportion 0.9
 	      shr-image-animate nil
+	      tab-width 4
 	      tab-always-indent 'complete)
 
 (add-hook 'prog-mode-hook #'display-line-numbers-mode)
