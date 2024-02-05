@@ -225,7 +225,7 @@ filextype *.lua,*.sh,*.conf,*rc,*.md,*.js,*.py,*.toml,*.go,*.css,config
         \ {Open with Kate}
         \ kate %f &,
         \ {Open with Sublime}
-        \ subl %f &,
+        \ subl -n %f &,
         \ {Open with Emacs}
         \ emacs -nw %f,
         \ {open with Okular}
