@@ -1,15 +1,19 @@
 return {
-
   {
-    "navarasu/onedark.nvim",
+    "olimorris/onedarkpro.nvim",
     lazy = true,
-    opts = { transparent = true },
+    config = function()
+      require("onedarkpro").setup({
+        options = {
+          transparency = true,
+        },
+        styles = {
+          comments = "italic",
+          keywords = "italic",
+          functions = "bold, italic",
+          methods = "italic",
+        },
+      })
+    end,
   },
-
-  -- {
-  --   "LazyVim/LazyVim",
-  --   opts = {
-  --     colorscheme = "onedark",
-  --   },
-  -- },
 }
