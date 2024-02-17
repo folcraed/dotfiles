@@ -23,7 +23,7 @@ symbol = ' '
 symbol = ' '
 
 [golang]
-symbol = ' '
+symbol = '  '
 
 [nodejs]
 symbol = ' '
