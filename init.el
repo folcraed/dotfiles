@@ -232,7 +232,7 @@
   :bind (;; C-c bindings (mode-specific-map)
          ("C-c d" . consult-mode-command)
          ;; Other custom bindings
-         ;; ("<help> a" . consult-apropos)            ;; orig. apropos-command
+         ;; ("C-h a" . consult-apropos)            ;; orig. apropos-command
          :map isearch-mode-map
          ("M-e" . consult-isearch-history))         ;; orig. isearch-edit-string
   :hook (completion-list-mode . consult-preview-at-point-mode)
@@ -250,26 +250,32 @@
             (car (project-root project))))))
 
 (use-package marginalia
+  :after vertico
   :init
   (marginalia-mode))
 
 (use-package corfu
   :custom
   (corfu-auto t)
+  (corfu-auto-prefix 3)
+  (corfu-auto-delay 0.5)
+  (corfu-popupinfo-mode t)
+  (corfu-popupinfo-delay 0.5)
+  (corfu-preview-current nil)
+  (completion-ignore-case t)
+  (tab-always-indent 'complete)
   :bind
   (:map corfu-map
 	("RET" . nil))
   :init
   (global-corfu-mode))
 
-(setq corfu-auto-delay 0.5
-      completion-styles '(orderless basic)
-      corfu-preview-current t)
-
 (use-package cape
+  :after corfu
   :bind ("C-c p f" . cape-file)
   :init
   (add-to-list 'completion-at-point-functions #'cape-file)
+  (add-to-list 'completion-at-point-functions #'cape-dict)
   (add-to-list 'completion-at-point-functions #'cape-dabbrev))
 
 ;; ==============================================
@@ -385,14 +391,15 @@
 	      size-indication-mode 1
 	      shr-max-image-proportion 0.9
 	      shr-image-animate nil
-	      tab-width 4
-	      tab-always-indent 'complete)
+	      tab-width 4)
 
 (add-hook 'prog-mode-hook #'display-line-numbers-mode)
 (add-hook 'minibuffer-setup-hook
 	  (lambda () (setq truncate-lines nil)))
 
 (show-paren-mode 1)
+(electric-indent-mode -1)
+(electric-pair-mode 1)
 
 ;; ==============================================
 ;; Some line movement keys I find easier
