@@ -524,5 +524,6 @@
 
 ;; Some package was overriding this, so put it last
 (put 'narrow-to-region 'disabled nil)
+(setq gc-cons-threshold (* 2 1000 1000))
 (provide 'init)
 ;;; init.el ends here.
