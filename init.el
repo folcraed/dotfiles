@@ -95,7 +95,7 @@
 	(error "Not in org link!")
       (string-match org-link-bracket-re text)
       (kill-new (substring text (match-beginning 1) (match-end 1))))))
-(global-set-key (kbd "C-c e") 'my-org-export-url)
+(keymap-global-set "C-c e" 'my-org-export-url)
 
 ;; ==============================================
 ;; Get Org to show heading path so it can be
@@ -115,7 +115,7 @@
   (let ((current-prefix-arg '(4))) ;; emulates C-u
     (call-interactively 'org-insert-link)))
 
-(define-key org-mode-map (kbd "C-c f") 'rw/insert-file-link)
+(keymap-set org-mode-map "C-c f" 'rw/insert-file-link)
 
 ;; Use the shortcuts for source and quote blocks
 (require 'org-tempo)
@@ -140,7 +140,7 @@
 
 (use-package expand-region
   :config
-  (global-set-key (kbd "C-=") 'er/expand-region))
+  (keymap-global-set "C-=" 'er/expand-region))
 
 (use-package rainbow-delimiters)
 (add-hook 'prog-mode-hook #'rainbow-delimiters-mode)
@@ -316,50 +316,50 @@
 ;; ===============================================
 ;; Some personal keybindings
 ;; ===============================================
-(global-set-key (kbd "C-c k") 'consult-yank-from-kill-ring)
-(global-set-key (kbd "C-c wb") 'rotate-frame-anticlockwise)
-(global-set-key (kbd "C-c wc") 'rotate-frame-clockwise)
-(global-set-key (kbd "C-c ws") 'rotate-frame)
-(global-set-key (kbd "<f6>") 'flyspell-buffer)
-(global-set-key (kbd "<f7>") 'flyspell-mode)
-(global-set-key (kbd "<f8>") 'flyspell-region)
-(global-set-key (kbd "C-c w") 'flyspell-correct-wrapper)
-(global-set-key (kbd "C-c x") 'kill-buffer-and-window)
-(global-set-key (kbd "M-s g") 'consult-ripgrep)
-(global-set-key (kbd "M-s b") 'rgrep)
-(global-set-key (kbd "M-s f") 'consult-fd)
-(global-set-key (kbd "M-f") 'consult-line)
-(global-set-key (kbd "C-p") 'find-file)
-(global-set-key (kbd "C-b") 'consult-buffer)
-(global-set-key (kbd "M-'") 'push-mark-command)
-(global-set-key (kbd "M-m") 'consult-mark)
-(global-set-key (kbd "M-b") 'consult-register-store)
-(global-set-key (kbd "M-g b") 'consult-register)
-(global-set-key (kbd "M-l") 'markdown-follow-link-at-point)
-(global-set-key (kbd "M-o") 'consult-outline)
-(global-set-key (kbd "M-g g") 'avy-goto-line)
-(global-set-key (kbd "M-G") 'goto-line)
-(global-set-key (kbd "M-j") 'avy-goto-char-timer)
-(global-set-key (kbd "M-;") 'comment-line)
-(global-set-key (kbd "M-#") 'dictionary-lookup-definition)
-(global-set-key (kbd "C-q") 'delete-frame)
-(define-key org-mode-map (kbd "C-c a") 'org-agenda)
-(define-key org-mode-map (kbd "C-c c") 'org-capture)
-(define-key org-mode-map (kbd "C-c i") 'org-table-insert-row)
-(define-key org-mode-map (kbd "C-c p") 'rw/show-org-path)
-(define-key org-mode-map (kbd "C-c t") 'org-time-stamp)
-(define-key org-mode-map (kbd "C-c y") 'org-store-link)
-(define-key org-mode-map (kbd "C-o") 'org-open-at-point)
-(define-key org-mode-map (kbd "<C-M-up>") 'org-table-move-row-up)
-(define-key org-mode-map (kbd "<C-M-down>") 'org-table-move-row-down)
-(define-key org-mode-map (kbd "<C-M-S-left>") nil)
-(define-key org-mode-map (kbd "<C-M-S-right>") nil)
-(global-set-key (kbd "<C-M-S-left>") 'shrink-window-horizontally)
-(global-set-key (kbd "<C-M-S-right>") 'enlarge-window-horizontally)
-(global-set-key (kbd "<C-M-S-down>") 'shrink-window)
-(global-set-key (kbd "<C-M-S-up>") 'enlarge-window)
-(global-set-key (kbd "<escape>") 'keyboard-escape-quit)
-(define-key dired-mode-map (kbd "C-c o") 'dired-open-file)
+(keymap-global-set "C-c k" 'consult-yank-from-kill-ring)
+(keymap-global-set "C-c w b" 'rotate-frame-anticlockwise)
+(keymap-global-set "C-c w c" 'rotate-frame-clockwise)
+(keymap-global-set "C-c w s" 'rotate-frame)
+(keymap-global-set "<f6>" 'flyspell-buffer)
+(keymap-global-set "<f7>" 'flyspell-mode)
+(keymap-global-set "<f8>" 'flyspell-region)
+(keymap-global-set "C-c w" 'flyspell-correct-wrapper)
+(keymap-global-set "C-c x" 'kill-buffer-and-window)
+(keymap-global-set "M-s g" 'consult-ripgrep)
+(keymap-global-set "M-s b" 'rgrep)
+(keymap-global-set "M-s f" 'consult-fd)
+(keymap-global-set "M-f" 'consult-line)
+(keymap-global-set "C-p" 'find-file)
+(keymap-global-set "C-b" 'consult-buffer)
+(keymap-global-set "M-'" 'push-mark-command)
+(keymap-global-set "M-m" 'consult-mark)
+(keymap-global-set "M-b" 'consult-register-store)
+(keymap-global-set "M-g b" 'consult-register)
+(keymap-global-set "M-l" 'markdown-follow-link-at-point)
+(keymap-global-set "M-o" 'consult-outline)
+(keymap-global-set "M-g g" 'avy-goto-line)
+(keymap-global-set "M-G" 'goto-line)
+(keymap-global-set "M-j" 'avy-goto-char-timer)
+(keymap-global-set "M-;" 'comment-line)
+(keymap-global-set "M-#" 'dictionary-lookup-definition)
+(keymap-global-set "C-q" 'delete-frame)
+(keymap-set org-mode-map "C-c a" 'org-agenda)
+(keymap-set org-mode-map "C-c c" 'org-capture)
+(keymap-set org-mode-map "C-c i" 'org-table-insert-row)
+(keymap-set org-mode-map "C-c p" 'rw/show-org-path)
+(keymap-set org-mode-map "C-c t" 'org-time-stamp)
+(keymap-set org-mode-map "C-c y" 'org-store-link)
+(keymap-set org-mode-map "C-o" 'org-open-at-point)
+(keymap-set org-mode-map "C-M-<up>" 'org-table-move-row-up)
+(keymap-set org-mode-map "C-M-<down>" 'org-table-move-row-down)
+(keymap-set org-mode-map "C-M-S-<left>" nil)
+(keymap-set org-mode-map "C-M-S-<right>" nil)
+(keymap-global-set "C-M-S-<left>" 'shrink-window-horizontally)
+(keymap-global-set "C-M-S-<right>" 'enlarge-window-horizontally)
+(keymap-global-set "C-M-S-<down>" 'shrink-window)
+(keymap-global-set "C-M-S-<up>" 'enlarge-window)
+(keymap-global-set "<escape>" 'keyboard-escape-quit)
+(keymap-set dired-mode-map "C-c o" 'dired-open-file)
 
 ;; ==============================================
 ;;  Sanity settings
@@ -408,10 +408,10 @@
   (transpose-lines 1)
   (forward-line -1))
 
-(global-set-key (kbd "M-n") 'rob-scroll-down)
-(global-set-key (kbd "M-p") 'rob-scroll-up)
-(global-set-key (kbd "M-S-<up>") 'rob-move-line-up)
-(global-set-key (kbd "M-S-<down>") 'rob-move-line-down)
+(keymap-global-set "M-n" 'rob-scroll-down)
+(keymap-global-set "M-p" 'rob-scroll-up)
+(keymap-global-set "M-S-<up>" 'rob-move-line-up)
+(keymap-global-set "M-S-<down>" 'rob-move-line-down)
 
 ;; ==============================================
 ;; Narrow or widen whatever I'm working on
@@ -430,7 +430,7 @@
 		(org-narrow-to-block))
 	       (t (org-narrow-to-subtree))))
 	(t (narrow-to-defun))))
-(global-set-key (kbd "<f5>") #'narrow-or-widen-dwim)
+(keymap-global-set "<f5>" #'narrow-or-widen-dwim)
 
 ;; ==============================================
 ;; Move to the new window when opened
@@ -441,7 +441,7 @@
   (split-window-below)
   (balance-windows)
   (other-window 1))
-(global-set-key (kbd "C-x 2") 'split-and-follow-horizontally)
+(keymap-global-set "C-x 2" 'split-and-follow-horizontally)
 
 (defun split-and-follow-vertically ()
     "Split the window vertically and go to new split."
@@ -449,7 +449,7 @@
   (split-window-right)
   (balance-windows)
   (other-window 1))
-(global-set-key (kbd "C-x 3") 'split-and-follow-vertically)
+(keymap-global-set "C-x 3" 'split-and-follow-vertically)
 
 ;; ==============================================
 ;; Select all inside delimiters Vim-like
@@ -463,7 +463,7 @@
     (skip-chars-forward "^<>)]}\"'")
     (setq end (point))
     (set-mark start)))
-(global-set-key (kbd "C-+") 'rw/select-text-in-delimiters)
+(keymap-global-set "C-+" 'rw/select-text-in-delimiters)
 
 ;; ==============================================
 ;; Sort selection by common delimiter
@@ -489,7 +489,7 @@
 ;; Custom settings
 ;; ==============================================
 (setq custom-safe-themes t)
-(load-theme 'doom-one t)
+(load-theme 'doom-one-light t)
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
