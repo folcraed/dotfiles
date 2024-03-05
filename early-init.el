@@ -11,3 +11,5 @@
 (setq ring-bell-function 'ignore)
 (setq frame-title-format "Emacs")
 (setq icon-title-format "Emacs")
+(add-to-list 'default-frame-alist '(width . 176))
+(add-to-list 'default-frame-alist '(height . 60))
