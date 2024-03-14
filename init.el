@@ -328,6 +328,7 @@
 (keymap-global-set "M-s g" 'consult-ripgrep)
 (keymap-global-set "M-s b" 'rgrep)
 (keymap-global-set "M-s f" 'consult-fd)
+(keymap-global-set "M-s s" 'consult-line-multi)
 (keymap-global-set "M-f" 'consult-line)
 (keymap-global-set "C-p" 'find-file)
 (keymap-global-set "C-b" 'consult-buffer)
@@ -338,6 +339,7 @@
 (keymap-global-set "M-l" 'markdown-follow-link-at-point)
 (keymap-global-set "M-o" 'consult-outline)
 (keymap-global-set "M-g g" 'avy-goto-line)
+(keymap-global-set "M-g l" 'consult-goto-line)
 (keymap-global-set "M-G" 'goto-line)
 (keymap-global-set "M-j" 'avy-goto-char-timer)
 (keymap-global-set "M-;" 'comment-line)
@@ -372,6 +374,7 @@
 	      size-indication-mode 1
 	      shr-max-image-proportion 0.9
 	      shr-image-animate nil
+		  case-fold-search nil
 	      tab-width 4)
 
 (add-hook 'prog-mode-hook #'display-line-numbers-mode)
