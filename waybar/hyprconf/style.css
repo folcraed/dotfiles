@@ -9,7 +9,7 @@
 
 window#waybar {
     background: rgba(40, 44, 52, 0.1);
-    color: #e5c07b;
+    color: #9ece6a;
     transition-property: background-color;
     transition-duration: .5s;
     border-radius: 0;
@@ -25,12 +25,12 @@ tooltip {
 }
 
 tooltip label {
-  background: #282c34;
-  color: #abb2bf;
+  background: #15161e;
+  color: #c0caf5;
 }
 
 #workspaces {
-    background: #5e81ac;
+    background: #7aa2f7;
     margin: 2px 2px 3px 2px;
     padding: 0px 1px;
     border-radius: 8px;
@@ -38,32 +38,32 @@ tooltip label {
     font-weight: bold;
     font-style: normal;
     font-size:13px;
-    color:#5e81ac;
+    color:#7aa2f7;
 }
 
 #workspaces button {
     padding: 0 0.5em;
     margin: 2 4 2 4px;
-    background-color: #abb2bf;
-    color: #282c34;
+    background-color: #c0caf5;
+    color: #15161e;
 }
 
 #workspaces button.empty {
-    background: #282c34;
-    color: #abb2bf;
+    background-color: #15161e;
+    color: #c0caf5;
 }
 
 #workspaces button.active {
-    background-color: #98c379;
-    color: #282c34;
+    background-color: #9ece6a;
+    color: #15161e;
 }
 
 #workspaces button.urgent {
-    background-color: #eb4d4b;
+    background-color: #f7768e;
 }
 
 #taskbar {
-    background: #abb2bf;
+    background: #c0caf5;
     padding:0 0.7em;
     border-radius: 8px;
 }
@@ -97,52 +97,52 @@ tooltip label {
 
 #clock {
     padding: 0 0.7em;
-    background-color: #f1fa8c;
+    background-color: #e0af68;
     color: #000000;
 }
 
 label:focus {
-    background-color: #d19a66;
+    background-color: #e0af68;
 }
 
 #cpu {
     padding: 0 0.7em;
-    background-color: #e5c07b;
+    background-color: #7aa2f7;
     color: #000000;
 }
 
 #memory {
     padding: 0 0.7em;
-    background-color: #98c379;
+    background-color: #9ece61;
     color: #000000;
 }
 
 #pulseaudio {
     padding: 0 0.7em;
-    background-color: #bd93f9;
+    background-color: #bb9af7;
     color: #000000;
 }
 
 #pulseaudio.muted {
     padding: 0 0.7em;
-    background-color: #44475a;
-    color: #f8f8f2;
+    background-color: #414868;
+    color: #a9b1d6;
 }
 
 #temperature {
     padding: 0 0.7em;
-    background-color: #88c0d0;
+    background-color: #7dcfff;
     color: #000000;
 }
 
 #temperature.critical {
     padding: 0 0.7em;
-    background-color: #ff5555;
+    background-color: #f7768e;
     color: #000000;
 }
 
 #tray {
-    background-color: #61afef;
+    background-color: #7aa2f7;
 }
 
 #tray > .passive {
@@ -151,23 +151,23 @@ label:focus {
 
 #tray > .needs-attention {
     -gtk-icon-effect: highlight;
-    background-color: #eb4d4b;
+    background-color: #f7768e;
 }
 
 #tray menu {
-  background: #282c34;
-  color: #abb2bf;
+  background: #15161e;
+  color: #c0caf5;
 }
 
 #idle_inhibitor {
     padding: 0 0.7em;
-    background-color: #44475a;
-    color: #f8f8f2;
+    background-color: #414868;
+    color: #c0caf5;
 }
 
 #idle_inhibitor.activated {
     padding: 0 0.7em;
-    background-color: #f8f8f2;
-    color: #44475a;
+    background-color: #c0caf5;
+    color: #414868;
 }
 
