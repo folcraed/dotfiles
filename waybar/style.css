@@ -8,8 +8,8 @@
 }
 
 window#waybar {
-    background: rgba(40, 44, 52, 0.1);
-    color: #9ece6a;
+    background: rgba(21, 22, 30, 0.1);
+    color: #c0caf5;
     transition-property: background-color;
     transition-duration: .5s;
     border-radius: 0;
@@ -20,8 +20,8 @@ window#waybar.hidden {
 }
 
 tooltip {
-  background: rgba(43, 48, 59, 0.5);
-  border: 1px solid rgba(100, 114, 125, 0.5);
+  background: rgba(21, 22, 30, 0.5);
+  border: 1px solid rgba(187, 154, 247, 0.5);
 }
 
 tooltip label {
