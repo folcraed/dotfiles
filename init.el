@@ -349,6 +349,7 @@
 (keymap-set org-mode-map "C-c a" 'org-agenda)
 (keymap-set org-mode-map "C-c c" 'org-capture)
 (keymap-set org-mode-map "C-c i" 'org-table-insert-row)
+(keymap-set org-mode-map "C-c m" 'org-emphasize)
 (keymap-set org-mode-map "C-c p" 'rw/show-org-path)
 (keymap-set org-mode-map "C-c t" 'org-time-stamp)
 (keymap-set org-mode-map "C-c y" 'org-store-link)
