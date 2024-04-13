@@ -82,6 +82,15 @@
 	(org-agenda-files :maxlevel . 2)))
 
 ;; ==============================================
+;; Langtool grammar checking for Org files
+;; ==============================================
+(use-package langtool)
+(setq langtool-java-bin "/usr/lib/jvm/java-21-openjdk/bin/java"
+	  langtool-bin "/usr/bin/languagetool"
+	  langtool-default-language "en")
+(require 'langtool)
+
+;; ==============================================
 ;; Sane copy org link to clipboard function
 ;; ==============================================
 (defun my-org-export-url ()
@@ -505,7 +514,7 @@
  '(cursor-type '(bar . 2))
  '(org-export-backends '(ascii html md odt))
  '(package-selected-packages
-   '(all-the-icons vertico consult orderless marginalia corfu cape project markdown-mode flyspell-correct rg winum which-key use-package tablist rainbow-mode rainbow-delimiters org-superstar minions magit iedit expand-region doom-themes doom-modeline avy transpose-frame async))
+   '(langtool all-the-icons vertico consult orderless marginalia corfu cape project markdown-mode flyspell-correct rg winum which-key use-package tablist rainbow-mode rainbow-delimiters org-superstar minions magit iedit expand-region doom-themes doom-modeline avy transpose-frame async))
  '(project-vc-extra-root-markers '("project.txt")))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
