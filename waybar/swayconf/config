@@ -9,6 +9,12 @@
     "sway/mode": {
         "format": "<span style=\"italic\">{}</span>"
     },
+    "sway/workspaces": {
+        "all-outputs": true
+    },
+    "sway/window": {
+        "all-outputs": true
+    },
     "idle_inhibitor": {
         "format": "{icon}",
         "format-icons": {
@@ -23,7 +29,7 @@
         "active-first": true,
         "tooltip-format": "{title}",
         "on-click": "activate",
-        "on-click-middle": "close",
+        "on-click-middle": "close"
     },
     "tray": {
         // "icon-size": 16,
