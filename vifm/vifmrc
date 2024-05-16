@@ -268,7 +268,7 @@ nnoremap yw :!echo %c:p | wl-copy %i<cr>
 " Mappings for faster renaming
 nnoremap I cw<c-a>
 nnoremap cc cw<c-u>
-nnoremap A cw
+nnoremap rf cW<c-u>
 
 " Open console in current directory
 nnoremap ,t :!xterm &<cr>
