@@ -191,7 +191,7 @@
 	doom-modeline-env-enable-python t
 	doom-modeline-env-enable-go t
 	doom-modeline-env-version t
-	column-number-mode 1))
+	column-number-mode t))
 (minions-mode 1)
 
 (use-package doom-themes
