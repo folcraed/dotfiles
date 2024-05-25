@@ -7,3 +7,5 @@ nvim/README.md
 nvim/lua/plugins/example.lua
 nvim/lazy-lock.json
 nvim/lazyvim.json
+waybar/config
+waybar/style.css
