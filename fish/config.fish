@@ -63,6 +63,10 @@ function dfh
     df -h
 end
 
+function ecn --description "Runs Emacsclient in terminal"
+    emacsclient -nw
+end
+
 function eN
     nvim ~/.config/nvim/init.lua
 end
