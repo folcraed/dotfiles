@@ -57,7 +57,7 @@ default_orientation auto
     bindsym $mod+Shift+e exit
 
     # Take a screenshot
-    bindsym $mod+Shift+p exec grim -g "$(slurp -d)" $(xdg-user-dir PICTURES)/$(date +'%s.png')
+    bindsym $mod+Shift+p exec grim -g "$(slurp -d)" ~/Temp/$(date +'%s.png')
 
     # Show clipboard history in rofi
     bindsym $mod+c exec exec cliphist list | rofi -dmenu | cliphist decode | wl-copy
@@ -172,6 +172,7 @@ for_window [app_id="gramps"] floating enable
 for_window [class="Sxiv"] floating enable
 for_window [app_id="recoll"] floating enable
 for_window [app_id="org.kde.okular"] floating enable
+for_window [app_id="org.kde.gwenview"] floating enable
 
 # Resizing containers:
 mode "resize" {
