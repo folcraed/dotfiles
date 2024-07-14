@@ -160,6 +160,8 @@ fileviewer *.jpg,*.png,*jpeg
         \kitty +kitten icat --transfer-mode=file --place=%pwx%ph@%pxx%py --clear
 
 filextype *.bmp,*.jpg,*.jpeg,*.png,*.gif,*.xpm,*tif,*.tiff,*.svg
+        \ {View in swayimg}
+        \ swayimg %c &,
         \ {View in sxiv}
         \ sxiv %c &,
         \ {View in gwenview}
