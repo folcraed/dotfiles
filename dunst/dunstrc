@@ -14,7 +14,7 @@
     separator_color = frame
     sort = yes
     idle_threshold = 120
-    font = Hack 10
+    font = "JetBrains Mono 10"
     line_height = 0
     markup = full
     format = "<b>%s</b>\n%b"
@@ -28,6 +28,8 @@
     icon_position = left
     max_icon_size = 32
     icon_path = /usr/share/icons/breeze-dark/status/16/:/usr/share/icons/breeze-dark/devices/16/
+    corners = all
+    corner_radius = 10
     sticky_history = yes
     history_length = 20
     browser = xdg-open
