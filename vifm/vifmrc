@@ -162,10 +162,8 @@ fileviewer *.jpg,*.png,*jpeg
 filextype *.bmp,*.jpg,*.jpeg,*.png,*.gif,*.xpm,*tif,*.tiff,*.svg
         \ {View in sxiv}
         \ sxiv %c &,
-        \ {View in feh}
-        \ feh -g 640x640 %c &,
         \ {View in gwenview}
-        \ gwenview %c,
+        \ gwenview %c &,
 
 " MD5
 filetype *.md5
