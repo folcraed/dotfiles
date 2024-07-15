@@ -332,6 +332,12 @@
      ("\\.png\\'" . browse-url-xdg-open)))
 
 ;; ===============================================
+;; Programming needs
+;; ===============================================
+(use-package go-mode)
+(add-to-list 'auto-mode-alist '("\\.go\\'" . go-mode))
+
+;; ===============================================
 ;; Some personal keybindings
 ;; ===============================================
 (keymap-global-set "C-c k" 'consult-yank-from-kill-ring)
@@ -521,8 +527,9 @@
  '(cursor-type '(bar . 2))
  '(org-export-backends '(ascii html md odt))
  '(package-selected-packages
-   '(ox-gfm langtool all-the-icons vertico consult orderless marginalia corfu cape project markdown-mode flyspell-correct rg winum which-key use-package tablist rainbow-mode rainbow-delimiters org-superstar minions magit iedit expand-region doom-themes doom-modeline avy transpose-frame async))
- '(project-vc-extra-root-markers '("project.txt")))
+   '(go-mode ox-gfm langtool all-the-icons vertico consult orderless marginalia corfu cape project markdown-mode flyspell-correct rg winum which-key use-package tablist rainbow-mode rainbow-delimiters org-superstar minions magit iedit expand-region doom-themes doom-modeline avy transpose-frame async))
+ '(project-vc-extra-root-markers '("project.txt"))
+ '(safe-local-variable-values '((flycheck-checker . python-flake8))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
