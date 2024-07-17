@@ -93,8 +93,7 @@
 ;; Langtool grammar checking for Org files
 ;; ==============================================
 (use-package langtool)
-(setq langtool-java-bin "/usr/lib/jvm/java-21-openjdk/bin/java"
-	  langtool-bin "/usr/bin/languagetool"
+(setq langtool-bin "/usr/bin/languagetool"
 	  langtool-default-language "en")
 (require 'langtool)
 
