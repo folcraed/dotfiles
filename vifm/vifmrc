@@ -95,20 +95,16 @@ command! FZFfind :set noquickview | :execute 'goto' fnameescape(term('find | fzf
 " The %a macro is ignored.  To use a % you must put %%.
 
 " Pdf
-filextype *.pdf okular %c &, evince %c
+filextype *.pdf okular %c &
 fileviewer *.pdf pdftotext -nopgbrk %c -
 
 " PostScript
 filextype *.ps,*.eps,*.ps.gz
-        \ {View in evince}
-        \ evince %f,
         \ {View in okular}
         \ okular %f %i &,
 
 " Djvu
 filextype *.djvu
-        \ {View in evince}
-        \ evince %f,
         \ {View in okular}
         \ okular %f,
 
@@ -129,8 +125,6 @@ filextype *.avi,*.mp4,*.wmv,*.dat,*.3gp,*.ogv,*.mkv,*.mpg,*.mpeg,*.vob,
         \ mpv %f &,
         \ {View using ffplay}
         \ ffplay -fs %f,
-        \ {View using Dragon}
-        \ dragon %f:p,
         \ {View using vlc}
         \ vlc %f,
 fileviewer *.avi,*.mp4,*.wmv,*.dat,*.3gp,*.ogv,*.mkv,*.mpg,*.mpeg,*.vob,
@@ -140,10 +134,10 @@ fileviewer *.avi,*.mp4,*.wmv,*.dat,*.3gp,*.ogv,*.mkv,*.mpg,*.mpeg,*.vob,
 
 " Web
 filextype *.html,*.htm
-	\ {Open with Vivaldi}
-	\ vivaldi-stable %f &,
         \ {Open with firefox}
         \ firefox %f &,
+        \ {Open with Vivaldi}
+        \ vivaldi-stable %f &,
 fileviewer *.html,*.htm lynx %f
 
 " Object
@@ -160,10 +154,10 @@ fileviewer *.jpg,*.png,*jpeg
         \kitty +kitten icat --transfer-mode=file --place=%pwx%ph@%pxx%py --clear
 
 filextype *.bmp,*.jpg,*.jpeg,*.png,*.gif,*.xpm,*tif,*.tiff,*.svg
-        \ {View in swayimg}
-        \ swayimg %c &,
         \ {View in sxiv}
         \ sxiv %c &,
+        \ {View in swayimg}
+        \ swayimg %c &,
         \ {View in gwenview}
         \ gwenview %c &,
 
@@ -223,7 +217,7 @@ filextype *.lua,*.sh,*.conf,*rc,*.md,*.js,*.py,*.toml,*.go,*.css,config
         \ {Open with Kate}
         \ kate %f &,
         \ {Open with Sublime}
-        \ subl -n %f &,
+        \ subl %f &,
         \ {Open with Emacs}
         \ emacs -nw %f,
         \ {open with Okular}
