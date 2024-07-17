@@ -33,7 +33,7 @@ position = parent
 # Window size (parent, image, or absolute size, e.g. 800,600)
 size = 1000,800
 # Window background mode/color (none/RGB, e.g. #112233)
-background = none
+background = #000000
 
 # Run slideshow at startup (yes/no)
 slideshow = no
