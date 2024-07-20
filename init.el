@@ -375,6 +375,7 @@
 (keymap-set org-mode-map "C-c p" 'rw/show-org-path)
 (keymap-set org-mode-map "C-c t" 'org-time-stamp)
 (keymap-set org-mode-map "C-c y" 'org-store-link)
+(keymap-set org-mode-map "C-c z" 'org-id-get-create)
 (keymap-set org-mode-map "C-o" 'org-open-at-point)
 (keymap-set org-mode-map "C-M-<up>" 'org-table-move-row-up)
 (keymap-set org-mode-map "C-M-<down>" 'org-table-move-row-down)
