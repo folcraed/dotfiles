@@ -314,6 +314,7 @@
 ;; Markdown editing
 ;; ===============================================
 (use-package markdown-mode
+  :defer t
   :mode (("README\\.md\\'" . gfm-mode)
          ("\\.md\\'" . gfm-mode)
          ("\\.markdown\\'" . markdown-mode))
@@ -321,7 +322,7 @@
 	   (markdown-wiki-link-alias-first nil)
 	   (markdown-wiki-link-search-type '(parent-directories))
 	   (markdown-hide-markup t))
-  :init (setq markdown-open-command "okular")
+  :config (setq markdown-open-command "okular")
   :bind (:map markdown-mode-map
 			  ("C-o" . markdown-follow-link-at-point)))
 
@@ -334,7 +335,8 @@
 ;; ===============================================
 ;; Programming needs
 ;; ===============================================
-(use-package go-mode)
+(use-package go-mode
+  :defer t)
 (add-to-list 'auto-mode-alist '("\\.go\\'" . go-mode))
 
 ;; ===============================================
