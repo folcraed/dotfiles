@@ -221,5 +221,6 @@ exec --no-startup-id udiskie -t
 exec --no-startup-id ssh-agent
 exec --no-startup-id recollindex -m -x
 exec wl-paste -t text --watch cliphist store
+exec emacs --bg-daemon
 include /etc/sway/config.d/*
 # vim: ft=dosini
