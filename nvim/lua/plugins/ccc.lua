@@ -5,7 +5,6 @@ return {
     config = function()
       require("ccc").setup()
     end,
-    cmd = "CccHighlighterToggle",
-    keys = { { "<leader>uh", "<cmd>CccHighlighterToggle<cr>", desc = "Toggle color highlight" } },
+    keys = { { "<leader>ut", "<cmd>CccHighlighterToggle<cr>", desc = "Toggle color highlight" } },
   },
 }
