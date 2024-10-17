@@ -36,7 +36,7 @@
         "spacing": 10
     },
     "clock": {
-        "format": "{:%I:%M %p}",
+        "format": "{:%a %e %b %I:%M %p}",
         "tooltip-format": "{:%a %e %b %Y | %I:%M %p}",
         "format-alt": "{:%a %e %b %Y}"
     },
