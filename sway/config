@@ -60,7 +60,7 @@ default_orientation auto
     bindsym $mod+Shift+p exec grim -g "$(slurp -d)" ~/Temp/$(date +'%s.png')
 
     # Show clipboard history in rofi
-    bindsym $mod+c exec exec cliphist list | rofi -dmenu | cliphist decode | wl-copy
+    bindsym $mod+c exec cliphist list | rofi -dmenu | cliphist decode | wl-copy
 
 ### Moving around:
     focus_follows_mouse no
@@ -77,7 +77,7 @@ default_orientation auto
     bindsym $mod+Up focus up
     bindsym $mod+Right focus right
 
-    # _move_ the focused window with the same, but add Shift
+    # Move the focused window with the same, but add Shift
     bindsym $mod+Shift+$left move left
     bindsym $mod+Shift+$down move down
     bindsym $mod+Shift+$up move up
@@ -135,13 +135,13 @@ default_orientation auto
     # Switch the current container between different layout styles
     bindsym $mod+s layout stacking
     bindsym $mod+w layout tabbed
-    bindsym $mod+e layout toggle split
+    bindsym $mod+t layout toggle split
 
     # Make the current focus fullscreen
     bindsym $mod+f fullscreen
 
     # Toggle pin window
-    bindsym $mod+t sticky toggle
+    bindsym $mod+e sticky toggle
 
     # Toggle the current focus between tiling and floating mode
     bindsym $mod+Shift+space floating toggle
@@ -169,6 +169,7 @@ bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 1 toggle
 for_window [app_id="mpv"] floating enable
 for_window [app_id="kcalc"] floating enable
 for_window [app_id="gramps"] floating enable
+for_window [app_id="imv"] floating enable
 for_window [class="Sxiv"] floating enable
 for_window [app_id="recoll"] floating enable
 for_window [app_id="org.kde.okular"] floating enable
