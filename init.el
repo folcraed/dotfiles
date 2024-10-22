@@ -98,22 +98,6 @@
 (require 'langtool)
 
 ;; ==============================================
-;; Sane copy org link to clipboard function
-;; ==============================================
-(defun my-org-export-url ()
-  "Copies the org link to the clipboard."
-  (interactive)
-  (let* ((link-info (assoc :link (org-context)))
-	 (text (when link-info
-		 (buffer-substring-no-properties (or (cadr link-info) (point-min))
-						 (or (caddr link-info) (point-max))))))
-    (if (not text)
-	(error "Not in org link!")
-      (string-match org-link-bracket-re text)
-      (kill-new (substring text (match-beginning 1) (match-end 1))))))
-(keymap-global-set "C-c e" 'my-org-export-url)
-
-;; ==============================================
 ;; Get Org to show heading path so it can be
 ;; assigned to a keybind defined later
 ;; ==============================================
@@ -380,6 +364,7 @@
 (keymap-set org-mode-map "C-c i" 'org-table-insert-row)
 (keymap-set org-mode-map "C-c m" 'org-emphasize)
 (keymap-set org-mode-map "C-c p" 'rw/show-org-path)
+(keymap-set org-mode-map "C-c e" 'org-toggle-link-display)
 (keymap-set org-mode-map "C-c t" 'org-time-stamp)
 (keymap-set org-mode-map "C-c y" 'org-store-link)
 (keymap-set org-mode-map "C-c z" 'org-id-get-create)
