@@ -132,6 +132,10 @@ function lg
     eza -alh --git
 end
 
+function london
+	TZ="Europe/London" date
+end
+
 function lt
     eza -alh --sort=modified
 end
