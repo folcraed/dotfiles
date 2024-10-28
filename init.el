@@ -327,9 +327,9 @@
 ;; Some personal keybindings
 ;; ===============================================
 (keymap-global-set "C-c k" 'consult-yank-from-kill-ring)
-(keymap-global-set "C-c w b" 'rotate-frame-anticlockwise)
-(keymap-global-set "C-c w c" 'rotate-frame-clockwise)
-(keymap-global-set "C-c w s" 'rotate-frame)
+(keymap-global-set "C-c r b" 'rotate-frame-anticlockwise)
+(keymap-global-set "C-c r c" 'rotate-frame-clockwise)
+(keymap-global-set "C-c r s" 'rotate-frame)
 (keymap-global-set "<f6>" 'flyspell-buffer)
 (keymap-global-set "<f7>" 'flyspell-mode)
 (keymap-global-set "<f8>" 'flyspell-region)
