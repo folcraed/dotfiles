@@ -12,7 +12,7 @@ $python\
 $golang\
 $lua\
 [](fg:#212736 bg:#1d2230)\
-$time\
+$cmd_duration\
 [ ](fg:#1d2230)\
 \n$character"""
 
@@ -55,11 +55,10 @@ symbol = " "
 style = "bg:#212736"
 format = '[[ $symbol ($version) ](fg:#7aa2f7 bg:#212736)]($style)'
 
-[time]
+[cmd_duration]
 disabled = false
-time_format = "%R"                                      # Hour:Minute Format
 style = "bg:#1d2230"
-format = '[[  $time ](fg:#a0a9cb bg:#1d2230)]($style)'
+format = '[[  $duration ](fg:#e0af68 bg:#1d2230)]($style)'
 
 [character]
 disabled = false
