@@ -333,6 +333,7 @@
 (keymap-global-set "<f6>" 'flyspell-buffer)
 (keymap-global-set "<f7>" 'flyspell-mode)
 (keymap-global-set "<f8>" 'flyspell-region)
+(keymap-global-set "<f9>" 'insert-char)
 (keymap-global-set "C-c w" 'flyspell-correct-wrapper)
 (keymap-global-set "C-c x" 'kill-buffer-and-window)
 (keymap-global-set "M-s g" 'consult-ripgrep)
