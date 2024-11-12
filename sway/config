@@ -57,7 +57,7 @@ default_orientation auto
     bindsym $mod+Shift+e exit
 
     # Take a screenshot
-    bindsym $mod+Shift+p exec grim -g "$(slurp -d)" ~/Temp/$(date +'%s.png')
+    bindsym Print exec grim -g "$(slurp -d)" ~/Temp/$(date +'%s.png')
 
     # Show clipboard history in rofi
     bindsym $mod+c exec cliphist list | rofi -dmenu | cliphist decode | wl-copy
