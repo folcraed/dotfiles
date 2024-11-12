@@ -29,11 +29,11 @@ format = '[[ $symbol $branch ](fg:#7aa2f7 bg:#394260)]($style)'
 
 [git_status]
 style = "bg:#394260"
-ahead = ' ($count)'
-untracked = ' ($count)'
-modified = '  ($count)'
-deleted = '  '
-format = '[[($ahead$untracked$modified$deleted )](fg:#7aa2f7 bg:#394260)]($style)'
+ahead = '[ ($count)](fg:green bg:#394260)'
+untracked = '[ ($count)](fg:red bg:#394260)'
+modified = '[  ($count)](fg:yellow bg:#394260)'
+deleted = '[  ($count)](fg:red bg:#394260)'
+format = '[[$all_status$ahead_behind](bg:#394260)]($style)'
 
 [nodejs]
 symbol = " "
