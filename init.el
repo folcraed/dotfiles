@@ -53,7 +53,8 @@
         ((auto-mode . emacs)
         ("\\.png\\'" . "xdg-open %s")
         ("\\.jpg\\'" . "xdg-open %s")
-        ("\\.pdf\\'" . "xdg-open %s"))))
+        ("\\.pdf\\'" . "xdg-open %s")
+		("\\.ods\\'" . "xdg-open %s"))))
 
 (setq org-directory "~/Dropbox/Notes")
 (setq org-capture-templates
