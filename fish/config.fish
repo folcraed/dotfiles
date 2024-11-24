@@ -64,6 +64,10 @@ function dfh
     df -h
 end
 
+function dui
+    dua i
+end
+
 function ecn --description "Runs Emacsclient in terminal"
     emacsclient -nw
 end
@@ -133,7 +137,7 @@ function lg
 end
 
 function london
-	TZ="Europe/London" date
+    TZ="Europe/London" date
 end
 
 function lt

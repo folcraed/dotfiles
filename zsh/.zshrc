@@ -124,6 +124,7 @@ alias now='curl https://tgftp.nws.noaa.gov/data/observations/metar/decoded/KMSO.
 alias later='lynx "https://forecast.weather.gov/MapClick.php?CityName=Missoula&state=MT&site=MSO&lat=46.9181&lon=-114.153&unit=0&lg=english&FcstType=text&TextType=1"'
 alias free='free -th'
 alias dfh='df -h'
+alias dui='dua i'
 alias xo='xdg-open $f'
 alias rgl='rg -a -l $s'
 alias rgs='rg -C 2 $s'
