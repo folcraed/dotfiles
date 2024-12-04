@@ -154,14 +154,14 @@ fileviewer *.jpg,*.png,*jpeg
         \kitty +kitten icat --transfer-mode=file --place=%pwx%ph@%pxx%py --clear
 
 filextype *.bmp,*.jpg,*.jpeg,*.png,*.gif,*.xpm,*tif,*.tiff,*.svg
+        \ {View in gwenview}
+        \ gwenview %c &,
         \ {View in imv}
         \ imv %c &,
         \ {View in sxiv}
         \ sxiv %c &,
         \ {View in swayimg}
         \ swayimg %c &,
-        \ {View in gwenview}
-        \ gwenview %c &,
 
 " MD5
 filetype *.md5
