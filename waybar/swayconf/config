@@ -5,7 +5,7 @@
     "height": 20,
     "modules-left": ["sway/workspaces", "sway/mode", "wlr/taskbar"],
     "modules-center": ["sway/window"],
-    "modules-right": ["idle_inhibitor", "pulseaudio", "cpu", "memory", "temperature", "clock", "tray"],
+    "modules-right": ["idle_inhibitor", "pulseaudio", "cpu", "memory", "temperature", "tray", "clock"],
     "sway/mode": {
         "format": "<span style=\"italic\">{}</span>"
     },

@@ -4,7 +4,7 @@
     "position": "top",
     "height": 20,
     "modules-left": ["hyprland/workspaces", "wlr/taskbar"],
-    "modules-right": ["idle_inhibitor", "pulseaudio", "cpu", "memory", "temperature", "clock", "tray"],
+    "modules-right": ["idle_inhibitor", "pulseaudio", "cpu", "memory", "tray", "temperature"],
     "modules-center": ["hyprland/window"],
     "idle_inhibitor": {
         "format": "{icon}",
