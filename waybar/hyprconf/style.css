@@ -12,7 +12,7 @@ window#waybar {
     color: #c0caf5;
     transition-property: background-color;
     transition-duration: .5s;
-    border-radius: 0;
+    border-radius: 0px;
 }
 
 window#waybar.hidden {
@@ -69,7 +69,7 @@ tooltip label {
 }
 
 #taskbar button {
-    margin:0;
+    margin:0px;
     padding: 0px 5px 0px 5px;
 }
 
@@ -92,7 +92,7 @@ tooltip label {
 
 /* If workspaces is the rightmost module, omit right margin */
 .modules-right > widget:last-child > #workspaces {
-    margin-right: 0;
+    margin-right: 5px;
 }
 
 #clock {
