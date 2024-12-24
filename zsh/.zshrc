@@ -166,6 +166,11 @@ function calc() {
   printf "\n"
 }
 
+function npkg() {
+  cd /var/cache/pacman/pkg
+  fd --changed-within 1week
+}
+
 function bu2() {
   rsync -aiv --delete --exclude='.dtrash' --exclude='.comments/' ~/Dropbox/Archives/ /run/media/rob/backup/Dropbox/Archives
   rsync -aiv --delete --exclude='.dtrash' --exclude='.comments/' ~/Dropbox/Genealogy/ /run/media/rob/backup/Dropbox/Genealogy

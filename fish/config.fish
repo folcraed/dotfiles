@@ -152,6 +152,11 @@ function mpvd
     mpv dvd://
 end
 
+function npkg
+    cd /var/cache/pacman/pkg
+    fd --changed-within 1week
+end
+
 function now
     curl --retry-max-time 5 --retry 5 https://tgftp.nws.noaa.gov/data/observations/metar/decoded/KMSO.TXT
 end
