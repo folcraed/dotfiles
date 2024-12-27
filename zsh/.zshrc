@@ -70,10 +70,9 @@ source /usr/share/fzf/key-bindings.zsh
 source $HOME/.zsh/zsh-extract/extract.plugin.zsh
 
 ## -- Alias config --
-alias al='cat ~/.zshrc | grep alias'
+alias al='bat ~/.zshrc | grep alias'
 alias Z='source ~/.zshrc && clear'
 alias vim='nvim'
-alias bs='baloosearch $s'
 alias ccache='sudo sh -c "echo 1 > /proc/sys/vm/drop_caches"'
 alias cdb='cd ~/Dropbox'
 alias cdt='cd ~/Temp'
@@ -86,10 +85,8 @@ alias cdp='cd ~/Projects'
 alias cdc='cd ~/.config'
 alias cdn='cd ~/Dropbox/Notes'
 alias clrc='sudo sysctl vm.drop_caches=1'
-alias ddg='ddgr -x $s'
 alias ll='eza -alFh'
 alias ecn='emacsclient -nw'
-alias fzy='fzf -e --bind "ctrl-y:execute-silent(echo {} | xclip)+abort"'
 alias fzb='fzf -e --preview="bat --color=always {}"'
 alias la='eza -alh'
 alias lr='eza -alh --sort=newest -r'
