@@ -139,6 +139,7 @@ alias gup='git pull'
 alias gcl='git clone'
 
 ## Functions
+# Removes files in git cache when they cause problems
 function gitclean() {
   for file in `cat .gitignore` ; do
     git rm -r --cached $file; done
@@ -156,18 +157,27 @@ function calc() {
     printf "$result" |
     sed -e 's/^\./0./'        # add "0" for cases like ".5"
         -e 's/^-\./-0./'      # add "0" for cases like "-.5"
-        -e 's/0*$//;s/\.$//'   # remove trailing zeros
+        -e 's/0*$//;s/\.$//'  # remove trailing zeros
   else
     printf "$result"
   fi
   printf "\n"
 }
 
+# Restarts the non-systemd Emacs daemon
+function remacs() {
+    killall emacs
+    sleep 2
+    emacs --bg-daemon
+}
+
+# Shows what packages have been updated in the last week.
 function npkg() {
   cd /var/cache/pacman/pkg
   fd --changed-within 1week
 }
 
+# Backs up files with rsync to external drive
 function bu2() {
   rsync -aiv --delete --exclude='.dtrash' --exclude='.comments/' ~/Dropbox/Archives/ /run/media/rob/backup/Dropbox/Archives
   rsync -aiv --delete --exclude='.dtrash' --exclude='.comments/' ~/Dropbox/Genealogy/ /run/media/rob/backup/Dropbox/Genealogy
