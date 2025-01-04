@@ -174,7 +174,7 @@ function remacs() {
 # Shows what packages have been updated in the last week.
 function npkg() {
   cd /var/cache/pacman/pkg
-  fd --changed-within 1week
+  fd --changed-within 1week -e zst
 }
 
 # Backs up files with rsync to external drive

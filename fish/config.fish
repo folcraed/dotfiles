@@ -154,7 +154,7 @@ end
 
 function npkg
     cd /var/cache/pacman/pkg
-    fd --changed-within 1week
+    fd --changed-within 1week -e zst
 end
 
 function now
