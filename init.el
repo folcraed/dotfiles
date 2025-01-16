@@ -247,28 +247,25 @@
   (marginalia-mode))
 
 (use-package corfu
-  :custom
-  (corfu-auto t)
-  (corfu-auto-prefix 3)
-  (corfu-auto-delay 0.5)
-  (corfu-popupinfo-mode t)
-  (corfu-popupinfo-delay 0.5)
-  (corfu-preview-current nil)
-  (completion-ignore-case t)
-  (tab-always-indent 'complete)
-  :bind
-  (:map corfu-map
+ :custom
+ (corfu-auto t)
+ (corfu-auto-prefix 3)
+ (corfu-auto-delay 0.5)
+ (corfu-preview-current nil)
+ (completion-ignore-case t)
+ (tab-always-indent 'complete)
+ :bind
+ (:map corfu-map
 	("RET" . nil))
-  :init
-  (global-corfu-mode))
+ :init
+ (global-corfu-mode))
 
 (use-package cape
-  :after corfu
-  :bind ("C-c p f" . cape-file)
-  :init
-  (add-to-list 'completion-at-point-functions #'cape-file)
-  (add-to-list 'completion-at-point-functions #'cape-dict)
-  (add-to-list 'completion-at-point-functions #'cape-dabbrev))
+ :after corfu
+ :init
+ (add-to-list 'completion-at-point-functions #'cape-file)
+ (add-to-list 'completion-at-point-functions #'cape-dict)
+ (add-to-list 'completion-at-point-functions #'cape-dabbrev))
 
 ;; ==============================================
 ;;  Flyspell stuff
