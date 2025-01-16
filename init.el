@@ -83,14 +83,6 @@
       '((nil :maxlevel . 2)
 	(org-agenda-files :maxlevel . 2)))
 
-;; ==============================================
-;; Org export to Github flavored markdown
-;; ==============================================
-(use-package ox-gfm)
-(eval-after-load "org"
-  '(require 'ox-gfm nil t))
-
-;; ==============================================
 ;; Langtool grammar checking for Org files
 ;; ==============================================
 (use-package langtool)
@@ -521,7 +513,7 @@
  '(cursor-type '(bar . 2))
  '(org-export-backends '(ascii html md odt))
  '(package-selected-packages
-   '(go-mode ox-gfm langtool all-the-icons vertico consult orderless marginalia corfu cape project markdown-mode flyspell-correct rg winum which-key use-package tablist rainbow-mode rainbow-delimiters org-superstar minions magit iedit expand-region doom-themes doom-modeline avy transpose-frame async))
+   '(go-mode langtool all-the-icons vertico consult orderless marginalia corfu cape project markdown-mode flyspell-correct rg winum which-key rainbow-mode rainbow-delimiters org-superstar minions magit iedit expand-region doom-themes doom-modeline avy transpose-frame async))
  '(project-vc-extra-root-markers '("project.txt"))
  '(safe-local-variable-values '((flycheck-checker . python-flake8))))
 (custom-set-faces
