@@ -1,6 +1,6 @@
 [{
     "layer": "top",
-    "output": "DP-2",
+    "output": "HP Inc. HP 32 QHD CNK9220Q0Q",
     "position": "top",
     "height": 20,
     "modules-left": ["sway/workspaces", "sway/mode", "wlr/taskbar"],
