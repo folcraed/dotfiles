@@ -306,13 +306,6 @@
      ("\\.png\\'" . browse-url-xdg-open)))
 
 ;; ===============================================
-;; Programming needs
-;; ===============================================
-(use-package go-mode
-  :defer t)
-(add-to-list 'auto-mode-alist '("\\.go\\'" . go-mode))
-
-;; ===============================================
 ;; Some personal keybindings
 ;; ===============================================
 (keymap-global-set "C-c k" 'consult-yank-from-kill-ring)
@@ -325,6 +318,7 @@
 (keymap-global-set "<f9>" 'insert-char)
 (keymap-global-set "C-c w" 'flyspell-correct-wrapper)
 (keymap-global-set "C-c x" 'kill-buffer-and-window)
+(keymap-global-set "C-c #" 'rainbow-mode)
 (keymap-global-set "M-s g" 'consult-ripgrep)
 (keymap-global-set "M-s b" 'rgrep)
 (keymap-global-set "M-s f" 'consult-fd)
@@ -510,7 +504,7 @@
  '(cursor-type '(bar . 2))
  '(org-export-backends '(ascii html md odt))
  '(package-selected-packages
-   '(go-mode langtool all-the-icons vertico consult orderless marginalia corfu cape project markdown-mode flyspell-correct rg winum which-key rainbow-mode rainbow-delimiters org-superstar minions magit iedit expand-region doom-themes doom-modeline avy transpose-frame async))
+   '(langtool all-the-icons vertico consult orderless marginalia corfu cape project markdown-mode flyspell-correct rg winum which-key rainbow-mode rainbow-delimiters org-superstar minions magit iedit expand-region doom-themes doom-modeline avy transpose-frame async))
  '(project-vc-extra-root-markers '("project.txt"))
  '(safe-local-variable-values '((flycheck-checker . python-flake8))))
 (custom-set-faces
