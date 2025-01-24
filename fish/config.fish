@@ -140,6 +140,14 @@ function london
     TZ="Europe/London" date
 end
 
+function sydney
+    TZ="Australia/Sydney" date
+end
+
+function athens
+    TZ="Europe/Athens" date
+end
+
 function lt
     eza -alh --sort=modified
 end
