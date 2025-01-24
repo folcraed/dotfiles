@@ -104,7 +104,7 @@ tooltip label {
 
 #clock {
     padding: 0 0.7em;
-    background-color: #f1fa8c;
+    background-color: #56b6c2;
     color: #000000;
 }
 
@@ -132,8 +132,8 @@ label:focus {
 
 #pulseaudio.muted {
     padding: 0 0.7em;
-    background-color: #44475a;
-    color: #f8f8f2;
+    background-color: #3b4252;
+    color: #abb2bf;
 }
 
 #temperature {
@@ -144,7 +144,7 @@ label:focus {
 
 #temperature.critical {
     padding: 0 0.7em;
-    background-color: #ff5555;
+    background-color: #e06c75;
     color: #000000;
 }
 
