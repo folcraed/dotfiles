@@ -218,6 +218,8 @@ filextype *.lua,*.sh,*.conf,*rc,*.md,*.js,*.py,*.toml,*.go,*.css,config
         \ nvim %f,
         \ {Open with Kate}
         \ kate %f &,
+        \ {Open with Sublime}
+        \ subl %f,
         \ {Open with Emacs}
         \ emacs -nw %f,
         \ {open with Okular}
