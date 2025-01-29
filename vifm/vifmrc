@@ -241,10 +241,10 @@ vnoremap w :view<cr>gv
 " Turn off search highlighting
 nnoremap ,h :nohl<cr>
 
-" Open file in Emacsclient
-nnoremap o :!emacsclient -nw %f<cr>
+" Open file in other editors
+nnoremap o :!emacs -nw %f<cr>
 " Open file in Emacs
-nnoremap O :!emacs -nw %f<cr>
+nnoremap O :!subl %f<cr>
 
 " Open file in the background using its default program
 nnoremap gb :file &<cr>l
