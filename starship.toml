@@ -57,8 +57,8 @@ format = '[[ $symbol ($version) ](fg:#61afef bg:#3f444a)]($style)'
 
 [cmd_duration]
 disabled = false
-style = "bg:#202328"
-format = '[[  $duration ](fg:#e5c07b bg:#202328)]($style)'
+style = "bg:#23272e"
+format = '[[  $duration ](fg:#e5c07b bg:#23272e)]($style)'
 
 [character]
 disabled = false
