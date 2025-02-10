@@ -77,7 +77,7 @@ tooltip label {
 #cpu,
 #memory,
 #temperature,
-#pulseaudio,
+#wireplumber,
 #tray,
 #idle_inhibitor,
 #window,
@@ -124,7 +124,7 @@ label:focus {
     color: #000000;
 }
 
-#pulseaudio {
+#wireplumber {
     padding: 0 0.7em;
     background-color: #bd93f9;
     color: #000000;

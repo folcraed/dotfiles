@@ -5,7 +5,7 @@
     "height": 20,
     "modules-left": ["sway/workspaces", "sway/mode", "wlr/taskbar"],
     "modules-center": ["sway/window"],
-    "modules-right": ["idle_inhibitor", "pulseaudio", "cpu", "memory", "temperature", "tray", "clock"],
+    "modules-right": ["idle_inhibitor", "wireplumber", "cpu", "memory", "temperature", "tray", "clock"],
     "sway/mode": {
         "format": "<span style=\"italic\">{}</span>"
     },
@@ -26,7 +26,7 @@
         "all-outputs": true,
         "format": "{icon}",
         "icon-size": 16,
-        "active-first": true,
+        "active-first": false,
         "tooltip-format": "{title}",
         "on-click": "activate",
         "on-click-middle": "close"
@@ -55,14 +55,11 @@
         "format": "{temperatureC}°C {icon}",
         "format-icons": [""]
     },
-    "pulseaudio": {
-        "format": "{volume}% {icon}",
-        "format-muted": " {format_source}",
-        "format-source": "{volume}% ",
-        "format-source-muted": "",
-        "format-icons": {
-            "default": ["", "", ""]
-        },
-        "on-click": "pavucontrol"
+    "wireplumber": {
+        "format": "{volume}% ",
+        "format-muted": " ",
+        "on-click": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle",
+        "on-scroll-up": "wpctl set-volume @DEFAULT_AUDIO_SINK@ 3%+",
+        "on-scroll-down": "wpctl set-volume @DEFAULT_AUDIO_SINK@ 3%-"
     }
 }]
