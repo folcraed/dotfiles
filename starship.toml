@@ -1,9 +1,9 @@
 format = """
 [░▒▓](#abb2bf)\
 [  ](bg:#abb2bf fg:#090c0c)\
-[](bg:#61afef fg:#abb2bf)\
+[](bg:#51afef fg:#abb2bf)\
 $directory\
-[](fg:#61afef bg:#5b6268)\
+[](fg:#51afef bg:#5b6268)\
 $git_branch\
 $git_status\
 [](fg:#5b6268 bg:#3f444a)\
@@ -17,7 +17,7 @@ $cmd_duration\
 \n$character"""
 
 [directory]
-style = "fg:#15161e bg:#61afef"
+style = "fg:#15161e bg:#51afef"
 format = "[ $path ]($style)"
 truncation_length = 3
 truncation_symbol = "…/"
@@ -25,7 +25,7 @@ truncation_symbol = "…/"
 [git_branch]
 symbol = ""
 style = "bg:#5b6268"
-format = '[[ $symbol $branch ](fg:#46d9ff bg:#5b6268)]($style)'
+format = '[[ $symbol $branch ](fg:#e5c07b bg:#5b6268)]($style)'
 
 [git_status]
 style = "bg:#5b6268"
@@ -38,27 +38,27 @@ format = '[[$all_status$ahead_behind](bg:#5b6268)]($style)'
 [nodejs]
 symbol = " "
 style = "bg:#3f444a"
-format = '[[ $symbol ($version) ](fg:#61afef bg:#3f444a)]($style)'
+format = '[[ $symbol ($version) ](fg:#98be65 bg:#3f444a)]($style)'
 
 [python]
 symbol = " "
 style = "bg:#3f444a"
-format = '[[ $symbol ($version) ](fg:#61afef bg:#3f444a)]($style)'
+format = '[[ $symbol ($version) ](fg:#98be65 bg:#3f444a)]($style)'
 
 [golang]
 symbol = "  "
 style = "bg:#3f444a"
-format = '[[ $symbol ($version) ](fg:#61afef bg:#3f444a)]($style)'
+format = '[[ $symbol ($version) ](fg:#98be65 bg:#3f444a)]($style)'
 
 [lua]
 symbol = " "
 style = "bg:#3f444a"
-format = '[[ $symbol ($version) ](fg:#61afef bg:#3f444a)]($style)'
+format = '[[ $symbol ($version) ](fg:#98be65 bg:#3f444a)]($style)'
 
 [cmd_duration]
 disabled = false
 style = "bg:#23272e"
-format = '[[  $duration ](fg:#e5c07b bg:#23272e)]($style)'
+format = '[[  $duration ](fg:#c678dd bg:#23272e)]($style)'
 
 [character]
 disabled = false
