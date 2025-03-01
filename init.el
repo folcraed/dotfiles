@@ -121,7 +121,6 @@
 ;; ==============================================
 ;;  My necessary packages
 ;; ==============================================
-(use-package which-key)
 (which-key-mode)
 
 (use-package avy
@@ -504,7 +503,7 @@
  '(cursor-type '(bar . 2))
  '(org-export-backends '(ascii html md odt))
  '(package-selected-packages
-   '(langtool all-the-icons vertico consult orderless marginalia corfu cape project markdown-mode flyspell-correct rg winum which-key rainbow-mode rainbow-delimiters org-superstar minions magit iedit expand-region doom-themes doom-modeline avy transpose-frame async))
+   '(langtool all-the-icons vertico consult orderless marginalia corfu cape project markdown-mode flyspell-correct rg winum rainbow-delimiters rainbow-mode org-superstar minions magit iedit expand-region doom-themes doom-modeline avy transpose-frame async))
  '(project-vc-extra-root-markers '("project.txt"))
  '(safe-local-variable-values '((flycheck-checker . python-flake8))))
 (custom-set-faces
