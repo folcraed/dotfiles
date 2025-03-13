@@ -255,6 +255,7 @@
  (corfu-preview-current nil)
  (completion-ignore-case t)
  (tab-always-indent 'complete)
+ (text-mode-ispell-word-completion nil)
  :bind
  (:map corfu-map
 	("RET" . nil))
