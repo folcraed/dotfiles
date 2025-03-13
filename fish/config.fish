@@ -28,56 +28,76 @@ function ccache --description "Clears memory buffers and cache"
     sudo sh -c 'echo 1 > /proc/sys/vm/drop_caches'
 end
 
-function cdd
+function cdd --description "Changes to the dotfiles directory"
     cd ~/.config/dotfiles
 end
 
-function cdt
+function cdD --description "Changes to the Downloads directory"
+    cd ~/Downloads
+end
+
+function cdt --description "Changes to the Temp directory"
     cd ~/Temp
 end
 
-function cdn
+function cdb --description "Changes to the Dropbox directory"
+    cd ~/Dropbox
+end
+
+function cdn --description "Changes to the Notes directory"
     cd ~/Dropbox/Notes
 end
 
-function cdg
+function cdg --description "Changes to the Genealogy directory"
     cd ~/Dropbox/Genealogy
 end
 
-function cdm
+function cdm --description "Changes to the Mindmaps directory"
     cd ~/Dropbox/Mindmaps
 end
 
-function cdc
+function cdc --description "Changes to the .config directory"
     cd ~/.config
 end
 
-function cdp
+function cdp --description "Changes to the Projects directory"
     cd ~/Projects
 end
 
-function clrc
+function cdu --description "Changes to the /usr/share directory"
+    cd /usr/share
+end
+
+function clrc --description "Clears the system buffers cache"
     sudo sysctl vm.drop_caches=1
 end
 
-function dfh
+function dfh --description "Shows disk usage in human readable form"
     df -h
 end
 
-function dui
+function dui --description "Runs the disk usage utility"
     dua i
 end
 
-function ecn --description "Runs Emacsclient in terminal"
-    emacsclient -nw
-end
-
-function eN
+function eN --description "Edit the Neovim configuration"
     nvim ~/.config/nvim/init.lua
 end
 
-function ela --description "Searches folder for file pattern"
-    eza -la $argv
+function lr --description "Sorts with newest at the top of list"
+    eza -alh --sort=newest -r
+end
+
+function lo --description "Sorts with newest at the bottom of list"
+    eza -alh --sort=newest
+end
+
+function la --description "List directory contents with optional regex search"
+    eza -alh $argv
+end
+
+function lg --description "List recent git commits"
+    eza -alh --git
 end
 
 function extract --description "Expand or extract bundled & compressed files"
@@ -120,52 +140,43 @@ function gst
     git status
 end
 
-function jvac
+function jvac --description "Cleans up (removes) old journal files"
     sudo journalctl --vacuum-files=2
 end
 
-function la
-    eza -alh $argv
-end
 
-function later
+function later --description "Shows weekly weather forecast"
     lynx "https://forecast.weather.gov/MapClick.php?CityName=Missoula&state=MT&site=MSO&lat=46.9181&lon=-114.153&unit=0&lg=english&FcstType=text&TextType=1"
 end
 
-function lg
-    eza -alh --git
-end
 
-function london
+function london --description "Shows current time in London, England"
     TZ="Europe/London" date
 end
 
-function sydney
+function sydney --description "Shows current time in Sydney, Australia"
     TZ="Australia/Sydney" date
 end
 
-function athens
+function athens --description "Shows current time in Athens, Greece"
     TZ="Europe/Athens" date
 end
 
-function lt
-    eza -alh --sort=modified
-end
-
-function mconv
+function mconv --description "Compiles video files into one file"
     ffmpeg -f concat -safe 0 -i files.txt -c copy Time_Team.webm
 end
 
-function mpvd
+function mpvd --description "Use mpv to watch DVD videos"
     mpv dvd://
 end
 
-function npkg
+function npkg --description "Shows list of recently installed/updated files"
     cd /var/cache/pacman/pkg
     fd --changed-within 1week -e zst
+    cd ~/
 end
 
-function now
+function now --description "Shows current weather"
     curl --retry-max-time 5 --retry 5 https://tgftp.nws.noaa.gov/data/observations/metar/decoded/KMSO.TXT
 end
 
@@ -173,17 +184,7 @@ function rgs --description "Searches current folder and shows 2 lines with match
     rg -C 2 --max-depth 1 $argv
 end
 
-function rsemacs --description "Restarts the emacs systemd daemon"
-    systemctl --user restart emacs
-end
-
-function remacs --description "Restarts the emacs daemon"
-    killall emacs
-    sleep 2
-    emacs --bg-daemon
-end
-
-function ytdl
+function ytdl --description "Downloads Youtube videos"
     yt-dlp --compat-options multistreams -4 $argv
 end
 
@@ -239,13 +240,6 @@ function pami
     pamac install $argv
 end
 
-function cleanl
-    sudo cp -r /usr/share/locale/en_US /tmp/ &&
-        sudo rm -r /usr/share/locale &&
-        sudo mkdir /usr/share/locale &&
-        sudo cp -r /tmp/en_US /usr/share/locale/
-end
-
 function icat
     kitty +kitten icat
 end
@@ -254,7 +248,7 @@ function slt
     systemctl list-timers
 end
 
-function rf
+function rf --description "Search for text with Recoll"
     recoll -t -a $argv
 end
 

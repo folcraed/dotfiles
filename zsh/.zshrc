@@ -71,8 +71,6 @@ source $HOME/.zsh/zsh-extract/extract.plugin.zsh
 
 ## -- Alias config --
 alias al='bat ~/.zshrc | grep alias'
-alias Z='source ~/.zshrc && clear'
-alias vim='nvim'
 alias ccache='sudo sh -c "echo 1 > /proc/sys/vm/drop_caches"'
 alias cdb='cd ~/Dropbox'
 alias cdt='cd ~/Temp'
@@ -85,22 +83,26 @@ alias cdp='cd ~/Projects'
 alias cdc='cd ~/.config'
 alias cdn='cd ~/Dropbox/Notes'
 alias clrc='sudo sysctl vm.drop_caches=1'
-alias ll='eza -alFh'
-alias ecn='emacsclient -nw'
+alias dfh='df -h'
+alias dui='dua i'
+alias eN='nvim ~/.config/nvim/init.lua'
+alias eZ='nvim ~/.zshrc'
+alias free='free -th'
 alias fzb='fzf -e --preview="bat --color=always {}"'
-alias la='eza -alh'
-alias lr='eza -alh --sort=newest -r'
+alias grep='grep --color=auto'
+alias jvac='sudo journalctl --vacuum-files=2'
+alias later='lynx "https://forecast.weather.gov/MapClick.php?CityName=Missoula&state=MT&site=MSO&lat=46.9181&lon=-114.153&unit=0&lg=english&FcstType=text&TextType=1"'
+alias la='eza -alh $s'
+alias lr='eza -alh --sort=newest -r' # Sorts with newest at top of list
 alias lg='eza -alh --git'
 alias lsg='eza -alh | grep $s'
-alias lt='eza -alh --sort=modified'
-alias grep='grep --color=auto'
-alias so='xset s off && xset -dpms'
-alias sx='xset s off && xset dpms 0 1800 0'
-alias ytdl='yt-dlp --compat-options multistreams -4 $s'
-alias eZ='nvim ~/.zshrc'
-alias eN='nvim ~/.config/nvim/init.lua'
+alias lo='eza -alh --sort=newest' # Sorts with newest at bottom of list
+alias london='TZ="Europe/London" date'
+alias sydney='TZ="Australia/Sydney" date'
+alias athens='TZ="Europe/Athens" date'
 alias mconv='ffmpeg -f concat -safe 0 -i files.txt -c copy Time_Team.webm'
 alias mpvd='mpv dvd://'
+alias now='curl https://tgftp.nws.noaa.gov/data/observations/metar/decoded/KMSO.TXT'
 alias pacs='pacman -Ss $s'
 alias pacq='pacman -Qi $s'
 alias pacf='pacman -Qo $s'
@@ -114,20 +116,15 @@ alias pacm='sudo pacman-mirrors -c United_States,Canada -aP https'
 alias pamu='pamac update'
 alias pams='pamac search $s'
 alias pami='pamac install $s'
-alias jvac='sudo journalctl --vacuum-files=2'
-alias london='TZ="Europe/London" date'
-alias sydney='TZ="Australia/Sydney" date'
-alias athens='TZ="Europe/Athens" date'
-alias now='curl https://tgftp.nws.noaa.gov/data/observations/metar/decoded/KMSO.TXT'
-alias later='lynx "https://forecast.weather.gov/MapClick.php?CityName=Missoula&state=MT&site=MSO&lat=46.9181&lon=-114.153&unit=0&lg=english&FcstType=text&TextType=1"'
-alias free='free -th'
-alias dfh='df -h'
-alias dui='dua i'
-alias xo='xdg-open $f'
-alias rgl='rg -a -l $s'
+alias rf='recoll -t -a $s'
 alias rgs='rg -C 2 $s'
 alias slt='systemctl list-timers'
-alias rf='recoll -t -a $s'
+alias so='xset s off && xset -dpms'
+alias sx='xset s off && xset dpms 0 1800 0'
+alias vim='nvim'
+alias xo='xdg-open $f'
+alias ytdl='yt-dlp --compat-options multistreams -4 $s'
+alias Z='source ~/.zshrc && clear'
 
 # Some aliases for git
 alias ga='git add'
@@ -165,17 +162,11 @@ function calc() {
   printf "\n"
 }
 
-# Restarts the non-systemd Emacs daemon
-function remacs() {
-    killall emacs
-    sleep 2
-    emacs --bg-daemon
-}
-
 # Shows what packages have been updated in the last week.
 function npkg() {
   cd /var/cache/pacman/pkg
   fd --changed-within 1week -e zst
+  cd ~/
 }
 
 # Backs up files with rsync to external drive
