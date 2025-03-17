@@ -83,8 +83,6 @@
       '((nil :maxlevel . 2)
 	(org-agenda-files :maxlevel . 2)))
 
-(use-package ox-gfm)
-
 ;; Langtool grammar checking for Org files
 ;; ==============================================
 (use-package langtool)
@@ -504,12 +502,12 @@
  ;; If there is more than one, they won't work right.
  '(calendar-mark-holidays-flag t)
  '(cursor-type '(bar . 2))
- '(org-export-backends '(ascii html md gfm odt))
+ '(org-export-backends '(ascii html md odt))
  '(package-selected-packages
    '(all-the-icons avy cape consult corfu doom-modeline doom-themes
 				   expand-region flyspell-correct iedit langtool magit
-				   marginalia markdown-mode minions orderless
-				   org-superstar ox-gfm project rainbow-delimiters
+				   ox-gfm marginalia markdown-mode minions orderless
+				   org-superstar project rainbow-delimiters
 				   rainbow-mode rg transpose-frame vertico winum))
  '(project-vc-extra-root-markers '("project.txt"))
  '(safe-local-variable-values '((flycheck-checker . python-flake8))))
