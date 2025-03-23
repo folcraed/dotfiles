@@ -30,14 +30,15 @@
 ;; ==============================================
 (use-package org
   :config
-  (setq-default org-hide-emphasis-markers t)
-  (setq org-startup-folded nil
-	org-startup-indented t
-	org-support-shift-select t
-	org-ellipsis " ▼"
-	org-tags-column 0
-	org-use-tag-inheritance nil
-	org-hide-leading-stars t))
+  (setq org-hide-emphasis-markers t
+		org-pretty-entities t
+		org-startup-folded nil
+		org-startup-indented t
+		org-support-shift-select t
+		org-ellipsis " ▼"
+		org-tags-column 0
+		org-use-tag-inheritance nil
+		org-hide-leading-stars t))
 
 (use-package org-superstar
   :config
