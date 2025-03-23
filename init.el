@@ -84,13 +84,6 @@
       '((nil :maxlevel . 2)
 	(org-agenda-files :maxlevel . 2)))
 
-;; Langtool grammar checking for Org files
-;; ==============================================
-(use-package langtool)
-(setq langtool-bin "/usr/bin/languagetool"
-	  langtool-default-language "en")
-(require 'langtool)
-
 ;; ==============================================
 ;; Get Org to show heading path so it can be
 ;; assigned to a keybind defined later
@@ -339,11 +332,6 @@
 (keymap-global-set "M-;" 'comment-line)
 (keymap-global-set "M-#" 'dictionary-lookup-definition)
 (keymap-global-set "C-q" 'delete-frame)
-(keymap-global-set "C-. b" 'langtool-correct-buffer)
-(keymap-global-set "C-. c" 'langtool-check-buffer)
-(keymap-global-set "C-. p" 'langtool-correct-at-point)
-(keymap-global-set "C-. q" 'langtool-check-done)
-(keymap-global-set "C-. s" 'langtool-server-stop)
 (keymap-set org-mode-map "C-c a" 'org-agenda)
 (keymap-set org-mode-map "C-c c" 'org-capture)
 (keymap-set org-mode-map "C-c i" 'org-table-insert-row)
@@ -506,7 +494,7 @@
  '(org-export-backends '(ascii html md odt))
  '(package-selected-packages
    '(all-the-icons avy cape consult corfu doom-modeline doom-themes
-				   expand-region flyspell-correct iedit langtool magit
+				   expand-region flyspell-correct iedit magit
 				   ox-gfm marginalia markdown-mode minions orderless
 				   org-superstar project rainbow-delimiters
 				   rainbow-mode rg transpose-frame vertico winum))
