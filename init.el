@@ -330,6 +330,7 @@
 (keymap-global-set "M-G" 'goto-line)
 (keymap-global-set "M-j" 'avy-goto-char-timer)
 (keymap-global-set "M-;" 'comment-line)
+(keymap-global-set "M-d" 'duplicate-dwim)
 (keymap-global-set "M-#" 'dictionary-lookup-definition)
 (keymap-global-set "C-q" 'delete-frame)
 (keymap-set org-mode-map "C-c a" 'org-agenda)
