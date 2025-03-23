@@ -366,7 +366,9 @@
 	      shr-max-image-proportion 0.9
 	      shr-image-animate nil
 		  case-fold-search nil
-	      tab-width 4)
+	      tab-width 4
+		  xref-search-program 'ripgrep
+		  grep-command "rg -ns --no-heading ")
 
 (add-hook 'prog-mode-hook #'display-line-numbers-mode)
 (add-hook 'minibuffer-setup-hook
