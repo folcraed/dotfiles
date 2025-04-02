@@ -5,6 +5,9 @@ set $down j
 set $up k
 set $right l
 
+# Ensure D-Bus has the right portals set
+exec dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP=sway
+
 # Set the terminal
 set $term kitty --single-instance
 
