@@ -42,119 +42,122 @@ default_orientation auto
 
 ### Key bindings
 
-    # start a terminal
-    bindsym $mod+Return exec $term
+# start a terminal
+bindsym $mod+Return exec $term
 
-    # kill focused window
-    bindsym $mod+Shift+q kill
+# kill focused window
+bindsym $mod+Shift+q kill
 
-    # start the launcher
-    bindsym $mod+p exec rofi -show drun
+# start the launcher
+bindsym $mod+p exec rofi -show drun
 
-    # mouse button for dragging.
-    floating_modifier $mod normal
+# mouse button for dragging.
+floating_modifier $mod normal
 
-    # reload the configuration file
-    bindsym $mod+Shift+c reload
+# reload the configuration file
+bindsym $mod+Shift+c reload
 
-    # exit sway
-    bindsym $mod+Shift+e exit
+# exit sway
+bindsym $mod+Shift+e exit
 
-    # Take a screenshot
-    bindsym Print exec grim -g "$(slurp -d)" ~/Temp/$(date +'%s.png')
+# Take a screenshot
+bindsym Print exec grim -g "$(slurp -d)" ~/Temp/$(date +'%s.png')
 
-    # Show clipboard history in rofi
-    bindsym $mod+c exec cliphist list | rofi -dmenu | cliphist decode | wl-copy
+# Show clipboard history in rofi
+bindsym $mod+c exec cliphist list | rofi -dmenu | cliphist decode | wl-copy
+
+# Show dunst history
+bindsym $mod+d exec dunstctl history-pop
 
 ### Moving around:
-    focus_follows_mouse no
+focus_follows_mouse no
 
-    # Move your focus around
-    bindsym $mod+$left focus left
-    bindsym $mod+$down focus down
-    bindsym $mod+$up focus up
-    bindsym $mod+$right focus right
+# Move your focus around
+bindsym $mod+$left focus left
+bindsym $mod+$down focus down
+bindsym $mod+$up focus up
+bindsym $mod+$right focus right
 
-    # or use $mod+[up|down|left|right]
-    bindsym $mod+Left focus left
-    bindsym $mod+Down focus down
-    bindsym $mod+Up focus up
-    bindsym $mod+Right focus right
+# or use $mod+[up|down|left|right]
+bindsym $mod+Left focus left
+bindsym $mod+Down focus down
+bindsym $mod+Up focus up
+bindsym $mod+Right focus right
 
-    # Move the focused window with the same, but add Shift
-    bindsym $mod+Shift+$left move left
-    bindsym $mod+Shift+$down move down
-    bindsym $mod+Shift+$up move up
-    bindsym $mod+Shift+$right move right
+# Move the focused window with the same, but add Shift
+bindsym $mod+Shift+$left move left
+bindsym $mod+Shift+$down move down
+bindsym $mod+Shift+$up move up
+bindsym $mod+Shift+$right move right
 
-    # ditto, with arrow keys
-    bindsym $mod+Shift+Left move left
-    bindsym $mod+Shift+Down move down
-    bindsym $mod+Shift+Up move up
-    bindsym $mod+Shift+Right move right
+# ditto, with arrow keys
+bindsym $mod+Shift+Left move left
+bindsym $mod+Shift+Down move down
+bindsym $mod+Shift+Up move up
+bindsym $mod+Shift+Right move right
 
 # Workspaces:
 
-    # Workspaces to each monitor
-    workspace 1 output "HP Inc. HP 32 QHD CNK9220Q0Q"
-    workspace 2 output "HP Inc. HP 32 QHD CNK9220Q0Q"
-    workspace 3 output "HP Inc. HP 32 QHD CNK9220Q0Q"
-    workspace 4 output "HP Inc. HP 32 QHD CNK9220Q0Q"
-    workspace 5 output "HP Inc. HP 32 QHD CNK9220Q0Q"
-    workspace 6 output "LG Electronics LG ULTRAGEAR 307MXFV9K787"
-    workspace 7 output "LG Electronics LG ULTRAGEAR 307MXFV9K787"
-    workspace 8 output "LG Electronics LG ULTRAGEAR 307MXFV9K787"
-    workspace 9 output "LG Electronics LG ULTRAGEAR 307MXFV9K787"
-    workspace 10 output "LG Electronics LG ULTRAGEAR 307MXFV9K787"
+# Workspaces to each monitor
+workspace 1 output "HP Inc. HP 32 QHD CNK9220Q0Q"
+workspace 2 output "HP Inc. HP 32 QHD CNK9220Q0Q"
+workspace 3 output "HP Inc. HP 32 QHD CNK9220Q0Q"
+workspace 4 output "HP Inc. HP 32 QHD CNK9220Q0Q"
+workspace 5 output "HP Inc. HP 32 QHD CNK9220Q0Q"
+workspace 6 output "LG Electronics LG ULTRAGEAR 307MXFV9K787"
+workspace 7 output "LG Electronics LG ULTRAGEAR 307MXFV9K787"
+workspace 8 output "LG Electronics LG ULTRAGEAR 307MXFV9K787"
+workspace 9 output "LG Electronics LG ULTRAGEAR 307MXFV9K787"
+workspace 10 output "LG Electronics LG ULTRAGEAR 307MXFV9K787"
 
-    # switch to workspace
-    bindsym $mod+1 workspace 1
-    bindsym $mod+2 workspace 2
-    bindsym $mod+3 workspace 3
-    bindsym $mod+4 workspace 4
-    bindsym $mod+5 workspace 5
-    bindsym $mod+6 workspace 6
-    bindsym $mod+7 workspace 7
-    bindsym $mod+8 workspace 8
-    bindsym $mod+9 workspace 9
-    bindsym $mod+0 workspace 10
+# switch to workspace
+bindsym $mod+1 workspace 1
+bindsym $mod+2 workspace 2
+bindsym $mod+3 workspace 3
+bindsym $mod+4 workspace 4
+bindsym $mod+5 workspace 5
+bindsym $mod+6 workspace 6
+bindsym $mod+7 workspace 7
+bindsym $mod+8 workspace 8
+bindsym $mod+9 workspace 9
+bindsym $mod+0 workspace 10
 
-    # move focused container to workspace
-    bindsym $mod+Shift+1 move container to workspace 1; workspace 1
-    bindsym $mod+Shift+2 move container to workspace 2; workspace 2
-    bindsym $mod+Shift+3 move container to workspace 3; workspace 3
-    bindsym $mod+Shift+4 move container to workspace 4; workspace 4
-    bindsym $mod+Shift+5 move container to workspace 5; workspace 5
-    bindsym $mod+Shift+6 move container to workspace 6; workspace 6
-    bindsym $mod+Shift+7 move container to workspace 7; workspace 7
-    bindsym $mod+Shift+8 move container to workspace 8; workspace 8
-    bindsym $mod+Shift+9 move container to workspace 9; workspace 9
-    bindsym $mod+Shift+0 move container to workspace 10; workspace 10
+# move focused container to workspace
+bindsym $mod+Shift+1 move container to workspace 1; workspace 1
+bindsym $mod+Shift+2 move container to workspace 2; workspace 2
+bindsym $mod+Shift+3 move container to workspace 3; workspace 3
+bindsym $mod+Shift+4 move container to workspace 4; workspace 4
+bindsym $mod+Shift+5 move container to workspace 5; workspace 5
+bindsym $mod+Shift+6 move container to workspace 6; workspace 6
+bindsym $mod+Shift+7 move container to workspace 7; workspace 7
+bindsym $mod+Shift+8 move container to workspace 8; workspace 8
+bindsym $mod+Shift+9 move container to workspace 9; workspace 9
+bindsym $mod+Shift+0 move container to workspace 10; workspace 10
 
 ### Layout stuff:
 
-    bindsym $mod+n splith
-    bindsym $mod+v splitv
+bindsym $mod+n splith
+bindsym $mod+v splitv
 
-    # Switch the current container between different layout styles
-    bindsym $mod+s layout stacking
-    bindsym $mod+w layout tabbed
-    bindsym $mod+t layout toggle split
+# Switch the current container between different layout styles
+bindsym $mod+s layout stacking
+bindsym $mod+w layout tabbed
+bindsym $mod+t layout toggle split
 
-    # Make the current focus fullscreen
-    bindsym $mod+f fullscreen
+# Make the current focus fullscreen
+bindsym $mod+f fullscreen
 
-    # Toggle pin window
-    bindsym $mod+e sticky toggle
+# Toggle pin window
+bindsym $mod+e sticky toggle
 
-    # Toggle the current focus between tiling and floating mode
-    bindsym $mod+Shift+space floating toggle
+# Toggle the current focus between tiling and floating mode
+bindsym $mod+Shift+space floating toggle
 
-    # Swap focus between the tiling area and the floating area
-    bindsym $mod+space focus mode_toggle
+# Swap focus between the tiling area and the floating area
+bindsym $mod+space focus mode_toggle
 
-    # move focus to the parent container
-    bindsym $mod+a focus parent
+# move focus to the parent container
+bindsym $mod+a focus parent
 
 # Make use of keyboard volume keys
 bindsym XF86AudioRaiseVolume exec --no-startup-id wpctl set-volume @DEFAULT_AUDIO_SINK@ 3%+
@@ -182,24 +185,24 @@ for_window [app_id="org.kde.kweather"] floating enable
 
 # Resizing containers:
 mode "resize" {
-    # left will shrink the containers width
-    # right will grow the containers width
-    # up will shrink the containers height
-    # down will grow the containers height
-    bindsym $left resize shrink width 10 px
-    bindsym $down resize grow height 10 px
-    bindsym $up resize shrink height 10 px
-    bindsym $right resize grow width 10 px
+# left will shrink the containers width
+# right will grow the containers width
+# up will shrink the containers height
+# down will grow the containers height
+bindsym $left resize shrink width 10 px
+bindsym $down resize grow height 10 px
+bindsym $up resize shrink height 10 px
+bindsym $right resize grow width 10 px
 
-    # ditto, with arrow keys
-    bindsym Left resize shrink width 10 px
-    bindsym Down resize grow height 10 px
-    bindsym Up resize shrink height 10 px
-    bindsym Right resize grow width 10 px
+# ditto, with arrow keys
+bindsym Left resize shrink width 10 px
+bindsym Down resize grow height 10 px
+bindsym Up resize shrink height 10 px
+bindsym Right resize grow width 10 px
 
-    # return to default mode
-    bindsym Return mode "default"
-    bindsym Escape mode "default"
+# return to default mode
+bindsym Return mode "default"
+bindsym Escape mode "default"
 }
 bindsym $mod+r mode "resize"
 
