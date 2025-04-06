@@ -50,12 +50,12 @@
           (?- . ?•))))
 
 (setq-default org-file-apps
-    (quote
-        ((auto-mode . emacs)
-        ("\\.png\\'" . "xdg-open %s")
-        ("\\.jpg\\'" . "xdg-open %s")
-        ("\\.pdf\\'" . "xdg-open %s")
-		("\\.ods\\'" . "xdg-open %s"))))
+			  (quote
+			   ((auto-mode . emacs)
+				("\\.png\\'" . "xdg-open %s")
+				("\\.jpg\\'" . "xdg-open %s")
+				("\\.pdf\\'" . "xdg-open %s")
+				("\\.ods\\'" . "xdg-open %s"))))
 
 (setq org-directory "~/Dropbox/Notes")
 (setq org-capture-templates
@@ -63,7 +63,7 @@
          "* TODO %?")
         ("g" "Genealogy" entry (file+headline "~/Dropbox/Notes/agenda.org" "Todos")
          "* TODO %a %?")
-        ("c" "Changes" entry (file+headline "~/Dropbox/Notes/Software.org" "Changes")
+        ("c" "Changes" entry (file "~/Dropbox/Notes/Changes.org")
          "* %t %?")
         ("j" "Jots" entry (file+headline "~/Dropbox/Notes/Notebook.org" "Refile")
          "* %?")))
@@ -82,7 +82,7 @@
 
 (setq org-refile-targets
       '((nil :maxlevel . 2)
-	(org-agenda-files :maxlevel . 2)))
+		(org-agenda-files :maxlevel . 2)))
 
 ;; ==============================================
 ;; Get Org to show heading path so it can be
@@ -160,15 +160,15 @@
   :hook (after-init . doom-modeline-mode)
   :config
   (setq doom-modeline-height 25
-	doom-modeline-minor-modes t
-	doom-modeline-major-mode-color-icon t
-	doom-modeline-buffer-modification-icon t
-	doom-modeline-buffer-encoding nil
-	doom-modeline-buffer-file-name-style 'relative-from-project
-	doom-modeline-env-enable-python t
-	doom-modeline-env-enable-go t
-	doom-modeline-env-version t
-	column-number-mode t))
+		doom-modeline-minor-modes t
+		doom-modeline-major-mode-color-icon t
+		doom-modeline-buffer-modification-icon t
+		doom-modeline-buffer-encoding nil
+		doom-modeline-buffer-file-name-style 'relative-from-project
+		doom-modeline-env-enable-python t
+		doom-modeline-env-enable-go t
+		doom-modeline-env-version t
+		column-number-mode t))
 (minions-mode 1)
 
 (use-package doom-themes
@@ -286,18 +286,18 @@
          ("\\.md\\'" . gfm-mode)
          ("\\.markdown\\'" . markdown-mode))
   :custom ((markdown-enable-wiki-links t)
-	   (markdown-wiki-link-alias-first nil)
-	   (markdown-wiki-link-search-type '(parent-directories))
-	   (markdown-hide-markup t))
+		   (markdown-wiki-link-alias-first nil)
+		   (markdown-wiki-link-search-type '(parent-directories))
+		   (markdown-hide-markup t))
   :config (setq markdown-open-command "okular")
   :bind (:map markdown-mode-map
 			  ("C-o" . markdown-follow-link-at-point)))
 
 ;; Use default apps for handling URLs in markdown
 (setq browse-url-handlers
-   '(("\\.pdf\\'" . browse-url-xdg-open)
-     ("\\.jpg\\'" . browse-url-xdg-open)
-     ("\\.png\\'" . browse-url-xdg-open)))
+	  '(("\\.pdf\\'" . browse-url-xdg-open)
+		("\\.jpg\\'" . browse-url-xdg-open)
+		("\\.png\\'" . browse-url-xdg-open)))
 
 ;; ===============================================
 ;; Some personal keybindings
@@ -359,21 +359,21 @@
 ;;  Sanity settings
 ;; ==============================================
 (setq-default make-backup-files nil
-	      backup-inhibited t
-	      create-lockfiles nil
-	      auto-save-default nil
-	      scroll-preserve-screen-position t
-	      size-indication-mode 1
-	      shr-max-image-proportion 0.9
-	      shr-image-animate nil
-		  case-fold-search nil
-	      tab-width 4
-		  xref-search-program 'ripgrep
-		  grep-command "rg -ns --no-heading ")
+			  backup-inhibited t
+			  create-lockfiles nil
+			  auto-save-default nil
+			  scroll-preserve-screen-position t
+			  size-indication-mode 1
+			  shr-max-image-proportion 0.9
+			  shr-image-animate nil
+			  case-fold-search nil
+			  tab-width 4
+			  xref-search-program 'ripgrep
+			  grep-command "rg -ns --no-heading ")
 
 (add-hook 'prog-mode-hook #'display-line-numbers-mode)
 (add-hook 'minibuffer-setup-hook
-	  (lambda () (setq truncate-lines nil)))
+		  (lambda () (setq truncate-lines nil)))
 
 (show-paren-mode 1)
 (electric-indent-mode -1)
@@ -418,15 +418,15 @@
   (interactive "P")
   (declare (interactive-only))
   (cond ((and (buffer-narrowed-p) (not p)) (widen))
-	((region-active-p)
-	 (narrow-to-region (region-beginning) (region-end)))
-	((derived-mode-p 'org-mode)
-	 (cond ((ignore-errors (org-edit-src-code))
-		(delete-other-windows))
-	       ((org-at-block-p)
-		(org-narrow-to-block))
-	       (t (org-narrow-to-subtree))))
-	(t (narrow-to-defun))))
+		((region-active-p)
+		 (narrow-to-region (region-beginning) (region-end)))
+		((derived-mode-p 'org-mode)
+		 (cond ((ignore-errors (org-edit-src-code))
+				(delete-other-windows))
+			   ((org-at-block-p)
+				(org-narrow-to-block))
+			   (t (org-narrow-to-subtree))))
+		(t (narrow-to-defun))))
 (keymap-global-set "<f5>" #'narrow-or-widen-dwim)
 
 ;; ==============================================
