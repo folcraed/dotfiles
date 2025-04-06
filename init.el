@@ -322,6 +322,7 @@
 (keymap-global-set "M-f" 'consult-line)
 (keymap-global-set "C-p" 'find-file)
 (keymap-global-set "C-b" 'consult-buffer)
+(keymap-global-set "C-c b" 'consult-buffer-other-window)
 (keymap-global-set "M-'" 'push-mark-command)
 (keymap-global-set "M-m" 'consult-mark)
 (keymap-global-set "M-l" 'avy-goto-line)
