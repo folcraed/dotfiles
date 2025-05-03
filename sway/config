@@ -218,7 +218,7 @@ input "type:keyboard" {
 exec swaymsg focus output DP-2
 
 # Startup apps
-# exec --no-startup-id gnome-keyring-daemon --start --components=secrets
+include /etc/sway/config.d/*
 exec --no-startup-id /usr/lib/polkit-kde-authentication-agent-1
 exec --no-startup-id /usr/lib/pam_kwallet_init
 exec --no-startup-id xset s off
@@ -227,5 +227,4 @@ exec --no-startup-id udiskie -t
 exec --no-startup-id ssh-agent
 exec --no-startup-id recollindex -m -x
 exec wl-paste -t text --watch cliphist store
-include /etc/sway/config.d/*
 # vim: ft=dosini
