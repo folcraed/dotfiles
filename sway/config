@@ -5,9 +5,6 @@ set $down j
 set $up k
 set $right l
 
-# Ensure D-Bus has the right portals set
-exec dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP=sway
-
 # Set the terminal
 set $term kitty --single-instance
 
@@ -23,7 +20,7 @@ output * bg /home/rob/Pictures/eilean_donan_castle.jpg fill
 seat seat0 xcursor_theme breeze_cursors 24
 
 # Set the screen timeout
-exec swayidle -w timeout 900 'swaymsg "output * dpms off"' resume 'swaymsg "output * dpms on"'
+exec swayidle timeout 900 'swaymsg "output * dpms off"' resume 'swaymsg "output * dpms on"'
 
 # Font
 font pango:"Roboto" 12
