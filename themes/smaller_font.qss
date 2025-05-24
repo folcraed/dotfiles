@@ -1,0 +1,12 @@
+/*
+ * This is always applied to the recoll GUI, and can be extended or overridden by the style sheet
+ * set in the preferences. The font size is edited before applying when recoll is scaled.
+ *
+ * NOTE: this will override the platform font size preference set by e.g. qt5ct. There is
+ * currently no easy way to change this, you will have to either edit the installed recoll-common.qss
+ * file to comment out or delete the font-size line, or place this file in "~/.recoll" directory.
+ */
+
+* {
+      font-size: 10pt;
+}
