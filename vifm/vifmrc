@@ -244,7 +244,7 @@ vnoremap w :view<cr>gv
 nnoremap ,h :nohl<cr>
 
 " Open file in other editors
-nnoremap O :!emacs -nw %f<cr>
+nnoremap O :!kate %f<cr>
 " Open file in Emacs
 nnoremap o :!subl %f<cr>
 
