@@ -179,6 +179,8 @@ function bu2() {
   rsync -aiv --delete --exclude='.dtrash' --exclude='.comments/' ~/Dropbox/Carroll/ /run/media/rob/backup/Dropbox/Carroll
   rsync -aiv --delete --exclude='.dtrash' --exclude='.comments/' ~/.googleearth/myplaces.kml /run/media/rob/backup/.googleearth
   rsync -aiv --delete ~/.local/share/marble/bookmarks/bookmarks.kml /run/media/rob/backup/marble
+  rsync -aiv --delete ~/.local/share/gramps/ /run/media/rob/backup/locals
+  rsync -aiv --delete ~/.config/gramps/gramps60/ /run/media/rob/backup/configs/gramps60
   rsync -aiv --delete --exclude='.dtrash' --exclude='.comments/' ~/Videos/ /run/media/rob/backup/Videos
   rsync -aiv --exclude='.git/' --exclude='pkg/' ~/Projects/ /run/media/rob/backup/Projects
   rsync -aiv --delete --exclude='.dtrash' --exclude='.comments/' ~/bin/ /run/media/rob/backup/bin

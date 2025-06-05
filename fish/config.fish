@@ -18,6 +18,8 @@ function bu2
     rsync -aiv --delete --exclude='.dtrash' --exclude='.comments/' ~/Dropbox/Carroll/ /run/media/rob/backup/Dropbox/Carroll
     rsync -aiv --delete --exclude='.dtrash' --exclude='.comments/' ~/.googleearth/myplaces.kml /run/media/rob/backup/.googleearth
     rsync -aiv --delete ~/.local/share/marble/bookmarks/bookmarks.kml /run/media/rob/backup/marble
+    rsync -aiv --delete ~/.local/share/gramps/ /run/media/rob/backup/locals
+    rsync -aiv --delete ~/.config/gramps/gramps60/ /run/media/rob/backup/configs/gramps60
     rsync -aiv --delete --exclude='.dtrash' --exclude='.comments/' ~/Videos/ /run/media/rob/backup/Videos
     rsync -aiv --exclude='.git/' --exclude='pkg/' ~/Projects/ /run/media/rob/backup/Projects
     rsync -aiv --delete --exclude='.dtrash' --exclude='.comments/' ~/bin/ /run/media/rob/backup/bin
@@ -144,11 +146,9 @@ function jvac --description "Cleans up (removes) old journal files"
     sudo journalctl --vacuum-files=2
 end
 
-
 function later --description "Shows weekly weather forecast"
     lynx "https://forecast.weather.gov/MapClick.php?CityName=Missoula&state=MT&site=MSO&lat=46.9181&lon=-114.153&unit=0&lg=english&FcstType=text&TextType=1"
 end
-
 
 function london --description "Shows current time in London, England"
     TZ="Europe/London" date
