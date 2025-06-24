@@ -215,7 +215,7 @@ input "type:keyboard" {
 }
 
 # Focus the main monitor on startup
-exec swaymsg focus output DP-2
+exec swaymsg focus output "HP Inc. HP 32 QHD CNK9220Q0Q"
 
 # Startup apps
 include /etc/sway/config.d/*
