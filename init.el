@@ -31,7 +31,6 @@
 (use-package org
   :config
   (setq org-hide-emphasis-markers t
-		org-pretty-entities t
 		org-startup-folded nil
 		org-startup-indented t
 		org-support-shift-select t
