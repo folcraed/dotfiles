@@ -29,6 +29,7 @@ font pango:"Roboto" 12
 gaps inner 10
 
 # Set the border for windows
+client.focused  #55ff7f #98c379 #ffffff #00ff7f #98c379
 default_border pixel 2
 default_floating_border pixel 1
 titlebar_border_thickness 0
