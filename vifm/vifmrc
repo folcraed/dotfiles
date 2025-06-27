@@ -214,6 +214,8 @@ filextype */
 
 " Script and config files
 filextype *.lua,*.sh,*.conf,*rc,*.md,*.js,*.py,*.toml,*.go,*.css,*.json,config
+        \ {Open with Emacs}
+        \ emacs -nw %f,
         \ {Open with Nvim}
         \ nvim %f,
         \ {Open with Micro}
@@ -222,8 +224,6 @@ filextype *.lua,*.sh,*.conf,*rc,*.md,*.js,*.py,*.toml,*.go,*.css,*.json,config
         \ kate %f &,
         \ {Open with Sublime}
         \ subl %f,
-        \ {Open with Emacs}
-        \ emacs -nw %f,
         \ {open with Okular}
         \ okular %f,
 fileviewer *.lua,*.sh,*.conf,*rc,*.md,*.js,*.py env -uCOLORTERM bat --color=always --wrap=never --pager=never %c -p
@@ -244,8 +244,7 @@ vnoremap w :view<cr>gv
 nnoremap ,h :nohl<cr>
 
 " Open file in other editors
-nnoremap O :!kate %f<cr>
-" Open file in Emacs
+nnoremap O :!emacs %f<cr>
 nnoremap o :!subl %f<cr>
 
 " Open file in the background using its default program
