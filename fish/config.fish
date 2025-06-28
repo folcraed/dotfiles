@@ -86,6 +86,10 @@ function eN --description "Edit the Neovim configuration"
     nvim ~/.config/nvim/init.lua
 end
 
+function enw --description "Run Emacs in terminal"
+    emacs -nw
+end
+
 function lr --description "Sorts with newest at the top of list"
     eza -alh --sort=newest -r
 end
