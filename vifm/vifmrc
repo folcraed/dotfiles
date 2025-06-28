@@ -213,7 +213,7 @@ filextype */
         \ dolphin %f &,
 
 " Script and config files
-filextype *.lua,*.sh,*.conf,*rc,*.md,*.js,*.py,*.toml,*.go,*.css,*.json,config
+filextype *.lua,*.sh,*.conf,*rc,*.md,*.js,*.py,*.toml,*.go,*.css,*.json,config,*.org
         \ {Open with Emacs}
         \ emacs -nw %f,
         \ {Open with Nvim}
@@ -244,7 +244,7 @@ vnoremap w :view<cr>gv
 nnoremap ,h :nohl<cr>
 
 " Open file in other editors
-nnoremap O :!emacs %f<cr>
+nnoremap O :!emacs %f &<cr>
 nnoremap o :!subl %f<cr>
 
 " Open file in the background using its default program
