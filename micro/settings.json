@@ -1,7 +1,8 @@
 {
   "colorscheme": "onedark",
-  "relativeruler": true,
   "softwrap": true,
   "wordwrap": true,
-  "statusformatl": "File:$(filename) | Git:$(status.branch) |$(modified)$(overwrite)| Line:$(line) Col:$(col) | Lines:$(status.lines) Size:$(status.size)"
+  "statusformatl": "File:$(filename) | Git:$(status.branch) |$(modified)$(overwrite)| Line:$(line) Col:$(col) | Lines:$(status.lines) Size:$(status.size)",
+  "diffgutter": true,
+  "truecolor": "on"
 }
