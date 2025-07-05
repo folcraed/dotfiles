@@ -269,7 +269,8 @@
 (setq ispell-program-name "aspell"
       ispell-dictionary "en_US"
       ispell-local-dictionary "american"
-      flyspell-issue-message-flag nil)
+      flyspell-issue-message-flag nil
+	  dictionary-server "dict.org")
 
 ;; ===============================================
 ;;  Magit
