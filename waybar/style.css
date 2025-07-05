@@ -1,22 +1,22 @@
-* { 
-    all: unset;
-    border: none;
-    border-radius: 8px;
-    font-family: 'Noto Sans', FontAwesome;
-    font-size: 13px;
-    min-height: 0;
+* {
+  all: unset;
+  border: none;
+  border-radius: 8px;
+  font-family: "Noto Sans", FontAwesome;
+  font-size: 13px;
+  min-height: 0;
 }
 
 window#waybar {
-    background: rgba(40, 44, 52, 0.1);
-    color: #e5c07b;
-    transition-property: background-color;
-    transition-duration: .5s;
-    border-radius: 0px;
+  background: rgba(40, 44, 52, 0.1);
+  color: #e5c07b;
+  transition-property: background-color;
+  transition-duration: 0.5s;
+  border-radius: 0px;
 }
 
 window#waybar.hidden {
-    opacity: 0.2;
+  opacity: 0.2;
 }
 
 tooltip {
@@ -30,135 +30,142 @@ tooltip label {
 }
 
 #workspaces {
-    background: #5e81ac;
-    margin: 2px 2px 3px 2px;
-    padding: 0px 1px;
-    border-radius: 8px;
-    border:0px;
-    font-weight: bold;
-    font-style: normal;
-    font-size:13px;
-    color:#5e81ac;
+  background: #51afef;
+  margin: 2px 2px 3px 2px;
+  padding: 0px 1px;
+  border-radius: 8px;
+  border: 0px;
+  font-weight: bold;
+  font-style: normal;
+  font-size: 13px;
+  color: #51afef;
 }
 
 #workspaces button {
-    padding: 0 0.5em;
-    margin: 2 4 2 4px;
-    background-color: #282c34;
-    color: #98C379;
+  padding: 0 0.5em;
+  margin: 2 4 2 4px;
+  background-color: #282c34;
+  color: #98c379;
 }
 
 #workspaces button:hover {
-    background: #98c379;
-    color: #ffffff;
+  background: #98c379;
+  color: #ffffff;
 }
 
 #workspaces button.focused {
-    background-color: #98c379;
-    color: #282c34;
+  background-color: #98c379;
+  color: #282c34;
 }
 
 #workspaces button.urgent {
-    background-color: #eb4d4b;
+  background-color: #eb4d4b;
 }
 
 #taskbar {
-    background: #abb2bf;
-    padding:0 0.7em;
-    border-radius: 8px;
+  background: #abb2bf;
+  padding: 0 0.7em;
+  border-radius: 8px;
 }
 
 #taskbar button {
-    margin:0px;
-    padding: 0px 5px 0px 5px;
+  margin: 0px;
+  padding: 0px 5px 0px 5px;
 }
 
 #clock,
 #cpu,
 #memory,
 #temperature,
+#temperature#GPU,
 #wireplumber,
 #tray,
 #idle_inhibitor,
 #window,
 #taskbar,
 #workspaces {
-    margin: 0 4px;
+  margin: 0 4px;
 }
 
 /* If workspaces is the leftmost module, omit left margin */
 .modules-left > widget:first-child > #workspaces {
-    margin-left: 5px;
+  margin-left: 5px;
 }
 
 /* If workspaces is the rightmost module, omit right margin */
 .modules-right > widget:last-child > #workspaces {
-    margin-right: 5px;
+  margin-right: 5px;
 }
 
 #window {
-    padding: 0 0.7em;
-    color: #c0caf5;
-    border-radius: 8px;
+  padding: 0 0.7em;
+  color: #c0caf5;
+  border-radius: 8px;
 }
 
 #clock {
-    padding: 0 0.7em;
-    background-color: #56b6c2;
-    color: #000000;
+  padding: 0 0.7em;
+  background-color: #51afef;
+  color: #000000;
 }
 
 label:focus {
-    background-color: #d19a66;
+  background-color: #d19a66;
 }
 
 #cpu {
-    padding: 0 0.7em;
-    background-color: #e5c07b;
-    color: #000000;
+  padding: 0 0.7em;
+  background-color: #e5c07b;
+  color: #000000;
 }
 
 #memory {
-    padding: 0 0.7em;
-    background-color: #98c379;
-    color: #000000;
+  padding: 0 0.7em;
+  background-color: #98c379;
+  color: #000000;
 }
 
 #wireplumber {
-    padding: 0 0.7em;
-    background-color: #bd93f9;
-    color: #000000;
+  padding: 0 0.7em;
+  background-color: #bd93f9;
+  color: #000000;
 }
 
 #pulseaudio.muted {
-    padding: 0 0.7em;
-    background-color: #3b4252;
-    color: #abb2bf;
+  padding: 0 0.7em;
+  background-color: #3b4252;
+  color: #abb2bf;
 }
 
 #temperature {
-    padding: 0 0.7em;
-    background-color: #88c0d0;
-    color: #000000;
+  padding: 0 0.7em;
+  background-color: #88c0d0;
+  color: #000000;
 }
 
 #temperature.critical {
-    padding: 0 0.7em;
-    background-color: #e06c75;
-    color: #000000;
+  padding: 0 0.7em;
+  background-color: #e06c75;
+  color: #000000;
+}
+
+#temperature.GPU {
+  padding: 0 0.7em;
+  background-color: #a9a1e1;
+  color: #000000;
 }
 
 #tray {
-    background-color: #61afef;
+  background-color: #2257a0;
 }
 
 #tray > .passive {
-    -gtk-icon-effect: dim;
+  -gtk-icon-effect: dim;
 }
 
 #tray > .needs-attention {
-    -gtk-icon-effect: highlight;
-    background-color: #eb4d4b;
+  -gtk-icon-effect: highlight;
+  background-color: #eb4d4b;
 }
 
 #tray menu {
@@ -167,14 +174,13 @@ label:focus {
 }
 
 #idle_inhibitor {
-    padding: 0 0.7em;
-    background-color: #44475a;
-    color: #f8f8f2;
+  padding: 0 0.7em;
+  background-color: #44475a;
+  color: #f8f8f2;
 }
 
 #idle_inhibitor.activated {
-    padding: 0 0.7em;
-    background-color: #f8f8f2;
-    color: #44475a;
+  padding: 0 0.7em;
+  background-color: #f8f8f2;
+  color: #44475a;
 }
-
