@@ -213,11 +213,11 @@ filextype */
         \ dolphin %f &,
 
 " Script and config files
-filextype *.lua,*.sh,*.conf,*rc,*.md,*.js,*.py,*.toml,*.go,*.css,*.json,config
-        \ {Open with Nvim}
-        \ nvim %f,
+filextype *.lua,*.sh,*.conf,*rc,*.md,*.js,*.py,*.toml,*.go,*.css,*.json,config,*.txt
         \ {Open with Emacs}
         \ emacs -nw %f,
+        \ {Open with Nvim}
+        \ nvim %f,
         \ {Open with Micro}
         \ micro %f,
         \ {Open with Kate}
@@ -228,7 +228,7 @@ filextype *.lua,*.sh,*.conf,*rc,*.md,*.js,*.py,*.toml,*.go,*.css,*.json,config
         \ okular %f,
 fileviewer *.lua,*.sh,*.conf,*rc,*.md,*.js,*.py env -uCOLORTERM bat --color=always --wrap=never --pager=never %c -p
 
-filextype *.org
+filextype *.org,*.el
         \ {Open with Emacs}
         \ emacs -nw %f
 
