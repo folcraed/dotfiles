@@ -10,19 +10,33 @@ function fish_title
 end
 
 function bu2
+    echo 'Backing up Archives...'
     rsync -aiv --delete --exclude='.dtrash' --exclude='.comments/' ~/Dropbox/Archives/ /run/media/rob/backup/Dropbox/Archives
+    echo 'Backing up Genealogy...'
     rsync -aiv --delete --exclude='.dtrash' --exclude='.comments/' ~/Dropbox/Genealogy/ /run/media/rob/backup/Dropbox/Genealogy
+    echo 'Backing up Mindmaps...'
     rsync -aiv --delete --exclude='.dtrash' --exclude='.comments/' ~/Dropbox/Mindmaps/ /run/media/rob/backup/Dropbox/Mindmaps
+    echo 'Backing up Notes...'
     rsync -aiv --delete --exclude='.dtrash' --exclude='.comments/' ~/Dropbox/Notes/ /run/media/rob/backup/Dropbox/Notes
+    echo 'Backing up Docs...'
     rsync -aiv --delete --exclude='.dtrash' --exclude='.comments/' ~/Dropbox/Docs/ /run/media/rob/backup/Dropbox/Docs
+    echo 'Backing up Carroll...'
     rsync -aiv --delete --exclude='.dtrash' --exclude='.comments/' ~/Dropbox/Carroll/ /run/media/rob/backup/Dropbox/Carroll
+    echo 'Backing up GoogleEarth...'
     rsync -aiv --delete --exclude='.dtrash' --exclude='.comments/' ~/.googleearth/myplaces.kml /run/media/rob/backup/.googleearth
+    echo 'Backing up Marble...'
     rsync -aiv --delete ~/.local/share/marble/bookmarks/bookmarks.kml /run/media/rob/backup/marble
+    echo 'Backing up Gramps Locals...'
     rsync -aiv --delete ~/.local/share/gramps/ /run/media/rob/backup/locals
+    echo 'Backing up Gramps Configs...'
     rsync -aiv --delete ~/.config/gramps/gramps60/ /run/media/rob/backup/configs/gramps60
+    echo 'Backing up Videos...'
     rsync -aiv --delete --exclude='.dtrash' --exclude='.comments/' ~/Videos/ /run/media/rob/backup/Videos
+    echo 'Backing up Projects...'
     rsync -aiv --exclude='.git/' --exclude='pkg/' ~/Projects/ /run/media/rob/backup/Projects
+    echo 'Backing up Bin...'
     rsync -aiv --delete --exclude='.dtrash' --exclude='.comments/' ~/bin/ /run/media/rob/backup/bin
+    echo 'Backing up Scripts...'
     rsync -aiv --delete --exclude='.dtrash' --exclude='.comments' --exclude='.git' ~/scripts/ /run/media/rob/backup/scripts
 end
 
