@@ -229,7 +229,7 @@ function pacc
 end
 
 function pacm
-    sudo pacman-mirrors -c United_States,Canada
+    sudo pacman-mirrors -c United_States
 end
 
 function pamu
