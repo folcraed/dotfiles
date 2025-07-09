@@ -336,7 +336,6 @@
 (keymap-global-set "C-q" 'delete-frame)
 (keymap-set org-mode-map "C-c a" 'org-agenda)
 (keymap-set org-mode-map "C-c c" 'org-capture)
-(keymap-set org-mode-map "C-c i" 'org-table-insert-row)
 (keymap-set org-mode-map "C-c m" 'org-emphasize)
 (keymap-set org-mode-map "C-c p" 'rw/show-org-path)
 (keymap-set org-mode-map "C-c e" 'org-toggle-link-display)
@@ -344,10 +343,8 @@
 (keymap-set org-mode-map "C-c y" 'org-store-link)
 (keymap-set org-mode-map "C-c z" 'org-id-get-create)
 (keymap-set org-mode-map "C-o" 'org-open-at-point)
-(keymap-set org-mode-map "C-M-<up>" 'org-table-move-row-up)
-(keymap-set org-mode-map "C-M-<down>" 'org-table-move-row-down)
-(keymap-set org-mode-map "C-M-S-<left>" nil)
-(keymap-set org-mode-map "C-M-S-<right>" nil)
+(keymap-set org-mode-map "C-M-S-<left>" nil) ; Originally decrease numbers
+(keymap-set org-mode-map "C-M-S-<right>" nil) ; Originally increase numbers
 (keymap-global-set "C-M-S-<left>" 'shrink-window-horizontally)
 (keymap-global-set "C-M-S-<right>" 'enlarge-window-horizontally)
 (keymap-global-set "C-M-S-<down>" 'shrink-window)
