@@ -214,10 +214,10 @@ filextype */
 
 " Script and config files
 filextype *.lua,*.sh,*.conf,*rc,*.md,*.js,*.py,*.toml,*.go,*.css,*.json,config,*.txt
-        \ {Open with Emacs}
-        \ emacs -nw %f,
         \ {Open with Nvim}
         \ nvim %f,
+        \ {Open with Emacs}
+        \ emacs -nw %f,
         \ {Open with Micro}
         \ micro %f,
         \ {Open with Kate}
