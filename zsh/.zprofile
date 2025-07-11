@@ -15,6 +15,7 @@ export QT_QPA_PLATFORM="wayland"
 export QTWEBENGINE_FORCE_USE_GBM=0
 export LYNX_LSS="$HOME/lynx.lss"
 export _JAVA_AWT_WM_NONREPARENTING=1
+export JAVA_HOME=/usr/lib/jvm/jre-jetbrains/
 export FREEPLANE_JAVA_HOME=/usr/lib/jvm/jre-jetbrains/
 
 if [ "$XDG_SESSION_TYPE" = "wayland" ]; then
