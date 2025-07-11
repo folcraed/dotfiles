@@ -12,7 +12,6 @@ export NO_AT_BRIDGE=1
 export GTK_OVERLAY_SCROLLING=0
 export QT_QPA_PLATFORMTHEME="kde"
 export QT_QPA_PLATFORM="wayland"
-export QTWEBENGINE_FORCE_USE_GBM=0
 export LYNX_LSS="$HOME/lynx.lss"
 export _JAVA_AWT_WM_NONREPARENTING=1
 export JAVA_HOME=/usr/lib/jvm/jre-jetbrains/
