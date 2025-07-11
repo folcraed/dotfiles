@@ -4,7 +4,7 @@ SETUVAR --export EDITOR:nvim
 SETUVAR FZF_LEGACY_KEYBINDINGS:0
 SETUVAR --export MANPAGER:nvim\x1e\x2bMan\x21
 SETUVAR --export NO_AT_BRIDGE:1
-SETUVAR --export PAGER:most
+SETUVAR --export PAGER:nvim\x20\x2dR
 SETUVAR VIRTUAL_ENV_DISABLE_PROMPT:1
 SETUVAR __fish_git_prompt_show_informative_status:true
 SETUVAR __fish_git_prompt_showstashstate:true
