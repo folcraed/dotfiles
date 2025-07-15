@@ -1,6 +1,0 @@
-[options]
-width = 1280
-height = 1024
-overlay = true
-overlay_font = Roboto:10
-overlay_text = $imv_current_file
