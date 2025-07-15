@@ -72,7 +72,7 @@
 
 (setq-default org-display-custom-times t)
 (setq-default org-export-headline-levels 6)
-(setq org-time-stamp-custom-formats '("%a %b %e %Y" . "%a %b %e %Y %H:%M")
+(setq org-time-stamp-custom-formats '("%a %e %b %Y" . "%a %e %b %Y %H:%M")
       org-agenda-files (quote ("~/Dropbox/Notes/agenda.org"))
 	  org-archive-location "./archive.org::* Finished"
       org-id-link-to-org-use-id 'use-existing
