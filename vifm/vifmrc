@@ -156,10 +156,6 @@ fileviewer *.jpg,*.png,*jpeg
 filextype *.bmp,*.jpg,*.jpeg,*.png,*.gif,*.xpm,*tif,*.tiff,*.svg
         \ {View in gwenview}
         \ gwenview %c &,
-        \ {View in imv}
-        \ imv %c &,
-        \ {View in sxiv}
-        \ sxiv %c &,
         \ {View in swayimg}
         \ swayimg %c &,
 
@@ -253,9 +249,6 @@ nnoremap o :!subl %f &<cr>
 
 " Open file in the background using its default program
 nnoremap gb :file &<cr>l
-
-" Open folder of images in sxiv
-nnoremap gv :!sxiv -t %d &<cr>
 
 " Yank current directory path into the clipboard
 nnoremap yd :!echo %d | xclip -selection clip %i<cr>
