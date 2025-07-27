@@ -300,6 +300,22 @@
 		("\\.png\\'" . browse-url-xdg-open)))
 
 ;; ===============================================
+;; Lua code
+;; ===============================================
+(use-package lua-mode)
+(autoload 'lua-mode "lua-mode" "Lua editong mode." t)
+(add-to-list 'auto-mode-alist '("\\.lua$" . lua-mode))
+(add-to-list 'interpreter-mode-alist '("lua" . lua-mode))
+
+;; ===============================================
+;; Treesitter
+;; ===============================================
+(setq major-mode-remap-alist
+	  '((lua-mode . lua-ts-mode)
+		(js-mode . js-ts-mode)
+		(python-mode . python-ts-mode)))
+
+;; ===============================================
 ;; Some personal keybindings
 ;; ===============================================
 (keymap-global-set "C-c k" 'consult-yank-from-kill-ring)
@@ -495,9 +511,9 @@
  '(org-export-backends '(ascii html md odt))
  '(package-selected-packages
    '(all-the-icons avy cape consult corfu doom-modeline doom-themes
-				   expand-region flyspell-correct iedit magit
-				   ox-gfm marginalia markdown-mode minions orderless
-				   org-superstar project rainbow-delimiters
+				   expand-region flyspell-correct iedit lua-mode magit
+				   marginalia markdown-mode minions orderless
+				   org-superstar ox-gfm project rainbow-delimiters
 				   rainbow-mode rg transpose-frame vertico winum))
  '(project-vc-extra-root-markers '("project.txt"))
  '(safe-local-variable-values '((flycheck-checker . python-flake8))))
