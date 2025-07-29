@@ -245,7 +245,7 @@ nnoremap ,h :nohl<cr>
 
 " Open file in other editors
 nnoremap O :!emacs %f &<cr>
-nnoremap o :!subl %f &<cr>
+nnoremap o :!emacs -nw %f<cr>
 
 " Open file in the background using its default program
 nnoremap gb :file &<cr>l
