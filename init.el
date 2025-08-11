@@ -462,20 +462,6 @@
 (keymap-global-set "C-x 3" 'split-and-follow-vertically)
 
 ;; ==============================================
-;; Select all inside delimiters Vim-like
-;; ==============================================
-(defun rw/select-text-in-delimiters ()
-  "Select text between the nearest left and right delimiters."
-  (interactive)
-  (let (start end)
-    (skip-chars-backward "^<>([{\"'")
-    (setq start (point))
-    (skip-chars-forward "^<>)]}\"'")
-    (setq end (point))
-    (set-mark start)))
-(keymap-global-set "C-+" 'rw/select-text-in-delimiters)
-
-;; ==============================================
 ;; Sort selection by common delimiter
 ;; Found in the EmacsWiki
 ;; ==============================================
