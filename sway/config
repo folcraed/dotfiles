@@ -94,6 +94,10 @@ bindsym $mod+Shift+Down move down
 bindsym $mod+Shift+Up move up
 bindsym $mod+Shift+Right move right
 
+# Switch focus to other monitor
+bindsym $mod+mod1+right focus output right
+bindsym $mod+mod1+left focus output left
+
 # Workspaces:
 
 # Workspaces to each monitor
