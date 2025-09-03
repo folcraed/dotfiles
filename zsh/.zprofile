@@ -12,11 +12,15 @@ export NO_AT_BRIDGE=1
 export GTK_OVERLAY_SCROLLING=0
 export QT_QPA_PLATFORMTHEME="kde"
 export QT_QPA_PLATFORM="wayland"
+# export QTWEBENGINE_FORCE_USE_GBM=0
 export LYNX_LSS="$HOME/lynx.lss"
 export _JAVA_AWT_WM_NONREPARENTING=1
 export JAVA_HOME=/usr/lib/jvm/jre-jetbrains/
 export FREEPLANE_JAVA_HOME=/usr/lib/jvm/jre-jetbrains/
 
-if [ "$XDG_SESSION_TYPE" = "wayland" ]; then
-    export MOZ_ENABLE_WAYLAND=1
+if [ "$XDG_SESSION_DESKTOP" = "sway:wlroots" ]; then
+    export QT_AUTO_SCREEN_SCALE_FACTOR=0
+fi
+if [ "$XDG_SESSION_DESKTOP" = "sway:wlroots" ]; then
+    export QT_WAYLAND_RECONNECT=1
 fi
