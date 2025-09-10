@@ -178,12 +178,9 @@ bindsym $mod+z scratchpad show
 for_window [app_id="mpv"] floating enable
 for_window [app_id="kcalc"] floating enable
 for_window [app_id="gramps"] floating enable
-for_window [app_id="imv"] floating enable
-for_window [class="Sxiv"] floating enable
 for_window [app_id="recoll"] floating enable
 for_window [app_id="org.kde.okular"] floating enable
 for_window [app_id="org.kde.gwenview"] floating enable
-for_window [app_id="org.kde.kweather"] floating enable
 
 # Resizing containers:
 mode "resize" {
@@ -225,7 +222,7 @@ exec swaymsg focus output "HP Inc. HP 32 QHD CNK9220Q0Q"
 # Startup apps
 include /etc/sway/config.d/*
 exec --no-startup-id /usr/lib/polkit-kde-authentication-agent-1
-exec --no-startup-id /usr/lib/pam_kwallet_init
+# exec --no-startup-id /usr/lib/pam_kwallet_init
 exec --no-startup-id xset s off
 exec --no-startup-id dunst
 exec --no-startup-id udiskie -t
