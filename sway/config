@@ -12,7 +12,6 @@ set $term kitty --single-instance
 # NOTE: You can get the names of your outputs by running: swaymsg -t get_outputs
 output "HP Inc. HP 32 QHD CNK9220Q0Q" resolution 2560x1440 position 0 0
 output "LG Electronics LG ULTRAGEAR 307MXFV9K787" resolution 2560x1440 position 2560 0
-output * adaptive_sync on
 output * subpixel rgb
 output * bg /home/rob/Pictures/eilean_donan_castle.jpg fill
 
