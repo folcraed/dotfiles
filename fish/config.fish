@@ -206,55 +206,55 @@ function ytdl --description "Downloads Youtube videos"
     yt-dlp --compat-options multistreams -4 $argv
 end
 
-function pacs
+function pacs --description "Search repos for package"
     pacman -Ss $argv
 end
 
-function pacq
+function pacq --description "Show package information"
     pacman -Qi $argv
 end
 
-function paci
+function paci --description "Install package"
     sudo pacman -S $argv
 end
 
-function pacf
+function pacf --description "Search for package owning file"
     pacman -Qo $argv
 end
 
-function pacr
+function pacr --description "Remove package"
     sudo pacman -Rns $argv
 end
 
-function paco
+function paco --description "Show list of orphan packages"
     sudo pacman -Qdt
 end
 
-function pacu
+function pacu --description "Pacman update from repos"
     sudo pacman -Syyu
 end
 
-function pacl
+function pacl --description "Show contents of installed package"
     pacman -Ql $argv
 end
 
-function pacc
+function pacc --description "Clear old packages from cache"
     sudo pacman -Sc
 end
 
-function pacm
+function pacm --description "Update pacman mirrors"
     sudo pacman-mirrors -c United_States
 end
 
-function pamu
+function pamu --description "Update all packages (repo and AUR)"
     pamac update
 end
 
-function pams
+function pams --description "Search repos and AUR for package"
     pamac search $argv
 end
 
-function pami
+function pami --description "Install package for repos or AUR"
     pamac install $argv
 end
 
