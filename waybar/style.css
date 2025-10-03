@@ -9,10 +9,11 @@
 
 window#waybar {
   background: rgba(40, 44, 52, 0.1);
-  color: #e5c07b;
+  color: #abb2bf;
   transition-property: background-color;
   transition-duration: 0.5s;
   border-radius: 0px;
+  font-weight: bold;
 }
 
 window#waybar.hidden {
@@ -27,6 +28,7 @@ tooltip {
 tooltip label {
   background: #282c34;
   color: #abb2bf;
+  font-size: 14px;
 }
 
 #workspaces {
@@ -35,9 +37,6 @@ tooltip label {
   padding: 0px 1px;
   border-radius: 8px;
   border: 0px;
-  font-weight: bold;
-  font-style: normal;
-  font-size: 13px;
   color: #51afef;
 }
 
@@ -85,6 +84,20 @@ tooltip label {
 #taskbar,
 #workspaces {
   margin: 0 4px;
+  padding: 0 0.7em;
+}
+
+#clock,
+#cpu,
+#memory,
+#temperature,
+#temperature#GPU,
+#wireplumber,
+#tray,
+#taskbar,
+#workspaces {
+  background-color: #51afef;
+  color: #000000;
 }
 
 /* If workspaces is the leftmost module, omit left margin */
@@ -98,69 +111,21 @@ tooltip label {
 }
 
 #window {
-  padding: 0 0.7em;
-  color: #c0caf5;
   border-radius: 8px;
 }
 
-#clock {
-  padding: 0 0.7em;
-  background-color: #51afef;
-  color: #000000;
-}
-
-label:focus {
-  background-color: #d19a66;
-}
-
-#cpu {
-  padding: 0 0.7em;
-  background-color: #e5c07b;
-  color: #000000;
-}
-
-#memory {
-  padding: 0 0.7em;
-  background-color: #98c379;
-  color: #000000;
-}
-
-#wireplumber {
-  padding: 0 0.7em;
-  background-color: #bd93f9;
-  color: #000000;
-}
-
 #pulseaudio.muted {
-  padding: 0 0.7em;
   background-color: #3b4252;
   color: #abb2bf;
 }
 
-#temperature {
-  padding: 0 0.7em;
-  background-color: #88c0d0;
-  color: #000000;
-}
-
 #temperature.critical {
-  padding: 0 0.7em;
   background-color: #e06c75;
   color: #000000;
 }
 
-#temperature.GPU {
-  padding: 0 0.7em;
-  background-color: #a9a1e1;
-  color: #000000;
-}
-
-#tray {
-  background-color: #2257a0;
-}
-
 #tray > .passive {
-  -gtk-icon-effect: dim;
+  -gtk-icon-effect: none;
 }
 
 #tray > .needs-attention {
@@ -171,16 +136,15 @@ label:focus {
 #tray menu {
   background: #282c34;
   color: #abb2bf;
+  font-size: 16px;
 }
 
 #idle_inhibitor {
-  padding: 0 0.7em;
   background-color: #44475a;
   color: #f8f8f2;
 }
 
 #idle_inhibitor.activated {
-  padding: 0 0.7em;
   background-color: #f8f8f2;
   color: #44475a;
 }
