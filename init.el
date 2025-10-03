@@ -64,7 +64,7 @@
          "* TODO %a %?")
         ("c" "Changes" entry (file "~/Dropbox/Notes/Changes.org")
          "* %t %?")
-        ("j" "Jots" entry (file+headline "~/Dropbox/Notes/Notebook.org" "Refile")
+        ("j" "Jots" entry (file+headline "~/Dropbox/Notes/jots.org" "Refile")
          "* %?")))
 
 (setq org-todo-keywords
