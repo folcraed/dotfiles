@@ -3,7 +3,6 @@
   border: none;
   border-radius: 8px;
   font-family: "Noto Sans", FontAwesome;
-  font-size: 13px;
   min-height: 0;
 }
 
@@ -13,6 +12,7 @@ window#waybar {
   transition-property: background-color;
   transition-duration: 0.5s;
   border-radius: 0px;
+  font-size: 13px;
   font-weight: bold;
 }
 
@@ -124,19 +124,21 @@ tooltip label {
   color: #000000;
 }
 
+#tray {
+  font-size: 16px;
+}
+
 #tray > .passive {
-  -gtk-icon-effect: none;
+  color: #abb2bf;
 }
 
 #tray > .needs-attention {
-  -gtk-icon-effect: highlight;
   background-color: #eb4d4b;
 }
 
 #tray menu {
-  background: #282c34;
+  background-color: #282c34;
   color: #abb2bf;
-  font-size: 16px;
 }
 
 #idle_inhibitor {
