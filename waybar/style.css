@@ -32,19 +32,19 @@ tooltip label {
 }
 
 #workspaces {
-  background: #51afef;
+  background: rgba(81, 175, 239, 0.5);
   margin: 2px 2px 3px 2px;
   padding: 0px 1px;
   border-radius: 8px;
   border: 0px;
-  color: #51afef;
+  color: rgba(81, 175, 239, 0.5);
 }
 
 #workspaces button {
   padding: 0 0.5em;
   margin: 2px 4px 2px 4px;
   background-color: #282c34;
-  color: #98c379;
+  color: #abb2bf;
 }
 
 #workspaces button:hover {
@@ -96,8 +96,8 @@ tooltip label {
 #tray,
 #taskbar,
 #workspaces {
-  background-color: #51afef;
-  color: #000000;
+  background-color: rgba(81, 175, 239, 0.5);
+  color: #f4f4f4;
 }
 
 /* If workspaces is the leftmost module, omit left margin */
