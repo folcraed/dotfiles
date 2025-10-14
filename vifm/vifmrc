@@ -251,7 +251,7 @@ nnoremap O :!emacs %f<cr>
 nnoremap gb :file &<cr>l
 
 " Yank current file path to Wayland clipboard
-nnoremap yw :!echo %c:p | wl-copy %i<cr>
+nnoremap yw :!wl-copy %c:p &<cr>
 
 " Mappings for faster renaming
 nnoremap I cw<c-a>
