@@ -77,11 +77,22 @@
 	  org-archive-location "./archive.org::* Finished"
       org-id-link-to-org-use-id 'use-existing
       org-keep-stored-link-after-insertion t
-      org-link-file-path-type 'noabbrev)
+      org-link-file-path-type 'noabbrev
+	  calendar-latitude 46.8
+	  calendar-longitude -113.9
+	  calendar-location-name "Missoula")
 
 (setq org-refile-targets
       '((nil :maxlevel . 2)
 		(org-agenda-files :maxlevel . 2)))
+
+;; ==============================================
+;;  Turn off holidays not wanted in agenda
+;; ==============================================
+(setq holiday-bahai-holidays nil
+	  holiday-hebrew-holidays nil
+	  holiday-islamic-holidays nil
+	  holiday-oriental-holidays nil)
 
 ;; ==============================================
 ;; Get Org to show heading path so it can be
