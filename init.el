@@ -7,7 +7,6 @@
 ;; ==============================================
 (setq lexical-binding t)
 (setq use-short-answers t)
-(set-fringe-mode 10)
 (prefer-coding-system 'utf-8)
 (global-visual-line-mode 1)
 (global-hl-line-mode 1)
@@ -176,8 +175,8 @@
 		doom-modeline-buffer-encoding nil
 		doom-modeline-buffer-file-name-style 'relative-from-project
 		doom-modeline-env-enable-python t
-		doom-modeline-env-enable-go t
 		doom-modeline-env-version t
+		mode-line-right-align-edge 'right-fringe
 		column-number-mode t))
 (minions-mode 1)
 
