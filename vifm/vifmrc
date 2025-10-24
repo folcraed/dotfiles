@@ -158,6 +158,8 @@ filextype *.bmp,*.jpg,*.jpeg,*.png,*.gif,*.xpm,*tif,*.tiff,*.svg
         \ gwenview %c &,
         \ {View in swayimg}
         \ swayimg %c &,
+        \ {Edit with Spectacle}
+        \ spectacle -E %c &,
 
 " MD5
 filetype *.md5

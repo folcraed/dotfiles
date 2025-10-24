@@ -262,6 +262,10 @@ function icat
     kitty +kitten icat
 end
 
+function se --description "Annotate image with Spectacle"
+    spectacle -E $argv
+end
+
 function slt
     systemctl list-timers
 end
