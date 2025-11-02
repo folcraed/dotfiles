@@ -6,7 +6,7 @@
 ;;  Set up some defaults
 ;; ==============================================
 (setq lexical-binding t)
-(setq use-short-answers t)
+(setopt use-short-answers t)
 (prefer-coding-system 'utf-8)
 (global-visual-line-mode 1)
 (global-hl-line-mode 1)
@@ -17,35 +17,34 @@
 
 ;; This is suppose to fix ??? displaying instead
 ;; of line numbers in modeline
-(setq line-number-display-limit-width 2000)
+(setopt line-number-display-limit-width 2000)
 
 (package-initialize)
 
 (require 'use-package)
-(setq use-package-always-ensure t)
+(setopt use-package-always-ensure t)
 
 ;; ==============================================
 ;;  Org-mode
 ;; ==============================================
 (use-package org
   :config
-  (setq org-hide-emphasis-markers t
-		org-startup-folded nil
-		org-startup-indented t
-		org-support-shift-select t
-		org-ellipsis " ▼"
-		org-tags-column 0
-		org-use-tag-inheritance nil
-		org-hide-leading-stars t))
+  (setopt org-hide-emphasis-markers t
+		  org-startup-indented t
+		  org-support-shift-select t
+		  org-ellipsis " ▼"
+		  org-tags-column 0
+		  org-use-tag-inheritance nil
+		  org-hide-leading-stars t))
 
 (use-package org-superstar
   :config
   (add-hook 'org-mode-hook (lambda () (org-superstar-mode 1)))
-  (setq org-superstar-headline-bullets-list '("●" "○"))
-  (setq org-superstar-item-bullet-alist
-        '((?* . ?•)
-          (?+ . ?◦)
-          (?- . ?•))))
+  (setopt org-superstar-headline-bullets-list '("●" "○"))
+  (setopt org-superstar-item-bullet-alist
+          '((?* . ?•)
+			(?+ . ?◦)
+			(?- . ?•))))
 
 (setq-default org-file-apps
 			  (quote
@@ -55,43 +54,43 @@
 				("\\.pdf\\'" . "xdg-open %s")
 				("\\.ods\\'" . "xdg-open %s"))))
 
-(setq org-directory "~/Dropbox/Notes")
-(setq org-capture-templates
-      '(("t" "Todo" entry (file+headline "~/Dropbox/Notes/agenda.org" "Todos")
-         "* TODO %?")
-        ("g" "Genealogy" entry (file+headline "~/Dropbox/Notes/agenda.org" "Todos")
-         "* TODO %a %?")
-        ("c" "Changes" entry (file "~/Dropbox/Notes/Changes.org")
-         "* %t %?")
-        ("j" "Jots" entry (file+headline "~/Dropbox/Notes/jots.org" "Refile")
-         "* %?")))
+(setopt org-directory "~/Dropbox/Notes")
+(setopt org-capture-templates
+		'(("t" "Todo" entry (file+headline "~/Dropbox/Notes/agenda.org" "Todos")
+           "* TODO %?")
+          ("g" "Genealogy" entry (file+headline "~/Dropbox/Notes/agenda.org" "Todos")
+           "* TODO %a %?")
+          ("c" "Changes" entry (file "~/Dropbox/Notes/Changes.org")
+           "* %t %?")
+          ("j" "Jots" entry (file+headline "~/Dropbox/Notes/jots.org" "Refile")
+           "* %?")))
 
-(setq org-todo-keywords
-      '((sequence "TODO" "WORKING" "DONE")))
+(setopt org-todo-keywords
+		'((sequence "TODO" "WORKING" "DONE")))
 
 (setq-default org-display-custom-times t)
 (setq-default org-export-headline-levels 6)
-(setq org-time-stamp-custom-formats '("%a %e %b %Y" . "%a %e %b %Y %H:%M")
-      org-agenda-files (quote ("~/Dropbox/Notes/agenda.org"))
-	  org-archive-location "./archive.org::* Finished"
-      org-id-link-to-org-use-id 'use-existing
-      org-keep-stored-link-after-insertion t
-      org-link-file-path-type 'noabbrev
-	  calendar-latitude 46.8
-	  calendar-longitude -113.9
-	  calendar-location-name "Missoula")
+(setopt org-time-stamp-custom-formats '("%a %e %b %Y" . "%a %e %b %Y %H:%M")
+		org-agenda-files (quote ("~/Dropbox/Notes/agenda.org"))
+		org-archive-location "./archive.org::* Finished"
+		org-id-link-to-org-use-id 'use-existing
+		org-keep-stored-link-after-insertion t
+		org-link-file-path-type 'noabbrev
+		calendar-latitude 46.8
+		calendar-longitude -113.9
+		calendar-location-name "Missoula")
 
-(setq org-refile-targets
-      '((nil :maxlevel . 2)
-		(org-agenda-files :maxlevel . 2)))
+(setopt org-refile-targets
+		'((nil :maxlevel . 2)
+		  (org-agenda-files :maxlevel . 2)))
 
 ;; ==============================================
 ;;  Turn off holidays not wanted in agenda
 ;; ==============================================
-(setq holiday-bahai-holidays nil
-	  holiday-hebrew-holidays nil
-	  holiday-islamic-holidays nil
-	  holiday-oriental-holidays nil)
+(setopt holiday-bahai-holidays nil
+		holiday-hebrew-holidays nil
+		holiday-islamic-holidays nil
+		holiday-oriental-holidays nil)
 
 ;; ==============================================
 ;; Get Org to show heading path so it can be
@@ -144,14 +143,14 @@
 
 (use-package rg)
 (rg-enable-default-bindings)
-(setq rg-use-transient-menu t)
+(setopt rg-use-transient-menu t)
 
 ;; ==============================================
 ;;  Dired enhancements
 ;; ==============================================
-(setq delete-by-moving-to-trash t
-      dired-listing-switches "-ahlv --group-directories-first"
-      dired-dwim-target t)
+(setopt delete-by-moving-to-trash t
+		dired-listing-switches "-ahlv --group-directories-first"
+		dired-dwim-target t)
 
 (defun dired-open-file ()
   "In Dired, open the file named on this line."
@@ -160,7 +159,7 @@
     (call-process "xdg-open" nil 0 nil file)))
 
 (put 'dired-find-alternate-file 'disabled nil)
-(setq dired-kill-when-opening-new-dired-buffer t)
+(setopt dired-kill-when-opening-new-dired-buffer t)
 
 ;; ===============================================
 ;;  Doom modeline & theme
@@ -168,22 +167,22 @@
 (use-package doom-modeline
   :hook (after-init . doom-modeline-mode)
   :config
-  (setq doom-modeline-height 25
-		doom-modeline-minor-modes t
-		doom-modeline-major-mode-color-icon t
-		doom-modeline-buffer-modification-icon t
-		doom-modeline-buffer-encoding nil
-		doom-modeline-buffer-file-name-style 'relative-from-project
-		doom-modeline-env-enable-python t
-		doom-modeline-env-version t
-		mode-line-right-align-edge 'right-fringe
-		column-number-mode t))
+  (setopt doom-modeline-height 25
+		  doom-modeline-minor-modes t
+		  doom-modeline-major-mode-color-icon t
+		  doom-modeline-buffer-modification-icon t
+		  doom-modeline-buffer-encoding nil
+		  doom-modeline-buffer-file-name-style 'relative-from-project
+		  doom-modeline-env-enable-python t
+		  doom-modeline-env-version t
+		  mode-line-right-align-edge 'right-fringe
+		  column-number-mode t))
 (minions-mode 1)
 
 (use-package doom-themes
   :config
-  (setq doom-themes-enable-bold t
-	doom-themes-enable-italic t))
+  (setopt doom-themes-enable-bold t
+		  doom-themes-enable-italic t))
 
 (use-package all-the-icons)
 
@@ -200,7 +199,7 @@
          ("M-7" . winum-select-window-7)
          ("M-8" . winum-select-window-8))
   :init
-  (setq winum-auto-setup-mode-line nil)
+  (setopt winum-auto-setup-mode-line nil)
   (winum-mode))
 
 ;; ==============================================
@@ -228,16 +227,16 @@
          ;; Other custom bindings
          ;; ("C-h a" . consult-apropos)            ;; orig. apropos-command
          :map isearch-mode-map
-         ("M-e" . consult-isearch-history))         ;; orig. isearch-edit-string
+         ("M-e" . consult-isearch-history))	;; orig. isearch-edit-string
   :hook (completion-list-mode . consult-preview-at-point-mode)
   :init
-  (setq register-preview-delay 0
-        register-preview-function #'consult-register-format)
+  (setopt register-preview-delay 0
+          register-preview-function #'consult-register-format)
   (advice-add #'register-preview :override #'consult-register-window)
-  (setq xref-show-xrefs-function #'consult-xref
-        xref-show-definitions-function #'consult-xref)
+  (setopt xref-show-xrefs-function #'consult-xref
+          xref-show-definitions-function #'consult-xref)
   :config
-  (setq consult-narrow-key "<") ;; (kbd "C-+")
+  (setopt consult-narrow-key "<") ;; (kbd "C-+")
   (setq consult-project-root-function
         (lambda ()
           (when-let (project (project-current))
@@ -276,11 +275,11 @@
 (use-package flyspell-correct
   :after flyspell)
 
-(setq ispell-program-name "aspell"
-      ispell-dictionary "en_US"
-      ispell-local-dictionary "american"
-      flyspell-issue-message-flag nil
-	  dictionary-server "dict.org")
+(setopt ispell-program-name "aspell"
+		ispell-dictionary "en_US"
+		ispell-local-dictionary "american"
+		flyspell-issue-message-flag nil
+		dictionary-server "dict.org")
 
 ;; ===============================================
 ;;  Magit
@@ -304,10 +303,10 @@
 			  ("C-o" . markdown-follow-link-at-point)))
 
 ;; Use default apps for handling URLs in markdown
-(setq browse-url-handlers
-	  '(("\\.pdf\\'" . browse-url-xdg-open)
-		("\\.jpg\\'" . browse-url-xdg-open)
-		("\\.png\\'" . browse-url-xdg-open)))
+(setopt browse-url-handlers
+		'(("\\.pdf\\'" . browse-url-xdg-open)
+		  ("\\.jpg\\'" . browse-url-xdg-open)
+		  ("\\.png\\'" . browse-url-xdg-open)))
 
 ;; ===============================================
 ;; Lua code
@@ -320,10 +319,10 @@
 ;; ===============================================
 ;; Treesitter
 ;; ===============================================
-(setq major-mode-remap-alist
-	  '((lua-mode . lua-ts-mode)
-		(js-mode . js-ts-mode)
-		(python-mode . python-ts-mode)))
+(setopt major-mode-remap-alist
+		'((lua-mode . lua-ts-mode)
+		  (js-mode . js-ts-mode)
+		  (python-mode . python-ts-mode)))
 
 ;; ===============================================
 ;; Some personal keybindings
@@ -494,8 +493,8 @@
 ;; ==============================================
 ;; Custom settings
 ;; ==============================================
-(setq custom-safe-themes t)
-(load-theme 'doom-one t)
+(setopt custom-safe-themes t)
+(load-theme 'doom-one-light t)
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
@@ -523,6 +522,6 @@
 
 ;; Some package was overriding this, so put it last
 (put 'narrow-to-region 'disabled nil)
-(setq gc-cons-threshold (* 2 1000 1000))
+(setopt gc-cons-threshold (* 2 1000 1000))
 (provide 'init)
 ;;; init.el ends here.
