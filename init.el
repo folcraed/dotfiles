@@ -1,3 +1,4 @@
+;;; -*- lexical-binding: t; -*-
 ;; Rob's Emacs settings
 ;; File or commit timestamp show when last updated.
 ;; Startup settings are in the early-init.el file
@@ -5,7 +6,6 @@
 ;; ==============================================
 ;;  Set up some defaults
 ;; ==============================================
-(setq lexical-binding t)
 (setopt use-short-answers t)
 (prefer-coding-system 'utf-8)
 (global-visual-line-mode 1)
