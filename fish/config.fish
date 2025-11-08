@@ -271,7 +271,7 @@ function slt
 end
 
 function rf --description "Search for text with Recoll"
-    recoll -t -a $argv
+    recollq -b $argv
 end
 
 function gitclean
