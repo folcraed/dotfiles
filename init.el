@@ -518,7 +518,10 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(font-lock-comment-face ((t (:foreground "#9ca0a4" :slant italic))))
- '(link ((t (:foreground "#51afef" :underline nil :weight bold)))))
+ '(link ((t (:foreground "#51afef" :underline nil :weight bold))))
+ '(outline-6 ((t (:extend t :foreground "#2257a0" :weight bold))))
+ '(outline-7 ((t (:extend t :foreground "#c678dd" :weight bold))))
+ '(outline-8 ((t (:extend t :foreground "#5699AF" :weight bold)))))
 
 ;; Some package was overriding this, so put it last
 (put 'narrow-to-region 'disabled nil)
