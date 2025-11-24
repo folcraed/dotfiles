@@ -506,7 +506,8 @@
  '(org-export-backends '(ascii html md odt))
  '(package-selected-packages
    '(all-the-icons avy cape consult corfu doom-modeline doom-themes
-				   expand-region flyspell-correct iedit lua-mode magit
+				   expand-region flyspell-correct
+				   gnu-elpa-keyring-update iedit lua-mode magit
 				   marginalia markdown-mode minions orderless
 				   org-superstar ox-gfm project rainbow-delimiters
 				   rainbow-mode rg transpose-frame vertico winum))
