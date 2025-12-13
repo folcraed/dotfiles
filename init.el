@@ -116,6 +116,13 @@
 (require 'org-tempo)
 
 ;; ==============================================
+;;  Org mind-map
+;; ==============================================
+(add-to-list 'load-path "/home/rob/.config/emacs/other/org-graphviz-mindmap")
+(require 'org-graphviz-mindmap)
+(setopt org-graphviz-mindmap-output-format "png")
+
+;; ==============================================
 ;;  Minion for the rest
 ;; ==============================================
 (use-package minions)
