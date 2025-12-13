@@ -221,11 +221,12 @@ exec swaymsg focus output "HP Inc. HP 32 QHD CNK9220Q0Q"
 # Startup apps
 include /etc/sway/config.d/*
 exec --no-startup-id /usr/lib/polkit-kde-authentication-agent-1
-# exec --no-startup-id /usr/lib/pam_kwallet_init
+exec --no-startup-id /usr/lib/pam_kwallet_init
 exec --no-startup-id xset s off
 exec --no-startup-id dunst
 exec --no-startup-id udiskie -t
 exec --no-startup-id ssh-agent
+exec --no-startup-id kwalletd6
 exec --no-startup-id recollindex -m -x
 exec wl-paste -t text --watch cliphist store
 # vim: ft=dosini
