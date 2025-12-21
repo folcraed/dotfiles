@@ -1,12 +1,23 @@
 configuration {
 /*	To see all options run rofi -dump-config */
-    modi: "window,run,filebrowser,drun";
+    modi: "window,run,filebrowser,drun,calc";
 	font: "JetBrains Mono 11";
 	terminal: "kitty";
 	run-command: "{cmd}";
 	run-shell-command: "{terminal} -e {cmd}";
 	dpi: 92;
-        /* theme-str: "window { width: 30%; }"; */
+    calc {
+        no-bold: false;
+        terse: true;
+        no-history: true;
+        no-persist-history: true;
+        automatic-save-to-history: false;
+        calc-command-history: false;
+        calc-error-color: "Green";
+        calc-command: "notify-send {result}";
+        hint-result: "Res: ";
+        hint-welcome: "Calc: ";
+    }
 }
 @theme "Arc-Darker"
 /* vim:ft=css

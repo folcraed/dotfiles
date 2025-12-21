@@ -48,6 +48,9 @@ bindsym $mod+Shift+q kill
 # start the launcher
 bindsym $mod+p exec rofi -show drun
 
+# open rofi calculator
+bindsym $mod+q exec rofi -show calc -modi calc
+
 # mouse button for dragging.
 floating_modifier $mod normal
 
