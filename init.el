@@ -172,7 +172,7 @@
 ;;  Doom modeline & theme
 ;; ===============================================
 (use-package doom-modeline
-  :hook (after-init . doom-modeline-mode)
+  :init (doom-modeline-mode 1)
   :config
   (setopt doom-modeline-height 25
 		  doom-modeline-minor-modes t
