@@ -84,6 +84,7 @@ alias cdc='cd ~/.config'
 alias cdn='cd ~/Dropbox/Notes'
 alias clrc='sudo sysctl vm.drop_caches=1'
 alias dfh='df -h'
+alias disks='sudo inxi -a -D'
 alias dui='dua i'
 alias enw='emacs -nw' # Open Emacs in terminal
 alias eN='nvim ~/.config/nvim/init.lua'

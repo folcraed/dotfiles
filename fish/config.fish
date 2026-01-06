@@ -92,6 +92,10 @@ function dfh --description "Shows disk usage in human readable form"
     df -h
 end
 
+function disks --description "Shows disk use and smart status"
+    sudo inxi -a -D
+end
+
 function dui --description "Runs the disk usage utility"
     dua i
 end
