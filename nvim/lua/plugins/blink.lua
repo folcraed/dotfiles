@@ -14,6 +14,11 @@ return {
           "fallback",
         },
       },
+      completion = {
+        menu = {
+          auto_show_delay_ms = 1000,
+        },
+      },
     },
   },
 }
