@@ -211,24 +211,20 @@ filextype */
         \ dolphin %f &,
 
 " Script and config files
-filextype *.lua,*.sh,*.conf,*rc,*.md,*.js,*.py,*.toml,*.go,*.css,*.json,config,*.txt
+filextype *.lua,*.sh,*.conf,*rc,*.md,*.js,*.py,*.toml,*.go,*.css,*.json,config,*.txt,*.org,*.el
         \ {Open with Nvim}
         \ nvim %f,
         \ {Open with Kate}
         \ kate %f &,
         \ {Open with Sublime}
-        \ subl %f,
+        \ subl %f &,
         \ {open with Okular}
-        \ okular %f,
+        \ okular %f &,
         \ {Open with Emacs}
-        \ emacs -nw %f,
+        \ emacs %f &,
         \ {Open with Micro}
         \ micro %f,
 fileviewer *.lua,*.sh,*.conf,*rc,*.md,*.js,*.py env -uCOLORTERM bat --color=always --wrap=never --pager=never %c -p
-
-filextype *.org,*.el
-        \ {Open with Emacs}
-        \ emacs -nw %f
 
 set vifminfo=dhistory,savedirs,chistory,state,tui,shistory,
     \phistory,fhistory,dirstack,registers,bookmarks,bmarks
