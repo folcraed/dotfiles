@@ -13,7 +13,7 @@ set $term kitty --single-instance
 output "HP Inc. HP 32 QHD CNK9220Q0Q" resolution 2560x1440 position 0 0
 output "LG Electronics LG ULTRAGEAR 307MXFV9K787" resolution 2560x1440 position 2560 0
 output * subpixel rgb
-output * bg /home/rob/Pictures/dark_boat.jpg fill
+output * bg /home/rob/Pictures/castle_evening.jpg fill
 
 # Set the mouse pointer theme and size
 seat seat0 xcursor_theme breeze_cursors 24
