@@ -139,8 +139,6 @@ function extract --description "Expand or extract bundled & compressed files"
             tar -zxvf $argv[1]
         case bz2 # tar compressed with bzip2
             tar -jxvf $argv[1]
-        case rar
-            unrar x $argv[1]
         case zip
             unzip $argv[1]
         case '*'
