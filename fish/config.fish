@@ -9,6 +9,11 @@ function fish_title
     echo (status current-command) ' '
 end
 
+function bdbu
+    echo 'Backing up Home...'
+    rsync -aiv --exclude='.cache/' --exclude='.var/' ~/ /run/media/rob/bigdrive
+end
+
 function bu2
     echo 'Backing up Archives...'
     rsync -aiv --delete --exclude='.dtrash' --exclude='.comments/' ~/Dropbox/Archives/ /run/media/rob/backup/Dropbox/Archives

@@ -204,5 +204,11 @@ function bu2() {
   rsync -aiv --delete --exclude='.dtrash' --exclude='.comments' --exclude='.git' ~/scripts/ /run/media/rob/backup/scripts
 }
 
+# Backs up files with rsync to big drive drive
+function bdbu() {
+  echo 'Backing up Home...'
+  rsync -aiv --exclude='.cache/' --exclude='.var/' ~/ /run/media/rob/bigdrive
+}
+
 ## Initialize Starship prompt
 eval "$(starship init zsh)"
