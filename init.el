@@ -116,13 +116,6 @@
 (require 'org-tempo)
 
 ;; ==============================================
-;;  Org mind-map
-;; ==============================================
-(add-to-list 'load-path "/home/rob/.config/emacs/other/org-graphviz-mindmap")
-(require 'org-graphviz-mindmap)
-(setopt org-graphviz-mindmap-output-format "png")
-
-;; ==============================================
 ;;  Minion for the rest
 ;; ==============================================
 (use-package minions)
@@ -495,13 +488,7 @@
  '(calendar-mark-holidays-flag t)
  '(cursor-type '(bar . 2))
  '(org-export-backends '(ascii html md odt))
- '(package-selected-packages
-   '(all-the-icons avy cape consult corfu doom-modeline doom-themes
-				   expand-region flyspell-correct
-				   gnu-elpa-keyring-update iedit magit
-				   marginalia markdown-mode minions orderless
-				   org-superstar ox-gfm project rainbow-delimiters
-				   rainbow-mode rg transpose-frame vertico winum))
+ '(package-selected-packages nil)
  '(project-vc-extra-root-markers '("project.txt")))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
