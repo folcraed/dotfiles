@@ -11,7 +11,7 @@ end
 
 function bdbu
     echo 'Backing up Home...'
-    rsync -aiv --exclude='.cache/' --exclude='.var/' ~/ /run/media/rob/bigdrive
+    rsync -aiv --exclude='.cache/' --exclude='.var/' ~/ /run/media/bigdrive
 end
 
 function bu2
