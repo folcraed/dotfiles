@@ -488,7 +488,12 @@
  '(calendar-mark-holidays-flag t)
  '(cursor-type '(bar . 2))
  '(org-export-backends '(ascii html md odt))
- '(package-selected-packages nil)
+ '(package-selected-packages
+   '(all-the-icons avy cape consult corfu doom-modeline doom-themes
+				   expand-region flyspell-correct iedit magit
+				   marginalia markdown-mode minions orderless
+				   org-superstar rainbow-delimiters rainbow-mode rg
+				   transpose-frame vertico winum))
  '(project-vc-extra-root-markers '("project.txt")))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
