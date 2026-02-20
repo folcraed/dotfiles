@@ -202,10 +202,10 @@ function bu2() {
   rsync -aiv --delete --exclude='.dtrash' --exclude='.comments' --exclude='.git' ~/scripts/ /run/media/rob/backup/scripts
 }
 
-# Backs up files with rsync to big drive drive
+# Backs up files with rsync to big drive
 function bdbu() {
   echo 'Backing up Home...'
-  rsync -aiv --exclude='Downloads' --exclude='Trash' --exclude='.git' --exclude='.cache/' --exclude='.var/' ~/ /run/media/bigdrive
+  rsync -aiv --exclude-from='/home/rob/.config/excluded.conf' ~/ /run/media/bigdrive
 }
 
 ## Initialize Starship prompt

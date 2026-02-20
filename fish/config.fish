@@ -11,7 +11,7 @@ end
 
 function bdbu
     echo 'Backing up Home...'
-    rsync -aiv --exclude='Downloads' --exclude='Trash' --exclude='.git' --exclude='.cache/' --exclude='.var/' ~/ /run/media/bigdrive
+    rsync -aiv --exclude-from='/home/rob/.config/excluded.conf' ~/ /run/media/bigdrive
 end
 
 function bu2
