@@ -285,6 +285,8 @@
 ;;  Magit
 ;; ===============================================
 (use-package magit)
+;; Keep vc from interfering with magit
+(setopt vc-handled-backends nil)
 
 ;; ===============================================
 ;; Markdown editing
@@ -494,7 +496,7 @@
 				   marginalia markdown-mode minions orderless
 				   org-superstar rainbow-delimiters rainbow-mode rg
 				   transpose-frame vertico winum))
- '(project-vc-extra-root-markers '("project.txt")))
+ '(project-vc-extra-root-markers '(".project" ".git")))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
