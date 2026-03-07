@@ -2,6 +2,9 @@ export _JAVA_AWT_WM_NONREPARENTING=1
 export JAVA_HOME=/usr/lib/jvm/java-21-openjdk/
 export FREEPLANE_JAVA_HOME=/usr/lib/jvm/java-21-openjdk/
 export EDITOR=nvim
+export VDPAU_DRIVER=nvidia
+export MOZ_DISABLE_RDD_SANDBOX=1
+export LIBVA_DRIVER_NAME=nvidia
 # export QTWEBENGINE_FORCE_USE_GBM=0
 
 if [ "$XDG_SESSION_DESKTOP" = "sway:wlroots" ]; then
