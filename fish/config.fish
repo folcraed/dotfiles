@@ -251,18 +251,6 @@ function pacm --description "Update pacman mirrors"
     sudo pacman-mirrors -c United_States
 end
 
-function pamu --description "Update all packages (repo and AUR)"
-    pamac update
-end
-
-function pams --description "Search repos and AUR for package"
-    pamac search $argv
-end
-
-function pami --description "Install package for repos or AUR"
-    pamac install $argv
-end
-
 function icat
     kitty +kitten icat
 end
