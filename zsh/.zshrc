@@ -88,6 +88,7 @@ alias disks='sudo inxi -a -D'
 alias dui='dua i'
 alias enw='emacs -nw' # Open Emacs in terminal
 alias eN='nvim ~/.config/nvim/init.lua'
+alias eou='eos-update --nvidia --yay'
 alias eZ='nvim ~/.zshrc'
 alias free='free -th'
 alias fzb='fzf -e --preview="bat --color=always {}"'

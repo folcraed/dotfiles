@@ -111,6 +111,10 @@ function enw --description "Run Emacs in terminal"
     emacs -nw
 end
 
+function eou --description "EOS Update system"
+    eos-update --nvidia --yay
+end
+
 function lr --description "Sorts with newest at the top of list"
     eza -alh --sort=newest -r
 end
