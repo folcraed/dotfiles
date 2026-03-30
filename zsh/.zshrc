@@ -203,7 +203,7 @@ function bu2() {
 # Backs up files with rsync to big drive
 function bdbu() {
   echo 'Backing up Home...'
-  rsync -aiv --exclude-from='/home/rob/.config/excluded.conf' ~/ /run/media/bigdrive
+  rsync -aiv --delete --exclude-from='/home/rob/.config/excluded.conf' ~/ /run/media/bigdrive
 }
 
 ## Initialize Starship prompt
