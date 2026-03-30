@@ -480,7 +480,7 @@
 ;; Custom settings
 ;; ==============================================
 (setopt custom-safe-themes t)
-(load-theme 'doom-one-light t)
+(load-theme 'doom-one t)
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
