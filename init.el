@@ -340,6 +340,7 @@
 (keymap-global-set "M-o" 'consult-outline)
 (keymap-global-set "M-g" 'consult-goto-line)
 (keymap-global-set "M-G" 'goto-line)
+(keymap-global-set "M-r" 'string-rectangle)
 (keymap-global-set "M-j" 'avy-goto-char-timer)
 (keymap-global-set "M-;" 'comment-line)
 (keymap-global-set "M-d" 'duplicate-dwim)
