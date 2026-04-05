@@ -275,7 +275,7 @@
 (use-package flyspell-correct
   :after flyspell)
 
-(setopt ispell-program-name "aspell"
+(setopt ispell-program-name "hunspell"
 		ispell-dictionary "en_US"
 		ispell-local-dictionary "american"
 		flyspell-issue-message-flag nil
