@@ -162,7 +162,7 @@
 (setopt dired-kill-when-opening-new-dired-buffer t)
 
 ;; ===============================================
-;;  Doom modeline & theme
+;;  Doom modeline & themes
 ;; ===============================================
 (use-package doom-modeline
   :init (doom-modeline-mode 1)
@@ -183,6 +183,14 @@
   :config
   (setopt doom-themes-enable-bold t
 		  doom-themes-enable-italic t))
+
+(use-package tokyo-night
+  :config
+  (setopt tokyo-night-scale-headings nil)
+  (load-theme 'tokyo-night t))
+
+(custom-set-faces
+ '(org-date ((t (:underline nil)))))
 
 (use-package all-the-icons)
 
@@ -481,7 +489,7 @@
 ;; Custom settings
 ;; ==============================================
 (setopt custom-safe-themes t)
-(load-theme 'doom-one-light t)
+;; (load-theme 'doom-one-light t)
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
@@ -495,19 +503,20 @@
    '(all-the-icons avy cape consult corfu doom-modeline doom-themes
 				   expand-region flyspell-correct iedit magit
 				   marginalia markdown-mode minions orderless
-				   org-superstar rainbow-delimiters rainbow-mode rg
-				   transpose-frame vertico winum))
+				   org-superstar ox-gfm rainbow-delimiters
+				   rainbow-mode rg tokyo-night transpose-frame vertico
+				   winum))
  '(project-vc-extra-root-markers '(".project" ".git")))
-(custom-set-faces
+;;(custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(font-lock-comment-face ((t (:foreground "#9ca0a4" :slant italic))))
- '(link ((t (:foreground "#51afef" :underline nil :weight bold))))
- '(outline-6 ((t (:extend t :foreground "#2257a0" :weight bold))))
- '(outline-7 ((t (:extend t :foreground "#c678dd" :weight bold))))
- '(outline-8 ((t (:extend t :foreground "#5699AF" :weight bold)))))
+;; '(font-lock-comment-face ((t (:foreground "#9ca0a4" :slant italic))))
+;; '(link ((t (:foreground "#51afef" :underline nil :weight bold))))
+;; '(outline-6 ((t (:extend t :foreground "#2257a0" :weight bold))))
+;; '(outline-7 ((t (:extend t :foreground "#c678dd" :weight bold))))
+;; '(outline-8 ((t (:extend t :foreground "#5699AF" :weight bold)))))
 
 ;; Some package was overriding this, so put it last
 (put 'narrow-to-region 'disabled nil)
