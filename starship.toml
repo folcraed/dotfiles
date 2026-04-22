@@ -1,66 +1,60 @@
 format = """
 [░▒▓](#abb2bf)\
 [  ](bg:#abb2bf fg:#090c0c)\
-[](bg:#51afef fg:#abb2bf)\
+[](bg:#7aa2f7 fg:#abb2bf)\
 $directory\
-[](fg:#51afef bg:#5b6268)\
+[](fg:#7aa2f7 bg:#414868)\
 $git_branch\
 $git_status\
-[](fg:#5b6268 bg:#3f444a)\
+[](fg:#414868 bg:#283457)\
 $nodejs\
 $python\
-$golang\
 $lua\
-[](fg:#3f444a bg:#23272e)\
+[](fg:#283457 bg:#292e42)\
 $cmd_duration\
-[ ](fg:#23272e)\
+[ ](fg:#292e42)\
 \n$character"""
 
 [directory]
-style = "fg:#15161e bg:#51afef"
+style = "fg:#15161e bg:#7aa2f7"
 format = "[ $path ]($style)"
 truncation_length = 3
 truncation_symbol = "…/"
 
 [git_branch]
 symbol = ""
-style = "bg:#5b6268"
-format = '[[ $symbol $branch ](fg:#e5c07b bg:#5b6268)]($style)'
+style = "bg:#414868"
+format = '[[ $symbol $branch ](fg:#8db0ff bg:#414868)]($style)'
 
 [git_status]
-style = "bg:#5b6268"
-ahead = '[ ($count)](fg:green bg:#5b6268)'
-untracked = '[ ($count)](fg:red bg:#5b6268)'
-modified = '[  ($count)](fg:yellow bg:#5b6268)'
-deleted = '[  ($count)](fg:red bg:#5b6268)'
-format = '[[$all_status$ahead_behind](bg:#5b6268)]($style)'
+style = "bg:#414868"
+ahead = '[ ($count)](fg:green bg:#414868)'
+untracked = '[ ($count)](fg:red bg:#414868)'
+modified = '[  ($count)](fg:yellow bg:#414868)'
+deleted = '[  ($count)](fg:red bg:#414868)'
+format = '[[$all_status$ahead_behind](bg:#414868)]($style)'
 
 [nodejs]
 symbol = " "
-style = "bg:#3f444a"
-format = '[[ $symbol ($version) ](fg:#98be65 bg:#3f444a)]($style)'
+style = "bg:#283457"
+format = '[[ $symbol ($version) ](fg:#9ece6a bg:#283457)]($style)'
 
 [python]
-symbol = " "
-style = "bg:#3f444a"
-format = '[[ $symbol ($version) ](fg:#98be65 bg:#3f444a)]($style)'
-
-[golang]
-symbol = "  "
-style = "bg:#3f444a"
-format = '[[ $symbol ($version) ](fg:#98be65 bg:#3f444a)]($style)'
+symbol = " "
+style = "bg:#283457"
+format = '[[ $symbol ($version) ](fg:#9ece6a bg:#283457)]($style)'
 
 [lua]
 symbol = " "
-style = "bg:#3f444a"
-format = '[[ $symbol ($version) ](fg:#98be65 bg:#3f444a)]($style)'
+style = "bg:#283457"
+format = '[[ $symbol ($version) ](fg:#9ece6a bg:#283457)]($style)'
 
 [cmd_duration]
 disabled = false
-style = "bg:#23272e"
-format = '[[  $duration ](fg:#c678dd bg:#23272e)]($style)'
+style = "bg:#292e42"
+format = '[[  $duration ](fg:#bb9af7 bg:#292e42)]($style)'
 
 [character]
 disabled = false
-success_symbol = '[⮞ ](bold fg:#98c379)'
-error_symbol = '[⮞ ](bold fg:#e06c75)'
+success_symbol = '[⮞ ](bold fg:#9ece6a)'
+error_symbol = '[⮞ ](bold fg:#f7768e)'
