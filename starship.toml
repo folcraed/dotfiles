@@ -9,7 +9,6 @@ $git_status\
 [](fg:#5b6268 bg:#3f444a)\
 $nodejs\
 $python\
-$golang\
 $lua\
 [](fg:#3f444a bg:#23272e)\
 $cmd_duration\
@@ -41,12 +40,7 @@ style = "bg:#3f444a"
 format = '[[ $symbol ($version) ](fg:#98be65 bg:#3f444a)]($style)'
 
 [python]
-symbol = " "
-style = "bg:#3f444a"
-format = '[[ $symbol ($version) ](fg:#98be65 bg:#3f444a)]($style)'
-
-[golang]
-symbol = "  "
+symbol = " "
 style = "bg:#3f444a"
 format = '[[ $symbol ($version) ](fg:#98be65 bg:#3f444a)]($style)'
 
