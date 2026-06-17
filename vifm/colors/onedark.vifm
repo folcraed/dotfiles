@@ -26,7 +26,7 @@ highlight Win             cterm=none ctermfg=-1         ctermbg=none
 
 highlight TopLine         cterm=none ctermfg=2          ctermbg=none
 highlight TopLineSel      cterm=none ctermfg=2          ctermbg=none
-highlight StatusLine      cterm=bold ctermfg=0          ctermbg=12
+highlight StatusLine      cterm=bold ctermfg=black      ctermbg=12
 highlight Border          cterm=none ctermfg=4          ctermbg=none
 
 highlight Selected        cterm=bold ctermfg=5          ctermbg=default
