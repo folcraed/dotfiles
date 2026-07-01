@@ -1,6 +1,6 @@
 " vim: filetype=vifm :
 
-set vicmd=nvim
+set vicmd="emacsclient -nw"
 set trashdir="~/.local/share/Trash"
 set shell=/usr/bin/zsh
 set trash
@@ -212,14 +212,14 @@ filextype */
 
 " Script and config files
 filextype *.lua,*.sh,*.conf,*rc,*.md,*.js,*.py,*.toml,*.go,*.css,*.json,config,*.txt,*.org,*.el
+        \ {Open with Emacs}
+        \ emacsclient -nw --alternate-editor= --create-frame %f,
         \ {Open with Nvim}
         \ nvim %f,
         \ {Open with Kate}
         \ kate %f &,
         \ {open with Okular}
         \ okular %f &,
-        \ {Open with Emacs}
-        \ emacs %f &,
         \ {Open with Micro}
         \ micro %f,
 fileviewer *.lua,*.sh,*.conf,*rc,*.md,*.js,*.py env -uCOLORTERM bat --color=always --wrap=never --pager=never %c -p
@@ -241,7 +241,7 @@ nnoremap ,h :nohl<cr>
 
 " Open file in other editors
 nnoremap o :!kate %f &<cr>
-nnoremap O :!emacs %f &<cr>
+nnoremap O :!emacsclient --alternate-editor= --create-frame %f &<cr>
 
 " Open file in the background using its default program
 nnoremap gb :file &<cr>l
@@ -257,10 +257,10 @@ nnoremap rf cW<c-u>
 " Open console in current directory
 nnoremap ,t :!xterm &<cr>
 
-" Open vim to edit vifmrc and apply settings after returning to vifm
-nnoremap ,c :write | execute ':!nvim $MYVIFMRC' | restart<cr>
-" Open nvim to edit vifmrc
-nnoremap ,C :!nvim --remote-tab-silent $MYVIFMRC &<cr>
+" Open Emacs to edit vifmrc and apply settings after returning to vifm
+nnoremap ,c :write | execute ':!emacsclient -nw $MYVIFMRC' | restart<cr>
+" Open Emacs to edit vifmrc
+nnoremap ,C :!emacsclient -nw $MYVIFMRC &<cr>
 
 " Toggle wrap setting on ,w key
 nnoremap ,w :set wrap!<cr>
