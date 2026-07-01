@@ -252,7 +252,7 @@ function pacc --description "Clear old packages from cache"
 end
 
 function pacm --description "Update pacman mirrors"
-    sudo pacman-mirrors -c United_States
+    sudo reflector --country US --age 12 --protocol https --sort rate --score 8 --save /etc/pacman.d/mirrorlist
 end
 
 function icat
