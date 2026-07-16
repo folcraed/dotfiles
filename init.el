@@ -46,13 +46,12 @@
 			(?+ . ?◦)
 			(?- . ?•))))
 
-(setq-default org-file-apps
-			  (quote
-			   ((auto-mode . emacs)
-				("\\.png\\'" . "xdg-open %s")
-				("\\.jpg\\'" . "xdg-open %s")
-				("\\.pdf\\'" . "xdg-open %s")
-				("\\.ods\\'" . "xdg-open %s"))))
+(setopt org-file-apps
+			   '((auto-mode . emacs)
+				("png" . "xdg-open %s")
+				("jpg" . "xdg-open %s")
+				("pdf" . "xdg-open %s")
+				("ods" . "xdg-open %s")))
 
 (setopt org-directory "~/Dropbox/Notes")
 (setopt org-capture-templates
@@ -68,8 +67,8 @@
 (setopt org-todo-keywords
 		'((sequence "TODO" "WORKING" "DONE")))
 
-(setq-default org-display-custom-times t)
-(setq-default org-export-headline-levels 6)
+(setopt org-display-custom-times t)
+(setopt org-export-headline-levels 6)
 (setopt org-time-stamp-custom-formats '("%a %e %b %Y" . "%a %e %b %Y %H:%M")
 		org-agenda-files (quote ("~/Dropbox/Notes/agenda.org"))
 		org-archive-location "./archive.org::* Finished"
