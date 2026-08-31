@@ -1,6 +1,6 @@
 # Startup exports
 export PATH=$HOME/bin:$PATH
-export EDITOR=nvim
+export EDITOR='emacsclient -nw'
 export BROWSER=firefox
 export SHELL=/usr/bin/zsh
 export PAGER="nvim -R"
@@ -19,6 +19,8 @@ export LYNX_LSS="$HOME/lynx.lss"
 export _JAVA_AWT_WM_NONREPARENTING=1
 export JAVA_HOME=/usr/lib/jvm/java-21-openjdk/
 export FREEPLANE_JAVA_HOME=/usr/lib/jvm/java-21-openjdk/
+export CUDA_DISABLE_PERF_BOOST=1
+# export QTWEBENGINE_FORCE_USE_GBM=0
 
 if [ "$XDG_SESSION_DESKTOP" = "sway;wlroots" ]; then
     export QT_AUTO_SCREEN_SCALE_FACTOR=0
