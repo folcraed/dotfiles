@@ -107,8 +107,8 @@ function eN --description "Edit the Neovim configuration"
     nvim ~/.config/nvim/init.lua
 end
 
-function enw --description "Run Emacs in terminal"
-    emacs -nw
+function emc --description "Run Emacsclient in terminal"
+    emacsclient -nw
 end
 
 function eou --description "EOS Update system"

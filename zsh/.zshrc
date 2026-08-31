@@ -86,7 +86,7 @@ alias clrc='sudo sysctl vm.drop_caches=1'
 alias dfh='df -h'
 alias disks='sudo inxi -a -D'
 alias dui='dua i'
-alias enw='emacs -nw' # Open Emacs in terminal
+alias emc='emacsclient -nw' # Open Emacs in terminal
 alias eN='nvim ~/.config/nvim/init.lua'
 alias eou='eos-update --nvidia --yay'
 alias eZ='nvim ~/.zshrc'
