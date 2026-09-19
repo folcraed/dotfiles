@@ -115,6 +115,10 @@ function eou --description "EOS Update system"
     eos-update --nvidia --yay
 end
 
+function icat --description "View image file with kitty terminal viewer"
+	kitty icat $argv
+end
+
 function lr --description "Sorts with newest at the top of list"
     eza -alh --sort=newest -r
 end
@@ -253,10 +257,6 @@ end
 
 function pacm --description "Update pacman mirrors"
     sudo reflector --country US --age 12 --protocol https --sort rate --score 8 --save /etc/pacman.d/mirrorlist
-end
-
-function icat
-    kitty +kitten icat
 end
 
 function se --description "Annotate image with Spectacle"
