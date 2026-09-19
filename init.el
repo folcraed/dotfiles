@@ -170,6 +170,7 @@
 		  doom-modeline-minor-modes t
 		  doom-modeline-major-mode-color-icon t
 		  doom-modeline-buffer-modification-icon t
+		  doom-modeline-project-name nil
 		  doom-modeline-buffer-encoding nil
 		  doom-modeline-buffer-file-name-style 'relative-from-project
 		  doom-modeline-env-enable-python t
@@ -238,7 +239,7 @@
   (setopt consult-narrow-key "<") ;; (kbd "C-+")
   (setq consult-project-root-function
         (lambda ()
-          (when-let (project (project-current))
+          (when-let* (project (project-current))
             (car (project-root project))))))
 
 (use-package marginalia
