@@ -12,8 +12,8 @@
 (global-hl-line-mode 1)
 (setq read-process-output-max (* 1024 1024))
 (cua-mode t)
-(set-face-attribute 'default nil :font "JetBrainsMono" :height 105)
-(set-face-attribute 'fixed-pitch nil :font "JetBrainsMono" :height 105)
+(set-face-attribute 'default nil :font "JetBrainsMono Nerd Font" :height 105)
+(set-face-attribute 'fixed-pitch nil :font "JetBrainsMono Nerd Font" :height 105)
 
 ;; This is suppose to fix ??? displaying instead
 ;; of line numbers in modeline
@@ -168,6 +168,7 @@
   :config
   (setopt doom-modeline-height 25
 		  doom-modeline-minor-modes t
+		  doom-modeline-icon t
 		  doom-modeline-major-mode-color-icon t
 		  doom-modeline-buffer-modification-icon t
 		  doom-modeline-project-name nil
@@ -184,7 +185,9 @@
   (setopt doom-themes-enable-bold t
 		  doom-themes-enable-italic t))
 
-(use-package all-the-icons)
+(use-package nerd-icons
+  :custom
+  (nerd-icons-font-family "JetBrainsMono Nerd Font"))
 
 ;; ==============================================
 ;;  Winum settings
@@ -492,11 +495,11 @@
  '(cursor-type '(bar . 2))
  '(org-export-backends '(ascii html md odt))
  '(package-selected-packages
-   '(all-the-icons avy cape consult corfu doom-modeline doom-themes
+   '(avy cape consult corfu doom-modeline doom-themes
 				   expand-region flyspell-correct iedit magit
 				   marginalia markdown-mode minions orderless
 				   org-superstar rainbow-delimiters rainbow-mode rg
-				   transpose-frame vertico winum))
+				   transpose-frame vertico winum nerd-icons))
  '(project-vc-extra-root-markers '(".project" ".git")))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
