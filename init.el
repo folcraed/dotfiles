@@ -12,8 +12,8 @@
 (global-hl-line-mode 1)
 (setq read-process-output-max (* 1024 1024))
 (cua-mode t)
-(set-face-attribute 'default nil :font "JetBrainsMono Nerd Font" :height 105)
-(set-face-attribute 'fixed-pitch nil :font "JetBrainsMono Nerd Font" :height 105)
+(set-face-attribute 'default nil :font "JetBrainsMono Nerd Font:size=10")
+(set-face-attribute 'fixed-pitch nil :font "JetBrainsMono Nerd Font:size=10")
 
 ;; This is suppose to fix ??? displaying instead
 ;; of line numbers in modeline
@@ -495,11 +495,10 @@
  '(cursor-type '(bar . 2))
  '(org-export-backends '(ascii html md odt))
  '(package-selected-packages
-   '(avy cape consult corfu doom-modeline doom-themes
-				   expand-region flyspell-correct iedit magit
-				   marginalia markdown-mode minions orderless
-				   org-superstar rainbow-delimiters rainbow-mode rg
-				   transpose-frame vertico winum nerd-icons))
+   '(avy cape consult corfu doom-modeline doom-themes expand-region
+		 flyspell-correct iedit magit marginalia markdown-mode minions
+		 orderless org-superstar rainbow-delimiters rainbow-mode rg
+		 transpose-frame vertico winum nerd-icons))
  '(project-vc-extra-root-markers '(".project" ".git")))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
