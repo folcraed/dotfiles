@@ -1,13 +1,14 @@
 * {
   all: unset;
   border: none;
-  border-radius: 8px;
+  border-radius: 10px;
+  padding: 2px 2px;
   font-family: "Noto Sans", FontAwesome;
-  min-height: 0;
+  min-height: 0px;
 }
 
 window#waybar {
-  background: rgba(40, 44, 52, 0.1);
+  background: rgba(10, 23, 55, 0.5);
   color: #abb2bf;
   transition-property: background-color;
   transition-duration: 0.5s;
@@ -22,7 +23,7 @@ window#waybar.hidden {
 
 tooltip {
   background: rgba(43, 48, 59, 0.5);
-  border: 1px solid rgba(100, 114, 125, 0.5);
+  border: 1px solid #132140;
 }
 
 tooltip label {
@@ -32,12 +33,10 @@ tooltip label {
 }
 
 #workspaces {
-  background: rgba(81, 175, 239, 0.5);
   margin: 2px 2px 3px 2px;
   padding: 0px 1px;
-  border-radius: 8px;
+  border-radius: 10px;
   border: 0px;
-  color: rgba(81, 175, 239, 0.5);
 }
 
 #workspaces button {
@@ -63,8 +62,8 @@ tooltip label {
 
 #taskbar {
   background: #abb2bf;
-  padding: 0 0.7em;
-  border-radius: 8px;
+  padding: 0 0.5em;
+  border-radius: 10px;
 }
 
 #taskbar button {
@@ -96,8 +95,9 @@ tooltip label {
 #tray,
 #taskbar,
 #workspaces {
-  background-color: rgba(81, 175, 239, 0.5);
-  color: #f4f4f4;
+  background-color: #132140;
+  border: 1px solid #0e2c6a;
+  color: #abb2bf;
 }
 
 /* If workspaces is the leftmost module, omit left margin */
