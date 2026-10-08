@@ -109,7 +109,7 @@
   (let ((current-prefix-arg '(4))) ;; emulates C-u
     (call-interactively 'org-insert-link)))
 
-(keymap-set org-mode-map "C-c f" 'rw/insert-file-link)
+(keymap-set org-mode-map "C-c f" #'rw/insert-file-link)
 
 ;; Use the shortcuts for source and quote blocks
 (require 'org-tempo)
@@ -133,7 +133,7 @@
 
 (use-package expand-region
   :config
-  (keymap-global-set "C-=" 'er/expand-region))
+  (keymap-global-set "C-=" #'er/expand-region))
 
 (use-package rainbow-delimiters)
 (add-hook 'prog-mode-hook #'rainbow-delimiters-mode)
@@ -316,55 +316,55 @@
 ;; ===============================================
 ;; Some personal keybindings
 ;; ===============================================
-(keymap-global-set "C-c k" 'consult-yank-from-kill-ring)
-(keymap-global-set "C-c r b" 'rotate-frame-anticlockwise)
-(keymap-global-set "C-c r c" 'rotate-frame-clockwise)
-(keymap-global-set "C-c r s" 'rotate-frame)
-(keymap-global-set "<f6>" 'flyspell-buffer)
-(keymap-global-set "<f7>" 'flyspell-mode)
-(keymap-global-set "<f8>" 'flyspell-region)
-(keymap-global-set "<f9>" 'insert-char)
-(keymap-global-set "C-c w" 'flyspell-correct-wrapper)
-(keymap-global-set "C-c x" 'kill-buffer-and-window)
-(keymap-global-set "C-c #" 'rainbow-mode)
-(keymap-global-set "M-s g" 'consult-ripgrep)
-(keymap-global-set "M-s b" 'rgrep)
-(keymap-global-set "M-s f" 'consult-fd)
-(keymap-global-set "M-s l" 'consult-line-multi)
-(keymap-global-set "M-s r" 'consult-register)
-(keymap-global-set "M-s s" 'consult-register-store)
-(keymap-global-set "M-f" 'consult-line)
-(keymap-global-set "C-p" 'find-file)
-(keymap-global-set "C-b" 'consult-buffer)
-(keymap-global-set "C-c b" 'consult-buffer-other-window)
-(keymap-global-set "M-'" 'push-mark-command)
-(keymap-global-set "M-m" 'consult-mark)
-(keymap-global-set "M-l" 'avy-goto-line)
-(keymap-global-set "M-o" 'consult-outline)
-(keymap-global-set "M-g" 'consult-goto-line)
-(keymap-global-set "M-G" 'goto-line)
-(keymap-global-set "M-r" 'string-rectangle)
-(keymap-global-set "M-j" 'avy-goto-char-timer)
-(keymap-global-set "M-;" 'comment-line)
-(keymap-global-set "M-d" 'duplicate-dwim)
-(keymap-global-set "M-#" 'dictionary-lookup-definition)
-(keymap-global-set "C-q" 'delete-frame)
-(keymap-set org-mode-map "C-c a" 'org-agenda)
-(keymap-set org-mode-map "C-c c" 'org-capture)
-(keymap-set org-mode-map "C-c m" 'org-emphasize)
-(keymap-set org-mode-map "C-c p" 'rw/show-org-path)
-(keymap-set org-mode-map "C-c t" 'org-toggle-link-display)
-(keymap-set org-mode-map "C-c y" 'org-store-link)
-(keymap-set org-mode-map "C-c z" 'org-id-get-create)
-(keymap-set org-mode-map "C-o" 'org-open-at-point)
+(keymap-global-set "C-c k" #'consult-yank-from-kill-ring)
+(keymap-global-set "C-c r b" #'rotate-frame-anticlockwise)
+(keymap-global-set "C-c r c" #'rotate-frame-clockwise)
+(keymap-global-set "C-c r s" #'rotate-frame)
+(keymap-global-set "<f6>" #'flyspell-buffer)
+(keymap-global-set "<f7>" #'flyspell-mode)
+(keymap-global-set "<f8>" #'flyspell-region)
+(keymap-global-set "<f9>" #'insert-char)
+(keymap-global-set "C-c w" #'flyspell-correct-wrapper)
+(keymap-global-set "C-c x" #'kill-buffer-and-window)
+(keymap-global-set "C-c #" #'rainbow-mode)
+(keymap-global-set "M-s g" #'consult-ripgrep)
+(keymap-global-set "M-s b" #'rgrep)
+(keymap-global-set "M-s f" #'consult-fd)
+(keymap-global-set "M-s l" #'consult-line-multi)
+(keymap-global-set "M-s r" #'consult-register)
+(keymap-global-set "M-s s" #'consult-register-store)
+(keymap-global-set "M-f" #'consult-line)
+(keymap-global-set "C-p" #'find-file)
+(keymap-global-set "C-b" #'consult-buffer)
+(keymap-global-set "C-c b" #'consult-buffer-other-window)
+(keymap-global-set "M-'" #'push-mark-command)
+(keymap-global-set "M-m" #'consult-mark)
+(keymap-global-set "M-l" #'avy-goto-line)
+(keymap-global-set "M-o" #'consult-outline)
+(keymap-global-set "M-g" #'consult-goto-line)
+(keymap-global-set "M-G" #'goto-line)
+(keymap-global-set "M-r" #'string-rectangle)
+(keymap-global-set "M-j" #'avy-goto-char-timer)
+(keymap-global-set "M-;" #'comment-line)
+(keymap-global-set "M-d" #'duplicate-dwim)
+(keymap-global-set "M-#" #'dictionary-lookup-definition)
+(keymap-global-set "C-q" #'delete-frame)
+(keymap-set org-mode-map "C-c a" #'org-agenda)
+(keymap-set org-mode-map "C-c c" #'org-capture)
+(keymap-set org-mode-map "C-c m" #'org-emphasize)
+(keymap-set org-mode-map "C-c p" #'rw/show-org-path)
+(keymap-set org-mode-map "C-c t" #'org-toggle-link-display)
+(keymap-set org-mode-map "C-c y" #'org-store-link)
+(keymap-set org-mode-map "C-c z" #'org-id-get-create)
+(keymap-set org-mode-map "C-o" #'org-open-at-point)
 (keymap-set org-mode-map "C-M-S-<left>" nil) ; Originally decrease numbers
 (keymap-set org-mode-map "C-M-S-<right>" nil) ; Originally increase numbers
-(keymap-global-set "C-M-S-<left>" 'shrink-window-horizontally)
-(keymap-global-set "C-M-S-<right>" 'enlarge-window-horizontally)
-(keymap-global-set "C-M-S-<down>" 'shrink-window)
-(keymap-global-set "C-M-S-<up>" 'enlarge-window)
-(keymap-global-set "<escape>" 'keyboard-escape-quit)
-(keymap-set dired-mode-map "C-c o" 'dired-open-file)
+(keymap-global-set "C-M-S-<left>" #'shrink-window-horizontally)
+(keymap-global-set "C-M-S-<right>" #'enlarge-window-horizontally)
+(keymap-global-set "C-M-S-<down>" #'shrink-window)
+(keymap-global-set "C-M-S-<up>" #'enlarge-window)
+(keymap-global-set "<escape>" #'keyboard-escape-quit)
+(keymap-set dired-mode-map "C-c o" #'dired-open-file)
 
 ;; ==============================================
 ;;  Sanity settings
@@ -416,10 +416,10 @@
   (transpose-lines 1)
   (forward-line -1))
 
-(keymap-global-set "M-n" 'rob-scroll-down)
-(keymap-global-set "M-p" 'rob-scroll-up)
-(keymap-global-set "M-S-<up>" 'rob-move-line-up)
-(keymap-global-set "M-S-<down>" 'rob-move-line-down)
+(keymap-global-set "M-n" #'rob-scroll-down)
+(keymap-global-set "M-p" #'rob-scroll-up)
+(keymap-global-set "M-S-<up>" #'rob-move-line-up)
+(keymap-global-set "M-S-<down>" #'rob-move-line-down)
 
 ;; ==============================================
 ;; Narrow or widen whatever I'm working on
@@ -449,7 +449,7 @@
   (split-window-below)
   (balance-windows)
   (other-window 1))
-(keymap-global-set "C-x 2" 'split-and-follow-horizontally)
+(keymap-global-set "C-x 2" #'split-and-follow-horizontally)
 
 (defun split-and-follow-vertically ()
     "Split the window vertically and go to new split."
@@ -457,7 +457,7 @@
   (split-window-right)
   (balance-windows)
   (other-window 1))
-(keymap-global-set "C-x 3" 'split-and-follow-vertically)
+(keymap-global-set "C-x 3" #'split-and-follow-vertically)
 
 ;; ==============================================
 ;; Sort selection by common delimiter
