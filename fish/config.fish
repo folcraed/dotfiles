@@ -131,6 +131,10 @@ function la --description "List directory contents with optional regex search"
     eza -alh $argv
 end
 
+function lah --description "List directory contents with hyperlinking and optional regex search"
+    eza -alh --hyperlink=auto $argv
+end
+
 function lg --description "List recent git commits"
     eza -alh --git
 end
