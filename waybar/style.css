@@ -22,12 +22,12 @@ window#waybar.hidden {
 }
 
 tooltip {
-  background: rgba(43, 48, 59, 0.5);
-  border: 1px solid #132140;
+  background: rgba(19, 33, 64, 0.5);
+  border: 1px solid #0e2c6a;
 }
 
 tooltip label {
-  background: #282c34;
+  background: rgba(19, 33, 64, 0.5);
   color: #abb2bf;
   font-size: 14px;
 }
@@ -93,6 +93,7 @@ tooltip label {
 #custom-nvidia,
 #wireplumber,
 #tray,
+#idle_inhibitor,
 #taskbar,
 #workspaces {
   background-color: #132140;
@@ -114,9 +115,8 @@ tooltip label {
   border-radius: 8px;
 }
 
-#pulseaudio.muted {
-  background-color: #3b4252;
-  color: #abb2bf;
+#wireplumber.muted {
+  color: #eb4d4b;
 }
 
 #temperature.critical {
@@ -137,12 +137,10 @@ tooltip label {
 }
 
 #tray menu {
-  background-color: #282c34;
   color: #abb2bf;
 }
 
 #idle_inhibitor {
-  background-color: #44475a;
   color: #f8f8f2;
 }
 
