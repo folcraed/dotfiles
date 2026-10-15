@@ -1,6 +1,6 @@
 " vim: filetype=vifm :
 
-set vicmd="emacsclient -nw"
+set vicmd="nvim"
 set trashdir="~/.local/share/Trash"
 set shell=/usr/bin/zsh
 set trash
@@ -253,14 +253,6 @@ nnoremap yw :!wl-copy %c:p &<cr>
 nnoremap I cw<c-a>
 nnoremap cc cw<c-u>
 nnoremap rf cW<c-u>
-
-" Open console in current directory
-nnoremap ,t :!xterm &<cr>
-
-" Open Emacs to edit vifmrc and apply settings after returning to vifm
-nnoremap ,c :write | execute ':!emacsclient -nw $MYVIFMRC' | restart<cr>
-" Open Emacs to edit vifmrc
-nnoremap ,C :!emacsclient -nw $MYVIFMRC &<cr>
 
 " Toggle wrap setting on ,w key
 nnoremap ,w :set wrap!<cr>
