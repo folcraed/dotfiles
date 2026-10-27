@@ -114,6 +114,8 @@
 ;; Use the shortcuts for source and quote blocks
 (require 'org-tempo)
 
+(use-package ox-rst)
+
 ;; ==============================================
 ;;  Minion for the rest
 ;; ==============================================
@@ -496,15 +498,14 @@
  '(package-selected-packages
    '(avy cape consult corfu doom-modeline doom-themes expand-region
 		 flyspell-correct iedit magit marginalia markdown-mode minions
-		 orderless org-superstar rainbow-delimiters rainbow-mode rg
-		 transpose-frame vertico winum nerd-icons))
+		 nerd-icons orderless org-superstar ox-rst rainbow-delimiters
+		 rainbow-mode rg transpose-frame vertico winum))
  '(project-vc-extra-root-markers '(".project" ".git")))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(delete-selection-replacement ((t (:foreground "#bbc2bf")))) ;; Dark mode
  '(font-lock-comment-face ((t (:foreground "#9ca0a4" :slant italic))))
  '(link ((t (:foreground "#51afef" :underline nil :weight bold)))))
 ;; '(delete-selection-replacement ((t (:foreground "#282c34")))) ;; Light mode
