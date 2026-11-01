@@ -494,7 +494,7 @@
  ;; If there is more than one, they won't work right.
  '(calendar-mark-holidays-flag t)
  '(cursor-type '(bar . 2))
- '(org-export-backends '(ascii html md odt))
+ '(org-export-backends '(ascii html md odt rst))
  '(package-selected-packages
    '(avy cape consult corfu doom-modeline doom-themes expand-region
 		 flyspell-correct iedit magit marginalia markdown-mode minions
